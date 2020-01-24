@@ -9,10 +9,10 @@
   "dependencies": {
     "copy": "^0.3.2",
     "husky": "^3.1.0",
-    "jdown": "^1.0.3"
+    "markdown-json": "^1.4.1"
   },
   "scripts": {
-    "data": "node ./src/data.js"
+    "data": "node ./src/data2.js"
   },
   "husky": {
     "hooks": {
