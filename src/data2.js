@@ -18,7 +18,7 @@ markdownJson(settings)
   .then(data => {
     // console.log("data:", data.data);
     const content = data;
-    // console.log("Content", content);
+    console.log("Content", content);
     let result = [];
     for (let i in content)
       result.push({
@@ -51,6 +51,6 @@ markdownJson(settings)
   });
 
 // copy md files
-copy("./src/data/**/*.md", "./docs", (err, files) => {
-  console.log("Log", err, files);
-});
+//copy("./src/data/**/*.md", "./docs", (err, files) => {
+//  console.log("Log", err, files);
+//});
