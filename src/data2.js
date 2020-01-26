@@ -1,5 +1,6 @@
 const markdownJson = require("markdown-json");
 const fs = require("fs");
+const copy = require("copy");
 
 //
 const settings = {
@@ -48,3 +49,8 @@ markdownJson(settings)
   .catch(err => {
     console.log("error:", err);
   });
+
+// copy md files
+copy("./src/data/**/*.md", "./docs", (err, files) => {
+  console.log("Log", err, files);
+});
