@@ -1,5 +1,5 @@
 ---
-name: Array.from()
+name: from
 theme: Array
 lang: js
 ---

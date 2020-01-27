@@ -18,14 +18,14 @@ markdownJson(settings)
   .then(data => {
     // console.log("data:", data.data);
     const content = data;
-    console.log("Content", content);
+    //console.log("Content", content);
     let result = [];
     for (let i in content)
       result.push({
         id: content[i].id,
         path: i,
         name: content[i].name,
-        nameIndex: content[i].title.toLocaleLowerCase(),
+        nameIndex: content[i].name.toLocaleLowerCase(),
         theme: content[i].theme ? content[i].theme : "",
         themeIndex: content[i].theme
           ? content[i].theme.toLocaleLowerCase()
@@ -38,7 +38,7 @@ markdownJson(settings)
           (content[i].theme ? content[i].theme.toLocaleLowerCase() + " " : "") +
           content[i].lang.toLocaleLowerCase()
       });
-    // console.log("Result:", result);
+    console.log("Result:", result);
 
     //
     fs.writeFile("docs/data.json", JSON.stringify(result), er => {
