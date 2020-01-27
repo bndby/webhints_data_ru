@@ -33,10 +33,9 @@ markdownJson(settings)
         lang: content[i].lang,
         langIndex: content[i].lang.toLocaleLowerCase(),
         filter:
-          content[i].title.toLocaleLowerCase() +
+          content[i].name.toLocaleLowerCase() +
           " " +
-          (content[i].theme ? content[i].theme.toLocaleLowerCase() : "") +
-          " " +
+          (content[i].theme ? content[i].theme.toLocaleLowerCase() + " " : "") +
           content[i].lang.toLocaleLowerCase()
       });
     // console.log("Result:", result);
