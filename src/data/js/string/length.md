@@ -1,12 +1,16 @@
 ---
 name: length
-theme: string
+theme: String
 lang: js
 ---
 
 # String.length
 
 Свойство **`length`** представляет длину строки.
+
+```js
+str.length;
+```
 
 ---
 
@@ -24,4 +28,3 @@ console.log("Пустая строка имеет длину, равную " + e
 ---
 
 - [MDN String.length](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/length)
-- [TC39 String.length](https://tc39.es/ecma262/#sec-properties-of-string-instances-length)

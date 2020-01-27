@@ -37,4 +37,3 @@ Array.isArray({ __proto__: Array.prototype });
 ---
 
 - [MDN Array.isArray()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray)
-- [TC39 Array.isArray()](https://tc39.es/ecma262/#sec-array.isarray)
