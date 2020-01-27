@@ -25,10 +25,13 @@ markdownJson(settings)
         id: content[i].id,
         path: i,
         name: content[i].name,
-        title: content[i].title.toLocaleLowerCase(),
-        theme: content[i].theme ? content[i].theme.toLocaleLowerCase() : "",
-        lang: content[i].lang.toLocaleLowerCase(),
-        keys: content[i].keys ? content[i].keys.toLocaleLowerCase() : "",
+        nameIndex: content[i].title.toLocaleLowerCase(),
+        theme: content[i].theme ? content[i].theme : "",
+        themeIndex: content[i].theme
+          ? content[i].theme.toLocaleLowerCase()
+          : "",
+        lang: content[i].lang,
+        langIndex: content[i].lang.toLocaleLowerCase(),
         filter:
           content[i].title.toLocaleLowerCase() +
           " " +

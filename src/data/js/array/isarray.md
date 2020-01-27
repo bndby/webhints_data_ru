@@ -1,9 +1,7 @@
 ---
 name: isArray
-title: Array.isArray()
-theme: array
+theme: Array
 lang: js
-keys:
 ---
 
 # Array.isArray()
@@ -14,7 +12,7 @@ keys:
 
 **Возвращаемое значение** `true` если объект является `Array`; иначе, `false`.
 
-## Пример
+---
 
 ```js
 // Все следующие вызовы вернут true
@@ -35,3 +33,8 @@ Array.isArray(true);
 Array.isArray(false);
 Array.isArray({ __proto__: Array.prototype });
 ```
+
+---
+
+- [MDN Array.isArray()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray)
+- [TC39 Array.isArray()](https://tc39.es/ecma262/#sec-array.isarray)

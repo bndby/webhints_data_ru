@@ -1,9 +1,7 @@
 ---
 name: html
-title: html
 theme:
 lang: html
-keys:
 ---
 
 # &lt;**html**&gt;
@@ -13,11 +11,7 @@ keys:
 `xmlns`
 : Определяет пространство имен XHTML-документа.
 
-- [WHATWG HTML Living Standard](https://html.spec.whatwg.org/multipage/semantics.html#the-html-element)
-- [Веб-документация MDN](https://developer.mozilla.org/ru/docs/Web/HTML/Element/html)
-- [xsltdev.ru](https://xsltdev.ru/html/html/)
-
-## Пример
+---
 
 ```html
 <!DOCTYPE html>
@@ -31,3 +25,9 @@ keys:
   </body>
 </html>
 ```
+
+---
+
+- [WHATWG HTML Living Standard](https://html.spec.whatwg.org/multipage/semantics.html#the-html-element)
+- [MDN](https://developer.mozilla.org/ru/docs/Web/HTML/Element/html)
+- [xsltdev.ru](https://xsltdev.ru/html/html/)
