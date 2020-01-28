@@ -36,7 +36,8 @@ markdownJson(settings)
           content[i].name.toLocaleLowerCase() +
           " " +
           (content[i].theme ? content[i].theme.toLocaleLowerCase() + " " : "") +
-          content[i].lang.toLocaleLowerCase()
+          content[i].lang.toLocaleLowerCase(),
+        title: content[i].title
       });
     console.log("Result:", result);
 

@@ -2,14 +2,14 @@
 name: html
 theme:
 lang: html
+title: &lt;**html**&gt;
 ---
-
-# &lt;**html**&gt;
 
 Является контейнером, который заключает в себе всё содержимое страницы.
 
-`xmlns`
-: Определяет пространство имен XHTML-документа.
+## Атрибуты
+
+`xmlns` - Определяет пространство имен XHTML-документа.
 
 ---
 
@@ -30,4 +30,3 @@ lang: html
 
 - [WHATWG HTML Living Standard](https://html.spec.whatwg.org/multipage/semantics.html#the-html-element)
 - [MDN](https://developer.mozilla.org/ru/docs/Web/HTML/Element/html)
-- [xsltdev.ru](https://xsltdev.ru/html/html/)

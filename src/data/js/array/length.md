@@ -2,9 +2,8 @@
 name: length
 theme: Array
 lang: js
+title: Array.length
 ---
-
-# Array.length
 
 Cвойство **`length`** объекта, который является экземпляром типа `Array`, устанавливает или возвращает число элементов этого массива.
 
@@ -19,4 +18,4 @@ items.length;
 
 ---
 
-- [MDN Array.length](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/length)
+- [Array.length](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/length)

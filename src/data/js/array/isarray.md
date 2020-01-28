@@ -2,15 +2,20 @@
 name: isArray
 theme: Array
 lang: js
+title: Array.isArray()
 ---
-
-# Array.isArray()
 
 Метод **`Array.isArray()`** возвращает `true`, если объект является массивом и `false`, если он массивом не является.
 
-- `obj` - Объект для проверки.
+## Синтаксис
 
-**Возвращаемое значение** `true` если объект является `Array`; иначе, `false`.
+```js
+Array.isArray(obj);
+```
+
+## Параметры
+
+`obj` - Объект для проверки.
 
 ---
 
@@ -36,4 +41,4 @@ Array.isArray({ __proto__: Array.prototype });
 
 ---
 
-- [MDN Array.isArray()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray)
+- [Array.isArray()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray)

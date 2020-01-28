@@ -2,9 +2,8 @@
 name: head
 theme:
 lang: html
+title: &lt;**head**&gt;
 ---
-
-# &lt;**head**&gt;
 
 Хранит элементы, цель которых — помочь браузеру в работе с данными.
 
@@ -27,4 +26,3 @@ lang: html
 
 - [WHATWG HTML Living Standard](https://html.spec.whatwg.org/multipage/semantics.html#the-head-element)
 - [Веб-документация MDN](https://developer.mozilla.org/ru/docs/Web/HTML/Element/head)
-- [xsltdev.ru](https://xsltdev.ru/html/head/)

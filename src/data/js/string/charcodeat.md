@@ -2,17 +2,20 @@
 name: charCodeAt
 theme: String
 lang: js
+title: String.prototype.charCodeAt()
 ---
 
-# String.prototype.charCodeAt()
+Метод **`charCodeAt()`** возвращает числовое значение Юникода для символа по указанному индексу (за исключением кодовых точек Юникода, больших `0x10000`).
 
-Метод charCodeAt() возвращает числовое значение Юникода для символа по указанному индексу (за исключением кодовых точек Юникода, больших 0x10000).
+## Синтаксис
 
 ```js
 str.charCodeAt(index);
 ```
 
-- `index` - Целое число больше, либо равное `0` и меньше длины строки; если параметр не является числом, он устанавливается в `0`.
+## Параметры
+
+`index` - Целое число больше, либо равное `0` и меньше длины строки; если параметр не является числом, он устанавливается в `0`.
 
 ---
 
@@ -22,4 +25,4 @@ str.charCodeAt(index);
 
 ---
 
-- [MDN String.prototype.charCodeAt()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt)
+- [String.prototype.charCodeAt()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt)

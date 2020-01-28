@@ -2,19 +2,20 @@
 name: concat
 theme: String
 lang: JS
+title: String.prototype.concat()
 ---
 
-# String.prototype.concat()
-
 Метод **`concat()`** объединяет текст из двух или более строк и возвращает новую строку.
+
+## Синтаксис
 
 ```js
 str.concat(string2, string3[, ..., stringN])
 ```
 
-- `string2...stringN` - Строки, объединяемые в эту строку.
+## Параметры
 
-Метод `concat()` объединяет текст из двух или более строк и возвращает новую строку.
+`string2...stringN` - Строки, объединяемые в эту строку.
 
 ---
 
@@ -27,4 +28,4 @@ console.log(hello.concat("Кевин", ", удачного дня."));
 
 ---
 
-- [MDN String.prototype.concat()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
+- [String.prototype.concat()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/concat)

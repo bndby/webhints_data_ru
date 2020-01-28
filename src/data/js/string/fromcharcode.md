@@ -2,19 +2,22 @@
 name: fromCharCode
 theme: String
 lang: js
+title: String.fromCharCode()
 ---
 
-# String.fromCharCode()
-
 Статический метод **`String.fromCharCode()`** возвращает строку, созданную из указанной последовательности значений Юникода.
+
+Этот метод возвращает примитивную строку, а не объект `String`.
+
+## Синтаксис
 
 ```js
 String.fromCharCode(num1[, ...[, numN]])
 ```
 
-- `num1, ..., numN` - Последовательность чисел, являющихся значениями Юникода.
+## Параметры
 
-Этот метод возвращает примитивную строку, а не объект `String`.
+`num1, ..., numN` - Последовательность чисел, являющихся значениями Юникода.
 
 ---
 
@@ -24,4 +27,4 @@ String.fromCharCode(65, 66, 67); // "ABC"
 
 ---
 
-- [MDN String.fromCharCode()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode)
+- [String.fromCharCode()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode)

@@ -2,11 +2,24 @@
 name: from
 theme: Array
 lang: js
+title: Array.from()
 ---
 
-# Array.from()
-
 Метод **`Array.from()`** создаёт новый экземпляр `Array` из массивоподобного или итерируемого объекта.
+
+## Синтаксис
+
+```js
+Array.from(arrayLike[, mapFn[, thisArg]])
+```
+
+## Параметры
+
+`arrayLike` - Массивоподобный или итерируемый объект, преобразуемый в массив.
+
+`mapFn` - Необязательный. Отображающая функция, вызываемая для каждого элемента массива.
+
+`thisArg` - Необязательный. Значение, используемое в качестве `this` при выполнении функции `mapFn`.
 
 ---
 
@@ -20,4 +33,4 @@ console.log(Array.from([1, 2, 3], x => x + x));
 
 ---
 
-- [MDN Array.from()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/from)
+- [Array.from()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/from)

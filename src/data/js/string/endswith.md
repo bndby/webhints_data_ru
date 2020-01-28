@@ -2,20 +2,22 @@
 name: endsWith
 theme: String
 lang: JS
+title: String.prototype.endsWith()
 ---
 
-# String.prototype.endsWith()
-
 Метод **`endsWith()`** определяет, заканчивается ли строка символами другой строки, возвращая, соотвественно, `true` или `false`.
+
+## Синтаксис
 
 ```js
 str.endsWith(searchString[, position])
 ```
 
-- `searchString` - Символы, искомые в конце данной строки.
-- `position` - Необязательный параметр. Искать внутри данной строки, как если бы эта строка была указанной длины; по умолчанию установлен в реальную длину строки, обрезается по диапазону, устанавливаемому длиной этой строки.
+## Параметры
 
-Этот метод позволяет вам определять, заканчивается ли или нет строка символами другой строки.
+`searchString` - Символы, искомые в конце данной строки.
+
+`position` - Необязательный параметр. Искать внутри данной строки, как если бы эта строка была указанной длины; по умолчанию установлен в реальную длину строки, обрезается по диапазону, устанавливаемому длиной этой строки.
 
 ---
 
@@ -29,4 +31,4 @@ console.log(str.endsWith("быть", 16)); // true
 
 ---
 
-- [MDN String.prototype.endsWith()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith)
+- [String.prototype.endsWith()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith)

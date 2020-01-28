@@ -2,17 +2,20 @@
 name: fromCodePoint
 theme: String
 lang: js
+title: String.fromCodePoint()
 ---
 
-# String.fromCodePoint()
-
 Статический метод **`String.fromCodePoint()`** возвращает строку, созданную из указанной последовательности кодовых точек.
+
+## Синтаксис
 
 ```js
 String.fromCodePoint(num1[, ...[, numN]])
 ```
 
-- `num1, ..., numN` - Последовательность кодовых точек.
+## Параметры
+
+`num1, ..., numN` - Последовательность кодовых точек.
 
 ---
 
@@ -34,4 +37,4 @@ String.fromCodePoint(NaN); // RangeError
 
 ---
 
-- [MDN String.fromCodePoint()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/fromCodePoint)
+- [String.fromCodePoint()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/fromCodePoint)

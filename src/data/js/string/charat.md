@@ -2,17 +2,20 @@
 name: charAt
 theme: String
 lang: js
+title: String.prototype.charAt()
 ---
 
-# String.prototype.charAt()
-
 Метод **`charAt()`** возвращает указанный символ из строки.
+
+## Синтаксис
 
 ```js
 str.charAt(index);
 ```
 
-- `index` - Целое число от `0` до длины строки минус `1`.
+## Параметры
+
+`index` - Целое число от `0` до длины строки минус `1`.
 
 ---
 
@@ -30,4 +33,4 @@ console.log(anyString.charAt(999)); // ''
 
 ---
 
-- [MDN String.prototype.charAt()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/charAt)
+- [String.prototype.charAt()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/charAt)

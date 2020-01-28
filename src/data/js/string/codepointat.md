@@ -2,17 +2,20 @@
 name: codePointAt
 theme: String
 lang: JS
+title: String.prototype.codePointAt()
 ---
 
-# String.prototype.codePointAt()
-
 Метод **`codePointAt()`** возвращает неотрицательное целое число, являющееся закодированным в UTF-16 значением кодовой точки.
+
+## Синтаксис
 
 ```js
 str.codePointAt(pos);
 ```
 
-- `pos` - Позиция элемента в строке, чья кодовоя точка возвращается функцией.
+## Параметры
+
+`pos` - Позиция элемента в строке, чья кодовоя точка возвращается функцией.
 
 ---
 
@@ -25,4 +28,4 @@ str.codePointAt(pos);
 
 ---
 
-- [MDN String.prototype.codePointAt()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/codePointAt)
+- [String.prototype.codePointAt()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/codePointAt)
