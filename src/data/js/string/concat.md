@@ -15,7 +15,8 @@ str.concat(string2, string3[, ..., stringN])
 
 ## Параметры
 
-`string2...stringN` - Строки, объединяемые в эту строку.
+**`string2...stringN`**<br />
+Строки, объединяемые в эту строку.
 
 ---
 

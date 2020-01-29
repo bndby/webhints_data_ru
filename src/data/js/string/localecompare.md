@@ -17,14 +17,14 @@ str.localeCompare(compareString[, locales[, options]])
 
 ## Параметры
 
-**`compareString`**
-: Строка, с которой сравнивается данная.
+**`compareString`**<br />
+Строка, с которой сравнивается данная.
 
-`locales`
-: Необязательный параметр. Строка с языковой меткой BCP 47, либо массив таких строк.
+`locales`<br />
+Необязательный параметр. Строка с языковой меткой BCP 47, либо массив таких строк.
 
-`options`
-: Необязательный параметр. Объект с некоторыми или всеми из следующих свойств: `localeMatcher`, `usage`, `sensitivity`, `ignore­Punctua­tion`, `numeric`, `caseFirst`
+`options`<br />
+Необязательный параметр. Объект с некоторыми или всеми из следующих свойств: `localeMatcher`, `usage`, `sensitivity`, `ignore­Punctua­tion`, `numeric`, `caseFirst`
 
 ---
 
