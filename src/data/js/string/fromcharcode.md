@@ -1,7 +1,7 @@
 ---
 name: fromCharCode
 theme: String
-lang: js
+lang: JS
 title: String.fromCharCode()
 ---
 

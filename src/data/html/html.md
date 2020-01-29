@@ -1,7 +1,7 @@
 ---
 name: html
 theme:
-lang: html
+lang: HTML
 title: &lt;**html**&gt;
 ---
 

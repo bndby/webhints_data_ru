@@ -1,7 +1,7 @@
 ---
 name: isArray
 theme: Array
-lang: js
+lang: JS
 title: Array.isArray()
 ---
 

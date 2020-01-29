@@ -1,7 +1,7 @@
 ---
 name: length
 theme: String
-lang: js
+lang: JS
 title: String.length
 ---
 

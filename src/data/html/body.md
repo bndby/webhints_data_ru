@@ -1,7 +1,7 @@
 ---
 name: body
 theme:
-lang: html
+lang: HTML
 title: &lt;**body**&gt;
 ---
 

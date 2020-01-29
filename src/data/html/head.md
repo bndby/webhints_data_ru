@@ -1,7 +1,7 @@
 ---
 name: head
 theme:
-lang: html
+lang: HTML
 title: &lt;**head**&gt;
 ---
 
@@ -25,4 +25,4 @@ title: &lt;**head**&gt;
 ---
 
 - [WHATWG HTML Living Standard](https://html.spec.whatwg.org/multipage/semantics.html#the-head-element)
-- [Веб-документация MDN](https://developer.mozilla.org/ru/docs/Web/HTML/Element/head)
+- [MDN](https://developer.mozilla.org/ru/docs/Web/HTML/Element/head)

@@ -1,7 +1,7 @@
 ---
 name: charAt
 theme: String
-lang: js
+lang: JS
 title: String.prototype.charAt()
 ---
 

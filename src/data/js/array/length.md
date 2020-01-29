@@ -1,7 +1,7 @@
 ---
 name: length
 theme: Array
-lang: js
+lang: JS
 title: Array.length
 ---
 

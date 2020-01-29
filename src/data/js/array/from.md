@@ -1,7 +1,7 @@
 ---
 name: from
 theme: Array
-lang: js
+lang: JS
 title: Array.from()
 ---
 
