@@ -2,7 +2,7 @@
 name: html
 theme:
 lang: HTML
-title: &lt;**html**&gt;
+title: html
 ---
 
 Является контейнером, который заключает в себе всё содержимое страницы.
