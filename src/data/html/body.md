@@ -2,7 +2,7 @@
 name: body
 theme:
 lang: HTML
-title: &lt;**body**&gt;
+title: body
 ---
 
 Хранит содержимое страницы (контента), отображаемого в окне браузера.
