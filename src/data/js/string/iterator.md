@@ -1,5 +1,5 @@
 ---
-name: @@iterator
+name: iterator
 theme: String
 lang: JS
 title: String.prototype[@@iterator]()

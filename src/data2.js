@@ -20,7 +20,7 @@ markdownJson(settings)
     const content = data;
     //console.log("Content", content);
     let result = [];
-    for (let i in content)
+    for (let i in content) {
       result.push({
         id: content[i].id,
         path: i,
@@ -39,7 +39,10 @@ markdownJson(settings)
           content[i].lang.toLocaleLowerCase(),
         title: content[i].title
       });
-    console.log("Result:", result);
+      console.log(content[i].name);
+    }
+
+    // console.log("Result:", result);
 
     //
     fs.writeFile("docs/data.json", JSON.stringify(result), er => {
