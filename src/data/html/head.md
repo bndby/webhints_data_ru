@@ -2,7 +2,7 @@
 name: head
 theme:
 lang: HTML
-title: &lt;**head**&gt;
+title: head
 ---
 
 Хранит элементы, цель которых — помочь браузеру в работе с данными.
