@@ -13,13 +13,17 @@ title: String.prototype.startsWith()
 str.startsWith(searchString[, position])
 ```
 
+```ts
+str.startsWith(searchString: string, position: number = 0): boolean
+```
+
 ## Параметры
 
-`searchString`<br />
+**`searchString`**<br />
 Символы, искомые в начале данной строки.
 
-`position`<br />
-Необязательный параметр. Позиция в строке, с которой начинать поиск строки `searchString`; по умолчанию установлена в `0`.
+_`position`_<br />
+Позиция в строке, с которой начинать поиск строки `searchString`; по умолчанию `0`.
 
 ---
 
