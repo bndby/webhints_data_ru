@@ -1,6 +1,6 @@
 ---
 name: string
-theme: String
+theme:
 lang: JS
 title: String
 ---
@@ -201,4 +201,4 @@ for (var i = 0, n = inputValues.length; i < n; ++i) {
 
 ---
 
-- []()
+- [`Strings`](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String)
