@@ -6,7 +6,7 @@ title: Array.prototype.concat()
 ---
 
 ```js
-var new_array = old_array.concat(value1[, value2[, ...[, valueN]]])
+var newArray = oldArray.concat(value1[, value2[, ...[, valueN]]])
 ```
 
 ---
