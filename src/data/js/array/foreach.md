@@ -5,16 +5,15 @@ lang: JS
 title: Array.prototype.forEach()
 ---
 
+```js
+arr.forEach(callback(currentValue[, index[, array]])[, thisArg]);
+```
+
+---
+
 Метод **`forEach()`** выполняет указанную функцию один раз для каждого элемента в массиве.
 
 ## Синтаксис
-
-```js
-arr.forEach(
-  function callback(currentValue[, index[, array]]) {
-  //your iterator
-}[, thisArg]);
-```
 
 ## Параметры
 
@@ -24,18 +23,14 @@ arr.forEach(
 **`currentValue`**<br />
 Текущий обрабатываемый элемент в массиве.
 
-**`index`**<br />
+_`index`_<br />
 Индекс текущего обрабатываемого элемента в массиве.
 
-**`array`**<br />
+_`array`_<br />
 Массив, по которому осуществляется проход.
 
-**`thisArg`**<br />
+_`thisArg`_<br />
 Значение, используемое в качестве `this` при вызове функции `callback`.
-
-## Возвращаемое значение
-
-`undefined`.
 
 ---
 

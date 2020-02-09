@@ -5,10 +5,6 @@ lang: JS
 title: String.prototype.startsWith()
 ---
 
-Метод **`startsWith()`** определяет, начинается ли строка с символов другой строки, возвращая, соотвественно, `true` или `false`.
-
-## Синтаксис
-
 ```js
 str.startsWith(searchString[, position])
 ```
@@ -16,6 +12,10 @@ str.startsWith(searchString[, position])
 ```ts
 str.startsWith(searchString: string, position: number = 0): boolean
 ```
+
+---
+
+Метод **`startsWith()`** определяет, начинается ли строка с символов другой строки, возвращая, соотвественно, `true` или `false`.
 
 ## Параметры
 

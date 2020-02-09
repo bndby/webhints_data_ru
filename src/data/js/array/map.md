@@ -5,16 +5,13 @@ lang: JS
 title: Array.prototype.map()
 ---
 
-Метод **`map()`** создаёт новый массив с результатом вызова указанной функции для каждого элемента массива.
-
-## Синтаксис
-
 ```js
-var new_array = arr.map(
-  function callback(currentValue[, index[, array]]) {
-  // Возвращает элемент для new_array
-}[, thisArg])
+var new_array = arr.map(callback(currentValue[, index[, array]])[, thisArg])
 ```
+
+---
+
+Метод **`map()`** создаёт новый массив с результатом вызова указанной функции для каждого элемента массива.
 
 ## Параметры
 

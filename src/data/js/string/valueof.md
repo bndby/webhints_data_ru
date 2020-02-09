@@ -5,13 +5,13 @@ lang: JS
 title: String.prototype.valueOf()
 ---
 
-Метод **`valueOf()`** возвращает примитивное значение объекта `String`.
-
-## Синтаксис
-
 ```js
 str.valueOf();
 ```
+
+---
+
+Метод **`valueOf()`** возвращает примитивное значение объекта `String`.
 
 ---
 

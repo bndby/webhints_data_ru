@@ -5,16 +5,13 @@ lang: JS
 title: Array.prototype.filter()
 ---
 
-Метод **`filter()`** создаёт новый массив со всеми элементами, прошедшими проверку, задаваемую в передаваемой функции.
-
-## Синтаксис
-
 ```js
-var newArray = arr.filter(
-    callback(element[, index[, array]])[,
-    thisArg]
-)
+var newArray = arr.filter( callback(element[, index[, array]])[, thisArg])
 ```
+
+---
+
+Метод **`filter()`** создаёт новый массив со всеми элементами, прошедшими проверку, задаваемую в передаваемой функции.
 
 ## Параметры
 

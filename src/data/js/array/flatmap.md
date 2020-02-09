@@ -5,18 +5,15 @@ lang: JS
 title: Array.prototype.flatMap()
 ---
 
+```js
+var new_array = arr.flatMap(callback(currentValue[, index[, array]])[, thisArg])
+```
+
+---
+
 Метод **`flatMap()`** сначала применяет функцию к каждому элементу, а затем преобразует полученый результат в плоскую структуру и помещает в новый массив.
 
 Это идентично `map` функции, с последующим применением функции `flat` с параметром `depth` равным `1`.
-
-## Синтаксис
-
-```js
-var new_array = arr.flatMap(
-    function callback(currentValue[, index[, array]]) {
-    // возращает элемент для new_array
-}[, thisArg])
-```
 
 ## Параметры
 

@@ -5,15 +5,19 @@ lang: JS
 title: Array.length
 ---
 
+```js
+var len = arr.length;
+```
+
+---
+
 Cвойство **`length`** объекта, который является экземпляром типа `Array`, устанавливает или возвращает число элементов этого массива.
 
 ---
 
 ```js
 var items = ["shoes", "shirts", "socks", "sweaters"];
-items.length;
-
-// возвращает 4
+console.log(items.length); // возвращает 4
 ```
 
 ---

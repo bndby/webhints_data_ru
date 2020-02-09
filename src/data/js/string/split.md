@@ -5,15 +5,14 @@ lang: JS
 title: String.prototype.split()
 ---
 
-Метод **`split()`** разбивает объект `String` на массив строк путём разделения строки указанной подстрокой.
-
-## Синтаксис
-
 ```ts
 str.split([separator[, limit]])
-
 String.split(separator: string | RegExp, limit?: number | undefined): string[]
 ```
+
+---
+
+Метод **`split()`** разбивает объект `String` на массив строк путём разделения строки указанной подстрокой.
 
 ## Параметры
 
