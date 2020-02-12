@@ -9,6 +9,10 @@ title: String.prototype.valueOf()
 str.valueOf();
 ```
 
+```ts
+valueOf(): string;
+```
+
 ---
 
 Метод **`valueOf()`** возвращает примитивное значение объекта `String`.

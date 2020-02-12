@@ -9,6 +9,10 @@ title: String.prototype.toLocaleLowerCase()
 str.toLocaleLowerCase();
 ```
 
+```ts
+toLocaleLowerCase(locales?: string | string[]): string; // ES5
+```
+
 ---
 
 Метод **`toLocaleLowerCase()`** возвращает значение строки, на которой он был вызван, преобразованное в нижний регистр согласно правилам преобразования регистра локали.

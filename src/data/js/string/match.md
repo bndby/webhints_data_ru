@@ -9,6 +9,10 @@ title: String.prototype.match()
 str.match(regexp);
 ```
 
+```ts
+match(regexp: string | RegExp): RegExpMatchArray | null; // ES5
+```
+
 ---
 
 Метод **`match()`** возвращает получившиеся совпадения при сопоставлении строки с регулярным выражением.

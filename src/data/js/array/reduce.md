@@ -9,6 +9,12 @@ title: Array.prototype.reduce()
 array.reduce(callback(accumulator, currentValue[, index[, array]])[, initialValue])
 ```
 
+```ts
+reduce(callbackfn: (previousValue: T, currentValue: T, currentIndex: number, array: T[]) => T): T; // ES5
+reduce(callbackfn: (previousValue: T, currentValue: T, currentIndex: number, array: T[]) => T, initialValue: T): T; // ES5
+reduce<U>(callbackfn: (previousValue: U, currentValue: T, currentIndex: number, array: T[]) => U, initialValue: U): U; // ES5
+```
+
 ---
 
 Метод **`reduce()`** применяет функцию `reducer` к каждому элементу массива (слева-направо), возвращая одно результирующее значение.

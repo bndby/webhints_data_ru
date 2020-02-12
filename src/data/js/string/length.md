@@ -9,6 +9,10 @@ title: String.length
 str.length;
 ```
 
+```ts
+readonly length: number;
+```
+
 ---
 
 Свойство **`length`** представляет длину строки.

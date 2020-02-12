@@ -9,6 +9,10 @@ title: String.prototype.charCodeAt()
 str.charCodeAt(index);
 ```
 
+```ts
+charCodeAt(index: number): number; // ES5
+```
+
 ---
 
 Метод **`charCodeAt()`** возвращает числовое значение Юникода для символа по указанному индексу (за исключением кодовых точек Юникода, больших `0x10000`).

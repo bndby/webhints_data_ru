@@ -9,6 +9,10 @@ title: String.prototype.toString()
 str.toString();
 ```
 
+```ts
+toString(): string; // ES5
+```
+
 ---
 
 Метод **`toString()`** возвращает строку, представляющую указанный объект.

@@ -5,9 +5,12 @@ lang: JS
 title: String.prototype.split()
 ---
 
-```ts
+```js
 str.split([separator[, limit]])
-String.split(separator: string | RegExp, limit?: number | undefined): string[]
+```
+
+```ts
+split(separator: string | RegExp, limit?: number): string[]; // ES5
 ```
 
 ---

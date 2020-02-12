@@ -6,7 +6,11 @@ title: String.prototype.slice()
 ---
 
 ```js
-str.slice(beginSlice[, endSlice])
+str.slice([start[, end]])
+```
+
+```ts
+slice(start?: number, end?: number): string; // ES5
 ```
 
 ---
@@ -15,10 +19,10 @@ str.slice(beginSlice[, endSlice])
 
 ## Параметры
 
-**`beginSlice`**<br />
+_`start`_<br />
 Индекс, с которого начинать извлечение (нумерация начинается с нуля). Если отрицателен, то трактуется как `sourceLength + beginSlice`, где `sourceLength` — это длина строки (например, если параметр `beginSlice` равен `-3`, то он трактуется как `sourceLength - 3`).
 
-_`endSlice`_<br />
+_`end`_<br />
 Необязательный параметр. Индекс, которым заканчивать извлечение (нумерация начинается с нуля). Если опущен, `slice()` извлечёт всё до конца строки. Если отрицателен, то трактуется как `sourceLength + endSlice`, где `sourceLength` — это длина строки.
 
 ---

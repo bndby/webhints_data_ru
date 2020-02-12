@@ -9,6 +9,10 @@ title: Array.prototype.forEach()
 arr.forEach(callback(currentValue[, index[, array]])[, thisArg]);
 ```
 
+```ts
+forEach(callbackfn: (value: T, index: number, array: T[]) => void, thisArg?: any): void; // ES5
+```
+
 ---
 
 Метод **`forEach()`** выполняет указанную функцию один раз для каждого элемента в массиве.

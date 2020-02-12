@@ -9,6 +9,11 @@ title: Array.prototype.splice()
 array.splice(start, deleteCount[, item1[, item2[, ...]]])
 ```
 
+```ts
+splice(start: number, deleteCount?: number): T[]; // ES5
+splice(start: number, deleteCount: number, ...items: T[]): T[]; // ES5
+```
+
 ---
 
 Метод **`splice()`** изменяет содержимое массива, удаляя существующие элементы и/или добавляя новые.

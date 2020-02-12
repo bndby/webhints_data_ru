@@ -9,6 +9,10 @@ title: String.prototype.charAt()
 str.charAt(index);
 ```
 
+```ts
+charAt(index: number): string; // ES5
+```
+
 ---
 
 Метод **`charAt()`** возвращает указанный символ из строки.

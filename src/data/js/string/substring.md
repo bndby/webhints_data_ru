@@ -9,6 +9,10 @@ title: String.prototype.substring()
 str.substring(indexA[, indexB])
 ```
 
+```ts
+substring(start: number, end?: number): string; // ES5
+```
+
 ---
 
 Метод **`substring()`** возвращает подстроку строки между двумя индексами, или от одного индекса и до конца строки.

@@ -9,6 +9,10 @@ title: Array.prototype.indexOf()
 arr.indexOf(searchElement[, fromIndex = 0])
 ```
 
+```ts
+indexOf(searchElement: T, fromIndex?: number): number; // ES5
+```
+
 ---
 
 Метод **`indexOf()`** возвращает первый индекс, по которому данный элемент может быть найден в массиве или `-1`, если такого индекса нет.

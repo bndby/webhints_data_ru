@@ -9,6 +9,10 @@ title: String.prototype.toLowerCase()
 str.toLowerCase();
 ```
 
+```ts
+toLowerCase(): string; // ES5
+```
+
 ---
 
 Метод **`toLowerCase()`** возвращает значение строки, на которой он был вызван, преобразованное в нижний регистр.

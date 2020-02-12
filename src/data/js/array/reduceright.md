@@ -9,6 +9,12 @@ title: Array.prototype.reduceRight()
 array.reduceRight(callback(previousValue, currentValue[, index[, array]])[, initialValue])
 ```
 
+```ts
+reduceRight(callbackfn: (previousValue: T, currentValue: T, currentIndex: number, array: T[]) => T): T; // ES5
+reduceRight(callbackfn: (previousValue: T, currentValue: T, currentIndex: number, array: T[]) => T, initialValue: T): T; // ES5
+reduceRight<U>(callbackfn: (previousValue: U, currentValue: T, currentIndex: number, array: T[]) => U, initialValue: U): U; // ES5
+```
+
 ---
 
 Метод **`reduceRight()`** применяет функцию к аккумулятору и каждому значению массива (справа-налево), сводя его к одному значению.

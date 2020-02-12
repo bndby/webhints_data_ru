@@ -9,6 +9,10 @@ title: String.prototype.indexOf()
 str.indexOf(searchValue, [fromIndex]);
 ```
 
+```ts
+indexOf(searchValue: string, fromIndex?: number): number; // ES5
+```
+
 ---
 
 Метод **`indexOf()`** возвращает индекс первого вхождения указанного значения в строковый объект `String`, на котором он был вызван, начиная с индекса `fromIndex`. Возвращает `-1`, если значение не найдено.

@@ -9,6 +9,10 @@ title: Array.prototype.every()
 arr.every(callback(currentValue[, index[, array]])[, thisArg])
 ```
 
+```ts
+every(callbackfn: (value: T, index: number, array: T[]) => unknown, thisArg?: any): boolean; // ES5
+```
+
 ---
 
 Метод **`every()`** проверяет, удовлетворяют ли все элементы массива условию, заданному в передаваемой функции.

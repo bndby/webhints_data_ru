@@ -9,6 +9,10 @@ title: String.prototype.localeCompare()
 str.localeCompare(compareString[, locales[, options]])
 ```
 
+```ts
+localeCompare(compareString: string): number; // ES5
+```
+
 ---
 
 Метод **`localeCompare()`** возвращает число, указывающее, должна ли данная строка находиться до, после или в том же самом месте, что и строка, переданная через параметр, при сортировке этих строк.

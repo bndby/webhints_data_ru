@@ -9,6 +9,10 @@ title: Array.prototype.join()
 arr.join([separator]);
 ```
 
+```ts
+join(separator?: string): string; // ES5
+```
+
 ---
 
 Метод **`join()`** объединяет все элементы массива (или массивоподобного объекта) в строку.

@@ -9,6 +9,10 @@ title: Array.prototype.slice()
 arr.slice([begin[, end]])
 ```
 
+```ts
+slice(start?: number, end?: number): T[]; // ES5
+```
+
 ---
 
 Метод **`slice()`** возвращает новый массив, содержащий копию части исходного массива.
