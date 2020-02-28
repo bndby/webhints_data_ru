@@ -9,10 +9,6 @@ title: Array.prototype.toString()
 arr.toString();
 ```
 
-```ts
-toString(): string; // ES5
-```
-
 ---
 
 Метод **`toString()`** возвращает строковое представление указанного массива и его элементов.

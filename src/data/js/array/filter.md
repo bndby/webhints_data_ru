@@ -9,11 +9,6 @@ title: Array.prototype.filter()
 var newArray = arr.filter( callback(element[, index[, array]])[, thisArg])
 ```
 
-```ts
-filter<S extends T>(callbackfn: (value: T, index: number, array: T[]) => value is S, thisArg?: any): S[]; // ES5
-filter(callbackfn: (value: T, index: number, array: T[]) => unknown, thisArg?: any): T[]; // ES5
-```
-
 ---
 
 Метод **`filter()`** создаёт новый массив со всеми элементами, прошедшими проверку, задаваемую в передаваемой функции.

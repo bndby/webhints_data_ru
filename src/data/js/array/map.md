@@ -9,10 +9,6 @@ title: Array.prototype.map()
 var new_array = arr.map(callback(currentValue[, index[, array]])[, thisArg])
 ```
 
-```ts
-map<U>(callbackfn: (value: T, index: number, array: T[]) => U, thisArg?: any): U[]; // ES5
-```
-
 ---
 
 Метод **`map()`** создаёт новый массив с результатом вызова указанной функции для каждого элемента массива.

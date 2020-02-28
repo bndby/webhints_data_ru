@@ -9,10 +9,6 @@ title: String.prototype.lastIndexOf()
 str.lastIndexOf(searchValue[, fromIndex])
 ```
 
-```ts
-lastIndexOf(searchValue: string, fromIndex?: number): number; // ES5
-```
-
 ---
 
 Метод **`lastIndexOf()`** возвращает индекс последнего вхождения указанного значения в строковый объект `String`, на котором он был вызван, или `-1`, если ничего не было найдено. Поиск по строке ведётся от конца к началу, начиная с индекса `fromIndex`.

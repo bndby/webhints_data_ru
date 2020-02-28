@@ -9,10 +9,6 @@ title: Array.prototype.unshift()
 arr.unshift([element1[, ...[, elementN]]])
 ```
 
-```ts
-unshift(...items: T[]): number; // ES5
-```
-
 ---
 
 Метод **`unshift()`** добавляет один или более элементов в начало массива и возвращает новую длину массива.

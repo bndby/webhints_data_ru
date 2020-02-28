@@ -9,10 +9,6 @@ title: Array.prototype.sort()
 arr.sort([compareFunction]);
 ```
 
-```ts
-sort(compareFn?: (a: T, b: T) => number): this; // ES5
-```
-
 ---
 
 Метод **`sort()`** на месте сортирует элементы массива и возвращает отсортированный массив.

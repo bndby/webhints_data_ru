@@ -9,10 +9,6 @@ title: String.prototype.toLocaleUpperCase()
 str.toLocaleUpperCase();
 ```
 
-```ts
-toLocaleUpperCase(locales?: string | string[]): string; // ES5
-```
-
 ---
 
 Метод **`toLocaleUpperCase()`** возвращает значение строки, на которой он был вызван, преобразованное в верхний регистр согласно правилам преобразования регистра локали.

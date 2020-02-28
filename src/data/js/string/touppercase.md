@@ -9,10 +9,6 @@ title: String.prototype.toUpperCase()
 str.toUpperCase();
 ```
 
-```ts
-toUpperCase(): string; // ES5
-```
-
 ---
 
 Метод **`toUpperCase()`** возвращает значение строки, на которой он был вызван, преобразованное в верхний регистр.

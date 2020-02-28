@@ -9,11 +9,6 @@ title: String.prototype.replace()
 str.replace(regexp|substr, newSubStr|function[, flags])
 ```
 
-```ts
-replace(searchValue: string | RegExp, replaceValue: string): string; // ES5
-replace(searchValue: string | RegExp, replacer: (substring: string, ...args: any[]) => string): string; // ES5
-```
-
 ---
 
 Метод **`replace()`** возвращает новую строку с некоторыми или всеми сопоставлениями с шаблоном, заменёнными на заменитель. Шаблон может быть строкой или регулярным выражением, а заменитель может быть строкой или функцией, вызываемой при каждом сопоставлении.
