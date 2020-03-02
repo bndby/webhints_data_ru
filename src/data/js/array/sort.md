@@ -6,7 +6,7 @@ title: Array.prototype.sort()
 ---
 
 ```js
-arr.sort([compareFunction]);
+arr.sort(compareFunction(a, b));
 ```
 
 ```ts
