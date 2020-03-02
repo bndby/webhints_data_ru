@@ -9,10 +9,6 @@ title: String.prototype.split()
 str.split([separator[, limit]])
 ```
 
-```ts
-split(separator: string | RegExp, limit?: number): string[]; // ES5
-```
-
 ---
 
 Метод **`split()`** разбивает объект `String` на массив строк путём разделения строки указанной подстрокой.

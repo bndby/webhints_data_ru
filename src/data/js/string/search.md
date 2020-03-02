@@ -9,10 +9,6 @@ title: String.prototype.search()
 str.search([regexp]);
 ```
 
-```ts
-search(regexp: string | RegExp): number; // ES5
-```
-
 ---
 
 Метод **`search()`** выполняет поиск сопоставления между регулярным выражением и этим объектом `String`.

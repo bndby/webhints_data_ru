@@ -9,10 +9,6 @@ title: Array.prototype.push()
 arr.push(element1, ..., elementN)
 ```
 
-```ts
-push(...items: T[]): number; // ES5
-```
-
 ---
 
 Метод **`push()`** добавляет один или более элементов в конец массива и возвращает новую длину массива.

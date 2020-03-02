@@ -9,10 +9,6 @@ title: Array.prototype.some()
 arr.some(callback(element[, index[, array]])[, thisArg])
 ```
 
-```ts
-some(callbackfn: (value: T, index: number, array: T[]) => unknown, thisArg?: any): boolean; // ES5
-```
-
 ---
 
 Метод **`some()`** проверяет, удовлетворяет ли какой-либо элемент массива условию, заданному в передаваемой функции.

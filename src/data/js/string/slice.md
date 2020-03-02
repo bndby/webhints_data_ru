@@ -9,10 +9,6 @@ title: String.prototype.slice()
 str.slice([start[, end]])
 ```
 
-```ts
-slice(start?: number, end?: number): string; // ES5
-```
-
 ---
 
 Метод **`slice()`** извлекает часть строки и возвращает новую строку.

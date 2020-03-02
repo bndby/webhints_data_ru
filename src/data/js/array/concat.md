@@ -9,11 +9,6 @@ title: Array.prototype.concat()
 var newArray = oldArray.concat(value1[, value2[, ...[, valueN]]])
 ```
 
-```ts
-concat(...items: ConcatArray<T>[]): T[]; // ES5
-concat(...items: (T | ConcatArray<T>)[]): T[]; // ES5
-```
-
 ---
 
 Метод **`concat()`** возвращает новый массив, состоящий из массива, на котором он был вызван, соединённого с другими массивами и/или значениями, переданными в качестве аргументов.

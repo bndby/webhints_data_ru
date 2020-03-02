@@ -9,10 +9,6 @@ title: String.prototype.concat()
 str.concat(string2, string3[, ..., stringN])
 ```
 
-```ts
-concat(...strings: string[]): string; // ES5
-```
-
 ---
 
 Метод **`concat()`** объединяет текст из двух или более строк и возвращает новую строку.
