@@ -1,13 +1,18 @@
 ---
 name: Date
-theme: 
+theme:
 lang: JS
 title: Date
 ---
 
+```js
+new Date();
+new Date(value);
+new Date(dateString);
+new Date(year, month[, day[, hour[, minute[, second[, millisecond]]]]]);
+```
 
 ---
-
 
 ## Свойства
 
@@ -36,100 +41,145 @@ title: Date
 
 ## Методы экземпляра
 
-`Date.prototype.getDate()`<br />
+**`Date.prototype.getDate()`**<br />
 Возвращает день месяца (`1`-`31`) указанной даты по местному времени.
 
-`Date.prototype.getDay()`<br />
+**`Date.prototype.getDay()`**<br />
 Возвращает день недели (`0`-`6`) указанной даты по местному времени.
 
-`Date.prototype.getFullYear()`<br />
+**`Date.prototype.getFullYear()`**<br />
 Возвращает год (4 цифры для 4-х значного года) указанной даты по местному времени.
 
-`Date.prototype.getHours()`<br />
+**`Date.prototype.getHours()`**<br />
 Возвращает часы (`0`-`23`) указанной даты по местному времени.
 
-`Date.prototype.getMilliseconds()`<br />
+**`Date.prototype.getMilliseconds()`**<br />
 Возвращает миллисекунды (`0`-`999`) указанной даты по местному времени.
 
-`Date.prototype.getMinutes()`<br />
+**`Date.prototype.getMinutes()`**<br />
 Возвращает минуты (`0`-`59`) указанной даты по местному времени.
 
-`Date.prototype.getMonth()`<br />
+**`Date.prototype.getMonth()`**<br />
 Возвращает месяц (`0`-`11`) указанной даты по местному времени.
 
-`Date.prototype.getSeconds()`<br />
+**`Date.prototype.getSeconds()`**<br />
 Возвращает секунды (`0`-`59`) указанной даты по местному времени.
 
-`Date.prototype.getTime()`<br />
+**`Date.prototype.getTime()`**<br />
 Возвращает числовое значение указанной даты как количество миллисекунд, прошедших с 1 января 1970 года 00:00:00 по UTC (отрицательное значение для даты до этого момента).
 
-`Date.prototype.getTimezoneOffset()`<br />
+**`Date.prototype.getTimezoneOffset()`**<br />
 Возвращает смещение часового пояса в минутах для текущей локали.
 
-`Date.prototype.getUTCDate()`<br />
+**`Date.prototype.getUTCDate()`**<br />
 Возвращает день месяца (`1`-`31`) указанной даты по всемирному координированному времени.
 
-`Date.prototype.getUTCDay()`<br />
+**`Date.prototype.getUTCDay()`**<br />
 Возвращает день недели (`0`-`6`) указанной даты по всемирному координированному времени.
 
-`Date.prototype.getUTCFullYear()`<br />
+**`Date.prototype.getUTCFullYear()`**<br />
 Возвращает год (4 цифры для 4-х значного года) указанной даты по всемирному координированному времени.
 
-`Date.prototype.getUTCHours()`<br />
+**`Date.prototype.getUTCHours()`**<br />
 Возвращает часы (`0`-`23`) указанной даты по всемирному координированному времени.
 
-`Date.prototype.getUTCMilliseconds()`<br />
+**`Date.prototype.getUTCMilliseconds()`**<br />
 Возвращает миллисекунды (`0`-`999`) указанной даты по всемирному координированному времени.
 
-`Date.prototype.getUTCMinutes()`<br />
+**`Date.prototype.getUTCMinutes()`**<br />
 Возвращает минуты (`0`-`59`) указанной даты по всемирному координированному времени.
 
-`Date.prototype.getUTCMonth()`<br />
+**`Date.prototype.getUTCMonth()`**<br />
 Возвращает месяц (`0`-`11`) указанной даты по всемирному координированному времени.
 
-`Date.prototype.getUTCSeconds()`<br />
+**`Date.prototype.getUTCSeconds()`**<br />
 Возвращает секунды (`0`-`59`) указанной даты по всемирному координированному времени.
 
+**`Date.prototype.setDate()`**<br />
+Устанавливает день месяца указанной даты по местному времени.
 
+**`Date.prototype.setFullYear()`**<br />
+Устанавливает полный год (4 цифры для 4-х значного года) указанной даты по местному времени.
 
+**`Date.prototype.setHours()`**<br />
+Устанавливает часы указанной даты по местному времени.
 
-`Date.prototype.toDateString()`<br />
+**`Date.prototype.setMilliseconds()`**<br />
+Устанавливает миллисекунды указанной даты по местному времени.
+
+**`Date.prototype.setMinutes()`**<br />
+Устанавливает минуты указанной даты по местному времени.
+
+**`Date.prototype.setMonth()`**<br />
+Устанавливает месяц указанной даты по местному времени.
+
+**`Date.prototype.setSeconds()`**<br />
+Устанавливает секунды указанной даты по местному времени.
+
+**`Date.prototype.setTime()`**<br />
+Устанавливает объект `Date` во время, представляемое количеством миллисекунд, прошедших с 1 января 1970 года 00:00:00 по UTC (отрицательное значение устанавливает даты до этого момента).
+
+**`Date.prototype.setUTCDate()`**<br />
+Устанавливает день месяца указанной даты по всемирному координированному времени.
+
+**`Date.prototype.setUTCFullYear()`**<br />
+Устанавливает полный год (4 цифры для 4-х значного года) указанной даты по всемирному координированному времени.
+
+**`Date.prototype.setUTCHours()`**<br />
+Устанавливает часы указанной даты по всемирному координированному времени.
+
+**`Date.prototype.setUTCMilliseconds()`**<br />
+Устанавливает миллисекунды указанной даты по всемирному координированному времени.
+
+**`Date.prototype.setUTCMinutes()`**<br />
+Устанавливает минуты указанной даты по всемирному координированному времени.
+
+**`Date.prototype.setUTCMonth()`**<br />
+Устанавливает месяц указанной даты по всемирному координированному времени.
+
+**`Date.prototype.setUTCSeconds()`**<br />
+Устанавливает секунды указанной даты по всемирному координированному времени.
+
+**`Date.prototype.setYear()`**<br />
+Устанавливает год (обычно 2-3 цифры) указанной даты по всемирному координированному времени. Вместо него используйте метод `setFullYear()`.
+
+**`Date.prototype.toDateString()`**<br />
 Возвращает часть, содержащую только дату объекта `Date` в качестве человеко-читаемой строки.
 
-`Date.prototype.toISOString()`<br />
+**`Date.prototype.toISOString()`**<br />
 Преобразует дату в строку, следуя расширенному формату ISO 8601.
 
-`Date.prototype.toJSON()`<br />
+**`Date.prototype.toJSON()`**<br />
 Возвращает строку, представляющую объект `Date`, используя метод `toISOString()`. Предназначен для использования методом JSON.`stringify()`.
 
-`Date.prototype.toGMTString()`<br />
+**`Date.prototype.toGMTString()`**<br />
 Возвращает строку, представляющую объект `Date`, на основе часового пояса GMT (всемирное время). Вместо него используйте метод `toUTCString()`.
 
-`Date.prototype.toLocaleDateString()`<br />
+**`Date.prototype.toLocaleDateString()`**<br />
 Возвращает строку с датой, чьё представление зависит от системных настроек локали.
 
-`Date.prototype.toLocaleFormat()`<br />
+**`Date.prototype.toLocaleFormat()`**<br />
 Преобразует дату в строку, используя строку форматирования.
 
-`Date.prototype.toLocaleString()`<br />
+**`Date.prototype.toLocaleString()`**<br />
 Возвращает строку, чьё представление зависит от настроек локали. Переопределяет метод `Object.prototype.toLocaleString()`.
 
-`Date.prototype.toLocaleTimeString()`<br />
+**`Date.prototype.toLocaleTimeString()`**<br />
 Возвращает строку со временем, чьё представление зависит от системных настроек локали.
 
-`Date.prototype.toSource()`<br />
+**`Date.prototype.toSource()`**<br />
 Возвращает строковое представление исходного кода эквивалентного объекта `Date`; вы можете использовать это значение для создания нового объекта. Переопределяет метод `Object.prototype.toSource()`.
 
-`Date.prototype.toString()`<br />
+**`Date.prototype.toString()`**<br />
 Возвращает строковое представление указанного объекта `Date`. Переопределяет метод `Object.prototype.toString()`.
 
-`Date.prototype.toTimeString()`<br />
+**`Date.prototype.toTimeString()`**<br />
 Возвращает часть, содержащую только время объекта `Date` в качестве человеко-читаемой строки.
 
-`Date.prototype.toUTCString()`<br />
+**`Date.prototype.toUTCString()`**<br />
 Преобразует дату в строку, используя часовой пояс UTC.
 
-`Date.prototype.valueOf()`<br />
+**`Date.prototype.valueOf()`**<br />
 Возвращает примитивное значение объекта `Date`. Переопределяет метод `Object.prototype.valueOf()`.
 
 Методы, унаследованные из `Object`:<br />
@@ -137,53 +187,55 @@ title: Date
 
 ---
 
-`Date.prototype.setDate()`<br />
-Устанавливает день месяца указанной даты по местному времени.
+Пример/ несколько способов создания объекта `Date`
 
-`Date.prototype.setFullYear()`<br />
-Устанавливает полный год (4 цифры для 4-х значного года) указанной даты по местному времени.
+```js
+var today = new Date();
+var birthday = new Date("December 17, 1995 03:24:00");
+var birthday = new Date("1995-12-17T03:24:00");
+var birthday = new Date(1995, 11, 17);
+var birthday = new Date(1995, 11, 17, 3, 24, 0);
+```
 
-`Date.prototype.setHours()`<br />
-Устанавливает часы указанной даты по местному времени.
+Следующие примеры показывают, как определить разницу во времени между двумя датами в JavaScript:
 
-`Date.prototype.setMilliseconds()`<br />
-Устанавливает миллисекунды указанной даты по местному времени.
+```js
+// Используя объекты Date
+var start = Date.now();
 
-`Date.prototype.setMinutes()`<br />
-Устанавливает минуты указанной даты по местному времени.
+// Событие, для которого замеряется время, происходит тут:
+doSomethingForALongTime();
+var end = Date.now();
+// затраченное время в миллисекундах
+var elapsed = end - start;
+// Используя встроенные методы
+var start = new Date();
 
-`Date.prototype.setMonth()`<br />
-Устанавливает месяц указанной даты по местному времени.
+// Событие, для которого замеряется время, происходит тут:
+doSomethingForALongTime();
+var end = new Date();
+// затраченное время в миллисекундах
+var elapsed = end.getTime() - start.getTime();
+// Проверяет функцию и возвращает её возвращаемое значение
+function printElapsedTime(fTest) {
+  var nStartTime = Date.now(),
+    vReturn = fTest(),
+    nEndTime = Date.now();
 
-`Date.prototype.setSeconds()`<br />
-Устанавливает секунды указанной даты по местному времени.
+  console.log(
+    "Затраченное время: " + String(nEndTime - nStartTime) + " миллисекунд"
+  );
+  return vReturn;
+}
 
-`Date.prototype.setTime()`<br />
-Устанавливает объект `Date` во время, представляемое количеством миллисекунд, прошедших с 1 января 1970 года 00:00:00 по UTC (отрицательное значение устанавливает даты до этого момента).
+yourFunctionReturn = printElapsedTime(yourFunction);
+```
 
-`Date.prototype.setUTCDate()`<br />
-Устанавливает день месяца указанной даты по всемирному координированному времени.
+Получить количество секунд с начало эпохи Unix
 
-`Date.prototype.setUTCFullYear()`<br />
-Устанавливает полный год (4 цифры для 4-х значного года) указанной даты по всемирному координированному времени.
-
-`Date.prototype.setUTCHours()`<br />
-Устанавливает часы указанной даты по всемирному координированному времени.
-
-`Date.prototype.setUTCMilliseconds()`<br />
-Устанавливает миллисекунды указанной даты по всемирному координированному времени.
-
-`Date.prototype.setUTCMinutes()`<br />
-Устанавливает минуты указанной даты по всемирному координированному времени.
-
-`Date.prototype.setUTCMonth()`<br />
-Устанавливает месяц указанной даты по всемирному координированному времени.
-
-`Date.prototype.setUTCSeconds()`<br />
-Устанавливает секунды указанной даты по всемирному координированному времени.
-
-`Date.prototype.setYear()`<br />
-Устанавливает год (обычно 2-3 цифры) указанной даты по всемирному координированному времени. Вместо него используйте метод `setFullYear()`.
+```js
+var seconds = Math.floor(Date.now() / 1000);
+```
 
 ---
 
