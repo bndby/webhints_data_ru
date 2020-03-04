@@ -6,7 +6,7 @@ title: Date.prototype.setDate()
 ---
 
 ```js
-dateObj.setDate(dayValue)
+dateObj.setDate(dayValue);
 ```
 
 ---
@@ -14,7 +14,6 @@ dateObj.setDate(dayValue)
 Метод **`setDate()`** устанавливает день месяца указанной даты по местному времени.
 
 ## Параметры
-
 
 **`dayValue`**<br />
 Целое число, представляющее номер дня в месяце.
@@ -29,8 +28,8 @@ dateObj.setDate(dayValue)
 
 ```js
 var theBigDay = new Date(1962, 6, 7); // 1962-07-07
-theBigDay.setDate(24);  // 1962-07-24
-theBigDay.setDate(32);  // 1962-08-01
+theBigDay.setDate(24); // 1962-07-24
+theBigDay.setDate(32); // 1962-08-01
 ```
 
 ---
