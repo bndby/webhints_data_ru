@@ -15,8 +15,9 @@ dateObj.setMilliseconds(millisecondsValue);
 
 ## Параметры
 
-**`millisecondsValue`**<br />
-Целое число от `0` до `999`, представляющее миллисекунды.
+**`millisecondsValue`**
+
+: Целое число от `0` до `999`, представляющее миллисекунды.
 
 ---
 

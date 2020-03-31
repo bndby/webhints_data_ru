@@ -15,16 +15,18 @@ dateObj.toLocaleTimeString([locales[, options]])
 
 ## Параметры
 
-_`locales`_<br />
-Необязательный параметр. Строка с языковой меткой BCP 47, либо массив таких строк. Разрешены следующие ключи расширения Unicode:
+_`locales`_
+
+: Необязательный параметр. Строка с языковой меткой BCP 47, либо массив таких строк. Разрешены следующие ключи расширения Unicode:
 
 - `nu`<br />
   Используемая система нумерации. Возможные значения включают в себя: "arab", "arabext", "bali", "beng", "deva", "fullwide", "gujr", "guru", "hanidec", "khmr", "knda", "laoo", "latn", "limb", "mlym", "mong", "mymr", "orya", "tamldec", "telu", "thai", "tibt".
 - `ca`<br />
   Используемый календарь. Возможные значения включают в себя: "buddhist", "chinese", "coptic", "ethioaa", "ethiopic", "gregory", "hebrew", "indian", "islamic", "islamicc", "iso8601", "japanese", "persian", "roc".
 
-_`options`_<br />
-Необязательный параметр. Объект с некоторыми или всеми из следующих свойств:
+_`options`_
+
+: Необязательный параметр. Объект с некоторыми или всеми из следующих свойств:
 
 - `localeMatcher`<br />
   Используемый алгоритм сопоставления локалей. Возможными значениями являются "lookup" и "best fit"; значением по умолчанию является "best fit".
