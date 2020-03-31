@@ -6,7 +6,7 @@ const copy = require("copy");
 const settings = {
   name: "markdown-json",
   cwd: "./",
-  src: "src/data/",
+  src: "src/",
   filePattern: "**/*.md",
   ignore: "*(icon|input)*",
   dist: "../docs/output.json",
