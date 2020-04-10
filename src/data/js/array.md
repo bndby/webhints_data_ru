@@ -13,7 +13,15 @@ new Array(arrayLength)
 
 ---
 
-1
+## Статичные свойства
+
+**[`Array.length`](/js/array/length/)**
+
+: Значение свойства `length` конструктора массива равно `1`.
+
+**[`Array.prototype`](/js/array/prototype/)**
+
+: Позволяет добавлять свойства ко всем объектам массива.
 
 ---
 
