@@ -1,7 +1,7 @@
 ---
 name: 
 theme: 
-lang: 
+lang: JS
 title: 
 ---
 
