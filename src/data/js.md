@@ -13,18 +13,15 @@ title: JS
 
 Глобальные функции, возвращающие результат определённой подпрограммы.
 
-- eval()
-- uneval()
-- isFinite()
-- isNaN()
-- parseFloat()
-- parseInt()
-- decodeURI()
-- decodeURIComponent()
-- encodeURI()
-- encodeURIComponent()
-- escape()
-- unescape()
+- [`eval()`](/js/eval/)
+- [`isFinite()`](/js/isfinite/)
+- [`isNaN()`](/js/isnan/)
+- [`parseFloat()`](/js/parsefloat/)
+- [`parseInt()`](/js/parseint/)
+- [`decodeURI()`](/js/decodeuri/)
+- [`decodeURIComponent()`](/js/decodeuricomponent/)
+- [`encodeURI()`](/js/encodeuri/)
+- [`encodeURIComponent()`](/js/encodeuricomponent/)
 
 ## Фундаментальные объекты
 

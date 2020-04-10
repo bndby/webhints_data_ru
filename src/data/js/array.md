@@ -15,11 +15,13 @@ new Array(arrayLength)
 
 ## Статичные свойства
 
-**`Array.length`**<br />
-Значение свойства `length` конструктора массива равно `1`.
+[`Array.length`](/js/array/length/)
 
-**`Array.prototype`**<br />
-Позволяет добавлять свойства ко всем объектам массива.
+: Значение свойства `length` конструктора массива равно `1`.
+
+[`Array.prototype`](/js/array/prototype/)
+
+: Позволяет добавлять свойства ко всем объектам массива.
 
 ## Статичные методы
 
@@ -170,7 +172,7 @@ var last = fruits[fruits.length - 1];
 Итерирование по массиву
 
 ```js
-fruits.forEach(function(item, index, array) {
+fruits.forEach(function (item, index, array) {
   console.log(item, index);
 });
 // Яблоко 0
