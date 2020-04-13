@@ -238,7 +238,7 @@ new Date(year, month[, day[, hour[, minute[, second[, millisecond]]]]]);
 
 ---
 
-Пример/ несколько способов создания объекта `Date`
+Пример несколько способов создания объекта `Date`
 
 ```js
 var today = new Date();
