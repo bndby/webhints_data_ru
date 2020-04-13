@@ -11,11 +11,11 @@ const settings = {
   ignore: "*(icon|input)*",
   dist: "../docs/output.json",
   server: false,
-  port: 3001
+  port: 3001,
 };
 
 markdownJson(settings)
-  .then(data => {
+  .then((data) => {
     // console.log("data:", data.data);
     const content = data;
     //console.log("Content", content);
@@ -37,7 +37,7 @@ markdownJson(settings)
           " " +
           (content[i].theme ? content[i].theme.toLocaleLowerCase() + " " : "") +
           content[i].lang.toLocaleLowerCase(),
-        title: content[i].title
+        title: content[i].title,
       });
       console.log(content[i].name);
     }
@@ -45,18 +45,18 @@ markdownJson(settings)
     // console.log("Result:", result);
 
     //
-    fs.writeFile("docs/data.json", JSON.stringify(result), er => {
+    fs.writeFile("docs/data.json", JSON.stringify(result), (er) => {
       if (er) {
         console.log("Write file error:", er);
       }
       console.log("Done.");
     });
   })
-  .catch(err => {
+  .catch((err) => {
     console.log("error:", err);
   });
 
 // copy md files
-//copy("./src/data/**/*.md", "./docs", (err, files) => {
-//  console.log("Log", err, files);
-//});
+copy("./src/**/*.md", "./docs", (err, files) => {
+  console.log("Log", err, files);
+});
