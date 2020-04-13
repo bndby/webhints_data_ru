@@ -42,9 +42,7 @@ new Date(year, month[, day[, hour[, minute[, second[, millisecond]]]]]);
 
 : Принимает те же самые параметры, что и самый длиный вариант конструктора (то есть, от 2 до 7) и возвращает количество миллисекунд, прошедших с 1 января 1970 года 00:00:00 по UTC.
 
-Методы, унаследованные из `Function`:
-
-: `apply`, `call`, `toSource`, `toString`
+Методы, унаследованные из `Function`: `apply`, `call`, `toSource`, `toString`
 
 ## Методы экземпляра
 
@@ -236,9 +234,7 @@ new Date(year, month[, day[, hour[, minute[, second[, millisecond]]]]]);
 
 : Возвращает примитивное значение объекта `Date`. Переопределяет метод `Object.prototype.valueOf()`.
 
-Методы, унаследованные из `Object`:
-
-: `__defineGetter__`, `__defineSetter__`, `hasOwnProperty`, `isPrototypeOf`, `__lookupGetter__`, `__lookupSetter__`, `__noSuchMethod__`, `propertyIsEnumerable`, `unwatch`, `watch`
+Методы, унаследованные из `Object`: `__defineGetter__`, `__defineSetter__`, `hasOwnProperty`, `isPrototypeOf`, `__lookupGetter__`, `__lookupSetter__`, `__noSuchMethod__`, `propertyIsEnumerable`, `unwatch`, `watch`
 
 ---
 
