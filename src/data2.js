@@ -1,6 +1,7 @@
 const markdownJson = require("markdown-json");
 const fs = require("fs");
-const copy = require("copy");
+const path = require("path");
+const cpy = require("cpy");
 
 //
 const settings = {
@@ -41,7 +42,7 @@ markdownJson(settings)
           content[i].lang.toLocaleLowerCase(),
         title: content[i].title,
       });
-      console.log(content[i].name);
+      // console.log(content[i].name);
     }
 
     // console.log("Result:", result);
@@ -59,6 +60,13 @@ markdownJson(settings)
   });
 
 // copy md files
-copy("./src/data/**/*.md", "./docs/_data", (err, files) => {
-  console.log("Log", err, files);
-});
+(async () => {
+  await cpy("**/*.md", "../../docs/data", {
+    parents: true,
+    cwd: "./src/data",
+    rename: (basename) => {
+      console.log("basename:", basename);
+      return path.basename(basename, ".md") + ".txt";
+    },
+  });
+})();
