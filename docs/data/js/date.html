@@ -24,9 +24,7 @@ new Date(year, month[, day[, hour[, minute[, second[, millisecond]]]]]);
 
 : Значение свойства `Date.length` равно `7`. Это количество аргументов, обрабатываемых конструктором.
 
-Свойства, унаследованные из `Function`:
-
-: `arity`, `caller`, `constructor`, `length`, `name`
+Свойства, унаследованные из `Function`: `arity`, `caller`, `constructor`, `length`, `name`
 
 ## Статические методы
 
@@ -192,7 +190,7 @@ new Date(year, month[, day[, hour[, minute[, second[, millisecond]]]]]);
 
 **[`Date.prototype.toJSON()`](/js/date/tojson/)**
 
-: Возвращает строку, представляющую объект `Date`, используя метод `toISOString()`. Предназначен для использования методом JSON.`stringify()`.
+: Возвращает строку, представляющую объект `Date`, используя метод `toISOString()`. Предназначен для использования методом `JSON.stringify()`.
 
 **[`Date.prototype.toGMTString()`](/js/date/togmtstring/)**
 

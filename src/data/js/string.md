@@ -20,9 +20,7 @@ let s2 = new String("2 + 2");
 
 : Позволяет добавлять свойства к объекту `String`.
 
-Свойства, унаследованные из `Function`:
-
-: `caller`, `constructor`, `length`, `name`
+Свойства, унаследованные из `Function`: `caller`, `constructor`, `length`, `name`
 
 ## Статические методы
 
@@ -38,9 +36,7 @@ let s2 = new String("2 + 2");
 
 : Возвращает строку, созданную из сырой шаблонной строки.
 
-Методы, унаследованные из `Function`:
-
-: `apply`, `call`, `toSource`, `toString`
+Методы, унаследованные из `Function`: `apply`, `call`, `toSource`, `toString`
 
 ## Свойства экземпляра
 
@@ -104,7 +100,7 @@ let s2 = new String("2 + 2");
 
 **[`String.prototype.quote()`](/js/string/quote/)**
 
-: Оборачивает строку в двойные кавычки ("`"`").
+: Оборачивает строку в двойные кавычки (`"`).
 
 **[`String.prototype.repeat()`](/js/string/repeat/)**
 
@@ -178,7 +174,7 @@ let s2 = new String("2 + 2");
 
 : Возвращает примитивное значение указанного объекта. Переопределяет метод `Object.prototype.valueOf()`.
 
-**[`String.prototype[@@iterator]()`](/js/string/iterator/)**
+**[`@@iterator`](/js/string/iterator/)**
 
 : Возвращает новый объект итератора `Iterator`, который итерируется по кодовым точкам строки и возвращает каждую кодовую точку в виде строкового значения.
 
