@@ -20,6 +20,8 @@ markdownJson(settings)
     const content = data;
     //console.log("Content", content);
     let result = [];
+
+    //
     for (let i in content) {
       result.push({
         id: content[i].id,
@@ -57,6 +59,6 @@ markdownJson(settings)
   });
 
 // copy md files
-copy("./src/**/*.md", "./docs", (err, files) => {
+copy("./src/data/**/*.md", "./docs/_data", (err, files) => {
   console.log("Log", err, files);
 });
