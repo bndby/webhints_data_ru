@@ -66,7 +66,7 @@ markdownJson(settings)
     cwd: "./src/data",
     rename: (basename) => {
       console.log("basename:", basename);
-      return path.basename(basename, ".md") + ".html";
+      return path.basename(basename, ".md") + ".dat";
     },
   });
 })();
