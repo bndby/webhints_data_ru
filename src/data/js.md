@@ -27,9 +27,9 @@ title: JS
 
 Общие языковые объекты, функции и ошибки.
 
-- Object
-- Function
-- Boolean
+- [`Object`](/js/object/)
+- [`Function`](/js/function/)
+- [`Boolean`](/js/boolean/)
 - Symbol
 - Error
 - EvalError
