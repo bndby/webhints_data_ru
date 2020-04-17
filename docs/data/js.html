@@ -87,7 +87,7 @@ title: JS
 
 - ArrayBuffer
 - DataView
-- JSON
+- [`JSON`](/js/json/)
 
 ## Объекты управляющих абстракций
 
