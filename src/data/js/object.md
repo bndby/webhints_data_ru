@@ -27,27 +27,27 @@ new Object([value])
 
 ## Статические методы
 
-**`Object.assign()`**
+**[`Object.assign()`](/js/object/assign/)**
 
 : Создаёт новый объект путём копирования значений всех собственных перечислимых свойств из одного или более исходных объектов в целевой объект.
 
-**`Object.create()`**
+**[`Object.create()`](/js/object/create/)**
 
 : Создаёт новый объект с указанными объектом прототипа и свойствами.
 
-**`Object.defineProperty()`**
+**[`Object.defineProperty()`](/js/object/defineproperty/)**
 
 : Добавляет к объекту именованное свойство, описываемое переданным дескриптором.
 
-**`Object.defineProperties()`**
+**[`Object.defineProperties()`](/js/object/defineproperties/)**
 
 : Добавляет к объекту именованные свойства, описываемые переданными дескрипторами.
 
-**`Object.freeze()`**
+**[`Object.freeze()`](/js/object/freeze/)**
 
 : Замораживает объект: другой код не сможет удалить или изменить никакое свойство.
 
-**`Object.getOwnPropertyDescriptor()`**
+**[`Object.getOwnPropertyDescriptor()`](/js/object/getownpropertydescriptor/)**
 
 : Возвращает дескриптор свойства для именованного свойства объекта.
 
