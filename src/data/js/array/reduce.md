@@ -6,7 +6,7 @@ title: Array.prototype.reduce()
 ---
 
 ```js
-array.reduce(callback(accumulator, currentValue[, index[, array]])[, initialValue])
+array.reduce((accumulator, currentValue, index, array) => {}, initialValue);
 ```
 
 ---
@@ -14,10 +14,6 @@ array.reduce(callback(accumulator, currentValue[, index[, array]])[, initialValu
 Метод **`reduce()`** применяет функцию `reducer` к каждому элементу массива (слева-направо), возвращая одно результирующее значение.
 
 ## Параметры
-
-**`callback`**
-
-: Функция, выполняющаяся для каждого элемента массива, принимает четыре аргумента:
 
 **`accumulator`**
 
@@ -44,7 +40,7 @@ _`initialValue`_
 Суммирование всех значений в массиве
 
 ```js
-var total = [0, 1, 2, 3].reduce(function(a, b) {
+var total = [0, 1, 2, 3].reduce(function (a, b) {
   return a + b;
 });
 // total == 6
@@ -67,8 +63,8 @@ var sum = [{ x: 1 }, { x: 2 }, { x: 3 }].reduce(
 var flattened = [
   [0, 1],
   [2, 3],
-  [4, 5]
-].reduce(function(a, b) {
+  [4, 5],
+].reduce(function (a, b) {
   return a.concat(b);
 });
 // flattened равен [0, 1, 2, 3, 4, 5]
