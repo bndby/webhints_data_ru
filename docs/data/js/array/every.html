@@ -6,7 +6,7 @@ title: Array.prototype.every()
 ---
 
 ```js
-arr.every(callback(currentValue[, index[, array]])[, thisArg])
+arr.every((currentValue, index, array) => {}, thisArg);
 ```
 
 ---
@@ -16,10 +16,6 @@ arr.every(callback(currentValue[, index[, array]])[, thisArg])
 Метод возвращает `true` при любом условии для пустого массива.
 
 ## Параметры
-
-**`callback`**
-
-: Функция проверки каждого элемента, принимает три аргумента:
 
 **`currentValue`**
 
@@ -56,8 +52,8 @@ function isBigEnough(element, index, array) {
 Стрелочные функции предоставляют более краткий синтаксис для подобных проверок.
 
 ```js
-[12, 5, 8, 130, 44].every(elem => elem >= 10); // false
-[12, 54, 18, 130, 44].every(elem => elem >= 10); // true
+[12, 5, 8, 130, 44].every((elem) => elem >= 10); // false
+[12, 54, 18, 130, 44].every((elem) => elem >= 10); // true
 ```
 
 ---

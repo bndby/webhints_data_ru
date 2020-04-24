@@ -6,7 +6,7 @@ title: Array.prototype.copyWithin()
 ---
 
 ```js
-arr.copyWithin(target, start[, end = this.length])
+arr.copyWithin(target, start, end);
 ```
 
 ---

@@ -6,7 +6,7 @@ title: Array.prototype.fill()
 ---
 
 ```js
-arr.fill(value[, start = 0[, end = this.length]])
+arr.fill(value, start, end);
 ```
 
 ---
@@ -21,11 +21,11 @@ arr.fill(value[, start = 0[, end = this.length]])
 
 _`start`_
 
-: Начальный индекс.
+: Начальный индекс. По умолчанию первый элемент массива.
 
 _`end`_
 
-: Конечный индекс.
+: Конечный индекс. По умолчанию последний элемент массива.
 
 ## Возвращаемое значение
 

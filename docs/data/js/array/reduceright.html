@@ -6,7 +6,8 @@ title: Array.prototype.reduceRight()
 ---
 
 ```js
-array.reduceRight(callback(previousValue, currentValue[, index[, array]])[, initialValue])
+array.reduceRight((previousValue, currentValue, index, array) => {},
+initialValue);
 ```
 
 ---
@@ -14,10 +15,6 @@ array.reduceRight(callback(previousValue, currentValue[, index[, array]])[, init
 Метод **`reduceRight()`** применяет функцию к аккумулятору и каждому значению массива (справа-налево), сводя его к одному значению.
 
 ## Параметры
-
-**`callback`**
-
-: Функция, выполняющаяся для каждого элемента массива, принимает четыре аргумента:
 
 **`previousValue`**
 
@@ -44,7 +41,7 @@ _`initialValue`_
 Суммирование всех значений в массиве
 
 ```js
-var total = [0, 1, 2, 3].reduceRight(function(a, b) {
+var total = [0, 1, 2, 3].reduceRight(function (a, b) {
   return a + b;
 });
 // total == 6
@@ -56,8 +53,8 @@ var total = [0, 1, 2, 3].reduceRight(function(a, b) {
 var flattened = [
   [0, 1],
   [2, 3],
-  [4, 5]
-].reduceRight(function(a, b) {
+  [4, 5],
+].reduceRight(function (a, b) {
   return a.concat(b);
 }, []);
 // flattened равен [4, 5, 2, 3, 0, 1]

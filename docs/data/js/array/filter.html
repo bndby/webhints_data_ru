@@ -6,7 +6,7 @@ title: Array.prototype.filter()
 ---
 
 ```js
-var newArray = arr.filter( callback(element[, index[, array]])[, thisArg])
+var newArray = arr.filter((element, index, array) => {}, thisArg);
 ```
 
 ---
@@ -14,10 +14,6 @@ var newArray = arr.filter( callback(element[, index[, array]])[, thisArg])
 Метод **`filter()`** создаёт новый массив со всеми элементами, прошедшими проверку, задаваемую в передаваемой функции.
 
 ## Параметры
-
-**`callback`**
-
-: Функция, которая будет вызвана для каждого элемента массива. Если функция возвращает `true`, то элемент остаётся в массиве, если `false`, то удаляется. В функцию будет передано три аргумента:
 
 **`element`**
 
@@ -44,10 +40,7 @@ _`thisArg`_
 Следующий пример использует `filter()` для создания отфильтрованного массива, все элементы которого больше или равны `10`, а все меньшие `10` удалены.
 
 ```js
-function isBigEnough(value) {
-  return value >= 10;
-}
-var filtered = [12, 5, 8, 130, 44].filter(isBigEnough);
+var filtered = [12, 5, 8, 130, 44].filter((value) => value >= 10);
 // массив filtered равен [12, 130, 44]
 ```
 
@@ -59,9 +52,9 @@ const fruits = ["apple", "banana", "grapes", "mango", "orange"];
 /**
  * Элементы массива фильтруется на основе критериев поиска (query)
  */
-const filterItems = query => {
+const filterItems = (query) => {
   return fruits.filter(
-    el => el.toLowerCase().indexOf(query.toLowerCase()) > -1
+    (el) => el.toLowerCase().indexOf(query.toLowerCase()) > -1
   );
 };
 

@@ -6,7 +6,7 @@ title: Array.prototype.find()
 ---
 
 ```js
-arr.find(callback[, thisArg])
+arr.find((element, index, array) => {}, thisArg);
 ```
 
 ---
@@ -14,10 +14,6 @@ arr.find(callback[, thisArg])
 Метод **`find()`** возвращает значение первого найденного в массиве элемента, которое удовлетворяет условию переданному в `callback` функции. В противном случае возвращается `undefined`.
 
 ## Параметры
-
-**`callback`**
-
-: Функция, вызывающаяся для каждого значения в массиве, принимает три аргумента:
 
 **`element`**
 
