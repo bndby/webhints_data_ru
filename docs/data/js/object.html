@@ -51,51 +51,51 @@ new Object([value])
 
 : Возвращает дескриптор свойства для именованного свойства объекта.
 
-**`Object.getOwnPropertyNames()`**
+**[`Object.getOwnPropertyNames()`](/js/object/getownpropertynames/)**
 
 : Возвращает массив, содержащий имена всех переданных объекту собственных перечисляемых и неперечисляемых свойств.
 
-**`Object.getOwnPropertySymbols()`**
+**[`Object.getOwnPropertySymbols()`](/js/object/getownpropertysymbols/)**
 
 : Возвращает массив всех символьных свойств, найденных непосредственно в переданом объекте.
 
-**`Object.getPrototypeOf()`**
+**[`Object.getPrototypeOf()`](/js/object/getprototypeof/)**
 
 : Возвращает прототип указанного объекта.
 
-**`Object.is()`**
+**[`Object.is()`](/js/object/is/)**
 
 : Определяет, являются ли два значения различимыми (то есть, одинаковыми)
 
-**`Object.isExtensible()`**
+**[`Object.isExtensible()`](/js/object/isextensible/)**
 
 : Определяет, разрешено ли расширение объекта.
 
-**`Object.isFrozen()`**
+**[`Object.isFrozen()`](/js/object/isfrozen/)**
 
 : Определяет, был ли объект заморожен.
 
-**`Object.isSealed()`**
+**[`Object.isSealed()`](/js/object/issealed/)**
 
 : Определяет, является ли объект запечатанным (sealed).
 
-**`Object.keys()`**
+**[`Object.keys()`](/js/object/keys/)**
 
 : Возвращает массив, содержащий имена всех собственных перечислимых свойств переданного объекта.
 
-**`Object.observe()`**
+**[`Object.observe()`](/js/object/observe/)**
 
 : Асинхронно наблюдает за изменениями в объекте.
 
-**`Object.preventExtensions()`**
+**[`Object.preventExtensions()`](/js/object/preventextensions/)**
 
 : Предотвращает любое расширение объекта.
 
-**`Object.seal()`**
+**[`Object.seal()`](/js/object/seal/)**
 
 : Предотвращает удаление свойств объекта другим кодом.
 
-**`Object.setPrototypeOf()`**
+**[`Object.setPrototypeOf()`](/js/object/setprototypeof/)**
 
 : Устанавливает прототип (т.е. внутреннее свойство `[[Prototype]]`)
 
@@ -115,15 +115,15 @@ new Object([value])
 
 ## Методы экземпляра
 
-**`Object.prototype.hasOwnProperty()`**
+**[`Object.prototype.hasOwnProperty()`](/js/object/hasownproperty/)**
 
 : Возвращает логическое значение, указывающее, содержит ли указанное свойство непосредственно объект, или он унаследовал его по цепочке прототипов.
 
-**`Object.prototype.isPrototypeOf()`**
+**[`Object.prototype.isPrototypeOf()`](/js/object/isprototypeof/)**
 
 : Возвращает логическое значение, указывающее, состоит ли указанный объект в цепочке прототипов объекта, на котором был вызван данный метод.
 
-**`Object.prototype.propertyIsEnumerable()`**
+**[`Object.prototype.propertyIsEnumerable()`](/js/object/propertyisenumerable/)**
 
 : Возвращает логическое значение, указывающее, установлен ли внутренний атрибут ECMAScript `DontEnum`.
 
@@ -131,11 +131,11 @@ new Object([value])
 
 : Возвращает строку, содержащую исходный код объекта в литеральной форме, представляющего объект, на котором был вызван данный метод; вы можете использовать это значение для создания нового объекта.
 
-**`Object.prototype.toLocaleString()`**
+**[`Object.prototype.toLocaleString()`](/js/object/tolocalestring/)**
 
 : Вызывает `toString()`.
 
-**`Object.prototype.toString()`**
+**[`Object.prototype.toString()`](/js/object/tostring/)**
 
 : Возвращает строковое представление объекта.
 
@@ -143,7 +143,7 @@ new Object([value])
 
 : Удаляет точку наблюдения (watchpoint) со свойства объекта.
 
-**`Object.prototype.valueOf()`**
+**[`Object.prototype.valueOf()`](/js/object/valueof/)**
 
 : Возвращает значение примитива указанного объекта.
 

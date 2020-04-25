@@ -9,20 +9,6 @@ title: JS
 
 ---
 
-## Функции
-
-Глобальные функции, возвращающие результат определённой подпрограммы.
-
-- [`eval()`](/js/eval/)
-- [`isFinite()`](/js/isfinite/)
-- [`isNaN()`](/js/isnan/)
-- [`parseFloat()`](/js/parsefloat/)
-- [`parseInt()`](/js/parseint/)
-- [`decodeURI()`](/js/decodeuri/)
-- [`decodeURIComponent()`](/js/decodeuricomponent/)
-- [`encodeURI()`](/js/encodeuri/)
-- [`encodeURIComponent()`](/js/encodeuricomponent/)
-
 ## Фундаментальные объекты
 
 Общие языковые объекты, функции и ошибки.
@@ -54,6 +40,20 @@ title: JS
 
 - [`String`](/js/string)
 - RegExp
+
+## Функции
+
+Глобальные функции, возвращающие результат определённой подпрограммы.
+
+- [`eval()`](/js/eval/)
+- [`isFinite()`](/js/isfinite/)
+- [`isNaN()`](/js/isnan/)
+- [`parseFloat()`](/js/parsefloat/)
+- [`parseInt()`](/js/parseint/)
+- [`decodeURI()`](/js/decodeuri/)
+- [`decodeURIComponent()`](/js/decodeuricomponent/)
+- [`encodeURI()`](/js/encodeuri/)
+- [`encodeURIComponent()`](/js/encodeuricomponent/)
 
 ---
 
