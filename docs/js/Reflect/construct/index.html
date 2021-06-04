@@ -1,0 +1,97 @@
+<h1>Reflect.construct()</h1><div><div></div>
+
+<p>Статический метод&nbsp;<code><strong>Reflect</strong></code><strong><code>.construct()</code></strong>&nbsp;работает как&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new"><code>new</code> operator</a>. Он эквивалентен&nbsp;<code>new target(...args)</code>. Это также даёт дополнительную возможность указать другой прототип.</p>
+
+<div><iframe class="interactive" width="100%" height="490" src="https://interactive-examples.mdn.mozilla.net/pages/js/reflect-construct.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate">Reflect.construct(target, argumentsList[, newTarget])
+</pre></div><h3 id="параметры"><a href="#параметры" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>target</code></dt>
+ <dd>Целевая функция для вызова.</dd>
+ <dt><code>argumentsList</code></dt>
+ <dd>Массивоподобный объект указывающий аргументы, с которыми <code>target</code>&nbsp;должна вызываться.</dd>
+ <dt><code>newTarget</code> <span class="badge inline optional">Необязательный</span></dt>
+ <dd>Конструктор, чей прототип должен быть использован. Смотрите также&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new.target"><code>new.target</code></a>&nbsp;оператор. Если&nbsp;<code>newTarget</code> не указан, то используется&nbsp;<code>target</code>.</dd>
+</dl></div><h3 id="возвращаемое_значение"><a href="#возвращаемое_значение" title="Permalink to Возвращаемое значение">Возвращаемое значение</a></h3><div><p>Новый экземпляр&nbsp;<code>target</code> (или&nbsp;<code>newTarget</code>, если указан), инициализируется <code>target</code> как конструктор с заданными аргументами.</p></div><h3 id="исключения"><a href="#исключения" title="Permalink to Исключения">Исключения</a></h3><div><p>Исключение <a href="/js/TypeError/"><code>TypeError</code></a>, если&nbsp;<code>target</code>&nbsp;или&nbsp;<code>newTarget</code> не являются конструкторами.</p></div><h2 id="описание"><a href="#описание" title="Permalink to Описание">Описание</a></h2><div><p><code>Reflect.construct()</code> позволяет вам вызывать&nbsp;конструктор с любым числом аргументов (что также возможно с использованием&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax">spread syntax</a> вместе с&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new"><code>new</code> operator</a>).</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Foo</span><span class="token punctuation">(</span><span class="token operator">...</span>args<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> obj <span class="token operator">=</span> Reflect<span class="token punctuation">.</span><span class="token function">construct</span><span class="token punctuation">(</span>Foo<span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="reflect.construct()_против_object.create()"><a href="#reflect.construct()_против_object.create()" title="Permalink to Reflect.construct()&nbsp;против&nbsp;Object.create()"><code>Reflect.construct()</code>&nbsp;против&nbsp;<code>Object.create()</code></a></h3><div><p>До появления&nbsp;<code>Reflect</code>, объекты могли быть созданы с использованием произвольной комбинации из конструктора и прототипа при помощи <a href="/js/Object/create/"><code>Object.create()</code></a>.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">function</span> <span class="token function">OneClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'one'</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">OtherClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'other'</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Данный вызов:</span>
+<span class="token keyword">var</span> obj1 <span class="token operator">=</span> Reflect<span class="token punctuation">.</span><span class="token function">construct</span><span class="token punctuation">(</span>OneClass<span class="token punctuation">,</span> args<span class="token punctuation">,</span> OtherClass<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// ...будет аналогичен данному:</span>
+<span class="token keyword">var</span> obj2 <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token class-name">OtherClass</span><span class="token punctuation">.</span>prototype<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">OneClass</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>obj2<span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj1<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 'one'</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj2<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 'one'</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj1 <span class="token keyword">instanceof</span> <span class="token class-name">OneClass</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// false</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj2 <span class="token keyword">instanceof</span> <span class="token class-name">OneClass</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// false</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj1 <span class="token keyword">instanceof</span> <span class="token class-name">OtherClass</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj2 <span class="token keyword">instanceof</span> <span class="token class-name">OtherClass</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
+</code></pre>
+
+<p>В любом случае, пока конечный результат один и тот же, существует одно важное отличие в этом процессе. При использовании&nbsp;<code>Object.create()</code> и <a href="/js/Function/apply/"><code>Function.prototype.apply()</code></a>,&nbsp;оператор&nbsp;<code>new.target</code> будет указывать на&nbsp;<code>undefined</code> внутри функции используемой в качестве конструктора, пока ключевое слово&nbsp;<code>new</code>&nbsp;не будет использовано для создания объекта.</p>
+
+<p>С другой стороны, в случае вызова&nbsp;<code>Reflect.construct()</code>, оператор&nbsp;<code>new.target</code> будет указывать на параметр&nbsp;<code>newTarget</code> если он задан, или&nbsp;<code>target</code>&nbsp;в отличном случае.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">function</span> <span class="token function">OneClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'OneClass'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">new</span><span class="token punctuation">.</span>target<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">OtherClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'OtherClass'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">new</span><span class="token punctuation">.</span>target<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> obj1 <span class="token operator">=</span> Reflect<span class="token punctuation">.</span><span class="token function">construct</span><span class="token punctuation">(</span>OneClass<span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Вывод:</span>
+<span class="token comment">//     OneClass</span>
+<span class="token comment">//     function OneClass { ... }</span>
+
+<span class="token keyword">var</span> obj2 <span class="token operator">=</span> Reflect<span class="token punctuation">.</span><span class="token function">construct</span><span class="token punctuation">(</span>OneClass<span class="token punctuation">,</span> args<span class="token punctuation">,</span> OtherClass<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Вывод:</span>
+<span class="token comment">//     OneClass</span>
+<span class="token comment">//     function OtherClass { ... }</span>
+
+<span class="token keyword">var</span> obj3 <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token class-name">OtherClass</span><span class="token punctuation">.</span>prototype<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">OneClass</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>obj3<span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Вывод:</span>
+<span class="token comment">//     OneClass</span>
+<span class="token comment">//     undefined</span>
+</code></pre></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="использования_reflect.construct()"><a href="#использования_reflect.construct()" title="Permalink to Использования&nbsp;Reflect.construct()">Использования&nbsp;<code>Reflect.construct()</code></a></h3><div><pre class="brush: js notranslate"><code><span class="token keyword">var</span> d <span class="token operator">=</span> Reflect<span class="token punctuation">.</span><span class="token function">construct</span><span class="token punctuation">(</span>Date<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1776</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+d <span class="token keyword">instanceof</span> <span class="token class-name">Date</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
+d<span class="token punctuation">.</span><span class="token function">getFullYear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 1776</span>
+</code></pre></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-reflect.construct" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Reflect.construct' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Initial definition.</td>
+  </tr>
+  <tr>
+   <td><a href="https://tc39.es/ecma262/#sec-reflect.construct" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript (ECMA-262)<br><small lang="ru">Определение 'Reflect.construct' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="совместимость_с_браузерами"><a href="#совместимость_с_браузерами" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/Reflect/"><code>Reflect</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new"><code>new</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new.target"><code>new.target</code></a></li>
+</ul></div>

@@ -1,0 +1,84 @@
+<h1>String.prototype.indexOf()</h1><div><div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Метод <strong><code>indexOf()</code></strong> возвращает индекс первого вхождения указанного значения в строковый объект <a href="/js/String/"><code>String</code></a>, на котором он был вызван, начиная с индекса <code>fromIndex</code>. Возвращает -1, если значение не найдено.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code><var>str</var>.indexOf(<var>searchValue</var>, [<var>fromIndex</var>]</code>)</pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>searchValue</code></dt>
+ <dd>Строка, представляющая искомое значение.</dd>
+ <dt><code>fromIndex</code></dt>
+ <dd>Необязательный параметр. Местоположение внутри строки, откуда начинать поиск. Может быть любым целым числом. Значение по умолчанию установлено в 0. Если <code>fromIndex&nbsp;&lt;&nbsp;0</code>, поиск ведётся по всей строке (так же, как если бы был передан 0). Если <code>fromIndex&nbsp;&gt;= str.length</code>, метод вернёт -1, но только в том случае, если <code>searchValue</code> не равен пустой строке, в этом случае он вернёт <code>str.length</code>.</dd>
+</dl></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Символы в строке идут слева направо. Индекс первого символа равен 0, а последнего символа в строке <code>stringName</code> равен <code>stringName.length - 1</code>.</p>
+
+<pre class="brush: js notranslate"><code><span class="token string">'Синий кит'</span><span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">'Синий'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// вернёт  0</span>
+<span class="token string">'Синий кит'</span><span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">'Голубой'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// вернёт -1</span>
+<span class="token string">'Синий кит'</span><span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">'кит'</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// вернёт  6</span>
+<span class="token string">'Синий кит'</span><span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">'кит'</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// вернёт  6</span>
+<span class="token string">'Синий кит'</span><span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment">// вернёт  8</span>
+<span class="token string">'Синий кит'</span><span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">// вернёт 9</span>
+<span class="token string">'Синий кит'</span><span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">// вернёт 9</span>
+</code></pre></div><h3 id="case-sensitivity"><a href="#case-sensitivity" title="Permalink to Регистрозависимость">Регистрозависимость</a></h3><div><p>Метод <code>indexOf()</code> является регистрозависимым. Например, следующее выражение вернёт -1:</p>
+
+<pre class="brush: js notranslate"><code><span class="token string">'Синий кит'</span><span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">'синий'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// вернёт -1</span>
+</code></pre></div><h3 id="checking_occurrences"><a href="#checking_occurrences" title="Permalink to Проверка на вхождение">Проверка на вхождение</a></h3><div><p>Обратите внимание, что значение 0 не вычисляется в <code>true</code>, а значение -1 не вычисляется в <code>false</code>. Поэтому, для проверки того, что конкретная строка содержится в другой строке, правильно делать так:</p>
+
+<pre class="brush: js notranslate"><code><span class="token string">'Синий кит'</span><span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">'Синий'</span><span class="token punctuation">)</span> <span class="token operator">!==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
+<span class="token string">'Синий кит'</span><span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">'Голубой'</span><span class="token punctuation">)</span> <span class="token operator">!==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">// false</span>
+</code></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_using_indexof_and_lastindexof"><a href="#example_using_indexof_and_lastindexof" title="Permalink to Пример: использование методов indexOf() и lastIndexOf()">Пример: использование методов <code>indexOf()</code> и <code>lastIndexOf()</code></a></h3><div><p>В следующем примере используются методы <code>indexOf()</code> и <a href="/js/String/lastIndexOf/"><code>lastIndexOf()</code></a> для нахождения значений в строке <code>"Дивный новый мир"</code>.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> anyString <span class="token operator">=</span> <span class="token string">'Дивный новый мир'</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Индекс первого вхождения «й» с начала строки равен '</span> <span class="token operator">+</span> anyString<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">'й'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Отобразит 5</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Индекс первого вхождения «й» с конца строки равен '</span> <span class="token operator">+</span> anyString<span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">(</span><span class="token string">'й'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Отобразит 11</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Индекс вхождения «новый» с начала строки равен '</span> <span class="token operator">+</span> anyString<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">'новый'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Отобразит 7</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Индекс вхождения «новый» с конца строки равен '</span> <span class="token operator">+</span> anyString<span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">(</span><span class="token string">'новый'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Отобразит 7</span>
+</code></pre></div><h3 id="example_indexof_and_case-sensitivity"><a href="#example_indexof_and_case-sensitivity" title="Permalink to Пример: метод indexOf() и регистрозависимость">Пример: метод <code>indexOf()</code> и регистрозависимость</a></h3><div><p>В следующем примере определяются две строковых переменных. Переменные содержат одинаковые строки, за исключение того, что слова во второй строке начинаются с заглавных букв. Первый вызов метода <a href="https://developer.mozilla.org/ru/docs/Web/API/Console/log"><code>console.log()</code></a> отобразит 18. Но поскольку метод <code>indexOf()</code> является регистрозависимым, строка <code>"чеддер"</code> в переменной <code>myCapString</code> не будет найдена, так что второй вызов метода <code>console.log()</code> отобразит -1.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> myString    <span class="token operator">=</span> <span class="token string">'бри, пеппер джек, чеддер'</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> myCapString <span class="token operator">=</span> <span class="token string">'Бри, Пеппер Джек, Чеддер'</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Вызов myString.indexOf("чеддер") вернул '</span> <span class="token operator">+</span> myString<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">'чеддер'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Отобразит 18</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Вызов myCapString.indexOf("чеддер") вернул '</span> <span class="token operator">+</span> myCapString<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">'чеддер'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Отобразит -1</span>
+</code></pre></div><h3 id="example_using_indexof_to_count_occurrences_of_a_letter_in_a_string"><a href="#example_using_indexof_to_count_occurrences_of_a_letter_in_a_string" title="Permalink to Пример: использование метода indexOf() для подсчёта вхождений буквы в строку">Пример: использование метода <code>indexOf()</code> для подсчёта вхождений буквы в строку</a></h3><div><p>Следующий пример устанавливает значение переменной <code>count</code> в количество вхождений буквы <code>в</code> в строку <code>str</code>:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">'Быть или не быть, вот в чём вопрос.'</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> pos <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">'в'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">while</span> <span class="token punctuation">(</span>pos <span class="token operator">!==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  count<span class="token operator">++</span><span class="token punctuation">;</span>
+  pos <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">'в'</span><span class="token punctuation">,</span> pos <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// отобразит 3</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td>ECMAScript 1-е издание.</td>
+   <td>Стандарт</td>
+   <td>Изначальное определение.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-15.5.4.7" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 5.1 (ECMA-262)<br><small lang="ru">Определение 'String.prototype.indexOf' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-string.prototype.indexof" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'String.prototype.indexOf' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><div><p>{{Compat}}</p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/String/charAt/"><code>String.prototype.charAt()</code></a></li>
+ <li><a href="/js/String/lastIndexOf/"><code>String.prototype.lastIndexOf()</code></a></li>
+ <li><a href="/js/String/split/"><code>String.prototype.split()</code></a></li>
+ <li><a href="/js/Array/indexOf/"><code>Array.prototype.indexOf()</code></a></li>
+</ul></div>

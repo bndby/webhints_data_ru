@@ -1,0 +1,113 @@
+<h1>Boolean</h1><div><div></div>
+
+<p>Объект <strong><code>Boolean</code></strong> является объектом-обёрткой над примитивом логического типа.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code>new Boolean([<var>value</var>])</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>value</code></dt>
+ <dd>Необязательный параметр. Начальное значение объекта <code>Boolean</code>.</dd>
+</dl></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Значение, переданное первым параметром, при необходимости преобразуется в логическое значение. Если значение опущено или равно <code>0</code>, <code>-0</code>, <a href="/js/null/"><code>null</code></a>, <code>false</code>, <a href="/js/NaN/"><code>NaN</code></a>, <a href="/js/undefined/"><code>undefined</code></a> или пустой строке (<code>""</code>), объект имеет начальное значение, равное <code>false</code>. Все остальные значения, включая любые объекты или строку <code>"false"</code>, создают объект с начальным значением, равным <code>true</code>.</p>
+
+<p>Не путайте примитивные значения <code>true</code> и <code>false</code> логического типа со значениями <code>true</code> и <code>false</code> объекта <code>Boolean</code>.</p>
+
+<p>Любой объект, чьё значение не является равным <a href="/js/undefined/"><code>undefined</code></a> или <a href="/js/null/"><code>null</code></a>, включая сам объект <code>Boolean</code> со значением, равным <code>false</code>, вычисляется в <code>true</code> при передаче его в условное выражение. Например, условие в следующей инструкции <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/if...else"><code>if</code></a> вычисляется в <code>true</code>:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Boolean</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// этот код будет выполнен</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p>Это поведение не применяется к примитивам логического типа. Например, условие в следующей инструкции <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/if...else"><code>if</code></a> вычисляется в <code>false&nbsp;</code>:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// этот код не будет выполнен</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p>Не используйте объект <code>Boolean</code> для преобразования нелогического значения в логическое значение. Вместо этого используйте <code>Boolean</code> в качестве функции:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token function">Boolean</span><span class="token punctuation">(</span>expression<span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">// предпочтительно</span>
+<span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Boolean</span><span class="token punctuation">(</span>expression<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// не используйте</span>
+</code></pre>
+
+<p>Если вы определите любой объект, включая объект <code>Boolean</code> со значением <code>false</code>, в качестве начального значения объекта <code>Boolean</code>, новый объект <code>Boolean</code> будет иметь значение <code>true</code>.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> myFalse <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Boolean</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// начальное значение равно false</span>
+<span class="token keyword">var</span> g <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Boolean</span><span class="token punctuation">(</span>myFalse<span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment">// начальное значение равно true</span>
+<span class="token keyword">var</span> myString <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">'Привет'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// строковый объект</span>
+<span class="token keyword">var</span> s <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Boolean</span><span class="token punctuation">(</span>myString<span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment">// начальное значение равно true</span>
+</code></pre>
+
+<p>Не используйте объект <code>Boolean</code>&nbsp;вместо примитива логического типа.</p></div><h2 id="properties"><a href="#properties" title="Permalink to Свойства">Свойства</a></h2><div><dl>
+ <dt><code>Boolean.length</code></dt>
+ <dd>Свойство <code>length</code> логического значения равно 1.</dd>
+ <dt><a href="https://developer.mozilla.org/ru/docs/conflicting/Web/JavaScript/Reference/Global_Objects/Boolean"><code>Boolean.prototype</code></a></dt>
+ <dd>Представляет прототип конструктора объекта <code>Boolean</code>.</dd>
+</dl>
+
+<p></p><div class="notecard note">
+
+<div><span>Свойства, унаследованные из <a href="/js/Function/"><code>Function</code></a>:</span></div>
+<div><a class="internal" href="/js/Function/Arity/"><code>arity</code></a>, <a class="internal" href="/js/Function/caller/"><code>caller</code></a>, <a class="internal only-in-en-us" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" title="Currently only available in English (US)">constructor (en-US)</a>, <a class="internal" href="/js/Function/length/"><code>length</code></a>, <a class="internal" href="/js/Function/name/"><code>name</code></a></div>
+</div><p></p></div><h2 id="methods"><a href="#methods" title="Permalink to Методы">Методы</a></h2><div><p>Глобальный объект <code>Boolean</code> не содержит собственных методов, однако, он наследует некоторые методы из цепочки прототипов:</p>
+
+<div><div class="notecard note">
+
+<div><span>Методы, унаследованные из <a href="/js/Function/"><code>Function</code></a>:</span></div>
+<div><a class="internal" href="/js/Function/apply/"><code>apply</code></a>, <a class="internal" href="/js/Function/call/"><code>call</code></a>, <a class="internal" href="/js/Function/toSource/"><code>toSource</code></a>, <a class="internal" href="/js/Function/toString/"><code>toString</code></a></div>
+</div></div></div><h2 id="boolean_instances"><a href="#boolean_instances" title="Permalink to Экземпляры объекта Boolean">Экземпляры объекта <code>Boolean</code></a></h2><div><p>Все экземпляры объекта <code>Boolean</code> наследуются от <a href="https://developer.mozilla.org/ru/docs/conflicting/Web/JavaScript/Reference/Global_Objects/Boolean"><code>Boolean.prototype</code></a>. Как и все конструкторы, объект прототипа предоставляет экземплярам свойства и методы.</p></div><h3 id="properties_2"><a href="#properties_2" title="Permalink to Свойства">Свойства</a></h3><div><div><dl>
+ <dt><code>Boolean.prototype.constructor</code></dt>
+ <dd>Возвращает функцию, создающую экземпляр прототипа. По умолчанию, это функция <a href="/js/Boolean/" aria-current="page"><code>Boolean</code></a>.</dd>
+</dl><div><div class="notecard note">
+
+<div><span>Свойства, унаследованные из <a href="/js/Object/"><code>Object</code></a>:</span></div>
+<div><a class="internal" href="/js/Object/Parent/"><code>parent</code></a>, <a class="internal" href="/js/Object/proto/"><code>proto</code></a></div>
+</div></div></div></div><h3 id="methods_2"><a href="#methods_2" title="Permalink to Методы">Методы</a></h3><div><div><dl>
+ <dt><a href="/js/Boolean/toSource/"><code>Boolean.prototype.toSource()</code></a> </dt>
+ <dd>Возвращает строку, содержащую исходный код объекта <a href="/js/Boolean/" aria-current="page"><code>Boolean</code></a>; вы можете использовать эту строку для создания эквивалентного объекта. Переопределяет метод <a href="/js/Object/toSource/"><code>Object.prototype.toSource()</code></a>.</dd>
+ <dt><a href="/js/Boolean/toString/"><code>Boolean.prototype.toString()</code></a></dt>
+ <dd>Возвращает строку <code>"true"</code> или <code>"false"</code>, в зависимости от значения объекта. Переопределяет метод <a href="/js/Object/toString/"><code>Object.prototype.toString()</code></a>.</dd>
+ <dt><a href="/js/Boolean/valueOf/"><code>Boolean.prototype.valueOf()</code></a></dt>
+ <dd>Возвращает примитивное значение объекта <a href="/js/Boolean/" aria-current="page"><code>Boolean</code></a>. Переопределяет метод <a href="/js/Object/valueOf/"><code>Object.prototype.valueOf()</code></a>.</dd>
+</dl><div><div class="notecard note">
+
+<div><span>Методы, унаследованные из <a href="/js/Object/"><code>Object</code></a>:</span></div>
+<div><a class="internal only-in-en-us" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineGetter__" title="Currently only available in English (US)">defineGetter (en-US)</a>, <a class="internal only-in-en-us" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineSetter__" title="Currently only available in English (US)">defineSetter (en-US)</a>, <a class="internal" href="/js/Object/hasOwnProperty/"><code>hasOwnProperty</code></a>, <a class="internal" href="/js/Object/isPrototypeOf/"><code>isPrototypeOf</code></a>, <a class="internal only-in-en-us" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupGetter__" title="Currently only available in English (US)">lookupGetter (en-US)</a>, <a class="internal only-in-en-us" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupSetter__" title="Currently only available in English (US)">lookupSetter (en-US)</a>, <a class="internal" href="/js/Object/Nosuchmethod/"><code>noSuchMethod</code></a>, <a class="internal" href="/js/Object/propertyIsEnumerable/"><code>propertyIsEnumerable</code></a>, <a class="internal" href="/js/Object/toLocaleString/"><code>toLocaleString</code></a>, <a class="internal" href="/js/Object/Unwatch/"><code>unwatch</code></a>, <a class="internal" href="/js/Object/Watch/"><code>watch</code></a></div>
+</div></div></div></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_creating_boolean_objects_with_an_initial_value_of_false"><a href="#example_creating_boolean_objects_with_an_initial_value_of_false" title="Permalink to Пример: создание объектов Boolean с начальным значением, равным false">Пример: создание объектов <code>Boolean</code> с начальным значением, равным <code>false</code></a></h3><div><pre class="brush: js notranslate"><code><span class="token keyword">var</span> bNoParam <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Boolean</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> bZero <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Boolean</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> bNull <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Boolean</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> bEmptyString <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Boolean</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> bfalse <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Boolean</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="example_creating_boolean_objects_with_an_initial_value_of_true"><a href="#example_creating_boolean_objects_with_an_initial_value_of_true" title="Permalink to Пример: создание объектов Boolean с начальным значением, равным true">Пример: создание объектов <code>Boolean</code> с начальным значением, равным <code>true</code></a></h3><div><pre class="brush: js notranslate"><code><span class="token keyword">var</span> btrue <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Boolean</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> btrueString <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Boolean</span><span class="token punctuation">(</span><span class="token string">'true'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> bfalseString <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Boolean</span><span class="token punctuation">(</span><span class="token string">'false'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> bSuLin <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Boolean</span><span class="token punctuation">(</span><span class="token string">'Су Лин'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> bArrayProto <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Boolean</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> bObjProto <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Boolean</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td>ECMAScript 1-е издание.</td>
+   <td>Стандарт</td>
+   <td>Изначальное определение. Реализована в JavaScript 1.0.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-15.6" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 5.1 (ECMA-262)<br><small lang="ru">Определение 'Boolean' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-boolean-objects" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Boolean' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><div><p>{{Compat}}</p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/ru/docs/conflicting/Web/JavaScript/Reference/Global_Objects/Boolean"><code>Boolean.prototype</code></a></li>
+ <li><a href="https://developer.mozilla.org/ru/docs/Glossary/Boolean">Boolean</a></li>
+ <li><a href="https://ru.wikipedia.org/wiki/%D0%9B%D0%BE%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D1%82%D0%B8%D0%BF" class="external" rel=" noopener">Логический тип данных (Википедия)</a></li>
+</ul></div>

@@ -1,0 +1,103 @@
+<h1>radial-gradient()</h1><div><div></div>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a>&nbsp;функция&nbsp;<strong><code>radial-gradient()</code></strong>&nbsp;создаёт картинку состоящую из последовательных переходов между двумя и более цветами, которые исходят из заданного центра. Они могут принимать форму круга или эллипса. Результатом функции будет объект типа&nbsp;<a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/gradient"><code>&lt;gradient&gt;</code> <span>(en-US)</span></a>, который является расширением типа&nbsp;<a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/image"><code>&lt;image&gt;</code> <span>(en-US)</span></a>.</p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/function-radial-gradient.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+
+
+<p>Как и любой градиент, радиальный градиент не имеет&nbsp;<a href="https://developer.mozilla.org/en-US/docs/CSS/image#no_intrinsic">внутренних размеров</a>,&nbsp;то есть заданных или предпочитаемых размеров, как и заданного коэффициента соотношения сторон. Его итоговый размер будет соответствовать размеру элемента к которому он применён.</p>
+
+<p>Чтобы создать повторяющийся радиальный градиент,&nbsp;который будет заполнять контейнер, необходимо использовать функцию&nbsp;<a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/repeating-radial-gradient()"><code>repeating-radial-gradient</code> <span>(en-US)</span></a>.</p>
+
+<p>Поскольку&nbsp;<code>&lt;gradient&gt;ы</code>&nbsp;относятся к типу&nbsp;<code>&lt;image&gt;</code>, они могут быть использованы только там где используется тип&nbsp;<code>&lt;image&gt;</code>. По этой причине&nbsp;<code>radial-gradient()</code>&nbsp;не будет работать совместно с&nbsp;<a href="/css/background-color/"><code>background-color</code></a> и другими свойствами, которые используют тип&nbsp;<a href="/css/color_value/"><code>&lt;color&gt;</code></a>.</p></div><h2 id="композиция_свойства"><a href="#композиция_свойства" title="Permalink to Композиция свойства">Композиция свойства</a></h2><div><p><img alt src="/files/3795/radial%20gradient.png" style="float: left;" loading="lazy">Радиальный градиент задаётся&nbsp;<em>позицией центра</em>,&nbsp;<em>конечной формой</em>, и&nbsp;двумя или более&nbsp;<em>точками изменения цвета</em>.</p>
+
+<p>Чтобы создать плавный градиент,&nbsp;функция&nbsp;<code>radial-gradient()</code> рисует серию концентрических форм исходящих из центра к краям формы градиента&nbsp;(и потенциально далее за его пределы). Конечная форма может быть как кругом так и эллипсом.</p>
+
+<p>Точки изменения цвета расположены на&nbsp;<em>виртуальном луче градиента</em>, который расширяется горизонтально направо. Позиция точек&nbsp;заданных&nbsp;в процентах рассчитывается относительно&nbsp;пересечения конечной формы таким лучом, что является&nbsp;<code>100%</code>. Цвет каждой такой формы задаётся цветом на пересечении луча градиента и этой формы.</p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="brush: css no-line-numbers notranslate"><code><span class="token comment">/* Градиент в центре контейнера,
+   переход от красного к синему и после к зелёному */</span>
+<span class="token function">radial-gradient</span><span class="token punctuation">(</span>circle at center<span class="token punctuation">,</span> red 0<span class="token punctuation">,</span> blue<span class="token punctuation">,</span> green 100%<span class="token punctuation">)</span></code></pre></div><h3 id="параметры"><a href="#параметры" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/position_value"><code>&lt;position&gt;</code> <span>(en-US)</span></a></dt>
+ <dd>Позицию начала градиента можно рассматривать как <a href="/css/background-position/"><code>background-position</code></a> или&nbsp;<a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin"><code>transform-origin</code> <span>(en-US)</span></a>. По умолчанию позиция равна&nbsp;<code>center</code>.</dd>
+ <dt><code>&lt;shape&gt;</code></dt>
+ <dd>Форма градиента. Может принимать значение&nbsp;<code>circle</code> (подразумевается что формой является круг с постоянным радиусом) или&nbsp;<code>ellipse</code> (форма является эллипсом, выровненным по оси). По умолчанию имеет значение&nbsp;<code>ellipse</code>.</dd>
+ <dt><code>&lt;extent-keyword&gt;</code></dt>
+ <dd>Параметр определяющий размер конечной формы. Возможные значения:</dd>
+ <dd>
+ <table class="standard-table">
+  <tbody>
+   <tr>
+    <th>Значение</th>
+    <th>Описание</th>
+   </tr>
+   <tr>
+    <td><code>closest-side</code></td>
+    <td>Конечная форма градиента соответствует стороне прямоугольника, ближайшей к его центру (для окружностей), или обеим вертикальным и горизонтальным сторонам, ближайшим к центру (для эллипсов).</td>
+   </tr>
+   <tr>
+    <td><code>closest-corner</code></td>
+    <td>Конечная форма градиента определяется таким образом, чтобы он точно соответствовал ближайшему углу окна от его центра.</td>
+   </tr>
+   <tr>
+    <td><code>farthest-side</code></td>
+    <td>Схоже с&nbsp;<code>closest-side</code>, кроме того что, размер формы определяется самой дальней стороной от своего центра (или вертикальных и горизонтальных сторон)</td>
+   </tr>
+   <tr>
+    <td><code>farthest-corner</code></td>
+    <td>Конечная форма градиента определяется таким образом, чтобы он точно соответствовал самому дальнему углу прямоугольника от его центра.</td>
+   </tr>
+  </tbody>
+ </table>
+
+ <div class="note notecard">
+ <p><strong>Примечание:</strong>&nbsp;Ранние реализации этой функции включают в себя другие значения свойства&nbsp;(<code>cover</code> and <code>contain</code>) которые являются синонимами&nbsp;<span class="st"><code>farthest-corner</code></span> и <code>closest-side</code>, соответственно. Рекомендуется использовать только стандартные значения, так как некоторые реализации уже перестали использовать старые&nbsp;значения свойств.</p>
+ </div>
+ </dd>
+ <dt><code>&lt;color-stop&gt;</code></dt>
+ <dd><a href="/css/color_value/"><code>&lt;color&gt;</code></a> значение цвета&nbsp;в точке изменения цвета за которым следует необязательный параметр позиции (<a href="/css/percentage/"><code>&lt;percentage&gt;</code></a> или <a href="/css/length/"><code>&lt;length&gt;</code></a> вдоль оси градиента). Значения&nbsp;<code>0%</code>, или&nbsp;<code>0</code> представляют&nbsp;центр градиента; значение&nbsp;<code>100%</code>&nbsp;представляет собой виртуальное пересечение конечной формы с виртуальным лучом градиента. Процентные значения будут линейно расположены на луче градиента.</dd>
+</dl></div><h3 id="синтаксис_2"><a href="#синтаксис_2" title="Permalink to Синтаксис">Синтаксис</a></h3><div><pre class="syntaxbox notranslate"><code>radial-gradient(
+  [ [ circle || <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length">&lt;length&gt;</a> ]                         [ at <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position_value">&lt;position&gt;</a> ]? , |
+    [ ellipse || [ <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length">&lt;length&gt;</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/percentage">&lt;percentage&gt;</a> ]{2} ]  [ at <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position_value">&lt;position&gt;</a> ]? , |
+    [ [ circle | ellipse ] || &lt;extent-keyword&gt; ]   [ at <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position_value">&lt;position&gt;</a> ]? , |
+    at <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position_value">&lt;position&gt;</a> ,
+  ]?
+  &lt;color-stop&gt; [ , &lt;color-stop&gt; ]+
+)
+где &lt;extent-keyword&gt; = closest-corner | closest-side | farthest-corner | farthest-side
+  и<code> &lt;color-stop&gt;     = &lt;color&gt; [ &lt;percentage&gt; | &lt;length&gt; ]?</code>
+</code></pre></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="простой_градиент"><a href="#простой_градиент" title="Permalink to Простой градиент">Простой градиент</a></h3><div><pre class="brush: css notranslate"><code><span class="token selector">.radial-gradient</span> <span class="token punctuation">{</span>
+  <span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token function">radial-gradient</span><span class="token punctuation">(</span>cyan 0%<span class="token punctuation">,</span> transparent 20%<span class="token punctuation">,</span> salmon 40%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> </code></pre>
+
+<p><iframe class="sample-code-frame" id="frame_Простой_градиент" width="120" height="120" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/radial-gradient()/_sample_.%D0%9F%D1%80%D0%BE%D1%81%D1%82%D0%BE%D0%B9_%D0%B3%D1%80%D0%B0%D0%B4%D0%B8%D0%B5%D0%BD%D1%82.html" loading="lazy"></iframe></p></div><h3 id="градиент_со_смещённым_центром"><a href="#градиент_со_смещённым_центром" title="Permalink to Градиент со смещённым центром">Градиент со смещённым центром</a></h3><div><pre class="brush: css notranslate"><code><span class="token selector">.radial-gradient</span> <span class="token punctuation">{</span>
+  <span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token function">radial-gradient</span><span class="token punctuation">(</span>farthest-corner at 40px 40px<span class="token punctuation">,</span>
+      #f35 0%<span class="token punctuation">,</span> #43e 100%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<p><iframe class="sample-code-frame" id="frame_Градиент_со_смещённым_центром" width="240" height="120" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/radial-gradient()/_sample_.%D0%93%D1%80%D0%B0%D0%B4%D0%B8%D0%B5%D0%BD%D1%82_%D1%81%D0%BE_%D1%81%D0%BC%D0%B5%D1%89%D1%91%D0%BD%D0%BD%D1%8B%D0%BC_%D1%86%D0%B5%D0%BD%D1%82%D1%80%D0%BE%D0%BC.html" loading="lazy"></iframe></p>
+
+<div class="note notecard">
+<p><strong>Примечание:</strong> Дополнительные примеры можно найти в&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Using_CSS_gradients">Использование&nbsp;CSS градиентов</a>.</p>
+</div></div><h2 id="спецификация"><a href="#спецификация" title="Permalink to Спецификация">Спецификация</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-images-3/#radial-gradients" hreflang="en" lang="en" class="external" rel=" noopener">CSS Images Module Level&nbsp;3<br><small lang="ru">Определение 'radial-gradients()' в этой спецификации.</small></a></td>
+   <td><span class="spec-cr">Кандидат в рекомендации</span></td>
+   <td>Initial definition.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="совместимость_с_браузерами"><a href="#совместимость_с_браузерами" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h3 id="сноски_к_quantum_css"><a href="#сноски_к_quantum_css" title="Permalink to Сноски к Quantum CSS">Сноски к Quantum CSS</a></h3><div><ul>
+ <li>Gecko имеет долгоиграющий баг&nbsp;благодаря которому значения вроде&nbsp;<code>radial-gradient(circle gold,red)</code>&nbsp;будут работать, даже несмотря на то, что пропущена запятая между&nbsp;<code>circle</code>&nbsp;и&nbsp;<code>gold</code> (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1383323" class="external" rel=" noopener">баг&nbsp;1383323</a>). Новый parallel CSS движок от Firefox (также известный как&nbsp;<a href="https://wiki.mozilla.org/Quantum" class="external" rel=" noopener">Quantum CSS</a>&nbsp;или&nbsp;<a href="https://wiki.mozilla.org/Quantum/Stylo" class="external" rel=" noopener">Stylo</a>, планируемый к релизу в Firefox 57) исправляет этот баг.</li>
+ <li>Также в Gecko&nbsp;выражения с&nbsp;<a href="/css/calc()/"><code>calc</code></a> считаются недействительными&nbsp;— значение не валидно при использовании в&nbsp; radial-gradient()&nbsp;(<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1376019" class="external" rel=" noopener">баг&nbsp;1376019</a>). Новый parallel CSS движок от Firefox (также известный как&nbsp;<a href="https://wiki.mozilla.org/Quantum" class="external" rel=" noopener">Quantum CSS</a>&nbsp;или&nbsp;<a href="https://wiki.mozilla.org/Quantum/Stylo" class="external" rel=" noopener">Stylo</a>, планируемый к релизу Firefox 57) исправляет этот баг.</li>
+</ul></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Using_CSS_gradients">Использование&nbsp;CSS градиентов</a></li>
+ <li>Другие варианты градиентов: <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/repeating-radial-gradient()"><code>repeating-radial-gradient</code> <span>(en-US)</span></a>, <a href="/css/linear-gradient()/"><code>linear-gradient</code></a>, <a href="/css/repeating-linear-gradient()/"><code>repeating-linear-gradient</code></a></li>
+ <li><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/image"><code>&lt;image&gt;</code> <span>(en-US)</span></a></li>
+</ul></div>

@@ -1,0 +1,45 @@
+<h1>Intl.RelativeTimeFormat.prototype.format()</h1><div><div></div>
+
+<p>The <strong><code>Intl.RelativeTimeFormat.prototype.format()</code></strong> method formats a <code>value</code> and <code>unit</code> according to the locale and formatting options of this <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/RelativeTimeFormat"><code>Intl.RelativeTimeFormat</code></a> object.</p>
+
+<div><iframe class="interactive" width="100%" height="490" src="https://interactive-examples.mdn.mozilla.net/pages/js/intl-relativetimeformat-prototype-format.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+<!-- The source for this interactive example is stored in a GitHub repository. If you'd like to contribute to the interactive examples project, please clone https://github.com/mdn/interactive-examples and send us a pull request. --></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: js notranslate"><code><span class="token function">format</span><span class="token punctuation">(</span>value<span class="token punctuation">,</span> unit<span class="token punctuation">)</span></code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Parameters">Parameters</a></h3><div><dl>
+	<dt><code><var>value</var></code></dt>
+	<dd>Numeric value to use in the internationalized relative time message.</dd>
+	<dt><code><var>unit</var></code></dt>
+	<dd>Unit to use in the relative time internationalized message. Possible values are: "<code>year</code>", "<code>quarter</code>", "<code>month</code>", "<code>week</code>", "<code>day</code>", "<code>hour</code>", "<code>minute</code>", "<code>second</code>". Plural forms are also permitted.</dd>
+</dl></div><h2 id="description"><a href="#description" title="Permalink to Description">Description</a></h2><div><p>The function returned by the <code>format</code> getter formats a value and a unit into a string according to the locale and formatting options of this <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/RelativeTimeFormat"><code>Intl.RelativeTimeFormat</code></a> object.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="basic_format_usage"><a href="#basic_format_usage" title="Permalink to Basic format usage">Basic format usage</a></h3><div><p>The following example shows how to create a relative time formatter using the English language.</p>
+
+<pre class="brush: js notranslate"><code><span class="token comment">// Create a relative time formatter in your locale</span>
+<span class="token comment">// with default values explicitly passed in.</span>
+<span class="token keyword">const</span> rtf <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Intl<span class="token punctuation">.</span>RelativeTimeFormat</span><span class="token punctuation">(</span><span class="token string">"en"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    localeMatcher<span class="token operator">:</span> <span class="token string">"best fit"</span><span class="token punctuation">,</span> <span class="token comment">// other values: "lookup"</span>
+    numeric<span class="token operator">:</span> <span class="token string">"always"</span><span class="token punctuation">,</span> <span class="token comment">// other values: "auto"</span>
+    style<span class="token operator">:</span> <span class="token string">"long"</span><span class="token punctuation">,</span> <span class="token comment">// other values: "short" or "narrow"</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Format relative time using negative value (-1).</span>
+rtf<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"day"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// &gt; "1 day ago"</span>
+
+<span class="token comment">// Format relative time using positive  value (1).</span>
+rtf<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"day"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// &gt; "in 1 day"</span></code></pre></div><h3 id="using_the_auto_option"><a href="#using_the_auto_option" title="Permalink to Using the auto option">Using the auto option</a></h3><div><p>If <code>numeric:auto</code> option is passed, it will produce the string <code>yesterday</code>, <code>today</code>, or <code>tomorrow</code> instead of <code>1 day ago</code>, <code>in 0 days</code>, or <code>in 1 day</code>. This allows to not always have to use numeric values in the output.</p>
+
+<pre class="brush: js notranslate"><code><span class="token comment">// Create a relative time formatter in your locale</span>
+<span class="token comment">// with numeric: "auto" option value passed in.</span>
+<span class="token keyword">const</span> rtf <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Intl<span class="token punctuation">.</span>RelativeTimeFormat</span><span class="token punctuation">(</span><span class="token string">"en"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> numeric<span class="token operator">:</span> <span class="token string">"auto"</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Format relative time using negative value (-1).</span>
+rtf<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"day"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// &gt; "yesterday"</span>
+
+rtf<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"day"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// &gt; "today"</span>
+
+<span class="token comment">// Format relative time using positive day unit (1).</span>
+rtf<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"day"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// &gt; "tomorrow"</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://tc39.es/ecma402/#sec-Intl.RelativeTimeFormat.prototype.format">ECMAScript Internationalization API Specification<!-- --> <!-- -->(ECMAScript Internationalization API)<br><small># <!-- -->sec-Intl.RelativeTimeFormat.prototype.format</small></a></td></tr></tbody></table><div></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><div></div></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+	<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/RelativeTimeFormat"><code>Intl.RelativeTimeFormat</code></a></li>
+</ul></div>

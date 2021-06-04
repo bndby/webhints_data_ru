@@ -1,0 +1,77 @@
+<h1>handler.set()</h1><div><div></div>
+
+<p>The <strong><code>handler.set()</code></strong> method is a trap for setting a property
+  value.</p>
+
+<div><iframe class="interactive" width="100%" height="692" src="https://interactive-examples.mdn.mozilla.net/pages/js/proxyhandler-set.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: js notranslate"><code><span class="token keyword">const</span> p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">set</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">target<span class="token punctuation">,</span> property<span class="token punctuation">,</span> value<span class="token punctuation">,</span> receiver</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Parameters">Parameters</a></h3><div><p>The following parameters are passed to the <code>set()</code> method. <code>this</code>
+  is bound to the handler.</p>
+
+<dl>
+  <dt><code><var>target</var></code></dt>
+  <dd>The target object.</dd>
+  <dt><code><var>property</var></code></dt>
+  <dd>The name or <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol"><code>Symbol</code></a> of the property to set.</dd>
+  <dt><code><var>value</var></code></dt>
+  <dd>The new value of the property to set.</dd>
+  <dt><code><var>receiver</var></code></dt>
+  <dd>
+    <p>The object to which the assignment was originally directed. This is usually the
+      proxy itself. But a <code>set()</code> handler can also be called indirectly, via
+      the prototype chain or various other ways.</p>
+    <p>For example, suppose a script does
+        <code><var>obj</var>.name = "jen"</code>, and <code><var>obj</var></code> is not a
+        proxy, and has no own property <code>.name</code>, but it has a proxy on its
+        prototype chain. That proxy's <code>set()</code> handler will be called, and
+        <code>obj</code> will be passed as the receiver.</p>
+  </dd>
+</dl></div><h3 id="return_value"><a href="#return_value" title="Permalink to Return value">Return value</a></h3><div><p>The <code>set()</code> method should return a boolean value.</p>
+
+<ul>
+  <li>Return <code>true</code> to indicate that assignment succeeded.</li>
+  <li>If the <code>set()</code> method returns <code>false</code>, and the assignment
+    happened in strict-mode code, a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError"><code>TypeError</code></a> will be thrown.</li>
+</ul></div><h2 id="description"><a href="#description" title="Permalink to Description">Description</a></h2><div><p>The <code><strong>handler.set()</strong></code> method is a trap for setting property
+  value.</p></div><h3 id="interceptions"><a href="#interceptions" title="Permalink to Interceptions">Interceptions</a></h3><div><p>This trap can intercept these operations:</p>
+
+<ul>
+  <li>Property assignment: <code><var>proxy</var>[<var>foo</var>] = <var>bar</var></code>
+    and <code><var>proxy</var>.<var>foo</var> = <var>bar</var></code></li>
+  <li>Inherited property assignment:
+    <code>Object.create(<var>proxy</var>)[<var>foo</var>] = <var>bar</var></code></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/set"><code>Reflect.set()</code></a></li>
+</ul></div><h3 id="invariants"><a href="#invariants" title="Permalink to Invariants">Invariants</a></h3><div><p>If the following invariants are violated, the proxy will throw a
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError"><code>TypeError</code></a>:</p>
+
+<ul>
+  <li>Cannot change the value of a property to be different from the value of the
+    corresponding target object property if the corresponding target object property is a
+    non-writable, non-configurable data property.</li>
+  <li>Cannot set the value of a property if the corresponding target object property is a
+    non-configurable accessor property that has <code>undefined</code> as its
+    <code>[[Set]]</code> attribute.</li>
+  <li>In strict mode, a <code>false</code> return value from the <code>set()</code>
+    handler will throw a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError"><code>TypeError</code></a> exception.</li>
+</ul></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="trap_setting_of_a_property_value"><a href="#trap_setting_of_a_property_value" title="Permalink to Trap setting of a property value">Trap setting of a property value</a></h3><div><p>The following code traps setting a property value.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">const</span> p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">set</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">target<span class="token punctuation">,</span> prop<span class="token punctuation">,</span> value<span class="token punctuation">,</span> receiver</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    target<span class="token punctuation">[</span>prop<span class="token punctuation">]</span> <span class="token operator">=</span> value<span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'property set: '</span> <span class="token operator">+</span> prop <span class="token operator">+</span> <span class="token string">' = '</span> <span class="token operator">+</span> value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'a'</span> <span class="token keyword">in</span> p<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// false</span>
+
+p<span class="token punctuation">.</span>a <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>               <span class="token comment">// "property set: a = 10"</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'a'</span> <span class="token keyword">in</span> p<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// true</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment">// 10</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://tc39.es/ecma262/#sec-proxy-object-internal-methods-and-internal-slots-set-p-v-receiver">Unknown specification<!-- --> <br><small># <!-- -->sec-proxy-object-internal-methods-and-internal-slots-set-p-v-receiver</small></a></td></tr></tbody></table><div></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy"><code>Proxy</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/Proxy"><code>handler</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/set"><code>Reflect.set()</code></a></li>
+</ul></div>

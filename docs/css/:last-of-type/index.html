@@ -1,0 +1,73 @@
+<h1>:last-of-type</h1><div><div></div>
+
+<p><a href="/css/" title="CSS">CSS</a> <a href="/css/Pseudo-classes/" title="Pseudo-classes">псевдокласс</a> <strong><code>:last-of-type</code></strong>&nbsp;находит последнего потомка с заданным тегом в списке детей родительского элемента.</p>
+
+<pre class="brush: css no-line-numbers notranslate"><code><span class="token comment">/* Выбирает &lt;p&gt;, являющийся последним элементом
+   среди элементов своего типа среди своих соседей */</span>
+<span class="token selector">p:last-of-type</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> lime<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<div class="note notecard">
+<p><strong>Примечание</strong>: В первоначальном определении выбранный элемент должен иметь родителя. Начиная с Selectors Level 4, это не является обязательным.</p>
+</div></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="notranslate">:last-of-type</pre></div><h2 id="пример"><a href="#пример" title="Permalink to Пример">Пример</a></h2><div></div><h3 id="стилизация_последнего_параграфа"><a href="#стилизация_последнего_параграфа" title="Permalink to Стилизация последнего параграфа">Стилизация последнего параграфа</a></h3><div><h4 id="html">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>Заголовок<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Параграф 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Параграф 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<h4 id="css">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token selector">p:last-of-type</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token property">font-style</span><span class="token punctuation">:</span> italic<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<h4 id="результат">Результат</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Стилизация_последнего_параграфа" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/:last-of-type/_sample_.%D0%A1%D1%82%D0%B8%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F_%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BD%D0%B5%D0%B3%D0%BE_%D0%BF%D0%B0%D1%80%D0%B0%D0%B3%D1%80%D0%B0%D1%84%D0%B0.html" loading="lazy"></iframe></p></div><h3 id="вложенные_элементы"><a href="#вложенные_элементы" title="Permalink to Вложенные элементы">Вложенные элементы</a></h3><div><p>Этот пример показывает как можно обратиться к вложенным элементам.&nbsp;Заметим, что в случаях когда не указано ни одного простого селектора,&nbsp;подразумевается&nbsp;<a href="/css/Universal_selectors/">универсальный селектор</a>&nbsp;(<code>*</code>).</p>
+
+<h4 id="html_2">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>article</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>Этот `div` первый.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>Этот <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span>вложенный `span` является последним<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>Этот <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>em</span><span class="token punctuation">&gt;</span></span>вложенный `em` первый<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>em</span><span class="token punctuation">&gt;</span></span>, а этот <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>em</span><span class="token punctuation">&gt;</span></span>вложенный `em` последний<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>em</span><span class="token punctuation">&gt;</span></span>!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>b</span><span class="token punctuation">&gt;</span></span>Этот `b` будет выбран!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>b</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>Это последний `div`!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>article</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<h4 id="css_2">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token selector">article :last-of-type</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> pink<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<h4 id="результат_2">Результат</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Вложенные_элементы" width="500" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/:last-of-type/_sample_.%D0%92%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5_%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D1%8B.html" loading="lazy"></iframe></p></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/selectors-4/#last-of-type-pseudo" hreflang="en" lang="en" class="external" rel=" noopener">Selectors Level&nbsp;4<br><small lang="ru">Определение ':last-of-type' в этой спецификации.</small></a></td>
+   <td><span class="spec-wd">Рабочий черновик</span></td>
+   <td>Теперь выбранные элементы не обязательно должны иметь родителя.</td>
+  </tr>
+  <tr>
+   <td><a href="https://drafts.csswg.org/selectors-3/#last-of-type-pseudo" hreflang="en" lang="en" class="external" rel=" noopener">Selectors Level&nbsp;3<br><small lang="ru">Определение ':last-of-type' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Изначальное определение.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="поддержка_браузерами"><a href="#поддержка_браузерами" title="Permalink to Поддержка браузерами">Поддержка браузерами</a></h2><p>BCD tables only load in the browser</p><div><div>
+<p></p><p></p>
+</div></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/css/:last-child/"><code>:last-child</code></a>, <a href="/css/:nth-last-of-type/"><code>:nth-last-of-type</code></a></li>
+</ul></div>

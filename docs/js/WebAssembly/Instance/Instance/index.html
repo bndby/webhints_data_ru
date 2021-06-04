@@ -1,0 +1,58 @@
+<h1>WebAssembly.Instance() constructor</h1><div><div></div>
+
+<p>The <strong><code>WebAssembly.Instance()</code></strong> constructor creates a new
+  <code>Instance</code> object which is a stateful, executable instance of a
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Module"><code>WebAssembly.Module</code></a>.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><div class="warning notecard">
+  <p><strong>Warning:</strong> Since instantiation for large modules can be expensive,
+    developers should only use the <code>Instance()</code> constructor when synchronous
+    instantiation is absolutely required; the asynchronous
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/instantiateStreaming"><code>WebAssembly.instantiateStreaming()</code></a> method should be used at all other
+    times.</p>
+</div>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">new</span> <span class="token class-name">WebAssembly<span class="token punctuation">.</span>Instance</span><span class="token punctuation">(</span>module<span class="token punctuation">,</span> importObject<span class="token punctuation">)</span></code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Parameters">Parameters</a></h3><div><dl>
+  <dt><em>module</em></dt>
+  <dd>The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Module"><code>WebAssembly.Module</code></a> object to be instantiated.</dd>
+  <dt><em>importObject</em> <span class="badge inline optional">Optional</span></dt>
+  <dd>An object containing the values to be imported into the newly-created
+    <code>Instance</code>, such as functions or <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Memory"><code>WebAssembly.Memory</code></a> objects.
+    There must be one matching property for each declared import of <code>module</code> or
+    else a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/LinkError"><code>WebAssembly.LinkError</code></a> is thrown.</dd>
+</dl></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="synchronously_instantiating_a_webassembly_module"><a href="#synchronously_instantiating_a_webassembly_module" title="Permalink to Synchronously instantiating a WebAssembly module"><span class="highlight-span">Synchronously instantiating a WebAssembly module</span></a></h3><div><p>The <code>WebAssembly.Instance()</code> constructor function can be called to
+  synchronously instantiate a given <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Module"><code>WebAssembly.Module</code></a> object, for example:
+</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">const</span> importObject <span class="token operator">=</span> <span class="token punctuation">{</span>
+  imports<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">imported_func</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">arg</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">'simple.wasm'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">response</span> <span class="token operator">=&gt;</span>
+  response<span class="token punctuation">.</span><span class="token function">arrayBuffer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">bytes</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> mod <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">WebAssembly<span class="token punctuation">.</span>Module</span><span class="token punctuation">(</span>bytes<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">let</span> instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">WebAssembly<span class="token punctuation">.</span>Instance</span><span class="token punctuation">(</span>mod<span class="token punctuation">,</span> importObject<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  instance<span class="token punctuation">.</span>exports<span class="token punctuation">.</span><span class="token function">exported_func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+
+<p>However, the preferred way to get an <code>Instance</code> is through the asynchronous
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/instantiateStreaming"><code>WebAssembly.instantiateStreaming()</code></a> function, for example like this:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">const</span> importObject <span class="token operator">=</span> <span class="token punctuation">{</span>
+  imports<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">imported_func</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">arg</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+WebAssembly<span class="token punctuation">.</span><span class="token function">instantiateStreaming</span><span class="token punctuation">(</span><span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">'simple.wasm'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> importObject<span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">obj</span> <span class="token operator">=&gt;</span> obj<span class="token punctuation">.</span>instance<span class="token punctuation">.</span>exports<span class="token punctuation">.</span><span class="token function">exported_func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://webassembly.github.io/spec/js-api/#dom-instance-instance">WebAssembly JavaScript Interface<!-- --> <br><small># <!-- -->dom-instance-instance</small></a></td></tr></tbody></table><div></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+  <li><a href="https://developer.mozilla.org/en-US/docs/WebAssembly">WebAssembly</a> overview page</li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/WebAssembly/Concepts">WebAssembly concepts</a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/WebAssembly/Using_the_JavaScript_API">Using the WebAssembly
+      JavaScript API</a></li>
+</ul></div>

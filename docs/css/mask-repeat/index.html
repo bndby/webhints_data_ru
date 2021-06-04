@@ -1,0 +1,113 @@
+<h1>mask-repeat</h1><div><div></div>
+
+<p>The <strong><code>mask-repeat</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> property sets how mask images are repeated. A mask image can be repeated along the horizontal axis, the vertical axis, both axes, or not repeated at all.</p>
+
+<pre class="brush: css no-line-numbers notranslate"><code><span class="token comment">/* One-value syntax */</span>
+<span class="token property">mask-repeat</span><span class="token punctuation">:</span> repeat-x<span class="token punctuation">;</span>
+<span class="token property">mask-repeat</span><span class="token punctuation">:</span> repeat-y<span class="token punctuation">;</span>
+<span class="token property">mask-repeat</span><span class="token punctuation">:</span> repeat<span class="token punctuation">;</span>
+<span class="token property">mask-repeat</span><span class="token punctuation">:</span> space<span class="token punctuation">;</span>
+<span class="token property">mask-repeat</span><span class="token punctuation">:</span> round<span class="token punctuation">;</span>
+<span class="token property">mask-repeat</span><span class="token punctuation">:</span> no-repeat<span class="token punctuation">;</span>
+
+<span class="token comment">/* Two-value syntax: horizontal | vertical */</span>
+<span class="token property">mask-repeat</span><span class="token punctuation">:</span> repeat space<span class="token punctuation">;</span>
+<span class="token property">mask-repeat</span><span class="token punctuation">:</span> repeat repeat<span class="token punctuation">;</span>
+<span class="token property">mask-repeat</span><span class="token punctuation">:</span> round space<span class="token punctuation">;</span>
+<span class="token property">mask-repeat</span><span class="token punctuation">:</span> no-repeat round<span class="token punctuation">;</span>
+
+<span class="token comment">/* Multiple values */</span>
+<span class="token property">mask-repeat</span><span class="token punctuation">:</span> space round<span class="token punctuation">,</span> no-repeat<span class="token punctuation">;</span>
+<span class="token property">mask-repeat</span><span class="token punctuation">:</span> round repeat<span class="token punctuation">,</span> space<span class="token punctuation">,</span> repeat-x<span class="token punctuation">;</span>
+
+<span class="token comment">/* Global values */</span>
+<span class="token property">mask-repeat</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">mask-repeat</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">mask-repeat</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre>
+
+<p>By default, the repeated images are clipped to the size of the element, but they can be scaled to fit (using <code>round</code>) or evenly distributed from end to end (using <code>space</code>).</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><p>One or more <code>&lt;repeat-style&gt;</code> values, separated by commas.</p></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+ <dt><code>&lt;repeat-style&gt;</code></dt>
+ <dd>The one-value syntax is a shorthand for the full two-value syntax:</dd>
+ <dd>
+ <table class="standard-table">
+  <tbody>
+   <tr>
+    <td><strong>Single value</strong></td>
+    <td><strong>Two-value equivalent</strong></td>
+   </tr>
+   <tr>
+    <td><code>repeat-x</code></td>
+    <td><code>repeat no-repeat</code></td>
+   </tr>
+   <tr>
+    <td><code>repeat-y</code></td>
+    <td><code>no-repeat repeat</code></td>
+   </tr>
+   <tr>
+    <td><code>repeat</code></td>
+    <td><code>repeat repeat</code></td>
+   </tr>
+   <tr>
+    <td><code>space</code></td>
+    <td><code>space space</code></td>
+   </tr>
+   <tr>
+    <td><code>round</code></td>
+    <td><code>round round</code></td>
+   </tr>
+   <tr>
+    <td><code>no-repeat</code></td>
+    <td><code>no-repeat no-repeat</code></td>
+   </tr>
+  </tbody>
+ </table>
+ In the two-value syntax, the first value represents the horizontal repetition behavior and the second value represents the vertical behavior. Here is an explanation of how each option works for either direction:</dd>
+ <dd>
+ <table class="standard-table">
+  <tbody>
+   <tr>
+    <td><code>repeat</code></td>
+    <td>The image is repeated as much as needed to cover the whole mask painting area. The last image will be clipped if it doesn't fit.</td>
+   </tr>
+   <tr>
+    <td><code>space</code></td>
+    <td>The image is repeated as much as possible without clipping. The first and last images are pinned to either side of the element, and whitespace is distributed evenly between the images. The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/mask-position"><code>mask-position</code></a> property is ignored unless only one image can be displayed without clipping. The only case where clipping happens using <code>space</code> is when there isn't enough room to display one image.</td>
+   </tr>
+   <tr>
+    <td><code>round</code></td>
+    <td>As the allowed space increases in size, the repeated images will stretch (leaving no gaps) until there is room for another one to be added. When the next image is added, all of the current ones compress to allow room. Example: An image with an original width of 260px, repeated three times, might stretch until each repetition is 300px wide, and then another image will be added. They will then compress to 225px.</td>
+   </tr>
+   <tr>
+    <td><code>no-repeat</code></td>
+    <td>The image is not repeated (and hence the mask painting area will not necessarily be entirely covered). The position of the non-repeated mask image is defined by the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/mask-position"><code>mask-position</code></a> CSS property.</td>
+   </tr>
+  </tbody>
+ </table>
+ </dd>
+</dl></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td><code>no-repeat</code></td></tr><tr><th scope="row">Applies to</th><td>all elements; In SVG, it applies to container elements excluding the <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/defs"><code>defs</code></a> element and all graphics elements</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance">Inherited</a></th><td>no</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>Consists of two keywords, one per dimension</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate"><a href="#repeat-style">&lt;repeat-style&gt;</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#hash_mark_()" title="Hash mark: the entity is repeated one or several times, each occurence separated by a comma">#</a><p style="font-family:Open Sans,Arial,sans-serif; margin: 10px 0 0 0;">where <br><code style="font-family:Consolas,Monaco,&quot;Andale Mono&quot;,monospace;"><span id="repeat-style">&lt;repeat-style&gt;</span> = repeat-x <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> repeat-y <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">[</a> repeat <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> space <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> round <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> no-repeat <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">]</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#curly_braces_(_)" title="Curly braces: encloses two integers defining the minimal and maximal numbers of occurrences of the entity">{</a>1,2<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#curly_braces_(_)" title="Curly braces: encloses two integers defining the minimal and maximal numbers of occurrences of the entity">}</a></code></p></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="setting_repeat_for_a_single_mask"><a href="#setting_repeat_for_a_single_mask" title="Permalink to Setting repeat for a single mask">Setting repeat for a single mask</a></h3><div><p><iframe width="100%" height="700" src="https://mdn.github.io/css-examples/masking/mask-repeat.html" loading="lazy"></iframe></p></div><h3 id="multiple_mask_image_support"><a href="#multiple_mask_image_support" title="Permalink to Multiple mask image support">Multiple mask image support</a></h3><div><p>You can specify a different <code>&lt;repeat-style&gt;</code> for each mask image, separated by commas:</p>
+
+<pre class="brush: css notranslate"><code><span class="token selector">.examplethree</span> <span class="token punctuation">{</span>
+  <span class="token property">mask-image</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string url">'mask1.png'</span><span class="token punctuation">)</span></span><span class="token punctuation">,</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string url">'mask2.png'</span><span class="token punctuation">)</span></span><span class="token punctuation">;</span>
+  <span class="token property">mask-repeat</span><span class="token punctuation">:</span> repeat-x<span class="token punctuation">,</span> repeat-y<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p>Each image is matched with the corresponding repeat style, from first specified to last.</p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.fxtf.org/css-masking-1/#the-mask-repeat" hreflang="en" lang="en" class="external" rel=" noopener">CSS Masking Module Level&nbsp;1<br><small lang="en-US">The definition of 'mask-repeat' in that specification.</small></a></td>
+   <td><span class="spec-cr">Candidate Recommendation</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+  <li><a href="https://css-tricks.com/clipping-masking-css/" class="external" rel=" noopener">Clipping and Masking in CSS</a></li>
+</ul></div>

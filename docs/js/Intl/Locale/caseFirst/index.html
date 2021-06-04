@@ -1,0 +1,35 @@
+<h1>Intl.Locale.prototype.caseFirst</h1><div><div></div>
+
+<p><span class="seoSummary">The <strong><code>Intl.Locale.prototype.caseFirst</code></strong> property is an accessor property that returns whether case is taken into account for the locale's collation rules.</span></p></div><h2 id="description"><a href="#description" title="Permalink to Description">Description</a></h2><div><p>A locale's collation rules are used to determine how strings are ordered in that locale. Certain locales use a character's case (UPPERCASE or lowercase) in the collation process. This additional rule can be expressed in a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale"><code>Locale's</code></a> <code>caseFirst</code> property.</p>
+
+<p>There are 3 values that the <code>caseFirst</code> property can have, outlined in the table below.</p></div><h3 id="casefirst_values"><a href="#casefirst_values" title="Permalink to caseFirst values"><code>caseFirst</code> values</a></h3><div><table class="standard-table">
+	<thead>
+		<tr>
+			<th scope="col">Value</th>
+			<th scope="col">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><code>upper</code></td>
+			<td>Upper case to be sorted before lower case.</td>
+		</tr>
+		<tr>
+			<td><code>lower</code></td>
+			<td>Lower case to be sorted before upper case.</td>
+		</tr>
+		<tr>
+			<td><code>false</code></td>
+			<td>No special case ordering.</td>
+		</tr>
+	</tbody>
+</table></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="setting_the_casefirst_value_via_the_locale_string"><a href="#setting_the_casefirst_value_via_the_locale_string" title="Permalink to Setting the caseFirst value via the locale string">Setting the caseFirst value via the locale string</a></h3><div><p>In the <a href="https://www.unicode.org/reports/tr35/" rel="noopener" class="external">Unicode locale string spec</a>, the values that <code>caseFirst</code> represents correspond to the key <code>kf</code>. <code>kf</code> is treated as a locale string "extension subtag". These subtags add additional data about the locale, and are added to locale identifiers by using the <code>-u</code> extension key. Thus, the <code>caseFirst</code> value can be added to the initial locale identifier string that is passed into the <code>Locale</code> constructor. To add the <code>caseFirst</code> value, first add the <code>-u</code> extension key to the string. Next, add the <code>-kf</code> extension key to indicate that you are adding a value for <code>caseFirst</code>. Finally, add the <code>caseFirst</code> value to the string.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">let</span> caseFirstStr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Intl<span class="token punctuation">.</span>Locale</span><span class="token punctuation">(</span><span class="token string">"fr-Latn-FR-u-kf-upper"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>caseFirstStr<span class="token punctuation">.</span>caseFirst<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Prints "upper"</span></code></pre></div><h3 id="setting_the_casefirst_value_via_the_configuration_object_argument"><a href="#setting_the_casefirst_value_via_the_configuration_object_argument" title="Permalink to Setting the caseFirst value via the configuration object argument">Setting the caseFirst value via the configuration object argument</a></h3><div><p>The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/Locale"><code>Intl.Locale</code></a> constructor has an optional configuration object argument, which can be used to pass extension types. Set the <code>caseFirst</code> property of the configuration object to your desired <code>caseFirst</code> value, and then pass it into the constructor.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">let</span> caseFirstObj<span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Intl<span class="token punctuation">.</span>Locale</span><span class="token punctuation">(</span><span class="token string">"en-Latn-US"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>caseFirst<span class="token operator">:</span> <span class="token string">"lower"</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>us12hour<span class="token punctuation">.</span>caseFirst<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Prints "lower"</span></code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://tc39.es/ecma402/#sec-Intl.Locale.prototype.caseFirst">ECMAScript Internationalization API Specification<!-- --> <!-- -->(ECMAScript Internationalization API)<br><small># <!-- -->sec-Intl.Locale.prototype.caseFirst</small></a></td></tr></tbody></table><div></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><div></div></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+	<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale"><code>Intl.Locale</code></a></li>
+	<li><a href="https://github.com/unicode-org/cldr/blob/master/common/bcp47/collation.xml#L49" class="external" rel=" noopener">Unicode case first collation spec</a></li>
+</ul></div>

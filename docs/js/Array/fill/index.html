@@ -1,0 +1,110 @@
+<h1>Array.prototype.fill()</h1><div><div></div>
+
+<p>Метод <code><strong>fill()</strong></code> заполняет все элементы массива от начального до конечного индексов одним значением.</p>
+
+<div><iframe class="interactive" width="100%" height="490" src="https://interactive-examples.mdn.mozilla.net/pages/js/array-fill.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+</div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code><var>arr</var>.fill(<var>value</var>[, <var>start<var> = 0[, <var>end</var> = this.length]])</var></var></code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>value</code></dt>
+ <dd>Значение, заполняющее массив.</dd>
+ <dt><code>start</code></dt>
+ <dd>Необязательный параметр. Начальный индекс.</dd>
+ <dt><code>end</code></dt>
+ <dd>Необязательный параметр. Конечный индекс.</dd>
+ <dt>
+ <h3 id="Возвращаемое_значение">Возвращаемое значение</h3>
+
+ <p>Изменённый массив.</p>
+ </dt>
+</dl></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Элементы заполняются в полузакрытом интервале [<code>start</code>, <code>end</code>).</p>
+
+<p>Метод <strong><code>fill</code></strong> принимает до трёх аргументов&nbsp;— <code>value</code>, <code>start</code> и <code>end</code>. Аргументы <code>start</code> и <code>end</code> являются необязательными со значениями по умолчанию, равными <code>0</code> и <code>length</code> объекта <code>this</code> соответственно.</p>
+
+<p>Если аргумент <code>start</code> является отрицательным, он трактуется как <code>length+start</code>, где <code>length</code>&nbsp;— это длина массива. Если аргумент <code>end</code> является отрицательным, он трактуется как <code>length+end</code>.</p>
+
+<p>Метод <code><strong>fill</strong></code> намеренно является <em>обобщённым</em>, он не требует, чтобы значение <code>this</code> внутри него было объектом <code>Array</code>.</p>
+
+<p>Метод <code><strong>fill</strong></code> является <em>изменяющим методом</em>, он изменит объект <code>this</code> и вернёт его, а не просто вернёт копию.</p>
+
+<p>Если аргумент <font face="consolas, Liberation Mono, courier, monospace"><span style="background-color: rgba(220, 220, 220, 0.5);">value</span></font>​​​​​ является объектом, то метод&nbsp;<code><strong>fill</strong></code>&nbsp;заполнит массив ссылками на этот объект.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div><pre class="notranslate"><code>[1, 2, 3].fill(4);               // [4, 4, 4]
+[1, 2, 3].fill(4, 1);            // [1, 4, 4]
+[1, 2, 3].fill(4, 1, 2);         // [1, 4, 3]
+[1, 2, 3].fill(4, 1, 1);         // [1, 2, 3]
+[1, 2, 3].fill(4, 3, 3);         // [1, 2, 3]
+[1, 2, 3].fill(4, -3, -2);       // [4, 2, 3]
+[1, 2, 3].fill(4, NaN, NaN);     // [1, 2, 3]
+[1, 2, 3].fill(4, 3, 5);         // [1, 2, 3]
+Array(3).fill(4);                // [4, 4, 4]
+[].fill.call({ length: 3 }, 4);  // {0: 4, 1: 4, 2: 4, length: 3}
+
+// Объекты заполняются по ссылке.
+var arr = Array(3).fill({}) // [{}, {}, {}];
+arr[0].hi = "hi"; // [{ hi: "hi" }, { hi: "hi" }, { hi: "hi" }]</code></pre></div><h2 id="polyfill"><a href="#polyfill" title="Permalink to Полифил">Полифил</a></h2><div><pre class="notranslate"><code>if (!Array.prototype.fill) {
+&nbsp; Object.defineProperty(Array.prototype, 'fill', {
+&nbsp; &nbsp; value: function(value) {
+
+&nbsp; &nbsp; &nbsp; // Шаги 1-2.
+&nbsp; &nbsp; &nbsp; if (this == null) {
+&nbsp; &nbsp; &nbsp; &nbsp; throw new TypeError('this is null or not defined');
+&nbsp; &nbsp; &nbsp; }
+
+&nbsp; &nbsp; &nbsp; var O = Object(this);
+
+&nbsp; &nbsp; &nbsp; // Шаги 3-5.
+&nbsp; &nbsp; &nbsp; var len = O.length &gt;&gt;&gt; 0;
+
+&nbsp; &nbsp; &nbsp; // Шаги 6-7.
+&nbsp; &nbsp; &nbsp; var start = arguments[1];
+&nbsp; &nbsp; &nbsp; var relativeStart = start &gt;&gt; 0;
+
+&nbsp; &nbsp; &nbsp; // Шаг 8.
+&nbsp; &nbsp; &nbsp; var k = relativeStart &lt; 0 ?
+&nbsp; &nbsp; &nbsp; &nbsp; Math.max(len + relativeStart, 0) :
+&nbsp; &nbsp; &nbsp; &nbsp; Math.min(relativeStart, len);
+
+&nbsp; &nbsp; &nbsp; // Шаги 9-10.
+&nbsp; &nbsp; &nbsp; var end = arguments[2];
+&nbsp; &nbsp; &nbsp; var relativeEnd = end === undefined ?
+&nbsp; &nbsp; &nbsp; &nbsp; len : end &gt;&gt; 0;
+
+&nbsp; &nbsp; &nbsp; // Шаг 11.
+&nbsp; &nbsp; &nbsp; var final = relativeEnd &lt; 0 ?
+&nbsp; &nbsp; &nbsp; &nbsp; Math.max(len + relativeEnd, 0) :
+&nbsp; &nbsp; &nbsp; &nbsp; Math.min(relativeEnd, len);
+
+&nbsp; &nbsp; &nbsp; // Шаг 12.
+&nbsp; &nbsp; &nbsp; while (k &lt; final) {
+&nbsp; &nbsp; &nbsp; &nbsp; O[k] = value;
+&nbsp; &nbsp; &nbsp; &nbsp; k++;
+&nbsp; &nbsp; &nbsp; }
+
+&nbsp; &nbsp; &nbsp; // Шаг 13.
+&nbsp; &nbsp; &nbsp; return O;
+&nbsp; &nbsp; }
+&nbsp; });
+}</code></pre>
+
+<p>Если вам нужно поддерживать действительно устаревшие движки JavaScript, которые не поддерживают <a href="/js/Object/defineProperty/">Object.defineProperty</a>, то лучше вообще не использовать полифилы для методов <font face="consolas, Liberation Mono, courier, monospace"><span style="background-color: rgba(220, 220, 220, 0.5);">Array.prototype</span></font>, так как вы не можете сделать их не перечисляемыми.</p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-array.prototype.fill" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Array.prototype.fill' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Изначальное определение.</td>
+  </tr>
+  <tr>
+   <td><a href="https://tc39.es/ecma262/#sec-array.prototype.fill" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript (ECMA-262)<br><small lang="ru">Определение 'Array.prototype.fill' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><div>
+<p></p><p></p>
+</div></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/Array/"><code>Array</code></a></li>
+ <li><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/fill"><code>TypedArray.prototype.fill()</code> <span>(en-US)</span></a></li>
+</ul></div>

@@ -1,0 +1,65 @@
+<h1>handler.construct()</h1><div><div></div>
+
+<p>The <strong><code>handler.construct()</code></strong> method is a trap for the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new"><code>new</code></a> operator. In order for the new operation to be valid on the resulting Proxy object, the target used to initialize the proxy must itself have a <code>[[Construct]]</code> internal method (i.e. <code>new target</code> must be valid).</p>
+
+<div><iframe class="interactive" width="100%" height="692" src="https://interactive-examples.mdn.mozilla.net/pages/js/proxyhandler-construct.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: js notranslate"><code><span class="token keyword">const</span> p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">construct</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">target<span class="token punctuation">,</span> argumentsList<span class="token punctuation">,</span> newTarget</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Parameters">Parameters</a></h3><div><p>The following parameters are passed to the <code>construct()</code> method. <code>this</code> is bound to the handler.</p>
+
+<dl>
+ <dt><code><var>target</var></code></dt>
+ <dd>The target object.</dd>
+ <dt><code><var>argumentsList</var></code></dt>
+ <dd>The list of arguments for the constructor.</dd>
+ <dt><code><var>newTarget</var></code></dt>
+ <dd>The constructor that was originally called, <code><var>p</var></code> above.</dd>
+</dl></div><h3 id="return_value"><a href="#return_value" title="Permalink to Return value">Return value</a></h3><div><p>The <code>construct</code> method must return an object.</p></div><h2 id="description"><a href="#description" title="Permalink to Description">Description</a></h2><div><p>The <code><strong>handler.construct()</strong></code> method is a trap for the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new"><code>new</code></a> operator.</p></div><h3 id="interceptions"><a href="#interceptions" title="Permalink to Interceptions">Interceptions</a></h3><div><p>This trap can intercept these operations:</p>
+
+<ul>
+ <li><code>new myFunction(...args)</code></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/construct"><code>Reflect.construct()</code></a></li>
+</ul></div><h3 id="invariants"><a href="#invariants" title="Permalink to Invariants">Invariants</a></h3><div><p>If the following invariants are violated, the proxy will throw a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError"><code>TypeError</code></a>:</p>
+
+<ul>
+ <li>The result must be an <code>Object</code>.</li>
+</ul></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="trapping_the_new_operator"><a href="#trapping_the_new_operator" title="Permalink to Trapping the new operator">Trapping the new operator</a></h3><div><p>The following code traps the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new"><code>new</code></a> operator.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">const</span> p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">construct</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">target<span class="token punctuation">,</span> argumentsList<span class="token punctuation">,</span> newTarget</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'called: '</span> <span class="token operator">+</span> argumentsList<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">', '</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span> value<span class="token operator">:</span> argumentsList<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">*</span> <span class="token number">10</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">p</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "called: 1"</span>
+                             <span class="token comment">// 10</span>
+</code></pre>
+
+<p>The following code violates the invariant.</p>
+
+<pre class="brush: js example-bad notranslate"><code><span class="token keyword">const</span> p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">construct</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">target<span class="token punctuation">,</span> argumentsList<span class="token punctuation">,</span> newTarget</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">new</span> <span class="token class-name">p</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// TypeError is thrown</span>
+</code></pre>
+
+<p>The following code improperly initializes the proxy. The <code><var>target</var></code> in Proxy initialization must itself be a valid constructor for the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new"><code>new</code></a> operator.</p>
+
+<pre class="brush: js example-bad notranslate"><code><span class="token keyword">const</span> p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">construct</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">target<span class="token punctuation">,</span> argumentsList<span class="token punctuation">,</span> newTarget</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">new</span> <span class="token class-name">p</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// TypeError is thrown, "p" is not a constructor</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://tc39.es/ecma262/#sec-proxy-object-internal-methods-and-internal-slots-construct-argumentslist-newtarget">Unknown specification<!-- --> <br><small># <!-- -->sec-proxy-object-internal-methods-and-internal-slots-construct-argumentslist-newtarget</small></a></td></tr></tbody></table><div></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy"><code>Proxy</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/Proxy"><code>handler</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new"><code>new</code></a> operator.</li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/construct"><code>Reflect.construct()</code></a></li>
+</ul></div>

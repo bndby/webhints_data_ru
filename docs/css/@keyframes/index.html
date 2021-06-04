@@ -1,0 +1,86 @@
+<h1>@keyframes</h1><div><div></div>
+
+<p><span class="seoSummary">The <strong><code>@keyframes</code></strong> CSS <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule">at-rule</a> controls the intermediate steps in a CSS animation sequence by defining styles for keyframes (or waypoints) along the animation sequence.</span> This gives more control over the intermediate steps of the animation sequence than <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions">transitions</a>.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: css no-line-numbers notranslate"><code><span class="token atrule"><span class="token rule">@keyframes</span> slidein</span> <span class="token punctuation">{</span>
+  <span class="token selector">from</span> <span class="token punctuation">{</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateX</span><span class="token punctuation">(</span>0%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token selector">to</span> <span class="token punctuation">{</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateX</span><span class="token punctuation">(</span>100%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+ <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/custom-ident"><code>&lt;custom-ident&gt;</code></a></dt>
+ <dd>A name identifying the keyframe list. This must match the identifier production in CSS syntax.</dd>
+ <dt><code>from</code></dt>
+ <dd>A starting offset of <code>0%</code>.</dd>
+ <dt><code>to</code></dt>
+ <dd>An ending offset of <code>100%</code>.</dd>
+ <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/percentage"><code>&lt;percentage&gt;</code></a></dt>
+ <dd>A percentage of the time through the animation sequence at which the specified keyframe should occur.</dd>
+</dl></div><h2 id="description"><a href="#description" title="Permalink to Description">Description</a></h2><div><p>JavaScript can access the <code>@keyframes</code> at-rule with the CSS object model interface <a href="https://developer.mozilla.org/en-US/docs/Web/API/CSSKeyframesRule"><code>CSSKeyframesRule</code></a>.</p>
+
+<p>To use keyframes, create a <code>@keyframes</code> rule with a name that is then used by the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/animation-name"><code>animation-name</code></a> property to match an animation to its keyframe declaration. Each <code>@keyframes</code> rule contains a style list of keyframe selectors, which specify percentages along the animation when the keyframe occurs, and a block containing the styles for that keyframe.</p>
+
+<p>You can list the keyframe percentages in any order; they will be handled in the order they should occur.</p></div><h3 id="valid_keyframe_lists"><a href="#valid_keyframe_lists" title="Permalink to Valid keyframe lists">Valid keyframe lists</a></h3><div><p>If a keyframe rule doesn't specify the start or end states of the animation (that is, <code>0%</code>/<code>from</code> and <code>100%</code>/<code>to</code>), browsers will use the element's existing styles for the start/end states. This can be used to animate an element from its initial state and back.</p>
+
+<p>Properties that can't be animated in keyframe rules are ignored, but supported properties will still be animated.</p></div><h3 id="resolving_duplicates"><a href="#resolving_duplicates" title="Permalink to Resolving duplicates">Resolving duplicates</a></h3><div><p>If multiple keyframe sets exist for a given name, the last one encountered by the parser is used. <code>@keyframes</code> rules don't cascade, so animations never derive keyframes from more than one rule set.</p>
+
+<p>If a given animation time offset is duplicated, all keyframes in the <code>@keyframes</code> rule for that percentage are used for that frame. There is cascading within a <code>@keyframes</code> rule if multiple keyframes specify the same percentage values.</p></div><h3 id="when_properties_are_left_out_of_some_keyframes"><a href="#when_properties_are_left_out_of_some_keyframes" title="Permalink to When properties are left out of some keyframes">When properties are left out of some keyframes</a></h3><div><p>Properties that aren't specified in every keyframe are interpolated if possible — properties that can't be interpolated are dropped from the animation. For example:</p>
+
+<pre class="brush: css notranslate"><code><span class="token atrule"><span class="token rule">@keyframes</span> identifier</span> <span class="token punctuation">{</span>
+  <span class="token selector">0%</span> <span class="token punctuation">{</span> <span class="token property">top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span> <span class="token property">left</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+  <span class="token selector">30%</span> <span class="token punctuation">{</span> <span class="token property">top</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+  <span class="token selector">68%, 72%</span> <span class="token punctuation">{</span> <span class="token property">left</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+  <span class="token selector">100%</span> <span class="token punctuation">{</span> <span class="token property">top</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> <span class="token property">left</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p>Here, the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/top"><code>top</code></a> property animates using the <code>0%</code>, <code>30%</code>, and <code>100%</code> keyframes, and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/left"><code>left</code></a> animates using the <code>0%</code>, <code>68%</code>, <code>72%</code> and <code>100%</code> keyframes.</p></div><h3 id="when_a_keyframe_is_defined_multiple_times"><a href="#when_a_keyframe_is_defined_multiple_times" title="Permalink to When a keyframe is defined multiple times">When a keyframe is defined multiple times</a></h3><div><p>If a keyframe is defined multiple times but not all affected properties are in each keyframe, all values specified in these keyframes are considered. For example:</p>
+
+<pre class="brush: css notranslate"><code><span class="token atrule"><span class="token rule">@keyframes</span> identifier</span> <span class="token punctuation">{</span>
+  <span class="token selector">0%</span> <span class="token punctuation">{</span> <span class="token property">top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+  <span class="token selector">50%</span> <span class="token punctuation">{</span> <span class="token property">top</span><span class="token punctuation">:</span> 30px<span class="token punctuation">;</span> <span class="token property">left</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+  <span class="token selector">50%</span> <span class="token punctuation">{</span> <span class="token property">top</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+  <span class="token selector">100%</span> <span class="token punctuation">{</span> <span class="token property">top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p>In this example, at the <code>50%</code> keyframe, the values used are <code>top: 10px</code> and <code>left: 20px</code>.</p>
+
+<p>Cascading keyframes are supported starting in Firefox 14.</p></div><h3 id="!important_in_a_keyframe"><a href="#!important_in_a_keyframe" title="Permalink to !important in a keyframe"><code>!important</code> in a keyframe</a></h3><div><p>Declarations in a keyframe qualified with <code>!important</code> are ignored.</p>
+
+<pre class="brush: css notranslate"><code><span class="token atrule"><span class="token rule">@keyframes</span> important1</span> <span class="token punctuation">{</span>
+  <span class="token selector">from</span> <span class="token punctuation">{</span> <span class="token property">margin-top</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+  <span class="token selector">50%</span>  <span class="token punctuation">{</span> <span class="token property">margin-top</span><span class="token punctuation">:</span> 150px <span class="token important">!important</span><span class="token punctuation">;</span> <span class="token punctuation">}</span> <span class="token comment">/* ignored */</span>
+  <span class="token selector">to</span>   <span class="token punctuation">{</span> <span class="token property">margin-top</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token atrule"><span class="token rule">@keyframes</span> important2</span> <span class="token punctuation">{</span>
+  <span class="token selector">from</span> <span class="token punctuation">{</span> <span class="token property">margin-top</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
+         <span class="token property">margin-bottom</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+  <span class="token selector">to</span>   <span class="token punctuation">{</span> <span class="token property">margin-top</span><span class="token punctuation">:</span> 150px <span class="token important">!important</span><span class="token punctuation">;</span> <span class="token comment">/* ignored */</span>
+         <span class="token property">margin-bottom</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate">@keyframes <a href="#keyframes-name">&lt;keyframes-name&gt;</a> {
+  <a href="#keyframe-block-list">&lt;keyframe-block-list&gt;</a>
+}<p style="font-family:Open Sans,Arial,sans-serif; margin: 10px 0 0 0;">where <br><code style="font-family:Consolas,Monaco,&quot;Andale Mono&quot;,monospace;"><span id="keyframes-name">&lt;keyframes-name&gt;</span> = <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/custom-ident" title>&lt;custom-ident&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/string" title>&lt;string&gt;</a><br><span id="keyframe-block-list">&lt;keyframe-block-list&gt;</span> = <a href="#keyframe-block">&lt;keyframe-block&gt;</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#plus_()" title="Plus: the entity may occur one or several times">+</a></code></p><p style="font-family:Open Sans,Arial,sans-serif; margin: 10px 0 0 0;">where <br><code style="font-family:Consolas,Monaco,&quot;Andale Mono&quot;,monospace;"><span id="keyframe-block">&lt;keyframe-block&gt;</span> = <a href="#keyframe-selector">&lt;keyframe-selector&gt;</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#hash_mark_()" title="Hash mark: the entity is repeated one or several times, each occurence separated by a comma">#</a> {
+  &lt;declaration-list&gt;
+}</code></p><p style="font-family:Open Sans,Arial,sans-serif; margin: 10px 0 0 0;">where <br><code style="font-family:Consolas,Monaco,&quot;Andale Mono&quot;,monospace;"><span id="keyframe-selector">&lt;keyframe-selector&gt;</span> = from <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/percentage" title>&lt;percentage&gt;</a></code></p></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="css_animation_examples"><a href="#css_animation_examples" title="Permalink to CSS animation examples">CSS animation examples</a></h3><div><p>See <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations">Using CSS animations</a> for examples.</p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-animations-1/#keyframes" hreflang="en" lang="en" class="external" rel=" noopener">CSS Animations Level 1<br><small lang="en-US">The definition of '@keyframes' in that specification.</small></a></td>
+   <td><span class="spec-wd">Working Draft</span></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations">Using CSS animations</a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/AnimationEvent"><code>AnimationEvent</code></a></li>
+</ul></div>

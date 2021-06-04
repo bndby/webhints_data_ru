@@ -1,0 +1,55 @@
+<h1>Array.prototype.pop()</h1><div><div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Метод <code><strong>pop()</strong></code> удаляет <strong>последний</strong> элемент из массива и возвращает его значение.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code><var>arr</var>.pop()</code></pre></div><h3 id="description"><a href="#description" title="Permalink to Возвращаемое значение">Возвращаемое значение</a></h3><div><p>Последний элемент массива или <a href="/js/undefined/"><code>undefined</code></a>, если массив пуст.</p></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Метод <code>pop</code> удаляет последний элемент из массива и возвращает удалённое значение.</p>
+
+<p>Метод <code>pop</code> не является привязанным к типу; этот метод может быть <a href="/js/Function/call/">вызван</a> или <a href="/js/Function/apply/">применён</a> к массивоподобным объектам. Объекты, не содержащие свойство <code>length</code>, отражающее последний элемент в серии последовательных числовых, начинающихся с нуля, свойств, могут повести себя неправильным образом.</p>
+
+<p>Если вы вызовете <code>pop()</code> на пустом массиве, он вернёт значение <a href="/js/undefined/"><code>undefined</code></a>.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_removing_the_last_element_of_an_array"><a href="#example_removing_the_last_element_of_an_array" title="Permalink to Удаление последнего элемента массива">Удаление последнего элемента массива</a></h3><div><p>Следующий код создаёт массив <code>myFish</code>, содержащий четыре элемента, а затем удаляет последний элемент.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> myFish <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'ангел'</span><span class="token punctuation">,</span> <span class="token string">'клоун'</span><span class="token punctuation">,</span> <span class="token string">'мандарин'</span><span class="token punctuation">,</span> <span class="token string">'хирург'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>myFish<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ['ангел', 'клоун', 'мандарин', 'хирург']</span>
+
+<span class="token keyword">var</span> popped <span class="token operator">=</span> myFish<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>myFish<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ['ангел', 'клоун', 'мандарин']</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>popped<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 'хирург'</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-262,%203rd%20edition,%20December%201999.pdf" hreflang="en" lang="en" class="external" title="Спецификация 'ECMAScript 3rd Edition (ECMA-262)'" rel=" noopener">ECMAScript 3rd Edition (ECMA-262)</a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Изначальное определение. Реализована в JavaScript 1.2.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-15.4.4.6" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 5.1 (ECMA-262)<br><small lang="ru">Определение 'Array.prototype.pop' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-array.prototype.pop" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Array.prototype.pop' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td><a href="https://tc39.es/ecma262/#sec-array.prototype.pop" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript (ECMA-262)<br><small lang="ru">Определение 'Array.prototype.pop' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><div>
+<div>
+
+
+<p></p><p></p>
+</div>
+</div></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/Array/push/"><code>Array.prototype.push()</code></a></li>
+ <li><a href="/js/Array/shift/"><code>Array.prototype.shift()</code></a></li>
+ <li><a href="/js/Array/unshift/"><code>Array.prototype.unshift()</code></a></li>
+ <li><a href="/js/Array/splice/"><code>Array.prototype.splice()</code></a></li>
+</ul></div>

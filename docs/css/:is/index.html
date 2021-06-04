@@ -1,0 +1,207 @@
+<h1>:is() (:matches(), :any())</h1><div><p></p><div class="notecard experimental">
+    <h4 id="experimental">Experimental</h4>
+    <p><strong>Это экспериментальная технология</strong><br>Так как спецификация этой технологии ещё не стабилизировалась, смотрите <a href="#browser_compatibility">таблицу совместимости</a> по поводу использования в различных браузерах. Также заметьте, что синтаксис и поведение экспериментальной технологии может измениться в будущих версиях браузеров, вслед за изменениями спецификации.</p>
+</div><p></p>
+
+<div class="note notecard">
+<p><strong>Примечание:</strong> <code>:matches()</code> был переименован в&nbsp;<code>:is()</code>&nbsp;в&nbsp;<a href="https://github.com/w3c/csswg-drafts/issues/3258" style="white-space: nowrap;" class="external" rel=" noopener">CSSWG issue&nbsp;#3258</a>.</p>
+</div>
+
+<p><strong><code>:is()</code></strong>&nbsp;это функция&nbsp;<a href="/css/">псевдокласс CSS</a>&nbsp;принимающая&nbsp;список селекторов как аргумент, и выбирает любой элемент, который может быть выбран одним из селекторов в этом списке. Это полезно при переписи огромных селекторов в более компактную форму.</p>
+
+<p>Заметьте, что в данный момент браузеры поддерживают её функциональность как&nbsp;<code>:matches()</code>, или даже как более старый, префиксный псевдокласс&nbsp;— <code>:any()</code>, включая старые версии&nbsp;Chrome, Firefox, и Safari. <code>:any()</code> работает точно таким же образом как и&nbsp;<code>:matches()</code>/<code>:is()</code>, за исключением того, что&nbsp; <code>:any()</code>&nbsp;требует постановку префиксов и не поддерживает <a href="https://developer.mozilla.org/ru/docs/Learn/CSS/Building_blocks/Selectors">комплексные селекторы</a>.</p>
+
+<pre class="brush: css no-line-numbers notranslate"><code><span class="token comment">/* Выбирает какой-либо абзац в шапке, основной части или подвале, который зависал */</span>
+<span class="token selector">:is(header, main, footer) p:hover</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token property">cursor</span><span class="token punctuation">:</span> pointer<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* Пример приведённый выше эквивалентен следующему */</span>
+<span class="token selector">header p:hover,
+main p:hover,
+footer p:hover</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token property">cursor</span><span class="token punctuation">:</span> pointer<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* Обратно-совместимая версия с:-*-any() и :matches()
+   (Это невозможно сгруппировать селекторы в одно правило,
+    так как присутствие одного неверного селектора аннулирует все правило.) */</span>
+<span class="token selector">:-webkit-any(header, main, footer) p:hover</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token property">cursor</span><span class="token punctuation">:</span> pointer<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">:-moz-any(header, main, footer) p:hover</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token property">cursor</span><span class="token punctuation">:</span> pointer<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">:matches(header, main, footer) p:hover</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token property">cursor</span><span class="token punctuation">:</span> pointer<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="notranslate">:is( <a href="#complex-selector-list">&lt;complex-selector-list&gt;</a> )<p style="font-family:Open Sans,Arial,sans-serif; margin: 10px 0 0 0;">где <br><code style="font-family:Consolas,Monaco,&quot;Andale Mono&quot;,monospace;"><span id="complex-selector-list">&lt;complex-selector-list&gt;</span> = <a href="#complex-selector">&lt;complex-selector&gt;</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#hash_mark_()" title="Currently only available in English (US)" class="only-in-en-us"># (en-US)</a></code></p><p style="font-family:Open Sans,Arial,sans-serif; margin: 10px 0 0 0;">где <br><code style="font-family:Consolas,Monaco,&quot;Andale Mono&quot;,monospace;"><span id="complex-selector">&lt;complex-selector&gt;</span> = <a href="#compound-selector">&lt;compound-selector&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> <a href="#combinator">&lt;combinator&gt;</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#question_mark_()" title="Currently only available in English (US)" class="only-in-en-us">? (en-US)</a> <a href="#compound-selector">&lt;compound-selector&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#asterisk_(*)" title="Currently only available in English (US)" class="only-in-en-us">* (en-US)</a></code></p><p style="font-family:Open Sans,Arial,sans-serif; margin: 10px 0 0 0;">где <br><code style="font-family:Consolas,Monaco,&quot;Andale Mono&quot;,monospace;"><span id="compound-selector">&lt;compound-selector&gt;</span> = <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> <a href="#type-selector">&lt;type-selector&gt;</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#question_mark_()" title="Currently only available in English (US)" class="only-in-en-us">? (en-US)</a> <a href="#subclass-selector">&lt;subclass-selector&gt;</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#asterisk_(*)" title="Currently only available in English (US)" class="only-in-en-us">* (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> <a href="#pseudo-element-selector">&lt;pseudo-element-selector&gt;</a> <a href="#pseudo-class-selector">&lt;pseudo-class-selector&gt;</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#asterisk_(*)" title="Currently only available in English (US)" class="only-in-en-us">* (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#asterisk_(*)" title="Currently only available in English (US)" class="only-in-en-us">* (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax##exclamation_point_(!)" title="Currently only available in English (US)" class="only-in-en-us">! (en-US)</a><br><span id="combinator">&lt;combinator&gt;</span> = '&gt;' <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> '<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#plus_()" title="Currently only available in English (US)" class="only-in-en-us">+ (en-US)</a>' <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> '~' <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> '<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_bar" title="Currently only available in English (US)" class="only-in-en-us">|| (en-US)</a>' <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a></code></p><p style="font-family:Open Sans,Arial,sans-serif; margin: 10px 0 0 0;">где <br><code style="font-family:Consolas,Monaco,&quot;Andale Mono&quot;,monospace;"><span id="type-selector">&lt;type-selector&gt;</span> = <a href="#wq-name">&lt;wq-name&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <a href="#ns-prefix">&lt;ns-prefix&gt;</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#question_mark_()" title="Currently only available in English (US)" class="only-in-en-us">? (en-US)</a> '<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#asterisk_(*)" title="Currently only available in English (US)" class="only-in-en-us">* (en-US)</a>'<br><span id="subclass-selector">&lt;subclass-selector&gt;</span> = <a href="#id-selector">&lt;id-selector&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <a href="#class-selector">&lt;class-selector&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <a href="#attribute-selector">&lt;attribute-selector&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <a href="#pseudo-class-selector">&lt;pseudo-class-selector&gt;</a><br><span id="pseudo-element-selector">&lt;pseudo-element-selector&gt;</span> = ':' <a href="#pseudo-class-selector">&lt;pseudo-class-selector&gt;</a><br><span id="pseudo-class-selector">&lt;pseudo-class-selector&gt;</span> = ':' &lt;ident-token&gt; <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> ':' &lt;function-token&gt; &lt;any-value&gt; ')'</code></p><p style="font-family:Open Sans,Arial,sans-serif; margin: 10px 0 0 0;">где <br><code style="font-family:Consolas,Monaco,&quot;Andale Mono&quot;,monospace;"><span id="wq-name">&lt;wq-name&gt;</span> = <a href="#ns-prefix">&lt;ns-prefix&gt;</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#question_mark_()" title="Currently only available in English (US)" class="only-in-en-us">? (en-US)</a> &lt;ident-token&gt;<br><span id="ns-prefix">&lt;ns-prefix&gt;</span> = <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> &lt;ident-token&gt; <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> '<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#asterisk_(*)" title="Currently only available in English (US)" class="only-in-en-us">* (en-US)</a>' <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#question_mark_()" title="Currently only available in English (US)" class="only-in-en-us">? (en-US)</a>  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <br><span id="id-selector">&lt;id-selector&gt;</span> = &lt;hash-token&gt;<br><span id="class-selector">&lt;class-selector&gt;</span> = '.' &lt;ident-token&gt;<br><span id="attribute-selector">&lt;attribute-selector&gt;</span> = '<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a>' <a href="#wq-name">&lt;wq-name&gt;</a> '<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a>' <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> '<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a>' <a href="#wq-name">&lt;wq-name&gt;</a> <a href="#attr-matcher">&lt;attr-matcher&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> &lt;string-token&gt; <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> &lt;ident-token&gt; <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a> <a href="#attr-modifier">&lt;attr-modifier&gt;</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#question_mark_()" title="Currently only available in English (US)" class="only-in-en-us">? (en-US)</a> '<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a>'<br></code></p><p style="font-family:Open Sans,Arial,sans-serif; margin: 10px 0 0 0;">где <br><code style="font-family:Consolas,Monaco,&quot;Andale Mono&quot;,monospace;"><span id="attr-matcher">&lt;attr-matcher&gt;</span> = <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> '~' <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a>  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a>  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> '^' <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> '$' <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> '<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#asterisk_(*)" title="Currently only available in English (US)" class="only-in-en-us">* (en-US)</a>' <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#question_mark_()" title="Currently only available in English (US)" class="only-in-en-us">? (en-US)</a> '='<br><span id="attr-modifier">&lt;attr-modifier&gt;</span> = i <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> s</code></p></pre></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="кроссбраузерный_пример"><a href="#кроссбраузерный_пример" title="Permalink to Кроссбраузерный пример">Кроссбраузерный пример</a></h3><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Это мой параграф в шапке<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>header</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>main</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Это первый<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>пункт списка<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Это второй<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>пункт списка<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>main</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>footer</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Это мой параграф в подвале<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>footer</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<pre class="brush: css notranslate"><code><span class="token selector">:-webkit-any(header, main, footer) p:hover</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token property">cursor</span><span class="token punctuation">:</span> pointer<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">:-moz-any(header, main, footer) p:hover</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token property">cursor</span><span class="token punctuation">:</span> pointer<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">:matches(header, main, footer) p:hover</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token property">cursor</span><span class="token punctuation">:</span> pointer<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">:is(header, main, footer) p:hover</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token property">cursor</span><span class="token punctuation">:</span> pointer<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">let</span> matchedItems<span class="token punctuation">;</span>
+
+<span class="token keyword">try</span> <span class="token punctuation">{</span>
+  matchedItems <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">':is(header, main, footer) p'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">catch</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    matchedItems <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">':matches(header, main, footer) p'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">catch</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+      matchedItems <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">':-webkit-any(header, main, footer) p'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">try</span> <span class="token punctuation">{</span>
+        matchedItems <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">':-moz-any(header, main, footer) p'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span> <span class="token keyword">catch</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Your browser doesn\'t support :is(), :matches(), or :any()'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+matchedItems<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>applyHandler<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">applyHandler</span><span class="token punctuation">(</span><span class="token parameter">elem</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  elem<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'This paragraph is inside a '</span> <span class="token operator">+</span> e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>parentNode<span class="token punctuation">.</span>nodeName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<p><iframe class="sample-code-frame" id="frame_Cross-browser_example" width="100%" height="300" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/:is/_sample_.Cross-browser_example.html" loading="lazy"></iframe></p></div><h3 id="упрощение_списка_селекторов"><a href="#упрощение_списка_селекторов" title="Permalink to Упрощение&nbsp;списка селекторов">Упрощение&nbsp;списка селекторов</a></h3><div><p>Псевдо-класс&nbsp;<code>:is()</code> может великолепно упрощать ваши&nbsp;CSS селекторы. К примеру, следующий&nbsp;CSS:</p>
+
+<pre class="brush: css notranslate"><code><span class="token comment">/* 3-уровневые (или более) неупорядоченные списки используют свойство square */</span>
+<span class="token selector">ol ol ul,     ol ul ul,     ol menu ul,     ol dir ul,
+ol ol menu,   ol ul menu,   ol menu menu,   ol dir menu,
+ol ol dir,    ol ul dir,    ol menu dir,    ol dir dir,
+ul ol ul,     ul ul ul,     ul menu ul,     ul dir ul,
+ul ol menu,   ul ul menu,   ul menu menu,   ul dir menu,
+ul ol dir,    ul ul dir,    ul menu dir,    ul dir dir,
+menu ol ul,   menu ul ul,   menu menu ul,   menu dir ul,
+menu ol menu, menu ul menu, menu menu menu, menu dir menu,
+menu ol dir,  menu ul dir,  menu menu dir,  menu dir dir,
+dir ol ul,    dir ul ul,    dir menu ul,    dir dir ul,
+dir ol menu,  dir ul menu,  dir menu menu,  dir dir menu,
+dir ol dir,   dir ul dir,   dir menu dir,   dir dir dir</span> <span class="token punctuation">{</span>
+  <span class="token property">list-style-type</span><span class="token punctuation">:</span> square<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p>... можно заменить на:</p>
+
+<pre class="brush: css notranslate"><code><span class="token comment">/* 3-уровневые (или более) неупорядоченные списки используют свойство square */</span>
+<span class="token selector">:is(ol, ul, menu, dir) :is(ol, ul, menu, dir) ul,
+:is(ol, ul, menu, dir) :is(ol, ul, menu, dir) menu,
+:is(ol, ul, menu, dir) :is(ol, ul, menu, dir) dir</span> <span class="token punctuation">{</span>
+  <span class="token property">list-style-type</span><span class="token punctuation">:</span> square<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div><h3 id="упрощение_селекторов_разделов"><a href="#упрощение_селекторов_разделов" title="Permalink to Упрощение селекторов разделов">Упрощение селекторов разделов</a></h3><div><p>Псевдо-класс&nbsp;<code>:is()</code>&nbsp; особенно&nbsp;полезен&nbsp; при работе с <a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Using_HTML_sections_and_outlines" title="Sections and Outlines of an HTML5 document">заголовками и разделами</a> HTML5.&nbsp;C тех пор как&nbsp;<a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/section"><code>&lt;section&gt;</code></a>, <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/article"><code>&lt;article&gt;</code></a>, <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/aside"><code>&lt;aside&gt;</code></a>, и <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/nav"><code>&lt;nav&gt;</code></a> обычно используют вместе, без&nbsp;<code>:is()</code>, стилизовать их, чтобы они соответствовали друг друг, может быть не просто.</p>
+
+<p>К примеру, без&nbsp;<code>:is()</code>, стилизовать все <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements" class="only-in-en-us" title="Currently only available in English (US)">&lt;h1&gt; (en-US)</a> элементы на разных уровнях может бы очень сложно:</p>
+
+<pre class="brush: css notranslate"><code><span class="token comment">/* Уровень 0 */</span>
+<span class="token selector">h1</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 30px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">/* Уровень 1 */</span>
+<span class="token selector">section h1, article h1, aside h1, nav h1</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 25px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">/* Уровень 2 */</span>
+<span class="token selector">section section h1, section article h1, section aside h1, section nav h1,
+article section h1, article article h1, article aside h1, article nav h1,
+aside section h1, aside article h1, aside aside h1, aside nav h1,
+nav section h1, nav article h1, nav aside h1, nav nav h1</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">/* Уровень 3 */</span>
+<span class="token comment">/* ... даже не смей думать об этом! */</span>
+</code></pre>
+
+<p>Используя&nbsp;<code>:is()</code>, как видно, это гораздо легче:</p>
+
+<pre class="brush: css notranslate"><code><span class="token comment">/* Уровень 0 */</span>
+<span class="token selector">h1</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 30px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">/* Уровень 1 */</span>
+<span class="token selector">:is(section, article, aside, nav) h1</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 25px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">/* Уровень 2 */</span>
+<span class="token selector">:is(section, article, aside, nav)
+:is(section, article, aside, nav) h1</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">/* Уровень 3 */</span>
+<span class="token selector">:is(section, article, aside, nav)
+:is(section, article, aside, nav)
+:is(section, article, aside, nav) h1</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 15px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div><h3 id="как_избежать_аннулирования_списка_селекторов"><a href="#как_избежать_аннулирования_списка_селекторов" title="Permalink to Как избежать аннулирования списка селекторов">Как избежать аннулирования списка селекторов</a></h3><div><p>В отличие от&nbsp;<a href="/css/Selector_list/">списка селекторов</a>, псевдокласс&nbsp;<code>:is()</code>&nbsp;не аннулируется, когда из селекторов, попавший туда не поддерживается браузером.</p>
+
+<pre class="brush: css notranslate"><code><span class="token selector">:is(:valid, :unsupported)</span> <span class="token punctuation">{</span>
+  ...
+<span class="token punctuation">}</span></code></pre>
+
+<p>Будет по прежнему определяться правильно и соответствовать&nbsp;<code>:valid</code> даже в браузерах, которые не поддерживают&nbsp;<code>:unsupported</code>, в то время как:</p>
+
+<pre class="brush: css notranslate"><code><span class="token selector">:valid, :unsupported</span> <span class="token punctuation">{</span>
+  ...
+<span class="token punctuation">}</span></code></pre>
+
+<p>Будет проигнорировано браузерами, которые не поддерживают&nbsp;<code>:unsupported</code> даже если они поддерживают&nbsp;<code>:valid</code>.</p></div><h3 id="разница_между_is_и_where"><a href="#разница_между_is_и_where" title="Permalink to Разница между :is() и :where()">Разница между :is() и :where()</a></h3><div><p>Разница между этими двумя, в том что&nbsp;<code>:is()</code> учитывает спецификацию общего селектора&nbsp;(он принимает специфику своего самого конкретного аргумента), в то же время&nbsp;<code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:where">:where()</a></code> имеет значение спецификации равное&nbsp;0. Это можно увидеть на&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:where#examples">примере&nbsp;на странице документации&nbsp;<code>:where()</code> </a>.</p></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/selectors-4/#matches-pseudo" hreflang="en" lang="en" class="external" rel=" noopener">Selectors Level&nbsp;4<br><small lang="ru">Определение ':is()' в этой спецификации.</small></a></td>
+   <td><span class="spec-wd">Рабочий черновик</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Браузерная совместимость">Браузерная совместимость</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/css/:where/"><code>:where()</code></a>&nbsp; - Like <code>:is()</code>, but with 0&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity">specificity</a>.</li>
+ <li><a href="/css/Selector_list/">Список селекторов</a></li>
+ <li><a href="https://developer.mozilla.org/ru/docs/Web/Web_Components">Веб компоненты</a></li>
+</ul></div>

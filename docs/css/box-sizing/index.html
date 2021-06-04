@@ -1,0 +1,77 @@
+<h1>box-sizing</h1><div><div></div>
+
+<p><span class="seoSummary"><a href="/css/">CSS</a> свойство <strong><code>box-sizing</code></strong> определяет как вычисляется общая ширина и высота элемента.</span></p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/box-sizing.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+<div></div>
+
+<p>По умолчанию в <a href="/css/CSS_Box_Model/Introduction_to_the_CSS_box_model/" title="CSS/Box_model">блоковой&nbsp;модели CSS</a> ширина и высота, которую вы задаёте элементу применяется только для контента элемента. Если у элемента есть граница или внутренний отступ, то они добавляются к ширине и высоте, чтобы получить&nbsp;отображаемый на экране размер. Это значит, что когда вы выставляете ширину и высоту, вам придётся изменять значение, при добавлении границ и отступов. Например, если у вас есть четыре блока с <code>width: 25%;</code> , и у какого-нибудь из них есть граница или внутренний отступ слева или справа, то&nbsp;по умолчанию они не поместятся на одной строке.</p>
+
+<p>Свойство <code>box-sizing</code> может изменять это поведение:</p>
+
+<ul>
+ <li><code>content-box</code> даёт стандартное поведение свойства box-sizing. Если вы выставите элементу ширину 100 пикселей, то ширина его контента будет 100 пикселей, а ширина границ и внутренних отступов при рендере будет добавлена к финальной ширине, делая элемент шире ста пикселей.</li>
+ <li><code>border-box</code> говорит браузеру учитывать любые границы и внутренние отступы в значениях, которые вы указываете в ширине и высоте элемента. Если вы выставите элементу ширину 100 пикселей, то эти 100 пикселей будут включать в себя границы и внутренние отступы, а контент сожмётся, чтобы выделить для них место. Обычно это упрощает работу с размерами элементов.</li>
+</ul>
+
+<div class="note notecard">
+<p><strong>Примечание: </strong>Часто выставление <code>box-sizing: border-box</code> полезно для размещения элементов. Оно сильно упрощает работу с размерами элементов, и как правило устраняет ряд подводных камней, на которые вы можете наткнуться, размещая контент. С другой стороны, используя <code>position-relative</code> или <code>position: absolute</code>, <code>box-sizing: content-box</code> позволяет позиционным значениям быть зависимыми только от контента, а не от границ и отступов, что иногда желательно.</p>
+</div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><p>Для свойства <code>box-sizing</code>&nbsp; устанавливается единственное ключевое слово из списка значений ниже.</p></div><h3 id="values"><a href="#values" title="Permalink to Значения">Значения</a></h3><div><dl>
+ <dt><code>content-box</code></dt>
+ <dd>Это значение по умолчанию, определённое в CSS стандарте. Свойства <a href="/css/width/">width</a> и <a href="/css/height/">height</a> включают исключительно контент, и не включают <a href="/css/padding/">padding</a> и <a href="/css/border/">border</a>. Например&nbsp;<code>.box {width: 350px; border: 10px solid black;}</code>&nbsp; будет иметь ширину 370 пикселей.</dd>
+ <dd>Размеры элемента рассчитываются следующим образом: <em>width = ширина контента</em>, и <em>height = высота контента</em>. (Границы и внутренние отступы не включаются в вычисление.)</dd>
+</dl>
+
+<dl>
+ <dt><code>border-box</code></dt>
+ <dd>Свойства <a href="/css/width/">width</a> и <a href="/css/height/">height</a> включают контент, внутренний отступ и границы, но не включают внешний отступ. Заметьте, что внутренний отступ и граница будут внутри блока. Например, <code>.box {width: 350px; border: 10px solid black;}</code> будет иметь общую ширину 350 пикселей, а ширина контента составит 330 пикселей. Размер контента не может быть отрицательным, минимальное значение - 0, поэтому <code>border-box</code> невозможно использовать для скрытия элемента.</dd>
+ <dd>Размеры элемента рассчитываются следующим образом: <em>width = граница + внутренний отступ + ширина контента</em>, и <em>height = граница + внутренний отступ + высота контента</em>.</dd>
+</dl></div><h3 id="формальный_синтаксис"><a href="#формальный_синтаксис" title="Permalink to Формальный синтаксис">Формальный синтаксис</a></h3><div><pre class="notranslate">content-box <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> border-box</pre>
+
+<div class="note notecard">
+<p><strong>Примечание:</strong> Значение <code>padding-box</code> устарело</p>
+</div></div><h2 id="пример"><a href="#пример" title="Permalink to Пример">Пример</a></h2><div><p>Этот пример показывает как разные значения <code>box-sizing</code> изменяют видимый размер двух идентичных элементов.</p></div><h3 id="html"><a href="#html" title="Permalink to HTML">HTML</a></h3><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>content-box<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Content box<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>border-box<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Border box<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre></div><h3 id="css"><a href="#css" title="Permalink to CSS">CSS</a></h3><div><pre class="brush: css notranslate"><code><span class="token selector">div</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 160px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 80px<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 8px solid red<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.content-box</span> <span class="token punctuation">{</span>
+  <span class="token property">box-sizing</span><span class="token punctuation">:</span> content-box<span class="token punctuation">;</span>
+  <span class="token comment">/* Total width: 160px + (2 * 20px) + (2 * 8px) = 216px
+     Total height: 80px + (2 * 20px) + (2 * 8px) = 136px
+     Content box width: 160px
+     Content box height: 80px */</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.border-box</span> <span class="token punctuation">{</span>
+  <span class="token property">box-sizing</span><span class="token punctuation">:</span> border-box<span class="token punctuation">;</span>
+  <span class="token comment">/* Total width: 160px
+     Total height: 80px
+     Content box width: 160px - (2 * 20px) - (2 * 8px) = 104px
+     Content box height: 80px - (2 * 20px) - (2 * 8px) = 24px */</span>
+<span class="token punctuation">}</span></code></pre></div><h3 id="результат"><a href="#результат" title="Permalink to Результат">Результат</a></h3><div><p><iframe class="sample-code-frame" id="frame_Пример" width="auto" height="300" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/box-sizing/_sample_.%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-ui-3/#box-sizing" hreflang="en" lang="en" class="external" rel=" noopener">CSS Basic User Interface Module Level&nbsp;3<br><small lang="ru">Определение 'box-sizing' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table>
+
+<p></p><table class="properties"><tbody><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td><code>content-box</code></td></tr><tr><th scope="row">Применяется к</th><td>все элементы, которые могут иметь ширину и высоту</td></tr><tr><th scope="row"><a href="/css/inheritance/">Наследуется</a></th><td>нет</td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>как указано</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/css/CSS_Box_Model/Introduction_to_the_CSS_box_model/" title="CSS/Box model">Блоковая модель CSS</a></li>
+</ul></div>

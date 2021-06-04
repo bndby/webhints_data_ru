@@ -1,0 +1,122 @@
+<h1>height</h1><div><div></div>
+
+<p>CSS атрибут <strong><code>height</code></strong> позволят обозначать высоту элемента. По умолчанию, свойство определяет высоту <a href="/css/CSS_Box_Model/Introduction_to_the_CSS_box_model#content/">внутренней области</a>. Если <a href="/css/box-sizing/"><code>box-sizing</code></a> имеет значение&nbsp;<code>border-box</code>, то свойство будет определять высоту <a href="/css/CSS_Box_Model/Introduction_to_the_CSS_box_model#border/">области рамки</a>.<br>
+ <br>
+ <iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/height.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></p>
+
+
+
+<p><br>
+ Атрибуты <a href="/css/min-height/"><code>min-height</code></a> и <a href="/css/max-height/"><code>max-height</code></a> при добавлении меняют значение&nbsp;<a href="/css/height/" aria-current="page"><code>height</code></a>.</p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="brush:css notranslate"><code><span class="token comment">/* Значения-ключевые слова */</span>
+<span class="token property">height</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+
+<span class="token comment">/* &lt;length&gt; значения */</span>
+<span class="token property">height</span><span class="token punctuation">:</span> 120px<span class="token punctuation">;</span>
+<span class="token property">height</span><span class="token punctuation">:</span> 10em<span class="token punctuation">;</span>
+
+<span class="token comment">/* &lt;percentage&gt; значения */</span>
+<span class="token property">height</span><span class="token punctuation">:</span> 75%<span class="token punctuation">;</span>
+
+<span class="token comment">/* Глобальные значения */</span>
+<span class="token property">height</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">height</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">height</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre></div><h3 id="значения"><a href="#значения" title="Permalink to Значения">Значения</a></h3><div><dl>
+ <dt><a href="/css/length/"><code>&lt;length&gt;</code></a></dt>
+ <dd>Высота - фиксированная величина.</dd>
+ <dt><a href="/css/percentage/"><code>&lt;percentage&gt;</code></a></dt>
+ <dd>Высота в процентах - размер относительно высоты родительского блока.</dd>
+ <dt><code>border-box</code>&nbsp;</dt>
+ <dd>Если присутствует, то предшествующие&nbsp;<a href="/css/length/"><code>&lt;length&gt;</code></a> или <a href="/css/percentage/"><code>&lt;percentage&gt;</code></a> применяются к области рамки&nbsp;элемента.</dd>
+ <dt><code>content-box</code>&nbsp;</dt>
+ <dd>Если присутствует, то предшествующие <a href="/css/length/"><code>&lt;length&gt;</code></a> or <a href="/css/percentage/"><code>&lt;percentage&gt;</code></a> применяются к внутренней области элемента.</dd>
+ <dt><code>auto</code></dt>
+ <dd>Браузер рассчитает и выберет высоту для указанного элемента.</dd>
+ <dt><code>fill</code>&nbsp;</dt>
+ <dd>Использует&nbsp;<code>fill-available</code>&nbsp;размер строки или&nbsp;<code>fill-available</code>&nbsp;размер блока, в зависимости от способа разметки.</dd>
+ <dt><code>max-content</code>&nbsp;</dt>
+ <dd>Внутренняя максимальная предпочтительная высота.</dd>
+ <dt><code>min-content</code>&nbsp;</dt>
+ <dd>Внутренняя минимальная предпочтительная высота.</dd>
+ <dt><code>available</code>&nbsp;</dt>
+ <dd>Высота содержащего блока минус вертикальные&nbsp;<code>margin</code>, <font face="consolas, Liberation Mono, courier, monospace"><span style="background-color: rgba(220, 220, 220, 0.5);">border</span></font>&nbsp;и <code>padding</code>.</dd>
+ <dt><code>fit-content</code>&nbsp;</dt>
+ <dd>Наибольшее из:
+ <ul>
+  <li>внутренняя минимальная высота</li>
+  <li>меньшая из внутренней предпочтительной высоты и доступной высоты</li>
+ </ul>
+ </dd>
+</dl></div><h3 id="формальный_синтаксис"><a href="#формальный_синтаксис" title="Permalink to Формальный синтаксис">Формальный синтаксис</a></h3><div><pre class="notranslate">auto <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <a href="/css/length/" title="Возможные значения: a number followed by'em', 'ex', 'ch', 'rem', 'px', 'cm', 'mm', 'in', 'vh', 'vw', 'vmin', 'vmax', 'pt', 'pc' или 'px', как 3px, 1.5cm, -0.5em или 0">&lt;length&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <a href="/css/percentage/" title>&lt;percentage&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> min-content <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> max-content <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> fit-content <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> fit-content(<a href="#length-percentage">&lt;length-percentage&gt;</a>)<p style="font-family:Open Sans,Arial,sans-serif; margin: 10px 0 0 0;">где <br><code style="font-family:Consolas,Monaco,&quot;Andale Mono&quot;,monospace;"><span id="length-percentage">&lt;length-percentage&gt;</span> = <a href="/css/length/" title="Возможные значения: a number followed by'em', 'ex', 'ch', 'rem', 'px', 'cm', 'mm', 'in', 'vh', 'vw', 'vmin', 'vmax', 'pt', 'pc' или 'px', как 3px, 1.5cm, -0.5em или 0">&lt;length&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <a href="/css/percentage/" title>&lt;percentage&gt;</a></code></p></pre></div><h2 id="пример"><a href="#пример" title="Permalink to Пример:">Пример:</a></h2><div></div><h3 id="html"><a href="#html" title="Permalink to HTML">HTML</a></h3><div><pre class="notranslate"><code>&lt;div id="taller"&gt;Я 50 пикселей в высоту.&lt;/div&gt;
+&lt;div id="shorter"&gt;Я 25 пикселей в высоту.&lt;/div&gt;
+&lt;div id="parent"&gt;
+  &lt;div id="child"&gt;
+    Моя высота - половина от высоты родителя.
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre></div><h3 id="css"><a href="#css" title="Permalink to CSS">CSS</a></h3><div><pre class="notranslate"><code>div {
+  width: 250px;
+  margin-bottom: 5px;
+  border: 2px solid blue;
+}
+
+#taller {
+  height: 50px;
+}
+
+#shorter {
+  height: 25px;
+}
+
+#parent {
+  height: 100px;
+}
+
+#child {
+  height: 50%;
+  width: 75%;
+}</code></pre>
+
+<p>&nbsp;</p></div><h3 id="результат"><a href="#результат" title="Permalink to Результат">Результат</a></h3><div><p><iframe class="sample-code-frame" id="frame_Example" width="auto" height="240" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/height/_sample_.Example.html" loading="lazy"></iframe></p>
+
+<p>&nbsp;</p></div><h2 id="проблемы_доступности"><a href="#проблемы_доступности" title="Permalink to Проблемы доступности">Проблемы доступности</a></h2><div><p>Убедитесь, что элементы с&nbsp;<code>height</code>&nbsp;не обрезаются и / или не затеняют другое содержимое, когда страница масштабируется для увеличения размера текста.&nbsp;</p>
+
+<ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/Understanding_WCAG/Perceivable#Guideline_1.4_Make_it_easier_for_users_to_see_and_hear_content_including_separating_foreground_from_background">MDN Understanding WCAG, Guideline 1.4 explanations</a></li>
+ <li><a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-scale.html" class="external" rel=" noopener">Understanding Success Criterion 1.4.4 | W3C Understanding WCAG 2.0</a></li>
+</ul></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-sizing-3/#width-height-keywords" hreflang="en" lang="en" class="external" rel=" noopener">CSS Box Sizing Module Level&nbsp;3<br><small lang="ru">Определение 'width' в этой спецификации.</small></a></td>
+   <td><span class="spec-wd">Рабочий черновик</span></td>
+   <td>Добавляет&nbsp;ключевые слова&nbsp;<code>max-content</code>,&nbsp;<code>min-content</code>,&nbsp;<code>available</code>,&nbsp;<code>fit-content</code>&nbsp;.</td>
+  </tr>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-transitions/#animatable-css" hreflang="en" lang="en" class="external" rel=" noopener">CSS Transitions<br><small lang="ru">Определение 'height' в этой спецификации.</small></a></td>
+   <td><span class="spec-wd">Рабочий черновик</span></td>
+   <td>Определяет&nbsp;<code>height</code> как анимируемое.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/CSS2/visudet.html#the-height-property" hreflang="en" lang="en" class="external" rel=" noopener">CSS Level&nbsp;2 (Revision&nbsp;1)<br><small lang="ru">Определение 'height' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Добавляет поддержку значений <a href="/css/length/"><code>&lt;length&gt;</code></a>&nbsp;и уточняет, к какому элементу применяется.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/CSS1/#height" hreflang="en" lang="en" class="external" rel=" noopener">CSS Level&nbsp;1<br><small lang="ru">Определение 'height' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Первоначальное определение</td>
+  </tr>
+ </tbody>
+</table>
+
+<p></p><table class="properties"><tbody><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td><code>auto</code></td></tr><tr><th scope="row">Применяется к</th><td>все элементы, кроме незаменяемых строчных элементов, табличных колонок и групп колонок</td></tr><tr><th scope="row"><a href="/css/inheritance/">Наследуется</a></th><td>нет</td></tr><tr><th scope="row">Проценты</th><td>Процент для генерируемого блока рассчитывается по отношению к высоте содержащего блока. Если высота содержащего блока не задана явно (т.е. зависит от высоты содержимого), и этот этот элемент позиционирован не абсолютно, значение будет <code>auto</code>. Процентная высота на корневом элементе относительна первоначальному блоку.</td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>процент, <code>auto</code> или абсолютная длина</td></tr><tr><th scope="row">Animation type</th><td><a href="/css/length#interpolation/" title="Значения типа данных CSS <длина> интерполируются как вещественные числа с плавающей запятой.">длина</a>, <a href="/css/percentage#interpolation/" title="Значения типа данных CSS <проценты> интерполируются как вещественные числа с плавающей запятой.">проценты</a> или calc();</td></tr></tbody></table><p></p></div><h2 id="поддержка_браузерами"><a href="#поддержка_браузерами" title="Permalink to Поддержка браузерами">Поддержка браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p>
+
+<p>&nbsp;</p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/css/CSS_Box_Model/Introduction_to_the_CSS_box_model/">Блочная модель</a>, <a href="/css/width/"><code>width</code></a>, <a href="/css/box-sizing/"><code>box-sizing</code></a>, <a href="/css/min-height/"><code>min-height</code></a>, <a href="/css/max-height/"><code>max-height</code></a></li>
+</ul></div>

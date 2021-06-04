@@ -1,0 +1,228 @@
+<h1>Array.prototype.filter()</h1><div><div></div>
+
+<p>Метод <code><strong>filter()</strong></code> создаёт новый массив со всеми элементами, прошедшими проверку, задаваемую в передаваемой функции.</p>
+
+<div><iframe class="interactive" width="100%" height="490" src="https://interactive-examples.mdn.mozilla.net/pages/js/array-filter.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+</div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="brush: js notranslate"><code><span class="token keyword">let</span> newArray <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token function">callback</span><span class="token punctuation">(</span>element<span class="token punctuation">[</span><span class="token punctuation">,</span> index<span class="token punctuation">,</span> <span class="token punctuation">[</span>array<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">,</span> thisArg<span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>callback</code></dt>
+ <dd>Функция, которая будет вызвана для каждого элемента массива. Если функция возвращает <code>true</code>, то элемент остаётся в массиве, если <code>false</code>, то удаляется.</dd>
+ <dd>В функцию будет передано три аргумента:</dd>
+ <dd>
+ <dl>
+  <dt><code>element</code></dt>
+  <dd>Текущий обрабатываемый элемент в массиве.</dd>
+  <dt><code>index</code><span class="badge inline optional">Необязательный</span></dt>
+  <dd>Индекс текущего обрабатываемого элемента в массиве.</dd>
+  <dt><code>array</code><span class="badge inline optional">Необязательный</span></dt>
+  <dd>Массив, по которому осуществляется проход.</dd>
+ </dl>
+ </dd>
+ <dt><code>thisArg</code> <span class="badge inline optional">Необязательный</span></dt>
+ <dd>Значение, используемое в качестве <code>this</code> при вызове функции <code>callback</code>.</dd>
+</dl></div><h3 id="возвращаемое_значение"><a href="#возвращаемое_значение" title="Permalink to Возвращаемое значение">Возвращаемое значение</a></h3><div><p>Вернётся новый массив с элементами, которые проходят тест, то есть <code>callback</code> вернёт <code>true</code>. Если ни один элемент не пройдёт тест, то будет возвращён пустой массив.</p></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Метод <code>filter()</code> вызывает переданную функцию <code>callback</code> один раз для каждого элемента, присутствующего в массиве, и конструирует новый массив со всеми значениями, для которых функция <code>callback</code> вернула <code>true</code> или <a href="https://developer.mozilla.org/ru/docs/Glossary/Truthy">значение, становящееся true при приведении в boolean</a>. Функция <code>callback</code> вызывается только для индексов массива, имеющих присвоенные значения; она не вызывается для индексов, которые были удалены или которым значения никогда не присваивались. Элементы массива, не прошедшие проверку функцией <code>callback</code>, просто пропускаются и не включаются в новый массив.</p>
+
+<p>Функция <code>callback</code> вызывается с тремя аргументами:</p>
+
+<ol>
+ <li>значение элемента;</li>
+ <li>индекс элемента;</li>
+ <li>массив, по которому осуществляется проход.</li>
+</ol>
+
+<p>Если в метод <code>filter()</code> был передан параметр <code>thisArg</code>, при вызове <code>callback</code> он будет использоваться в качестве значения <code>this</code>. В противном случае, в качестве значения <code>this</code> будет использоваться значение <code><a href="/js/undefined/"><code>undefined</code></a></code>. В конечном итоге, значение <code>this</code>, наблюдаемое из функции <code>callback</code>, определяется согласно <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/this"><code>обычным правилам определения <code>this</code>, видимого из функции</code></a>.</p>
+
+<p>Метод <code>filter()</code> не изменяет массив, для которого он был вызван.</p>
+
+<p>Диапазон элементов, обрабатываемых методом <code>filter()</code>, устанавливается до первого вызова функции <code>callback</code>. Элементы, добавленные в массив после начала выполнения метода <code>filter()</code>, не будут посещены функцией <code>callback</code>. Если существующие элементы массива изменятся, значения, переданные в функцию <code>callback</code>, будут значениями на тот момент времени, когда метод <code>filter()</code> посетит их; удалённые элементы посещены не будут.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="filtering_out_all_small_values"><a href="#filtering_out_all_small_values" title="Permalink to Отфильтровывание всех маленьких значений">Отфильтровывание всех маленьких значений</a></h3><div><p>Следующий пример использует <code>filter()</code> для создания отфильтрованного массива, все элементы которого больше или равны 10, а все меньшие 10 удалены.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">function</span> <span class="token function">isBigEnough</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> value <span class="token operator">&gt;=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> filtered <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">130</span><span class="token punctuation">,</span> <span class="token number">44</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>isBigEnough<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// массив filtered равен [12, 130, 44]</span>
+</code></pre></div><h3 id="find_all_prime_numbers_in_an_array"><a href="#find_all_prime_numbers_in_an_array" title="Permalink to Найти все простые числа в массиве">Найти все простые числа в массиве</a></h3><div><p>Следующий пример возвращает все простые числа в массиве:</p>
+
+<pre class="notranslate"><code>let array = [4, 6, 8, 9, 12, 53, -17, 2, 5, 7, 31, 97, -1, 17];
+
+function isPrime(num) {
+    if (num &lt;= 1)
+        return false;
+    else if (num === 2)
+        return true;
+    else {
+        for (let i = 2; i &lt; num; i++)
+            if (num % i === 0)
+                return false;
+        return true;
+    }
+}
+
+console.log(array.filter(isPrime));   // [53, 2, 5, 7, 31, 97, 17]</code></pre></div><h3 id="filtering_invalid_entries_from_json"><a href="#filtering_invalid_entries_from_json" title="Permalink to Фильтрация неверных записей в JSON">Фильтрация неверных записей в JSON</a></h3><div><p>В следующем примере метод <code>filter()</code> используется для создания отфильтрованного объекта JSON, все элементы которого содержат ненулевое числовое поле <code>id</code>.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span> id<span class="token operator">:</span> <span class="token number">15</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> id<span class="token operator">:</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> id<span class="token operator">:</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> id<span class="token operator">:</span> <span class="token number">3</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> id<span class="token operator">:</span> <span class="token number">12.2</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> id<span class="token operator">:</span> <span class="token keyword">null</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> id<span class="token operator">:</span> <span class="token number">NaN</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> id<span class="token operator">:</span> <span class="token string">'undefined'</span> <span class="token punctuation">}</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> invalidEntries <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">isNumber</span><span class="token punctuation">(</span><span class="token parameter">obj</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> obj<span class="token operator">!==</span> <span class="token keyword">undefined</span> <span class="token operator">&amp;&amp;</span> <span class="token keyword">typeof</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'number'</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span><span class="token function">isNaN</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">filterByID</span><span class="token punctuation">(</span><span class="token parameter">item</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isNumber</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span>id<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> item<span class="token punctuation">.</span>id <span class="token operator">!==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    invalidEntries<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> arrByID <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>filterByID<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Отфильтрованный массив\n'</span><span class="token punctuation">,</span> arrByID<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Filtered Array</span>
+<span class="token comment">// [{ id: 15 }, { id: -1 }, { id: 3 }, { id: 12.2 }]</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Количество ошибочных записей = '</span><span class="token punctuation">,</span> invalidEntries<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Number of Invalid Entries = 5</span>
+
+</code></pre></div><h3 id="поиск_в_массиве"><a href="#поиск_в_массиве" title="Permalink to Поиск в массиве">Поиск в массиве</a></h3><div><p>В следующем примере <code>filter()</code> используется для фильтрации содержимого массива на основе входных данных.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> fruits <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'apple'</span><span class="token punctuation">,</span> <span class="token string">'banana'</span><span class="token punctuation">,</span> <span class="token string">'grapes'</span><span class="token punctuation">,</span> <span class="token string">'mango'</span><span class="token punctuation">,</span> <span class="token string">'orange'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * Элементы массива фильтруется на основе критериев поиска (query)
+*/</span>
+<span class="token keyword">function</span> <span class="token function">filterItems</span><span class="token punctuation">(</span><span class="token parameter">query</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> fruits<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">el</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> el<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>query<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">filterItems</span><span class="token punctuation">(</span><span class="token string">'ap'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ['apple', 'grapes']</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">filterItems</span><span class="token punctuation">(</span><span class="token string">'an'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ['banana', 'mango', 'orange']</span></code></pre></div><h3 id="es2015_implementation"><a href="#es2015_implementation" title="Permalink to ES2015 реализация">ES2015 реализация</a></h3><div><pre class="brush: js notranslate"><code><span class="token keyword">const</span> fruits <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'apple'</span><span class="token punctuation">,</span> <span class="token string">'banana'</span><span class="token punctuation">,</span> <span class="token string">'grapes'</span><span class="token punctuation">,</span> <span class="token string">'mango'</span><span class="token punctuation">,</span> <span class="token string">'orange'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * Элементы массива фильтруется на основе критериев поиска (query)
+ */</span>
+<span class="token keyword">const</span> <span class="token function-variable function">filterItems</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">query</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> fruits<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">el</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span>
+    el<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>query<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token operator">-</span><span class="token number">1</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">filterItems</span><span class="token punctuation">(</span><span class="token string">'ap'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ['apple', 'grapes']</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">filterItems</span><span class="token punctuation">(</span><span class="token string">'an'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ['banana', 'mango', 'orange']</span>
+
+</code></pre></div><h3 id="affecting_initial_array_modifying_appending_and_deleting"><a href="#affecting_initial_array_modifying_appending_and_deleting" title="Permalink to Влияние на начальный массив (изменение, добавление и удаление)">Влияние на начальный массив (изменение, добавление и удаление)</a></h3><div><p>В следующих примерах проверяется поведение метода <code>filter</code> при изменении массива.</p>
+
+<pre class="brush: js notranslate"><code><span class="token comment">// Изменение всех элементов</span>
+<span class="token keyword">let</span> words <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'spray'</span><span class="token punctuation">,</span> <span class="token string">'limit'</span><span class="token punctuation">,</span> <span class="token string">'exuberant'</span><span class="token punctuation">,</span> <span class="token string">'destruction'</span><span class="token punctuation">,</span><span class="token string">'elite'</span><span class="token punctuation">,</span> <span class="token string">'present'</span><span class="token punctuation">]</span>
+
+<span class="token keyword">const</span> modifiedWords <span class="token operator">=</span> words<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span> <span class="token punctuation">(</span><span class="token parameter">word<span class="token punctuation">,</span> index<span class="token punctuation">,</span> arr</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  arr<span class="token punctuation">[</span>index<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+=</span><span class="token string">' extra'</span>
+  <span class="token keyword">return</span> word<span class="token punctuation">.</span>length <span class="token operator">&lt;</span> <span class="token number">6</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>modifiedWords<span class="token punctuation">)</span>
+<span class="token comment">// Обратите внимание, что есть три слова длиной менее 6, но так как они были изменены,</span>
+<span class="token comment">// возвращается одно слово ['spray']</span>
+
+<span class="token comment">// Добавление новых элементов</span>
+words <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'spray'</span><span class="token punctuation">,</span> <span class="token string">'limit'</span><span class="token punctuation">,</span> <span class="token string">'exuberant'</span><span class="token punctuation">,</span> <span class="token string">'destruction'</span><span class="token punctuation">,</span><span class="token string">'elite'</span><span class="token punctuation">,</span> <span class="token string">'present'</span><span class="token punctuation">]</span>
+<span class="token keyword">const</span> appendedWords <span class="token operator">=</span> words<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span> <span class="token punctuation">(</span><span class="token parameter">word<span class="token punctuation">,</span> index<span class="token punctuation">,</span> arr</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">'new'</span><span class="token punctuation">)</span>
+  <span class="token keyword">return</span> word<span class="token punctuation">.</span>length <span class="token operator">&lt;</span> <span class="token number">6</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>appendedWords<span class="token punctuation">)</span>
+<span class="token comment">// Только три слова удовлетворяют условию, хотя `words` теперь имеет куда больше слов,</span>
+<span class="token comment">// длинной меньше 6 символов: ['spray', 'limit', 'elite']</span>
+
+<span class="token comment">// Удаление элементов</span>
+words <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'spray'</span><span class="token punctuation">,</span> <span class="token string">'limit'</span><span class="token punctuation">,</span> <span class="token string">'exuberant'</span><span class="token punctuation">,</span> <span class="token string">'destruction'</span><span class="token punctuation">,</span> <span class="token string">'elite'</span><span class="token punctuation">,</span> <span class="token string">'present'</span><span class="token punctuation">]</span>
+<span class="token keyword">const</span> deleteWords <span class="token operator">=</span> words<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span> <span class="token punctuation">(</span><span class="token parameter">word<span class="token punctuation">,</span> index<span class="token punctuation">,</span> arr</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  arr<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token keyword">return</span> word<span class="token punctuation">.</span>length <span class="token operator">&lt;</span> <span class="token number">6</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>deleteWords<span class="token punctuation">)</span>
+<span class="token comment">// Заметьте, что 'elite' не получено, так как удалено из `words` до того,</span>
+<span class="token comment">// как filter смог получить его: ['spray', 'limit']</span></code></pre></div><h2 id="polyfill"><a href="#polyfill" title="Permalink to Полифил">Полифил</a></h2><div><p>Метод <code>filter()</code> был добавлен к стандарту ECMA-262 в 5-м издании; поэтому он может отсутствовать в других реализациях стандарта. Вы можете работать с ним, добавив следующий код в начало ваших скриптов, он позволяет использовать <code>filter()</code> в реализациях, которые не поддерживают этот метод. Этот алгоритм является точно тем, что описан в ECMA-262 5-го издания; он предполагает, что <code>fn.call</code> вычисляется в оригинальное значение <a href="/js/Function/call/"><code>Function.prototype.call()</code></a> и что <a href="/js/Array/push/"><code>Array.prototype.push()</code></a> содержит своё оригинальное значение.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>filter<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">filter</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>fun<span class="token comment">/*, thisArg*/</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token string">'use strict'</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token operator">===</span> <span class="token keyword">void</span> <span class="token number">0</span> <span class="token operator">||</span> <span class="token keyword">this</span> <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">TypeError</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">var</span> t <span class="token operator">=</span> <span class="token function">Object</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> len <span class="token operator">=</span> t<span class="token punctuation">.</span>length <span class="token operator">&gt;&gt;&gt;</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> fun <span class="token operator">!==</span> <span class="token string">'function'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">TypeError</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">var</span> res <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> thisArg <span class="token operator">=</span> arguments<span class="token punctuation">.</span>length <span class="token operator">&gt;=</span> <span class="token number">2</span> <span class="token operator">?</span> arguments<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">:</span> <span class="token keyword">void</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> len<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token keyword">in</span> t<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> val <span class="token operator">=</span> t<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// ПРИМЕЧАНИЕ: Технически, здесь должен быть Object.defineProperty на</span>
+        <span class="token comment">//             следующий индекс, поскольку push может зависеть от</span>
+        <span class="token comment">//             свойств на Object.prototype и Array.prototype.</span>
+        <span class="token comment">//             Но этот метод новый и коллизии должны быть редкими,</span>
+        <span class="token comment">//             так что используем более совместимую альтернативу.</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">fun</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>thisArg<span class="token punctuation">,</span> val<span class="token punctuation">,</span> i<span class="token punctuation">,</span> t<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          res<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> res<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-15.4.4.20" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 5.1 (ECMA-262)<br><small lang="ru">Определение 'Array.prototype.filter' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Изначальное определение. Реализована в JavaScript 1.6.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-array.prototype.filter" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Array.prototype.filter' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td><a href="https://tc39.es/ecma262/#sec-array.prototype.filter" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript (ECMA-262)<br><small lang="ru">Определение 'Array.prototype.filter' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><div>
+<p></p><p></p>
+</div></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/Array/forEach/"><code>Array.prototype.forEach()</code></a></li>
+ <li><a href="/js/Array/every/"><code>Array.prototype.every()</code></a></li>
+ <li><a href="/js/Array/some/"><code>Array.prototype.some()</code></a></li>
+ <li><a href="/js/Array/Reduce/"><code>Array.prototype.reduce()</code></a></li>
+</ul></div>

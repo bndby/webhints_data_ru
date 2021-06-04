@@ -1,0 +1,73 @@
+<h1>String.prototype.codePointAt()</h1><div><div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Метод <strong><code>codePointAt()</code></strong> возвращает неотрицательное целое число, являющееся закодированным в UTF-16 значением кодовой точки.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code><var>str</var>.codePointAt(<var>pos</var>)</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>pos</code></dt>
+ <dd>Позиция элемента в строке, чья кодовая точка возвращается функцией.</dd>
+</dl></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Если на указанной позиции нет элементов, будет возвращено значение <a href="/js/undefined/"><code>undefined</code></a>. Если суррогатная пара UTF-16 не начинается в позиции <code>pos</code>, будет возвращено кодовое значение в позиции <code>pos</code>.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_using_codepointat"><a href="#example_using_codepointat" title="Permalink to Пример: использование метода codePointAt()">Пример: использование метода <code>codePointAt()</code></a></h3><div><pre class="brush: js notranslate"><code><span class="token string">'ABC'</span><span class="token punctuation">.</span><span class="token function">codePointAt</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>          <span class="token comment">// 66</span>
+<span class="token string">'\uD800\uDC00'</span><span class="token punctuation">.</span><span class="token function">codePointAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 65536</span>
+
+<span class="token string">'XYZ'</span><span class="token punctuation">.</span><span class="token function">codePointAt</span><span class="token punctuation">(</span><span class="token number">42</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// undefined</span>
+</code></pre></div><h2 id="polyfill"><a href="#polyfill" title="Permalink to Полифил">Полифил</a></h2><div><p>Следующий полифил расширяет прототип строки определённой в ECMAScript 6 функцией <code>codePointAt()</code>, если браузер не имеет её родной поддержки.</p>
+
+<pre class="brush: js notranslate"><code><span class="token comment">/*! http://mths.be/codepointat v0.1.0 от @mathias */</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token class-name">String</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>codePointAt<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token string">'use strict'</span><span class="token punctuation">;</span> <span class="token comment">// необходимо для поддержки методов `apply`/`call` с `undefined`/`null`</span>
+    <span class="token keyword">var</span> <span class="token function-variable function">codePointAt</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">position</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">throw</span> <span class="token function">TypeError</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">var</span> string <span class="token operator">=</span> <span class="token function">String</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">var</span> size <span class="token operator">=</span> string<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+      <span class="token comment">// `ToInteger`</span>
+      <span class="token keyword">var</span> index <span class="token operator">=</span> position <span class="token operator">?</span> <span class="token function">Number</span><span class="token punctuation">(</span>position<span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>index <span class="token operator">!=</span> index<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// лучше, чем `isNaN`</span>
+        index <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token comment">// Проверяем выход индекса за границы строки</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>index <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token operator">||</span> index <span class="token operator">&gt;=</span> size<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">undefined</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token comment">// Получаем первое кодовое значение</span>
+      <span class="token keyword">var</span> first <span class="token operator">=</span> string<span class="token punctuation">.</span><span class="token function">charCodeAt</span><span class="token punctuation">(</span>index<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">var</span> second<span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span> <span class="token comment">// проверяем, не начинает ли оно суррогатную пару</span>
+        first <span class="token operator">&gt;=</span> <span class="token number">0xD800</span> <span class="token operator">&amp;&amp;</span> first <span class="token operator">&lt;=</span> <span class="token number">0xDBFF</span> <span class="token operator">&amp;&amp;</span> <span class="token comment">// старшая часть суррогатной пары</span>
+        size <span class="token operator">&gt;</span> index <span class="token operator">+</span> <span class="token number">1</span> <span class="token comment">// следующее кодовое значение</span>
+      <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        second <span class="token operator">=</span> string<span class="token punctuation">.</span><span class="token function">charCodeAt</span><span class="token punctuation">(</span>index <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>second <span class="token operator">&gt;=</span> <span class="token number">0xDC00</span> <span class="token operator">&amp;&amp;</span> second <span class="token operator">&lt;=</span> <span class="token number">0xDFFF</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// младшая часть суррогатной пары</span>
+          <span class="token comment">// http://mathiasbynens.be/notes/javascript-encoding#surrogate-formulae</span>
+          <span class="token keyword">return</span> <span class="token punctuation">(</span>first <span class="token operator">-</span> <span class="token number">0xD800</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">0x400</span> <span class="token operator">+</span> second <span class="token operator">-</span> <span class="token number">0xDC00</span> <span class="token operator">+</span> <span class="token number">0x10000</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">return</span> first<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>Object<span class="token punctuation">.</span>defineProperty<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">.</span>prototype<span class="token punctuation">,</span> <span class="token string">'codePointAt'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+        <span class="token string">'value'</span><span class="token operator">:</span> codePointAt<span class="token punctuation">,</span>
+        <span class="token string">'configurable'</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        <span class="token string">'writable'</span><span class="token operator">:</span> <span class="token boolean">true</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token class-name">String</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>codePointAt <span class="token operator">=</span> codePointAt<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-string.prototype.codepointat" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'String.prototype.codePointAt' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Изначальное определение.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/String/fromCodePoint/"><code>String.fromCodePoint()</code></a></li>
+ <li><a href="/js/String/fromCharCode/"><code>String.fromCharCode()</code></a></li>
+ <li><a href="/js/String/charCodeAt/"><code>String.prototype.charCodeAt()</code></a></li>
+ <li><a href="/js/String/charAt/"><code>String.prototype.charAt()</code></a></li>
+</ul></div>

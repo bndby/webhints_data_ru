@@ -1,0 +1,99 @@
+<h1>&lt;gradient&gt;</h1><div><div></div>
+
+<p>The <strong><code>&lt;gradient&gt;</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Types">data type</a> is a special type of <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/image"><code>&lt;image&gt;</code></a> that consists of a progressive transition between two or more colors.</p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/type-gradient.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+
+
+<p>A CSS gradient has <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/image#no_intrinsic">no intrinsic dimensions</a>; i.e., it has no natural or preferred size, nor a preferred ratio. Its concrete size will match the size of the element to which it applies.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><p>The <code>&lt;gradient&gt;</code> data type is defined with one of the function types listed below.</p>
+
+<div id="linear-gradient">
+<h4 id="linear_gradient">Linear gradient</h4>
+
+<p>Linear gradients transition colors progressively along an imaginary line. They are generated with the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient()"><code>linear-gradient()</code></a> function.</p>
+</div>
+
+<div id="radial-gradient">
+<h4 id="radial_gradient">Radial gradient</h4>
+
+<p>Radial gradients transition colors progressively from a center point (origin). They are generated with the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/radial-gradient()"><code>radial-gradient()</code></a> function.</p>
+</div>
+
+<div id="repeating-gradient">
+<h4 id="repeating_gradient">Repeating gradient</h4>
+
+<p>Repeating gradients duplicate a gradient as much as necessary to fill a given area. They are generated with the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/repeating-linear-gradient()"><code>repeating-linear-gradient()</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/repeating-radial-gradient()"><code>repeating-radial-gradient()</code></a> functions.</p>
+</div>
+
+<div id="conic-gradient">
+<h4 id="conic_gradient">Conic gradient</h4>
+
+<p>Conic gradients transition colors progressively around a circle. They are generated with the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/conic-gradient()"><code>conic-gradient()</code></a> function.</p>
+</div></div><h2 id="interpolation"><a href="#interpolation" title="Permalink to Interpolation">Interpolation</a></h2><div><p>As with any interpolation involving colors, gradients are calculated in the alpha-premultiplied color space. This prevents unexpected shades of gray from appearing when both the color and the opacity are changing. (Be aware that older browsers may not use this behavior when using the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#transparent_keyword">transparent keyword</a>.)</p></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="linear_gradient_example"><a href="#linear_gradient_example" title="Permalink to Linear gradient example">Linear gradient example</a></h3><div><p>A simple linear gradient.</p>
+
+
+
+<pre class="brush: css notranslate"><code><span class="token selector">.linear-gradient</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>to right<span class="token punctuation">,</span>
+      red<span class="token punctuation">,</span> orange<span class="token punctuation">,</span> yellow<span class="token punctuation">,</span> green<span class="token punctuation">,</span> blue<span class="token punctuation">,</span> indigo<span class="token punctuation">,</span> violet<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<p><iframe class="sample-code-frame" id="frame_Linear_gradient_example" width="240" height="120" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/gradient/_sample_.Linear_gradient_example.html" loading="lazy"></iframe></p></div><h3 id="radial_gradient_example"><a href="#radial_gradient_example" title="Permalink to Radial gradient example">Radial gradient example</a></h3><div><p>A simple radial gradient.</p>
+
+
+
+<pre class="brush: css notranslate"><code><span class="token selector">.radial-gradient</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">radial-gradient</span><span class="token punctuation">(</span>red<span class="token punctuation">,</span> yellow<span class="token punctuation">,</span> <span class="token function">rgb</span><span class="token punctuation">(</span>30<span class="token punctuation">,</span> 144<span class="token punctuation">,</span> 255<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p><iframe class="sample-code-frame" id="frame_Radial_gradient_example" width="240" height="120" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/gradient/_sample_.Radial_gradient_example.html" loading="lazy"></iframe></p></div><h3 id="repeating_gradient_examples"><a href="#repeating_gradient_examples" title="Permalink to Repeating gradient examples">Repeating gradient examples</a></h3><div><p>Simple repeating linear and radial gradient examples.</p>
+
+
+
+<pre class="brush: css notranslate"><code><span class="token selector">.linear-repeat</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">repeating-linear-gradient</span><span class="token punctuation">(</span>to top left<span class="token punctuation">,</span>
+      lightpink<span class="token punctuation">,</span> lightpink 5px<span class="token punctuation">,</span> white 5px<span class="token punctuation">,</span> white 10px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.radial-repeat</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">repeating-radial-gradient</span><span class="token punctuation">(</span>powderblue<span class="token punctuation">,</span> powderblue 8px<span class="token punctuation">,</span> white 8px<span class="token punctuation">,</span> white 16px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<p><iframe class="sample-code-frame" id="frame_Repeating_gradient_examples" width="240" height="220" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/gradient/_sample_.Repeating_gradient_examples.html" loading="lazy"></iframe></p></div><h3 id="conic_gradient_example"><a href="#conic_gradient_example" title="Permalink to Conic gradient example">Conic gradient example</a></h3><div><p>A simple conic gradient example. Note that this isn't supported widely across browser as of yet.</p>
+
+
+
+<pre class="brush: css notranslate"><code><span class="token selector">.conic-gradient</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">conic-gradient</span><span class="token punctuation">(</span>lightpink<span class="token punctuation">,</span> white<span class="token punctuation">,</span> powderblue<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p><iframe class="sample-code-frame" id="frame_Conic_gradient_example" width="240" height="240" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/gradient/_sample_.Conic_gradient_example.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-images-4/#gradients" hreflang="en" lang="en" class="external" rel=" noopener">CSS Images Module Level&nbsp;4<br><small lang="en-US">The definition of '&lt;gradient&gt;' in that specification.</small></a></td>
+   <td><span class="spec-wd">Working Draft</span></td>
+   <td>Adds conic-gradient</td>
+  </tr>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-images-3/#gradients" hreflang="en" lang="en" class="external" rel=" noopener">CSS Images Module Level&nbsp;3<br><small lang="en-US">The definition of '&lt;gradient&gt;' in that specification.</small></a></td>
+   <td><span class="spec-cr">Candidate Recommendation</span></td>
+   <td>Initial definition.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><div></div></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Using_CSS_gradients">Using CSS gradients</a></li>
+ <li>Gradient functions: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient()"><code>linear-gradient()</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/radial-gradient()"><code>radial-gradient()</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/repeating-linear-gradient()"><code>repeating-linear-gradient()</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/repeating-radial-gradient()"><code>repeating-radial-gradient()</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/conic-gradient()"><code>conic-gradient()</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Types">CSS Basic Data Types</a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Values_and_Units">CSS Units and Values</a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units">Introduction to CSS: Values and Units</a></li>
+</ul></div>

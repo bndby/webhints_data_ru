@@ -1,0 +1,81 @@
+<h1>Array.prototype.concat()</h1><div><div></div>
+
+<p>Метод <code><strong>concat()</strong></code> возвращает новый массив, состоящий из массива, на котором он был вызван, соединённого с другими массивами и/или значениями, переданными в качестве аргументов.</p>
+
+<div><iframe class="interactive" width="100%" height="490" src="https://interactive-examples.mdn.mozilla.net/pages/js/array-concat.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+</div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code>var <var>new_array</var> = <var>old_array</var>.concat(<var>value1</var>[, <var>value2</var>[, ...[, <var>valueN</var>]]])</code></pre></div><h3 id="параметры"><a href="#параметры" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>value<em>N</em></code></dt>
+ <dd>Массивы и/или значения, соединяемые в новый массив. Смотрите описание ниже.</dd>
+</dl></div><h3 id="возвращаемое_значение"><a href="#возвращаемое_значение" title="Permalink to Возвращаемое значение">Возвращаемое значение</a></h3><div><p>Новый экземпляр <a href="/js/Array/"><code>Array</code></a>.</p></div><h2 id="описание"><a href="#описание" title="Permalink to Описание">Описание</a></h2><div><p>Метод <code>concat</code> создаёт новый массив, состоящий из элементов в объекте, на котором он был вызван, за которыми по порядку следуют, для каждого аргумента, все его элементы (если аргумент является массивом), либо сам аргумент (если он массивом не является).</p>
+
+<p>Метод <code>concat</code> не изменяет данный массив или любой из массивов, переданных в аргументах, а вместо этого возвращает поверхностную копию, содержащую копии тех элементов, что были объединены с исходными массивами. Элементы оригинальных массивов копируются в новый массив по следующим правилам:</p>
+
+<ul>
+ <li>Ссылки на объекты (но не фактические объекты): метод <code>concat</code> копирует ссылки на объекты в новый массив. И оригинал, и новый массив ссылаются на один и тот же объект. То есть, если объект по ссылке будет изменён, изменения будут видны и в новом, и в исходном массивах.</li>
+ <li>Строки, числа и булевы значения (но не объекты <a href="/js/String/"><code>String</code></a>, <a href="/js/Number/"><code>Number</code></a> или <a href="/js/Boolean/"><code>Boolean</code></a>): метод <code>concat</code> копирует значения строк и чисел в новый массив.</li>
+</ul>
+
+<div class="note notecard">
+<p><strong>Примечание:</strong> Соединение массивов и/или значений в новый массив оставит соединяемые массивы/значения неизменными. Кроме того, любая операция над новым массивом (если только элемент не является ссылкой) не будет затрагивать исходные массивы и наоборот.</p>
+</div></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="соединение_двух_массивов"><a href="#соединение_двух_массивов" title="Permalink to Соединение двух массивов">Соединение двух массивов</a></h3><div><p>Следующий код соединяет два массива:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> alpha <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    numeric <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> alphaNumeric <span class="token operator">=</span> alpha<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>numeric<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>alphaNumeric<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Результат: ['a', 'b', 'c', 1, 2, 3]</span>
+</code></pre></div><h3 id="соединение_трёх_массивов"><a href="#соединение_трёх_массивов" title="Permalink to Соединение трёх массивов">Соединение трёх массивов</a></h3><div><p>Следующий код соединяет три массива:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> num1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    num2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    num3 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> nums <span class="token operator">=</span> num1<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>num2<span class="token punctuation">,</span> num3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Результат: [1, 2, 3, 4, 5, 6, 7, 8, 9]</span>
+</code></pre></div><h3 id="соединение_значений_в_массив"><a href="#соединение_значений_в_массив" title="Permalink to Соединение значений в массив">Соединение значений в массив</a></h3><div><p>Следующий код соединяет три значения в массив:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> alpha <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> alphaNumeric <span class="token operator">=</span> alpha<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>alphaNumeric<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Результат: ['a', 'b', 'c', 1, 2, 3]</span>
+</code></pre></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-262,%203rd%20edition,%20December%201999.pdf" hreflang="en" lang="en" class="external" title="Спецификация 'ECMAScript 3rd Edition (ECMA-262)'" rel=" noopener">ECMAScript 3rd Edition (ECMA-262)</a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Изначальное определение. Реализована в JavaScript 1.2.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-15.4.4.4" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 5.1 (ECMA-262)<br><small lang="ru">Определение 'Array.prototype.concat' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-array.prototype.concat" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Array.prototype.concat' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td><a href="https://tc39.es/ecma262/#sec-array.prototype.concat" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript (ECMA-262)<br><small lang="ru">Определение 'Array.prototype.concat' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="совместимость_с_браузерами"><a href="#совместимость_с_браузерами" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><div>
+<p></p><p></p>
+</div></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/Array/push/"><code>push</code></a> / <a href="/js/Array/pop/"><code>pop</code></a>&nbsp;— добавление / удаление элементов с конца массива</li>
+ <li><a href="/js/Array/unshift/"><code>unshift</code></a> / <a href="/js/Array/shift/"><code>shift</code></a>&nbsp;— добавление / удаление элементов с начала массива</li>
+ <li><a href="/js/Array/splice/"><code>splice</code></a>&nbsp;— добавление / удаление элементов в указанной позиции массива</li>
+ <li><a href="/js/String/concat/"><code>String.prototype.concat()</code></a></li>
+ <li><a href="/js/Symbol/isConcatSpreadable/"><code>Symbol.isConcatSpreadable</code></a> — управление уменьшением размерности массива</li>
+</ul></div>

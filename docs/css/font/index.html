@@ -1,0 +1,114 @@
+<h1>font</h1><div><div></div>
+
+<p>CSS-свойство <strong><code>font</code></strong> является сокращением для <a href="/css/font-style/"><code>font-style</code></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant"><code>font-variant</code> <span>(en-US)</span></a>, <a href="/css/font-weight/"><code>font-weight</code></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-stretch"><code>font-stretch</code> <span>(en-US)</span></a>, <a href="/css/font-size/"><code>font-size</code></a>, <a href="/css/line-height/"><code>line-height</code></a>, и <a href="/css/font-family/"><code>font-family</code></a>. Кроме того, он позволяет установить системный шрифт для элементов интерфейса.</p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/font.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+
+
+<p>Как и с любым сокращённым свойством, любое значение, которое не указано, устанавливается в начальное значение (возможно, переопределяя значения, ранее установленные с использованием не сокращённых свойств). Свойства&nbsp;<a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-size-adjust"><code>font-size-adjust</code> <span>(en-US)</span></a> и <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-kerning"><code>font-kerning</code> <span>(en-US)</span></a> хоть и не могут быть напрямую установлены с помощью&nbsp;<code>font</code>, но они&nbsp;также сбрасываются к своим начальным значениям.</p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><p>The <code>font</code> property may be specified as either a single keyword, which will select a system font, or as a shorthand for various font-related properties.</p>
+
+<p>If <code>font</code> is specified as a system keyword, it must be one of: <code><a href="#caption">caption</a></code>, <code><a href="#icon">icon</a></code>, <code><a href="#menu">menu</a></code>, <code><a href="#message-box">message-box</a></code>, <code><a href="#small-caption">small-caption</a></code>, <code><a href="#status-bar">status-bar</a></code>.</p>
+
+<p>If <code>font</code> is specified as a shorthand for several font-related properties, then:</p>
+
+<ul>
+ <li>it must include values for:
+  <ul>
+   <li><a href="/css/font-size/"><code>&lt;font-size&gt;</code></a></li>
+   <li><a href="/css/font-family/"><code>&lt;font-family&gt;</code></a></li>
+  </ul>
+ </li>
+ <li>it may optionally include values for:
+  <ul>
+   <li><a href="/css/font-style/"><code>&lt;font-style&gt;</code></a></li>
+   <li><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant"><code>&lt;font-variant&gt;</code> <span>(en-US)</span></a></li>
+   <li><a href="/css/font-weight/"><code>&lt;font-weight&gt;</code></a></li>
+   <li><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-stretch"><code>&lt;font-stretch&gt;</code> <span>(en-US)</span></a></li>
+   <li><a href="/css/line-height/"><code>&lt;line-height&gt;</code></a></li>
+  </ul>
+ </li>
+ <li><code>font-style</code>, <code>font-variant</code> and <code>font-weight</code> must precede <code>font-size</code></li>
+ <li><code>font-variant</code> may only specify the values defined in CSS 2.1, that is <code>normal</code> and <code>small-caps</code></li>
+ <li><code>font-stretch</code> may only be a single keyword value.</li>
+ <li><code>line-height</code> must immediately follow <code>font-size</code>, preceded by "/", like this: "<code>16px/3</code>"</li>
+ <li><code>font-family</code> must be the last value specified.</li>
+</ul></div><h3 id="значения"><a href="#значения" title="Permalink to Значения">Значения</a></h3><div><dl>
+ <dt id="<'font-style'>"><code>&lt;'font-style'&gt;</code></dt>
+ <dd>See the <a href="/css/font-style/"><code>font-style</code></a> CSS property.</dd>
+ <dt id="<'font-variant'>"><code>&lt;'font-variant'&gt;</code></dt>
+ <dd>See the <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant"><code>font-variant</code> <span>(en-US)</span></a> CSS property.</dd>
+ <dt id="<'font-weight'>"><code>&lt;'font-weight'&gt;</code></dt>
+ <dd>See the <a href="/css/font-weight/"><code>font-weight</code></a> CSS property.</dd>
+ <dt id="<'font-stretch'>"><code>&lt;'font-stretch'&gt;</code></dt>
+ <dd>See the <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-stretch"><code>font-stretch</code> <span>(en-US)</span></a> CSS property.</dd>
+ <dt id="<'font-size'>"><code>&lt;'font-size'&gt;</code></dt>
+ <dd>See the <a href="/css/font-size/"><code>font-size</code></a> CSS property.</dd>
+ <dt id="<'line-height'>"><code>&lt;'line-height'&gt;</code></dt>
+ <dd>See the <a href="/css/line-height/"><code>line-height</code></a> CSS property.</dd>
+ <dt id="<'font-family'>"><code>&lt;'font-family'&gt;</code></dt>
+ <dd>See the <a href="/css/font-family/"><code>font-family</code></a> CSS property.</dd>
+</dl>
+
+<h4 id="system_font_values">System font values</h4>
+
+<dl>
+ <dt id="caption"><code>caption</code></dt>
+ <dd>The system font used for captioned controls (e.g., buttons, drop-downs, etc.).</dd>
+ <dt id="icon"><code>icon</code></dt>
+ <dd>The system font used to label icons.</dd>
+ <dt id="menu"><code>menu</code></dt>
+ <dd>The system font used in menus (e.g., dropdown menus and menu lists).</dd>
+ <dt id="message-box"><code>message-box</code></dt>
+ <dd>The system font used in dialog boxes.</dd>
+ <dt id="small-caption"><code>small-caption</code></dt>
+ <dd>The system font used for labeling small controls.</dd>
+ <dt id="status-bar"><code>status-bar</code></dt>
+ <dd>The system font used in window status bars.</dd>
+ <dt>Prefixed system font keywords</dt>
+ <dd>Browsers often implement several more, prefixed, keywords: Gecko implements <code>-moz-window</code>, <code>-moz-document</code>, <code>-moz-desktop</code>, <code>-moz-info</code>, <code>-moz-dialog</code>, <code>-moz-button</code>, <code>-moz-pull-down-menu</code>, <code>-moz-list</code>, and <code>-moz-field</code>.</dd>
+</dl></div><h3 id="формальный_синтаксис"><a href="#формальный_синтаксис" title="Permalink to Формальный синтаксис">Формальный синтаксис</a></h3><div><pre class="notranslate"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> <a href="/css/font-style/" title="normal | italic | oblique <angle>?">&lt;'font-style'&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_bar" title="Currently only available in English (US)" class="only-in-en-us">|| (en-US)</a> <a href="#font-variant-css21">&lt;font-variant-css21&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_bar" title="Currently only available in English (US)" class="only-in-en-us">|| (en-US)</a> <a href="/css/font-weight/" title="<font-weight-absolute> | bolder | lighter">&lt;'font-weight'&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_bar" title="Currently only available in English (US)" class="only-in-en-us">|| (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-stretch" title="Currently only available in English (US)" class="only-in-en-us">&lt;'font-stretch'&gt; (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#question_mark_()" title="Currently only available in English (US)" class="only-in-en-us">? (en-US)</a> <a href="/css/font-size/" title="<absolute-size> | <relative-size> | <length-percentage>">&lt;'font-size'&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> / <a href="/css/line-height/" title="normal | <number> | <length> | <percentage>">&lt;'line-height'&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#question_mark_()" title="Currently only available in English (US)" class="only-in-en-us">? (en-US)</a> <a href="/css/font-family/" title="[ <family-name> | <generic-family> ]#">&lt;'font-family'&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> caption <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> icon <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> menu <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> message-box <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> small-caption <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> status-bar<p style="font-family:Open Sans,Arial,sans-serif; margin: 10px 0 0 0;">где <br><code style="font-family:Consolas,Monaco,&quot;Andale Mono&quot;,monospace;"><span id="font-variant-css21">&lt;font-variant-css21&gt;</span> = <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> normal <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> small-caps <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a></code></p></pre></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div><pre class="brush: css notranslate"><code><span class="token comment">/* Set the font size to 12px and the line height to 14px.
+   Set the font family to sans-serif */</span>
+<span class="token selector">p</span> <span class="token punctuation">{</span> <span class="token property">font</span><span class="token punctuation">:</span> 12px/14px sans-serif <span class="token punctuation">}</span>
+
+<span class="token comment">/* Set the font size to 80% of the parent element
+   or default value (if no parent element present).
+   Set the font family to sans-serif */</span>
+<span class="token selector">p</span> <span class="token punctuation">{</span> <span class="token property">font</span><span class="token punctuation">:</span> 80% sans-serif <span class="token punctuation">}</span>
+
+<span class="token comment">/* Set the font weight to bold,
+   the font-style to italic,
+   the font size to large,
+   and the font family to serif. */</span>
+<span class="token selector">p</span> <span class="token punctuation">{</span> <span class="token property">font</span><span class="token punctuation">:</span> bold italic large serif <span class="token punctuation">}</span>
+
+<span class="token comment">/* Use the same font as the status bar of the window */</span>
+<span class="token selector">p</span> <span class="token punctuation">{</span> <span class="token property">font</span><span class="token punctuation">:</span> status-bar <span class="token punctuation">}</span>
+</code></pre></div><h3 id="live_sample"><a href="#live_sample" title="Permalink to Live sample">Live sample</a></h3><div><p><iframe class="sample-code-frame" id="frame_live_sample" width="100%" height="440px" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/font/_sample_.live_sample.html" loading="lazy"></iframe></p></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-fonts-3/#font-prop" hreflang="en" lang="en" class="external" rel=" noopener">CSS Fonts Module Level&nbsp;3<br><small lang="ru">Определение 'font' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Added support for <code>font-stretch</code> values.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/CSS2/fonts.html#font-shorthand" hreflang="en" lang="en" class="external" rel=" noopener">CSS Level&nbsp;2 (Revision&nbsp;1)<br><small lang="ru">Определение 'font-weight' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Added support for keywords.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/CSS1/#font" hreflang="en" lang="en" class="external" rel=" noopener">CSS Level&nbsp;1<br><small lang="ru">Определение 'font' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Initial definition.</td>
+  </tr>
+ </tbody>
+</table>
+
+<p></p><table class="properties"><tbody><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td>как и у каждого из подсвойств этого свойства:<br><ul><li><a href="/css/font-style/"><code>font-style</code></a>: <code>normal</code></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant" class="only-in-en-us" title="Currently only available in English (US)">font-variant (en-US)</a>: <code>normal</code></li><li><a href="/css/font-weight/"><code>font-weight</code></a>: <code>normal</code></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-stretch" class="only-in-en-us" title="Currently only available in English (US)">font-stretch (en-US)</a>: <code>normal</code></li><li><a href="/css/font-size/"><code>font-size</code></a>: <code>medium</code></li><li><a href="/css/line-height/"><code>line-height</code></a>: <code>normal</code></li><li><a href="/css/font-family/"><code>font-family</code></a>: зависит от браузера</li></ul></td></tr><tr><th scope="row">Применяется к</th><td>все элементы. Это также применяется к <a href="/css/::first-letter/"><code>::first-letter</code></a> и <a href="/css/::first-line/"><code>::first-line</code></a>.</td></tr><tr><th scope="row"><a href="/css/inheritance/">Наследуется</a></th><td>да</td></tr><tr><th scope="row">Проценты</th><td>как и у каждого из подсвойств этого свойства:<br><ul><li><a href="/css/font-size/"><code>font-size</code></a>: относятся к размеру шрифта родителя</li><li><a href="/css/line-height/"><code>line-height</code></a>: относятся к размеру шрифта самого элемента</li></ul></td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>как и у каждого из подсвойств этого свойства:<br><ul><li><a href="/css/font-style/"><code>font-style</code></a>: как указано</li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant" class="only-in-en-us" title="Currently only available in English (US)">font-variant (en-US)</a>: как указано</li><li><a href="/css/font-weight/"><code>font-weight</code></a>: ключевое слово или числовое значение, с <code>bolder</code> и <code>lighter</code>, трансформируемися в действительное значение</li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-stretch" class="only-in-en-us" title="Currently only available in English (US)">font-stretch (en-US)</a>: как указано</li><li><a href="/css/font-size/"><code>font-size</code></a>: как указано, но с относительной длиной, конвертируемой в абсолютные длины</li><li><a href="/css/line-height/"><code>line-height</code></a>: для процентов и значений длин, абсолютной длины, если другое не указано</li><li><a href="/css/font-family/"><code>font-family</code></a>: как указано</li></ul></td></tr><tr><th scope="row">Animation type</th><td>как и у каждого из подсвойств этого свойства:<br><ul><li><a href="/css/font-style/"><code>font-style</code></a>: discrete</li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant" class="only-in-en-us" title="Currently only available in English (US)">font-variant (en-US)</a>: discrete</li><li><a href="/css/font-weight/"><code>font-weight</code></a>: <a href="/css/font-weight#interpolation/" title="Значения жирности шрифта интерполируются через целое число дискретных шагов (умноженных на 100). Интерполяция происходит в пространстве действительных чисел, а получившееся значение преобразуется в целое путём округления до ближайшей сотни, со значениями точно между соседними множителями, округляемыми в сторону положительной бесконечности.">жирность шрифта</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-stretch" class="only-in-en-us" title="Currently only available in English (US)">font-stretch (en-US)</a>: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-stretch" title="Currently only available in English (US)" class="only-in-en-us">ширина начертания шрифта (en-US)</a></li><li><a href="/css/font-size/"><code>font-size</code></a>: <a href="/css/length#interpolation/" title="Значения типа данных CSS <длина> интерполируются как вещественные числа с плавающей запятой.">длина</a></li><li><a href="/css/line-height/"><code>line-height</code></a>: число или длина</li><li><a href="/css/font-family/"><code>font-family</code></a>: discrete</li></ul></td></tr></tbody></table><p></p></div><h2 id="поддержка_браузерами"><a href="#поддержка_браузерами" title="Permalink to Поддержка браузерами">Поддержка браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div>

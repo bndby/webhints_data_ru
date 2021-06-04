@@ -1,0 +1,262 @@
+<h1>transform-origin</h1><div><div></div>
+
+<p>The <strong><code>transform-origin</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> property sets the origin for an element's transformations.</p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/transform-origin.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+<p>The transform origin is the point around which a transformation is applied. For example, the transform origin of the <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotate()">rotate()</a></code> function is the center of rotation.</p>
+
+<p>In effect, this property wraps a pair of translations around the element's other transformations. The first translation moves the transform origin to the true origin at <math><mrow><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></math>. Then the other transformations are applied, and because the transform origin is at <math><mrow><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></math>, those transformations act about the transform origin. Finally, the opposite translation is applied, moving the transform origin back to its original location. Consequently, this definition</p>
+
+<pre class="brush: css notranslate"><code><span class="token property">transform-origin</span><span class="token punctuation">:</span> -100% 50%<span class="token punctuation">;</span>
+<span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotate</span><span class="token punctuation">(</span>45deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+<p>results in the same transformation as</p>
+
+<pre class="brush: css notranslate"><code><span class="token property">transform-origin</span><span class="token punctuation">:</span> 0 0<span class="token punctuation">;</span>
+<span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate</span><span class="token punctuation">(</span>-100%<span class="token punctuation">,</span> 50%<span class="token punctuation">)</span> <span class="token function">rotate</span><span class="token punctuation">(</span>45deg<span class="token punctuation">)</span> <span class="token function">translate</span><span class="token punctuation">(</span>100%<span class="token punctuation">,</span> -50%<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+<p>Reading from right to left, <code>translate(100%, -50%)</code> is the translation to bring the transform origin to the true origin, <code>rotate(45deg)</code> is the original transformation, and <code>translate(-100%, 50%)</code> is the translation to restore the transform origin to its original location.</p>
+
+<p>By default, the origin of a transform is <code>center</code>.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: css notranslate"><code><span class="token comment">/* One-value syntax */</span>
+<span class="token property">transform-origin</span><span class="token punctuation">:</span> 2px<span class="token punctuation">;</span>
+<span class="token property">transform-origin</span><span class="token punctuation">:</span> bottom<span class="token punctuation">;</span>
+
+<span class="token comment">/* x-offset | y-offset */</span>
+<span class="token property">transform-origin</span><span class="token punctuation">:</span> 3cm 2px<span class="token punctuation">;</span>
+
+<span class="token comment">/* x-offset-keyword | y-offset */</span>
+<span class="token property">transform-origin</span><span class="token punctuation">:</span> left 2px<span class="token punctuation">;</span>
+
+<span class="token comment">/* x-offset-keyword | y-offset-keyword */</span>
+<span class="token property">transform-origin</span><span class="token punctuation">:</span> right top<span class="token punctuation">;</span>
+
+<span class="token comment">/* y-offset-keyword | x-offset-keyword */</span>
+<span class="token property">transform-origin</span><span class="token punctuation">:</span> top right<span class="token punctuation">;</span>
+
+<span class="token comment">/* x-offset | y-offset | z-offset */</span>
+<span class="token property">transform-origin</span><span class="token punctuation">:</span> 2px 30% 10px<span class="token punctuation">;</span>
+
+<span class="token comment">/* x-offset-keyword | y-offset | z-offset */</span>
+<span class="token property">transform-origin</span><span class="token punctuation">:</span> left 5px -3px<span class="token punctuation">;</span>
+
+<span class="token comment">/* x-offset-keyword | y-offset-keyword | z-offset */</span>
+<span class="token property">transform-origin</span><span class="token punctuation">:</span> right bottom 2cm<span class="token punctuation">;</span>
+
+<span class="token comment">/* y-offset-keyword | x-offset-keyword | z-offset */</span>
+<span class="token property">transform-origin</span><span class="token punctuation">:</span> bottom right 2cm<span class="token punctuation">;</span>
+
+<span class="token comment">/* Global values */</span>
+<span class="token property">transform-origin</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">transform-origin</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">transform-origin</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre>
+
+<p>The <code>transform-origin</code> property may be specified using one, two, or three values, where each value represents an offset. Offsets that are not explicitly defined are reset to their corresponding <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">initial values</a>.</p>
+
+<p>If a single <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length"><code>&lt;length&gt;</code></a> or <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/percentage"><code>&lt;percentage&gt;</code></a>&nbsp;value is defined, it represents the horizontal offset.</p>
+
+<p>If two or more values are defined and either no value is a keyword, or the only used keyword is <code>center</code>, then the first value represents the horizontal offset and the second represents the vertical offset.</p>
+
+<ul>
+ <li>One-value syntax:
+  <ul>
+   <li>The value must be a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length"><code>&lt;length&gt;</code></a>, a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/percentage"><code>&lt;percentage&gt;</code></a>, or one of the keywords <code>left</code>, <code>center</code>, <code>right</code>, <code>top</code>, and <code>bottom</code>.</li>
+  </ul>
+ </li>
+ <li>Two-value syntax:
+  <ul>
+   <li>One value must be a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length"><code>&lt;length&gt;</code></a>, a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/percentage"><code>&lt;percentage&gt;</code></a>, or one of the keywords <code>left</code>, <code>center</code>, and <code>right</code>.</li>
+   <li>The other value must be a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length"><code>&lt;length&gt;</code></a>, a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/percentage"><code>&lt;percentage&gt;</code></a>, or one of the keywords <code>top</code>, <code>center</code>, and <code>bottom</code>.</li>
+  </ul>
+ </li>
+ <li>Three-value syntax:
+  <ul>
+   <li>The first two values are the same as for the two-value syntax.</li>
+   <li>The third value must be a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length"><code>&lt;length&gt;</code></a>. It always represents the Z offset.</li>
+  </ul>
+ </li>
+</ul></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+ <dt><var>x-offset</var></dt>
+ <dd>Is a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length"><code>&lt;length&gt;</code></a> or a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/percentage"><code>&lt;percentage&gt;</code></a> describing how far from the left edge of the box the origin of the transform is set.</dd>
+ <dt><var>offset-keyword</var></dt>
+ <dd>Is one of the <code>left</code>, <code>right</code>, <code>top</code>, <code>bottom</code>, or <code>center</code> keyword describing the corresponding offset.</dd>
+ <dt><var>y-offset</var></dt>
+ <dd>Is a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length"><code>&lt;length&gt;</code></a> or a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/percentage"><code>&lt;percentage&gt;</code></a> describing how far from the top edge of the box the origin of the transform is set.</dd>
+ <dt><var>x-offset-keyword</var></dt>
+ <dd>Is one of the <code>left</code>, <code>right</code>, or <code>center</code> keyword describing how far from the left edge of the box the origin of the transform is set.</dd>
+ <dt><var>y-offset-keyword</var></dt>
+ <dd>Is one of the <code>top</code>, <code>bottom</code>, or <code>center</code> keyword describing how far from the top edge of the box the origin of the transform is set.</dd>
+ <dt><var>z-offset</var></dt>
+ <dd>Is a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length"><code>&lt;length&gt;</code></a> (and never a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/percentage"><code>&lt;percentage&gt;</code></a> which would make the statement invalid) describing how far from the user eye the z=0 origin is set.</dd>
+</dl>
+
+<p>The keywords are convenience shorthands and match the following <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/percentage"><code>&lt;percentage&gt;</code></a> values:</p>
+
+<table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Keyword</th>
+   <th scope="col">Value</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><code>left</code></td>
+   <td><code>0%</code></td>
+  </tr>
+  <tr>
+   <td><code>center</code></td>
+   <td><code>50%</code></td>
+  </tr>
+  <tr>
+   <td><code>right</code></td>
+   <td><code>100%</code></td>
+  </tr>
+  <tr>
+   <td><code>top</code></td>
+   <td><code>0%</code></td>
+  </tr>
+  <tr>
+   <td><code>bottom</code></td>
+   <td><code>100%</code></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td><code>50% 50% 0</code></td></tr><tr><th scope="row">Applies to</th><td>transformable elements</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance">Inherited</a></th><td>no</td></tr><tr><th scope="row">Percentages</th><td>refer to the size of bounding box</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>for <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length"><code>&lt;length&gt;</code></a> the absolute value, otherwise a percentage</td></tr><tr><th scope="row">Animation type</th><td>simple list of length, percentage, or calc</td></tr></tbody></table><p></p>
+
+<div class="notecard note">
+<p>The initial value of&nbsp;<code>transform-origin</code>&nbsp;is&nbsp;<code>0 0</code>&nbsp;for all SVG elements except for root&nbsp;<code>&lt;svg&gt;</code>&nbsp;elements and&nbsp;<code>&lt;svg&gt;</code>&nbsp;elements that are a direct child of a&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/foreignObject">foreignObject</a>, and whose <code>transform-origin</code> is&nbsp;<code>50% 50%</code>, like other CSS elements.&nbsp;See the&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform-origin">SVG transform-origin</a>&nbsp;attribute for more information.</p>
+</div></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">[</a> <a href="#length-percentage">&lt;length-percentage&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> left <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> center <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> right <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> top <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> bottom <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">]</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">[</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">[</a> <a href="#length-percentage">&lt;length-percentage&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> left <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> center <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> right <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">]</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_ampersand" title="Double ampersand: all of the entities must be present, in any order">&amp;&amp;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">[</a> <a href="#length-percentage">&lt;length-percentage&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> top <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> center <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> bottom <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">]</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">]</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length" title="Possible values: a number followed by'em', 'ex', 'ch', 'rem', 'px', 'cm', 'mm', 'in', 'vh', 'vw', 'vmin', 'vmax', 'pt', 'pc' or 'px', like 3px, 1.5cm, -0.5em or 0">&lt;length&gt;</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#question_mark_()" title="Question mark: the entity is optional">?</a><p style="font-family:Open Sans,Arial,sans-serif; margin: 10px 0 0 0;">where <br><code style="font-family:Consolas,Monaco,&quot;Andale Mono&quot;,monospace;"><span id="length-percentage">&lt;length-percentage&gt;</span> = <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length" title="Possible values: a number followed by'em', 'ex', 'ch', 'rem', 'px', 'cm', 'mm', 'in', 'vh', 'vw', 'vmin', 'vmax', 'pt', 'pc' or 'px', like 3px, 1.5cm, -0.5em or 0">&lt;length&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/percentage" title>&lt;percentage&gt;</a></code></p></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="a_demonstration_of_various_transform_values"><a href="#a_demonstration_of_various_transform_values" title="Permalink to A demonstration of various transform values">A demonstration of various transform values</a></h3><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th>Code</th>
+   <th>Sample</th>
+  </tr>
+  <tr>
+   <td>
+    <p><code>transform: none;</code></p>
+   </td>
+   <td>
+    
+
+    <div><iframe class="no-button" id="frame_transform_none" height="120" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/transform-origin/_sample_.transform_none.html" loading="lazy"></iframe></div>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p><code>transform: rotate(30deg);</code></p>
+   </td>
+   <td>
+    
+
+    <div><iframe class="no-button" id="frame_transform_rotate_only" height="120" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/transform-origin/_sample_.transform_rotate_only.html" loading="lazy"></iframe></div>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p><code>transform: rotate(30deg);<br>
+     transform-origin: 0 0;</code></p>
+   </td>
+   <td>
+    
+
+    <div><iframe class="no-button" id="frame_transform_rotate" height="120" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/transform-origin/_sample_.transform_rotate.html" loading="lazy"></iframe></div>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p><code>transform: rotate(30deg);<br>
+     transform-origin: 100% 100%;</code></p>
+   </td>
+   <td>
+    
+
+    <div><iframe class="no-button" id="frame_transform_rotate_with_percentage" height="120" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/transform-origin/_sample_.transform_rotate_with_percentage.html" loading="lazy"></iframe></div>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p><code>transform: rotate(30deg);<br>
+     transform-origin: -1em -3em;</code></p>
+   </td>
+   <td>
+    
+
+    <div><iframe class="no-button" id="frame_transform_rotate_with_em" height="120" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/transform-origin/_sample_.transform_rotate_with_em.html" loading="lazy"></iframe></div>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p><code>transform: scale(1.7);</code></p>
+   </td>
+   <td>
+    
+
+    <div><iframe class="no-button" id="frame_transform_scale_only" height="120" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/transform-origin/_sample_.transform_scale_only.html" loading="lazy"></iframe></div>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p><code>transform: scale(1.7);<br>
+     transform-origin: 0 0;</code></p>
+   </td>
+   <td>
+    
+
+    <div><iframe class="no-button" id="frame_transform_scale_without_origin" height="120" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/transform-origin/_sample_.transform_scale_without_origin.html" loading="lazy"></iframe></div>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p><code>transform: scale(1.7);<br>
+     transform-origin: 100% -30%;</code></p>
+   </td>
+   <td>
+    
+
+    <div><iframe class="no-button" id="frame_transform_scale" height="120" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/transform-origin/_sample_.transform_scale.html" loading="lazy"></iframe></div>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p><code>transform: skewX(50deg);<br>
+     transform-origin: 100% -30%;</code></p>
+   </td>
+   <td>
+    
+
+    <div><iframe class="no-button" id="frame_transform_skew_x" height="120" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/transform-origin/_sample_.transform_skew_x.html" loading="lazy"></iframe></div>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p><code>transform: skewY(50deg);<br>
+     transform-origin: 100% -30%;</code></p>
+   </td>
+   <td>
+    
+
+    <div><iframe class="no-button" id="frame_transform_skew_y" height="120" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/transform-origin/_sample_.transform_skew_y.html" loading="lazy"></iframe></div>
+   </td>
+  </tr>
+ </tbody>
+</table></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-transforms/#transform-origin-property" hreflang="en" lang="en" class="external" rel=" noopener">CSS Transforms Level&nbsp;1<br><small lang="en-US">The definition of 'transform-origin' in that specification.</small></a></td>
+   <td><span class="spec-wd">Working Draft</span></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transforms/Using_CSS_transforms">Using CSS transforms</a></li>
+ <li><a href="https://css-tricks.com/almanac/properties/t/transform-origin/" class="external" rel=" noopener">https://css-tricks.com/almanac/properties/t/transform-origin/</a></li>
+</ul></div>

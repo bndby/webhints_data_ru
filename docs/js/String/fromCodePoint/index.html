@@ -1,0 +1,109 @@
+<h1>String.fromCodePoint()</h1><div><div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Статический метод <strong><code>String.fromCodePoint()</code></strong> возвращает строку, созданную из указанной последовательности кодовых точек.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code>String.fromCodePoint(<var>num1</var>[, ...[, <var>numN</var>]])</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>num1, ..., num<em>N</em></code></dt>
+ <dd>Последовательность кодовых точек.</dd>
+</dl></div><h3 id="throws"><a href="#throws" title="Permalink to Выбрасываемые исключения">Выбрасываемые исключения</a></h3><div><dl>
+ <dt><a href="/js/RangeError/"><code>RangeError</code></a></dt>
+ <dd>Исключение <a href="/js/RangeError/"><code>RangeError</code></a> выбрасывается в случае, если методу предоставлена неверная кодовая точка Юникода (например, "RangeError: NaN is not a valid code point").</dd>
+</dl></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Поскольку метод <code>fromCodePoint()</code> является статическим методом объекта <a href="/js/String/"><code>String</code></a>, вы всегда должны использовать его как <code>String.fromCodePoint()</code>, а не как метод созданного вами экземпляра <a href="/js/String/"><code>String</code></a>.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_using_fromcharcode"><a href="#example_using_fromcharcode" title="Permalink to Пример: использование метода fromCodePoint()">Пример: использование метода <code>fromCodePoint()</code></a></h3><div><pre class="brush: js notranslate"><code>String<span class="token punctuation">.</span><span class="token function">fromCodePoint</span><span class="token punctuation">(</span><span class="token number">42</span><span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment">// "*"</span>
+String<span class="token punctuation">.</span><span class="token function">fromCodePoint</span><span class="token punctuation">(</span><span class="token number">65</span><span class="token punctuation">,</span> <span class="token number">90</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// "AZ"</span>
+String<span class="token punctuation">.</span><span class="token function">fromCodePoint</span><span class="token punctuation">(</span><span class="token number">0x404</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// "\u0404"</span>
+String<span class="token punctuation">.</span><span class="token function">fromCodePoint</span><span class="token punctuation">(</span><span class="token number">0x2F804</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// "\uD87E\uDC04"</span>
+String<span class="token punctuation">.</span><span class="token function">fromCodePoint</span><span class="token punctuation">(</span><span class="token number">194564</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// "\uD87E\uDC04"</span>
+String<span class="token punctuation">.</span><span class="token function">fromCodePoint</span><span class="token punctuation">(</span><span class="token number">0x1D306</span><span class="token punctuation">,</span> <span class="token number">0x61</span><span class="token punctuation">,</span> <span class="token number">0x1D307</span><span class="token punctuation">)</span> <span class="token comment">// "\uD834\uDF06a\uD834\uDF07"</span>
+
+String<span class="token punctuation">.</span><span class="token function">fromCodePoint</span><span class="token punctuation">(</span><span class="token string">'_'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">// RangeError</span>
+String<span class="token punctuation">.</span><span class="token function">fromCodePoint</span><span class="token punctuation">(</span><span class="token number">Infinity</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// RangeError</span>
+String<span class="token punctuation">.</span><span class="token function">fromCodePoint</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment">// RangeError</span>
+String<span class="token punctuation">.</span><span class="token function">fromCodePoint</span><span class="token punctuation">(</span><span class="token number">3.14</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">// RangeError</span>
+String<span class="token punctuation">.</span><span class="token function">fromCodePoint</span><span class="token punctuation">(</span><span class="token number">3e-2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">// RangeError</span>
+String<span class="token punctuation">.</span><span class="token function">fromCodePoint</span><span class="token punctuation">(</span><span class="token number">NaN</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">// RangeError</span>
+</code></pre>
+
+<pre class="brush: js notranslate"><code><span class="token comment">// Метод String.fromCharCode() не может вернуть символ по такой большой кодовой точке</span>
+<span class="token comment">// Следующий же метод может вернуть 4-байтный символ так же, как и обычный</span>
+<span class="token comment">// 2-байтный (то есть, он может вернуть один символ, который на самом деле</span>
+<span class="token comment">// имеет длину 2, а не 1!)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>String<span class="token punctuation">.</span><span class="token function">fromCodePoint</span><span class="token punctuation">(</span><span class="token number">0x2F804</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// или 194564 в десятичной записи</span>
+</code></pre></div><h2 id="polyfill"><a href="#polyfill" title="Permalink to Полифил">Полифил</a></h2><div><p>Метод <code>String.fromCodePoint()</code> был добавлен к стандарту ECMAScript в 6-й версии и может поддерживаться ещё не во всех браузерах или окружениях. Используйте код ниже в качестве полифила:</p>
+
+<pre class="brush: js notranslate"><code><span class="token comment">/*! http://mths.be/fromcodepoint v0.1.0 by @mathias */</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>String<span class="token punctuation">.</span>fromCodePoint<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> defineProperty <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// IE 8 поддерживает метод `Object.defineProperty` только на элементах DOM</span>
+      <span class="token keyword">try</span> <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> object <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+        <span class="token keyword">var</span> $defineProperty <span class="token operator">=</span> Object<span class="token punctuation">.</span>defineProperty<span class="token punctuation">;</span>
+        <span class="token keyword">var</span> result <span class="token operator">=</span> <span class="token function">$defineProperty</span><span class="token punctuation">(</span>object<span class="token punctuation">,</span> object<span class="token punctuation">,</span> object<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> $defineProperty<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span> <span class="token keyword">catch</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+      <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> stringFromCharCode <span class="token operator">=</span> String<span class="token punctuation">.</span>fromCharCode<span class="token punctuation">;</span>
+    <span class="token keyword">var</span> floor <span class="token operator">=</span> Math<span class="token punctuation">.</span>floor<span class="token punctuation">;</span>
+    <span class="token keyword">var</span> <span class="token function-variable function">fromCodePoint</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">var</span> <span class="token constant">MAX_SIZE</span> <span class="token operator">=</span> <span class="token number">0x4000</span><span class="token punctuation">;</span>
+      <span class="token keyword">var</span> codeUnits <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+      <span class="token keyword">var</span> highSurrogate<span class="token punctuation">;</span>
+      <span class="token keyword">var</span> lowSurrogate<span class="token punctuation">;</span>
+      <span class="token keyword">var</span> index <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+      <span class="token keyword">var</span> length <span class="token operator">=</span> arguments<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token string">''</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">var</span> result <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">;</span>
+      <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">++</span>index <span class="token operator">&lt;</span> length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> codePoint <span class="token operator">=</span> <span class="token function">Number</span><span class="token punctuation">(</span>arguments<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>
+          <span class="token operator">!</span><span class="token function">isFinite</span><span class="token punctuation">(</span>codePoint<span class="token punctuation">)</span> <span class="token operator">||</span>       <span class="token comment">// `NaN`, `+Infinity` или `-Infinity`</span>
+          codePoint <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token operator">||</span>              <span class="token comment">// неверная кодовая точка Юникода</span>
+          codePoint <span class="token operator">&gt;</span> <span class="token number">0x10FFFF</span> <span class="token operator">||</span>       <span class="token comment">// неверная кодовая точка Юникода</span>
+          <span class="token function">floor</span><span class="token punctuation">(</span>codePoint<span class="token punctuation">)</span> <span class="token operator">!=</span> codePoint <span class="token comment">// не целое число</span>
+        <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">throw</span> <span class="token function">RangeError</span><span class="token punctuation">(</span><span class="token string">'Invalid code point: '</span> <span class="token operator">+</span> codePoint<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>codePoint <span class="token operator">&lt;=</span> <span class="token number">0xFFFF</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// кодовая точка Базовой многоязыковой плоскости (БМП)</span>
+          codeUnits<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>codePoint<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span> <span class="token comment">// Астральная кодовая точка; делим её на суррогатную пару</span>
+          <span class="token comment">// http://mathiasbynens.be/notes/javascript-encoding#surrogate-formulae</span>
+          codePoint <span class="token operator">-=</span> <span class="token number">0x10000</span><span class="token punctuation">;</span>
+          highSurrogate <span class="token operator">=</span> <span class="token punctuation">(</span>codePoint <span class="token operator">&gt;&gt;</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">0xD800</span><span class="token punctuation">;</span>
+          lowSurrogate <span class="token operator">=</span> <span class="token punctuation">(</span>codePoint <span class="token operator">%</span> <span class="token number">0x400</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">0xDC00</span><span class="token punctuation">;</span>
+          codeUnits<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>highSurrogate<span class="token punctuation">,</span> lowSurrogate<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>index <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">==</span> length <span class="token operator">||</span> codeUnits<span class="token punctuation">.</span>length <span class="token operator">&gt;</span> <span class="token constant">MAX_SIZE</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          result <span class="token operator">+=</span> <span class="token function">stringFromCharCode</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> codeUnits<span class="token punctuation">)</span><span class="token punctuation">;</span>
+          codeUnits<span class="token punctuation">.</span>length <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>defineProperty<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">defineProperty</span><span class="token punctuation">(</span>String<span class="token punctuation">,</span> <span class="token string">'fromCodePoint'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+        <span class="token string">'value'</span><span class="token operator">:</span> fromCodePoint<span class="token punctuation">,</span>
+        <span class="token string">'configurable'</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        <span class="token string">'writable'</span><span class="token operator">:</span> <span class="token boolean">true</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      String<span class="token punctuation">.</span>fromCodePoint <span class="token operator">=</span> fromCodePoint<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-string.fromcodepoint" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'String.fromCodePoint' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Изначальное определение.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/String/fromCharCode/"><code>String.fromCharCode()</code></a></li>
+ <li><a href="/js/String/charAt/"><code>String.prototype.charAt()</code></a></li>
+ <li><a href="/js/String/codePointAt/"><code>String.prototype.codePointAt()</code></a></li>
+ <li><a href="/js/String/charCodeAt/"><code>String.prototype.charCodeAt()</code></a></li>
+</ul></div>

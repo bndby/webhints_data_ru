@@ -1,0 +1,54 @@
+<h1>RegExp.prototype[@@matchAll]()</h1><div><div></div>
+
+<p>The <strong><code>[@@matchAll]</code></strong> method returns all matches of the
+  regular expression against a string.</p>
+
+<div><iframe class="interactive" width="100%" height="692" src="https://interactive-examples.mdn.mozilla.net/pages/js/regexp-prototype-@@matchall.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe>
+</div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: js notranslate"><code>regexp<span class="token punctuation">[</span>Symbol<span class="token punctuation">.</span>matchAll<span class="token punctuation">]</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span></code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Parameters">Parameters</a></h3><div><dl>
+  <dt><code><var>str</var></code></dt>
+  <dd>A <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String"><code>String</code></a> that is a target of the match.</dd>
+</dl></div><h3 id="return_value"><a href="#return_value" title="Permalink to Return value">Return value</a></h3><div><p>An <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators">iterator</a>.
+</p></div><h2 id="description"><a href="#description" title="Permalink to Description">Description</a></h2><div><p>This method is called internally in <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/matchAll"><code>String.prototype.matchAll()</code></a>. For
+  example, the following two examples return same result.</p>
+
+<pre class="brush: js notranslate"><code><span class="token string">'abc'</span><span class="token punctuation">.</span><span class="token function">matchAll</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">a</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token operator">/</span>a<span class="token operator">/</span><span class="token punctuation">[</span>Symbol<span class="token punctuation">.</span>matchAll<span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token string">'abc'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+<p>This method exists for customizing the behavior of <code>matchAll()</code> in
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp"><code>RegExp</code></a> subclasses.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="direct_call"><a href="#direct_call" title="Permalink to Direct call">Direct call</a></h3><div><p>This method can be used in almost the same way as
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/matchAll"><code>String.prototype.matchAll()</code></a>, except for the different value of
+  <code>this</code> and the different order of arguments.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">let</span> re <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">[0-9]+</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> str <span class="token operator">=</span> <span class="token string">'2016-01-02'</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> result <span class="token operator">=</span> re<span class="token punctuation">[</span>Symbol<span class="token punctuation">.</span>matchAll<span class="token punctuation">]</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Array<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>result<span class="token punctuation">,</span> <span class="token parameter">x</span> <span class="token operator">=&gt;</span> x<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// ["2016", "01", "02"]</span>
+</code></pre></div><h3 id="using_matchall_in_subclasses"><a href="#using_matchall_in_subclasses" title="Permalink to Using @@matchAll in subclasses">Using @@matchAll in subclasses</a></h3><div><p>Subclasses of <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp"><code>RegExp</code></a> can override the <code>[@@matchAll]()</code> method
+  to modify the default behavior.</p>
+
+<p>For example, to return an <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array"><code>Array</code></a> instead of an <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators">iterator</a>:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">class</span> <span class="token class-name">MyRegExp</span> <span class="token keyword">extends</span> <span class="token class-name">RegExp</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">[</span>Symbol<span class="token punctuation">.</span>matchAll<span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token parameter">str</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token class-name">RegExp</span><span class="token punctuation">.</span>prototype<span class="token punctuation">[</span>Symbol<span class="token punctuation">.</span>matchAll<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> str<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>result<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> Array<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> re <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MyRegExp</span><span class="token punctuation">(</span><span class="token string">'([0-9]+)-([0-9]+)-([0-9]+)'</span><span class="token punctuation">,</span> <span class="token string">'g'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> str <span class="token operator">=</span> <span class="token string">'2016-01-02|2019-03-07'</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> result <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">matchAll</span><span class="token punctuation">(</span>re<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>result<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [ "2016-01-02", "2016", "01", "02" ]</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>result<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [ "2019-03-07", "2019", "03", "07" ]</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://tc39.es/ecma262/#sec-regexp-prototype-matchall">Unknown specification<!-- --> <br><small># <!-- -->sec-regexp-prototype-matchall</small></a></td></tr></tbody></table><div></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+  <li>A polyfill of <code>RegExp.prototype[@@matchAll]</code> is available in <a href="https://github.com/zloirock/core-js#ecmascript-string-and-regexp" class="external" rel=" noopener"><code>core-js</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/matchAll"><code>String.prototype.matchAll()</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/matchAll"><code>Symbol.matchAll</code></a></li>
+</ul></div>

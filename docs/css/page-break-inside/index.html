@@ -1,0 +1,115 @@
+<h1>page-break-inside</h1><div><div></div>
+
+<div class="notecard warning">This property has been replaced by the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/break-inside"><code>break-inside</code></a> property.</div>
+
+<p>The <strong><code>page-break-inside</code></strong> CSS property adjusts page breaks <em>inside</em> the current element.</p>
+
+<pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* Keyword values */</span>
+<span class="token property">page-break-inside</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+<span class="token property">page-break-inside</span><span class="token punctuation">:</span> avoid<span class="token punctuation">;</span>
+
+<span class="token comment">/* Global values */</span>
+<span class="token property">page-break-inside</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">page-break-inside</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">page-break-inside</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+ <dt><code>auto</code></dt>
+ <dd>Initial value. Automatic page breaks (neither forced nor forbidden).</dd>
+ <dt><code>avoid</code></dt>
+ <dd>Avoid page breaks inside the element.</dd>
+</dl></div><h2 id="page_break_aliases"><a href="#page_break_aliases" title="Permalink to Page break aliases">Page break aliases</a></h2><div><p>The <code>page-break-inside</code> property is now a legacy property, replaced by <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/break-inside"><code>break-inside</code></a>.</p>
+
+<p>For compatibility reasons, <code>page-break-inside</code> should be treated by browsers as an alias of <code>break-inside</code>. This ensures that sites using <code>page-break-inside</code> continue to work as designed. A subset of values should be aliased as follows:</p>
+
+<table>
+ <thead>
+  <tr>
+   <th scope="col">page-break-inside</th>
+   <th scope="col">break-inside</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><code>auto</code></td>
+   <td><code>auto</code></td>
+  </tr>
+  <tr>
+   <td><code>avoid</code></td>
+   <td><code>avoid</code></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td><code>auto</code></td></tr><tr><th scope="row">Applies to</th><td>block-level elements in the normal flow of the root element. User agents may also apply it to other elements like <code>table-row</code> elements.</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance">Inherited</a></th><td>no</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>as specified</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate">auto <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> avoid</pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="avoiding_page_breaks_inside_elements"><a href="#avoiding_page_breaks_inside_elements" title="Permalink to Avoiding page breaks inside elements">Avoiding page breaks inside elements</a></h3><div><h4 id="html">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>page<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>This is the first paragraph.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>list<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span>A list<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ol</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>one<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+<span class="token comment">&lt;!--       &lt;li&gt;two&lt;/li&gt; --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ol</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>one<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+<span class="token comment">&lt;!--     &lt;li&gt;two&lt;/li&gt; --&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>This is the second paragraph.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>This is the third paragraph, it contains more text.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>This is the fourth paragraph. It has a little bit more text than the third one.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<h4 id="css">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token selector">.page</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #8cffa0<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 90px<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+  <span class="token property">columns</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+  <span class="token property">column-width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.list, ol, ul, p</span> <span class="token punctuation">{</span>
+  <span class="token property">break-inside</span><span class="token punctuation">:</span> avoid<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">p</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #8ca0ff<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">ol, ul, .list</span> <span class="token punctuation">{</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 0.5em 0<span class="token punctuation">;</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> orange<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">p:first-child</span> <span class="token punctuation">{</span>
+  <span class="token property">margin-top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<h4 id="result">Result</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Avoiding_page_breaks_inside_elements" width="400" height="160" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/page-break-inside/_sample_.Avoiding_page_breaks_inside_elements.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-page-3/#page-break-inside" hreflang="en" lang="en" class="external" rel=" noopener">CSS Paged Media Module Level&nbsp;3<br><small lang="en-US">The definition of 'page-break-inside' in that specification.</small></a></td>
+   <td><span class="spec-wd">Working Draft</span></td>
+   <td>Allows this property on more elements.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/CSS2/page.html#propdef-page-break-inside" hreflang="en" lang="en" class="external" rel=" noopener">CSS Level&nbsp;2 (Revision&nbsp;1)<br><small lang="en-US">The definition of 'page-break-inside' in that specification.</small></a></td>
+   <td><span class="spec-rec">Recommendation</span></td>
+   <td>Initial definition.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/break-before"><code>break-before</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/break-after"><code>break-after</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/break-inside"><code>break-inside</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/page-break-after"><code>page-break-after</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/page-break-before"><code>page-break-before</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/orphans"><code>orphans</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/widows"><code>widows</code></a></li>
+</ul></div>

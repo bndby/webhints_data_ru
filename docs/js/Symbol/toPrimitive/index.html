@@ -1,0 +1,57 @@
+<h1>Symbol.toPrimitive</h1><div><div></div>
+
+<p><strong><code>Symbol.toPrimitive</code>&nbsp;</strong>является символом (symbol), который описывает свойство объекта как функцию, которая вызывается при преобразовании объекта в соответствующее примитивное значение.</p>
+
+<p><iframe class="interactive" width="100%" height="490" src="https://interactive-examples.mdn.mozilla.net/pages/js/symbol-toprimitive.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></p>
+
+
+
+<p>&nbsp;</p></div><h2 id="описание"><a href="#описание" title="Permalink to Описание">Описание</a></h2><div><p>С помощью свойства&nbsp;<strong><code>Symbol.toPrimitive</code></strong><code>&nbsp;</code>(которое описывается как функция), объект может быть приведён к примитивному типу. Функция вызывается со строковым аргументом&nbsp;<code><strong>hint</strong></code>, который передаёт желаемый тип примитива. Значением аргумента&nbsp;<code><strong>hint</strong></code>&nbsp;может быть одно из следующих значений&nbsp;<code>"<em>number</em>"</code>, <code>"<em>string</em>"</code>, и&nbsp;<code>"<em>default</em>"</code>.</p></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div><p>Описанные ниже примеры показывают как с помощью свойства&nbsp;<strong><code>Symbol.toPrimitive</code></strong>&nbsp;можно привести объект к примитивному типу.</p>
+
+<pre class="brush: js notranslate"><code><span class="token comment">// Объект без свойства Symbol.toPrimitive</span>
+<span class="token keyword">var</span> obj1 <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token operator">+</span>obj1<span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">// NaN</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>obj1<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "[object Object]"</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj1 <span class="token operator">+</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "[object Object]"</span>
+
+<span class="token comment">// Объект со свойством Symbol.toPrimitive</span>
+<span class="token keyword">var</span> obj2 <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">[</span>Symbol<span class="token punctuation">.</span>toPrimitive<span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token parameter">hint</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>hint <span class="token operator">==</span> <span class="token string">'number'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token number">10</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>hint <span class="token operator">==</span> <span class="token string">'string'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token string">'hello'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token operator">+</span>obj2<span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">// 10        -- желаемый тип (hint) - "number"</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>obj2<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "hello"   -- желаемый тип (hint) - "string"</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj2 <span class="token operator">+</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "true"    -- желаемый тип (hint) - "default"</span>
+</code></pre></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-symbol.toprimitive" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Symbol.toPrimitive' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Initial definition.</td>
+  </tr>
+  <tr>
+   <td><a href="https://tc39.es/ecma262/#sec-symbol.toprimitive" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript (ECMA-262)<br><small lang="ru">Определение 'Symbol.toPrimitive' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="поддержка_браузерами"><a href="#поддержка_браузерами" title="Permalink to Поддержка браузерами">Поддержка браузерами</a></h2><p>BCD tables only load in the browser</p><div><p>&nbsp;</p>
+
+<p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/@@toPrimitive"><code>Date.prototype[@@toPrimitive]</code> <span>(en-US)</span></a></li>
+ <li><a href="/js/Symbol/@@toPrimitive/"><code>Symbol.prototype[@@toPrimitive]</code></a></li>
+ <li><a href="/js/Object/toString/"><code>Object.prototype.toString()</code></a></li>
+ <li><a href="/js/Object/valueOf/"><code>Object.prototype.valueOf()</code></a></li>
+</ul></div>

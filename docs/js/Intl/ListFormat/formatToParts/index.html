@@ -1,0 +1,39 @@
+<h1>Intl.ListFormat.prototype.formatToParts()</h1><div><div></div>
+
+<p>The <strong><code>Intl.ListFormat.prototype.formatToParts()</code></strong> method
+	returns an <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array"><code>Array</code></a> of objects representing the different components that
+	can be used to format a list of values in a locale-aware fashion.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: js notranslate"><code><span class="token function">formatToParts</span><span class="token punctuation">(</span>list<span class="token punctuation">)</span></code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Parameters">Parameters</a></h3><div><dl>
+	<dt><code><var>list</var></code></dt>
+	<dd>An <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array"><code>Array</code></a> of values to be formatted according to a locale.</dd>
+</dl></div><h3 id="return_value"><a href="#return_value" title="Permalink to Return value">Return value</a></h3><div><p>An <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array"><code>Array</code></a> of components which contains the formatted parts from the list.
+</p></div><h2 id="description"><a href="#description" title="Permalink to Description">Description</a></h2><div><p>Whereas <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/ListFormat/format"><code>Intl.ListFormat.prototype.format()</code></a> returns a string being the formatted version
+	of the list (according to the given locale and style options),
+	<code>formatToParts()</code> returns an array of the different components of the
+	formatted string.</p>
+
+<p>Each element of the resulting array has two properties: <code>type</code> and
+	<code>value</code>. The <code>type</code> property may be either
+	"<code>element</code>", which refers to a value from the list, or
+	"<code>literal</code>" which refers to a linguistic construct. The <code>value</code>
+	property gives the content, as a string, of the token.</p>
+
+<p>The locale and style options used for formatting are given when constructing the
+	<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/ListFormat"><code>Intl.ListFormat</code></a> instance.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="using_formattoparts"><a href="#using_formattoparts" title="Permalink to Using formatToParts">Using formatToParts</a></h3><div><pre class="brush: js notranslate"><code><span class="token keyword">const</span> fruits <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'Apple'</span><span class="token punctuation">,</span> <span class="token string">'Orange'</span><span class="token punctuation">,</span> <span class="token string">'Pineapple'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> myListFormat <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Intl<span class="token punctuation">.</span>ListFormat</span><span class="token punctuation">(</span><span class="token string">'en-GB'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> style<span class="token operator">:</span> <span class="token string">'long'</span><span class="token punctuation">,</span> type<span class="token operator">:</span> <span class="token string">'conjunction'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">table</span><span class="token punctuation">(</span>myListFormat<span class="token punctuation">.</span><span class="token function">formatToParts</span><span class="token punctuation">(</span>fruits<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// [</span>
+<span class="token comment">//  { "type": "element", "value": "Apple" },</span>
+<span class="token comment">//  { "type": "literal", "value": ", " },</span>
+<span class="token comment">//  { "type": "element", "value": "Orange" },</span>
+<span class="token comment">//  { "type": "literal", "value": ", and " },</span>
+<span class="token comment">//  { "type": "element", "value": "Pineapple" }</span>
+<span class="token comment">// ]</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://tc39.es/ecma402/#sec-Intl.ListFormat.prototype.formatToParts">ECMAScript Internationalization API Specification<!-- --> <!-- -->(ECMAScript Internationalization API)<br><small># <!-- -->sec-Intl.ListFormat.prototype.formatToParts</small></a></td></tr></tbody></table><div></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><div></div></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+	<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/ListFormat"><code>Intl.ListFormat</code></a></li>
+	<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/ListFormat/format"><code>Intl.ListFormat.prototype.format()</code></a>
+	</li>
+	<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/RelativeTimeFormat/formatToParts"><code>Intl.RelativeTimeFormat.prototype.formatToParts()</code></a></li>
+	<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/formatToParts"><code>Intl.NumberFormat.prototype.formatToParts()</code></a></li>
+	<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/formatToParts"><code>Intl.DateTimeFormat.prototype.formatToParts()</code></a></li>
+</ul></div>

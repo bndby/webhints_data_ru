@@ -1,0 +1,48 @@
+<h1>:visited</h1><div><p></p><p></p></div><h2 id="описание"><a href="#описание" title="Permalink to Описание">Описание</a></h2><div><p>CSS <a href="/css/Pseudo-classes/" title="Pseudo-classes">псевдокласс</a> <code>:visited</code>&nbsp;позволяет вам выбирать ссылки, которые были посещены. Этот стиль может переопределяться другими относящимися к ссылкам псевдоклассами, такими как&nbsp;<a href="/css/:link/"><code>:link</code></a>, <a href="/css/:hover/"><code>:hover</code></a> и <a href="/css/:active/"><code>:active</code></a>, появляющимися в соответствующем порядке. Чтобы стилизировать ссылки должным образом, вам нужно вставлять&nbsp;правило&nbsp;<code>:visited</code> до правила&nbsp;<code>:link</code>, но после других, определённых&nbsp;<em>LVHA-порядком</em>: <code>:link</code> — <code>:visited</code> — <code>:hover</code> — <code>:active</code>.</p>
+
+<div class="note style-wrap notecard">
+<p><strong>Замечание: </strong>Из-за&nbsp;причин приватности, браузеры строго ограничивают стили, которые вы можете применить к элементу, используя этот псевдокласс: только <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/color"><code>color</code> <span>(en-US)</span></a>, <a href="/css/background-color/"><code>background-color</code></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-color"><code>border-color</code> <span>(en-US)</span></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom-color"><code>border-bottom-color</code> <span>(en-US)</span></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-left-color"><code>border-left-color</code> <span>(en-US)</span></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-right-color"><code>border-right-color</code> <span>(en-US)</span></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-top-color"><code>border-top-color</code> <span>(en-US)</span></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/outline-color"><code>outline-color</code> <span>(en-US)</span></a>, <a href="/css/column-rule-color/"><code>column-rule-color</code></a>, <code>fill</code>&nbsp;и&nbsp;<code>stroke</code>. Заметьте также, что альфа-канал будет игнорироваться: будет использоваться альфа-канал, используемый для непосвящённых ссылок вместо него&nbsp;(но если прозрачность -&nbsp;<code>0</code>, то в этот случае игнорируется весь цвет, и один из используемых стилей для непосвящённых ссылок).</p>
+
+<p>Несмотря на то, что цвет может меняться, метод&nbsp;<code>getComputedStyle</code>&nbsp;наврёт и всегда будет давать значение цвета непосвящённых ссылок.</p>
+
+<p>Для дополнительной информации об ограничениях и их причин, смотрите&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Privacy_and_the_:visited_selector" title="Currently only available in English (US)" class="only-in-en-us">Приватность и селектор :visited (en-US)</a>.</p>
+</div></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div><pre class="brush: css notranslate"><code><span class="token selector">a:visited</span> <span class="token punctuation">{</span> <span class="token property">color</span><span class="token punctuation">:</span> #4b2f89<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token selector">a:visited</span> <span class="token punctuation">{</span> <span class="token property">background-color</span><span class="token punctuation">:</span> white <span class="token punctuation">}</span> </code></pre></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://html.spec.whatwg.org/multipage/scripting.html#selector-visited" hreflang="en" lang="en" class="external" rel=" noopener">HTML Living Standard<br><small lang="ru">Определение ':visited' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><a href="https://drafts.csswg.org/selectors-4/#link" hreflang="en" lang="en" class="external" rel=" noopener">Selectors Level&nbsp;4<br><small lang="ru">Определение ':visited' в этой спецификации.</small></a></td>
+   <td><span class="spec-wd">Рабочий черновик</span></td>
+   <td>Без изменений.</td>
+  </tr>
+  <tr>
+   <td><a href="https://drafts.csswg.org/selectors-3/#link" hreflang="en" lang="en" class="external" rel=" noopener">Selectors Level&nbsp;3<br><small lang="ru">Определение ':visited' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Без изменений.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/CSS2/selector.html#link-pseudo-classes" hreflang="en" lang="en" class="external" rel=" noopener">CSS Level&nbsp;2 (Revision&nbsp;1)<br><small lang="ru">Определение ':visited' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Ограничение использовать его только для элементов <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/A"><code>&lt;a&gt;</code></a>. Позволяет браузерам ограничивать его поведение из-за причин приватности.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/CSS1/#anchor-pseudo-classes" hreflang="en" lang="en" class="external" rel=" noopener">CSS Level&nbsp;1<br><small lang="ru">Определение ':visited' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Изначальное определение</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Поддержка браузерами">Поддержка браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Privacy_and_the_:visited_selector" title="Currently only available in English (US)" class="only-in-en-us">Приватность и селектор :visited (en-US)</a></li>
+ <li>Относящиеся к ссылкам псевдоклассы: <a href="/css/:link/"><code>:link</code></a>, <a href="/css/:active/"><code>:active</code></a> и&nbsp;<a href="/css/:hover/"><code>:hover</code></a>.</li>
+</ul></div>

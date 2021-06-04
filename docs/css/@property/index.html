@@ -1,0 +1,76 @@
+<h1>@property</h1><div><div><div class="notecard experimental">
+    <h4 id="experimental">Experimental</h4>
+    <p><strong>This is an <a href="https://developer.mozilla.org/en-US/docs/MDN/Guidelines/Conventions_definitions#experimental">experimental technology</a></strong><br>Check the <a href="#browser_compatibility">Browser compatibility table</a> carefully before using this in production.</p>
+</div></div>
+
+<p>The <strong><code>@property</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule"><code>at-rule</code></a> is part of the <a href="https://developer.mozilla.org/en-US/docs/Web/Houdini">CSS Houdini</a> umbrella of APIs, it allows developers to explicitly define their <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/--*"><code>css custom properties</code></a>, allowing for property type checking, setting default values, and define whether a property can inherit values or not.</p>
+
+<p>The <code>@property</code> rule represents a custom property registration directly in a stylesheet without having to run any JS. Valid <code>@property</code> rules result in a registered custom property, as if <a href="https://developer.mozilla.org/en-US/docs/Web/API/CSS/RegisterProperty"><code>CSS.registerProperty</code></a> had been called with equivalent parameters.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: css no-line-numbers notranslate"><code><span class="token atrule"><span class="token rule">@property</span> --property-name</span> <span class="token punctuation">{</span>
+  <span class="token property">syntax</span><span class="token punctuation">:</span> <span class="token string">'&lt;color&gt;'</span><span class="token punctuation">;</span>
+  <span class="token property">inherits</span><span class="token punctuation">:</span> false<span class="token punctuation">;</span>
+  <span class="token property">initial-value</span><span class="token punctuation">:</span> #c0ffee<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<p>A valid <code>@property</code> rule represents a custom property registration, with the property name being the serialization of the in the rule’s prelude.</p>
+
+<p><code>@property</code> rules require a <strong>syntax</strong> and <strong>inherits</strong> descriptor; if either are missing, the entire rule is invalid and must be ignored. The <strong>initial-value</strong> descriptor is optional only if the syntax is the universal syntax definition, otherwise the descriptor is required; if it’s missing, the entire rule is invalid and must be ignored.</p>
+
+<p>Unknown descriptors are invalid and ignored, but do not invalidate the <code>@property</code> rule.</p></div><h2 id="multiple_declarations"><a href="#multiple_declarations" title="Permalink to Multiple declarations">Multiple declarations</a></h2><div><p>To declare multiple custom properties at the same time, use the following syntax:</p>
+
+<pre class="brush: css no-line-numbers notranslate"><code><span class="token atrule"><span class="token rule">@property</span> --primary-color<span class="token punctuation">,</span>
+@property --secondary-color<span class="token punctuation">,</span>
+@property --text-color</span> <span class="token punctuation">{</span>
+  <span class="token property">syntax</span><span class="token punctuation">:</span> <span class="token string">'&lt;color&gt;'</span><span class="token punctuation">;</span>
+  <span class="token property">inherits</span><span class="token punctuation">:</span> true<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token atrule"><span class="token rule">@property</span> --primary-color</span> <span class="token punctuation">{</span>
+  <span class="token property">initial-value</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token atrule"><span class="token rule">@property</span> --secondary-color</span> <span class="token punctuation">{</span>
+  <span class="token property">initial-value</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token atrule"><span class="token rule">@property</span> --text-color</span> <span class="token punctuation">{</span>
+  <span class="token property">initial-value</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div><p>Add type checking to <code>--my-color</code> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/--*"><code>custom property</code></a>, as a color, a default value, and not allow it to inherit its value:</p>
+
+<p>Using <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@property" aria-current="page"><code>@property</code></a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule">at-rule</a>:</p>
+
+<pre class="brush: css notranslate"><code><span class="token atrule"><span class="token rule">@property</span> --my-color</span> <span class="token punctuation">{</span>
+  <span class="token property">syntax</span><span class="token punctuation">:</span> <span class="token string">'&lt;color&gt;'</span><span class="token punctuation">;</span>
+  <span class="token property">inherits</span><span class="token punctuation">:</span> false<span class="token punctuation">;</span>
+  <span class="token property">initial-value</span><span class="token punctuation">:</span> #c0ffee<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p>Using <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a> <a href="https://developer.mozilla.org/en-US/docs/Web/API/CSS/RegisterProperty"><code>CSS.registerProperty</code></a>:</p>
+
+<pre class="brush: js notranslate"><code>window<span class="token punctuation">.</span><span class="token constant">CSS</span><span class="token punctuation">.</span><span class="token function">registerProperty</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">'--my-color'</span><span class="token punctuation">,</span>
+  syntax<span class="token operator">:</span> <span class="token string">'&lt;color&gt;'</span><span class="token punctuation">,</span>
+  inherits<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  initialValue<span class="token operator">:</span> <span class="token string">'#c0ffee'</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate">@property &lt;custom-property-name&gt; {
+  &lt;declaration-list&gt;
+}</pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+  <tr>
+   <td><a href="https://drafts.css-houdini.org/css-properties-values-api-1/#at-property-rule" hreflang="en" lang="en" class="external" title="The 'CSS Properties and Values API Level&nbsp;1' specification" rel=" noopener">CSS Properties and Values API Level&nbsp;1</a></td>
+   <td><span class="spec-wd">Working Draft</span></td>
+   <td>Initial definition.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/CSS_Properties_and_Values_API">CSS Properties and Values API</a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/CSS_Painting_API">CSS Painting API</a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/CSS_Typed_OM_API">CSS Typed Object Model</a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/Houdini">CSS Houdini</a></li>
+</ul></div>

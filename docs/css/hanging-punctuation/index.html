@@ -1,0 +1,77 @@
+<h1>hanging-punctuation</h1><div><div><div class="notecard experimental">
+    <h4 id="experimental">Experimental</h4>
+    <p><strong>Это экспериментальная технология</strong><br>Так как спецификация этой технологии ещё не стабилизировалась, смотрите <a href="#browser_compatibility">таблицу совместимости</a> по поводу использования в различных браузерах. Также заметьте, что синтаксис и поведение экспериментальной технологии может измениться в будущих версиях браузеров, вслед за изменениями спецификации.</p>
+</div></div>
+
+<p><span class="seoSummary">Свойство&nbsp;<strong><code>hanging-punctuation</code></strong>&nbsp;определяет как браузер будет отображать знаки пунктуации, попадающие в начало или в конец строки. Висячая пунктуация может располагаться за границами контейнера.&nbsp;</span></p>
+
+<pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* Значения ключевых слов */</span>
+<span class="token property">hanging-punctuation</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token property">hanging-punctuation</span><span class="token punctuation">:</span> first<span class="token punctuation">;</span>
+<span class="token property">hanging-punctuation</span><span class="token punctuation">:</span> last<span class="token punctuation">;</span>
+<span class="token property">hanging-punctuation</span><span class="token punctuation">:</span> force-end<span class="token punctuation">;</span>
+<span class="token property">hanging-punctuation</span><span class="token punctuation">:</span> allow-end<span class="token punctuation">;</span>
+
+<span class="token comment">/* Два ключевых слова */</span>
+<span class="token property">hanging-punctuation</span><span class="token punctuation">:</span> first force-end<span class="token punctuation">;</span>
+<span class="token property">hanging-punctuation</span><span class="token punctuation">:</span> first allow-end<span class="token punctuation">;</span>
+<span class="token property">hanging-punctuation</span><span class="token punctuation">:</span> first last<span class="token punctuation">;</span>
+<span class="token property">hanging-punctuation</span><span class="token punctuation">:</span> last force-end<span class="token punctuation">;</span>
+<span class="token property">hanging-punctuation</span><span class="token punctuation">:</span> last allow-end<span class="token punctuation">;</span>
+
+<span class="token comment">/* Три ключевых слова */</span>
+<span class="token property">hanging-punctuation</span><span class="token punctuation">:</span> first force-end last<span class="token punctuation">;</span>
+<span class="token property">hanging-punctuation</span><span class="token punctuation">:</span> first allow-end last<span class="token punctuation">;</span>
+
+<span class="token comment">/* Общие значения */</span>
+<span class="token property">hanging-punctuation</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">hanging-punctuation</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">hanging-punctuation</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre>
+
+<p></p><table class="properties"><tbody><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td><code>none</code></td></tr><tr><th scope="row">Применяется к</th><td>все элементы</td></tr><tr><th scope="row"><a href="/css/inheritance/">Наследуется</a></th><td>да</td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>как указано</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><p>Свойство&nbsp;<code>hanging-punctuation</code>&nbsp; может быть определено с помощью одного, двух или трёх ключевых слов.</p>
+
+<ul>
+ <li>Для <strong>одного&nbsp;значения</strong>&nbsp;может быть использовано любое из описанных ниже значений.</li>
+ <li>Для <strong>двух значений</strong>&nbsp;используются следующие варианты:
+  <ul>
+   <li><code>first</code>&nbsp;вместе с одним из&nbsp;<code>last</code>, <code>allow-end</code>&nbsp;или&nbsp;<code>force-end</code></li>
+   <li><code>last</code> вместе с одним из <code>first</code>, <code>allow-end</code>&nbsp;или&nbsp;<code>force-end</code></li>
+  </ul>
+ </li>
+ <li>Для&nbsp;<strong>трёх значений</strong>&nbsp;используются один из следующих&nbsp;вариантов:
+  <ul>
+   <li><code>first</code>, <code>allow-end</code>&nbsp;и <code>last</code></li>
+   <li><code>first</code>, <code>force-end</code>&nbsp;и <code>last</code></li>
+  </ul>
+ </li>
+</ul></div><h3 id="значения"><a href="#значения" title="Permalink to Значения">Значения</a></h3><div><dl>
+ <dt><code>none</code></dt>
+ <dd>Никакие символы не выносятся.</dd>
+ <dt><code>first</code></dt>
+ <dd>Открывающая&nbsp;скобка&nbsp;или кавычка&nbsp;в начале первой строки выровненного элемента будет вынесена.</dd>
+ <dt><code>last</code></dt>
+ <dd>Закрывающая скобка или кавычка последней строки выровненного элемента будет вынесена.</dd>
+ <dt><code>force-end</code></dt>
+ <dd>Точка или запятая в конце строки выносится.</dd>
+ <dt><code>allow-end</code></dt>
+ <dd>Точка или запятая в конце строки будет вынесена, если нет лучшего варианта для выравнивания.</dd>
+</dl></div><h3 id="формальный_синтаксис"><a href="#формальный_синтаксис" title="Permalink to Формальный синтаксис">Формальный синтаксис</a></h3><div><pre class="notranslate">none <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> first <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_bar" title="Currently only available in English (US)" class="only-in-en-us">|| (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> force-end <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> allow-end <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_bar" title="Currently only available in English (US)" class="only-in-en-us">|| (en-US)</a> last <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a></pre></div><h2 id="пример"><a href="#пример" title="Permalink to Пример">Пример</a></h2><div></div><h3 id="html"><a href="#html" title="Permalink to HTML">HTML</a></h3><div><pre class="brush: html notranslate" style="white-space: pre-wrap;"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dignissim nunc mauris, et sollicitudin est scelerisque sed. Praesent laoreet tortor massa, sit amet vulputate nulla pharetra ut.”<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span></code></pre></div><h3 id="css"><a href="#css" title="Permalink to CSS">CSS</a></h3><div><pre class="brush: css notranslate"><code><span class="token selector">p</span> <span class="token punctuation">{</span>
+  <span class="token property">hanging-punctuation</span><span class="token punctuation">:</span> first last<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> .5rem<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div><h3 id="результат"><a href="#результат" title="Permalink to Результат">Результат</a></h3><div><p><iframe class="sample-code-frame" id="frame_Пример" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/hanging-punctuation/_sample_.%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80.html" loading="lazy"></iframe></p></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-text-3/#hanging-punctuation-property" hreflang="en" lang="en" class="external" rel=" noopener">CSS Text Module Level&nbsp;3<br><small lang="ru">Определение 'hanging-punctuation' в этой спецификации.</small></a></td>
+   <td><span class="spec-cr">Кандидат в рекомендации</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="браузерная_совместимость"><a href="#браузерная_совместимость" title="Permalink to Браузерная совместимость">Браузерная совместимость</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div>

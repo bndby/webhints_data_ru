@@ -1,0 +1,62 @@
+<h1>TypedArray.prototype.slice()</h1><div><div></div>
+
+<p>The <strong><code>slice()</code></strong> method returns a new typed array (with a new
+  underlying buffer), that contains a copy of a portion of the original typed array. This
+  method has the same algorithm as <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice"><code>Array.prototype.slice()</code></a>.
+  <em>TypedArray</em> is one of the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray#typedarray_objects">typed
+    array types</a> here.</p>
+
+<div><iframe class="interactive" width="100%" height="410" src="https://interactive-examples.mdn.mozilla.net/pages/js/typedarray-slice.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: js notranslate"><code><span class="token function">slice</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token function">slice</span><span class="token punctuation">(</span>start<span class="token punctuation">)</span>
+<span class="token function">slice</span><span class="token punctuation">(</span>start<span class="token punctuation">,</span> end<span class="token punctuation">)</span>
+</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Parameters">Parameters</a></h3><div><dl>
+  <dt><code><var>start</var></code> <span class="badge inline optional">Optional</span></dt>
+  <dd>
+    <p>Zero-based index at which to begin extraction.</p>
+    <p>A negative index can be used, indicating an offset from the end of the sequence.
+    <code>slice(-2)</code> extracts the last two elements in the sequence.</p>
+    <p>If <code><var>start</var></code> is undefined, <code>slice</code> begins from index
+    <code>0</code>.</p>
+  </dd>
+  <dt><code><var>end</var></code> <span class="badge inline optional">Optional</span></dt>
+  <dd>
+    <p>Zero-based index <em>before</em> which to end extraction. <code>slice</code>
+    extracts up to but not including <code><var>end</var></code>.</p>
+    <p>For example, <code>slice(1,4)</code> extracts the second element through the fourth
+    element (elements indexed 1, 2, and 3).</p>
+    <p>A negative index can be used, indicating an offset from the end of the sequence.
+    <code>slice(2,-1)</code> extracts the third element through the second-to-last element
+    in the sequence.</p>
+    <p>If <code><var>end</var></code> is omitted, <code>slice</code> extracts through the
+    end of the sequence (<code>typedarray.length</code>).</p>
+  </dd>
+</dl></div><h3 id="return_value"><a href="#return_value" title="Permalink to Return value">Return value</a></h3><div><p>A new typed array containing the extracted elements.</p></div><h2 id="description"><a href="#description" title="Permalink to Description">Description</a></h2><div><p>The <code>slice</code> method does not alter. It returns a shallow copy of elements
+  from the original typed array.</p>
+
+<p>If a new element is added to either typed array, the other typed array is not affected.
+</p></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="return_a_portion_of_an_existing_typed_array"><a href="#return_a_portion_of_an_existing_typed_array" title="Permalink to Return a portion of an existing typed
+  array">Return a portion of an existing typed
+  array</a></h3><div><pre class="brush: js notranslate"><code><span class="token keyword">const</span> uint8 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Uint8Array</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+uint8<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// Uint8Array [ 2, 3 ]</span>
+uint8<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// Uint8Array [ 3 ]</span>
+uint8<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// Uint8Array [ 2, 3 ]</span>
+uint8<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Uint8Array [ 1 ]</span>
+</code></pre></div><h2 id="polyfill"><a href="#polyfill" title="Permalink to Polyfill">Polyfill</a></h2><div><p>Since there is no global object with the name <em>TypedArray</em>, polyfilling must be
+  done on an "as needed" basis.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token class-name">Uint8Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>slice<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span><span class="token class-name">Uint8Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">,</span> <span class="token string">'slice'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">value</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">begin<span class="token punctuation">,</span> end</span><span class="token punctuation">)</span>
+     <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Uint8Array</span><span class="token punctuation">(</span><span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> begin<span class="token punctuation">,</span> end<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p>If you need to support truly obsolete JavaScript engines that don't support
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty"><code>Object.defineProperty</code></a>, it's best not to polyfill
+  <code>Array.prototype</code> methods at all, as you can't make them non-enumerable.</p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://tc39.es/ecma262/#sec-%typedarray%.prototype.slice">Unknown specification<!-- --> <br><small># <!-- -->sec-%typedarray%.prototype.slice</small></a></td></tr></tbody></table><div></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+  <li>A polyfill of <code>TypedArray.prototype.slice</code> is available in <a href="https://github.com/zloirock/core-js#ecmascript-typed-arrays" class="external" rel=" noopener"><code>core-js</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice"><code>Array.prototype.slice()</code></a></li>
+</ul></div>

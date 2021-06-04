@@ -1,0 +1,1380 @@
+<h1>appearance (-moz-appearance, -webkit-appearance)</h1><div><div><div class="notecard experimental">
+    <h4 id="experimental">Experimental</h4>
+    <p><strong>Это экспериментальная технология</strong><br>Так как спецификация этой технологии ещё не стабилизировалась, смотрите <a href="#browser_compatibility">таблицу совместимости</a> по поводу использования в различных браузерах. Также заметьте, что синтаксис и поведение экспериментальной технологии может измениться в будущих версиях браузеров, вслед за изменениями спецификации.</p>
+</div></div>
+
+<p>CSS свойство <strong><code>-moz-appearance</code></strong> используется в Gecko (Firefox) для отображения элемента, используя базовые стили платформы на основе темы операционной системы.</p>
+
+<p>Свойство <strong><code>-webkit-appearance</code></strong> используется в браузерах WebKit-based (например, Safari) и Blink-based (например, Chrome, Opera) для того же эффекта. Заметьте, что Firefox и Edge также поддерживают <code>-webkit-appearance</code>, для обеспечения совместимости.</p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/appearance.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+
+
+<p>Это свойство часто используется в таблицах стилей <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XUL/Tutorial" class="page-not-created" title="This is a link to an unwritten page">XUL</a> для разработки пользовательских виджетов в стиле, соответствующем платформе. Оно, также, используется в реализации <a href="https://developer.mozilla.org/en-US/docs/XBL" class="page-not-created" title="This is a link to an unwritten page">XBL</a> виджетов, которые поставляются с платформой Mozilla.</p>
+
+<div class="note notecard">
+<p><strong>Примечание о совместимости</strong>: Если вы хотите использовать это свойство на веб-сайте, вы должны тестировать его очень осторожно. Хотя оно поддерживается в большинстве современных браузерах, его реализация широко варьируется. В старых браузерах, даже ключевое слово <code>none</code> не окажет одинакового эффекта на все элементы формы различных браузеров, а некоторые его совсем не поддерживают. Различия меньше в более современных браузерах.</p>
+</div></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="brush: css notranslate"><code><span class="token comment">/* CSS модуль базового интерфейса 4 уровня, значения */</span>
+<span class="token property">appearance</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token property">appearance</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+<span class="token property">appearance</span><span class="token punctuation">:</span> button<span class="token punctuation">;</span>
+<span class="token property">appearance</span><span class="token punctuation">:</span> textfield<span class="token punctuation">;</span>
+<span class="token property">appearance</span><span class="token punctuation">:</span> searchfield<span class="token punctuation">;</span>
+<span class="token property">appearance</span><span class="token punctuation">:</span> textarea<span class="token punctuation">;</span>
+<span class="token property">appearance</span><span class="token punctuation">:</span> push-button<span class="token punctuation">;</span>
+<span class="token property">appearance</span><span class="token punctuation">:</span> button-bevel<span class="token punctuation">;</span>
+<span class="token property">appearance</span><span class="token punctuation">:</span> slider-horizontal<span class="token punctuation">;</span>
+<span class="token property">appearance</span><span class="token punctuation">:</span> checkbox<span class="token punctuation">;</span>
+<span class="token property">appearance</span><span class="token punctuation">:</span> radio<span class="token punctuation">;</span>
+<span class="token property">appearance</span><span class="token punctuation">:</span> square-button<span class="token punctuation">;</span>
+<span class="token property">appearance</span><span class="token punctuation">:</span> menulist<span class="token punctuation">;</span>
+<span class="token property">appearance</span><span class="token punctuation">:</span> menulist-button<span class="token punctuation">;</span>
+<span class="token property">appearance</span><span class="token punctuation">:</span> listbox<span class="token punctuation">;</span>
+<span class="token property">appearance</span><span class="token punctuation">:</span> meter<span class="token punctuation">;</span>
+<span class="token property">appearance</span><span class="token punctuation">:</span> progress-bar<span class="token punctuation">;</span>
+
+<span class="token comment">/* Частичный список доступных значений в Gecko */</span>
+<span class="token property">-moz-appearance</span><span class="token punctuation">:</span> scrollbarbutton-up<span class="token punctuation">;</span>
+<span class="token property">-moz-appearance</span><span class="token punctuation">:</span> button-bevel<span class="token punctuation">;</span>
+
+<span class="token comment">/* Частичный список доступных значений в WebKit/Blink (таких как Gecko и Edge) */</span>
+<span class="token property">-webkit-appearance</span><span class="token punctuation">:</span> media-mute-button<span class="token punctuation">;</span>
+<span class="token property">-webkit-appearance</span><span class="token punctuation">:</span> caret<span class="token punctuation">;</span>
+</code></pre>
+
+<p>Свойство <code>-moz-appearance</code> может быть указано как одно значение, выбранное из списка ниже.</p></div><h3 id="значения"><a href="#значения" title="Permalink to Значения">Значения</a></h3><div><p><code>&lt;appearance&gt;</code> является одним из нижеследующих ключевых свойств:</p>
+
+<table class="standard-table">
+ <tbody>
+  <tr>
+   <th>Value</th>
+   <th>Demo</th>
+   <th>Browser</th>
+   <th>Description</th>
+  </tr>
+  <tr>
+   <td><code>none</code></td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleNone" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleNone.html" loading="lazy"></iframe></td>
+   <td>Firefox Chrome Safari Edge</td>
+   <td>No special styling is applied. This is the default.</td>
+  </tr>
+  <tr>
+   <td><code>auto</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleAuto" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleAuto.html" loading="lazy"></iframe></td>
+   <td>None</td>
+   <td>The user agent selects the appropriate special styling based on the element. Acts as <code>none</code> on elements with no special styling.</td>
+  </tr>
+  <tr>
+   <td><code>attachment</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleAttachment" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleAttachment.html" loading="lazy"></iframe></td>
+   <td>Safari</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>borderless-attachment</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sample-borderless-attachment" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sample-borderless-attachment.html" loading="lazy"></iframe></td>
+   <td>Safari</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>button</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleButton" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleButton.html" loading="lazy"></iframe></td>
+   <td>Firefox Chrome Safari Edge</td>
+   <td>The element is drawn like a button.</td>
+  </tr>
+  <tr>
+   <td><code>button-arrow-down</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleButtonArrowDown" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleButtonArrowDown.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in FF 64</td>
+  </tr>
+  <tr>
+   <td><code>button-arrow-next</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleButtonArrowNext" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleButtonArrowNext.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in FF 64</td>
+  </tr>
+  <tr>
+   <td><code>button-arrow-previous</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleButtonArrowPrevious" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleButtonArrowPrevious.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in FF 64</td>
+  </tr>
+  <tr>
+   <td><code>button-arrow-up</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleButtonArrowUp" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleButtonArrowUp.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in FF 64</td>
+  </tr>
+  <tr>
+   <td><code>button-bevel</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleButtonBevel" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleButtonBevel.html" loading="lazy"></iframe></td>
+   <td>Firefox Chrome Safari Edge</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>button-focus</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleButtonFocus" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleButtonFocus.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in FF 64</td>
+  </tr>
+  <tr>
+   <td><code>caps-lock-indicator</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sample-caps-lock-indicator" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sample-caps-lock-indicator.html" loading="lazy"></iframe></td>
+   <td>Safari Edge</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>caret</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleCaret" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleCaret.html" loading="lazy"></iframe></td>
+   <td>Firefox Chrome Safari Edge</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>checkbox</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleCheckbox" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleCheckbox.html" loading="lazy"></iframe></td>
+   <td>Firefox Chrome Safari Edge</td>
+   <td>The element is drawn like a checkbox, including only the actual "checkbox" portion.</td>
+  </tr>
+  <tr>
+   <td><code>checkbox-container</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleCheckboxContainer" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleCheckboxContainer.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>The element is drawn like a container for a checkbox, which may include a prelighting background effect under certain platforms. Normally it would contain a label and a checkbox.</td>
+  </tr>
+  <tr>
+   <td><code>checkbox-label</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleCheckboxLabel" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleCheckboxLabel.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>checkmenuitem</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleCheckmenuitem" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleCheckmenuitem.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>color-well</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sample-color-well" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sample-color-well.html" loading="lazy"></iframe></td>
+   <td>Safari</td>
+   <td><code>input type=color</code></td>
+  </tr>
+  <tr>
+   <td><code>continuous-capacity-level-indicator</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sample-continuous-capacity-level-indicator" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sample-continuous-capacity-level-indicator.html" loading="lazy"></iframe></td>
+   <td>Safari</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>default-button</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sample-default-button" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sample-default-button.html" loading="lazy"></iframe></td>
+   <td>Safari Edge</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>discrete-capacity-level-indicator</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sample-discrete-capacity-level-indicator" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sample-discrete-capacity-level-indicator.html" loading="lazy"></iframe></td>
+   <td>Safari</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>dualbutton</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleDualButton" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleDualButton.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in FF 64</td>
+  </tr>
+  <tr>
+   <td><code>groupbox</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleGroupbox" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleGroupbox.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in FF 64</td>
+  </tr>
+  <tr>
+   <td><code>inner-spin-button</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleInnerSpinButton" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleInnerSpinButton.html" loading="lazy"></iframe></td>
+   <td>Firefox Chrome Safari</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>image-controls-button</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sample-image-controls-button" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sample-image-controls-button.html" loading="lazy"></iframe></td>
+   <td>Safari</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>list-button</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sample-list-button" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sample-list-button.html" loading="lazy"></iframe></td>
+   <td>Safari</td>
+   <td>datalist</td>
+  </tr>
+  <tr>
+   <td><code>listbox</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleListBox" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleListBox.html" loading="lazy"></iframe></td>
+   <td>Firefox Chrome Safari Edge</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>listitem</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleListItem" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleListItem.html" loading="lazy"></iframe></td>
+   <td>Firefox Chrome Safari Edge</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>media-enter-fullscreen-button</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleMediaEnterFullscreenButton" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleMediaEnterFullscreenButton.html" loading="lazy"></iframe></td>
+   <td>Chrome Safari</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>media-exit-fullscreen-button</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleMediaExitFullscreenButton" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleMediaExitFullscreenButton.html" loading="lazy"></iframe></td>
+   <td>Chrome Safari</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>media-fullscreen-volume-slider</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sample-media-fullscreen-volume-slider" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sample-media-fullscreen-volume-slider.html" loading="lazy"></iframe></td>
+   <td>Safari</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>media-fullscreen-volume-slider-thumb</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sample-media-fullscreen-volume-slider-thumb" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sample-media-fullscreen-volume-slider-thumb.html" loading="lazy"></iframe></td>
+   <td>Safari</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>media-mute-button</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleMediaMuteButton" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleMediaMuteButton.html" loading="lazy"></iframe></td>
+   <td>Chrome Safari Edge</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>media-play-button</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleMediaPlayButton" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleMediaPlayButton.html" loading="lazy"></iframe></td>
+   <td>Chrome Safari Edge</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>media-overlay-play-button</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleMediaOverlayPlayButton" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleMediaOverlayPlayButton.html" loading="lazy"></iframe></td>
+   <td>Chrome Safari</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>media-return-to-realtime-button</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sample-media-return-to-realtime-button" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sample-media-return-to-realtime-button.html" loading="lazy"></iframe></td>
+   <td>Safari</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>media-rewind-button</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sample-media-rewind-button" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sample-media-rewind-button.html" loading="lazy"></iframe></td>
+   <td>Safari</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>media-seek-back-button</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sample-media-seek-back-button" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sample-media-seek-back-button.html" loading="lazy"></iframe></td>
+   <td>Safari Edge</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>media-seek-forward-button</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sample-media-seek-forward-button" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sample-media-seek-forward-button.html" loading="lazy"></iframe></td>
+   <td>Safari Edge</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>media-toggle-closed-captions-button</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleMediaToggleClosedCaptionsButton" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleMediaToggleClosedCaptionsButton.html" loading="lazy"></iframe></td>
+   <td>Chrome Safari</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>media-slider</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleMediaSlider" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleMediaSlider.html" loading="lazy"></iframe></td>
+   <td>Chrome Safari Edge</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>media-sliderthumb</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleMediaSliderThumb" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleMediaSliderThumb.html" loading="lazy"></iframe></td>
+   <td>Chrome Safari Edge</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>media-volume-slider-container</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleMediaVolumeSliderContainer" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleMediaVolumeSliderContainer.html" loading="lazy"></iframe></td>
+   <td>Chrome Safari</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>media-volume-slider-mute-button</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sample-media-volume-slider-mute-button" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sample-media-volume-slider-mute-button.html" loading="lazy"></iframe></td>
+   <td>Safari</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>media-volume-slider</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleMediaVolumeSlider" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleMediaVolumeSlider.html" loading="lazy"></iframe></td>
+   <td>Chrome Safari</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>media-volume-sliderthumb</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleMediaVolumeSliderThumb" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleMediaVolumeSliderThumb.html" loading="lazy"></iframe></td>
+   <td>Chrome Safari</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>media-controls-background</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleMediaControlsBackground" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleMediaControlsBackground.html" loading="lazy"></iframe></td>
+   <td>Chrome Safari</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>media-controls-dark-bar-background</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sample-media-controls-dark-bar-background" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sample-media-controls-dark-bar-background.html" loading="lazy"></iframe></td>
+   <td>Safari</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>media-controls-fullscreen-background</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleMediaControlsFullscreenBackground" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleMediaControlsFullscreenBackground.html" loading="lazy"></iframe></td>
+   <td>Chrome Safari</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>media-controls-light-bar-background</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sample-media-controls-light-bar-background" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sample-media-controls-light-bar-background.html" loading="lazy"></iframe></td>
+   <td>Safari</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>media-current-time-display</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleMediaCurrentTimeDisplay" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleMediaCurrentTimeDisplay.html" loading="lazy"></iframe></td>
+   <td>Chrome Safari</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>media-time-remaining-display</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleMediaTimeRemainingDisplay" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleMediaTimeRemainingDisplay.html" loading="lazy"></iframe></td>
+   <td>Chrome Safari</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>menuarrow</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleMenuArrow" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleMenuArrow.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64</td>
+  </tr>
+  <tr>
+   <td><code>menubar</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleMenubar" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleMenubar.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64</td>
+  </tr>
+  <tr>
+   <td><code>menucheckbox</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleMenuCheckbox" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleMenuCheckbox.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64</td>
+  </tr>
+  <tr>
+   <td><code>menuimage</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleMenuImage" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleMenuImage.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64</td>
+  </tr>
+  <tr>
+   <td><code>menuitem</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleMenuItem" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleMenuItem.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64, the element was styled as menu item, item is highlighted when hovered.</td>
+  </tr>
+  <tr>
+   <td><code>menuitemtext</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleMenuItemText" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleMenuItemText.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in FF 64</td>
+  </tr>
+  <tr>
+   <td><code>menulist</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleMenuList" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleMenuList.html" loading="lazy"></iframe></td>
+   <td>Firefox Chrome Safari Edge</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>menulist-button</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleMenuListButton" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleMenuListButton.html" loading="lazy"></iframe></td>
+   <td>Firefox Chrome Safari Edge</td>
+   <td>The element is styled as a button that would indicate a menulist can be opened.</td>
+  </tr>
+  <tr>
+   <td><code>menulist-text</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleMenuListText" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleMenuListText.html" loading="lazy"></iframe></td>
+   <td>Firefox Chrome Safari Edge</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>menulist-textfield</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleMenuListTextfield" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleMenuListTextfield.html" loading="lazy"></iframe></td>
+   <td>Firefox Chrome Safari Edge</td>
+   <td>The element is styled as the text field for a menulist. (Not implemented for the Windows platform)</td>
+  </tr>
+  <tr>
+   <td><code>menupopup</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleMenuPopup" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleMenuPopup.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64</td>
+  </tr>
+  <tr>
+   <td><code>menuradio</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleMenuRadio" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleMenuRadio.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64</td>
+  </tr>
+  <tr>
+   <td><code>menuseparator</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleMenuSeparator" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleMenuSeparator.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64</td>
+  </tr>
+  <tr>
+   <td><code>meter</code></td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleMeter" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleMeter.html" loading="lazy"></iframe></td>
+   <td>Chrome Safari Firefox</td>
+   <td>New in Fx 64</td>
+  </tr>
+  <tr>
+   <td><code>meterbar</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleMeterbar" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleMeterbar.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>New in Fx 16. Use <code>meter</code> instead</td>
+  </tr>
+  <tr>
+   <td><code>meterchunk</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleMeterchunk" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleMeterchunk.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>New in Fx 16. Removed in Firefox 64.</td>
+  </tr>
+  <tr>
+   <td><code>number-input</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleNumberInput" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleNumberInput.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>progress-bar</code></td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleProgressBarWebkit" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleProgressBarWebkit.html" loading="lazy"></iframe></td>
+   <td>Chrome Safari Firefox</td>
+   <td>New in Fx 64</td>
+  </tr>
+  <tr>
+   <td><code>progress-bar-value</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleProgressBarValueWebkit" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleProgressBarValueWebkit.html" loading="lazy"></iframe></td>
+   <td>Chrome Safari</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>progressbar</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleProgressBar" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleProgressBar.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>The element is styled like a progress bar. Use <code>progress-bar</code> instead</td>
+  </tr>
+  <tr>
+   <td><code>progressbar-vertical</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleProgressBarVertical" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleProgressBarVertical.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>progresschunk</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleProgressChunk" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleProgressChunk.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64.</td>
+  </tr>
+  <tr>
+   <td><code>progresschunk-vertical</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleProgressChunkVertical" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleProgressChunkVertical.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64.</td>
+  </tr>
+  <tr>
+   <td><code>push-button</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_samplePushButton" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.samplePushButton.html" loading="lazy"></iframe></td>
+   <td>Chrome Safari Edge</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>radio</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleRadio" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleRadio.html" loading="lazy"></iframe></td>
+   <td>Firefox Chrome Safari Edge</td>
+   <td>The element is drawn like a radio button, including only the actual "radio button" portion.</td>
+  </tr>
+  <tr>
+   <td><code>radio-container</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleRadioContainer" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleRadioContainer.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64, the element is drawn like a container for a radio button, which may include a prelighting background effect under certain platforms. Normally it would contain a label and a radio button.</td>
+  </tr>
+  <tr>
+   <td><code>radio-label</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleRadioLabel" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleRadioLabel.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64.</td>
+  </tr>
+  <tr>
+   <td><code>radiomenuitem</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleRadioMenuItem" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleRadioMenuItem.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64.</td>
+  </tr>
+  <tr>
+   <td><code>range</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleRange" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleRange.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>range-thumb</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleRangeThumb" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleRangeThumb.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>rating-level-indicator</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sample-rating-level-indicator" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sample-rating-level-indicator.html" loading="lazy"></iframe></td>
+   <td>Safari</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>resizer</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleResizer" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleResizer.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 63</td>
+  </tr>
+  <tr>
+   <td><code>resizerpanel</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleResizerPanel" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleResizerPanel.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 63.</td>
+  </tr>
+  <tr>
+   <td><code>scale-horizontal</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleScaleHorizontal" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleScaleHorizontal.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>scalethumbend</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleThumbEnd" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleThumbEnd.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>scalethumb-horizontal</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleScaleThumbHorizontal" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleScaleThumbHorizontal.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>scalethumbstart</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleScaleThumbStart" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleScaleThumbStart.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>scalethumbtick</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleScaleThumbTick" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleScaleThumbTick.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>scalethumb-vertical</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleScaleThumbVertical" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleScaleThumbVertical.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>scale-vertical</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleScaleVertical" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleScaleVertical.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>scrollbarbutton-down</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleScrollbarButtonDown" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleScrollbarButtonDown.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 63.</td>
+  </tr>
+  <tr>
+   <td><code>scrollbarbutton-left</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleScrollbarButtonLeft" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleScrollbarButtonLeft.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 63.</td>
+  </tr>
+  <tr>
+   <td><code>scrollbarbutton-right</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleScrollbarButtonRight" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleScrollbarButtonRight.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 63.</td>
+  </tr>
+  <tr>
+   <td><code>scrollbarbutton-up</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleScrollbarButtonUp" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleScrollbarButtonUp.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 63.</td>
+  </tr>
+  <tr>
+   <td><code>scrollbarthumb-horizontal</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleScrollbarThumbHorizontal" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleScrollbarThumbHorizontal.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>scrollbarthumb-vertical</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleScrollbarThumbVertical" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleScrollbarThumbVertical.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>scrollbartrack-horizontal</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleScrollbarTrackHorizontal" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleScrollbarTrackHorizontal.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>scrollbartrack-vertical</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleScrollbarTrackVertical" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleScrollbarTrackVertical.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>searchfield</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleSearchField" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleSearchField.html" loading="lazy"></iframe></td>
+   <td>Firefox Chrome Safari Edge</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>searchfield-decoration</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sample-searchfield-decoration" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sample-searchfield-decoration.html" loading="lazy"></iframe></td>
+   <td>Safari Edge</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>searchfield-results-decoration</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sample-searchfield-results-decoration" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sample-searchfield-results-decoration.html" loading="lazy"></iframe></td>
+   <td>Safari Edge</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>searchfield-results-button</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sample-searchfield-results-button" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sample-searchfield-results-button.html" loading="lazy"></iframe></td>
+   <td>Safari Edge</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>searchfield-cancel-button</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleSearchFieldCancelButton" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleSearchFieldCancelButton.html" loading="lazy"></iframe></td>
+   <td>Chrome Safari Edge</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>snapshotted-plugin-overlay</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sample-snapshotted-plugin-overlay" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sample-snapshotted-plugin-overlay.html" loading="lazy"></iframe></td>
+   <td>Safari</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>separator</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleSeparator" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleSeparator.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64.</td>
+  </tr>
+  <tr>
+   <td><code>sheet</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleSheet" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleSheet.html" loading="lazy"></iframe></td>
+   <td>None</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>slider-horizontal</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleSliderHorizontal" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleSliderHorizontal.html" loading="lazy"></iframe></td>
+   <td>Chrome Safari Edge</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>slider-vertical</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleSliderVertical" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleSliderVertical.html" loading="lazy"></iframe></td>
+   <td>Chrome Safari Edge</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>sliderthumb-horizontal</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleSliderThumbHorizontal" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleSliderThumbHorizontal.html" loading="lazy"></iframe></td>
+   <td>Chrome Safari Edge</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>sliderthumb-vertical</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleSliderThumbVertical" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleSliderThumbVertical.html" loading="lazy"></iframe></td>
+   <td>Chrome Safari Edge</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>spinner</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleSpinner" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleSpinner.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64.</td>
+  </tr>
+  <tr>
+   <td><code>spinner-downbutton</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleSpinnerDownbutton" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleSpinnerDownbutton.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64.</td>
+  </tr>
+  <tr>
+   <td><code>spinner-textfield</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleSpinnerTextfield" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleSpinnerTextfield.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64.</td>
+  </tr>
+  <tr>
+   <td><code>spinner-upbutton</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleSpinnerUpbutton" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleSpinnerUpbutton.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64.</td>
+  </tr>
+  <tr>
+   <td><code>splitter</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleSplitter" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleSplitter.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64.</td>
+  </tr>
+  <tr>
+   <td><code>square-button</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleSquareButton" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleSquareButton.html" loading="lazy"></iframe></td>
+   <td>Chrome Safari Edge</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>statusbar</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleStatusBar" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleStatusBar.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64.</td>
+  </tr>
+  <tr>
+   <td><code>statusbarpanel</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleStatusBarPanel" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleStatusBarPanel.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64.</td>
+  </tr>
+  <tr>
+   <td><code>tab</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleTab" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleTab.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64</td>
+  </tr>
+  <tr>
+   <td><code>tabpanel</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleTabPanel" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleTabPanel.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64.</td>
+  </tr>
+  <tr>
+   <td><code>tabpanels</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleTabPanels" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleTabPanels.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64</td>
+  </tr>
+  <tr>
+   <td><code>tab-scroll-arrow-back</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleTabScrollArrowBack" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleTabScrollArrowBack.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64.</td>
+  </tr>
+  <tr>
+   <td><code>tab-scroll-arrow-forward</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleTabScrollArrowForward" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleTabScrollArrowForward.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64.</td>
+  </tr>
+  <tr>
+   <td><code>textarea</code></td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleTextArea" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleTextArea.html" loading="lazy"></iframe></td>
+   <td>Firefox Chrome Safari Edge</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>textfield</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleTextField" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleTextField.html" loading="lazy"></iframe></td>
+   <td>Firefox Chrome Safari Edge</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>textfield-multiline</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleTextfieldMultiline" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleTextfieldMultiline.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Use <code>textarea</code> instead</td>
+  </tr>
+  <tr>
+   <td><code>toolbar</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleToolbar" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleToolbar.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64.</td>
+  </tr>
+  <tr>
+   <td><code>toolbarbutton</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleToolbarButton" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleToolbarButton.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64.</td>
+  </tr>
+  <tr>
+   <td><code>toolbarbutton-dropdown</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleToolbarButtonDropdown" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleToolbarButtonDropdown.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64.</td>
+  </tr>
+  <tr>
+   <td><code>toolbargripper</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleToolbarGripper" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleToolbarGripper.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64.</td>
+  </tr>
+  <tr>
+   <td><code>toolbox</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleToolbox" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleToolbox.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64.</td>
+  </tr>
+  <tr>
+   <td><code>tooltip</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleTooltip" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleTooltip.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64.</td>
+  </tr>
+  <tr>
+   <td><code>treeheader</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleTreeHeader" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleTreeHeader.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64.</td>
+  </tr>
+  <tr>
+   <td><code>treeheadercell</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleTreeHeaderCell" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleTreeHeaderCell.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64.</td>
+  </tr>
+  <tr>
+   <td><code>treeheadersortarrow</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleTreeHeaderSortArrow" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleTreeHeaderSortArrow.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64.</td>
+  </tr>
+  <tr>
+   <td><code>treeitem</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleTreeItem" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleTreeItem.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64.</td>
+  </tr>
+  <tr>
+   <td><code>treeline</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleTreeLine" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleTreeLine.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64.</td>
+  </tr>
+  <tr>
+   <td><code>treetwisty</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleTreeTwisty" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleTreeTwisty.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64.</td>
+  </tr>
+  <tr>
+   <td><code>treetwistyopen</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleTreeTwistyOpen" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleTreeTwistyOpen.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64.</td>
+  </tr>
+  <tr>
+   <td><code>treeview</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleTreeView" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleTreeView.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64.</td>
+  </tr>
+  <tr>
+   <td><code>relevancy-level-indicator</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sample-relevancy-level-indicator" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sample-relevancy-level-indicator.html" loading="lazy"></iframe></td>
+   <td>Safari</td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><code>-moz-win-borderless-glass</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleWinBorderlessGlass" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleWinBorderlessGlass.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64. This style applies the Aero Glass effect -- but without a border -- to the element.</td>
+  </tr>
+  <tr>
+   <td><code>-moz-win-browsertabbar-toolbox</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleWinBrowsertabbarToolbox" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleWinBrowsertabbarToolbox.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64. This toolbox style is meant to be used for the tab bar in a browser.</td>
+  </tr>
+  <tr>
+   <td><code>-moz-win-communicationstext</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleWinCommunicationstext" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleWinCommunicationstext.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64.</td>
+  </tr>
+  <tr>
+   <td><code>-moz-win-communications-toolbox</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleWinCommunicationsToolbox" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleWinCommunicationsToolbox.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64. This toolbox style is meant to be used in communications and productivity applications. Corresponding foreground color is <code>-moz-win-communicationstext</code>.</td>
+  </tr>
+  <tr>
+   <td><code>-moz-win-exclude-glass</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleWinExcludeGlass" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleWinExcludeGlass.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64. This styles is used to exclude the Aero Glass effect on the element.</td>
+  </tr>
+  <tr>
+   <td><code>-moz-win-glass</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleWinGlass" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleWinGlass.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64. This style applies the Aero Glass effect to the element.</td>
+  </tr>
+  <tr>
+   <td><code>-moz-win-media-toolbox</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleWinMediaToolbox" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleWinMediaToolbox.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64. This toolbox style is meant to be used in applications that manage media objects. Corresponding foreground color is <code>-moz-win-mediatext</code>.</td>
+  </tr>
+  <tr>
+   <td><code>-moz-window-button-box</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleWindowButtonBox" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleWindowButtonBox.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64.</td>
+  </tr>
+  <tr>
+   <td><code>-moz-window-button-box-maximized</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleWindowButtonBoxMaximized" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleWindowButtonBoxMaximized.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64.</td>
+  </tr>
+  <tr>
+   <td><code>-moz-window-button-close</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleWindowButtonClose" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleWindowButtonClose.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64.</td>
+  </tr>
+  <tr>
+   <td><code>-moz-window-button-maximize</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleWindowButtonMaximize" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleWindowButtonMaximize.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64.</td>
+  </tr>
+  <tr>
+   <td><code>-moz-window-button-minimize</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleWindowButtonMinimize" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleWindowButtonMinimize.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64.</td>
+  </tr>
+  <tr>
+   <td><code>-moz-window-button-restore</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleWindowButtonRestore" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleWindowButtonRestore.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64.</td>
+  </tr>
+  <tr>
+   <td><code>-moz-window-frame-bottom</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleWindowFrameBottom" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleWindowFrameBottom.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64.</td>
+  </tr>
+  <tr>
+   <td><code>-moz-window-frame-left</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleWindowFrameLeft" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleWindowFrameLeft.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64.</td>
+  </tr>
+  <tr>
+   <td><code>-moz-window-frame-right</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleWindowFrameRight" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleWindowFrameRight.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64.</td>
+  </tr>
+  <tr>
+   <td><code>-moz-window-titlebar</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleWindowTitlebar" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleWindowTitlebar.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64.</td>
+  </tr>
+  <tr>
+   <td><code>-moz-window-titlebar-maximized</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleWindowTitlebarMaximized" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleWindowTitlebarMaximized.html" loading="lazy"></iframe></td>
+   <td>Firefox</td>
+   <td>Removed in Firefox 64.</td>
+  </tr>
+  <tr>
+   <td><code>-apple-pay-button</code>&nbsp;</td>
+   <td>
+    
+    <iframe class="nobutton" id="frame_sampleApplePayButton" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/appearance/_sample_.sampleApplePayButton.html" loading="lazy"></iframe></td>
+   <td>Safari</td>
+   <td><strong>iOS and macOS only</strong>. Available on the web starting in iOS 10.1 and macOS 10.12.1</td>
+  </tr>
+ </tbody>
+</table></div><h3 id="формальный_синтаксис"><a href="#формальный_синтаксис" title="Permalink to Формальный синтаксис">Формальный синтаксис</a></h3><div><pre class="notranslate">none <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> auto <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> textfield <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> menulist-button <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <a href="#compat-auto">&lt;compat-auto&gt;</a><p style="font-family:Open Sans,Arial,sans-serif; margin: 10px 0 0 0;">где <br><code style="font-family:Consolas,Monaco,&quot;Andale Mono&quot;,monospace;"><span id="compat-auto">&lt;compat-auto&gt;</span> = searchfield <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> textarea <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> push-button <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> slider-horizontal <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> checkbox <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> radio <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> square-button <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> menulist <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> listbox <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> meter <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> progress-bar <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> button</code></p></pre></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div><p>Нижеприведённый пример показывает, как сделать элемент, выглядящий как кнопка панели инструментов в Firefox:</p>
+
+<pre class="brush: css notranslate"><code><span class="token selector">.exampleone</span> <span class="token punctuation">{</span>
+  <span class="token property">-moz-appearance</span><span class="token punctuation">:</span> toolbarbutton<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p>Смотрите также <a href="http://jsfiddle.net/go392m5s/" class="external" rel=" noopener">this JSFiddle</a> в качестве примера, показывающего как вы можете использовать <code>appearance: none</code> для стилизации радио кнопок и чекбоксов.</p></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-ui-4/#appearance-switching" hreflang="en" lang="en" class="external" rel=" noopener">CSS Basic User Interface Module Level&nbsp;4<br><small lang="ru">Определение 'appearance' в этой спецификации.</small></a></td>
+   <td><span class="spec-wd">Рабочий черновик</span></td>
+   <td>Первое определение.</td>
+  </tr>
+ </tbody>
+</table>
+
+<p></p><table class="properties"><tbody><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td><code>auto</code></td></tr><tr><th scope="row">Применяется к</th><td>все элементы</td></tr><tr><th scope="row"><a href="/css/inheritance/">Наследуется</a></th><td>нет</td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>как указано</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="поддержка_браузерами"><a href="#поддержка_браузерами" title="Permalink to Поддержка&nbsp; браузерами">Поддержка&nbsp; браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a class="external" href="https://www.w3.org/TR/2004/CR-css3-ui-20040511/#appearance" rel=" noopener">Definition of <code>appearance</code> in CSS 3 Basic User Interface</a> (Candidate Recommendation from 2004-05-11).</li>
+ <li><a class="external" href="https://wiki.csswg.org/spec/css4-ui#dropped-css3-features" rel=" noopener">Dropped CSS3 features from the UI spec.4</a></li>
+</ul></div>

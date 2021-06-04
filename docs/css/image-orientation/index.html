@@ -1,0 +1,68 @@
+<h1>image-orientation</h1><div><div><div class="notecard deprecated">
+            <h4 id="deprecated">Deprecated</h4>
+            <p>This feature is no longer recommended. Though some browsers might still support it, it may have already been removed from the relevant web standards, may be in the process of being dropped, or may only be kept for compatibility purposes. Avoid using it, and update existing code if possible; see the <a href="#browser_compatibility">compatibility table</a> at the bottom of this page to guide your decision. Be aware that this feature may cease to work at any time.</p>
+        </div></div>
+
+<p><span class="seoSummary">The <strong><code>image-orientation</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> property specifies a layout-independent correction to the orientation of an image.</span> It should <em>not</em> be used for any other orientation adjustments; instead, the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform"><code>transform</code></a> property should be used with the <code>rotate</code> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function"><code>&lt;transform-function&gt;</code></a>.</p>
+
+<div class="warning notecard">
+<p><strong>Warning:</strong> This property is deprecated in the specification. Its functionality may be moved into properties on the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img"><code>&lt;img&gt;</code></a> and/or <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture"><code>&lt;picture&gt;</code></a> elements, with the possible exception of <code>from-image</code>. The <code>flip</code> and <code>&lt;angle&gt;</code> values were made obsolete in Firefox 63.</p>
+</div>
+
+<pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* keyword values */</span>
+<span class="token property">image-orientation</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token property">image-orientation</span><span class="token punctuation">:</span> from-image<span class="token punctuation">;</span> <span class="token comment">/* Use EXIF data from the image */</span>
+
+<span class="token comment">/* Global values */</span>
+<span class="token property">image-orientation</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">image-orientation</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">image-orientation</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+
+<span class="token comment">/* Obsolete Values. 
+    
+ */</span>
+<span class="token property">image-orientation</span><span class="token punctuation">:</span> 90deg<span class="token punctuation">;</span> <span class="token comment">/* Rotate 90deg */</span>
+<span class="token property">image-orientation</span><span class="token punctuation">:</span> 90deg flip<span class="token punctuation">;</span> <span class="token comment">/* Rotate 90deg, and flip it horizontally */</span>
+<span class="token property">image-orientation</span><span class="token punctuation">:</span> flip<span class="token punctuation">;</span> <span class="token comment">/* No rotation, only applies a horizontal flip */</span></code></pre></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+ <dt><code>none</code></dt>
+ <dd>Does not apply any additional image rotation; the image is oriented as encoded or as other CSS property values dictate.</dd>
+ <dt><code>from-image</code></dt>
+ <dd>Default initial value. The <a title="EXIF" href="https://en.wikipedia.org/wiki/EXIF" class="external" rel=" noopener">EXIF</a> information contained in the image is used to rotate the image appropriately.</dd>
+ <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/angle"><code>&lt;angle&gt;</code></a> </dt>
+ <dd>The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/angle"><code>&lt;angle&gt;</code></a> of rotation to apply to the image. It is rounded to the nearest <code>90deg</code> (<code>0.25turn</code>).</dd>
+ <dt><code>flip</code> </dt>
+ <dd>The image is flipped horizontally (i.e., reflected) after the rotation given by the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/angle"><code>&lt;angle&gt;</code></a> value is applied. If no <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/angle"><code>&lt;angle&gt;</code></a> is given, <code>0deg</code> is used.</dd>
+</dl></div><h2 id="description"><a href="#description" title="Permalink to Description">Description</a></h2><div><p>This property is intended <em>only</em> to be used for the purpose of correcting the orientation of images which were shot with the camera rotated. It should <em>not</em> be used for arbitrary rotations. For any purpose other than correcting an image's orientation due to how it was shot or scanned, use a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform"><code>transform</code></a> property with the <code>rotate</code> keyword to specify rotation. This includes any user-directed changes to the orientation of the image, or changes required for printing in portrait versus landscape orientation.</p>
+
+<p>If used in conjunction with other CSS properties, such as a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function"><code>&lt;transform-function&gt;</code></a>, any <code>image-orientation</code> rotation is applied before any other transformations.</p></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td><code>from-image</code></td></tr><tr><th scope="row">Applies to</th><td>all elements</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance">Inherited</a></th><td>yes</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>an <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/angle"><code>&lt;angle&gt;</code></a>, rounded to the next quarter turn from <code>0deg</code> and normalized, that is moduloing the value by <code>1turn</code></td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate">from-image <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/angle" title="Possible values: a number followed by'deg', 'grad', 'rad' or 'turn', like 2turn, 1.3rad, -60deg or 0grad.">&lt;angle&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">[</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/angle" title="Possible values: a number followed by'deg', 'grad', 'rad' or 'turn', like 2turn, 1.3rad, -60deg or 0grad.">&lt;angle&gt;</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#question_mark_()" title="Question mark: the entity is optional">?</a> flip <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">]</a></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="orienting_image_from_image_data"><a href="#orienting_image_from_image_data" title="Permalink to Orienting image from image data">Orienting image from image data</a></h3><div><h4 id="css">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token selector">#image</span> <span class="token punctuation">{</span>
+  <span class="token property">image-orientation</span><span class="token punctuation">:</span> from-image<span class="token punctuation">;</span> <span class="token comment">/* Can be changed in the live sample */</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+
+
+<h4 id="result">Result</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Orienting_image_from_image_data" width="100%" height="240" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/image-orientation/_sample_.Orienting_image_from_image_data.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-images-3/#the-image-orientation" hreflang="en" lang="en" class="external" rel=" noopener">CSS Images Module Level&nbsp;3<br><small lang="en-US">The definition of 'image-orientation' in that specification.</small></a></td>
+   <td><span class="spec-cr">Candidate Recommendation</span></td>
+   <td>Initial definition.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li>Other image-related CSS properties: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit"><code>object-fit</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/object-position"><code>object-position</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/image-orientation" aria-current="page"><code>image-orientation</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/image-rendering"><code>image-rendering</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/image-resolution"><code>image-resolution</code></a>.</li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform"><code>transform</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/rotate"><code>rotate</code></a></li>
+</ul>
+
+<div></div></div>

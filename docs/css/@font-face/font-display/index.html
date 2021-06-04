@@ -1,0 +1,50 @@
+<h1>font-display</h1><div><div></div></div><h2 id="описание"><a href="#описание" title="Permalink to Описание">Описание</a></h2><div><p>Дескриптор&nbsp;<code>font-display</code>&nbsp;определяет то, как шрифт, подключённый через&nbsp;font face будет отображаться в зависимости от того, загрузился ли он и готов ли к использованию.</p></div><h3 id="временная_шкала_отображения_шрифтов"><a href="#временная_шкала_отображения_шрифтов" title="Permalink to Временная шкала отображения шрифтов">Временная шкала отображения шрифтов</a></h3><div><p>Временная шкала отображения шрифтов&nbsp;основывается на таймере, который запускается в момент, когда пользовательский агент начинает попытки по применению загруженного шрифта.&nbsp; Эта временная шкала разделена на три отрезка, приведённых ниже, которые диктуют поведение рендеринга любых элементов с использованием шрифта.</p>
+
+<dl>
+ <dt>Период блокировки шрифта (Font block period)</dt>
+ <dd>Если шрифт не загружен, любой элемент, который пытается его использовать, должен быть отрендерен с невидимым запасным шрифтом. Если за это время шрифт успешно загружается, то он используется, как обычно.</dd>
+ <dt>Период подмены шрифта (Font swap period)</dt>
+ <dd>Если шрифт не загружен, любой элемент, который пытается его использовать, должен быть отрендерен запасным шрифтом.&nbsp;Если за это время шрифт успешно загружается, то он используется, как обычно.</dd>
+ <dt>Период отказа шрифта (Font failure period)</dt>
+ <dd>Если шрифт не загружен, пользовательский агент воспринимает это как неудачную загрузку и использует запасной шрифт.</dd>
+</dl>
+
+<p></p><table class="properties"><tbody><tr><th scope="row">Связано с <a href="/css/At-rule/">@-правила</a></th><td><a href="/css/@font-face/"><code>@font-face</code></a></td></tr><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td><code>auto</code></td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>как указано</td></tr></tbody></table><p></p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="brush: css; notranslate"><code><span class="token comment">/* Значения свойства */</span>
+<span class="token property">font-display</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+<span class="token property">font-display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+<span class="token property">font-display</span><span class="token punctuation">:</span> swap<span class="token punctuation">;</span>
+<span class="token property">font-display</span><span class="token punctuation">:</span> fallback<span class="token punctuation">;</span>
+<span class="token property">font-display</span><span class="token punctuation">:</span> optional<span class="token punctuation">;</span></code></pre></div><h3 id="значения"><a href="#значения" title="Permalink to Значения">Значения</a></h3><div><dl>
+ <dt>auto</dt>
+ <dd>Стратегию&nbsp;загрузки&nbsp;шрифта определяет пользовательский агент.</dd>
+ <dt>block</dt>
+ <dd>Для шрифта задаётся короткий период&nbsp;блокировки и бесконечный период&nbsp;подмены.</dd>
+ <dt>swap</dt>
+ <dd>Для шрифта не задаётся период&nbsp;блокировки и задаётся бесконечный период подмены.</dd>
+ <dt>fallback</dt>
+ <dd>Для шрифта задаётся очень короткий период&nbsp;блокировки и короткий период&nbsp;подмены.</dd>
+ <dt>optional</dt>
+ <dd>Для шрифта задаётся очень короткий период блокировки и не задаётся период подмены.</dd>
+</dl></div><h3 id="официальный_синтаксис"><a href="#официальный_синтаксис" title="Permalink to Официальный синтаксис">Официальный синтаксис</a></h3><div><pre class="notranslate"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> auto <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> block <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> swap <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> fallback <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> optional <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a></pre></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div><pre class="brush: css; highlight[7] notranslate"><code><span class="token atrule"><span class="token rule">@font-face</span></span> <span class="token punctuation">{</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> ExampleFont<span class="token punctuation">;</span>
+  <span class="token property">src</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>/path/to/fonts/examplefont.woff<span class="token punctuation">)</span></span> <span class="token function">format</span><span class="token punctuation">(</span><span class="token string">'woff'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+       <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>/path/to/fonts/examplefont.eot<span class="token punctuation">)</span></span> <span class="token function">format</span><span class="token punctuation">(</span><span class="token string">'eot'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">font-weight</span><span class="token punctuation">:</span> 400<span class="token punctuation">;</span>
+  <span class="token property">font-style</span><span class="token punctuation">:</span> normal<span class="token punctuation">;</span>
+  <span class="token property">font-display</span><span class="token punctuation">:</span> fallback<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://tabatkins.github.io/specs/css-font-display/#font-display-desc" hreflang="en" lang="en" class="external" rel=" noopener">CSS Font Rendering Controls Module Level 1<br><small lang="ru">Определение 'font-display' в этой спецификации.</small></a></td>
+   <td><span class="spec-draft">Черновик</span></td>
+   <td>Исходное описание</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="поддержка_браузерами"><a href="#поддержка_браузерами" title="Permalink to Поддержка браузерами">Поддержка браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div>

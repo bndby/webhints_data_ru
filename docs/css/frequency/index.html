@@ -1,0 +1,40 @@
+<h1>&lt;frequency&gt;</h1><div><div></div>
+
+<p>The <strong><code>&lt;frequency&gt;</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Types">data type</a> represents a frequency dimension, such as the pitch of a speaking voice. It is not currently used in any CSS properties.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><p>The <code>&lt;frequency&gt;</code> data type consists of a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/number"><code>&lt;number&gt;</code></a> followed by one of the units listed below. As with all CSS dimensions, there is no space between the unit literal and the number.</p></div><h3 id="units"><a href="#units" title="Permalink to Units">Units</a></h3><div><dl>
+ <dt><code><a id="Hz">Hz</a></code></dt>
+ <dd>Represents a frequency in hertz. Examples: <code>0Hz</code>, <code>1500Hz</code>, <code>10000Hz</code>.</dd>
+ <dt><code><a id="kHz">kHz</a></code></dt>
+ <dd>Represents a frequency in kilohertz. Examples: <code>0kHz</code>, <code>1.5kHz</code>, <code>10kHz</code>.</dd>
+</dl>
+
+<div class="note notecard">
+<p><strong>Note:</strong> Although the number <code>0</code> is always the same regardless of unit, the unit may not be omitted. In other words, <code>0</code> is invalid and does not represent <code>0Hz</code> or <code>0kHz</code>. Though the units are case-insensitive, it is good practice to use a capital "H" for <code>Hz</code> and <code>kHz</code>, as specified in the <a href="https://en.wikipedia.org/wiki/International_System_of_Units" class="external" rel=" noopener">SI</a>.</p>
+</div></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="valid_frequency_values"><a href="#valid_frequency_values" title="Permalink to Valid frequency values">Valid frequency values</a></h3><div><pre class="notranslate">12Hz     Positive integer
+4.3Hz    Non-integer
+14KhZ    The unit is case-insensitive, though non-SI capitalization is not recommended.
++0Hz     Zero, with a leading + and a unit
+-0kHz    Zero, with a leading - and a unit</pre></div><h3 id="invalid_frequency_values"><a href="#invalid_frequency_values" title="Permalink to Invalid frequency values">Invalid frequency values</a></h3><div><pre class="example-bad notranslate">12.0     This is a &lt;number&gt;, not an &lt;frequency&gt;, because it is missing a unit.
+7 Hz     No space is allowed between the number and the unit.
+0        Although unitless zero is an allowable &lt;length&gt;, it's an invalid &lt;frequency&gt;.</pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-values-3/#frequency" hreflang="en" lang="en" class="external" rel=" noopener">CSS Values and Units Module Level&nbsp;3<br><small lang="en-US">The definition of '&lt;frequency&gt;' in that specification.</small></a></td>
+   <td><span class="spec-cr">Candidate Recommendation</span></td>
+   <td>Initial definition.</td>
+  </tr>
+ </tbody>
+</table>
+
+<div class="note notecard">
+<p><strong>Note:</strong> This data type was initially introduced in <a href="https://www.w3.org/TR/CSS2/aural.html#q19.0" class="external" rel=" noopener">CSS Level 2</a> for the now-obsolete <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/aural">aural</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media#media_types">media type</a>, where it was used to define the pitch of the voice. However, the <code>&lt;frequency&gt;</code> data type has been reintroduced in CSS3, though no CSS property is using it at the moment.</p>
+</div></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/frequency-percentage"><code>&lt;frequency-percentage&gt;</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Values_and_Units">CSS Values and Units</a></li>
+</ul></div>

@@ -1,0 +1,56 @@
+<h1>text-align-last</h1><div><div></div>
+
+<div><div class="notecard experimental">
+    <h4 id="experimental">Experimental</h4>
+    <p><strong>Это экспериментальная технология</strong><br>Так как спецификация этой технологии ещё не стабилизировалась, смотрите <a href="#browser_compatibility">таблицу совместимости</a> по поводу использования в различных браузерах. Также заметьте, что синтаксис и поведение экспериментальной технологии может измениться в будущих версиях браузеров, вслед за изменениями спецификации.</p>
+</div></div></div><h2 id="кратко"><a href="#кратко" title="Permalink to Кратко">Кратко</a></h2><div><p><code>text-align-last</code> CSS свойство описывает как выравнивается последняя строка в блоке или строка, идущая сразу перед принудительным разрывом строки.</p>
+
+<div><table class="properties"><tbody><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td><code>auto</code></td></tr><tr><th scope="row">Применяется к</th><td>блочные контейнеры</td></tr><tr><th scope="row"><a href="/css/inheritance/">Наследуется</a></th><td>да</td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>как указано</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table></div></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="twopartsyntaxbox notranslate"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax" title="CSS/Value_definition_syntax">Formal syntax</a>: <pre class="notranslate">auto <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> start <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> end <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> left <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> right <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> center <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> justify</pre></pre>
+
+<pre class="notranslate">text-align-last: auto
+text-align-last: start
+text-align-last: end
+text-align-last: left
+text-align-last: right
+text-align-last: center
+text-align-last: justify
+
+text-align-last: inherit
+</pre></div><h3 id="значения"><a href="#значения" title="Permalink to Значения">Значения</a></h3><div><dl>
+ <dt><code>auto</code></dt>
+ <dd>Затронутая строка выравнивается в зависимости от значения&nbsp; <a href="/css/text-align/"><code>text-align</code></a>, за исключением <a href="/css/text-align/"><code>text-align</code></a> со значением <code>justify</code>, в этом случае эффект такой же как установить <code>text-align-last</code> равным <code>left</code>.</dd>
+ <dt><code>start</code></dt>
+ <dd>Подобно <code>left</code> если направление слева направо, и <code>right</code> если направление справа налево.</dd>
+ <dt><code>end</code></dt>
+ <dd>Подобно <code>right</code> если направление слева направо, и <code>left</code> если направление справа налево.</dd>
+ <dt><code>left</code></dt>
+ <dd>Линейное содержимое выравнивается по левому краю линейного блока.</dd>
+ <dt><code>right</code></dt>
+ <dd>Линейное содержимое выравнивается по правому краю линейного блока.</dd>
+ <dt><code>center</code></dt>
+ <dd>Линейное содержимое центрируется внутри линейного блока.</dd>
+ <dt><code>justify</code></dt>
+ <dd>Текст выравнивается по ширине. Тексту следует выстраивать свои левые и правые границы по левым и правым границам содержимого параграфа.</dd>
+</dl></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div><pre class="brush:css notranslate"><code><span class="token selector">div</span> <span class="token punctuation">{</span>
+  <span class="token property">text-align</span><span class="token punctuation">:</span> justify<span class="token punctuation">;</span>
+  <span class="token property">-moz-text-align-last</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+  <span class="token property">text-align-last</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-text-3/#text-align-last" hreflang="en" lang="en" class="external" rel=" noopener">CSS Text Module Level&nbsp;3<br><small lang="ru">Определение 'text-align-last' в этой спецификации.</small></a></td>
+   <td><span class="spec-cr">Кандидат в рекомендации</span></td>
+   <td>&nbsp;</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="совместимость_браузера"><a href="#совместимость_браузера" title="Permalink to Совместимость браузера">Совместимость браузера</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/css/text-align/"><code>text-align</code></a></li>
+</ul></div>

@@ -1,0 +1,82 @@
+<h1>Promise.resolve()</h1><div><div></div>
+
+<p>Метод&nbsp;<code><strong>Promise.resolve(value)</strong></code> возвращает <a href="/js/Promise/"><code>Promise</code></a> выполненный с переданным значением. Если переданное значение является thenable - объект&nbsp;(т.е. имеет метод&nbsp;<a href="/js/Promise/then/"><code>"then" method</code></a>), возвращаемый промис будет следовать thenable - объекту, принимая своё состояние; в ином случае возвращаемый промис будет выполнен с переданным значением.</p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><var>Promise.resolve(value)</var>;
+Promise.resolve(promise);
+Promise.resolve(thenable);
+</pre></div><h3 id="параметры"><a href="#параметры" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt>value</dt>
+ <dd>Значение с которым&nbsp;будет выполнен промис. Может также быть промисом или&nbsp;объект подобный промису (thenable - объект имеющий метод then).</dd>
+</dl></div><h3 id="возвращаемое_значение"><a href="#возвращаемое_значение" title="Permalink to Возвращаемое значение">Возвращаемое значение</a></h3><div><p>Выполненный с переданным значением <a href="/js/Promise/"><code>Promise</code></a>.</p></div><h2 id="описание"><a href="#описание" title="Permalink to Описание">Описание</a></h2><div><p><code>Метод Promise.resolve</code>&nbsp;возвращает выполненное промис (<code>Promise</code>).</p></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="использование_метода_promise.resolve"><a href="#использование_метода_promise.resolve" title="Permalink to Использование метода&nbsp;Promise.resolve">Использование метода&nbsp;<code>Promise.resolve</code></a></h3><div><pre class="brush: js notranslate"><code>Promise<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">"Success"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "Success"</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// не будет вызвана</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="выполнение_с_массивом"><a href="#выполнение_с_массивом" title="Permalink to Выполнение с массивом">Выполнение с массивом</a></h3><div><pre class="brush: js notranslate"><code><span class="token keyword">var</span> p <span class="token operator">=</span> Promise<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+p<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">v</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>v<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 1</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="выполнение_с_другим_промисом_promise"><a href="#выполнение_с_другим_промисом_promise" title="Permalink to Выполнение с другим промисом (&nbsp;Promise)">Выполнение с другим промисом (&nbsp;<code>Promise</code>)</a></h3><div><pre class="brush: js notranslate"><code><span class="token keyword">var</span> original <span class="token operator">=</span> Promise<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> cast <span class="token operator">=</span> Promise<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>original<span class="token punctuation">)</span><span class="token punctuation">;</span>
+cast<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">v</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="выполнение_с_thenable_объектом_и_выбрасывание_исключений"><a href="#выполнение_с_thenable_объектом_и_выбрасывание_исключений" title="Permalink to Выполнение с thenable объектом&nbsp;и выбрасывание исключений">Выполнение с thenable объектом&nbsp;и выбрасывание исключений</a></h3><div><pre class="brush: js notranslate"><code><span class="token comment">// Выполнение с thenable объектом</span>
+<span class="token keyword">var</span> p1 <span class="token operator">=</span> Promise<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token function-variable function">then</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">onFulfill<span class="token punctuation">,</span> onReject</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token function">onFulfill</span><span class="token punctuation">(</span><span class="token string">"fulfilled!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>p1 <span class="token keyword">instanceof</span> <span class="token class-name">Promise</span><span class="token punctuation">)</span> <span class="token comment">// true</span>
+
+p1<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">v</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "fulfilled!"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// не вызывается</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Thenable объект выбрасывает исключение</span>
+<span class="token comment">// перед вызовом колбэка Promise resolves</span>
+<span class="token keyword">var</span> thenable <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token function-variable function">then</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">resolve</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">TypeError</span><span class="token punctuation">(</span><span class="token string">"Throwing"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">"Resolving"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> p2 <span class="token operator">=</span> Promise<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>thenable<span class="token punctuation">)</span><span class="token punctuation">;</span>
+p2<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">v</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// не вызывается</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// TypeError: Throwing</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Thenable объект выбрасывает исключение</span>
+<span class="token comment">// после вызова колбэка Promise resolves</span>
+<span class="token keyword">var</span> thenable <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token function-variable function">then</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">resolve</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">"Resolving"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">TypeError</span><span class="token punctuation">(</span><span class="token string">"Throwing"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> p3 <span class="token operator">=</span> Promise<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>thenable<span class="token punctuation">)</span><span class="token punctuation">;</span>
+p3<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">v</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "Resolving"</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// не вызывается</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="спецификация"><a href="#спецификация" title="Permalink to Спецификация">Спецификация</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-promise.resolve" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Promise.resolve' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Initial definition in an ECMA standard.</td>
+  </tr>
+  <tr>
+   <td><a href="https://tc39.es/ecma262/#sec-promise.resolve" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript (ECMA-262)<br><small lang="ru">Определение 'Promise.resolve' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="совместимость_с_браузерами"><a href="#совместимость_с_браузерами" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><div class="notecard warning"><p>No compatibility data found for <code>javascript/promise</code>.<br><a href="#on-github">Check for problems with this page</a> or contribute missing data to<!-- --> <a href="https://github.com/mdn/browser-compat-data">mdn/browser-compat-data</a>.</p></div><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/Promise/"><code>Promise</code></a></li>
+</ul></div>

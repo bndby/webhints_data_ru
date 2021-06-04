@@ -1,0 +1,65 @@
+<h1>padding-bottom</h1><div><div></div>
+
+<p>The <strong><code>padding-bottom</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> property sets the height of the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model#padding-area">padding area</a> on the bottom of an element.</p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/padding-bottom.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+
+
+<p>An element's padding area is the space between its content and its border.</p>
+
+<p><img alt="The effect of the CSS padding-bottom property on the element box" src="/en-US/docs/Web/CSS/padding-bottom/padding-bottom.svg" width="400" height="130" loading="lazy"></p>
+
+<div class="note notecard">
+<p><strong>Note:</strong> The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding"><code>padding</code></a> property can be used to set paddings on all four sides of an element with a single declaration.</p>
+</div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* &lt;length&gt; values */</span>
+<span class="token property">padding-bottom</span><span class="token punctuation">:</span> 0.5em<span class="token punctuation">;</span>
+<span class="token property">padding-bottom</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+<span class="token property">padding-bottom</span><span class="token punctuation">:</span> 2cm<span class="token punctuation">;</span>
+
+<span class="token comment">/* &lt;percentage&gt; value */</span>
+<span class="token property">padding-bottom</span><span class="token punctuation">:</span> 10%<span class="token punctuation">;</span>
+
+<span class="token comment">/* Global values */</span>
+<span class="token property">padding-bottom</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">padding-bottom</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">padding-bottom</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre>
+
+<p>The <code>padding-bottom</code> property is specified as a single value chosen from the list below. Unlike margins, negative values are not allowed for padding.</p></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+ <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length"><code>&lt;length&gt;</code></a></dt>
+ <dd>The size of the padding as a fixed value. Must be nonnegative.</dd>
+ <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/percentage"><code>&lt;percentage&gt;</code></a></dt>
+ <dd>The size of the padding as a percentage, relative to the <em>width</em> of the containing block. Must be nonnegative.</dd>
+</dl></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td><code>0</code></td></tr><tr><th scope="row">Applies to</th><td>all elements, except <code>table-row-group</code>, <code>table-header-group</code>, <code>table-footer-group</code>, <code>table-row</code>, <code>table-column-group</code> and <code>table-column</code>. It also applies to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::first-letter"><code>::first-letter</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::first-line"><code>::first-line</code></a>.</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance">Inherited</a></th><td>no</td></tr><tr><th scope="row">Percentages</th><td>refer to the width of the containing block</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>the percentage as specified or the absolute length</td></tr><tr><th scope="row">Animation type</th><td>a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length#interpolation" title="Values of the <length> CSS data type are interpolated as real, floating-point numbers.">length</a></td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length" title="Possible values: a number followed by'em', 'ex', 'ch', 'rem', 'px', 'cm', 'mm', 'in', 'vh', 'vw', 'vmin', 'vmax', 'pt', 'pc' or 'px', like 3px, 1.5cm, -0.5em or 0">&lt;length&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/percentage" title>&lt;percentage&gt;</a></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="setting_padding_bottom_with_pixels_and_percentages"><a href="#setting_padding_bottom_with_pixels_and_percentages" title="Permalink to Setting padding bottom with pixels and percentages">Setting padding bottom with pixels and percentages</a></h3><div><pre class="brush: css notranslate"><code><span class="token selector">.content</span> <span class="token punctuation">{</span> <span class="token property">padding-bottom</span><span class="token punctuation">:</span> 5%<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token selector">.sidebox</span> <span class="token punctuation">{</span> <span class="token property">padding-bottom</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-box-3/#propdef-padding-bottom" hreflang="en" lang="en" class="external" rel=" noopener">CSS Box Model<br><small lang="en-US">The definition of 'padding-bottom' in that specification.</small></a></td>
+   <td><span class="spec-cr">Candidate Recommendation</span></td>
+   <td>No change.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/CSS2/box.html#padding-properties" hreflang="en" lang="en" class="external" rel=" noopener">CSS Level&nbsp;2 (Revision&nbsp;1)<br><small lang="en-US">The definition of 'padding-bottom' in that specification.</small></a></td>
+   <td><span class="spec-rec">Recommendation</span></td>
+   <td>No change.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/CSS1/#padding-bottom" hreflang="en" lang="en" class="external" rel=" noopener">CSS Level&nbsp;1<br><small lang="en-US">The definition of 'padding-bottom' in that specification.</small></a></td>
+   <td><span class="spec-rec">Recommendation</span></td>
+   <td>Initial definition.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model">Introduction to the CSS basic box model</a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding-top"><code>padding-top</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding-right"><code>padding-right</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding-left"><code>padding-left</code></a> and the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding"><code>padding</code></a> shorthand</li>
+ <li>The mapped logical properties: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding-block-start"><code>padding-block-start</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding-block-end"><code>padding-block-end</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding-inline-start"><code>padding-inline-start</code></a>, and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding-inline-end"><code>padding-inline-end</code></a> and the shorthands <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding-block"><code>padding-block</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding-inline"><code>padding-inline</code></a></li>
+</ul></div>

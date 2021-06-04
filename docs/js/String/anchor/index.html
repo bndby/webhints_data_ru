@@ -1,0 +1,35 @@
+<h1>String.prototype.anchor()</h1><div><div> <div class="notecard deprecated">
+            <h4 id="устарело">Устарело</h4>
+            <p>Эта возможность была удалена из веб-стандартов. Хотя некоторые браузеры по-прежнему могут поддерживать её, она находится в процессе удаления. Не используйте её ни в старых, ни в новых проектах. Страницы или веб-приложения, использующие её, могут в любой момент сломаться.</p>
+        </div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Метод <strong><code>anchor()</code></strong> создаёт якорный HTML-элемент <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/A"><code>&lt;a&gt;</code></a>, используемый в качестве цели гиперссылки.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code><var>str</var>.anchor(<var>name</var>)</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>name</code></dt>
+ <dd>Строка, представляющая атрибут <code>name</code> создаваемого тега.</dd>
+</dl></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Метод <code>anchor()</code> используется для программного создания и отображения якоря в документе.</p>
+
+<p>Текстовая строка представляет из себя буквальный текст, который ва хотите показать пользователю. Строковый параметр <code>name</code> представляет атрибут <code>name</code> элемента <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/A"><code>&lt;a&gt;</code></a>.</p>
+
+<p>Якоря, созданные методом <code>anchor()</code>, становятся элементами в массиве <a href="https://developer.mozilla.org/ru/docs/Web/API/Document/anchors"><code>document.anchors</code></a>.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_using_anchor"><a href="#example_using_anchor" title="Permalink to Пример: использование метода anchor()">Пример: использование метода <code>anchor()</code></a></h3><div><pre class="brush: js notranslate"><code><span class="token keyword">var</span> myString <span class="token operator">=</span> <span class="token string">'Оглавление'</span><span class="token punctuation">;</span>
+
+document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> myString<span class="token punctuation">.</span><span class="token function">anchor</span><span class="token punctuation">(</span><span class="token string">'contents_anchor'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+<p>приведёт к выводу следующего HTML:</p>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>contents_anchor<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Оглавление<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-string.prototype.anchor" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'String.prototype.anchor' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Изначальное определение. Реализована в JavaScript 1.0.<br>
+    Определена в (нормативном) Приложении B по Дополнительным возможностям ECMAScript для веб-браузеров.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/String/link/"><code>String.prototype.link()</code></a></li>
+</ul></div>

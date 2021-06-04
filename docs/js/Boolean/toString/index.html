@@ -1,0 +1,31 @@
+<h1>Boolean.prototype.toString()</h1><div><div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Метод <code><strong>toString()</strong></code> возвращает строковое представление указанного объекта <a href="/js/Boolean/"><code>Boolean</code></a>.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code><var>bool</var>.toString()</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><p>Нет.</p></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Объект <a href="/js/Boolean/"><code>Boolean</code></a> переопределяет метод <code>toString</code> объекта <a href="/js/Object/"><code>Object</code></a>; он не наследует метод <a href="/js/Object/toString/"><code>Object.prototype.toString()</code></a>. Для объектов <a href="/js/Boolean/"><code>Boolean</code></a> метод <code>toString</code> возвращает строковое представление объекта.</p>
+<p>JavaScript вызывает метод <code>toString</code> автоматически, когда объект <a href="/js/Boolean/"><code>Boolean</code></a> должен быть представлен в виде текста или когда объект <a href="/js/Boolean/"><code>Boolean</code></a> находится в контексте строковой конкатенации.</p>
+<p>Для объектов и значений <a href="/js/Boolean/"><code>Boolean</code></a> встроенный метод <code>toString</code> возвращает строки «<code>true</code>» или «<code>false</code>» в зависимости от значения логического объекта.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example.3a_using_tostring"><a href="#example.3a_using_tostring" title="Permalink to Пример: использование toString">Пример: использование <code>toString</code></a></h3><div><p>В следующем коде вызов <code>flag.toString()</code> вернёт строку <code>"true"</code>:</p>
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> flag <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Boolean</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> myVar <span class="token operator">=</span> flag<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td>ECMAScript 1-е издание.</td>
+   <td>Стандарт</td>
+   <td>Изначальное определение. Реализована в JavaScript 1.1.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-15.6.4.2" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 5.1 (ECMA-262)<br><small lang="ru">Определение 'Boolean.prototype.toString' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-boolean.prototype.tostring" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Boolean.prototype.toString' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/Object/toString/"><code>Object.prototype.toString()</code></a></li>
+</ul></div>

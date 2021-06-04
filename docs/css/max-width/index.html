@@ -1,0 +1,130 @@
+<h1>max-width</h1><div><div></div>
+
+<p>Свойство&nbsp;<a href="https://developer.mozilla.org/ru/docs/Web/ru/docs/Web/CSS">CSS</a> <strong><code>max-width</code></strong> устанавливает максимальную ширину элемента. Оно предотвращает&nbsp;<a href="/css/used_value/">используемое значение</a> свойства <a href="/css/width/"><code>width</code></a> &nbsp;от становления больше, чем значение, указанное для <code>max-width</code>.</p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/max-width.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+
+
+<p><a href="/css/max-width/" aria-current="page"><code>max-width</code></a> перекрывает <a href="/css/width/"><code>width</code></a>, но <a href="/css/min-width/"><code>min-width</code></a> перекрывает <a href="/css/max-width/" aria-current="page"><code>max-width</code></a>.</p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* &lt;length&gt; значение */</span>
+<span class="token property">max-width</span><span class="token punctuation">:</span> 3.5em<span class="token punctuation">;</span>
+
+<span class="token comment">/* &lt;percentage&gt; значение */</span>
+<span class="token property">max-width</span><span class="token punctuation">:</span> 75%<span class="token punctuation">;</span>
+
+<span class="token comment">/* Значения-ключевые слова */</span>
+<span class="token property">max-width</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token property">max-width</span><span class="token punctuation">:</span> max-content<span class="token punctuation">;</span>
+<span class="token property">max-width</span><span class="token punctuation">:</span> min-content<span class="token punctuation">;</span>
+<span class="token property">max-width</span><span class="token punctuation">:</span> fit-content<span class="token punctuation">;</span>
+<span class="token property">max-width</span><span class="token punctuation">:</span> fill-available<span class="token punctuation">;</span>
+
+<span class="token comment">/* Глобальные значения */</span>
+<span class="token property">max-width</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">max-width</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">max-width</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre></div><h3 id="значения"><a href="#значения" title="Permalink to Значения">Значения</a></h3><div><dl>
+ <dt><a href="/css/length/"><code>&lt;length&gt;</code></a></dt>
+ <dd>Максимальная ширина выражается как <a href="/css/length/"><code>&lt;length&gt;</code></a>.</dd>
+ <dt><a href="/css/percentage/"><code>&lt;percentage&gt;</code></a></dt>
+ <dd>Максимальная ширина выражается как <a href="/css/percentage/"><code>&lt;percentage&gt;</code></a> от ширины родительского блока.</dd>
+</dl>
+
+<h4 id="значения-ключевые_слова">Значения-ключевые слова</h4>
+
+<dl>
+ <dt><code>none</code></dt>
+ <dd>Ширина не имеет максимального значения. (по умолчанию)</dd>
+ <dt><code>max-content</code></dt>
+ <dd>Внутренняя предпочтительная ширина.</dd>
+ <dt><code>min-content</code></dt>
+ <dd>Внутренняя минимальная ширина.</dd>
+ <dt><code>fill-available</code></dt>
+ <dd>Ширина родительского блока минус горизонтальные&nbsp;<code>margin</code>, <code>border</code>, и <code>padding</code>. (Обратите внимание, что некоторые браузеры реализуют устаревшее имя для этого ключевого слова., <code>available</code>.)</dd>
+ <dt><code>fit-content</code></dt>
+ <dd>То же что и&nbsp;<code>max-content.</code></dd>
+</dl></div><h3 id="формальный_синтаксис"><a href="#формальный_синтаксис" title="Permalink to Формальный синтаксис">Формальный синтаксис</a></h3><div><pre class="notranslate">none <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <a href="#length-percentage">&lt;length-percentage&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> min-content <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> max-content <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> fit-content <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> fit-content(<a href="#length-percentage">&lt;length-percentage&gt;</a>)<p style="font-family:Open Sans,Arial,sans-serif; margin: 10px 0 0 0;">где <br><code style="font-family:Consolas,Monaco,&quot;Andale Mono&quot;,monospace;"><span id="length-percentage">&lt;length-percentage&gt;</span> = <a href="/css/length/" title="Возможные значения: a number followed by'em', 'ex', 'ch', 'rem', 'px', 'cm', 'mm', 'in', 'vh', 'vw', 'vmin', 'vmax', 'pt', 'pc' или 'px', как 3px, 1.5cm, -0.5em или 0">&lt;length&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <a href="/css/percentage/" title>&lt;percentage&gt;</a></code></p></pre></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div><p>В этом примере, "child" будет иметь ширину 150 пикселей или ширину "parent", в зависимости от того, что меньше:</p>
+
+<div id="basic-max-width-demo">
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>parent<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>child<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    Fusce pulvinar vestibulum eros, sed luctus ex lobortis quis.
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<pre class="brush: css notranslate"><code><span class="token selector">#parent</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> lightblue<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">#child</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> gold<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+  <span class="token property">max-width</span><span class="token punctuation">:</span> 150px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</div>
+
+<p><iframe class="sample-code-frame" id="frame_basic-max-width-demo" width="350" height="100" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/max-width/_sample_.basic-max-width-demo.html" loading="lazy"></iframe></p>
+
+<p>Значение <code>fit-content</code> можно использовать для установки ширины элемента на основе внутреннего размера, требуемого его содержимым:</p>
+
+<div id="fit-content-demo">
+<pre class="brush: html notranslate" style="display: none;"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>parent<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>child<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        Child Text
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<pre class="brush: css notranslate"><code><span class="token selector">#parent</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> lightblue<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">#child</span>  <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> gold<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+  <span class="token property">max-width</span><span class="token punctuation">:</span> -moz-fit-content<span class="token punctuation">;</span>
+  <span class="token property">max-width</span><span class="token punctuation">:</span> -webkit-fit-content<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</div>
+
+<p><iframe class="sample-code-frame" id="frame_fit-content-demo" width="400" height="100" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/max-width/_sample_.fit-content-demo.html" loading="lazy"></iframe></p></div><h2 id="проблемы_доступности"><a href="#проблемы_доступности" title="Permalink to Проблемы доступности">Проблемы доступности</a></h2><div><p>Убедитесь, что элементы с <code>max-width</code>&nbsp;не обрезаются и / или не закрывают другой контент, когда страница увеличена для увеличения размера текста.&nbsp;</p>
+
+<ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/Understanding_WCAG/Perceivable#Guideline_1.4_Make_it_easier_for_users_to_see_and_hear_content_including_separating_foreground_from_background">MDN Understanding WCAG, Guideline 1.4 explanations</a></li>
+ <li><a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-scale.html" rel="noopener" class="external">Understanding Success Criterion 1.4.4 &nbsp;| W3C Understanding WCAG 2.0</a></li>
+</ul></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-sizing-3/#width-height-keywords" hreflang="en" lang="en" class="external" rel=" noopener">CSS Box Sizing Module Level&nbsp;3<br><small lang="ru">Определение 'max-width' в этой спецификации.</small></a></td>
+   <td><span class="spec-wd">Рабочий черновик</span></td>
+   <td>Добавляет ключевые слова <code>max-content</code>, <code>min-content</code>, <code>fit-content</code>, и <code>fill-available</code>.<em> </em>(CSS3 Box и CSS3 Writing Modes черновики, используемые для определения этих ключевых слов, были заменены этой спецификацией<em>)</em></td>
+  </tr>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-transitions/#animatable-css" hreflang="en" lang="en" class="external" rel=" noopener">CSS Transitions<br><small lang="ru">Определение 'max-width' в этой спецификации.</small></a></td>
+   <td><span class="spec-wd">Рабочий черновик</span></td>
+   <td>Определяет&nbsp;<code>max-width</code> как анимируемое.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/CSS2/visudet.html#min-max-widths" hreflang="en" lang="en" class="external" rel=" noopener">CSS Level&nbsp;2 (Revision&nbsp;1)<br><small lang="ru">Определение 'max-width' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Первоначальное определение.</td>
+  </tr>
+ </tbody>
+</table>
+
+<p></p><table class="properties"><tbody><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td><code>none</code></td></tr><tr><th scope="row">Применяется к</th><td>все элементы, кроме незаменяемых строчных элементов, табличных строк и групп строк</td></tr><tr><th scope="row"><a href="/css/inheritance/">Наследуется</a></th><td>нет</td></tr><tr><th scope="row">Проценты</th><td>ссылается на ширину содержащего блока</td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>проценты, как указаны, абсолютная длина или <code>none</code></td></tr><tr><th scope="row">Animation type</th><td><a href="/css/length#interpolation/" title="Значения типа данных CSS <длина> интерполируются как вещественные числа с плавающей запятой.">длина</a>, <a href="/css/percentage#interpolation/" title="Значения типа данных CSS <проценты> интерполируются как вещественные числа с плавающей запятой.">проценты</a> или calc();</td></tr></tbody></table><p></p></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Поддержка браузерами">Поддержка браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/css/width/"><code>width</code></a>, <a href="/css/min-width/"><code>min-width</code></a>, <a href="/css/max-height/"><code>max-height</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model" title="en/CSS/box_model">Блочная модель</a>, <a href="/css/box-sizing/"><code>box-sizing</code></a></li>
+</ul></div>

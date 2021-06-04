@@ -1,0 +1,40 @@
+<h1>Math.clz32()</h1><div><div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Метод <strong><code>Math.clz32()</code></strong> возвращает количество ведущих нулевых битов в 32-битном двоичном представлении числа.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code>Math.clz32(<var>x</var>)</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>x</code></dt>
+ <dd>Число.</dd>
+</dl></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Название <code>clz32</code> является сокращением для более длинного <code>CountLeadingZeroes32</code> (<code>ПосчтитатьВедущиеНули32</code>).</p>
+
+<p>Если значение <code>x</code> не является числом, оно будет сначала преобразовано в число, а потом в 32-битное беззнаковое целое число.</p>
+
+<p>Если преобразованное 32-битное беззнаковое целое число равно <code>0</code>, метод вернёт <code>32</code>, поскольку все биты в числе равны <code>0</code>.</p>
+
+<p>Этот метод особенно полезен для систем, которые компилируются в JS, например, для <a href="https://developer.mozilla.org/ru/docs/Emscripten" class="page-not-created" title="This is a link to an unwritten page">Emscripten</a>.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_using_math.clz32"><a href="#example_using_math.clz32" title="Permalink to Пример: использование метода Math.clz32()">Пример: использование метода <code>Math.clz32()</code></a></h3><div><pre class="brush: js notranslate"><code>Math<span class="token punctuation">.</span><span class="token function">clz32</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                <span class="token comment">// 31</span>
+Math<span class="token punctuation">.</span><span class="token function">clz32</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>             <span class="token comment">// 22</span>
+Math<span class="token punctuation">.</span><span class="token function">clz32</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                 <span class="token comment">// 32</span>
+
+<span class="token punctuation">[</span><span class="token number">NaN</span><span class="token punctuation">,</span> <span class="token number">Infinity</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">Infinity</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token keyword">undefined</span><span class="token punctuation">,</span> <span class="token string">'foo'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>
+<span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">n</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> Math<span class="token punctuation">.</span><span class="token function">clz32</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token operator">!==</span> <span class="token number">32</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                           <span class="token comment">// []</span>
+
+Math<span class="token punctuation">.</span><span class="token function">clz32</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>             <span class="token comment">// 31</span>
+Math<span class="token punctuation">.</span><span class="token function">clz32</span><span class="token punctuation">(</span><span class="token number">3.5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>              <span class="token comment">// 30</span>
+</code></pre></div><h2 id="polyfill"><a href="#polyfill" title="Permalink to Полифил">Полифил</a></h2><div><pre class="brush: js notranslate"><code>Math<span class="token punctuation">.</span>clz32 <span class="token operator">=</span> Math<span class="token punctuation">.</span>clz32 <span class="token operator">||</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  value <span class="token operator">=</span> <span class="token function">Number</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token operator">&gt;&gt;&gt;</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> value <span class="token operator">!==</span> <span class="token number">0</span> <span class="token operator">?</span> <span class="token number">31</span> <span class="token operator">-</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>value <span class="token operator">+</span> <span class="token number">0.5</span><span class="token punctuation">)</span> <span class="token operator">/</span> Math<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token number">32</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-math.clz32" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Math.clz32' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Изначальное определение.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/Math/"><code>Math</code></a></li>
+</ul></div>

@@ -1,0 +1,61 @@
+<h1>Object.getOwnPropertyDescriptor()</h1><div><div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Метод <code><strong>Object.getOwnPropertyDescriptor()</strong></code> возвращает дескриптор свойства для <dfn>собственного свойства</dfn> (то есть такого, которое находится непосредственно в объекте, а не получено через цепочку прототипов) переданного объекта.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code>Object.getOwnPropertyDescriptor(<var>obj</var>, <var>prop</var>)</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>obj</code></dt>
+ <dd>Объект, в котором ищется свойство.</dd>
+ <dt><code>prop</code></dt>
+ <dd>Имя свойства, чьё описание будет возвращено.</dd>
+</dl></div><h3 id="returns"><a href="#returns" title="Permalink to Возвращаемое значение">Возвращаемое значение</a></h3><div><p>Дескриптор переданного свойства, если оно присутствует в объекте, либо <a href="/js/undefined/"><code>undefined</code></a>, если его там нет.</p></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Этот метод позволяет просмотреть точное описание свойства. <dfn>Свойство</dfn> в JavaScript состоит из строкового имени и дескриптора свойства. Подробная информация о типах дескрипторов свойств и их атрибутах может быть найдена в описании метода <a href="/js/Object/defineProperty/"><code>Object.defineProperty()</code></a>.</p>
+<p><dfn>Дескриптор свойства</dfn>&nbsp;— это запись с некоторыми из следующих атрибутов:</p>
+<dl>
+ <dt><code>value</code></dt>
+ <dd>Значение, ассоциированное со свойством (только в дескрипторе данных).</dd>
+ <dt><code>writable</code></dt>
+ <dd>Значение <code>true</code>, если значение, ассоциированное со свойством, может быть изменено, иначе <code>false</code> (только в дескрипторе данных).</dd>
+ <dt><code>get</code></dt>
+ <dd>Функция, возвращающая значение свойства, либо <a href="/js/undefined/"><code>undefined</code></a>, если такая функция отсутствует (только в дескрипторе доступа).</dd>
+ <dt><code>set</code></dt>
+ <dd>Функция, изменяющая значение свойства, либо <a href="/js/undefined/"><code>undefined</code></a>, если такая функция отсутствует (только в дескрипторе доступа).</dd>
+ <dt><code>configurable</code></dt>
+ <dd>Значение <code>true</code>, если тип дескриптора этого свойства может быть изменён и если свойство может быть удалено из содержащего его объекта, иначе <code>false</code>.</dd>
+ <dt><code>enumerable</code></dt>
+ <dd>Значение <code>true</code>, если это свойство доступно при перечислении свойств содержащего его объекта, иначе <code>false</code>.</dd>
+</dl></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div><pre class="brush: js notranslate"><code><span class="token keyword">var</span> o<span class="token punctuation">,</span> d<span class="token punctuation">;</span>
+
+o <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token keyword">get</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token number">17</span><span class="token punctuation">;</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+d <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">getOwnPropertyDescriptor</span><span class="token punctuation">(</span>o<span class="token punctuation">,</span> <span class="token string">'foo'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// d равен { configurable: true, enumerable: true, get: /*функция геттера*/, set: undefined }</span>
+
+o <span class="token operator">=</span> <span class="token punctuation">{</span> bar<span class="token operator">:</span> <span class="token number">42</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+d <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">getOwnPropertyDescriptor</span><span class="token punctuation">(</span>o<span class="token punctuation">,</span> <span class="token string">'bar'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// d равен { configurable: true, enumerable: true, value: 42, writable: true }</span>
+
+o <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span>o<span class="token punctuation">,</span> <span class="token string">'baz'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> value<span class="token operator">:</span> <span class="token number">8675309</span><span class="token punctuation">,</span> writable<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> enumerable<span class="token operator">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+d <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">getOwnPropertyDescriptor</span><span class="token punctuation">(</span>o<span class="token punctuation">,</span> <span class="token string">'baz'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// d равен { value: 8675309, writable: false, enumerable: false, configurable: false }</span>
+</code></pre></div><h2 id="notes"><a href="#notes" title="Permalink to Примечания">Примечания</a></h2><div><p>В ES5, если первый аргумент метода не является объектом (является примитивным значением), будет выброшено исключение <a href="/js/TypeError/"><code>TypeError</code></a>. В ES6 такой аргумент будет сначала приведён к объекту.</p>
+<pre class="brush: js notranslate"><code><span class="token operator">&gt;</span> Object<span class="token punctuation">.</span><span class="token function">getOwnPropertyDescriptor</span><span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+TypeError<span class="token operator">:</span> <span class="token string">"foo"</span> is not an object  <span class="token comment">// код ES5</span>
+
+<span class="token operator">&gt;</span> Object<span class="token punctuation">.</span><span class="token function">getOwnPropertyDescriptor</span><span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span> configurable<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> enumerable<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token string">'f'</span><span class="token punctuation">,</span> writable<span class="token operator">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span>  <span class="token comment">// код ES6</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-15.2.3.3" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 5.1 (ECMA-262)<br><small lang="ru">Определение 'Object.getOwnPropertyDescriptor' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Изначальное определение. Реализована в JavaScript 1.8.5.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-object.getownpropertydescriptor" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Object.getOwnPropertyDescriptor' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/Object/defineProperty/"><code>Object.defineProperty()</code></a></li>
+</ul></div>

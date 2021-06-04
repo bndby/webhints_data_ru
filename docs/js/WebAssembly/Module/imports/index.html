@@ -1,0 +1,29 @@
+<h1>WebAssembly.Module.imports()</h1><div><div></div>
+
+<p>The <strong><code>WebAssembly.imports()</code></strong> function returns an array
+  containing descriptions of all the declared imports of the given <code>Module</code>.
+</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: js notranslate"><code>WebAssembly<span class="token punctuation">.</span>Module<span class="token punctuation">.</span><span class="token function">imports</span><span class="token punctuation">(</span>module<span class="token punctuation">)</span></code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Parameters">Parameters</a></h3><div><dl>
+  <dt><em>module</em></dt>
+  <dd>A <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Module"><code>WebAssembly.Module</code></a> object.</dd>
+</dl></div><h3 id="return_value"><a href="#return_value" title="Permalink to Return value">Return value</a></h3><div><p>An array containing objects representing the imported functions of the given module.
+</p></div><h3 id="exceptions"><a href="#exceptions" title="Permalink to Exceptions">Exceptions</a></h3><div><p>If module is not a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Module"><code>WebAssembly.Module</code></a> object instance, a
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError"><code>TypeError</code></a> is thrown.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="using_imports"><a href="#using_imports" title="Permalink to Using imports">Using imports</a></h3><div><p>The following example (see imports.html <a href="https://github.com/mdn/webassembly-examples/blob/master/js-api-examples/imports.html" class="external" rel=" noopener">source
+    code</a>; <a href="https://mdn.github.io/webassembly-examples/js-api-examples/imports.html" class="external" rel=" noopener">see it
+    live also</a>) compiles the loaded simple.wasm module.&nbsp; This module is then queried
+  for its imports.</p>
+
+<pre class="brush: js notranslate"><code>WebAssembly<span class="token punctuation">.</span><span class="token function">compileStreaming</span><span class="token punctuation">(</span><span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">'simple.wasm'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">mod</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> imports <span class="token operator">=</span> WebAssembly<span class="token punctuation">.</span>Module<span class="token punctuation">.</span><span class="token function">imports</span><span class="token punctuation">(</span>mod<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>imports<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+<p>The output looks like this:</p>
+
+<pre class="brush: js notranslate"><code><span class="token punctuation">{</span> module<span class="token operator">:</span> <span class="token string">"imports"</span><span class="token punctuation">,</span> name<span class="token operator">:</span> <span class="token string">"imported_func"</span><span class="token punctuation">,</span> kind<span class="token operator">:</span> <span class="token string">"function"</span> <span class="token punctuation">}</span></code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://webassembly.github.io/spec/js-api/#dom-module-imports">WebAssembly JavaScript Interface<!-- --> <br><small># <!-- -->dom-module-imports</small></a></td></tr></tbody></table><div></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+  <li><a href="https://developer.mozilla.org/en-US/docs/WebAssembly">WebAssembly</a> overview page</li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/WebAssembly/Concepts">WebAssembly concepts</a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/WebAssembly/Using_the_JavaScript_API">Using the WebAssembly
+      JavaScript API</a></li>
+</ul></div>

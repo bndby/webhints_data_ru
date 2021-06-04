@@ -1,0 +1,93 @@
+<h1>word-break</h1><div><div></div>
+
+<p>Свойство&nbsp;<a href="/css/">CSS</a> <strong> <code>word-break</code></strong>&nbsp;определяет, где будет установлен перевод&nbsp;на новую строку в случае превышения текстом границ&nbsp;блока.</p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/word-break.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+</div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* Значения ключевых слов */</span>
+<span class="token property">word-break</span><span class="token punctuation">:</span> normal<span class="token punctuation">;</span>
+<span class="token property">word-break</span><span class="token punctuation">:</span> break-all<span class="token punctuation">;</span>
+<span class="token property">word-break</span><span class="token punctuation">:</span> keep-all<span class="token punctuation">;</span>
+<span class="token property">word-break</span><span class="token punctuation">:</span> break-word<span class="token punctuation">;</span> <span class="token comment">/* не включено в стандарт */</span>
+
+<span class="token comment">/* Глобальные значения */</span>
+<span class="token property">word-break</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">word-break</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">word-break</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre>
+
+<p>Свойство&nbsp;<code>word-break</code> определяется одним из описанных ниже ключевых слов.</p></div><h3 id="значения"><a href="#значения" title="Permalink to Значения">Значения</a></h3><div><dl>
+ <dt><code>normal</code></dt>
+ <dd>Поведение по умолчанию для расстановки перевода&nbsp;строк.</dd>
+ <dt><code>break-all</code></dt>
+ <dd>При превышении границ блока, перевод строки будет вставлен между любыми двумя символами (за исключением текста на китайском/японском/корейском языке).</dd>
+ <dt><code>keep-all</code></dt>
+ <dd>Перевод строки не будет использован в тексте&nbsp;на китайском/японском/корейском языке. Для текста на других языках будет применено поведение по умолчанию&nbsp;(<code>normal</code>).</dd>
+ <dt><code>break-word</code> </dt>
+ <dd>При превышении границ блока, обычно остающиеся целыми слова,&nbsp;могут быть разбиты&nbsp;в произвольном месте, если не будет найдено&nbsp;более подходящее для переноса строки&nbsp;место.</dd>
+</dl>
+
+<div class="note notecard">
+<p><strong>Примечание:</strong>&nbsp;В отличие от&nbsp;<code>word-break: break-word</code>&nbsp;и&nbsp;<code>overflow-wrap: break-word</code> (смотри <a href="/css/overflow-wrap/"><code>overflow-wrap</code></a>), <code>word-break: break-all</code>&nbsp;вставит перевод строки в том месте, где текст будет превышать занимаемый им блок (даже в том случае, когда текст можно перенести по словам).</p>
+</div></div><h3 id="формальный_синтаксис"><a href="#формальный_синтаксис" title="Permalink to Формальный синтаксис">Формальный синтаксис</a></h3><div><pre class="notranslate">normal <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> break-all <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> keep-all <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> break-word</pre></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="html"><a href="#html" title="Permalink to HTML">HTML</a></h3><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>1. <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>code</span><span class="token punctuation">&gt;</span></span>word-break: normal<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>code</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>normal narrow<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is a long and
+ Honorificabilitudinitatibus califragilisticexpialidocious Taumatawhakatangihangakoauauotamateaturipukakapikimaungahoronukupokaiwhenuakitanatahu
+ グレートブリテンおよび北アイルランド連合王国という言葉は本当に長い言葉<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>2. <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>code</span><span class="token punctuation">&gt;</span></span>word-break: break-all<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>code</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>breakAll narrow<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is a long and
+ Honorificabilitudinitatibus califragilisticexpialidocious Taumatawhakatangihangakoauauotamateaturipukakapikimaungahoronukupokaiwhenuakitanatahu
+ グレートブリテンおよび北アイルランド連合王国という言葉は本当に長い言葉<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>3. <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>code</span><span class="token punctuation">&gt;</span></span>word-break: keep-all<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>code</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>keepAll narrow<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is a long and
+ Honorificabilitudinitatibus califragilisticexpialidocious Taumatawhakatangihangakoauauotamateaturipukakapikimaungahoronukupokaiwhenuakitanatahu
+ グレートブリテンおよび北アイルランド連合王国という言葉は本当に長い言葉<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>4. <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>code</span><span class="token punctuation">&gt;</span></span>word-break: break-word<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>code</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>breakWord narrow<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is a long and
+  Honorificabilitudinitatibus califragilisticexpialidocious Taumatawhakatangihangakoauauotamateaturipukakapikimaungahoronukupokaiwhenuakitanatahu
+ グレートブリテンおよび北アイルランド連合王国という言葉は本当に長い言葉<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span></code></pre></div><h3 id="css"><a href="#css" title="Permalink to CSS">CSS</a></h3><div><pre class="brush: css notranslate"><code><span class="token selector">.narrow</span> <span class="token punctuation">{</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 5px<span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 1px solid<span class="token punctuation">;</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> table<span class="token punctuation">;</span>
+  <span class="token property">max-width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.normal</span> <span class="token punctuation">{</span>
+  <span class="token property">word-break</span><span class="token punctuation">:</span> normal<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.breakAll</span> <span class="token punctuation">{</span>
+  <span class="token property">word-break</span><span class="token punctuation">:</span> break-all<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.keepAll</span> <span class="token punctuation">{</span>
+  <span class="token property">word-break</span><span class="token punctuation">:</span> keep-all<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.breakWord</span> <span class="token punctuation">{</span>
+  <span class="token property">word-break</span><span class="token punctuation">:</span> break-word<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p><iframe class="sample-code-frame" id="frame_Примеры" width="100%" height="600" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/word-break/_sample_.%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D1%8B.html" loading="lazy"></iframe></p></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-text-3/#word-break-property" hreflang="en" lang="en" class="external" rel=" noopener">CSS Text Module Level&nbsp;3<br><small lang="ru">Определение 'word-break' в этой спецификации.</small></a></td>
+   <td><span class="spec-cr">Кандидат в рекомендации</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table>
+
+<div><table class="properties"><tbody><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td><code>normal</code></td></tr><tr><th scope="row">Применяется к</th><td>все элементы</td></tr><tr><th scope="row"><a href="/css/inheritance/">Наследуется</a></th><td>да</td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>как указано</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table></div></div><h2 id="браузерная_совместимость"><a href="#браузерная_совместимость" title="Permalink to Браузерная совместимость">Браузерная совместимость</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="/css/overflow-wrap/"><code>overflow-wrap</code></a></li>
+</ul></div>

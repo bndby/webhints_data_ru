@@ -1,0 +1,57 @@
+<h1>Symbol.species</h1><div><div></div>
+
+<p><code><strong>Symbol.species</strong></code><strong> —</strong>&nbsp;известный символ, позволяющий&nbsp;определить конструктор, использующийся для создания порождённых объектов.</p>
+
+<div><table class="standard-table">
+  <thead>
+    <tr>
+      <th class="header" colspan="2">Атрибуты свойства<code>Symbol.species</code></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Записываемое</td>
+      <td>нет</td>
+    </tr>
+    <tr>
+      <td>Перечисляемое</td>
+      <td>нет</td>
+    </tr>
+    <tr>
+      <td>Настраиваемое</td>
+      <td>нет</td>
+    </tr>
+  </tbody>
+</table></div></div><h2 id="описание"><a href="#описание" title="Permalink to Описание">Описание</a></h2><div><p>Свойство <code><strong>Symbol.species</strong></code>, содержащее аксессор (геттер),&nbsp;позволяет подклассам переопределить конструктор, используемый по умолчанию для создания новых объектов.</p></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div><p>Вам может понадобиться возвращать объекты типа <a href="/js/Array/"><code>Array</code></a> в методах вашего производного&nbsp;класса&nbsp;<code>MyArray</code>. Например, при использовании метода вроде <a href="/js/Array/map/"><code>map()</code></a>, использующего конструктор по умолчанию, вам может потребоваться возвращать объект родительского&nbsp;типа&nbsp;<code>Array</code>, вместо&nbsp;<code>MyArray</code>. Символ <code><strong>species</strong></code> позволит вам это сделать:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">class</span> <span class="token class-name">MyArray</span> <span class="token keyword">extends</span> <span class="token class-name">Array</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Перегружаем species для использования родительского конструктора Array</span>
+  <span class="token keyword">static</span> <span class="token keyword">get</span> <span class="token punctuation">[</span>Symbol<span class="token punctuation">.</span>species<span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> Array<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MyArray</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> mapped <span class="token operator">=</span> a<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">x</span> <span class="token operator">=&gt;</span> x <span class="token operator">*</span> x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>mapped <span class="token keyword">instanceof</span> <span class="token class-name">MyArray</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// false</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>mapped <span class="token keyword">instanceof</span> <span class="token class-name">Array</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// true</span>
+</code></pre></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-symbol.species" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Symbol.species' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Изначальное определение.</td>
+  </tr>
+  <tr>
+   <td><a href="https://tc39.es/ecma262/#sec-symbol.species" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript (ECMA-262)<br><small lang="ru">Определение 'Symbol.species' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="поддержка_браузерами"><a href="#поддержка_браузерами" title="Permalink to Поддержка браузерами">Поддержка браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/Map/@@species/"><code>Map[@@species]</code></a></li>
+ <li><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/@@species"><code>Set[@@species]</code> <span>(en-US)</span></a></li>
+</ul></div>

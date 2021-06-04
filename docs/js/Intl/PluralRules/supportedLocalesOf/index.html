@@ -1,0 +1,42 @@
+<h1>Intl.PluralRules.supportedLocalesOf()</h1><div><div></div>
+
+<p>The <strong><code>Intl.PluralRules.supportedLocalesOf()</code></strong> method returns
+	an array containing those of the provided locales that are supported in plural
+	formatting without having to fall back to the runtime's default locale.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: js notranslate"><code>Intl<span class="token punctuation">.</span>PluralRules<span class="token punctuation">.</span><span class="token function">supportedLocalesOf</span><span class="token punctuation">(</span>locales<span class="token punctuation">)</span>
+Intl<span class="token punctuation">.</span>PluralRules<span class="token punctuation">.</span><span class="token function">supportedLocalesOf</span><span class="token punctuation">(</span>locales<span class="token punctuation">,</span> options<span class="token punctuation">)</span>
+</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Parameters">Parameters</a></h3><div><dl>
+	<dt><code><var>locales</var></code></dt>
+	<dd>A string with a BCP 47 language tag, or an array of such strings. For the general
+		form of the <code><var>locales</var></code> argument, see the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#locale_identification_and_negotiation">Intl</a> page.</dd>
+	<dt><code><var>options</var></code> <span class="badge inline optional">Optional</span></dt>
+	<dd>
+		<p>An object that may have the following property:</p>
+
+		<dl>
+			<dt><code>localeMatcher</code></dt>
+			<dd>The locale matching algorithm to use. Possible values are
+				"<code>lookup</code>" and "<code>best fit</code>"; the default is
+				"<code>best fit</code>". For information about this option, see the
+				<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#locale_negotiation">Intl</a> page.</dd>
+		</dl>
+	</dd>
+</dl></div><h3 id="return_value"><a href="#return_value" title="Permalink to Return value">Return value</a></h3><div><p>An array of strings representing a subset of the given locale tags that are supported
+	in plural formatting without having to fall back to the runtime's default locale.</p></div><h2 id="description"><a href="#description" title="Permalink to Description">Description</a></h2><div><p>Returns an array with a subset of the language tags provided in <code>locales</code>.
+	The language tags returned are those for which the runtime supports a locale in plural
+	formatting that the locale matching algorithm used considers a match, so that it
+	wouldn't have to fall back to the default locale.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="using_supportedlocalesof"><a href="#using_supportedlocalesof" title="Permalink to Using supportedLocalesOf()">Using supportedLocalesOf()</a></h3><div><p>Assuming a runtime that supports Indonesian and German but not Balinese in plural
+	formatting, <code>supportedLocalesOf</code> returns the Indonesian and German language
+	tags unchanged, even though <code>pinyin</code> collation is neither relevant to
+	plural formatting nor used with Indonesian, and a specialized German for Indonesia is
+	unlikely to be supported. Note the specification of the "<code>lookup</code>"
+	algorithm here — a "<code>best fit</code>" matcher might decide that Indonesian is an
+	adequate match for Balinese since most Balinese speakers also understand Indonesian,
+	and therefore return the Balinese language tag as well.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">const</span> locales <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'ban'</span><span class="token punctuation">,</span> <span class="token string">'id-u-co-pinyin'</span><span class="token punctuation">,</span> <span class="token string">'de-ID'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> options <span class="token operator">=</span> <span class="token punctuation">{</span> localeMatcher<span class="token operator">:</span> <span class="token string">'lookup'</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Intl<span class="token punctuation">.</span>PluralRules<span class="token punctuation">.</span><span class="token function">supportedLocalesOf</span><span class="token punctuation">(</span>locales<span class="token punctuation">,</span> options<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">', '</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// → "id-u-co-pinyin, de-ID"</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://tc39.es/ecma402/#sec-intl.pluralrules.supportedlocalesof">ECMAScript Internationalization API Specification<!-- --> <!-- -->(ECMAScript Internationalization API)<br><small># <!-- -->sec-intl.pluralrules.supportedlocalesof</small></a></td></tr></tbody></table><div></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><div></div></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+	<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/PluralRules"><code>Intl.PluralRules</code></a></li>
+</ul></div>

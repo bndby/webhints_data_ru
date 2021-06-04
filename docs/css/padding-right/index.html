@@ -1,0 +1,52 @@
+<h1>padding-right</h1><div><div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Summary">Summary</a></h2><div><p><a href="https://developer.mozilla.org/en/CSS" title="CSS">CSS</a>&nbsp;свойство&nbsp;<strong><code>padding-right</code></strong>&nbsp;элемента устанавливает значение поля&nbsp;от правого края элемента. Поля элемента (<a href="https://developer.mozilla.org/en/CSS/box_model#padding" title="http://developer.mozilla.org/en/CSS/Box_model#padding">padding area</a>) это&nbsp;область, расположенная между контентом&nbsp;и&nbsp;границей элемента. Отрицательное значение не валидно.</p>
+
+<p></p><table class="properties"><tbody><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td><code>0</code></td></tr><tr><th scope="row">Применяется к</th><td>все элементы, кроме <code>table-row-group</code>, <code>table-header-group</code>, <code>table-footer-group</code>, <code>table-row</code>, <code>table-column-group</code> и <code>table-column</code>. Это также применяется к <a href="/css/::first-letter/"><code>::first-letter</code></a> и <a href="/css/::first-line/"><code>::first-line</code></a>.</td></tr><tr><th scope="row"><a href="/css/inheritance/">Наследуется</a></th><td>нет</td></tr><tr><th scope="row">Проценты</th><td>ссылается на ширину содержащего блока</td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>процент, как указан, или аблосютная длина</td></tr><tr><th scope="row">Animation type</th><td><a href="/css/length#interpolation/" title="Значения типа данных CSS <длина> интерполируются как вещественные числа с плавающей запятой.">длина</a></td></tr></tbody></table><p></p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush:css notranslate"><code><span class="token comment">/* &lt;length&gt; значения */</span>
+<span class="token property">padding-right</span><span class="token punctuation">:</span> 0.5em<span class="token punctuation">;</span>
+<span class="token property">padding-right</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+<span class="token property">padding-right</span><span class="token punctuation">:</span> 2cm<span class="token punctuation">;</span>
+
+<span class="token comment">/* &lt;percentage&gt; значения */</span>
+<span class="token property">padding-right</span><span class="token punctuation">:</span> 10%<span class="token punctuation">;</span>
+
+<span class="token comment">/* Общие значения */</span>
+<span class="token property">padding-right</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">padding-right</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">padding-right</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+ <dt>&lt;length&gt;</dt>
+ <dd>Устанавливает положительную фиксированную ширину. Подробнее: <a href="/css/length/"><code>&lt;length&gt;</code></a>.</dd>
+ <dt>&lt;percentage&gt;</dt>
+ <dd>Процент по отношению к ширине контейнера.</dd>
+</dl></div><h3 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h3><div><pre class="notranslate"><a href="/css/length/" title="Возможные значения: a number followed by'em', 'ex', 'ch', 'rem', 'px', 'cm', 'mm', 'in', 'vh', 'vw', 'vmin', 'vmax', 'pt', 'pc' или 'px', как 3px, 1.5cm, -0.5em или 0">&lt;length&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <a href="/css/percentage/" title>&lt;percentage&gt;</a></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div><pre class="brush: css notranslate"><code><span class="token selector">.content</span> <span class="token punctuation">{</span> <span class="token property">padding-right</span><span class="token punctuation">:</span> 5%<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token selector">.sidebox</span> <span class="token punctuation">{</span> <span class="token property">padding-right</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-box-3/#the-padding" hreflang="en" lang="en" class="external" rel=" noopener">CSS Box Model<br><small lang="ru">Определение 'padding-right' в этой спецификации.</small></a></td>
+   <td><span class="spec-cr">Кандидат в рекомендации</span></td>
+   <td>Без изменений.</td>
+  </tr>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-transitions/#animatable-css" hreflang="en" lang="en" class="external" rel=" noopener">CSS Transitions<br><small lang="ru">Определение 'padding-right' в этой спецификации.</small></a></td>
+   <td><span class="spec-wd">Рабочий черновик</span></td>
+   <td>Определяет&nbsp;<code>padding-right</code>, как анимируемое свойство.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/CSS2/box.html#padding-properties" hreflang="en" lang="en" class="external" rel=" noopener">CSS Level&nbsp;2 (Revision&nbsp;1)<br><small lang="ru">Определение 'padding-right' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Без изменений.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/CSS1/#padding-right" hreflang="en" lang="en" class="external" rel=" noopener">CSS Level&nbsp;1<br><small lang="ru">Определение 'padding-right' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Исходное определение.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div>

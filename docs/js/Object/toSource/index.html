@@ -1,0 +1,84 @@
+<h1>Object.prototype.toSource()</h1><div><div> <div class="notecard warning">
+        <h4 id="не_стандартно">Не стандартно</h4>
+        <p>Эта возможность не является стандартной и стандартизировать её пока никто не собирается. Не используйте её на сайтах, смотрящих во внешний мир: она будет работать не у всех пользователей. Также могут присутствовать большие несовместимости между реализациями и её поведение может в будущем измениться.</p>
+      </div></div>
+
+<p>Метод <strong><code>toSource()</code></strong> возвращает строку, представляющую исходный код объекта.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code>Object.toSource();
+<var>obj</var>.toSource();</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><p>Нет.</p></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Метод <code>toSource()</code> возвращает следующие значения:</p>
+
+<ul>
+ <li>Для встроенного объекта <a href="/js/Object/"><code>Object</code></a>, метод <code>toSource()</code> возвращает следующую строку, указывающую, что исходный код не доступен:
+
+  <pre class="brush: js notranslate"><code><span class="token keyword">function</span> <span class="token function">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">[</span>native code<span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre>
+ </li>
+ <li>Для экземпляров <a href="/js/Object/"><code>Object</code></a>, метод <code>toSource()</code> возвращает строку, представляющую исходный код.</li>
+</ul>
+
+<p>Вы можете вызывать метод <code>toSource()</code> во время отладки для просмотра содержимого объекта.</p></div><h3 id="overriding_the_tosource_method"><a href="#overriding_the_tosource_method" title="Permalink to Переопределение метода toSource()">Переопределение метода <code>toSource()</code></a></h3><div><p>Вы можете безопасно переопределять метод <code>toSource()</code> для объектов. Например:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">function</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token class-name">Person</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">toSource</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token function">Person_toSource</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token string">'new Person('</span> <span class="token operator">+</span> <span class="token function">uneval</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">')'</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">'Joe'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toSource</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ---&gt; new Person("Joe")</span>
+</code></pre></div><h3 id="built-in_tostring_methods"><a href="#built-in_tostring_methods" title="Permalink to Встроенные методы toSource()">Встроенные методы <code>toSource()</code></a></h3><div><p>Каждый тип ядра JavaScript имеет свой собственный метод <code>toSource()</code>. Вот эти объекты:</p>
+
+<ul>
+ <li><a href="/js/Array/toSource/"><code>Array.prototype.toSource()</code></a> &nbsp;— метод объекта <a href="/js/Array/"><code>Array</code></a>.</li>
+ <li><a href="/js/Boolean/toSource/"><code>Boolean.prototype.toSource()</code></a> &nbsp;— метод объекта <a href="/js/Boolean/"><code>Boolean</code></a>.</li>
+ <li><a href="/js/Date/toSource/"><code>Date.prototype.toSource()</code></a> &nbsp;— метод объекта <a href="/js/Date/"><code>Date</code></a>.</li>
+ <li><a href="/js/Function/toSource/"><code>Function.prototype.toSource()</code></a> &nbsp;— метод объекта <a href="/js/Function/"><code>Function</code></a>.</li>
+ <li><a href="/js/Number/toSource/"><code>Number.prototype.toSource()</code></a> &nbsp;— метод объекта <a href="/js/Number/"><code>Number</code></a>.</li>
+ <li><a href="/js/RegExp/toSource/"><code>Regexp.prototype.toSource()</code></a> &nbsp;— метод объекта <a href="/js/RegExp/"><code>RegExp</code></a>.</li>
+ <li><a href="/js/String/toSource/"><code>String.prototype.toSource()</code></a> &nbsp;— метод объекта <a href="/js/String/"><code>String</code></a>.</li>
+ <li><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toSource"><code>Symbol.prototype.toSource()</code> <span>(en-US)</span></a> &nbsp;— метод объекта <a href="/js/Symbol/"><code>Symbol</code></a>.</li>
+ <li><code>Math.toSource()</code>&nbsp;— возвращает строку "Math".</li>
+</ul></div><h3 id="limitations_on_cyclical_objects"><a href="#limitations_on_cyclical_objects" title="Permalink to Ограничение на циклические объекты">Ограничение на циклические объекты</a></h3><div><p>В том случае, если объекты содержат ссылки на самих себя, например циклический связанный список или дерево, которое можно обходить в обоих направлениях, метод <code>toSource()</code> не создаёт такие ссылки, начиная с Firefox 24. Например:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> obj1 <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> obj2 <span class="token operator">=</span> <span class="token punctuation">{</span> a<span class="token operator">:</span> obj1 <span class="token punctuation">}</span><span class="token punctuation">;</span>
+obj1<span class="token punctuation">.</span>b <span class="token operator">=</span> obj2<span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Циклическая ссылка: '</span> <span class="token operator">+</span> <span class="token punctuation">(</span>obj1<span class="token punctuation">.</span>b<span class="token punctuation">.</span>a <span class="token operator">==</span> obj1<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> objSource <span class="token operator">=</span> obj1<span class="token punctuation">.</span><span class="token function">toSource</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// вернёт "({b:{a:{}}})"</span>
+
+obj1 <span class="token operator">=</span> <span class="token function">eval</span><span class="token punctuation">(</span>objSource<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Циклическая ссылка: '</span> <span class="token operator">+</span> <span class="token punctuation">(</span>obj1<span class="token punctuation">.</span>b<span class="token punctuation">.</span>a <span class="token operator">==</span> obj1<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+<p>Если же вам позарез нужно использовать метод <code>toSource()</code> для циклической структуры, объект должен предоставить переопределённый метод <code>toSource()</code>, либо с помощью ссылки на конструктор, либо предоставив анонимную функцию.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_using_tosource"><a href="#example_using_tosource" title="Permalink to Пример: использование метода toSource()">Пример: использование метода <code>toSource()</code></a></h3><div><p>Следующий код определяет тип объекта <code>Dog</code> и создаёт объект <code>theDog</code> типа <code>Dog</code>:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">function</span> <span class="token function">Dog</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> breed<span class="token punctuation">,</span> color<span class="token punctuation">,</span> sex</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>breed <span class="token operator">=</span> breed<span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>color <span class="token operator">=</span> color<span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>sex <span class="token operator">=</span> sex<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+theDog <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Dog</span><span class="token punctuation">(</span><span class="token string">'Болтушка'</span><span class="token punctuation">,</span> <span class="token string">'лабрадор'</span><span class="token punctuation">,</span> <span class="token string">'шоколадный'</span><span class="token punctuation">,</span> <span class="token string">'девочка'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+<p>Вызов метода <code>toSource()</code> на объекте <code>theDog</code> отобразит исходный код JavaScript, который определяет объект:</p>
+
+<pre class="brush: js notranslate"><code>theDog<span class="token punctuation">.</span><span class="token function">toSource</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// вернёт ({name:"Болтушка", breed:"лабрадор", color:"шоколадный", sex:"девочка"})</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><p>Не является частью какого-либо стандарта. Реализована в JavaScript 1.3.</p></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p>&nbsp;</p>
+
+<p></p><p></p>
+
+<p>&nbsp;</p>
+
+<div>&nbsp;</div>
+
+<div id="compat-mobile">&nbsp;</div></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/Object/toString/"><code>Object.prototype.toString()</code></a></li>
+</ul></div>

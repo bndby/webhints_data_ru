@@ -1,0 +1,70 @@
+<h1>overscroll-behavior</h1><div><div></div>
+
+<p><span class="seoSummary">The <strong><code>overscroll-behavior</code></strong> CSS property is shorthand for the <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/overscroll-behavior-x"><code>overscroll-behavior-x</code> <span>(en-US)</span></a> and <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/overscroll-behavior-y"><code>overscroll-behavior-y</code> <span>(en-US)</span></a> properties, which allow you to control the browser's scroll overflow behavior — what happens when the boundary of a scrolling area is reached.</span></p>
+
+<pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* Значения-ключевые слова */</span>
+<span class="token property">overscroll-behavior</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span> <span class="token comment">/* по умолчанию */</span>
+<span class="token property">overscroll-behavior</span><span class="token punctuation">:</span> contain<span class="token punctuation">;</span>
+<span class="token property">overscroll-behavior</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+
+<span class="token comment">/* Двойное значение */</span>
+<span class="token property">overscroll-behavior</span><span class="token punctuation">:</span> auto contain<span class="token punctuation">;</span>
+
+<span class="token comment">/* Глобальные значения */</span>
+<span class="token property">overflow</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">overflow</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">overflow</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre>
+
+<p>По умолчанию, мобильные браузеры как правило обеспечивают эффект "отскока" или даже&nbsp;обновляют страницу при достижение её верхней или нижней части (или другой области прокрутки). You may also have noticed that when you have a dialog box with scrolling content on top of a page of scrolling content, once the dialog box's scroll boundary is reached, the underlying page will then start to scroll — this is called <strong>scroll chaining</strong>.</p>
+
+<p>In some cases these behaviors are not desirable. you can use <code>overscroll-behavior</code> to get rid of unwanted scroll chaining and the browser's Facebook/Twitter app-inspired "pull to refresh"-type behavior.</p>
+
+<p></p><table class="properties"><tbody><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td><code>auto</code></td></tr><tr><th scope="row">Применяется к</th><td>не заменяемые блочные и inline-block элементы</td></tr><tr><th scope="row"><a href="/css/inheritance/">Наследуется</a></th><td>нет</td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>как и у каждого из подсвойств этого свойства:<br><ul><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/overscroll-behavior-x" class="only-in-en-us" title="Currently only available in English (US)">overscroll-behavior-x (en-US)</a>: как указано</li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/overscroll-behavior-y" class="only-in-en-us" title="Currently only available in English (US)">overscroll-behavior-y (en-US)</a>: как указано</li></ul></td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><p>The <code>overscroll-behavior</code> property is specified as one or two keywords chosen from the list of values below.</p>
+
+<p>Two keywords specifies the <code>overscroll-behavior</code> value on the <code>x</code> and <code>y</code> axes respectively. If only one value is specified, both x and y are assumed to have the same value.</p></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+ <dt><code>auto</code></dt>
+ <dd>The default scroll overflow behavior occurs as normal.</dd>
+ <dt><code>contain</code></dt>
+ <dd>Default scroll overflow behavior is observed inside the element this value is set on (e.g. "bounce" effects or refreshes), but no scroll chaining occurs to neighbouring scrolling areas, e.g. underlying elements will not scroll.</dd>
+ <dt><code>none</code></dt>
+ <dd>No scroll chaining occurs to neighbouring scrolling areas, and default scroll overflow behavior is prevented.</dd>
+</dl></div><h3 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h3><div><pre class="notranslate"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> contain <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> none <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> auto <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#curly_braces_(_)" title="Currently only available in English (US)" class="only-in-en-us">{ (en-US)</a>1,2<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#curly_braces_(_)" title="Currently only available in English (US)" class="only-in-en-us">} (en-US)</a></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div><p>In our <a href="https://mdn.github.io/css-examples/overscroll-behavior/" class="external" rel=" noopener">overscroll-behavior example</a> (see the <a href="https://github.com/mdn/css-examples/tree/master/overscroll-behavior" class="external" rel=" noopener">source code</a> also), we present a full-page list of fake contacts, and a dialog box containing a chat window.&nbsp;</p>
+
+<p><img alt src="https://mdn.mozillademos.org/files/15778/example.png" style="border-style: solid; border-width: 1px; display: block; margin: 0px auto;" loading="lazy"></p>
+
+<p>Both of these areas scroll; normally if you scrolled the chat window until you hit a scroll boundary, the underlying contacts window would start to scroll too, which is not desirable. This can be stopped using <code>overscroll-behavior-y</code> (<code>overscroll-behavior</code> would also work) on the chat window, like this:</p>
+
+<pre class="brush: css notranslate"><code><span class="token selector">.messages</span> <span class="token punctuation">{</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 220px<span class="token punctuation">;</span>
+  <span class="token property">overflow</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+  <span class="token property">overscroll-behavior-y</span><span class="token punctuation">:</span> contain<span class="token punctuation">;</span>
+<span class="token punctuation">}</span> </code></pre>
+
+<p>We also wanted to get rid of the standard overscroll effects when the contacts are scrolled to the top or bottom (e.g. Chrome on Android refreshes the page when you scroll past the top boundary). This can be prevented by setting <code>overscroll-behavior: none</code> on the <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/body"><code>&lt;body&gt;</code></a> element:</p>
+
+<pre class="brush: css notranslate"><code><span class="token selector">body</span> <span class="token punctuation">{</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">overscroll-behavior</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><p>Until the CSSWG publishes their own draft, the specification can only be found in its <a href="https://wicg.github.io/overscroll-behavior/" class="external" rel=" noopener">WICG Github Repository</a>.</p>
+
+<table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="about:unknown#propdef-overscroll-behavior" hreflang="en" lang="en" class="external">Unknown<br><small lang="ru">Определение 'overscroll-behavior' в этой спецификации.</small></a></td>
+   <td><span class="spec-">Неизвестно</span></td>
+   <td>&nbsp;</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developers.google.com/web/updates/2017/11/overscroll-behavior#demo" class="external" rel=" noopener">Take control of your scroll: customizing pull-to-refresh and overflow effects</a></li>
+</ul>
+
+<p>&nbsp;</p></div>

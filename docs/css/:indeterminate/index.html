@@ -1,0 +1,93 @@
+<h1>:indeterminate</h1><div><p></p><p></p>
+
+<p><a href="/css/">CSS</a><a href="/css/Pseudo-classes/">&nbsp;псевдокласс</a>&nbsp;<strong><code>:indeterminate</code></strong>&nbsp;находит&nbsp;элементы&nbsp;в неопределённом состоянии.</p>
+
+<pre class="brush: css no-line-numbers notranslate"><code><span class="token comment">/* Выбирает все элементы &lt;input&gt;, которые находятся в неопределённом состоянии */</span>
+<span class="token selector">input:indeterminate</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> lime<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<p>Селектор находит следующие элементы:</p>
+
+<ul>
+ <li>Элементы&nbsp;<code><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox">&lt;input type="checkbox"&gt;</a></code>, свойство&nbsp;<code>indeterminate</code>&nbsp;которых было установлено в&nbsp;<code>true</code>&nbsp;через <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a></li>
+ <li>Элементы&nbsp;<code><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio">&lt;input type="radio"&gt;</a></code>, когда все радио переключатели в одной группе (с одинаковым атрибутом&nbsp;<code>name</code>) не выбраны</li>
+ <li>Элементы <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/progress"><code>&lt;progress&gt;</code></a> в неопределённом состоянии</li>
+</ul></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="notranslate">:indeterminate</pre></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="чекбокс_и_радио_переключатели"><a href="#чекбокс_и_радио_переключатели" title="Permalink to Чекбокс и радио переключатели">Чекбокс и радио переключатели</a></h3><div><p>В этом примере специальные стили применяются к меткам, которые привязаны к неопределённым полям формы.</p>
+
+<h4 id="html">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>checkbox<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>checkbox<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>checkbox<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Эта метка будет зелёной.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Эта метка будет зелёной.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<h4 id="css">CSS</h4>
+
+<pre class="brush: css; hightlight[5] notranslate"><code><span class="token selector">input:indeterminate + label</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> lime<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<h4 id="javascript">JavaScript</h4>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> inputs <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">"input"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> inputs<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  inputs<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>indeterminate <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p><iframe class="sample-code-frame" id="frame_Checkbox_radio_button" width="auto" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/:indeterminate/_sample_.Checkbox_radio_button.html" loading="lazy"></iframe></p></div><h3 id="полоса_прогресса"><a href="#полоса_прогресса" title="Permalink to Полоса прогресса">Полоса прогресса</a></h3><div><h4 id="html_2">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>progress</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<h4 id="css_2">CSS</h4>
+
+<pre class="brush: css; hightlight[5] notranslate"><code><span class="token selector">progress</span> <span class="token punctuation">{</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 4px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">progress:indeterminate</span> <span class="token punctuation">{</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 0.5<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> lightgray<span class="token punctuation">;</span>
+  <span class="token property">box-shadow</span><span class="token punctuation">:</span> 0 0 2px 1px red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="результат"><a href="#результат" title="Permalink to Результат">Результат</a></h3><div><p><iframe class="sample-code-frame" id="frame_Progress_bar" width="auto" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/:indeterminate/_sample_.Progress_bar.html" loading="lazy"></iframe></p></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://html.spec.whatwg.org/multipage/#selector-indeterminate" hreflang="en" lang="en" class="external" rel=" noopener">HTML Living Standard<br><small lang="ru">Определение ':indeterminate' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td>Нет изменений.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html52/#selector-indeterminate" hreflang="en" lang="en" class="external" rel=" noopener">HTML5<br><small lang="ru">Определение ':indeterminate' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Определение семантики HTML и проверки.</td>
+  </tr>
+  <tr>
+   <td><a href="https://drafts.csswg.org/selectors-4/#indeterminate" hreflang="en" lang="en" class="external" rel=" noopener">Selectors Level&nbsp;4<br><small lang="ru">Определение ':indeterminate' в этой спецификации.</small></a></td>
+   <td><span class="spec-wd">Рабочий черновик</span></td>
+   <td>Нет изменений.</td>
+  </tr>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-ui-3/#indeterminate" hreflang="en" lang="en" class="external" rel=" noopener">CSS Basic User Interface Module Level&nbsp;3<br><small lang="ru">Определение ':indeterminate' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Определён псевдокласс, но не семантика.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="поддержка_браузерами"><a href="#поддержка_браузерами" title="Permalink to Поддержка браузерами">Поддержка браузерами</a></h2><p>BCD tables only load in the browser</p><div><div>
+<p></p><p></p>
+</div></div>

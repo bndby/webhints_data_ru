@@ -1,0 +1,85 @@
+<h1>TypedArray.prototype.forEach()</h1><div><div></div>
+
+<p>The <strong><code>forEach()</code></strong> method executes a provided function once
+  per array element. This method has the same algorithm as
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach"><code>Array.prototype.forEach()</code></a>. <em>TypedArray</em> is one of the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray#typedarray_objects">typed
+    array types</a> here.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: js notranslate"><code><span class="token comment">// Arrow function</span>
+<span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">element</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span> <span class="token punctuation">)</span>
+<span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">element<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span> <span class="token punctuation">)</span>
+<span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">element<span class="token punctuation">,</span> index<span class="token punctuation">,</span> array</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span> <span class="token punctuation">)</span>
+
+<span class="token comment">// Callback function</span>
+<span class="token function">forEach</span><span class="token punctuation">(</span>callbackFn<span class="token punctuation">)</span>
+<span class="token function">forEach</span><span class="token punctuation">(</span>callbackFn<span class="token punctuation">,</span> thisArg<span class="token punctuation">)</span>
+
+<span class="token comment">// Inline callback function</span>
+<span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token function">callbackFn</span><span class="token punctuation">(</span><span class="token parameter">element</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token function">callbackFn</span><span class="token punctuation">(</span><span class="token parameter">element<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token function">callbackFn</span><span class="token punctuation">(</span><span class="token parameter">element<span class="token punctuation">,</span> index<span class="token punctuation">,</span> array</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token function">callbackFn</span><span class="token punctuation">(</span><span class="token parameter">element<span class="token punctuation">,</span> index<span class="token punctuation">,</span> array</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> thisArg<span class="token punctuation">)</span>
+</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Parameters">Parameters</a></h3><div><dl>
+  <dt><code><var>callbackFn</var></code></dt>
+  <dd>Function that produces an element of the new typed array, taking three arguments:
+    <dl>
+      <dt><code><var>element</var></code></dt>
+      <dd>The current element being processed in the typed array.</dd>
+      <dt><code><var>index</var></code></dt>
+      <dd>The index of the current element being processed in the array.</dd>
+      <dt><code><var>array</var></code></dt>
+      <dd>The array <code>forEach()</code> was called upon.</dd>
+    </dl>
+  </dd>
+  <dt><code><var>thisArg</var></code> <span class="badge inline optional">Optional</span></dt>
+  <dd>Value to use as <code>this</code> when executing <code><var>callbackFn</var></code>.
+  </dd>
+</dl></div><h3 id="return_value"><a href="#return_value" title="Permalink to Return value">Return value</a></h3><div><p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined"><code>undefined</code></a>.</p></div><h2 id="description"><a href="#description" title="Permalink to Description">Description</a></h2><div><p>The <code>forEach()</code> method executes the provided
+  <code><var>callbackFn</var></code> once for each element present in the typed array in
+  ascending order. It is not invoked for indexes that have been deleted or elided.
+  However, it is executed for elements that are present and have the value
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined"><code>undefined</code></a>.</p>
+
+<p><code><var>callbackFn</var></code> is invoked with <strong>three arguments</strong>:</p>
+
+<ul>
+  <li>the <strong>element value</strong></li>
+  <li>the <strong>element index</strong></li>
+  <li>the <strong>typed array being traversed</strong></li>
+</ul>
+
+<p>If a <code><var>thisArg</var></code> parameter is provided to <code>forEach()</code>,
+  it will be passed to <code><var>callbackFn</var></code> when invoked, for use as its
+  <code>this</code> value.&nbsp; Otherwise, the value <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined"><code>undefined</code></a> will be passed
+  for use as its <code>this</code> value. The <code>this</code> value ultimately
+  observable by <code><var>callbackFn</var></code> is determined according to <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this">the usual rules for
+    determining the <code>this</code> seen by a function</a>.</p>
+
+<p>The range of elements processed by <code>forEach()</code> is set before the first
+  invocation of <code>callbackFn</code>. Elements that are appended to the typed array after
+  the call to <code>forEach()</code> begins will not be visited by
+  <code><var>callbackFn</var></code> . If the values of existing elements of the typed array
+  are changed, the value passed to <code><var>callbackFn</var></code> will be the value at
+  the time <code>forEach()</code> visits them; elements that are deleted before being
+  visited are not visited.</p>
+
+<p><code>forEach()</code> executes the <code>callbackFn</code> function once for each typed
+  array element; unlike <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/every"><code>every()</code></a> and
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/some"><code>some()</code></a> it, always returns the value
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined"><code>undefined</code></a>.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="logging_the_contents_of_a_typed_array"><a href="#logging_the_contents_of_a_typed_array" title="Permalink to Logging the contents of a typed array">Logging the contents of a typed array</a></h3><div><p>The following code logs a line for each element in a typed array:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">function</span> <span class="token function">logArrayElements</span><span class="token punctuation">(</span><span class="token parameter">element<span class="token punctuation">,</span> index<span class="token punctuation">,</span> array</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'a['</span> <span class="token operator">+</span> index <span class="token operator">+</span> <span class="token string">'] = '</span> <span class="token operator">+</span> element<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">new</span> <span class="token class-name">Uint8Array</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>logArrayElements<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// logs:</span>
+<span class="token comment">// a[0] = 0</span>
+<span class="token comment">// a[1] = 1</span>
+<span class="token comment">// a[2] = 2</span>
+<span class="token comment">// a[3] = 3</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://tc39.es/ecma262/#sec-%typedarray%.prototype.foreach">Unknown specification<!-- --> <br><small># <!-- -->sec-%typedarray%.prototype.foreach</small></a></td></tr></tbody></table><div></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+  <li>A polyfill of <code>TypedArray.prototype.forEach</code> is available in <a href="https://github.com/zloirock/core-js#ecmascript-typed-arrays" class="external" rel=" noopener"><code>core-js</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/map"><code>TypedArray.prototype.map()</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/every"><code>TypedArray.prototype.every()</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/some"><code>TypedArray.prototype.some()</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach"><code>Array.prototype.forEach()</code></a></li>
+</ul></div>

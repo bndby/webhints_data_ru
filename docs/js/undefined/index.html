@@ -1,0 +1,110 @@
+<h1>undefined</h1><div><div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Значение глобального свойства <code><strong>undefined</strong></code> представляет значение <code><a href="https://developer.mozilla.org/ru/docs/Glossary/undefined">undefined</a></code>. Это одно из <a href="https://developer.mozilla.org/ru/docs/Glossary/Primitive">примитивных значений</a> JavaScript.</p>
+
+<div><table class="standard-table">
+  <thead>
+    <tr>
+      <th class="header" colspan="2">Атрибуты свойства<code>undefined</code></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Записываемое</td>
+      <td>нет</td>
+    </tr>
+    <tr>
+      <td>Перечисляемое</td>
+      <td>нет</td>
+    </tr>
+    <tr>
+      <td>Настраиваемое</td>
+      <td>нет</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<div></div>
+
+<p><iframe class="interactive" width="100%" height="490" src="https://interactive-examples.mdn.mozilla.net/pages/js/globalprops-undefined.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code>undefined</code></pre></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p><code>undefined</code> является свойством <em>глобального объекта</em>, то есть, это переменная в глобальной области видимости. Начальным значением <code>undefined</code> является примитивное значение <code>undefined</code>.</p>
+
+<p>В современных браузерах (JavaScript 1.8.5 / Firefox 4+), <code>undefined</code> является ненастраиваемым и незаписываемым свойством, в соответствии со спецификацией ECMAScript 5. Даже когда это не так, избегайте его переопределения.</p>
+
+<p>Переменная, не имеющая присвоенного значения, обладает типом <code>undefined</code>. Также <code>undefined</code> возвращают метод или инструкция, если переменная, участвующая в вычислениях, не имеет присвоенного значения. Функция возвращает <code>undefined</code>, если она не <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/return">возвращает</a> какого-либо значения.</p>
+
+<p>Поскольку <code>undefined</code> не является <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#keywords">зарезервированным словом <span>(en-US)</span></a>, он может использоваться в качестве <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Grammar_and_types#variables">идентификатора</a> (имени переменной) в любой области видимости, за исключением глобальной.</p>
+
+<pre class="brush: js notranslate"><code><span class="token comment">// печатает 'foo string'</span>
+<span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token keyword">var</span> <span class="token keyword">undefined</span> <span class="token operator">=</span> <span class="token string">'foo'</span><span class="token punctuation">;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">undefined</span><span class="token punctuation">,</span> <span class="token keyword">typeof</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// печатает 'foo string'</span>
+<span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter"><span class="token keyword">undefined</span></span><span class="token punctuation">)</span><span class="token punctuation">{</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">undefined</span><span class="token punctuation">,</span> <span class="token keyword">typeof</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="strict_equality_and_undefined"><a href="#strict_equality_and_undefined" title="Permalink to Пример: строгое сравнение и undefined">Пример: строгое сравнение и <code>undefined</code></a></h3><div><p>Вы можете использовать <code>undefined</code> и операторы строгого равенства или неравенства для определения того, имеет ли переменная значение. В следующем коде переменная <code>x</code> не определена и инструкция <code>if</code> вычисляется в <code>true</code>.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> x<span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>x <span class="token operator">===</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// эти инструкции будут выполнены</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">else</span> <span class="token punctuation">{</span>
+  <span class="token comment">// эти инструкции не будут выполнены</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<div class="note notecard">
+<p><strong>Обратите внимание:</strong> здесь используется оператор строгого равенства (идентичности) вместо простого оператора равенства, поскольку <code>x == undefined</code> также проверяет, является ли <code>x</code> равным <code>null</code>, в то время как оператор идентичности этого не делает. <a href="/js/null/"><code>null</code></a> не эквивалентен <code>undefined</code>. Для более подробной информации смотрите <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators">операторы сравнения <span>(en-US)</span></a>.</p>
+</div></div><h3 id="typeof_operator_and_undefined"><a href="#typeof_operator_and_undefined" title="Permalink to Пример: оператор typeof и undefined">Пример: оператор <code>typeof</code> и <code>undefined</code></a></h3><div><p>В качестве альтернативы можно использовать оператор <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/typeof"><code>typeof</code></a>:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> x<span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> x <span class="token operator">===</span> <span class="token string">'undefined'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// эти инструкции будут выполнены</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p>Одной из причин использования оператора <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/typeof"><code>typeof</code></a> может быть та, что он не выбрасывает ошибку, если переменная не была определена.</p>
+
+<pre class="brush: js notranslate"><code><span class="token comment">// переменная x не была определена ранее</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> x <span class="token operator">===</span> <span class="token string">'undefined'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// вычислится в true без ошибок</span>
+  <span class="token comment">// эти инструкции будут выполнены</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span>x <span class="token operator">===</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// выкинет ReferenceError</span>
+
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p>Однако, уловки такого рода должны избегаться. JavaScript является языком со статической областью видимости, так что узнать, была ли переменная определена, можно путём просмотра, была ли она определена в охватывающем контексте. Единственным исключением являет глобальная область видимости, но глобальная область видимости привязана к глобальному объекту, так что проверка существования переменной в глобальном контексте может быть осуществлена путём проверки существования свойства <em>глобального объекта</em> (например, используя оператор <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/in"><code>in</code></a>).</p></div><h3 id="void_operator_and_undefined"><a href="#void_operator_and_undefined" title="Permalink to Пример: оператор void и undefined">Пример: оператор <code>void</code> и <code>undefined</code></a></h3><div><p>Третьей альтернативой является оператор <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/void"><code>void</code></a>.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> x<span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>x <span class="token operator">===</span> <span class="token keyword">void</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// эти инструкции будут выполнены</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// переменная y не была определена ранее</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>y <span class="token operator">===</span> <span class="token keyword">void</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// выкинет ReferenceError (в отличие от оператора `typeof`)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td>ECMAScript 1-е издание.</td>
+   <td>Стандарт</td>
+   <td>Изначальное определение. Реализована в JavaScript 1.3.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-15.1.1.3" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 5.1 (ECMA-262)<br><small lang="ru">Определение 'undefined' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-undefined" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'undefined' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/NaN/"><code>NaN</code></a></li>
+ <li><a href="/js/null/"><code>null</code></a></li>
+</ul></div>

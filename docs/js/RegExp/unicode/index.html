@@ -1,0 +1,42 @@
+<h1>RegExp.prototype.unicode</h1><div><div></div>
+
+<p>The <strong><code>unicode</code></strong> property indicates whether or not the "<code>u</code>" flag is used with a regular expression. <code>unicode</code> is a read-only property of an individual regular expression instance.</p>
+
+<div><iframe class="interactive" width="100%" height="692" src="https://interactive-examples.mdn.mozilla.net/pages/js/regexp-prototype-unicode.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+
+<div><table class="standard-table">
+  <thead>
+    <tr>
+      <th class="header" colspan="2">Property attributes of <code>RegExp.prototype.unicode</code></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Writable</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <td>Enumerable</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <td>Configurable</td>
+      <td>yes</td>
+    </tr>
+  </tbody>
+</table></div></div><h2 id="description"><a href="#description" title="Permalink to Description">Description</a></h2><div><p>The value of <code>unicode</code> is a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean"><code>Boolean</code></a> and <code>true</code> if the "<code>u</code>" flag was used; otherwise <code>false</code>. The "<code>u</code>" flag enables various Unicode-related features. With the "u" flag, any Unicode code point escapes will be interpreted as such, for example.</p>
+
+<p>You cannot change this property directly. It is read-only.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="using_the_unicode_property"><a href="#using_the_unicode_property" title="Permalink to Using the unicode property">Using the unicode property</a></h3><div><pre class="brush: js notranslate"><code><span class="token keyword">var</span> regex <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">RegExp</span><span class="token punctuation">(</span><span class="token string">'\u{61}'</span><span class="token punctuation">,</span> <span class="token string">'u'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>regex<span class="token punctuation">.</span>unicode<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://tc39.es/ecma262/#sec-get-regexp.prototype.unicode">Unknown specification<!-- --> <br><small># <!-- -->sec-get-regexp.prototype.unicode</small></a></td></tr></tbody></table><div></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/lastIndex"><code>RegExp.lastIndex</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/dotAll"><code>RegExp.prototype.dotAll</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/global"><code>RegExp.prototype.global</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/hasIndices"><code>RegExp.prototype.hasIndices</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/ignoreCase"><code>RegExp.prototype.ignoreCase</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/multiline"><code>RegExp.prototype.multiline</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/source"><code>RegExp.prototype.source</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/sticky"><code>RegExp.prototype.sticky</code></a></li>
+</ul></div>

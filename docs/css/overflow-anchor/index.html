@@ -1,0 +1,40 @@
+<h1>overflow-anchor</h1><div><div></div>
+
+<p>The <strong><code>overflow-anchor</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> property provides a way to opt out of the browser's scroll anchoring behavior, which adjusts scroll position to minimize content shifts.</p>
+
+<p>Scroll anchoring behavior is enabled by default in any browser that supports it. Therefore, changing the value of this property is typically only required if you are experiencing problems with scroll anchoring in a document or part of a document and need to turn the behavior off.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* Keyword values */</span>
+<span class="token property">overflow-anchor</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+<span class="token property">overflow-anchor</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+
+<span class="token comment">/* Global values */</span>
+<span class="token property">overflow-anchor</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">overflow-anchor</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">overflow-anchor</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+ <dt><code>auto</code></dt>
+ <dd>The element becomes a potential anchor when adjusting scroll position.</dd>
+ <dt><code>none</code></dt>
+ <dd>The element won't be selected as a potential anchor.</dd>
+</dl></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td><code>auto</code></td></tr><tr><th scope="row">Applies to</th><td>all elements</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance">Inherited</a></th><td>no</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>as specified</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate">auto <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> none</pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="prevent_scroll_anchoring"><a href="#prevent_scroll_anchoring" title="Permalink to Prevent scroll anchoring">Prevent scroll anchoring</a></h3><div><p>To prevent scroll anchoring in a document, use the <code>overflow-anchor</code> property.</p>
+
+<pre class="brush: css notranslate"><code><span class="token selector">*</span> <span class="token punctuation">{</span>
+  <span class="token property">overflow-anchor</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-scroll-anchoring/#propdef-overflow-anchor" hreflang="en" lang="en" class="external" rel=" noopener">CSS Scroll Anchoring Module Level&nbsp;1<br><small lang="en-US">The definition of 'overflow-anchor' in that specification.</small></a></td>
+   <td><span class="spec-ed">Editor's Draft</span></td>
+   <td>Initial definition.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-anchor/Guide_to_scroll_anchoring">Guide to scroll anchoring</a></li>
+</ul></div>

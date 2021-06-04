@@ -1,0 +1,146 @@
+<h1>will-change</h1><div><p></p><div class="notecard experimental">
+    <h4 id="experimental">Experimental</h4>
+    <p><strong>Это экспериментальная технология</strong><br>Так как спецификация этой технологии ещё не стабилизировалась, смотрите <a href="#browser_compatibility">таблицу совместимости</a> по поводу использования в различных браузерах. Также заметьте, что синтаксис и поведение экспериментальной технологии может измениться в будущих версиях браузеров, вслед за изменениями спецификации.</p>
+</div><p></p>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a>&nbsp;свойство&nbsp;<code style="font-style: normal;">will-change</code>&nbsp;предоставляет автору возможность уведомить браузер об ожидаемом изменении элемента<span class="seoSummary">, таким образом браузер может настроить&nbsp;соответствующую оптимизацию до того как элемент действительно изменится. Такой тип оптимизации может повысить отзывчивость страницы, совершая, возможно дорогие операции до того как они действительно понадобятся.&nbsp;</span></p>
+
+<pre class="notranslate"><code>/* Keyword values */
+will-change: auto;
+will-change: scroll-position;
+will-change: contents;
+will-change: transform;        /* Example of &lt;custom-ident&gt; */
+will-change: opacity;          /* Example of &lt;custom-ident&gt; */
+will-change: left, top;        /* Example of two &lt;animateable-feature&gt; */
+
+/* Global values */
+will-change: inherit;
+will-change: initial;
+will-change: unset;</code></pre>
+
+
+
+<p>Правильно использование этого свойства может быть немного сложнее:</p>
+
+<ul>
+ <li>
+  <p id="Don't_apply_will-change_to_too_many_elements"><em>Не применяйте&nbsp;will-change к большому числу элементов.</em> Браузер и так пытается изо всех сил всё оптимизировать.&nbsp;Некоторые тяжёлые оптимизации ссылающиеся на&nbsp;<code>will-change</code>&nbsp;используют много аппаратных мощностей, и если злоупотреблять этим, это может привести к замедлению работы страницы и потреблению большого количества ресурсов.</p>
+ </li>
+ <li>
+  <p><em>Используйте умеренно.</em> Обычное поведение для оптимизаций которые выполняет браузер, удалить оптимизацию как можно скорее и вернуть нормальное состояние. Но добавление&nbsp;<code>will-change</code> прямо в файле стилей&nbsp;предполагает, что указанный элемент всегда находится в нескольких шагах от изменений&nbsp;и браузер будет сохранять для него оптимизацию гораздо&nbsp;больше времени. Так что, было бы хорошо включать и отключать&nbsp;<code>will-change</code>&nbsp;используя скрипт до и после того как произошли&nbsp;изменения.</p>
+ </li>
+ <li>
+  <p><em>Не применяйте&nbsp;will-change к элементам&nbsp;для выполнения преждевременной оптимизации</em>. Если ваша страница хорошо отрабатывается, не применяйте&nbsp;<code>will-change</code> свойство к элементу только чтобы выжать немного больше скорости. <code>will-change</code> предназначен для использования в крайнем случае, для того чтобы исправить существующие проблемы оптимизации. Его не следует использовать для предвидения проблем оптимизации. Чрезмерное использование&nbsp;<code>will-change</code> приведёт к&nbsp;излишнему потреблению памяти&nbsp;и вызовет более тяжёлый рендеринг так как браузер будет пытаться подготовиться к возможным изменениям. Это приведёт к ухудшению производительности.</p>
+ </li>
+ <li>
+  <p id="Give_it_sufficient_time_to_work"><em>Дайте ему достаточно времени, чтобы работать</em>. Это свойство даёт автору способ указать пользовательскому агенту свойства, которые могут измениться в будущем.&nbsp;Затем браузер может применить любые предварительные оптимизации, необходимые для изменения свойств до того, когда эти свойства изменятся.&nbsp;Поэтому важно дать браузеру некоторое время, чтобы провести оптимизацию. Найдите способ предсказать изменение хотя бы немного заранее, что-то изменится, и затем установите изменение.</p>
+ </li>
+</ul>
+
+<p></p><table class="properties"><tbody><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td><code>auto</code></td></tr><tr><th scope="row">Применяется к</th><td>все элементы</td></tr><tr><th scope="row"><a href="/css/inheritance/">Наследуется</a></th><td>нет</td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>как указано</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div></div><h3 id="значения"><a href="#значения" title="Permalink to Значения">Значения</a></h3><div><dl>
+ <dt><code>auto</code></dt>
+ <dd>Это ключевое слово не выражает конкретной цели; пользовательский агент должен применяться независимо эвристики и оптимизации как он это обычно делает.</dd>
+</dl>
+
+<p>&lt;Animateable-feature&gt;&nbsp;может иметь одно из следующих значений:</p>
+
+<dl>
+ <dt><code>scroll-position</code></dt>
+ <dd>Указывает, что автор ожидает анимацию или изменение положения скролла элемента в ближайшем будущем.</dd>
+ <dt><code>contents</code></dt>
+ <dd>Указывает, что автор ожидает анимацию или изменение чего то в контенте элемента в ближайшем будущем.</dd>
+ <dt><a href="/css/custom-ident/"><code>&lt;custom-ident&gt;</code></a></dt>
+ <dd>Указывает, что автор ожидает анимацию или изменить свойства с заданным именем в элементе в ближайшем будущем . Если заданное свойство-это сокращённая запись, &nbsp;тогда оно указывает на все полные записи свойств, на которые указывает сокращённая запись. Это не может быть одним из следующих значений: <code>unset</code>, <code>initial</code>, <code>inherit</code>, <code>will-change</code>, <code>auto</code>, <code>scroll-position</code>, или&nbsp;<code>contents</code>.&nbsp;</dd>
+</dl></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div><pre class="brush: css notranslate"><code><span class="token selector">.sidebar</span> <span class="token punctuation">{</span>
+  <span class="token property">will-change</span><span class="token punctuation">:</span> transform<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p>В примере выше прямо&nbsp;в таблицу стилей добавляется свойство <code>will-change</code>, которое заставит браузер&nbsp;держать оптимизацию&nbsp;в памяти намного дольше, чем нужно, а мы уже видели&nbsp;почему следует этого избегать. Ниже приведён ещё один пример, показывающий, как применить свойство&nbsp;<code>will-change</code> с помощью скриптов, что вероятно, вам следует делать в большинстве случаев.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> el <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'element'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Set will-change when the element is hovered</span>
+el<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'mouseenter'</span><span class="token punctuation">,</span> hintBrowser<span class="token punctuation">)</span><span class="token punctuation">;</span>
+el<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'animationEnd'</span><span class="token punctuation">,</span> removeHint<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">hintBrowser</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// The optimizable properties that are going to change</span>
+  <span class="token comment">// in the animation's keyframes block</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>style<span class="token punctuation">.</span>willChange <span class="token operator">=</span> <span class="token string">'transform, opacity'</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">removeHint</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>style<span class="token punctuation">.</span>willChange <span class="token operator">=</span> <span class="token string">'auto'</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<p>Однако&nbsp;может быть целесообразно включить will-change в вашу таблицу стилей для приложения, в котором страница переворачивается при нажатии клавиши,&nbsp;например&nbsp;альбом или презентация, где страницы большие и сложные. Это позволит браузеру заранее подготовить переход&nbsp;и позволит быстро переключаться между страницами, как только будет нажата клавиша.</p>
+
+<pre class="brush: css notranslate"><code><span class="token selector">.slide</span> <span class="token punctuation">{</span>
+  <span class="token property">will-change</span><span class="token punctuation">:</span> transform<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div><h2 id="спецификация"><a href="#спецификация" title="Permalink to Спецификация">Спецификация</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-will-change/#will-change" hreflang="en" lang="en" class="external" rel=" noopener">CSS Will Change Module Level&nbsp;1<br><small lang="ru">Определение 'will-change' в этой спецификации.</small></a></td>
+   <td><span class="spec-cr">Кандидат в рекомендации</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="браузерная_совместимость"><a href="#браузерная_совместимость" title="Permalink to Браузерная совместимость">Браузерная совместимость</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p>
+
+<div id="compat-desktop">
+<table class="compat-table">
+ <tbody>
+  <tr>
+   <th>Feature</th>
+   <th>Chrome</th>
+   <th>Firefox (Gecko)</th>
+   <th>Internet Explorer</th>
+   <th>Opera</th>
+   <th>Safari (WebKit)</th>
+  </tr>
+  <tr>
+   <td>Basic support</td>
+   <td>36</td>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/36" title="Выпущен 2015-02-24.">36</a> (36) [1]</td>
+   <td><span style="color:#f00;">Нет</span></td>
+   <td>24</td>
+   <td><span style="color:#f00;">Нет</span></td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+<div id="compat-mobile">
+<table class="compat-table">
+ <tbody>
+  <tr>
+   <th>Feature</th>
+   <th>Android</th>
+   <th>Firefox Mobile (Gecko)</th>
+   <th>IE&nbsp;Phone</th>
+   <th>Opera Mobile</th>
+   <th>Safari Mobile</th>
+  </tr>
+  <tr>
+   <td>Basic support</td>
+   <td>37</td>
+   <td>36.0 (36) [1]</td>
+   <td><span style="color:#f00;">Нет</span></td>
+   <td><span style="color:#f00;">Нет</span></td>
+   <td><span style="color:#f00;">Нет</span></td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+<p>[1] В Firefox с&nbsp;31 до 35 версии свойство&nbsp;<code>will-change</code> было доступно, но только, если пользователь установил значение флага&nbsp;<code style="font-style: normal; line-height: 1.5;">layout.css.will-change.enabled</code>&nbsp;в&nbsp;<code>true</code>. Выбор был&nbsp;удалён&nbsp;в Firefox 43.</p>
+
+<p>Firefox позволяет установить&nbsp;<code>will-change: will-change</code>&nbsp;до версии 42.0, что не соответствует спецификации. Это было исправлено в&nbsp;Firefox 43.0. Смотрите <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1195884" class="external" rel=" noopener">баг&nbsp;1195884</a>.</p></div>

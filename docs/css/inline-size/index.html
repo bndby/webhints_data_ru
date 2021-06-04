@@ -1,0 +1,57 @@
+<h1>inline-size</h1><div><div></div>
+
+<p>Свойство&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/CSS" title="CSS">CSS</a> <strong><code>inline-size</code></strong>&nbsp;определяет горизонтальные или вертикальные размеры блока в зависимости от режима написания&nbsp;(writing mode). Оно соответствует свойствам <a href="/css/width/"><code>width</code></a> и <a href="/css/height/"><code>height</code></a>&nbsp;и зависит от свойства&nbsp;<a href="/css/writing-mode/"><code>writing-mode</code></a>.</p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/inline-size.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* &lt;length&gt; values */</span>
+<span class="token property">inline-size</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+<span class="token property">inline-size</span><span class="token punctuation">:</span> 25em<span class="token punctuation">;</span>
+
+<span class="token comment">/* &lt;percentage&gt; values */</span>
+<span class="token property">inline-size</span><span class="token punctuation">:</span> 75%<span class="token punctuation">;</span>
+
+<span class="token comment">/* Keyword values */</span>
+<span class="token property">inline-size</span><span class="token punctuation">:</span> max-content<span class="token punctuation">;</span>
+<span class="token property">inline-size</span><span class="token punctuation">:</span> min-content<span class="token punctuation">;</span>
+<span class="token property">inline-size</span><span class="token punctuation">:</span> <span class="token function">fit-content</span><span class="token punctuation">(</span>20em<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token property">inline-size</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+
+<span class="token comment">/* Global values */</span>
+<span class="token property">inline-size</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">inline-size</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">inline-size</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre>
+
+<p>Если&nbsp;режим написания (writing mode) — вертикальный, значение&nbsp;<code>inline-size</code>&nbsp;относится к высоте элемента; в противном случае, оно относиться к ширине элемента. Связанное свойство&nbsp;—&nbsp;<a href="/css/block-size/"><code>block-size</code></a>, которое определяет другие размеры элемента.</p></div><h3 id="значения"><a href="#значения" title="Permalink to Значения">Значения</a></h3><div><p>Свойство&nbsp;<code>inline-size</code>&nbsp;принимает те же значения, что и свойства&nbsp;<a href="/css/width/"><code>width</code></a> и <a href="/css/height/"><code>height</code></a>.</p></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td><code>auto</code></td></tr><tr><th scope="row">Применяется к</th><td>с такими же <a href="/css/width/"><code>width</code></a> и <a href="/css/height/"><code>height</code></a></td></tr><tr><th scope="row"><a href="/css/inheritance/">Наследуется</a></th><td>нет</td></tr><tr><th scope="row">Проценты</th><td>встроенный размер содержащего блока</td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>с такими же <a href="/css/width/"><code>width</code></a> и <a href="/css/height/"><code>height</code></a></td></tr><tr><th scope="row">Animation type</th><td><a href="/css/length#interpolation/" title="Значения типа данных CSS <длина> интерполируются как вещественные числа с плавающей запятой.">длина</a>, <a href="/css/percentage#interpolation/" title="Значения типа данных CSS <проценты> интерполируются как вещественные числа с плавающей запятой.">проценты</a> или calc();</td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate"><a href="/css/width/" title="auto | <length> | <percentage> | min-content | max-content | fit-content | fit-content(<length-percentage>)">&lt;'width'&gt;</a></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="setting_inline_size_in_pixels"><a href="#setting_inline_size_in_pixels" title="Permalink to Setting inline size in pixels">Setting inline size in pixels</a></h3><div><h4 id="html">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>exampleText<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Example text<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<h4 id="css">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token selector">.exampleText</span> <span class="token punctuation">{</span>
+  <span class="token property">writing-mode</span><span class="token punctuation">:</span> vertical-rl<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span>
+  <span class="token property">inline-size</span><span class="token punctuation">:</span> 110px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<h4 id="result">Result</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Setting_inline_size_in_pixels" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/inline-size/_sample_.Setting_inline_size_in_pixels.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-logical/#propdef-inline-size" hreflang="en" lang="en" class="external" rel=" noopener">CSS Logical Properties and Values Level&nbsp;1<br><small lang="ru">Определение 'inline-size' в этой спецификации.</small></a></td>
+   <td><span class="spec-ed">Редакторский черновик</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility&nbsp;">Browser compatibility&nbsp;</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li>The mapped physical properties: <a href="/css/width/"><code>width</code></a> and <a href="/css/height/"><code>height</code></a></li>
+ <li><a href="/css/writing-mode/"><code>writing-mode</code></a></li>
+</ul></div>

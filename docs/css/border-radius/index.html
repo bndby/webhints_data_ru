@@ -1,0 +1,172 @@
+<h1>border-radius</h1><div><div></div>
+
+<p><strong><code>border-radius</code></strong> — это <a href="/css/">CSS</a>-свойство, позволяющее разработчикам определять, как скругляются границы блока. Закруглённость&nbsp;каждого угла определяется с помощью одного или двух радиусов, определяя его форму: круг или эллипс.</p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/border-radius.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+
+
+<p>Это свойство является <a href="/css/Shorthand_properties/" title="ru/CSS/Shorthand_properties">короткой записью</a> для четырёх свойств <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-top-left-radius"><code>border-top-left-radius</code> <span>(en-US)</span></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-top-right-radius"><code>border-top-right-radius</code> <span>(en-US)</span></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom-right-radius"><code>border-bottom-right-radius</code> <span>(en-US)</span></a> и<a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom-left-radius"><code>border-bottom-left-radius</code> <span>(en-US)</span></a>.</p>
+
+<p>Скругление применяется ко всему <a href="/css/background/"><code>background</code></a>, даже если элемент не имеет границ, точное положение отсечения определяется свойством <a href="/css/background-clip/"><code>background-clip</code></a>.</p>
+
+<p>Свойство <code>border-radius</code> не применяется к элементам таблицы, когда свойство <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-collapse"><code>border-collapse</code> <span>(en-US)</span></a> имеет значение <code>collapse</code>.</p>
+
+<div class="note notecard"><strong>Замечание:</strong> Как и с любым другим сокращённым свойством, отдельные подсвойства не могут наследоваться. Например, как в <code>border-radius:0 0 inherit inherit</code>, что будет частично переопределять существующие определения. Вместо этого должны использоваться отдельные длинные свойства.</div></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="brush: css no-line-numbers notranslate"><code><span class="token comment">/* Такой синтаксис позволяет указать всего одно значение, вместе четырёх */</span>
+<span class="token comment">/* Скругление применяется ко всем четырём углам */</span>
+<span class="token property">border-radius</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+
+<span class="token comment">/* top-left-and-bottom-right | top-right-and-bottom-left */</span>
+<span class="token property">border-radius</span><span class="token punctuation">:</span> 10px 5%<span class="token punctuation">;</span>
+
+<span class="token comment">/* top-left | top-right-and-bottom-left | bottom-right */</span>
+<span class="token property">border-radius</span><span class="token punctuation">:</span> 2px 4px 2px<span class="token punctuation">;</span>
+
+<span class="token comment">/* top-left | top-right | bottom-right | bottom-left */</span>
+<span class="token property">border-radius</span><span class="token punctuation">:</span> 1px 0 3px 4px<span class="token punctuation">;</span>
+
+<span class="token comment">/* Синтаксис из двух радиусов также может применяться ко всем четырём углам */</span>
+<span class="token comment">/* (первые значения радиуса) /радиус */</span>
+<span class="token property">border-radius</span><span class="token punctuation">:</span> 10px 5% / 20px<span class="token punctuation">;</span>
+
+<span class="token comment">/* (первые значения радиуса) / top-left-and-bottom-right | top-right-and-bottom-left */</span>
+<span class="token property">border-radius</span><span class="token punctuation">:</span> 10px 5% / 20px 30px<span class="token punctuation">;</span>
+
+<span class="token comment">/* (первые значения радиуса) / top-left | top-right-and-bottom-left | bottom-right */</span>
+<span class="token property">border-radius</span><span class="token punctuation">:</span> 10px 5px 2em / 20px 25px 30%<span class="token punctuation">;</span>
+
+<span class="token comment">/* (первые значения радиуса) / top-left | top-right | bottom-right | bottom-left */</span>
+<span class="token property">border-radius</span><span class="token punctuation">:</span> 10px 5% / 20px 25em 30px 35em<span class="token punctuation">;</span>
+
+<span class="token comment">/* Глобальные значения */</span>
+<span class="token property">border-radius</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">border-radius</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">border-radius</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre>
+
+<p>Свойство <code>border-radius</code> может быть задано как:</p>
+
+<ul>
+ <li>одно, два, три или четыре значения <a href="/css/length/"><code>&lt;length&gt;</code></a> или <a href="/css/percentage/"><code>&lt;percentage&gt;</code></a>. Используется для задания обычного радиуса углов.</li>
+ <li>одна, две, три или четыре пары значений <code>&lt;length&gt;</code> or <code>&lt;percentage&gt;</code>, разделённые "/". Используется для задания эллиптического скругления.</li>
+</ul></div><h3 id="значения"><a href="#значения" title="Permalink to Значения">Значения</a></h3><div><table>
+ <tbody>
+  <tr>
+   <td style="vertical-align: top;"><em>radius</em></td>
+   <td><img alt="all-corner.png" class="default internal" src="/@api/deki/files/6138/=all-corner.png" loading="lazy"></td>
+   <td style="vertical-align: top;"><a href="/css/length/"><code>&lt;length&gt;</code></a> или <a href="/css/percentage/"><code>&lt;percentage&gt;</code></a> устанавливает радиус скругления для всех углов элемента. Может быть указано только одно значение (или одна пара).</td>
+  </tr>
+  <tr>
+   <td style="vertical-align: top;"><em>top-left-and-bottom-right</em></td>
+   <td><img alt="top-left-bottom-right.png" class="default internal" src="/@api/deki/files/6141/=top-left-bottom-right.png" loading="lazy"></td>
+   <td style="vertical-align: top;"><a href="/css/length/"><code>&lt;length&gt;</code></a> или <a href="/css/percentage/"><code>&lt;percentage&gt;</code></a> устанавливает радиус для верхнего левого и нижнего правого угла элемента. Следует использовать синтаксис с двумя значениями.</td>
+  </tr>
+  <tr>
+   <td style="vertical-align: top;"><em>top-right-and-bottom-left</em></td>
+   <td><img alt="top-right-bottom-left.png" class="default internal" src="/@api/deki/files/6143/=top-right-bottom-left.png" loading="lazy"></td>
+   <td style="vertical-align: top;"><a href="/css/length/"><code>&lt;length&gt;</code></a> или <a href="/css/percentage/"><code>&lt;percentage&gt;</code></a> устанавливает радиус для верхнего правого и нижнего левого угла элемента. Можно использовать синтаксис с двумя или тремя значениями.</td>
+  </tr>
+  <tr>
+   <td style="vertical-align: top;"><em>top-left</em></td>
+   <td><img alt="top-left.png" class="default internal" src="/@api/deki/files/6142/=top-left.png" loading="lazy"></td>
+   <td style="vertical-align: top;"><a href="/css/length/"><code>&lt;length&gt;</code></a> или <a href="/css/percentage/"><code>&lt;percentage&gt;</code></a> устанавливает радиус для левого верхнего угла элемента. Можно использовать синтаксис с тремя и четырьмя значениями.</td>
+  </tr>
+  <tr>
+   <td style="vertical-align: top;"><em>top-right</em></td>
+   <td style="margin-left: 2px;"><img alt="top-right.png" class="default internal" src="/@api/deki/files/6144/=top-right.png" loading="lazy"></td>
+   <td style="vertical-align: top;"><a href="/css/length/"><code>&lt;length&gt;</code></a> или <a href="/css/percentage/"><code>&lt;percentage&gt;</code></a> устанавливает радиус для верхнего правого угла элемента. Следует использовать синтаксис с четырьмя значениями.</td>
+  </tr>
+  <tr>
+   <td style="vertical-align: top;"><em>bottom-right</em></td>
+   <td style="margin-left: 2px;"><img alt="bottom-rigth.png" class="default internal" src="/@api/deki/files/6140/=bottom-rigth.png" loading="lazy"></td>
+   <td style="vertical-align: top;"><a href="/css/length/"><code>&lt;length&gt;</code></a> или <a href="/css/percentage/"><code>&lt;percentage&gt;</code></a> устанавливает радиус для нижнего правого угла элемента. Можно использовать синтаксис с тремя и четырьмя значениями.</td>
+  </tr>
+  <tr>
+   <td style="vertical-align: top;"><em>bottom-left</em></td>
+   <td><img alt="bottom-left.png" class="default internal" src="/@api/deki/files/6139/=bottom-left.png" loading="lazy"></td>
+   <td style="vertical-align: top;"><a href="/css/length/"><code>&lt;length&gt;</code></a> или <a href="/css/percentage/"><code>&lt;percentage&gt;</code></a> устанавливает радиус для нижнего левого угла элемента. Следует использовать синтаксис с четырьмя значениями.</td>
+  </tr>
+ </tbody>
+</table>
+
+<dl>
+ <dt><a id="<length>" name="<length>"></a><a href="/css/length/"><code>&lt;length&gt;</code></a></dt>
+ <dd>Обозначает размер радиуса окружности или две полуоси эллипса. Может быть выражена в любых единицах CSS. Отрицательные значения не принимаются.</dd>
+ <dt><a id="<percentage>" name="<percentage>"></a><a href="/css/percentage/"><code>&lt;percentage&gt;</code></a></dt>
+ <dd>Обозначает размер радиуса окружности, или две полуоси эллипса. Проценты по горизонтальной оси относятся к ширине элемента, проценты по вертикальной оси к высоте. Отрицательные значения недействительны.</dd>
+</dl>
+
+<p>Например:</p>
+
+<pre class="brush: css no-line-numbers notranslate"><code><span class="token property">border-radius</span><span class="token punctuation">:</span> 1em/5em<span class="token punctuation">;</span>
+
+<span class="token comment">/* ... эквивалентно этому: */</span>
+<span class="token property">border-top-left-radius</span><span class="token punctuation">:</span>     1em 5em<span class="token punctuation">;</span>
+<span class="token property">border-top-right-radius</span><span class="token punctuation">:</span>    1em 5em<span class="token punctuation">;</span>
+<span class="token property">border-bottom-right-radius</span><span class="token punctuation">:</span> 1em 5em<span class="token punctuation">;</span>
+<span class="token property">border-bottom-left-radius</span><span class="token punctuation">:</span>  1em 5em<span class="token punctuation">;</span>
+</code></pre>
+
+<pre class="brush: css no-line-numbers notranslate"><code><span class="token property">border-radius</span><span class="token punctuation">:</span> 4px 3px 6px / 2px 4px<span class="token punctuation">;</span>
+
+<span class="token comment">/* ... эквивалентно этому: */</span>
+<span class="token property">border-top-left-radius</span><span class="token punctuation">:</span>     4px 2px<span class="token punctuation">;</span>
+<span class="token property">border-top-right-radius</span><span class="token punctuation">:</span>    3px 4px<span class="token punctuation">;</span>
+<span class="token property">border-bottom-right-radius</span><span class="token punctuation">:</span> 6px 2px<span class="token punctuation">;</span>
+<span class="token property">border-bottom-left-radius</span><span class="token punctuation">:</span>  3px 4px<span class="token punctuation">;</span>
+</code></pre></div><h3 id="формальный_синтаксис"><a href="#формальный_синтаксис" title="Permalink to Формальный синтаксис">Формальный синтаксис</a></h3><div><pre class="notranslate"><a href="#length-percentage">&lt;length-percentage&gt;</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#curly_braces_(_)" title="Currently only available in English (US)" class="only-in-en-us">{ (en-US)</a>1,4<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#curly_braces_(_)" title="Currently only available in English (US)" class="only-in-en-us">} (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> / <a href="#length-percentage">&lt;length-percentage&gt;</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#curly_braces_(_)" title="Currently only available in English (US)" class="only-in-en-us">{ (en-US)</a>1,4<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#curly_braces_(_)" title="Currently only available in English (US)" class="only-in-en-us">} (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#question_mark_()" title="Currently only available in English (US)" class="only-in-en-us">? (en-US)</a><p style="font-family:Open Sans,Arial,sans-serif; margin: 10px 0 0 0;">где <br><code style="font-family:Consolas,Monaco,&quot;Andale Mono&quot;,monospace;"><span id="length-percentage">&lt;length-percentage&gt;</span> = <a href="/css/length/" title="Возможные значения: a number followed by'em', 'ex', 'ch', 'rem', 'px', 'cm', 'mm', 'in', 'vh', 'vw', 'vmin', 'vmax', 'pt', 'pc' или 'px', как 3px, 1.5cm, -0.5em или 0">&lt;length&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <a href="/css/percentage/" title>&lt;percentage&gt;</a></code></p></pre></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div><pre style="display: inline-block; margin: 10px; border: solid 10px; border-radius: 10px 40px 40px 10px;" class="notranslate">  border: solid 10px;
+  /* угол изгибается в виде 'D' */
+  border-radius: 10px 40px 40px 10px;
+</pre>
+
+<pre style="display: inline-block; margin: 10px; border: groove 1em red; border-radius: 2em;" class="notranslate">  border: groove 1em red;
+  border-radius: 2em;
+</pre>
+
+<pre style="display: inline-block; margin: 10px; background: gold; border: ridge gold; border-radius: 13em/3em;" class="notranslate">  background: gold;
+  border: ridge gold;
+  border-radius: 13em/3em;
+</pre>
+
+<pre style="display: inline-block; margin: 10px; background: gold; border: none; border-radius: 40px 10px;" class="notranslate">  border: none;
+  border-radius: 40px 10px;
+</pre>
+
+<pre style="display: inline-block; margin: 10px; background: burlywood; border: none; border-radius: 50%;" class="notranslate">  border: none;
+  border-radius: 50%;
+</pre>
+
+<pre style="display: inline-block; margin: 10px; border: dotted; border-width: 10px 4px; border-radius: 10px 40px;" class="notranslate">  border: dotted;
+  border-width: 10px 4px;
+  border-radius: 10px 40px;
+</pre>
+
+<pre style="display: inline-block; margin: 10px; border: dashed; border-width: 2px 4px; border-radius: 40px;" class="notranslate">  border: dashed;
+  border-width: 2px 4px;
+  border-radius: 40px;
+</pre></div><h2 id="живые_примеры"><a href="#живые_примеры" title="Permalink to Живые примеры">Живые примеры</a></h2><div><ul>
+ <li>Пример 1: <a href="http://jsfiddle.net/Tripad/qnGKj/2/" class="external" rel=" noopener">http://jsfiddle.net/Tripad/qnGKj/2/</a></li>
+ <li>Пример 2: <a href="http://jsfiddle.net/Tripad/qnGKj/3/" class="external" rel=" noopener">http://jsfiddle.net/Tripad/qnGKj/3/</a></li>
+ <li>Пример 3: <a href="http://jsfiddle.net/Tripad/qnGKj/4/" class="external" rel=" noopener">http://jsfiddle.net/Tripad/qnGKj/4/</a></li>
+ <li>Пример 4: <a href="http://jsfiddle.net/Tripad/qnGKj/5/" class="external" rel=" noopener">http://jsfiddle.net/Tripad/qnGKj/5/</a></li>
+ <li>Пример 5: <a href="http://jsfiddle.net/Tripad/qnGKj/6/" class="external" rel=" noopener">http://jsfiddle.net/Tripad/qnGKj/6/</a></li>
+</ul></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-backgrounds-3/#border-radius" hreflang="en" lang="en" class="external" rel=" noopener">CSS Backgrounds and Borders Module Level&nbsp;3<br><small lang="ru">Определение 'border-radius' в этой спецификации.</small></a></td>
+   <td><span class="spec-cr">Кандидат в рекомендации</span></td>
+   <td>Изначальное определение</td>
+  </tr>
+ </tbody>
+</table>
+
+<p></p><table class="properties"><tbody><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td>как и у каждого из подсвойств этого свойства:<br><ul><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-top-left-radius" class="only-in-en-us" title="Currently only available in English (US)">border-top-left-radius (en-US)</a>: <code>0</code></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-top-right-radius" class="only-in-en-us" title="Currently only available in English (US)">border-top-right-radius (en-US)</a>: <code>0</code></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom-right-radius" class="only-in-en-us" title="Currently only available in English (US)">border-bottom-right-radius (en-US)</a>: <code>0</code></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom-left-radius" class="only-in-en-us" title="Currently only available in English (US)">border-bottom-left-radius (en-US)</a>: <code>0</code></li></ul></td></tr><tr><th scope="row">Применяется к</th><td>все элементы, но браузеры не применяют к элементам <code>table</code> и <code>inline-table</code>, когда <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-collapse" class="only-in-en-us" title="Currently only available in English (US)">border-collapse (en-US)</a>:<code>collapse</code>. Поведение на внутритабличных элементах не определено.. Это также применяется к <a href="/css/::first-letter/"><code>::first-letter</code></a>.</td></tr><tr><th scope="row"><a href="/css/inheritance/">Наследуется</a></th><td>нет</td></tr><tr><th scope="row">Проценты</th><td>относятся к соответствующему размеру границы элемента</td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>как и у каждого из подсвойств этого свойства:<br><ul><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom-left-radius" class="only-in-en-us" title="Currently only available in English (US)">border-bottom-left-radius (en-US)</a>: две абсолютных <a href="/css/length/"><code>length</code></a> или <a href="/css/percentage/"><code>percentage</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom-right-radius" class="only-in-en-us" title="Currently only available in English (US)">border-bottom-right-radius (en-US)</a>: две абсолютных <a href="/css/length/"><code>length</code></a> или <a href="/css/percentage/"><code>percentage</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-top-left-radius" class="only-in-en-us" title="Currently only available in English (US)">border-top-left-radius (en-US)</a>: две абсолютных <a href="/css/length/"><code>length</code></a> или <a href="/css/percentage/"><code>percentage</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-top-right-radius" class="only-in-en-us" title="Currently only available in English (US)">border-top-right-radius (en-US)</a>: две абсолютных <a href="/css/length/"><code>length</code></a> или <a href="/css/percentage/"><code>percentage</code></a></li></ul></td></tr><tr><th scope="row">Animation type</th><td>как и у каждого из подсвойств этого свойства:<br><ul><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-top-left-radius" class="only-in-en-us" title="Currently only available in English (US)">border-top-left-radius (en-US)</a>: <a href="/css/length#interpolation/" title="Значения типа данных CSS <длина> интерполируются как вещественные числа с плавающей запятой.">длина</a>, <a href="/css/percentage#interpolation/" title="Значения типа данных CSS <проценты> интерполируются как вещественные числа с плавающей запятой.">проценты</a> или calc();</li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-top-right-radius" class="only-in-en-us" title="Currently only available in English (US)">border-top-right-radius (en-US)</a>: <a href="/css/length#interpolation/" title="Значения типа данных CSS <длина> интерполируются как вещественные числа с плавающей запятой.">длина</a>, <a href="/css/percentage#interpolation/" title="Значения типа данных CSS <проценты> интерполируются как вещественные числа с плавающей запятой.">проценты</a> или calc();</li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom-right-radius" class="only-in-en-us" title="Currently only available in English (US)">border-bottom-right-radius (en-US)</a>: <a href="/css/length#interpolation/" title="Значения типа данных CSS <длина> интерполируются как вещественные числа с плавающей запятой.">длина</a>, <a href="/css/percentage#interpolation/" title="Значения типа данных CSS <проценты> интерполируются как вещественные числа с плавающей запятой.">проценты</a> или calc();</li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom-left-radius" class="only-in-en-us" title="Currently only available in English (US)">border-bottom-left-radius (en-US)</a>: <a href="/css/length#interpolation/" title="Значения типа данных CSS <длина> интерполируются как вещественные числа с плавающей запятой.">длина</a>, <a href="/css/percentage#interpolation/" title="Значения типа данных CSS <проценты> интерполируются как вещественные числа с плавающей запятой.">проценты</a> или calc();</li></ul></td></tr></tbody></table><p></p></div><h2 id="совместимость_с_браузерами"><a href="#совместимость_с_браузерами" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li>Относящиеся к Border-radius CSS-свойства: <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-top-left-radius"><code>border-top-left-radius</code> <span>(en-US)</span></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-top-right-radius"><code>border-top-right-radius</code> <span>(en-US)</span></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom-right-radius"><code>border-bottom-right-radius</code> <span>(en-US)</span></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom-left-radius"><code>border-bottom-left-radius</code> <span>(en-US)</span></a></li>
+</ul></div>

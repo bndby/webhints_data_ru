@@ -1,0 +1,33 @@
+<h1>Map.prototype.size</h1><div><div></div>
+
+<p>Геттер&nbsp;<code>size</code> возвращает количество элементов в объекте <a href="/js/Map/"><code>Map</code></a>.</p>
+
+<p><iframe class="interactive" width="100%" height="490" src="https://interactive-examples.mdn.mozilla.net/pages/js/map-prototype-size.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></p></div><h2 id="описание"><a href="#описание" title="Permalink to Описание">Описание</a></h2><div><p>Значение&nbsp;<code>size</code> - целое число, описывающее, сколько элементов имеет объект Map. У свойства&nbsp;<code>size</code>&nbsp;не определён сеттер: переопределить его нельзя.</p></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="использование_size"><a href="#использование_size" title="Permalink to Использование&nbsp;size">Использование&nbsp;<code>size</code></a></h3><div><pre class="brush:js notranslate"><code><span class="token keyword">var</span> myMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+myMap<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">,</span> <span class="token string">"альфа"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+myMap<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">"b"</span><span class="token punctuation">,</span> <span class="token string">"бета"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+myMap<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">"g"</span><span class="token punctuation">,</span> <span class="token string">"гамма"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+myMap<span class="token punctuation">.</span>size <span class="token comment">// 3</span>
+</code></pre></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-get-map.prototype.size" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Map.prototype.size' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Первое определение</td>
+  </tr>
+  <tr>
+   <td><a href="https://tc39.es/ecma262/#sec-get-map.prototype.size" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript (ECMA-262)<br><small lang="ru">Определение 'Map.prototype.size' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="совместимость_с_браузерами"><a href="#совместимость_с_браузерами" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="замечания_для_gecko"><a href="#замечания_для_gecko" title="Permalink to Замечания для Gecko">Замечания для Gecko</a></h2><div><ul>
+ <li>С&nbsp;версии Gecko&nbsp;13 (Firefox 13 / Thunderbird 13 / SeaMonkey 2.10) до&nbsp;Gecko 18 (Firefox 18 / Thunderbird 18 / SeaMonkey 2.15 / Firefox OS 1.0.1 / Firefox OS 1.1) свойство <font face="consolas, Liberation Mono, courier, monospace"><span style="background-color: rgba(220, 220, 220, 0.5);">size</span></font>&nbsp;было методом&nbsp;<code>Map.prototype.size</code>, но это было изменено в поздних версиях чтобы соответствовать спецификации ECMAScript 2015 (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=807001" class="external" rel=" noopener">баг&nbsp;807001</a>).</li>
+</ul></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/Map/"><code>Map</code></a></li>
+</ul></div>

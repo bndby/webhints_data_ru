@@ -1,0 +1,116 @@
+<h1>repeating-radial-gradient()</h1><div><div></div>
+
+<p>The <strong><code>repeating-radial-gradient()</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Functions">function</a> creates an image consisting of repeating gradients that radiate from an origin. It is similar to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/radial-gradient()"><code>radial-gradient()</code></a> and takes the same arguments, but it repeats the color stops infinitely in all directions so as to cover its entire container, similar to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/repeating-linear-gradient()"><code>repeating-linear-gradient()</code></a> . The function's result is an object of the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/gradient"><code>&lt;gradient&gt;</code></a> data type, which is a special kind of <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/image"><code>&lt;image&gt;</code></a>.</p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/function-repeating-radial-gradient.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+
+
+<p>With each repetition, the positions of the color stops are shifted by a multiple of the dimensions of the basic radial gradient (the distance between the last color stop and the first). Thus, the position of each ending color stop coincides with a starting color stop; if the color values are different, this will result in a sharp visual transition, which can be mitigated by repeating the first color as the last color.</p>
+
+<p>As with any gradient, a repeating radial gradient has <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/image#no_intrinsic">no intrinsic dimensions</a>; i.e., it has no natural or preferred size, nor a preferred ratio. Its concrete size will match the size of the element it applies to.</p>
+
+<p>Because <code>&lt;gradient&gt;</code>s belong to the <code>&lt;image&gt;</code> data type, they can only be used where <code>&lt;image&gt;</code>s can be used. For this reason, <code>repeating-radial-gradient()</code> won't work on <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-color"><code>background-color</code></a> and other properties that use the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value"><code>&lt;color&gt;</code></a> data type.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: css no-line-numbers notranslate"><code><span class="token comment">/* A gradient at the center of its container,
+   starting red, changing to blue, and finishing green,
+   with the colors repeating every 30px */</span>
+<span class="token function">repeating-radial-gradient</span><span class="token punctuation">(</span>circle at center<span class="token punctuation">,</span> red 0<span class="token punctuation">,</span> blue<span class="token punctuation">,</span> green 30px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">/* An elliptical gradient near the top left of its container,
+   starting red, changing to green and back again,
+   repeating five times between the center and the bottom right corner,
+   and only once between the center and the top left corner */</span>
+<span class="token function">repeating-radial-gradient</span><span class="token punctuation">(</span>farthest-corner at 20% 20%<span class="token punctuation">,</span> red 0<span class="token punctuation">,</span> green<span class="token punctuation">,</span> red 20%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+ <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position_value"><code>&lt;position&gt;</code></a></dt>
+ <dd>The position of the gradient, interpreted in the same way as <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-position"><code>background-position</code></a> or <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin"><code>transform-origin</code></a>. If unspecified, it defaults to <code>center</code>.</dd>
+ <dt><code>&lt;shape&gt;</code></dt>
+ <dd>The gradient's shape. The value can be <code>circle</code> (meaning that the gradient's shape is a circle with constant radius) or <code>ellipse</code> (meaning that the shape is an axis-aligned ellipse). If unspecified, it defaults to <code>ellipse</code>.</dd>
+ <dt><code>&lt;extent-keyword&gt;</code></dt>
+ <dd>A keyword describing how big the ending shape must be. The possible values are:</dd>
+ <dd>
+ <table class="standard-table">
+  <tbody>
+   <tr>
+    <th>Keyword</th>
+    <th>Description</th>
+   </tr>
+   <tr>
+    <td><code>closest-side</code></td>
+    <td>The gradient's ending shape meets the side of the box closest to its center (for circles) or meets both the vertical and horizontal sides closest to the center (for ellipses).</td>
+   </tr>
+   <tr>
+    <td><code>closest-corner</code></td>
+    <td>The gradient's ending shape is sized so that it exactly meets the closest corner of the box from its center.</td>
+   </tr>
+   <tr>
+    <td><code>farthest-side</code></td>
+    <td>Similar to <code>closest-side</code>, except the ending shape is sized to meet the side of the box farthest from its center (or vertical and horizontal sides).</td>
+   </tr>
+   <tr>
+    <td><code>farthest-corner</code></td>
+    <td>The gradient's ending shape is sized so that it exactly meets the farthest corner of the box from its center.</td>
+   </tr>
+  </tbody>
+ </table>
+
+ <div class="note notecard">
+ <p><strong>Note:</strong> Early implementations of this function included other keywords (<code>cover</code> and <code>contain</code>) as synonyms of the standard <code>farthest-corner</code> and <code>closest-side</code>, respectively. Use the standard keywords only, as some implementations have already dropped those older variants.</p>
+ </div>
+ </dd>
+ <dt><code>&lt;color-stop&gt;</code></dt>
+ <dd>A color-stop's <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value"><code>&lt;color&gt;</code></a> value, followed by an optional stop position (either a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/percentage"><code>&lt;percentage&gt;</code></a> or a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length"><code>&lt;length&gt;</code></a> along the gradient's axis). A percentage of <code>0%</code>, or a length of <code>0</code>, represents the center of the gradient; the value <code>100%</code> represents the intersection of the ending shape with the virtual gradient ray. Percentage values in between are linearly positioned on the virtual gradient ray.</dd>
+</dl></div><h3 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h3><div><pre class="brush: css notranslate"><code><span class="token selector">repeating-radial-gradient(
+       [[ circle  || &lt;length&gt; ]                     [at &lt;position&gt;]? , |
+        [ ellipse || [&lt;length&gt; | &lt;percentage&gt; ]</span><span class="token punctuation">{</span>2<span class="token punctuation">}</span><span class="token selector">] [at &lt;position&gt;]? , |
+        [[ circle | ellipse ] || &lt;extent-keyword&gt; ] [at &lt;position&gt;]? , |
+                                                     at &lt;position&gt;   ,    &lt;color-stop-list&gt; )
+        \---------------------------------------------------------------/\-----------------/
+                  Contour, size and position of the ending shape          List of color stops
+
+where &lt;extent-keyword&gt; = closest-corner | closest-side | farthest-corner | farthest-side
+   and &lt;color-stop-list&gt; = [ &lt;linear-color-stop&gt; [, &lt;color-hint&gt;? ]? ]#, &lt;linear-color-stop&gt;
+   and &lt;linear-color-stop&gt; = &lt;color&gt; [ &lt;color-stop-length&gt; ]?
+   and &lt;color-stop-length&gt; = [ &lt;percentage&gt; | &lt;length&gt; ]</span><span class="token punctuation">{</span>1<span class="token punctuation">,</span>2<span class="token punctuation">}</span>
+   and &lt;color-hint&gt; = [ &lt;percentage&gt; | &lt;length&gt; ]</code></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="black_and_white_gradient"><a href="#black_and_white_gradient" title="Permalink to Black and white gradient">Black and white gradient</a></h3><div><pre class="brush: css notranslate"><code><span class="token selector">.radial-gradient</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">repeating-radial-gradient</span><span class="token punctuation">(</span>black<span class="token punctuation">,</span> black 5px<span class="token punctuation">,</span> white 5px<span class="token punctuation">,</span> white 10px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p><iframe class="sample-code-frame" id="frame_Black_and_white_gradient" width="120" height="120" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/repeating-radial-gradient()/_sample_.Black_and_white_gradient.html" loading="lazy"></iframe></p></div><h3 id="farthest-corner"><a href="#farthest-corner" title="Permalink to Farthest-corner">Farthest-corner</a></h3><div><pre class="brush: css notranslate"><code><span class="token selector">.radial-gradient</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">repeating-radial-gradient</span><span class="token punctuation">(</span>ellipse farthest-corner at 20% 20%<span class="token punctuation">,</span>
+      red<span class="token punctuation">,</span> black 5%<span class="token punctuation">,</span> blue 5%<span class="token punctuation">,</span> green 10%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">repeating-radial-gradient</span><span class="token punctuation">(</span>ellipse farthest-corner at 20% 20%<span class="token punctuation">,</span>
+      red 0 5%<span class="token punctuation">,</span> green 5% 10%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p><iframe class="sample-code-frame" id="frame_Farthest-corner" width="120" height="120" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/repeating-radial-gradient()/_sample_.Farthest-corner.html" loading="lazy"></iframe></p>
+
+<p>The elliptical gradient will be centered 20% from the top left, and will repeat 10 times between the center and the farthest corner (the bottom right corner). Browsers supporting multi position color stops will display a red and green striped ellipse. Browsers not supporting the syntax yet will see a gradient that goes from red to black and then from blue to green.</p>
+
+<div class="note notecard">
+<p><strong>Note:</strong> Please see <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Using_CSS_gradients">Using CSS gradients</a> for more examples.</p>
+</div></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-images-3/#repeating-gradients" hreflang="en" lang="en" class="external" rel=" noopener">CSS Images Module Level&nbsp;3<br><small lang="en-US">The definition of 'repeating-radial-gradient()' in that specification.</small></a></td>
+   <td><span class="spec-cr">Candidate Recommendation</span></td>
+   <td>Initial definition.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><div></div></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Using_CSS_gradients">Using CSS gradients</a></li>
+ <li>Other gradient functions: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/radial-gradient()"><code>radial-gradient()</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient()"><code>linear-gradient()</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/repeating-linear-gradient()"><code>repeating-linear-gradient()</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/conic-gradient()"><code>conic-gradient()</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/repeating-conic-gradient()"><code>repeating-conic-gradient()</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/image"><code>&lt;image&gt;</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/image()"><code>image()</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/element()"><code>element()</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/image-set()"><code>image-set()</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/cross-fade()"><code>cross-fade()</code></a></li>
+</ul></div>

@@ -1,0 +1,64 @@
+<h1>Reflect</h1><div><div></div>
+
+<p><strong>Reflect</strong> - это встроенный объект, который предоставляет методы для перехватывания JavaScript операций.&nbsp;Эти методы аналогичны методам&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/Proxy">proxy handler</a>`ов.&nbsp;<code>Reflect</code> - это не функциональный, а простой объект, он не является сконструированным.</p></div><h2 id="описание"><a href="#описание" title="Permalink to Описание">Описание</a></h2><div><p>В отличие от большинства глобальных объектов, <code>Reflect</code> - это не конструктор. Вы не можете использовать его с <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new"><code>оператором new</code></a> или вызывать <code>Reflect,</code> как функцию. Все свойства и методы объекта <code>Reflect</code> являются статическими (так же, как и у объекта <a href="/js/Math/"><code>Math</code></a>).</p></div><h2 id="методы"><a href="#методы" title="Permalink to Методы">Методы</a></h2><div><p>Объект <code>Reflect</code> обеспечивает работу статических функций, называющиеся так же, как <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/Proxy">методы proxy handler</a>`а. Некоторые из этих методов - те же, что и соответствующие им методы класса <a href="/js/Object/"><code>Object</code></a>.</p>
+
+<dl>
+ <dt><a href="/js/Reflect/apply/"><code>Reflect.apply()</code></a></dt>
+ <dd>Вызывает целевую функцию с аргументами, переданными в параметре <code>args</code>. Смотрите&nbsp;также <a href="/js/Function/apply/"><code>Function.prototype.apply()</code></a>.</dd>
+ <dt><a href="/js/Reflect/construct/"><code>Reflect.construct()</code></a></dt>
+ <dd>&nbsp;Оператор&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new"><code>new</code></a>&nbsp;как функция. Аналогично&nbsp;<code>new target(...args)</code>. Также предоставляет возможность определить другой прототип.</dd>
+ <dt><a href="/js/Reflect/defineProperty/"><code>Reflect.defineProperty()</code></a></dt>
+ <dd>Похож&nbsp;на <a href="/js/Object/defineProperty/"><code>Object.defineProperty()</code></a>. Возвращает&nbsp;<a href="/js/Boolean/"><code>Boolean</code></a>.</dd>
+ <dt><a href="/js/Reflect/deleteProperty/"><code>Reflect.deleteProperty()</code></a></dt>
+ <dd>Оператор <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete"><code>delete</code></a>&nbsp;как функция. Аналогично <code>delete target[name]</code>.</dd>
+ <dt><a class="page-not-created" title="Документация об этом ещё не написана; пожалуйста, поспособствуйте её написанию!"><code>Reflect.enumerate()</code></a></dt>
+ <dd>Похож на&nbsp;цикл&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in"><code>for...in</code></a>. Возвращает итератор с собственными перечисляемыми и наследуемыми&nbsp;свойствами целевого объекта.</dd>
+ <dt><a href="/js/Reflect/get/"><code>Reflect.get()</code></a></dt>
+ <dd>Функция, которая возвращает значение свойств.</dd>
+ <dt><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/getOwnPropertyDescriptor"><code>Reflect.getOwnPropertyDescriptor()</code> <span>(en-US)</span></a></dt>
+ <dd>Аналогично <a href="/js/Object/getOwnPropertyDescriptor/"><code>Object.getOwnPropertyDescriptor()</code></a>. Возвращает дескриптор указанного свойства если присутствует в объекте, иначе <a href="/js/undefined/"><code>undefined</code></a>.</dd>
+ <dt><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/getPrototypeOf"><code>Reflect.getPrototypeOf()</code> <span>(en-US)</span></a></dt>
+ <dd>Аналогично&nbsp;<a href="/js/Object/getPrototypeOf/"><code>Object.getPrototypeOf()</code></a>.</dd>
+ <dt><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/has"><code>Reflect.has()</code> <span>(en-US)</span></a></dt>
+ <dd>Оператор&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/in"><code>in</code> </a>как функция. Возвращает значение <a href="/js/Boolean/"><code>Boolean</code></a> в зависимости от факта наличия собственного или наследованного свойства.</dd>
+ <dt><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/isExtensible"><code>Reflect.isExtensible()</code> <span>(en-US)</span></a></dt>
+ <dd>Аналогично&nbsp;<a href="/js/Object/isExtensible/"><code>Object.isExtensible()</code></a>.</dd>
+ <dt><a href="/js/Reflect/ownKeys/"><code>Reflect.ownKeys()</code></a></dt>
+ <dd>Возвращает массив строк с именами собственных (не наследованных) свойств.</dd>
+ <dt><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/preventExtensions"><code>Reflect.preventExtensions()</code> <span>(en-US)</span></a></dt>
+ <dd>Аналогично <a href="/js/Object/preventExtensions/"><code>Object.preventExtensions()</code></a>. Возвращает <a href="/js/Boolean/"><code>Boolean</code></a>.</dd>
+ <dt><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/set"><code>Reflect.set()</code> <span>(en-US)</span></a></dt>
+ <dd>Функция,&nbsp;присваивающая значения свойствам. Возвращает <a href="/js/Boolean/"><code>Boolean</code></a> значение&nbsp;<code>true</code>&nbsp;при успешном выполнении.</dd>
+ <dt><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/setPrototypeOf"><code>Reflect.setPrototypeOf()</code> <span>(en-US)</span></a></dt>
+ <dd>Функция,&nbsp;присваивающая&nbsp;прототип целевому объекту.</dd>
+</dl></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="проверка_наличия_конкретных_свойств_у_объекта"><a href="#проверка_наличия_конкретных_свойств_у_объекта" title="Permalink to Проверка наличия конкретных свойств&nbsp;у объекта">Проверка наличия конкретных свойств&nbsp;у объекта</a></h3><div><pre class="brush: js notranslate"><code><span class="token keyword">const</span> duck <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">'Maurice'</span><span class="token punctuation">,</span>
+  color<span class="token operator">:</span> <span class="token string">'white'</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">greeting</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Quaaaack! My name is </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+Reflect<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>duck<span class="token punctuation">,</span> <span class="token string">'color'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// true</span>
+Reflect<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>duck<span class="token punctuation">,</span> <span class="token string">'haircut'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// false</span></code></pre></div><h3 id="возврат_собственных_ключей_объекта"><a href="#возврат_собственных_ключей_объекта" title="Permalink to Возврат собственных ключей объекта">Возврат собственных ключей объекта</a></h3><div><pre class="brush: js notranslate"><code>Reflect<span class="token punctuation">.</span><span class="token function">ownKeys</span><span class="token punctuation">(</span>duck<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// [ "name", "color", "greeting" ]</span></code></pre></div><h3 id="добавление_нового_свойства_в_объект"><a href="#добавление_нового_свойства_в_объект" title="Permalink to Добавление нового свойства в объект">Добавление нового свойства в объект</a></h3><div><pre class="brush: js notranslate"><code>Reflect<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>duck<span class="token punctuation">,</span> <span class="token string">'eyes'</span><span class="token punctuation">,</span> <span class="token string">'black'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// вернётся "true" если вызов успешен</span>
+<span class="token comment">// объект "duck" теперь содержит свойство "eyes" со значением "black"</span></code></pre></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-reflect-object" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Reflect' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Изначальное определение.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="совместимость_с_браузерами"><a href="#совместимость_с_браузерами" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li>Глобальный объект <a href="/js/Proxy/"><code>Proxy</code></a>.</li>
+ <li>Объект <a href="https://developer.mozilla.org/ru/docs/conflicting/Web/JavaScript/Reference/Global_Objects/Proxy/Proxy"><code>handler</code></a>.</li>
+</ul></div>

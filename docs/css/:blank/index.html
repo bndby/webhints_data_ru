@@ -1,0 +1,43 @@
+<h1>:blank</h1><div><p></p><div class="notecard experimental">
+    <h4 id="experimental">Experimental</h4>
+    <p><strong>This is an <a href="https://developer.mozilla.org/en-US/docs/MDN/Guidelines/Conventions_definitions#experimental">experimental technology</a></strong><br>Check the <a href="#browser_compatibility">Browser compatibility table</a> carefully before using this in production.</p>
+</div><p></p>
+
+<div class="notecard note">
+<p><strong>Note:</strong> The <code>:blank</code> selector is considered at risk, as the CSSWG keeps changing it.</p>
+
+<p>See <a href="https://github.com/w3c/csswg-drafts/issues/1967" title="[selectors] decide on :blank" class="external" rel=" noopener">CSSWG issue #1967</a>.</p>
+</div>
+
+<p>The <strong><code>:blank</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes">pseudo-class</a> selects empty user input elements (e.g. <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input"><code>&lt;input&gt;</code></a> or <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea"><code>&lt;textarea&gt;</code></a>).</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="notranslate">:blank</pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="simple_blank_example"><a href="#simple_blank_example" title="Permalink to Simple :blank example">Simple :blank example</a></h3><div><p>In eventual supporting browsers, the <code>:blank</code> pseudo-class will enable developers to highlight in some way input controls that are not required, but still have no content filled in, perhaps as a reminder to users.</p>
+
+<h4 id="html">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>textarea</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>textarea</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<h4 id="css">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token selector">textarea:blank</span> <span class="token punctuation">{</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 3px solid red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<h4 id="result">Result</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Simple_blank_example" width="100%" height="150" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/:blank/_sample_.Simple_blank_example.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/selectors-4/#blank-pseudo" hreflang="en" lang="en" class="external" rel=" noopener">Selectors Level&nbsp;4<br><small lang="en-US">The definition of ':blank' in that specification.</small></a></td>
+   <td><span class="spec-wd">Working Draft</span></td>
+   <td>Initial definition.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:empty"><code>:empty</code></a></li>
+</ul></div>

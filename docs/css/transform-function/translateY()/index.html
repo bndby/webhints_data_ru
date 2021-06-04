@@ -1,0 +1,146 @@
+<h1>translateY()</h1><div><div></div>
+
+<p>The <strong><code>translateY()</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Functions">function</a> repositions an element vertically on the 2D plane. Its result
+  is a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function"><code>&lt;transform-function&gt;</code></a> data type.</p>
+
+<p><img alt src="/en-US/docs/Web/CSS/transform-function/translateY()/translatey.png" width="243" height="195" loading="lazy"></p>
+
+<div class="note notecard">
+  <p><strong>Note:</strong> <code>translateY(ty)</code> is equivalent to
+    <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translate()">translate</a>(0, ty)</code> or
+    <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translate3d()">translate3d</a>(0, ty, 0)</code>.
+  </p>
+</div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: css notranslate"><code><span class="token comment">/* &lt;length-percentage&gt; values */</span>
+<span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateY</span><span class="token punctuation">(</span>200px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateY</span><span class="token punctuation">(</span>50%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+  <dt><code>&lt;length-percentage&gt;</code></dt>
+  <dd>The value is a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length"><code>&lt;length&gt;</code></a> or <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/percentage"><code>&lt;percentage&gt;</code></a> representing the ordinate of the
+    translating vector. A percentage value refers to the height of the reference box defined by the
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-box"><code>transform-box</code></a> property.</dd>
+</dl>
+
+<table class="standard-table">
+  <thead>
+    <tr>
+      <th scope="col">Cartesian coordinates on ℝ<sup>2</sup></th>
+      <th scope="col">Homogeneous coordinates on ℝℙ<sup>2</sup></th>
+      <th scope="col">Cartesian coordinates on ℝ<sup>3</sup></th>
+      <th scope="col">Homogeneous coordinates on ℝℙ<sup>3</sup></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="2">
+        <p>A translation is not a linear transformation in ℝ<sup>2</sup> and can't be represented using a
+          Cartesian-coordinate matrix.</p>
+      </td>
+      <td><math>
+          <mfenced>
+            <mtable>
+              <mtr>
+                <mtd><mn>1</mn></mtd>
+                <mtd><mn>0</mn></mtd>
+                <mtd><mn>0</mn></mtd>
+              </mtr>
+              <mtr>
+                <mtd><mn>0</mn></mtd>
+                <mtd><mn>1</mn></mtd>
+                <mtd><mi>t</mi></mtd>
+              </mtr>
+              <mtr>
+                <mtd><mn>0</mn></mtd>
+                <mtd><mn>0</mn></mtd>
+                <mtd><mn>1</mn></mtd>
+              </mtr>
+            </mtable>
+          </mfenced>
+        </math></td>
+      <td rowspan="2"><math>
+          <mfenced>
+            <mtable>
+              <mtr>
+                <mtd><mn>1</mn></mtd>
+                <mtd><mn>0</mn></mtd>
+                <mtd><mn>0</mn></mtd>
+              </mtr>
+              <mtr>
+                <mtd><mn>0</mn></mtd>
+                <mtd><mn>1</mn></mtd>
+                <mtd><mi>t</mi></mtd>
+              </mtr>
+              <mtr>
+                <mtd><mn>0</mn></mtd>
+                <mtd><mn>0</mn></mtd>
+                <mtd><mn>1</mn></mtd>
+              </mtr>
+            </mtable>
+          </mfenced>
+        </math></td>
+      <td rowspan="2"><math>
+          <mfenced>
+            <mtable>
+              <mtr>
+                <mtd><mn>1</mn></mtd>
+                <mtd><mn>0</mn></mtd>
+                <mtd><mn>0</mn></mtd>
+                <mtd><mn>0</mn></mtd>
+              </mtr>
+              <mtr>
+                <mtd><mn>0</mn></mtd>
+                <mtd><mn>1</mn></mtd>
+                <mtd><mn>0</mn></mtd>
+                <mtd><mi>t</mi></mtd>
+              </mtr>
+              <mtr>
+                <mtd><mn>0</mn></mtd>
+                <mtd><mn>0</mn></mtd>
+                <mtd><mn>1</mn></mtd>
+                <mtd><mn>0</mn></mtd>
+              </mtr>
+              <mtr>
+                <mtd><mn>0</mn></mtd>
+                <mtd><mn>0</mn></mtd>
+                <mtd><mn>0</mn></mtd>
+                <mtd><mn>1</mn></mtd>
+              </mtr>
+            </mtable>
+          </mfenced>
+        </math></td>
+    </tr>
+    <tr>
+      <td><code>[1 0 0 1 0 t]</code></td>
+    </tr>
+  </tbody>
+</table></div><h3 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h3><div><pre class="brush: css notranslate"><code><span class="token function">translateY</span><span class="token punctuation">(</span>&lt;length-percentage&gt;<span class="token punctuation">)</span>
+</code></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="html"><a href="#html" title="Permalink to HTML">HTML</a></h3><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>Static<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>moved<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Moved<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>Static<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre></div><h3 id="css"><a href="#css" title="Permalink to CSS">CSS</a></h3><div><pre class="brush: css notranslate"><code><span class="token selector">div</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 60px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 60px<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> skyblue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.moved</span> <span class="token punctuation">{</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateY</span><span class="token punctuation">(</span>10px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> pink<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="result"><a href="#result" title="Permalink to Result">Result</a></h3><div><p><iframe class="sample-code-frame" id="frame_Examples" width="250" height="250" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/transform-function/translateY()/_sample_.Examples.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+  <thead>
+    <tr>
+      <th scope="col">Specification</th>
+      <th scope="col">Status</th>
+      <th scope="col">Comment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://drafts.csswg.org/css-transforms/#funcdef-transform-translatey" hreflang="en" lang="en" class="external" rel=" noopener">CSS Transforms Level&nbsp;1<br><small lang="en-US">The definition of 'translateY()' in that specification.</small></a></td>
+      <td><span class="spec-wd">Working Draft</span></td>
+      <td>Initial definition</td>
+    </tr>
+  </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform"><code>transform</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function"><code>&lt;transform-function&gt;</code></a></li>
+</ul></div>

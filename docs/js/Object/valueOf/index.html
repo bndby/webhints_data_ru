@@ -1,0 +1,49 @@
+<h1>Object.prototype.valueOf()</h1><div><div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Метод <code><strong>valueOf()</strong></code> возвращает примитивное значение указанного объекта.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code><var>object</var>.valueOf()</code></pre></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>JavaScript вызывает метод <code>valueOf</code> для преобразования объекта в примитивное значение. Вам редко потребуется вызывать метод <code>valueOf</code> самостоятельно; JavaScript автоматически вызывает его при обнаружении объекта, когда ожидается примитивное значение.</p>
+
+<p>По умолчанию, метод <code>valueOf</code> наследуется каждым объектом, произошедшим от <a href="/js/Object/"><code>Object</code></a>. Каждый встроенный объект ядра переопределяет этот метод, возвращая подходящее значение. Если объект не имеет примитивного значения, <code>valueOf</code> возвращает сам объект, который отображается как:</p>
+
+<pre class="brush: js notranslate"><code><span class="token punctuation">[</span>object Object<span class="token punctuation">]</span></code></pre>
+
+<p>Вы можете использовать <code>valueOf</code> в своём коде для преобразования встроенных объектов в примитивное значение. Когда вы создаёте пользовательский объект, вы можете переопределить метод <code>Object.prototype.valueOf()</code>, чтобы вызывать собственный метод вместо метода по умолчанию из <a href="/js/Object/"><code>Object</code></a>.</p></div><h3 id="overriding_valueof_for_custom_objects"><a href="#overriding_valueof_for_custom_objects" title="Permalink to Переопределение valueOf в пользовательских объектах">Переопределение <code>valueOf</code> в пользовательских объектах</a></h3><div><p>Вы можете создать функцию, вызываемую вместо метода <code>valueOf</code> по умолчанию. Ваша функция не должна принимать аргументов.</p>
+
+<p>Предположим, у вас есть объект типа <code>myNumberType</code> и вы хотите создать для него метод <code>valueOf</code>. Следующий код присваивает определённую пользователем функцию методу <code>valueOf</code> объекта:</p>
+
+<pre class="brush: js notranslate"><code>myNumberType<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">valueOf</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> customPrimitiveValue<span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+
+<p>Начиная с этого места в вашем коде, в любое время, когда объект типа <code>myNumberType</code> будет использоваться в контексте, где он должен быть представлен примитивным значением, JavaScript будет&nbsp;автоматически вызывать&nbsp; функцию, определённую в этом коде.</p>
+
+<p>Метод объекта <code>valueOf</code> обычно вызывается движком JavaScript, но вы можете вызвать его и самостоятельно, как показано ниже:</p>
+
+<pre class="brush: js notranslate"><code>myNumber<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+
+<div class="note notecard">
+<p><strong>Примечание:</strong> объекты в строковом контексте преобразуются с помощью метода <a href="/js/Object/toString/"><code>toString()</code></a>, что отличается от объектов <a href="/js/String/"><code>String</code></a>, преобразующихся в строковые примитивы методом <code>valueOf</code>. Все объекты имеют преобразование в строку вида "<code>[object <em>type</em>]</code>". Но многие объекты не преобразуются в число, логическое значение или функцию.</p>
+</div></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_using_valueof"><a href="#example_using_valueof" title="Permalink to Пример: использование valueOf">Пример: использование <code>valueOf</code></a></h3><div><pre class="brush: js notranslate"><code><span class="token keyword">var</span> o <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+myVar <span class="token operator">=</span> o<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">// [object Object]</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td>ECMAScript 1-е издание.</td>
+   <td>Стандарт</td>
+   <td>Изначальное определение. Реализована в JavaScript 1.1.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-15.2.4.4" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 5.1 (ECMA-262)<br><small lang="ru">Определение 'Object.prototype.valueOf' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-object.prototype.valueof" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Object.prototype.valueOf' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/Object/toString/"><code>Object.prototype.toString()</code></a></li>
+ <li><a href="/js/parseInt/"><code>parseInt()</code></a></li>
+</ul></div>

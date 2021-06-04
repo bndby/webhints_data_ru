@@ -1,0 +1,36 @@
+<h1>SharedArrayBuffer() constructor</h1><div><div></div>
+
+<div class="note notecard">
+  <p><strong>Note:</strong> <code>SharedArrayBuffer</code> was disabled by default in all major
+    browsers on 5 January, 2018 in response to <a href="https://meltdownattack.com/" class="external" rel=" noopener">Spectre</a>. Chrome <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=821270" class="external" rel=" noopener">re-enabled it in
+      v67</a> on platforms where its site-isolation feature is enabled to protect against
+    Spectre-style vulnerabilities.</p>
+</div>
+
+<p>The <strong><code>SharedArrayBuffer()</code> constructor</strong> is used to create a
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer"><code>SharedArrayBuffer</code></a> object representing a generic, fixed-length raw binary
+  data buffer, similar to the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer"><code>ArrayBuffer</code></a> object.</p>
+
+<div><iframe class="interactive" width="100%" height="410" src="https://interactive-examples.mdn.mozilla.net/pages/js/sharedarraybuffer-constructor.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe>
+</div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: js notranslate"><code><span class="token keyword">new</span> <span class="token class-name">SharedArrayBuffer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">new</span> <span class="token class-name">SharedArrayBuffer</span><span class="token punctuation">(</span>length<span class="token punctuation">)</span>
+</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Parameters">Parameters</a></h3><div><dl>
+  <dt><code><var>length</var></code> <span class="badge inline optional">Optional</span></dt>
+  <dd>The size, in bytes, of the array buffer to create.</dd>
+</dl></div><h3 id="return_value"><a href="#return_value" title="Permalink to Return value">Return value</a></h3><div><p>A new <code>SharedArrayBuffer</code> object of the specified size. Its contents are
+  initialized to 0.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="always_use_the_new_operator_to_create_a_sharedarraybuffer"><a href="#always_use_the_new_operator_to_create_a_sharedarraybuffer" title="Permalink to Always use the new
+  operator to create a SharedArrayBuffer">Always use the new
+  operator to create a SharedArrayBuffer</a></h3><div><p><code>SharedArrayBuffer</code> constructors are required to be constructed with a
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new"><code>new</code></a> operator. Calling a <code>SharedArrayBuffer</code>
+  constructor as a function without <code>new</code> will throw a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError"><code>TypeError</code></a>.
+</p>
+
+<pre class="brush: js example-bad notranslate"><code><span class="token keyword">var</span> sab <span class="token operator">=</span> <span class="token function">SharedArrayBuffer</span><span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// TypeError: calling a builtin SharedArrayBuffer constructor</span>
+<span class="token comment">// without new is forbidden</span></code></pre>
+
+<pre class="brush: js example-good notranslate"><code><span class="token keyword">var</span> sab <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SharedArrayBuffer</span><span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://tc39.es/ecma262/#sec-sharedarraybuffer-constructor">Unknown specification<!-- --> <br><small># <!-- -->sec-sharedarraybuffer-constructor</small></a></td></tr></tbody></table><div></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Atomics"><code>Atomics</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer"><code>ArrayBuffer</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays">JavaScript typed arrays</a></li>
+</ul></div>

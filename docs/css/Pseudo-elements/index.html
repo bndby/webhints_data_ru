@@ -1,0 +1,80 @@
+<h1>Псевдоэлементы</h1><div><div></div>
+
+<p><strong>Псевдоэлемент</strong>&nbsp;в&nbsp;CSS —&nbsp;<dfn>это ключевое слово, добавляемое к селектору,</dfn>&nbsp;которое позволяет стилизовать определённую часть выбранного элемента. Например, псевдоэлемент <a href="/css/::first-line/"><code>::first-line</code></a> может&nbsp;быть использован для изменения шрифта первой строки абзаца.</p>
+
+<pre class="brush: css no-line-numbers notranslate"><code><span class="token comment">/* Первая строка каждого элемента &lt;p&gt;. */</span>
+<span class="token selector">p::first-line</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+  <span class="token property">text-transform</span><span class="token punctuation">:</span> uppercase<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<div class="note notecard">
+<p><strong>Примечание:</strong>&nbsp;В отличие&nbsp;от псевдоэлементов, <a href="/css/Pseudo-classes/">псевдоклассы</a>&nbsp;могут быть использованы для стилизации элемента на основе его <em>состояния</em>.</p>
+</div></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate">selector::pseudo-element {
+  property: value;
+}</pre>
+
+<p>В селекторе можно использовать только один псевдоэлемент. Он должен находиться после простых селекторов в выражении.</p>
+
+<div class="note notecard">
+<p><strong>Примечание:</strong>&nbsp;Как правило, следует использовать двойное двоеточие&nbsp;(<code>::</code>) вместо одинарного (<code>:</code>). В этом состоит различие между псевдоклассами и псевдоэлементами. Однако, так как это различие не присутствовало в старых версиях спецификации&nbsp;W3C, большинство браузеров поддерживают оба синтаксиса для псевдоэлементов.</p>
+</div></div><h2 id="список_стандартных_псевдоэлементов"><a href="#список_стандартных_псевдоэлементов" title="Permalink to Список стандартных псевдоэлементов">Список стандартных псевдоэлементов</a></h2><div><div class="index">
+<ul>
+ <li><a href="/css/::after/"><code>::after</code></a></li>
+ <li><a href="/css/::before/"><code>::before</code></a></li>
+ <li><a href="/css/::cue/"><code>::cue</code></a></li>
+ <li><a href="/css/::first-letter/"><code>::first-letter</code></a></li>
+ <li><a href="/css/::first-line/"><code>::first-line</code></a></li>
+ <li><a href="/css/::selection/"><code>::selection</code></a></li>
+ <li><a href="/css/::slotted/"><code>::slotted</code></a></li>
+ <li><a href="/css/::backdrop/"><code>::backdrop</code></a> </li>
+ <li><a href="/css/::placeholder/"><code>::placeholder</code></a> </li>
+ <li><a href="/css/::marker/"><code>::marker</code></a> </li>
+ <li><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/::spelling-error"><code>::spelling-error</code> <span>(en-US)</span></a> </li>
+ <li><a href="/css/::grammar-error/"><code>::grammar-error</code></a> </li>
+</ul>
+</div>
+
+<table class="standard-table">
+ <tbody>
+  <tr>
+   <th>Браузер</th>
+   <th>Начиная с версии</th>
+   <th>Поддерживает</th>
+  </tr>
+  <tr>
+   <td rowspan="2">Internet Explorer</td>
+   <td>8.0</td>
+   <td><code>:pseudo-element</code></td>
+  </tr>
+  <tr>
+   <td>9.0</td>
+   <td><code>:pseudo-element ::pseudo-element</code></td>
+  </tr>
+  <tr>
+   <td rowspan="2">Firefox (Gecko)</td>
+   <td>1.0 (1.0)</td>
+   <td><code>:pseudo-element</code></td>
+  </tr>
+  <tr>
+   <td>1.0 (1.5)</td>
+   <td><code>:pseudo-element ::pseudo-element</code></td>
+  </tr>
+  <tr>
+   <td rowspan="2">Opera</td>
+   <td>4.0</td>
+   <td><code>:pseudo-element</code></td>
+  </tr>
+  <tr>
+   <td>7.0</td>
+   <td><code>:pseudo-element ::pseudo-element</code></td>
+  </tr>
+  <tr>
+   <td>Safari (WebKit)</td>
+   <td>1.0 (85)</td>
+   <td><code>:pseudo-element ::pseudo-element</code></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/css/Pseudo-classes/">Псевдоклассы</a></li>
+</ul></div>

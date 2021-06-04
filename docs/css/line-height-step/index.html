@@ -1,0 +1,47 @@
+<h1>line-height-step</h1><div><div></div>
+
+<p>The <strong><code>line-height-step</code></strong> CSS property sets the step unit for line box heights. When the property is set, line box heights are rounded up to the closest multiple of the unit.</p>
+
+<pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* Point values */</span>
+<span class="token property">line-height-step</span><span class="token punctuation">:</span> 18pt<span class="token punctuation">;</span>
+</code></pre></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><p>The <code>line-height-step</code> property is specified as any one of the following:</p>
+
+<ul>
+ <li>a <code><a href="#length">&lt;length&gt;</a></code>.</li>
+</ul></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+ <dt><a id="length"><code>&lt;length&gt;</code></a></dt>
+ <dd>The specified <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length"><code>&lt;length&gt;</code></a> is used in the calculation of the line box height step.</dd>
+</dl></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td><code>0</code></td></tr><tr><th scope="row">Applies to</th><td>block containers</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance">Inherited</a></th><td>yes</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>absolute <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length"><code>&lt;length&gt;</code></a></td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length" title="Possible values: a number followed by'em', 'ex', 'ch', 'rem', 'px', 'cm', 'mm', 'in', 'vh', 'vw', 'vmin', 'vmax', 'pt', 'pc' or 'px', like 3px, 1.5cm, -0.5em or 0">&lt;length&gt;</a></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="setting_step_unit_for_line_box_height"><a href="#setting_step_unit_for_line_box_height" title="Permalink to Setting step unit for line box height">Setting step unit for line box height</a></h3><div><p id="sect1">In the following example, the height of line box in each paragraph is rounded up to the step unit. The line box in <code>&lt;h1&gt;</code> does not fit into one step unit and thus occupies two, but it is still centered within the two step unit.</p>
+
+<pre class="brush: css notranslate"><code><span class="token selector">:root</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 12pt<span class="token punctuation">;</span>
+  <span class="token property">--my-grid</span><span class="token punctuation">:</span> 18pt<span class="token punctuation">;</span>
+  <span class="token property">line-height-step</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--my-grid<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">h1</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 20pt<span class="token punctuation">;</span>
+  <span class="token property">margin-top</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span>2 * <span class="token function">var</span><span class="token punctuation">(</span>--my-grid<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<p>The result of these rules is shown below in the following screenshot:</p>
+
+<p><img alt="How the line-height-step property affects the appearance of text." src="/en-US/docs/Web/CSS/line-height-step/line-grid-center.png" width="144" height="340" loading="lazy"></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-rhythm/#line-height-step" hreflang="en" lang="en" class="external" rel=" noopener">CSS Rhythmic Sizing<br><small lang="en-US">The definition of 'line-height-step' in that specification.</small></a></td>
+   <td><span class="spec-wd">Working Draft</span></td>
+   <td>Initial definition.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font"><code>font</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-size"><code>font-size</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/line-height"><code>line-height</code></a></li>
+</ul></div>

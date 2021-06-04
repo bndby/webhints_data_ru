@@ -1,0 +1,69 @@
+<h1>background-position-x</h1><div><div></div>
+
+<p>Свойство <strong><code>background-position-x</code></strong> - это <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> - свойство, которое устанавливает начальную горизонтальную позицию для каждого фонового изображения. Эта позиция является относительной к позиции слоя, установленной с помощью свойства <a href="/css/background-origin/"><code>background-origin</code></a>.</p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/background-position-x.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+
+
+<p>Значение этого свойства отменяется любой декларацией <a href="/css/background/"><code>background</code></a> или коротким свойством <a href="/css/background-position/"><code>background-position</code></a> применёнными после его объявления.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="brush: css no-line-numbers notranslate"><code><span class="token comment">/* Keyword values */</span>
+<span class="token property">background-position-x</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span>
+<span class="token property">background-position-x</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+<span class="token property">background-position-x</span><span class="token punctuation">:</span> right<span class="token punctuation">;</span>
+
+<span class="token comment">/* &lt;percentage&gt; values */</span>
+<span class="token property">background-position-x</span><span class="token punctuation">:</span> 25%<span class="token punctuation">;</span>
+
+<span class="token comment">/* &lt;length&gt; values */</span>
+<span class="token property">background-position-x</span><span class="token punctuation">:</span> 0px<span class="token punctuation">;</span>
+<span class="token property">background-position-x</span><span class="token punctuation">:</span> 1cm<span class="token punctuation">;</span>
+<span class="token property">background-position-x</span><span class="token punctuation">:</span> 8em<span class="token punctuation">;</span>
+
+<span class="token comment">/* Side-relative values */</span>
+<span class="token property">background-position-x</span><span class="token punctuation">:</span> right 3px<span class="token punctuation">;</span>
+<span class="token property">background-position-x</span><span class="token punctuation">:</span> left 25%<span class="token punctuation">;</span>
+
+<span class="token comment">/* Multiple values */</span>
+<span class="token property">background-position-x</span><span class="token punctuation">:</span> 0px<span class="token punctuation">,</span> center<span class="token punctuation">;</span>
+
+<span class="token comment">/* Global values */</span>
+<span class="token property">background-position-x</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">background-position-x</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">background-position-x</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre>
+
+<p>Свойство <code>background-position-x</code> принимает одно или несколько значений, разделённых запятыми.</p></div><h3 id="значения"><a href="#значения" title="Permalink to Значения">Значения</a></h3><div><dl>
+ <dt><code>left</code></dt>
+ <dd>Выравнивает левый край фонового изображения по левому краю фонового позиционирующего слоя.</dd>
+ <dt><code>center</code></dt>
+ <dd>Выравнивает центр фонового изображения по центру фонового позиционирующего слоя.</dd>
+ <dt><code>right</code></dt>
+ <dd>Выравнивает правый край фонового изображения по правому краю фонового позиционирующего слоя.</dd>
+ <dt><a href="/css/length/"><code>&lt;length&gt;</code></a></dt>
+ <dd><span class="tlid-translation translation" lang="ru"><span title>Смещение левого вертикального края данного фонового изображения от левого вертикального края фонового слоя.</span> <span title>(Некоторые браузеры позволяют назначать правый край для смещения).</span></span></dd>
+ <dt><a href="/css/percentage/"><code>&lt;percentage&gt;</code></a></dt>
+ <dd><span class="tlid-translation translation" lang="ru"><span title>Смещение горизонтальной позиции заданного фонового изображения относительно контейнера.</span> <span title>Значение 0% означает, что левый край фонового изображения выровнен с левым краем контейнера, а значение 100% означает, что правый край фонового изображения выровнен с правым краем контейнера, таким образом</span> <span title>значение 50% горизонтально центрирует фоновое изображение.</span></span></dd>
+</dl></div><h3 id="формальный_синтаксис"><a href="#формальный_синтаксис" title="Permalink to Формальный синтаксис">Формальный синтаксис</a></h3><div><pre class="notranslate"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> center <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> left <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> right <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> x-start <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> x-end <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#question_mark_()" title="Currently only available in English (US)" class="only-in-en-us">? (en-US)</a> <a href="#length-percentage">&lt;length-percentage&gt;</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#question_mark_()" title="Currently only available in English (US)" class="only-in-en-us">? (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax##exclamation_point_(!)" title="Currently only available in English (US)" class="only-in-en-us">! (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#hash_mark_()" title="Currently only available in English (US)" class="only-in-en-us"># (en-US)</a><p style="font-family:Open Sans,Arial,sans-serif; margin: 10px 0 0 0;">где <br><code style="font-family:Consolas,Monaco,&quot;Andale Mono&quot;,monospace;"><span id="length-percentage">&lt;length-percentage&gt;</span> = <a href="/css/length/" title="Возможные значения: a number followed by'em', 'ex', 'ch', 'rem', 'px', 'cm', 'mm', 'in', 'vh', 'vw', 'vmin', 'vmax', 'pt', 'pc' или 'px', как 3px, 1.5cm, -0.5em или 0">&lt;length&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <a href="/css/percentage/" title>&lt;percentage&gt;</a></code></p></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-backgrounds-4/#background-position-longhands" hreflang="en" lang="en" class="external" rel=" noopener">CSS Backgrounds and Borders Module Level&nbsp;4<br><small lang="ru">Определение 'background-position-x' в этой спецификации.</small></a></td>
+   <td><span class="spec-ed">Редакторский черновик</span></td>
+   <td>Initial specification of longhand sub-properties of <a href="/css/background-position/"><code>background-position</code></a> to match longstanding implementations.</td>
+  </tr>
+ </tbody>
+</table>
+
+<p></p><table class="properties"><tbody><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td><code>left</code></td></tr><tr><th scope="row">Применяется к</th><td>все элементы</td></tr><tr><th scope="row"><a href="/css/inheritance/">Наследуется</a></th><td>нет</td></tr><tr><th scope="row">Проценты</th><td>относятся к ширине области позиционирования фона минус высота фонового изображения</td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>Список, каждый элемент которого состоит из: смещения, данного комбинацией абсолютной длины и процентов плюс ключевое слово</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/css/background-position/"><code>background-position</code></a></li>
+ <li><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-position-y"><code>background-position-y</code> <span>(en-US)</span></a></li>
+ <li><a class="page-not-created" title="Документация об этом ещё не написана; пожалуйста, поспособствуйте её написанию!"><code>background-position-inline</code></a></li>
+ <li><a class="page-not-created" title="Документация об этом ещё не написана; пожалуйста, поспособствуйте её написанию!"><code>background-position-block</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Backgrounds_and_Borders/Using_multiple_backgrounds" title="CSS/Multiple backgrounds">Использование множественных фонов</a></li>
+</ul></div>

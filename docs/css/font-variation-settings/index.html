@@ -1,0 +1,92 @@
+<h1>font-variation-settings</h1><div><div></div>
+
+<p>The <strong><code>font-variation-settings</code></strong> CSS property provides low-level control over <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Fonts/Variable_Fonts_Guide">variable font</a> characteristics, by specifying the four letter axis names of the characteristics you want to vary, along with their values.</p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/font-variation-settings.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* Use the default settings */</span>
+<span class="token property">font-variation-settings</span><span class="token punctuation">:</span> normal<span class="token punctuation">;</span>
+
+<span class="token comment">/* Set values for variable font axis names */</span>
+<span class="token property">font-variation-settings</span><span class="token punctuation">:</span> <span class="token string">"XHGT"</span> 0.7<span class="token punctuation">;</span>
+
+<span class="token comment">/* Global values */</span>
+<span class="token property">font-variation-settings</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">font-variation-settings</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">font-variation-settings</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><p>This property's value can take one of two forms:</p>
+
+<dl>
+ <dt><code>normal</code></dt>
+ <dd>Text is laid out using default settings.</dd>
+ <dt><code>&lt;string&gt; &lt;number&gt;</code></dt>
+ <dd>When rendering text, the list of variable font axis names is passed to the text layout engine to enable or disable font features. Each setting is always one or more pairs consisting of a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/string"><code>&lt;string&gt;</code></a> of 4 ASCII characters followed by a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/number"><code>&lt;number&gt;</code></a> indicating the axis value to set. If the <code>&lt;string&gt;</code> has more or fewer characters or contains characters outside the U+20 - U+7E codepoint range, the whole property is invalid. The <code>&lt;number&gt;</code> can be fractional or negative, depending on the value range available in your font, as defined by the font designer.</dd>
+</dl></div><h2 id="description"><a href="#description" title="Permalink to Description">Description</a></h2><div><p>This property is a low-level mechanism designed to set variable font features where no other way to enable or access those features exist. You should only use it when no basic properties exist to set those features (e.g. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight"><code>font-weight</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-style"><code>font-style</code></a>).</p>
+
+<p>Font characteristics set using <code>font-variation-settings</code> will always override those set using the corresponding basic font properties, e.g. <code>font-weight</code>, no matter where they appear in the cascade. In some browsers, this is currently only true when the <code>@font-face</code> declaration includes a <code>font-weight</code> range.</p></div><h3 id="registered_and_custom_axes"><a href="#registered_and_custom_axes" title="Permalink to Registered and custom axes">Registered and custom axes</a></h3><div><p>Variable font axes come in two types: <strong>registered</strong> and <strong>custom</strong>.</p>
+
+<p>Registered axes are the most commonly encountered — common enough that the authors of the specification felt they were worth standardizing. Note that this doesn't mean that the author has to include all of these in their font.</p>
+
+<p>Here are the registered axes along with their corresponding CSS properties:</p>
+
+<table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Axis Tag</th>
+   <th scope="col">CSS Property</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>"wght"</td>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight"><code>font-weight</code></a></td>
+  </tr>
+  <tr>
+   <td>"wdth"</td>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-stretch"><code>font-stretch</code></a></td>
+  </tr>
+  <tr>
+   <td>"slnt" (slant)</td>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-style"><code>font-style</code></a>: <code>oblique + angle</code></td>
+  </tr>
+  <tr>
+   <td>"ital"</td>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-style"><code>font-style</code></a>: <code>italic</code></td>
+  </tr>
+  <tr>
+   <td>"opsz"</td>
+   <td>
+    <p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-optical-sizing"><code>font-optical-sizing</code></a></p>
+   </td>
+  </tr>
+ </tbody>
+</table>
+
+<p>Custom axes can be anything the font designer wants to vary in their font, for example ascender or descender heights, the size of serifs, or anything else they can imagine. Any axis can be used as long as it is given a unique 4-character axis. Some will end up becoming more common, and may even become registered over time.</p>
+
+<div class="note notecard">
+<p><strong>Note</strong>: Registered axis tags are identified using lower-case tags, whereas custom axes should be given upper-case tags. Note that font designers aren't forced follow this practice in any way, and some won't. The important takeaway here is that axis tags are case-sensitive.</p>
+</div>
+
+<p>In order to use variable fonts on your operating system, you need to make sure that it is up to date. For example Linux OSes need the latest Linux Freetype version, and macOS prior to 10.13 does not support variable fonts. If your operating system is not up to date, you will not be able to use variable fonts in web pages or the Firefox Developer Tools.</p></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td><code>normal</code></td></tr><tr><th scope="row">Applies to</th><td>all elements. It also applies to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::first-letter"><code>::first-letter</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::first-line"><code>::first-line</code></a>.</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance">Inherited</a></th><td>yes</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>as specified</td></tr><tr><th scope="row">Animation type</th><td>a transform</td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate">normal <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">[</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/string" title>&lt;string&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/number" title>&lt;number&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">]</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#hash_mark_()" title="Hash mark: the entity is repeated one or several times, each occurence separated by a comma">#</a></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div><p>You can find a number of other variable fonts examples at our <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Fonts/Variable_Fonts_Guide">Variable fonts guide</a>, <a class="external external-icon" href="https://v-fonts.com/" rel="noopener">v-fonts.com</a>, and <a class="external external-icon" href="https://www.axis-praxis.org/" rel="noopener">axis-praxis.org</a>.</p></div><h3 id="weight_wght"><a href="#weight_wght" title="Permalink to Weight (wght)">Weight (wght)</a></h3><div><p>The following live example's CSS can be edited to allow you to play with font weight values.</p>
+
+<div><iframe width="100%" height="520" src="https://mdn.github.io/css-examples/variable-fonts/weight.html" loading="lazy"></iframe></div></div><h3 id="slant_slnt"><a href="#slant_slnt" title="Permalink to Slant (slnt)">Slant (slnt)</a></h3><div><p>The following live example's CSS can be edited to allow you to play with font slant/oblique values.</p>
+
+<div><iframe width="100%" height="520" src="https://mdn.github.io/css-examples/variable-fonts/slant.html" loading="lazy"></iframe></div></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-fonts-4/#descdef-font-face-font-variation-settings" hreflang="en" lang="en" class="external" rel=" noopener">CSS Fonts Module Level&nbsp;4<br><small lang="en-US">The definition of 'font-variation-settings' in that specification.</small></a></td>
+   <td><span class="spec-wd">Working Draft</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Fonts/Variable_Fonts_Guide">Variable fonts guide</a></li>
+ <li><a href="https://www.microsoft.com/typography/otspec180/otvaroverview.htm" class="external" rel=" noopener">OpenType Font Variations Overview</a></li>
+ <li><a href="https://www.microsoft.com/typography/otspec/dvaraxisreg.htm" class="external" rel=" noopener">OpenType Design-Variation Axis Tag Registry</a></li>
+</ul></div>

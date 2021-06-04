@@ -1,0 +1,102 @@
+<h1>text-emphasis-position</h1><div><div></div>
+
+<p>The <strong><code>text-emphasis-position</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> property sets where emphasis marks are drawn. Like ruby text, if there isn't enough room for emphasis marks, the line height is increased.</p>
+
+<pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* Initial value */</span>
+<span class="token property">text-emphasis-position</span><span class="token punctuation">:</span> over right<span class="token punctuation">;</span>
+
+<span class="token comment">/* Keywords value */</span>
+<span class="token property">text-emphasis-position</span><span class="token punctuation">:</span> over left<span class="token punctuation">;</span>
+<span class="token property">text-emphasis-position</span><span class="token punctuation">:</span> under right<span class="token punctuation">;</span>
+<span class="token property">text-emphasis-position</span><span class="token punctuation">:</span> under left<span class="token punctuation">;</span>
+
+<span class="token property">text-emphasis-position</span><span class="token punctuation">:</span> left over<span class="token punctuation">;</span>
+<span class="token property">text-emphasis-position</span><span class="token punctuation">:</span> right under<span class="token punctuation">;</span>
+<span class="token property">text-emphasis-position</span><span class="token punctuation">:</span> left under<span class="token punctuation">;</span>
+
+<span class="token comment">/* Global values */</span>
+<span class="token property">text-emphasis-position</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">text-emphasis-position</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">text-emphasis-position</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre>
+
+<div class="note notecard"></div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+	<dt><code><dfn>over</dfn></code></dt>
+	<dd>Draw marks over the text in horizontal writing mode.</dd>
+	<dt><code><dfn>under</dfn></code></dt>
+	<dd>Draw marks under the text in horizontal writing mode.</dd>
+	<dt><code><dfn>right</dfn></code></dt>
+	<dd>Draws marks to the right of the text in vertical writing mode.</dd>
+	<dt><code><dfn>left</dfn></code></dt>
+	<dd>Draw marks to the left of the text in vertical writing mode.</dd>
+</dl></div><h2 id="description"><a href="#description" title="Permalink to Description">Description</a></h2><div><p>The preferred position of emphasis marks depends on the language. In Japanese for example, the preferred position is <span class="css">over right</span>. In Chinese, on the other hand, the preferred position is <span class="css">under right</span>. The informative table below summarizes the preferred emphasis mark positions for Chinese, Mongolian and Japanese:</p>
+
+<table>
+	<caption>Preferred emphasis mark and ruby position</caption>
+	<thead>
+		<tr>
+			<th rowspan="2" scope="col">Language</th>
+			<th colspan="2" scope="col">Preferred position</th>
+			<th colspan="2" rowspan="2" scope="col">Illustration</th>
+		</tr>
+		<tr>
+			<th>Horizontal</th>
+			<th>Vertical</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Japanese</td>
+			<td rowspan="3">over</td>
+			<td rowspan="3">right</td>
+			<td rowspan="3"><img alt="Emphasis marks appear over each emphasized character in horizontal Japanese text." src="/en-US/docs/Web/CSS/text-emphasis-position/text-emphasis-ja.png" title="Emphasis (shown in blue for clarity) applied above a fragment of Japanese text" width="416" height="78" loading="lazy"></td>
+			<td rowspan="4"><img alt="Emphasis marks appear on the right of each emphasized character in vertical Japanese text." src="/en-US/docs/Web/CSS/text-emphasis-position/text-emphasis-v.gif" title="Emphasis applied on the right of a fragment of Japanese text" width="34" height="89" loading="lazy"></td>
+		</tr>
+		<tr>
+			<td>Korean</td>
+		</tr>
+		<tr>
+			<td>Mongolian</td>
+		</tr>
+		<tr>
+			<td>Chinese</td>
+			<td>under</td>
+			<td>right</td>
+			<td><img alt="Emphasis marks appear below each emphasized character in horizontal Simplified Chinese text." src="/en-US/docs/Web/CSS/text-emphasis-position/text-emphasis-zh.gif" title="Emphasis (shown in blue for clarity) applied below a fragment of Chinese text" width="133" height="28" loading="lazy"></td>
+		</tr>
+	</tbody>
+</table>
+
+<div class="note notecard">
+<p><strong>Note</strong>: The <code>text-emphasis-position</code> cannot be set, and therefore are not reset either, using the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-emphasis"><code>text-emphasis</code></a> shorthand property.</p>
+</div></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td><code>over right</code></td></tr><tr><th scope="row">Applies to</th><td>all elements</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance">Inherited</a></th><td>no</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>as specified</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">[</a> over <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> under <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">]</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_ampersand" title="Double ampersand: all of the entities must be present, in any order">&amp;&amp;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">[</a> right <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> left <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">]</a></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="preferring_ruby_over_emphasis_marks"><a href="#preferring_ruby_over_emphasis_marks" title="Permalink to Preferring ruby over emphasis marks">Preferring ruby over emphasis marks</a></h3><div><p>Some editors prefer to hide emphasis marks when they conflict with ruby. In HTML, this can be done with the following style rule:</p>
+
+<pre class="brush: css notranslate"><code><span class="token selector">ruby</span> <span class="token punctuation">{</span>
+  <span class="token property">text-emphasis</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="preferring_emphasis_marks_over_ruby"><a href="#preferring_emphasis_marks_over_ruby" title="Permalink to Preferring emphasis marks over ruby">Preferring emphasis marks over ruby</a></h3><div><p>Some other editors prefer to hide ruby when they conflict with emphasis marks. In HTML, this can be done with the following pattern:</p>
+
+<pre class="brush: css notranslate"><code><span class="token selector">em</span> <span class="token punctuation">{</span>
+  <span class="token property">text-emphasis</span><span class="token punctuation">:</span> dot<span class="token punctuation">;</span> <span class="token comment">/* Set text-emphasis for &lt;em&gt; elements */</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">em rt</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span> <span class="token comment">/* Hide ruby inside &lt;em&gt; elements */</span>
+<span class="token punctuation">}</span></code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+	<thead>
+		<tr>
+			<th scope="col">Specification</th>
+			<th scope="col">Status</th>
+			<th scope="col">Comment</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><a href="https://drafts.csswg.org/css-text-decor-3/#text-emphasis-position-property" hreflang="en" lang="en" class="external" rel=" noopener">CSS Text Decoration Module Level&nbsp;3<br><small lang="en-US">The definition of 'text-emphasis' in that specification.</small></a></td>
+			<td><span class="spec-cr">Candidate Recommendation</span></td>
+			<td>Initial definition</td>
+		</tr>
+	</tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+	<li>The longhand properties <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-emphasis-style"><code>text-emphasis-style</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-emphasis-color"><code>text-emphasis-color</code></a>, and the corresponding shorthand property <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-emphasis"><code>text-emphasis</code></a>.</li>
+</ul></div>

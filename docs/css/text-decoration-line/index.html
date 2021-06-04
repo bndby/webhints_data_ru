@@ -1,0 +1,65 @@
+<h1>text-decoration-line</h1><div><div></div>
+
+<p>The <strong><code>text-decoration-line</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> property sets the kind of decoration that is used on text in an element, such as an underline or overline.</p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/text-decoration-line.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+<p>When setting multiple line-decoration properties at once, it may be more convenient to use the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration"><code>text-decoration</code></a> shorthand property instead.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* Single keyword */</span>
+<span class="token property">text-decoration-line</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token property">text-decoration-line</span><span class="token punctuation">:</span> underline<span class="token punctuation">;</span>
+<span class="token property">text-decoration-line</span><span class="token punctuation">:</span> overline<span class="token punctuation">;</span>
+<span class="token property">text-decoration-line</span><span class="token punctuation">:</span> line-through<span class="token punctuation">;</span>
+<span class="token property">text-decoration-line</span><span class="token punctuation">:</span> blink<span class="token punctuation">;</span>
+
+<span class="token comment">/* Multiple keywords */</span>
+<span class="token property">text-decoration-line</span><span class="token punctuation">:</span> underline overline<span class="token punctuation">;</span>               <span class="token comment">/* Two decoration lines */</span>
+<span class="token property">text-decoration-line</span><span class="token punctuation">:</span> overline underline line-through<span class="token punctuation">;</span>  <span class="token comment">/* Multiple decoration lines */</span>
+
+<span class="token comment">/* Global values */</span>
+<span class="token property">text-decoration-line</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">text-decoration-line</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">text-decoration-line</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre>
+
+<p>The <code>text-decoration-line</code> property is specified as <code>none</code>, or <strong>one or more</strong> space-separated values from the list below.</p></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+ <dt><code>none</code></dt>
+ <dd>Produces no text decoration.</dd>
+ <dt><code>underline</code></dt>
+ <dd>Each line of text has a decorative line beneath it.</dd>
+ <dt><code>overline</code></dt>
+ <dd>Each line of text has a decorative line above it.</dd>
+ <dt><code>line-through</code></dt>
+ <dd>Each line of text has a decorative line going through its middle.</dd>
+ <dt><code>blink</code> </dt>
+ <dd>The text blinks (alternates between visible and invisible). Conforming user agents may not blink the text. This value is <strong>deprecated</strong> in favor of <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/animation">CSS animations</a>.</dd>
+</dl></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td><code>none</code></td></tr><tr><th scope="row">Applies to</th><td>all elements. It also applies to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::first-letter"><code>::first-letter</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::first-line"><code>::first-line</code></a>.</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance">Inherited</a></th><td>no</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>as specified</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate">none <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">[</a> underline <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_bar" title="Double bar: one or several of the entities must be present, in any order">||</a> overline <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_bar" title="Double bar: one or several of the entities must be present, in any order">||</a> line-through <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_bar" title="Double bar: one or several of the entities must be present, in any order">||</a> blink <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">]</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> spelling-error <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> grammar-error</pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="basic_example"><a href="#basic_example" title="Permalink to Basic example">Basic example</a></h3><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>wavy<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Here's some text with wavy red underline!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>both<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This text has lines both above and below it.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<pre class="brush: css notranslate"><code><span class="token selector">.wavy</span> <span class="token punctuation">{</span>
+  <span class="token property">text-decoration-line</span><span class="token punctuation">:</span> underline<span class="token punctuation">;</span>
+  <span class="token property">text-decoration-style</span><span class="token punctuation">:</span> wavy<span class="token punctuation">;</span>
+  <span class="token property">text-decoration-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.both</span> <span class="token punctuation">{</span>
+  <span class="token property">text-decoration-line</span><span class="token punctuation">:</span> underline overline<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<p><iframe class="sample-code-frame" id="frame_Examples" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/text-decoration-line/_sample_.Examples.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-text-decor-3/#text-decoration-line-property" hreflang="en" lang="en" class="external" rel=" noopener">CSS Text Decoration Module Level&nbsp;3<br><small lang="en-US">The definition of 'text-decoration-line' in that specification.</small></a></td>
+   <td><span class="spec-cr">Candidate Recommendation</span></td>
+   <td>Initial definition. The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration"><code>text-decoration</code></a> property is now a shorthand to define multiple related properties.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li>When setting multiple line-decoration properties at once, it may be more convenient to use the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration"><code>text-decoration</code></a> shorthand property instead.</li>
+</ul></div>

@@ -1,0 +1,112 @@
+<h1>border-bottom-right-radius</h1><div><div></div>
+
+<p>The <strong><code>border-bottom-right-radius</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> property rounds the bottom-right corner of an element by specifying the radius (or the radius of the semi-major and semi-minor axes) of the ellipse defining the curvature of the corner.</p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/border-bottom-right-radius.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+<p>The rounding can be a circle or an ellipse, or if one of the value is <code>0</code> no rounding is done and the corner is square.</p>
+
+<img alt="border-bottom-right-radius.png" class="default internal" src="/en-US/docs/Web/CSS/border-bottom-right-radius/border-bottom-right-radius.png" width="597" height="164" loading="lazy">
+
+<p>A background, being an image or a color, is clipped at the border, even a rounded one; the exact location of the clipping is defined by the value of the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-clip"><code>background-clip</code></a> property.</p>
+
+<div class="note notecard"><strong>Note:</strong> If the value of this property is not set in a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius"><code>border-radius</code></a> shorthand property that is applied to the element after the <code>border-bottom-right-radius</code> CSS property, the value of this property is then reset to its initial value by the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties">shorthand property</a>.</div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* The corner is a circle */</span>
+<span class="token comment">/* border-bottom-right-radius: radius */</span>
+<span class="token property">border-bottom-right-radius</span><span class="token punctuation">:</span> 3px<span class="token punctuation">;</span>
+
+<span class="token comment">/* Percentage values */</span>
+<span class="token property">border-bottom-right-radius</span><span class="token punctuation">:</span> 20%<span class="token punctuation">;</span> <span class="token comment">/* corner of a circle if box is a square or else corner of a rectangle */</span>
+<span class="token property">border-bottom-right-radius</span><span class="token punctuation">:</span> 20% 20%<span class="token punctuation">;</span> <span class="token comment">/* same as above */</span> <span class="token comment">/* 20% of horizontal(width) and vertical(height) */</span>
+<span class="token property">border-bottom-right-radius</span><span class="token punctuation">:</span> 20% 10%<span class="token punctuation">;</span> <span class="token comment">/* 20% of horizontal(width) and 10% of vertical(height) */</span>
+
+<span class="token comment">/*The corner is an ellipse */</span>
+<span class="token comment">/* border-bottom-right-radius: horizontal vertical */</span>
+<span class="token property">border-bottom-right-radius</span><span class="token punctuation">:</span> 0.5em 1em<span class="token punctuation">;</span>
+
+<span class="token property">border-bottom-right-radius</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span></code></pre>
+
+<p>With one value:</p>
+
+<ul>
+	<li>the value is a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length"><code>&lt;length&gt;</code></a> or a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/percentage"><code>&lt;percentage&gt;</code></a> denoting the radius of the circle to use for the border in that corner.</li>
+</ul>
+
+<p>With two values:</p>
+
+<ul>
+	<li>the first value is a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length"><code>&lt;length&gt;</code></a> or a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/percentage"><code>&lt;percentage&gt;</code></a> denoting the horizontal semi-major axis of the ellipse to use for the border in that corner.</li>
+	<li>the second value is a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length"><code>&lt;length&gt;</code></a> or a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/percentage"><code>&lt;percentage&gt;</code></a> denoting the vertical semi-major axis of the ellipse to use for the border in that corner.</li>
+</ul></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+	<dt><code>&lt;length-percentage&gt;</code></dt>
+	<dd>Denotes the size of the circle radius or the semi-major and semi-minor axes of the ellipse. As absolute length it can be expressed in any unit allowed by the CSS <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length"><code>&lt;length&gt;</code></a> data type. Percentages for the horizontal axis refer to the width of the box, percentages for the vertical axis refer to the height of the box. Negative values are invalid.</dd>
+</dl></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td><code>0</code></td></tr><tr><th scope="row">Applies to</th><td>all elements; but User Agents are not required to apply to <code>table</code> and <code>inline-table</code> elements when <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-collapse"><code>border-collapse</code></a> is <code>collapse</code>. The behavior on internal table elements is undefined for the moment.. It also applies to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::first-letter"><code>::first-letter</code></a>.</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance">Inherited</a></th><td>no</td></tr><tr><th scope="row">Percentages</th><td>refer to the corresponding dimension of the border box</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>two absolute <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length"><code>&lt;length&gt;</code></a>s or <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/percentage"><code>&lt;percentage&gt;</code></a>s</td></tr><tr><th scope="row">Animation type</th><td>a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length#interpolation" title="Values of the <length> CSS data type are interpolated as real, floating-point numbers.">length</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/percentage#interpolation" title="Values of the <percentage> CSS data type are interpolated as real, floating-point numbers.">percentage</a> or calc();</td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate"><a href="#length-percentage">&lt;length-percentage&gt;</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#curly_braces_(_)" title="Curly braces: encloses two integers defining the minimal and maximal numbers of occurrences of the entity">{</a>1,2<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#curly_braces_(_)" title="Curly braces: encloses two integers defining the minimal and maximal numbers of occurrences of the entity">}</a><p style="font-family:Open Sans,Arial,sans-serif; margin: 10px 0 0 0;">where <br><code style="font-family:Consolas,Monaco,&quot;Andale Mono&quot;,monospace;"><span id="length-percentage">&lt;length-percentage&gt;</span> = <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length" title="Possible values: a number followed by'em', 'ex', 'ch', 'rem', 'px', 'cm', 'mm', 'in', 'vh', 'vw', 'vmin', 'vmax', 'pt', 'pc' or 'px', like 3px, 1.5cm, -0.5em or 0">&lt;length&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/percentage" title>&lt;percentage&gt;</a></code></p></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="arc_of_a_circle"><a href="#arc_of_a_circle" title="Permalink to Arc of a circle">Arc of a circle</a></h3><div><p>A single <code>&lt;length&gt;</code> value produces an arc of a circle.</p>
+
+
+
+<pre class="brush: css notranslate"><code><span class="token selector">div</span> <span class="token punctuation">{</span>
+  <span class="token property">border-bottom-right-radius</span><span class="token punctuation">:</span> 40px<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> lightgreen<span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> solid 1px black<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<iframe class="sample-code-frame" id="frame_arc_of_a_circle" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/border-bottom-right-radius/_sample_.arc_of_a_circle.html" loading="lazy"></iframe></div><h3 id="arc_of_an_ellipse"><a href="#arc_of_an_ellipse" title="Permalink to Arc of an ellipse">Arc of an ellipse</a></h3><div><p>Two different <code>&lt;length&gt;</code> values produce an arc of an ellipse.</p>
+
+
+
+<pre class="brush: css notranslate"><code><span class="token selector">div</span> <span class="token punctuation">{</span>
+  <span class="token property">border-bottom-right-radius</span><span class="token punctuation">:</span> 40px 20px<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> lightgreen<span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> solid 1px black<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<iframe class="sample-code-frame" id="frame_arc_of_an_ellipse" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/border-bottom-right-radius/_sample_.arc_of_an_ellipse.html" loading="lazy"></iframe></div><h3 id="square_element_with_percentage_radius"><a href="#square_element_with_percentage_radius" title="Permalink to Square element with percentage radius">Square element with percentage radius</a></h3><div><p>A square element with a single <code>&lt;percentage&gt;</code> value produces an arc of a circle.</p>
+
+
+
+<pre class="brush: css notranslate"><code><span class="token selector">div</span> <span class="token punctuation">{</span>
+  <span class="token property">border-bottom-right-radius</span><span class="token punctuation">:</span> 40%<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> lightgreen<span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> solid 1px black<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<iframe class="sample-code-frame" id="frame_square_element_with_percentage_radius" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/border-bottom-right-radius/_sample_.square_element_with_percentage_radius.html" loading="lazy"></iframe></div><h3 id="non_square_element_with_percentage_radius"><a href="#non_square_element_with_percentage_radius" title="Permalink to Non-square element with percentage radius">Non-square element with percentage radius</a></h3><div><p>A non-square element with a single <code>&lt;percentage&gt;</code> value produces an arc of an ellipse.</p>
+
+
+
+<pre class="brush: css notranslate"><code><span class="token selector">div</span> <span class="token punctuation">{</span>
+  <span class="token property">border-bottom-right-radius</span><span class="token punctuation">:</span> 40%<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> lightgreen<span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> solid 1px black<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<iframe class="sample-code-frame" id="frame_non_square_element_with_percentage_radius" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/border-bottom-right-radius/_sample_.non_square_element_with_percentage_radius.html" loading="lazy"></iframe></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+	<thead>
+		<tr>
+			<th scope="col">Specification</th>
+			<th scope="col">Status</th>
+			<th scope="col">Comment</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><a href="https://drafts.csswg.org/css-backgrounds-3/#propdef-border-bottom-right-radius" hreflang="en" lang="en" class="external" rel=" noopener">CSS Backgrounds and Borders Module Level&nbsp;3<br><small lang="en-US">The definition of 'border-bottom-right-radius' in that specification.</small></a></td>
+			<td><span class="spec-cr">Candidate Recommendation</span></td>
+			<td>Initial definition</td>
+		</tr>
+	</tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+	<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius"><code>border-radius</code></a> shorthand property</li>
+	<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-top-right-radius"><code>border-top-right-radius</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom-left-radius"><code>border-bottom-left-radius</code></a>, and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-top-left-radius"><code>border-top-left-radius</code></a></li>
+</ul></div>

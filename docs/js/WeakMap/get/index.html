@@ -1,0 +1,20 @@
+<h1>WeakMap.prototype.get()</h1><div><div></div>
+
+<p>The <strong><code>get()</code></strong> method returns a specified element from a
+  <code>WeakMap</code> object.</p>
+
+<div><iframe class="interactive" width="100%" height="490" src="https://interactive-examples.mdn.mozilla.net/pages/js/weakmap-prototype-get.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: js notranslate"><code><span class="token function">get</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span></code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Parameters">Parameters</a></h3><div><dl>
+  <dt><code><var>key</var></code></dt>
+  <dd>Required. The key of the element to return from the <code>WeakMap</code> object.
+  </dd>
+</dl></div><h3 id="return_value"><a href="#return_value" title="Permalink to Return value">Return value</a></h3><div><p>The element associated with the specified key in the <code>WeakMap</code> object. If
+  the key can't be found, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined"><code>undefined</code></a> is returned.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="using_the_get_method"><a href="#using_the_get_method" title="Permalink to Using the get() method">Using the get() method</a></h3><div><pre class="brush: js notranslate"><code><span class="token keyword">var</span> wm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">WeakMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+wm<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>window<span class="token punctuation">,</span> <span class="token string">'foo'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+wm<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>window<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Returns "foo".</span>
+wm<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'baz'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// Returns undefined.</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://tc39.es/ecma262/#sec-weakmap.prototype.get">Unknown specification<!-- --> <br><small># <!-- -->sec-weakmap.prototype.get</small></a></td></tr></tbody></table><div></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap"><code>WeakMap</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap/set"><code>WeakMap.set()</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap/has"><code>WeakMap.has()</code></a></li>
+</ul></div>

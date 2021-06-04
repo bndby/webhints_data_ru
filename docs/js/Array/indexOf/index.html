@@ -1,0 +1,120 @@
+<h1>Array.prototype.indexOf()</h1><div><div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Метод <code><strong>indexOf()</strong></code> возвращает первый индекс, по которому данный элемент может быть найден в массиве или -1, если такого индекса нет.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code><var>arr</var>.indexOf(<var>searchElement</var>[, <var>fromIndex</var> = 0])</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>searchElement</code></dt>
+ <dd>Искомый элемент в массиве.</dd>
+ <dt><code>fromIndex</code></dt>
+ <dd>Индекс, с которого начинать поиск. Если индекс больше или равен длине массива, возвращается -1, что означает, что массив даже не просматривается. Если индекс является отрицательным числом, он трактуется как смещение с конца массива. Обратите внимание: если индекс отрицателен, массив всё равно просматривается от начала к концу. Если рассчитанный индекс оказывается меньше 0, поиск ведётся по всему массиву. Значение по умолчанию равно 0, что означает, что просматривается весь массив.</dd>
+</dl></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Метод <code>indexOf()</code> сравнивает искомый элемент <code>searchElement</code> с элементами в массиве, используя <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#using_the_equality_operators" class="only-in-en-us" title="Currently only available in English (US)">строгое сравнение (en-US)</a> (тот же метод используется оператором <code>===</code>, тройное равно).</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_using_indexof"><a href="#example_using_indexof" title="Permalink to Пример: использование indexOf()">Пример: использование <code>indexOf()</code></a></h3><div><p>В следующем примере <code>indexOf()</code> используется для поиска значений в массиве.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> array <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+array<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">// 0</span>
+array<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">// -1</span>
+array<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 2</span>
+array<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// -1</span>
+array<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 0</span>
+</code></pre></div><h3 id="example_finding_all_the_occurrences_of_an_element"><a href="#example_finding_all_the_occurrences_of_an_element" title="Permalink to Пример: нахождение всех вхождений элемента">Пример: нахождение всех вхождений элемента</a></h3><div><p>В следующем примере <code>indexOf()</code> используется для поиска всех индексов элемента в указанном массиве, которые с помощью <a href="/js/Array/push/"><code>push()</code></a> добавляются в другой массив.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> indices <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> array <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">,</span> <span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'d'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> element <span class="token operator">=</span> <span class="token string">'a'</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> idx <span class="token operator">=</span> array<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span>idx <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  indices<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>idx<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  idx <span class="token operator">=</span> array<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>element<span class="token punctuation">,</span> idx <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>indices<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// [0, 2, 4]</span>
+</code></pre></div><h2 id="polyfill"><a href="#polyfill" title="Permalink to Полифил">Полифил</a></h2><div><p>Метод <code>indexOf()</code> был добавлен к стандарту ECMA-262 в 5-м издании; поэтому он может отсутствовать в других реализациях стандарта. Вы можете работать с ним, добавив следующий код в начало ваших скриптов, он позволяет использовать <code>indexOf()</code> в реализациях, которые не поддерживают этот метод. Этот алгоритм является точно тем, что описан в ECMA-262 5-го издания; он предполагает, что <a href="/js/TypeError/"><code>TypeError</code></a> и <a href="/js/Math/abs/"><code>Math.abs()</code></a> имеют свои первоначальные значения.</p>
+
+<pre class="brush: js notranslate"><code><span class="token comment">// Шаги алгоритма ECMA-262, 5-е издание, 15.4.4.14</span>
+<span class="token comment">// Ссылка (en): http://es5.github.io/#x15.4.4.14</span>
+<span class="token comment">// Ссылка (ru): http://es5.javascript.ru/x15.4.html#x15.4.4.14</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>indexOf<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">indexOf</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">searchElement<span class="token punctuation">,</span> fromIndex</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> k<span class="token punctuation">;</span>
+
+    <span class="token comment">// 1. Положим O равным результату вызова ToObject с передачей ему</span>
+    <span class="token comment">//    значения this в качестве аргумента.</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">TypeError</span><span class="token punctuation">(</span><span class="token string">'"this" is null or not defined'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">var</span> <span class="token constant">O</span> <span class="token operator">=</span> <span class="token function">Object</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 2. Положим lenValue равным результату вызова внутреннего метода Get</span>
+    <span class="token comment">//    объекта O с аргументом "length".</span>
+    <span class="token comment">// 3. Положим len равным ToUint32(lenValue).</span>
+    <span class="token keyword">var</span> len <span class="token operator">=</span> <span class="token constant">O</span><span class="token punctuation">.</span>length <span class="token operator">&gt;&gt;&gt;</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 4. Если len равен 0, вернём -1.</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>len <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// 5. Если был передан аргумент fromIndex, положим n равным</span>
+    <span class="token comment">//    ToInteger(fromIndex); иначе положим n равным 0.</span>
+    <span class="token keyword">var</span> n <span class="token operator">=</span> <span class="token operator">+</span>fromIndex <span class="token operator">||</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token number">Infinity</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      n <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// 6. Если n &gt;= len, вернём -1.</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">&gt;=</span> len<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// 7. Если n &gt;= 0, положим k равным n.</span>
+    <span class="token comment">// 8. Иначе, n&lt;0, положим k равным len - abs(n).</span>
+    <span class="token comment">//    Если k меньше нуля 0, положим k равным 0.</span>
+    k <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span>n <span class="token operator">&gt;=</span> <span class="token number">0</span> <span class="token operator">?</span> n <span class="token operator">:</span> len <span class="token operator">-</span> Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 9. Пока k &lt; len, будем повторять</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>k <span class="token operator">&lt;</span> len<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// a. Положим Pk равным ToString(k).</span>
+      <span class="token comment">//   Это неявное преобразование для левостороннего операнда в операторе in</span>
+      <span class="token comment">// b. Положим kPresent равным результату вызова внутреннего метода</span>
+      <span class="token comment">//    HasProperty объекта O с аргументом Pk.</span>
+      <span class="token comment">//   Этот шаг может быть объединён с шагом c</span>
+      <span class="token comment">// c. Если kPresent равен true, выполним</span>
+      <span class="token comment">//    i.  Положим elementK равным результату вызова внутреннего метода Get</span>
+      <span class="token comment">//        объекта O с аргументом ToString(k).</span>
+      <span class="token comment">//   ii.  Положим same равным результату применения</span>
+      <span class="token comment">//        Алгоритма строгого сравнения на равенство между</span>
+      <span class="token comment">//        searchElement и elementK.</span>
+      <span class="token comment">//  iii.  Если same равен true, вернём k.</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>k <span class="token keyword">in</span> <span class="token constant">O</span> <span class="token operator">&amp;&amp;</span> <span class="token constant">O</span><span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">===</span> searchElement<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> k<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      k<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-15.4.4.14" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 5.1 (ECMA-262)<br><small lang="ru">Определение 'Array.prototype.indexOf' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Изначальное определение. Реализована в JavaScript 1.6.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-array.prototype.indexof" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Array.prototype.indexOf' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><a href="https://tc39.es/ecma262/#sec-array.prototype.indexof" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript (ECMA-262)<br><small lang="ru">Определение 'Array.prototype.indexOf' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/Array/lastIndexOf/"><code>Array.prototype.lastIndexOf()</code></a></li>
+ <li><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/indexOf"><code>TypedArray.prototype.indexOf()</code> <span>(en-US)</span></a></li>
+</ul></div>

@@ -1,0 +1,64 @@
+<h1>column-width</h1><div><div></div>
+
+<p><span class="seoSummary">The <strong><code>column-width</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> property sets the ideal column width in a multi-column layout.</span> The container will have as many columns as can fit without any of them having a width less than the <code>column-width</code> value. If the width of the container is narrower than the specified value, the single column's width will be smaller than the declared column width.</p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/column-width.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+<p>This property can help you create responsive designs that fit different screen sizes. Especially in the presence of the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/column-count"><code>column-count</code></a> property (which has precedence), you must specify all related length values to achieve an exact column width. In horizontal text these are <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/width"><code>width</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/column-width" aria-current="page"><code>column-width</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/column-gap"><code>column-gap</code></a>, and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/column-rule-width"><code>column-rule-width</code></a>.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* Keyword value */</span>
+<span class="token property">column-width</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+
+<span class="token comment">/* &lt;length&gt; values */</span>
+<span class="token property">column-width</span><span class="token punctuation">:</span> 60px<span class="token punctuation">;</span>
+<span class="token property">column-width</span><span class="token punctuation">:</span> 15.5em<span class="token punctuation">;</span>
+<span class="token property">column-width</span><span class="token punctuation">:</span> 3.3vw<span class="token punctuation">;</span>
+
+<span class="token comment">/* Global values */</span>
+<span class="token property">column-width</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">column-width</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">column-width</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre>
+
+<p>The <code>column-width</code> property is specified as one of the values listed below.</p></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+ <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length"><code>&lt;length&gt;</code></a></dt>
+ <dd>Indicates the optimal column width. The actual column width may differ from the specified value: it may be wider when necessary to fill available space, and narrower when the available space is too small. The value must be strictly positive or the declaration is invalid. Percentage values are also invalid.</dd>
+ <dt><code>auto</code></dt>
+ <dd>The width of the column is determined by other CSS properties, such as <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/column-count"><code>column-count</code></a>.</dd>
+</dl></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td><code>auto</code></td></tr><tr><th scope="row">Applies to</th><td>Block containers except table wrapper boxes</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance">Inherited</a></th><td>no</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>the absolute length, zero or larger</td></tr><tr><th scope="row">Animation type</th><td>a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length#interpolation" title="Values of the <length> CSS data type are interpolated as real, floating-point numbers.">length</a></td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length" title="Possible values: a number followed by'em', 'ex', 'ch', 'rem', 'px', 'cm', 'mm', 'in', 'vh', 'vw', 'vmin', 'vmax', 'pt', 'pc' or 'px', like 3px, 1.5cm, -0.5em or 0">&lt;length&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> auto</pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="setting_column_width_in_pixels"><a href="#setting_column_width_in_pixels" title="Permalink to Setting column width in pixels">Setting column width in pixels</a></h3><div><h4 id="html">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>content-box<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<h4 id="css">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token selector">.content-box</span> <span class="token punctuation">{</span>
+  <span class="token property">column-width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<h4 id="result">Result</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Setting_column_width_in_pixels" width="auto" height="160" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/column-width/_sample_.Setting_column_width_in_pixels.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-sizing-3/#column-sizing" hreflang="en" lang="en" class="external" rel=" noopener">CSS Box Sizing Module Level&nbsp;3<br><small lang="en-US">The definition of 'column-width' in that specification.</small></a></td>
+   <td><span class="spec-wd">Working Draft</span></td>
+   <td>Adds intrinsic sizes via the keywords <code>min-content</code>, <code>max-content</code>, and <code>fit-content</code>.</td>
+  </tr>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-multicol-1/#cw" hreflang="en" lang="en" class="external" rel=" noopener">CSS Multi-column Layout Module<br><small lang="en-US">The definition of 'column-width' in that specification.</small></a></td>
+   <td><span class="spec-wd">Working Draft</span></td>
+   <td>Initial definition.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Multiple-column_Layout">Multiple-column Layout</a> (Learn Layout)</li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Columns/Basic_Concepts_of_Multicol">Basic Concepts of Multicol</a></li>
+</ul></div>

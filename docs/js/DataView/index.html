@@ -1,0 +1,63 @@
+<h1>DataView</h1><div><div></div>
+
+<p>Вид <strong><code>DataView</code></strong>&nbsp;предоставляет низко-уровневый интерфейс для чтения и записи многочисленных числовых типов в бинарном&nbsp;<a href="/js/ArrayBuffer/"><code>ArrayBuffer</code></a>, независимо от порядка&nbsp;байтов&nbsp;платформы.</p>
+
+<div><iframe class="interactive" width="100%" height="490" src="https://interactive-examples.mdn.mozilla.net/pages/js/dataview-constructor.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate">new DataView(buffer [, byteOffset [, byteLength]])</pre></div><h3 id="параметры"><a href="#параметры" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>buffer</code></dt>
+ <dd>Существующий&nbsp;<a href="/js/ArrayBuffer/"><code>ArrayBuffer</code></a> или&nbsp;<a href="/js/SharedArrayBuffer/"><code>SharedArrayBuffer</code></a>  для использования как хранилище для нового объекта&nbsp;<code>DataView</code>.</dd>
+ <dt><code>byteOffset</code> <span class="badge inline optional">Необязательный</span></dt>
+ <dd>Смещение в байтах к первому байту в заданном буфере. Если не определён, то вид буфера будет начинаться с первого байта.</dd>
+ <dt><code>byteLength</code> <span class="badge inline optional">Необязательный</span></dt>
+ <dd>Количество элементов в массиве байтов.&nbsp;Если не определён, то длина вида будет соответствовать длине буфера.</dd>
+</dl></div><h3 id="возвращаемое_значение"><a href="#возвращаемое_значение" title="Permalink to Возвращаемое значение">Возвращаемое значение</a></h3><div><p>Новый&nbsp;объект <code>DataView</code>&nbsp;представляющий определённый буфер данных.</p></div><h3 id="исключения"><a href="#исключения" title="Permalink to Исключения">Исключения</a></h3><div><dl>
+ <dt><code><a href="/js/RangeError/"><code>RangeError</code></a></code></dt>
+ <dd>Выкидывается если&nbsp;<code>byteOffset</code> &nbsp;и&nbsp;<code>byteLength</code> заходит за пределы буфера.</dd>
+</dl></div><h2 id="описание"><a href="#описание" title="Permalink to Описание">Описание</a></h2><div></div><h3 id="порядок_байтов"><a href="#порядок_байтов" title="Permalink to Порядок байтов">Порядок байтов</a></h3><div><p>Многобайтовые числовые форматы представлены в памяти по разному в зависимости от архитектуры машины, см&nbsp;<a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Glossary/Endianness">Endianness <span>(en-US)</span></a> для объяснения. Аксессоры DataView предоставляют явный контроль над обращением к данным вне зависимости от порядка байтов архитектуры платформы.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> littleEndian <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> buffer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayBuffer</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">new</span> <span class="token class-name">DataView</span><span class="token punctuation">(</span>buffer<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">setInt16</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">256</span><span class="token punctuation">,</span> <span class="token boolean">true</span> <span class="token comment">/* littleEndian */</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// Int16Array uses the platform's endianness.</span>
+  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Int16Array</span><span class="token punctuation">(</span>buffer<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">===</span> <span class="token number">256</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>littleEndian<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true or false</span>
+</code></pre></div><h2 id="свойства"><a href="#свойства" title="Permalink to Свойства">Свойства</a></h2><div><p>All <code>DataView</code> instances inherit from <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView"><code>DataView.prototype</code> <span>(en-US)</span></a> and allows the addition of properties to all DataView objects.</p>
+
+<p>{{page('en-US/Web/JavaScript/Reference/Global_Objects/DataView/prototype','Properties')}}</p></div><h2 id="методы"><a href="#методы" title="Permalink to Методы">Методы</a></h2><div><p>{{page('en-US/Web/JavaScript/Reference/Global_Objects/DataView/prototype','Methods')}}</p></div><h2 id="пример"><a href="#пример" title="Permalink to Пример">Пример</a></h2><div><pre class="brush: js notranslate"><code><span class="token keyword">var</span> buffer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayBuffer</span><span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> dv <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DataView</span><span class="token punctuation">(</span>buffer<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+dv<span class="token punctuation">.</span><span class="token function">setInt16</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">42</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+dv<span class="token punctuation">.</span><span class="token function">getInt16</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//42</span>
+</code></pre></div><h2 id="спецификация"><a href="#спецификация" title="Permalink to Спецификация">Спецификация</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+  <tr>
+   <td><a href="https://www.khronos.org/registry/typedarray/specs/latest/" hreflang="en" lang="en" class="external" title="Спецификация 'Typed Array Specification'" rel=" noopener">Typed Array Specification</a></td>
+   <td><span class="spec-obsolete">Устаревшая</span></td>
+   <td>Superseded by ECMAScript 6</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-dataview-constructor" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'DataView' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Initial definition in an ECMA standard</td>
+  </tr>
+  <tr>
+   <td><a href="https://tc39.es/ecma262/#sec-dataview-constructor" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript (ECMA-262)<br><small lang="ru">Определение 'DataView' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="таблица_совместимости"><a href="#таблица_совместимости" title="Permalink to Таблица совместимости">Таблица совместимости</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="замечания_совместимости"><a href="#замечания_совместимости" title="Permalink to Замечания совместимости">Замечания совместимости</a></h2><div><p>Starting with Firefox 40, <code>DataView</code> requires to be constructed with a <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/new"><code>new</code></a> operator. Calling <code>DataView()</code> as a function without <code>new</code>, will throw a <a href="/js/TypeError/"><code>TypeError</code></a> from now on.</p>
+
+<pre class="brush: js example-bad notranslate"><code><span class="token keyword">var</span> dv <span class="token operator">=</span> <span class="token function">DataView</span><span class="token punctuation">(</span>buffer<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// TypeError: calling a builtin DataView constructor without new is forbidden</span></code></pre>
+
+<pre class="brush: js example-good notranslate"><code><span class="token keyword">var</span> dv <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DataView</span><span class="token punctuation">(</span>buffer<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div><h2 id="также"><a href="#также" title="Permalink to Также">Также</a></h2><div><ul>
+ <li><a class="link-https external" href="https://github.com/jDataView/jDataView" rel=" noopener">jDataView</a>: JavaScript library that polyfills and extends the <code>DataView</code> API to all browsers and Node.js.</li>
+ <li><a href="/js/ArrayBuffer/"><code>ArrayBuffer</code></a></li>
+ <li><a href="/js/SharedArrayBuffer/"><code>SharedArrayBuffer</code></a></li>
+</ul></div>

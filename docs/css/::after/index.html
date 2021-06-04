@@ -1,0 +1,140 @@
+<h1>::after (:after)</h1><div><div></div>
+
+<p><span class="seoSummary">В CSS, <strong><code>::after</code></strong>&nbsp;создаёт&nbsp;<a href="/css/Pseudo-elements/">псевдоэлемент</a>, который является последним потомком выбранного элемента. Часто используется для добавления косметического содержимого в элемент с помощью свойства <a href="/css/content/"><code>content</code></a>.</span>&nbsp;По умолчанию&nbsp;является инлайновым.</p>
+
+<pre class="brush: css no-line-numbers  language-css notranslate"><code><span class="token comment">/* Добавить стрелки после ссылок */</span>
+<span class="token selector">a::after</span> <span class="token punctuation">{</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">"→"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<div class="note notecard">
+<p><strong>Примечание:</strong>&nbsp;Псведоэлементы, созданные с помощью&nbsp;<code>::before</code> и <code>::after</code> <a href="https://www.w3.org/TR/CSS2/generate.html#before-after-content" class="external" rel=" noopener">содержатся в блоке форматирования элемента</a>, и поэтому не применяются к <em><a href="/css/Replaced_element/">замещаемым&nbsp;элементам</a></em>,&nbsp;таким как&nbsp;<a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/img"><code>&lt;img&gt;</code></a>&nbsp;или&nbsp;<a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/br"><code>&lt;br&gt;</code></a>.</p>
+</div></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="notranslate">/* CSS3 syntax */
+::after
+
+/* CSS2 syntax */
+:after</pre>
+
+<div class="note notecard">
+<p>В CSS3 появилась запись&nbsp;<code>::after</code>&nbsp;(с двумя двоеточиями) для различения&nbsp;<a href="/css/Pseudo-classes/">псевдоклассов</a>&nbsp;и <a href="/css/Pseudo-elements/">псевдоэлементов</a>. Браузеры также поддерживают запись&nbsp;<code>:after</code>, введённую в&nbsp;CSS2.</p>
+</div></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="простое_использование"><a href="#простое_использование" title="Permalink to Простое использование">Простое использование</a></h3><div><p>Давайте создадим два класса, один для скучных параграфов и один для потрясающих.&nbsp;Затем мы сможем отметить каждый параграф добавлением псевдоэлемента в его конец.</p>
+
+<h4 id="html">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>boring-text<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Вот простой скучный текст.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Вот нормальный текст, который не является ни скучным, ни потрясающим.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>exciting-text<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Помогать MDN легко и весело.
+Просто нажмите кнопку редактирования, чтобы добавить новые живые примеры, или улучшить существующие примеры.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<h4 id="css">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token selector">.exciting-text::after</span> <span class="token punctuation">{</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">"&lt;- теперь это *просто* потрясающе!"</span><span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.boring-text::after</span> <span class="token punctuation">{</span>
+   <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">"&lt;- СКУЧНО!"</span><span class="token punctuation">;</span>
+   <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<h4 id="результат">Результат</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Простое_использование" width="500" height="150" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/::after/_sample_.%D0%9F%D1%80%D0%BE%D1%81%D1%82%D0%BE%D0%B5_%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5.html" loading="lazy"></iframe></p></div><h3 id="пример_оформления"><a href="#пример_оформления" title="Permalink to Пример оформления">Пример оформления</a></h3><div><p>Можно стилизовать текст или изображения в свойстве&nbsp;<a href="/css/content/"><code>content</code></a> практически любым способом.</p>
+
+<h4 id="html_2">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ribbon<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Посмотрите, где находится оранжевый прямоугольник.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<h4 id="css_2">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token selector">.ribbon</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #5BC8F7<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.ribbon::after</span> <span class="token punctuation">{</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">"Посмотрите на этот оранжевый прямоугольник."</span><span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #FFBA10<span class="token punctuation">;</span>
+  <span class="token property">border-color</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+  <span class="token property">border-style</span><span class="token punctuation">:</span> dotted<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<h4 id="результат_2">Результат</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Пример_оформления" width="450" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/::after/_sample_.%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80_%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F.html" loading="lazy"></iframe></p></div><h3 id="подсказки"><a href="#подсказки" title="Permalink to Подсказки">Подсказки</a></h3><div><p>Следующий пример показывает использование&nbsp;<a href="/css/Pseudo-elements/">псевдоэлемента</a>&nbsp;<code>::after</code> в сочетании с CSS-выражением&nbsp;<a href="/css/attr()/"><code>attr()</code></a>&nbsp;и <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Global_attributes#attr-dataset">пользовательского <code>data-*</code> атрибута</a>&nbsp;<code>data-descr</code>&nbsp;для создания <em>подсказки</em> на чистом&nbsp;CSS.</p>
+
+<h4 id="html_3">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Здесь находится живой пример вышеприведённого кода.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span> <span class="token punctuation">/&gt;</span></span>
+  У нас есть некоторый <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">data-descr</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>коллекция слов и знаков препинаний<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>текст<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span> здесь с несколькими
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">data-descr</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>маленькие всплывающие окошки, которые снова исчезают<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>подсказками<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span> <span class="token punctuation">/&gt;</span></span>
+  Не стесняйтесь, наводите мышку чтобы <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">data-descr</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>не понимать буквально<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>взглянуть<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>.
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<h4 id="css_3">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token selector">span[data-descr]</span> <span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+  <span class="token property">text-decoration</span><span class="token punctuation">:</span> underline<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> #00F<span class="token punctuation">;</span>
+  <span class="token property">cursor</span><span class="token punctuation">:</span> help<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">span[data-descr]:hover::after</span> <span class="token punctuation">{</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token function">attr</span><span class="token punctuation">(</span>data-descr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> 24px<span class="token punctuation">;</span>
+  <span class="token property">min-width</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 1px #aaaaaa solid<span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #ffffcc<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 12px<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> #000000<span class="token punctuation">;</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 14px<span class="token punctuation">;</span>
+  <span class="token property">z-index</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<h4 id="результат_3">Результат</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Подсказки" width="450" height="120" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/::after/_sample_.%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B7%D0%BA%D0%B8.html" loading="lazy"></iframe></p></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-pseudo-4/#selectordef-after" hreflang="en" lang="en" class="external" rel=" noopener">CSS Pseudo-Elements Level&nbsp;4<br><small lang="ru">Определение '::after' в этой спецификации.</small></a></td>
+   <td><span class="spec-wd">Рабочий черновик</span></td>
+   <td>Нет значительных изменений по сравнению с предыдущей версией спецификации.</td>
+  </tr>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-transitions/#animatable-properties" hreflang="en" lang="en" class="external" rel=" noopener">CSS Transitions<br><small lang="ru">Определение 'transitions on pseudo-element properties' в этой спецификации.</small></a></td>
+   <td><span class="spec-wd">Рабочий черновик</span></td>
+   <td>Разрешает переходы для свойств, определённых в псевдоэлементах.</td>
+  </tr>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-animations-1/" hreflang="en" lang="en" class="external" rel=" noopener">CSS Animations Level 1<br><small lang="ru">Определение 'animations on pseudo-element properties' в этой спецификации.</small></a></td>
+   <td><span class="spec-wd">Рабочий черновик</span></td>
+   <td>Разрешает анимации на свойствах, определённых в псевдоэлементах.</td>
+  </tr>
+  <tr>
+   <td><a href="https://drafts.csswg.org/selectors-3/#gen-content" hreflang="en" lang="en" class="external" rel=" noopener">Selectors Level&nbsp;3<br><small lang="ru">Определение '::after' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Введение синтаксиса с двумя двоеточиями.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/CSS2/generate.html#before-after-content" hreflang="en" lang="en" class="external" rel=" noopener">CSS Level&nbsp;2 (Revision&nbsp;1)<br><small lang="ru">Определение '::after' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Изначальное определение, используя синтаксис с одним двоеточием.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="поддержка_браузерами"><a href="#поддержка_браузерами" title="Permalink to Поддержка браузерами">Поддержка браузерами</a></h2><p>BCD tables only load in the browser</p><div><div>
+<p></p><p></p>
+</div></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/css/::before/"><code>::before</code></a>, <a href="/css/content/"><code>content</code></a></li>
+</ul></div>

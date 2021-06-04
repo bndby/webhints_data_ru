@@ -1,0 +1,39 @@
+<h1>String.prototype.padStart()</h1><div><div></div>
+
+<p>The <strong><code>padStart()</code></strong> method pads the
+    current string with another string (multiple times, if needed) until the resulting
+    string reaches the given length. The padding is applied from the start of the
+  current string.</p>
+
+<div><iframe class="interactive" width="100%" height="490" src="https://interactive-examples.mdn.mozilla.net/pages/js/string-padstart.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: js notranslate"><code><span class="token function">padStart</span><span class="token punctuation">(</span>targetLength<span class="token punctuation">)</span>
+<span class="token function">padStart</span><span class="token punctuation">(</span>targetLength<span class="token punctuation">,</span> padString<span class="token punctuation">)</span>
+</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Parameters">Parameters</a></h3><div><dl>
+  <dt><code><var>targetLength</var></code></dt>
+  <dd>The length of the resulting string once the current <code><var>str</var></code> has
+    been padded. If the value is less than <code><var>str.</var>length</code>, then
+    <code><var>str</var></code> is returned as-is.</dd>
+  <dt><code><var>padString</var></code> <span class="badge inline optional">Optional</span></dt>
+  <dd>The string to pad the current <code><var>str</var></code> with. If
+    <code><var>padString</var></code> is too long to stay within the
+    <code><var>targetLength</var></code>, it will be truncated from the end. The default
+    value is "<code> </code>" (<code>U+0020 'SPACE'</code>).</dd>
+</dl></div><h3 id="return_value"><a href="#return_value" title="Permalink to Return value">Return value</a></h3><div><p>A <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String"><code>String</code></a> of the specified <code><var>targetLength</var></code> with
+  <code><var>padString</var></code> applied from the start.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="basic_examples"><a href="#basic_examples" title="Permalink to Basic examples">Basic examples</a></h3><div><pre class="brush: js notranslate"><code><span class="token string">'abc'</span><span class="token punctuation">.</span><span class="token function">padStart</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token comment">// "       abc"</span>
+<span class="token string">'abc'</span><span class="token punctuation">.</span><span class="token function">padStart</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token string">"foo"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// "foofoofabc"</span>
+<span class="token string">'abc'</span><span class="token punctuation">.</span><span class="token function">padStart</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token string">"123465"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "123abc"</span>
+<span class="token string">'abc'</span><span class="token punctuation">.</span><span class="token function">padStart</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span> <span class="token string">"0"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">// "00000abc"</span>
+<span class="token string">'abc'</span><span class="token punctuation">.</span><span class="token function">padStart</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>          <span class="token comment">// "abc"</span></code></pre></div><h3 id="fixed_width_string_number_conversion"><a href="#fixed_width_string_number_conversion" title="Permalink to Fixed width string number conversion">Fixed width string number conversion</a></h3><div><pre class="brush: js notranslate"><code><span class="token comment">// Javascript version of: (unsigned)</span>
+<span class="token comment">//  printf "%0*d" width num</span>
+<span class="token keyword">function</span> <span class="token function">leftFillNum</span><span class="token punctuation">(</span><span class="token parameter">num<span class="token punctuation">,</span> targetLength</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> num<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">padStart</span><span class="token punctuation">(</span>targetLength<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> num <span class="token operator">=</span> <span class="token number">123</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">leftFillNum</span><span class="token punctuation">(</span>num<span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// expected output: "00123"</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://tc39.es/ecma262/#sec-string.prototype.padstart">Unknown specification<!-- --> <br><small># <!-- -->sec-string.prototype.padstart</small></a></td></tr></tbody></table><div></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+  <li>A polyfill of <code>String.prototype.padStart</code> is available in <a href="https://github.com/zloirock/core-js#ecmascript-string-and-regexp" class="external" rel=" noopener"><code>core-js</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padEnd"><code>String.prototype.padEnd()</code></a></li>
+  <li><a href="https://github.com/behnammodi/polyfill/blob/master/string.polyfill.js" class="external" rel=" noopener">A
+      polyfill</a></li>
+</ul></div>

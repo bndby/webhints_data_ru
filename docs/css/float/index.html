@@ -1,0 +1,156 @@
+<h1>float</h1><div><div>Свойство float CSS указывает, что элемент должен быть взят из нормального потока и помещён вдоль левой или правой стороны его контейнера, где текст и встроенные элементы будут обтекать его.</div></div><h2 id="summary"><a href="#summary" title="Permalink to Summary">Summary</a></h2><div><p>CSS свойство&nbsp;<code>float</code>&nbsp;указывает, что текущий элемент должен быть изъят из обычного&nbsp;flow (потока) и прижат к левой или правой стороне родительского элемента. Текст и inline элементы будут обтекать такой элемент.</p>
+
+<p><strong>Плавающий элемент</strong>&nbsp;- это любой элемент со свойством <code>float</code> отличным от&nbsp;<code>none</code>.</p>
+
+<p></p><table class="properties"><tbody><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td><code>none</code></td></tr><tr><th scope="row">Применяется к</th><td>все элементы, но не будет эффекта, если <code>display: none</code></td></tr><tr><th scope="row"><a href="/css/inheritance/">Наследуется</a></th><td>нет</td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>как указано</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p>
+
+<p>Поскольку&nbsp;<code>float</code>&nbsp;подразумевает использование блочной модели, это свойство изменяет вычисляемые значения&nbsp;<a href="/css/display/"><code>display</code></a> в следующих случаях:</p>
+
+<table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specified value</th>
+   <th scope="col">Computed value</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><code>inline</code></td>
+   <td><code>block</code></td>
+  </tr>
+  <tr>
+   <td><code>inline-block</code></td>
+   <td><code>block</code></td>
+  </tr>
+  <tr>
+   <td><code>inline-table</code></td>
+   <td><code>table</code></td>
+  </tr>
+  <tr>
+   <td><code>table-row</code></td>
+   <td><code>block</code></td>
+  </tr>
+  <tr>
+   <td><code>table-row-group</code></td>
+   <td><code>block</code></td>
+  </tr>
+  <tr>
+   <td><code>table-column</code></td>
+   <td><code>block</code></td>
+  </tr>
+  <tr>
+   <td><code>table-column-group</code></td>
+   <td><code>block</code></td>
+  </tr>
+  <tr>
+   <td><code>table-cell</code></td>
+   <td><code>block</code></td>
+  </tr>
+  <tr>
+   <td><code>table-caption</code></td>
+   <td><code>block</code></td>
+  </tr>
+  <tr>
+   <td><code>table-header-group</code></td>
+   <td><code>block</code></td>
+  </tr>
+  <tr>
+   <td><code>table-footer-group</code></td>
+   <td><code>block</code></td>
+  </tr>
+  <tr>
+   <td><code>flex</code></td>
+   <td><code>flex</code>, <code>float</code> не оказывает влияния на такие элементы</td>
+  </tr>
+  <tr>
+   <td><code>inline-flex</code></td>
+   <td><code>inline-flex</code>, <code>float</code> не оказывает влияния на такие элементы</td>
+  </tr>
+  <tr>
+   <td><em>other</em></td>
+   <td><em>не меняются</em></td>
+  </tr>
+ </tbody>
+</table>
+
+<div class="note notecard"><strong>Note: </strong>If you're referring to this property from JavaScript as a member of the <a class="page-not-created" title="Документация об этом ещё не написана; пожалуйста, поспособствуйте её написанию!"><code>element.style</code></a> object, you must spell it as <code>cssFloat</code>. Also note that Internet Explorer versions 8 and older spelled this <code>styleFloat</code>. This is an exception to the rule that the name of the DOM member is the camel-case name of the dash-separated CSS name (and is due to the fact that "float" is a reserved word in JavaScript, as with the need to escape "class" as "className" and escape &lt;label&gt;'s "for" as "htmlFor").</div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush:css notranslate"><code><span class="token property">float</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span>
+<span class="token property">float</span><span class="token punctuation">:</span> right<span class="token punctuation">;</span>
+<span class="token property">float</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+
+<span class="token property">float</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+</code></pre></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+ <dt><code>left</code></dt>
+ <dd>Is a keyword indicating that the element must float on the left side of its containing block.</dd>
+ <dt><code>right</code></dt>
+ <dd>Is a keyword indicating that the element must float on the right side of its containing block.</dd>
+ <dt><code>none</code></dt>
+ <dd>Is a keyword indicating that the element must not float.</dd>
+ <dt>
+ <h3 id="Formal_syntax">Formal syntax</h3>
+ </dt>
+</dl>
+
+<pre class="notranslate">left <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> right <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> none <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> inline-start <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> inline-end</pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div><p><a href="https://media.prod.mdn.mozit.cloud/samples/cssref/float.html" class="external" rel=" noopener">Посмотреть живые примеры</a></p>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/css<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+  <span class="token selector">div</span> <span class="token punctuation">{</span> <span class="token property">border</span><span class="token punctuation">:</span> solid red<span class="token punctuation">;</span>  <span class="token property">max-width</span><span class="token punctuation">:</span> 70ex<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+  <span class="token selector">h4</span>  <span class="token punctuation">{</span> <span class="token property">float</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span>  <span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h4</span><span class="token punctuation">&gt;</span></span>HELLO!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h4</span><span class="token punctuation">&gt;</span></span>
+  This is some text. This is some text. This is some text.
+  This is some text. This is some text. This is some text.
+  This is some text. This is some text. This is some text.
+  This is some text. This is some text. This is some text.
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<div style="border: solid red; max-width: 70ex;">
+<h4 id="hello!" style="float: left; margin: 0;">HELLO!</h4>
+This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.</div></div><h3 id="how_floats_are_positioned"><a href="#how_floats_are_positioned" title="Permalink to How floats are positioned">How floats are positioned</a></h3><div><p>As mentioned above, when an element is floated it is taken out of the normal flow of the document. It is shifted to the left or right until it touches the edge of it's containing box <em>or another floated element</em>.</p>
+
+<p>In the image below, there are three red squares. Two are floated left and one is floated right. Note that the second "left" red square is placed to the right of the first. Additional squares would continue to stack to the right until they filled the containing box, after which they would wrap to the next line.</p>
+
+<p><img src="/@api/deki/files/4927/=floats.png" loading="lazy"></p></div><h3 id="clearing_floats"><a href="#clearing_floats" title="Permalink to Clearing floats">Clearing floats</a></h3><div><p>In the example above, the floated elements are shorter vertically than the block of text they're floated within. However, if the text was not long enough to wrap below the bottom of all the floats, we might see unanticipated effects. If the paragraph above, for instance, only read "Lorem ipsum dolor sit amet," and was followed by another heading of the same style as the "Floats Example" heading, the second heading would appear between the red boxes. Most likely, we want the next heading to be aligned all the way to the left. To accomplish that, we'd need to clear the floats.</p>
+
+<p>The simplest way to clear the floats in this example is to add the <a href="/css/clear/"><code>clear</code></a> property to the new heading we want to be sure is aligned left:</p>
+
+<pre class="brush:css notranslate"><code><span class="token selector">h2.secondHeading</span> <span class="token punctuation">{</span> <span class="token property">clear</span><span class="token punctuation">:</span> both<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+</code></pre>
+
+<p>However, this method only works if there are no other elements within the same <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context" rel="internal" class="only-in-en-us" title="Currently only available in English (US)">block formatting context (en-US)</a> that we <em>do</em> want the heading to continue to appear next to horizontally. If our <code>H2</code> has siblings which are a sidebars floated to the left and right, using <code>clear</code> will force it to appear below both sidebars, which is probably not what we want.</p>
+
+<p>If clearing floats on an element below them is not an option, another approach is to limit the block formatting context of the floats' container. Referring to the example above again, it appears that all three red boxes are within a <code>P</code> element. We can set the <a href="/css/overflow/"><code>overflow</code></a> property on that P to <code>hidden</code> or <code>auto</code> to cause it to expand to contain them, but not allow them to drop out the bottom of it:</p>
+
+<pre class="brush:css notranslate"><code><span class="token selector">p.withRedBoxes</span> <span class="token punctuation">{</span> <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span> <span class="token property">height</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+</code></pre>
+
+<div class="note notecard"><strong>Note:</strong> Setting <code>overflow</code> to <code>scroll</code> will also contain any floated child elements, but will show scrollbars no matter the height of the content. Here we're setting <code>height</code> to <code>auto</code> even though that's the default to indicate that the container should grow to accommodate its content.</div></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-box-3/#float" hreflang="en" lang="en" class="external" rel=" noopener">CSS Box Model<br><small lang="ru">Определение 'float' в этой спецификации.</small></a></td>
+   <td><span class="spec-cr">Кандидат в рекомендации</span></td>
+   <td>Lots of new values, not all clearly defined yet. Any differences in behavior unrelated to new features are expected to be unintentional; please report.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/CSS2/visuren.html#float-position" hreflang="en" lang="en" class="external" rel=" noopener">CSS Level&nbsp;2 (Revision&nbsp;1)<br><small lang="ru">Определение 'float' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>No change.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/CSS1/#float" hreflang="en" lang="en" class="external" rel=" noopener">CSS Level&nbsp;1<br><small lang="ru">Определение 'float' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Initial definition.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context" class="only-in-en-us" title="Currently only available in English (US)">Block formatting context (en-US)</a></li>
+</ul></div>

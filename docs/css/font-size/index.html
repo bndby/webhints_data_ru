@@ -1,0 +1,163 @@
+<h1>font-size</h1><div><div></div></div><h2 id="описание"><a href="#описание" title="Permalink to Описание">Описание</a></h2><div><p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS" title="CSS">CSS</a> Свойство <strong><code>font-size</code></strong> определяет размер шрифта. Это свойство также используется для вычисления размера<code> em</code>, <code>ex</code> и других относительных единиц. Подробнее: <a href="/css/length/"><code>&lt;length&gt;</code></a>.</p>
+
+<p><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/font-size.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="brush:css notranslate"><code><span class="token comment">/* значения в &lt;абсолютных размерах&gt; */</span>
+<span class="token property">font-size</span><span class="token punctuation">:</span> xx-small<span class="token punctuation">;</span>
+<span class="token property">font-size</span><span class="token punctuation">:</span> x-small<span class="token punctuation">;</span>
+<span class="token property">font-size</span><span class="token punctuation">:</span> small<span class="token punctuation">;</span>
+<span class="token property">font-size</span><span class="token punctuation">:</span> medium<span class="token punctuation">;</span>
+<span class="token property">font-size</span><span class="token punctuation">:</span> large<span class="token punctuation">;</span>
+<span class="token property">font-size</span><span class="token punctuation">:</span> x-large<span class="token punctuation">;</span>
+<span class="token property">font-size</span><span class="token punctuation">:</span> xx-large<span class="token punctuation">;</span>
+
+<span class="token comment">/* значения в &lt;относительных размерах&gt; */</span>
+<span class="token property">font-size</span><span class="token punctuation">:</span> larger<span class="token punctuation">;</span>
+<span class="token property">font-size</span><span class="token punctuation">:</span> smaller<span class="token punctuation">;</span>
+
+<span class="token comment">/* &lt;значения длины&gt; */</span>
+<span class="token property">font-size</span><span class="token punctuation">:</span> 12px<span class="token punctuation">;</span>
+<span class="token property">font-size</span><span class="token punctuation">:</span> 0.8em<span class="token punctuation">;</span>
+
+<span class="token comment">/* &lt;процентные значения&gt; */</span>
+<span class="token property">font-size</span><span class="token punctuation">:</span> 80%<span class="token punctuation">;</span>
+
+<span class="token comment">/* Глобальные значения */</span>
+<span class="token property">font-size</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">font-size</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">font-size</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre>
+
+<p>Свойство <code>font-size</code> устанавливается одним из следующих способов:</p>
+
+<ul>
+ <li>Ключевым словом из перечня&nbsp; <a href="/css/font-size$edit#absolute-size/">абсолютных значений</a> или <a href="/css/font-size$edit#relative-size/">относительных значений</a></li>
+ <li>Как <code>&lt;значение длины&gt;</code> или <code>&lt;процентное значение&gt;</code>, по отношению к размеру родительского элемента.</li>
+</ul></div><h3 id="values"><a href="#values" title="Permalink to Значения">Значения</a></h3><div><dl>
+ <dt><code>xx-small, x-small, small, medium, large, x-large, xx-large</code></dt>
+ <dd>Набор ключевых слов абсолютных значений, по отношению к пользовательскому размеру шрифта по умолчанию (им считается <code>medium</code> - среднее).</dd>
+ <dt><code>larger, smaller</code></dt>
+ <dd>Больше (larger) или меньше (smaller). Ключевые слова для относительного размера. Шрифт будет больше или меньше по отношению в размеру шрифта родительского элемента.Примерно на такое же соотношение, которое используется в ключевых словах абсолютного размера выше.</dd>
+ <dt><a href="/css/length/"><code>&lt;length&gt;</code></a></dt>
+ <dd>
+ <p>Положительное значение длины <a href="/css/length/"><code>&lt;length&gt;</code></a>. Для большинства единиц измерения, зависимых от шрифта (таких как <code>em</code> и <code>ex</code>), размер шрифта будет зависеть от размера шрифта родительских элементов.</p>
+
+ <p>Для единиц измерения, зависимых от шрифта, которые зависят от корневых единиц (таких как <code>rem</code>), размер шрифта будет коррелироваться по отношению к шрифту, используемому корневым элементом&nbsp; <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/html"><code>&lt;html&gt;</code></a> (root).</p>
+ </dd>
+ <dt><code>&lt;процентные значения&gt;</code></dt>
+ <dd>Положительное процентное <a href="/css/percentage/"><code>&lt;percentage&gt;</code></a> значение по отношению к размеру шрифта родительского элемента.</dd>
+</dl>
+
+<div class="note notecard">
+<p><strong>Примечание:</strong> Для обеспечения максимальной совместимости обычно лучше использовать значения, относящиеся к размеру шрифта пользователя по умолчанию.</p>
+</div></div><h3 id="формальный_синтаксис"><a href="#формальный_синтаксис" title="Permalink to Формальный синтаксис">Формальный синтаксис</a></h3><div><pre class="notranslate"><a href="#absolute-size">&lt;absolute-size&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <a href="#relative-size">&lt;relative-size&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <a href="#length-percentage">&lt;length-percentage&gt;</a><p style="font-family:Open Sans,Arial,sans-serif; margin: 10px 0 0 0;">где <br><code style="font-family:Consolas,Monaco,&quot;Andale Mono&quot;,monospace;"><span id="absolute-size">&lt;absolute-size&gt;</span> = xx-small <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> x-small <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> small <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> medium <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> large <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> x-large <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> xx-large <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> xxx-large<br><span id="relative-size">&lt;relative-size&gt;</span> = larger <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> smaller<br><span id="length-percentage">&lt;length-percentage&gt;</span> = <a href="/css/length/" title="Возможные значения: a number followed by'em', 'ex', 'ch', 'rem', 'px', 'cm', 'mm', 'in', 'vh', 'vw', 'vmin', 'vmax', 'pt', 'pc' или 'px', как 3px, 1.5cm, -0.5em или 0">&lt;length&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <a href="/css/percentage/" title>&lt;percentage&gt;</a></code></p></pre></div><h2 id="possible_approaches"><a href="#possible_approaches" title="Permalink to Возможные подходы">Возможные подходы</a></h2><div><p>Существуют разные способы задания размера шрифта. С помощью ключевых слов или с помощью числовых значений для размера пикселей или размера ems.&nbsp; Выберите подходящий метод в зависимости от потребностей конкретной веб-страницы.</p></div><h3 id="keywords"><a href="#keywords" title="Permalink to Ключевые слова">Ключевые слова</a></h3><div><p>Keywords are a good way to set the size of fonts on the web. By setting a keyword font size on the body element, you can set relative font-sizing everywhere else on the page, giving you the ability to easily scale the font up or down on the entire page accordingly.</p></div><h3 id="pixels"><a href="#pixels" title="Permalink to Pixels">Pixels</a></h3><div><p>Setting the font size in pixel values (<code>px</code>) is a good choice when you need pixel accuracy. A px value is static. This is an OS-independent and cross-browser way of literally telling the browsers to render the letters at exactly the number of pixels in height that you specified. The results may vary slightly across browsers, as they may use different algorithms to achieve a similar effect.</p>
+
+<p>Font sizing settings can also be used in combination. For example, if a parent element is set to <code>16px</code> and its child element is set to <code>larger</code>, the child element displays larger than the parent element in the page.</p>
+
+<div class="note notecard"><strong>Note:</strong> Defining font sizes in pixel is <em><a href="https://en.wikipedia.org/wiki/Web_accessibility" class="external" rel=" noopener">not accessible</a></em>, because the user cannot change the font size from the browser. (For example, users with limited vision may wish to set the font size much larger than the size chosen by a web designer.) Therefore, avoid using pixels for font sizes if you wish to create an inclusive design.</div></div><h3 id="ems"><a href="#ems" title="Permalink to Ems">Ems</a></h3><div><p>Another way of setting the font size is with <code>em</code> values. The size of an <code>em</code> value is dynamic. When defining the <code>font-size</code> property, an em is equal to the size of the font that applies to the parent of the element in question. If you haven't set the font size anywhere on the page, then it is the browser default, which is probably 16px. So, by default 1em = 16px, and 2em = 32px. If you set a <code>font-size</code> of 20px on the body element, then 1em = 20px and 2em = 40px. Note that the value 2 is essentially a multiplier of the current em size.</p>
+
+<p>In order to calculate the em equivalent for any pixel value required, you can use this formula:</p>
+
+<pre class="notranslate">em = desired element pixel value / parent element font-size in pixels</pre>
+
+<p>For example, suppose the font-size of the body of the page is set to 1em, with the browser standard of 1em = 16px; if the font-size you want is 12px, then you should specify 0.75em (because 12/16 = 0.75). Similarly, if you want a font size of 10px, then specify 0.625em (10/16 = 0.625); for 22px, specify 1.375em (22/16).</p>
+
+<p>A popular technique to use throughout the document is to set the the font-size of the body to 62.5% (that is 62.5% of the default of 16px), which equates to 10px, or 0.625em. Now you can set the font-size for any elements using em units, with an easy-to-remember conversion, by dividing the px value by 10. This way 6px = 0.6em, 8px = 0.8em, 12px = 1.2em, 14px = 1.4em, 16px = 1.6em. For example:</p>
+
+<pre class="brush:css notranslate"><code><span class="token selector">body</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 62.5%<span class="token punctuation">;</span> <span class="token comment">/* font-size 1em = 10px on default browser settings */</span>
+<span class="token punctuation">}</span>
+<span class="token selector">span</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 1.6em<span class="token punctuation">;</span> <span class="token comment">/* 1.6em = 16px */</span>
+<span class="token punctuation">}</span></code></pre>
+
+<p>The em is a very useful unit in CSS, since it automatically adapts its length relative to the font that the reader chooses to use.</p>
+
+<p>One important fact to keep in mind:&nbsp; em values compound. Take the following HTML and apply it with the previous CSS above:</p>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span>Outer <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span>inner<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span> outer<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<p>The result is:</p>
+
+<p><iframe class="sample-code-frame" id="frame_Ems" width="400" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/font-size/_sample_.Ems.html" loading="lazy"></iframe></p>
+
+<p>Assuming that the browser's default <code>font-size</code> is 16px, the words "outer" would be rendered at 16px, but the word "inner" would be rendered at 25.6px. This is because the inner span's <code>font-size</code> is 1.6 em which is relative to its parent's <code>font-size</code>, which is in turn relative to its parent's <code>font-size</code>. This is often called <strong>compounding</strong>.</p></div><h3 id="rems"><a href="#rems" title="Permalink to Rems">Rems</a></h3><div><p><code>rem</code> values were invented in order to sidestep the compounding problem. <code>rem</code> values are relative to the root <code>html</code> element, not the parent element. In other words, it lets you specify a font size in a relative fashion without being affected by the size of the parent, thereby eliminating compounding.</p>
+
+<p>The CSS below is nearly identical to the previous example. The only exception is that the unit has been changed to <code>rem</code>.</p>
+
+<pre class="brush: css notranslate"><code><span class="token selector">html</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 62.5%<span class="token punctuation">;</span> <span class="token comment">/* font-size 1em = 10px on default browser settings */</span>
+<span class="token punctuation">}</span>
+<span class="token selector">span</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 1.6rem<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p>Then we apply this CSS to the same HTML, which looks like this:</p>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span>Outer <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span>inner<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span> outer<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<p><iframe class="sample-code-frame" id="frame_Rems" width="400" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/font-size/_sample_.Rems.html" loading="lazy"></iframe></p>
+
+<p>In this example, the words "outer inner outer" are all displayed at 16px (assuming that the browser's font-size has been left at the default value of 16px).</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_1"><a href="#example_1" title="Permalink to Пример 1">Пример 1</a></h3><div><pre class="brush: css notranslate"><code><span class="token comment">/* Set paragraph text to be very large. */</span>
+<span class="token selector">p</span> <span class="token punctuation">{</span> <span class="token property">font-size</span><span class="token punctuation">:</span> xx-large <span class="token punctuation">}</span>
+
+<span class="token comment">/* Set h1 (level 1 heading) text to be 2.5 times the size
+ * of the text around it. */</span>
+<span class="token selector">h1</span> <span class="token punctuation">{</span> <span class="token property">font-size</span><span class="token punctuation">:</span> 250% <span class="token punctuation">}</span>
+
+<span class="token comment">/* Sets text enclosed within span tag to be 16px */</span>
+<span class="token selector">span</span> <span class="token punctuation">{</span> <span class="token property">font-size</span><span class="token punctuation">:</span> 16px<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+</code></pre></div><h3 id="пример_2"><a href="#пример_2" title="Permalink to Пример 2">Пример 2</a></h3><div><pre class="brush: css notranslate"><code><span class="token selector">.small</span> <span class="token punctuation">{</span>
+	<span class="token property">font-size</span><span class="token punctuation">:</span> xx-small<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.larger</span> <span class="token punctuation">{</span>
+	<span class="token property">font-size</span><span class="token punctuation">:</span> larger<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.point</span> <span class="token punctuation">{</span>
+	<span class="token property">font-size</span><span class="token punctuation">:</span> 24pt<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.percent</span> <span class="token punctuation">{</span>
+	<span class="token property">font-size</span><span class="token punctuation">:</span> 200%<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>small<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Small H1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>larger<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Larger H1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>point<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>24 point H1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>percent<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>200% H1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<h4 id="live_sample">Live Sample</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Пример_2" width="600" height="200" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/font-size/_sample_.%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80_2.html" loading="lazy"></iframe></p></div><h2 id="notes"><a href="#notes" title="Permalink to Примечание">Примечание</a></h2><div><p><code>em</code> and <code>ex</code> units on the <a href="/css/font-size/" aria-current="page"><code>font-size</code></a> property are relative to the parent element's font size (unlike all other properties, where they're relative to the font size on the element). This means <code>em</code> units and percentages do the same thing for <a href="/css/font-size/" aria-current="page"><code>font-size</code></a>.</p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-fonts-3/#font-size-prop" hreflang="en" lang="en" class="external" rel=" noopener">CSS Fonts Module Level&nbsp;3<br><small lang="ru">Определение 'font-size' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>No change</td>
+  </tr>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-transitions/#animatable-css" hreflang="en" lang="en" class="external" rel=" noopener">CSS Transitions<br><small lang="ru">Определение 'font-size' в этой спецификации.</small></a></td>
+   <td><span class="spec-wd">Рабочий черновик</span></td>
+   <td>Defines <code>font-size</code> as animatable.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/CSS2/fonts.html#propdef-font-size" hreflang="en" lang="en" class="external" rel=" noopener">CSS Level&nbsp;2 (Revision&nbsp;1)<br><small lang="ru">Определение 'font-size' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>No change</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/CSS1/#font-size" hreflang="en" lang="en" class="external" rel=" noopener">CSS Level&nbsp;1<br><small lang="ru">Определение 'font-size' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость браузеров">Совместимость браузеров</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div>

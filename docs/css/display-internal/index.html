@@ -1,0 +1,89 @@
+<h1>&lt;display-internal&gt;</h1><div><div></div>
+
+<p class="summary">Some layout models such as <code>table</code> and <code>ruby</code> have a complex internal structure, with several different roles that their children and descendants can fill. This page defines those "internal" display values, which only have meaning within that particular layout mode.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><p>Valid <code>&lt;display-internal&gt;</code> values:</p>
+
+<dl>
+ <dt><code>table-row-group</code></dt>
+ <dd>These elements behave like <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tbody"><code>&lt;tbody&gt;</code></a> HTML elements.</dd>
+ <dt><code>table-header-group</code></dt>
+ <dd>These elements behave like <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/thead"><code>&lt;thead&gt;</code></a> HTML elements.</dd>
+ <dt><code>table-footer-group</code></dt>
+ <dd>These elements behave like <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tfoot"><code>&lt;tfoot&gt;</code></a> HTML elements.</dd>
+ <dt><code>table-row</code></dt>
+ <dd>These elements behave like <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tr"><code>&lt;tr&gt;</code></a> HTML elements.</dd>
+ <dt><code>table-cell</code></dt>
+ <dd>These elements behave like <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/td"><code>&lt;td&gt;</code></a> HTML elements.</dd>
+ <dt><code>table-column-group</code></dt>
+ <dd>These elements behave like <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/colgroup"><code>&lt;colgroup&gt;</code></a> HTML elements.</dd>
+ <dt><code>table-column</code></dt>
+ <dd>These elements behave like <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/col"><code>&lt;col&gt;</code></a> HTML elements.</dd>
+ <dt><code>table-caption</code></dt>
+ <dd>These elements behave like <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/caption"><code>&lt;caption&gt;</code></a> HTML elements.</dd>
+ <dt><code>ruby-base</code> </dt>
+ <dd>These elements behave like <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/rb"><code>&lt;rb&gt;</code></a> HTML elements.</dd>
+ <dt><code>ruby-text</code> </dt>
+ <dd>These elements behave like <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/rt"><code>&lt;rt&gt;</code></a> HTML elements.</dd>
+ <dt><code>ruby-base-container</code> </dt>
+ <dd>These elements behave like <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/rbc" class="page-not-created" title="This is a link to an unwritten page"><code>&lt;rbc&gt;</code></a> HTML elements generated as anonymous boxes.</dd>
+ <dt><code>ruby-text-container</code> </dt>
+ <dd>These elements behave like <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/rtc"><code>&lt;rtc&gt;</code></a> HTML elements.</dd>
+</dl></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="css_tables_example"><a href="#css_tables_example" title="Permalink to CSS tables example">CSS tables example</a></h3><div><p>The following example demonstrates laying out a simple form using CSS table layout.</p>
+
+<h4 id="html">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>main</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>name<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Name<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>name<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>name<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>age<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Age<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>age<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>age<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>main</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<h4 id="css">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token selector">main</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> table<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">div</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> table-row<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">label, input</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> table-cell<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 5px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<h4 id="result">Result</h4>
+
+<p><iframe class="sample-code-frame" id="frame_CSS_tables_example" width="100%" height="100" src="https://yari-demos.prod.mdn.mozit.cloud/en-us/docs/web/css/display-internal/_sample_.CSS_tables_example.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-display/#typedef-display-internal" hreflang="en" lang="en" class="external" rel=" noopener">CSS Display Module Level&nbsp;3<br><small lang="en-US">The definition of 'display-internal' in that specification.</small></a></td>
+   <td><span class="spec-cr">Candidate Recommendation</span></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><div></div><h3 id="support_of_table_values"><a href="#support_of_table_values" title="Permalink to Support of table values">Support of table values</a></h3><p>BCD tables only load in the browser</p><div><p><code>table</code>, <code>table-cell</code>, <code>table-column</code>, <code>table-column-group</code>, <code>table-footer-group</code>, <code>table-header-group</code>, <code>table-row</code>, and <code>table-row-group</code></p>
+
+<p></p><p></p></div><h3 id="support_of_ruby_values"><a href="#support_of_ruby_values" title="Permalink to Support of ruby values">Support of ruby values</a></h3><p>BCD tables only load in the browser</p><div><p><code>ruby</code>, <code>ruby-base</code>, <code>ruby-base-container</code>, <code>ruby-text</code>, and <code>ruby-text-container</code></p>
+
+<p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display"><code>display</code></a>
+  <ul>
+   <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display-outside"><code>&lt;display-outside&gt;</code></a></li>
+   <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display-inside"><code>&lt;display-inside&gt;</code></a></li>
+   <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display-listitem"><code>&lt;display-listitem&gt;</code></a></li>
+   <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display-box"><code>&lt;display-box&gt;</code></a></li>
+   <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display-legacy"><code>&lt;display-legacy&gt;</code></a></li>
+  </ul>
+ </li>
+</ul></div>

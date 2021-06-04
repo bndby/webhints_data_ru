@@ -1,0 +1,106 @@
+<h1>background-size</h1><div><div></div></div><h2 id="описание"><a href="#описание" title="Permalink to Описание">Описание</a></h2><div><p>Значение&nbsp;<strong><code>background-size</code></strong>&nbsp;в&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/CSS" title="CSS">CSS</a> позволяет задавать размер фонового изображения. Изображение может быть оставлено в исходном размере, растянуто, или подогнано под размеры&nbsp;доступного&nbsp;пространства.</p>
+
+<div class="note notecard"><strong>Предупреждение:</strong> Если значение этого свойства не задано в сокращённом свойстве <a href="/css/background/"><code>background</code></a>, которое применяется к элементу после CSS свойства <code>background-size</code>, то значение этого свойства затем сбрасывается до исходного значения c помощью сокращённого свойства.</div>
+
+<p></p><table class="properties"><tbody><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td><code>auto auto</code></td></tr><tr><th scope="row">Применяется к</th><td>все элементы. Это также применяется к <a href="/css/::first-letter/"><code>::first-letter</code></a> и <a href="/css/::first-line/"><code>::first-line</code></a>.</td></tr><tr><th scope="row"><a href="/css/inheritance/">Наследуется</a></th><td>нет</td></tr><tr><th scope="row">Проценты</th><td>относительно области позиционирования фона</td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>как указано, но с относительной длиной, конвертируемой в абсолютные длины</td></tr><tr><th scope="row">Animation type</th><td>repeatable list of simple list of length, percentage, or calc</td></tr></tbody></table><p></p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="brush: css notranslate"><code><span class="token comment">/* Ключевые слова */</span>
+<span class="token property">background-size</span><span class="token punctuation">:</span> cover<span class="token punctuation">;</span>
+<span class="token property">background-size</span><span class="token punctuation">:</span> contain<span class="token punctuation">;</span>
+
+<span class="token comment">/* Указано одно значение - ширина изображения, */</span>
+<span class="token comment">/* высота в таком случае устанавливается в auto */</span>
+<span class="token property">background-size</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+<span class="token property">background-size</span><span class="token punctuation">:</span> 3em<span class="token punctuation">;</span>
+<span class="token property">background-size</span><span class="token punctuation">:</span> 12px<span class="token punctuation">;</span>
+<span class="token property">background-size</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+
+<span class="token comment">/* Указаны два значения - */</span>
+<span class="token comment">/* ширина и высота соответственно */</span>
+<span class="token property">background-size</span><span class="token punctuation">:</span> 50% auto<span class="token punctuation">;</span>
+<span class="token property">background-size</span><span class="token punctuation">:</span> 3em 25%<span class="token punctuation">;</span>
+<span class="token property">background-size</span><span class="token punctuation">:</span> auto 6px<span class="token punctuation">;</span>
+<span class="token property">background-size</span><span class="token punctuation">:</span> auto auto<span class="token punctuation">;</span>
+
+<span class="token comment">/* Значения для нескольких фонов */</span>
+<span class="token comment">/* Не путайте такую запись с background-size: auto auto */</span>
+<span class="token property">background-size</span><span class="token punctuation">:</span> auto<span class="token punctuation">,</span> auto<span class="token punctuation">;</span>
+<span class="token property">background-size</span><span class="token punctuation">:</span> 50%<span class="token punctuation">,</span> 25%<span class="token punctuation">,</span> 25%<span class="token punctuation">;</span>
+<span class="token property">background-size</span><span class="token punctuation">:</span> 6px<span class="token punctuation">,</span> auto<span class="token punctuation">,</span> contain<span class="token punctuation">;</span>
+
+<span class="token comment">/* Глобальные значения */</span>
+<span class="token property">background-size</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">background-size</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">background-size</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre></div><h3 id="значения"><a href="#значения" title="Permalink to Значения">Значения</a></h3><div><dl>
+ <dt><code>&lt;размер&gt;</code></dt>
+ <dd>Значение&nbsp;<code><a href="/css/length/"><code>&lt;length&gt;</code></a></code>&nbsp;позволяет масштабировать размер фонового&nbsp;изображения&nbsp;в заданном измерении. Отрицательный размер не допускается.</dd>
+ <dt><code>&lt;проценты&gt;</code></dt>
+ <dd>Значение <code><a href="/css/percentage/"><code>&lt;percentage&gt;</code></a></code>, которое масштабирует фоновое изображение в соответствующем измерении до указанного процента области расположения фона, которое определяется значением <a href="/css/background-origin/"><code>background-origin</code></a>. Область расположения фона по умолчанию является областью, содержащей содержимое поля и его отступы; область также может быть изменена на содержимое или область, содержащую границы, отступы и содержимое. Если <a href="/css/background-attachment/"><code>attachment</code></a> фона является <code>fixed</code>, область позиционирования фона вместо этого является всей областью окна браузера, не включая область, покрытую полосами прокрутки, если они присутствуют. Отрицательные проценты не допускаются.</dd>
+ <dt><code>auto</code></dt>
+ <dd>Значение позволяет изменять размер фонового изображения в соответствии с заданным направлением, сохраняя его пропорции.</dd>
+ <dt><code>contain</code></dt>
+ <dd>Масштабирует картинку так, чтобы она максимально накрыла собой весь блок. Картинка при этом не обрезается, а вписывается в блок с сохранением пропорций.</dd>
+ <dt><code>cover</code></dt>
+ <dd>Ключевое слово, обратное <code>contain</code>. Масштабирует изображение как можно больше c&nbsp;сохранением&nbsp;пропорций&nbsp;изображения (изображение не становится сплющенным).&nbsp;Когда изображение и контейнер имеют разные размеры, <em>изображение обрезается</em> либо влево / вправо, либо сверху / снизу.</dd>
+</dl>
+
+<p>Интерпретация возможных значений зависит от внутренних размеров изображений (ширина и высота) и внутренней пропорции (соотношение ширины и высоты).&nbsp;Растровое изображение всегда имеет внутренние размеры и внутреннюю пропорцию. Векторное изображение может иметь оба внутренних размера (и, следовательно, должно иметь внутреннюю пропорцию).&nbsp;Он также может иметь одно или не иметь внутренних размеров, и в любом случае он может иметь или не иметь внутреннюю пропорцию.&nbsp;Градиенты обрабатываются как изображения без внутренних размеров или внутренней пропорции.</p>
+
+<div class="note notecard">
+<p><strong>Предупреждение: </strong>Это поведение изменилось в Gecko 8.0 (Firefox 8.0 / Thunderbird 8.0 / SeaMonkey 2.5). До этого, градиенты обрабатывались как изображения без внутренних размеров, с внутренней пропорцией, идентичной пропорции&nbsp;области расположения фона.</p>
+</div>
+
+<p>Фоновые изображения, сгенерированные из элементов с использованием <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/element()"><code>-moz-element</code> <span>(en-US)</span></a> (которые фактически соответствуют элементу) в настоящее время обрабатываются как изображения с размерами элемента, или как область расположения фона, если элементом является SVG, с соответствующей внутренней пропорцией.</p>
+
+<div class="note notecard"><strong>Предупреждение:</strong> Это не определённое в настоящее время поведение, которое заключается в том, что внутренние размеры и пропорция должны быть такими же как у элемента во всех случаях.</div>
+
+<p>Визуализированный размер фонового изображения затем вычисляется следующим способом:</p>
+
+<dl>
+ <dt><font face="Open Sans, Arial, sans-serif">Если оба атрибута в&nbsp;</font><code>background-size</code>&nbsp;заданы и различны от&nbsp;<code>auto</code>:</dt>
+ <dd>Фоновое изображение отображается в указанном размере.</dd>
+ <dt>Если&nbsp;<code>background-size</code> содержит&nbsp;<code>contain</code>&nbsp;или&nbsp;<code>cover</code>:</dt>
+ <dd>Изображение визуализируется с сохранением его внутренней пропорции при наибольшем размере, который содержится внутри области размещения фона или покрывает её. Если изображение не имеет внутренней пропорции, оно отображается с размером области расположения фона.</dd>
+ <dt>Если&nbsp;<code>background-size</code>&nbsp;установлен как&nbsp;<code>auto</code>&nbsp;или&nbsp;<code>auto auto</code>:</dt>
+ <dd>Если изображение имеет оба внутренних размера, оно отображается с таким размером.&nbsp;Если оно не имеет внутренних размеров и внутренней пропорции, оно отображается с размером области расположения фона. Если оно не&nbsp;имеет размеров, но имеет пропорцию, оно отображается так, если был был бы указан&nbsp;<code>contain</code>.&nbsp;Если изображение имеет один внутренний размер и пропорцию, оно отображается с размером, определённым этим одним размером и пропорцией.&nbsp;Если изображение имеет один внутренний размер, но не имеет пропорцию, оно отображается с использованием внутреннего размера и соответствующим размером области позиционирования фона.</dd>
+ <dt>Если background-size содержит один атрибут&nbsp;<code>auto</code> и один не-<code>auto</code>:</dt>
+ <dd>Если изображение имеет внутреннюю пропорцию, то визуализируйте его используя указанный размер, и вычислите другой размер из указанного размера и внутренней пропорции. Если изображение не имеет внутренней пропорции, используйте указанный размер для этого размера.&nbsp;Для другого размера, используйте соответствующее внутреннее измерение изображения, если оно есть.&nbsp;Если такого внутреннего размера нет, используйте соответствующий размер области расположения фона.</dd>
+</dl>
+
+<p>Обратите внимание, что изменение размера фона для векторных изображений, в которых отсутствуют внутренние размеры или пропорции, ещё не полностью реализовано во всех браузерах. Будьте осторожны, полагаясь на поведение, описанное выше, и тестируйте в нескольких браузерах (в частности, включая версии Firefox 7 или более ранней версии и Firefox 8 или более поздней версии), чтобы убедиться, что различные визуализации приемлемы.</p></div><h3 id="формальный_синтаксис"><a href="#формальный_синтаксис" title="Permalink to Формальный синтаксис">Формальный синтаксис</a></h3><div><pre class="notranslate"><a href="#bg-size">&lt;bg-size&gt;</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#hash_mark_()" title="Currently only available in English (US)" class="only-in-en-us"># (en-US)</a><p style="font-family:Open Sans,Arial,sans-serif; margin: 10px 0 0 0;">где <br><code style="font-family:Consolas,Monaco,&quot;Andale Mono&quot;,monospace;"><span id="bg-size">&lt;bg-size&gt;</span> = <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> <a href="#length-percentage">&lt;length-percentage&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> auto <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#curly_braces_(_)" title="Currently only available in English (US)" class="only-in-en-us">{ (en-US)</a>1,2<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#curly_braces_(_)" title="Currently only available in English (US)" class="only-in-en-us">} (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> cover <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> contain</code></p><p style="font-family:Open Sans,Arial,sans-serif; margin: 10px 0 0 0;">где <br><code style="font-family:Consolas,Monaco,&quot;Andale Mono&quot;,monospace;"><span id="length-percentage">&lt;length-percentage&gt;</span> = <a href="/css/length/" title="Возможные значения: a number followed by'em', 'ex', 'ch', 'rem', 'px', 'cm', 'mm', 'in', 'vh', 'vw', 'vmin', 'vmax', 'pt', 'pc' или 'px', как 3px, 1.5cm, -0.5em или 0">&lt;length&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <a href="/css/percentage/" title>&lt;percentage&gt;</a></code></p></pre></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div><p><a href="https://whereswalden.com/files/mozilla/background-size/page-cover.html" class="external" rel=" noopener">Эта демонстрация <code>background-size: cover</code></a> и&nbsp;<a href="https://whereswalden.com/files/mozilla/background-size/page-contain.html" class="external" rel=" noopener">эта демонстрация <code>background-size: contain</code></a> предназначены для открытия в новых окнах, чтобы вы могли видеть, как <code>contain</code> и <code>cover</code> ведут&nbsp;себя, когда размеры области расположения фона изменяются. <a href="https://whereswalden.com/files/mozilla/background-size/more-examples.html" class="external" rel=" noopener">Эта серия демонстраций, как работает <code>background-size</code> и взаимодействует с другими свойствами <code>background-*</code></a>, должна в значительной степени охватить оставшуюся основу в том, как использовать <code>background-size</code> отдельно и в сочетании с другими свойствами.</p></div><h2 id="замечания"><a href="#замечания" title="Permalink to Замечания">Замечания</a></h2><div><p>Если вы указываете градиент в качестве фона и указали <code>background-size</code>, который будет использоваться вместе с ним, лучше не указывать размер, который использует единственную автоматическую составную часть, или задаётся с использованием только значения ширины (для примера, <code>background-size: 50%</code>).&nbsp;Рендеринг градиентов в таких случаях изменился в Firefox 8, и в настоящее время он обычно несовместим во всех браузерах, которые не реализуют рендеринг в соответствии с&nbsp;<a href="https://www.w3.org/TR/css3-background/#the-background-size" title="http://www.w3.org/TR/css3-background/#the-background-size" class="external" rel=" noopener">CSS3 спецификацией <code>background-size</code> </a>и с&nbsp;<a href="https://dev.w3.org/csswg/css3-images/#gradients" title="http://dev.w3.org/csswg/css3-images/#gradients" class="external" rel=" noopener">CSS3 спецификацией градиента значений изображения</a>.</p>
+
+<pre class="brush: css notranslate"><code><span class="token selector">.bar</span> <span class="token punctuation">{</span>
+       <span class="token property">width</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span> <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+       <span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token function">gradient</span><span class="token punctuation">(</span>...<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+       <span class="token comment">/* Лучше не использовать */</span>
+       <span class="token property">background-size</span><span class="token punctuation">:</span> 25px<span class="token punctuation">;</span>
+       <span class="token property">background-size</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+       <span class="token property">background-size</span><span class="token punctuation">:</span> auto 50px<span class="token punctuation">;</span>
+       <span class="token property">background-size</span><span class="token punctuation">:</span> auto 50%<span class="token punctuation">;</span>
+
+       <span class="token comment">/* Допускается */</span>
+       <span class="token property">background-size</span><span class="token punctuation">:</span> 25px 50px<span class="token punctuation">;</span>
+       <span class="token property">background-size</span><span class="token punctuation">:</span> 50% 50%<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p>Обратите внимание, что особенно не рекомендуется использовать размер в пикселях и&nbsp;размер&nbsp;<code>auto</code> с градиентом, потому что невозможно воспроизвести рендеринг в версиях&nbsp;Firefox до 8 и в браузерах, не реализующих рендеринг Firefox 8, без знания точного размера элемента, фон которого указывается.</p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-backgrounds-3/#the-background-size" hreflang="en" lang="en" class="external" rel=" noopener">CSS Backgrounds and Borders Module Level&nbsp;3<br><small lang="ru">Определение 'background-size' в этой спецификации.</small></a></td>
+   <td><span class="spec-cr">Кандидат в рекомендации</span></td>
+   <td>Первоначальное определение</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference" title="CSS Reference">Справочник по CSS</a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Backgrounds_and_Borders/Using_multiple_backgrounds" title="CSS/Multiple backgrounds">Несколько фонов</a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Backgrounds_and_Borders/Resizing_background_images" title="CSS/Scaling_background_images">Масштабирование фонового изображения</a></li>
+</ul></div>

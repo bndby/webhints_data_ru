@@ -1,0 +1,98 @@
+<h1>border-top-style</h1><div><div></div>
+
+<p>The <strong><code>border-top-style</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> property sets the line style of an element's top <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border"><code>border</code></a>.</p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/border-top-style.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+<div class="notecard note">
+<p>The specification doesn't define how borders of different styles connect in the corners.</p>
+</div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* Keyword values */</span>
+<span class="token property">border-top-style</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token property">border-top-style</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+<span class="token property">border-top-style</span><span class="token punctuation">:</span> dotted<span class="token punctuation">;</span>
+<span class="token property">border-top-style</span><span class="token punctuation">:</span> dashed<span class="token punctuation">;</span>
+<span class="token property">border-top-style</span><span class="token punctuation">:</span> solid<span class="token punctuation">;</span>
+<span class="token property">border-top-style</span><span class="token punctuation">:</span> double<span class="token punctuation">;</span>
+<span class="token property">border-top-style</span><span class="token punctuation">:</span> groove<span class="token punctuation">;</span>
+<span class="token property">border-top-style</span><span class="token punctuation">:</span> ridge<span class="token punctuation">;</span>
+<span class="token property">border-top-style</span><span class="token punctuation">:</span> inset<span class="token punctuation">;</span>
+<span class="token property">border-top-style</span><span class="token punctuation">:</span> outset<span class="token punctuation">;</span>
+
+<span class="token comment">/* Global values */</span>
+<span class="token property">border-top-style</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">border-top-style</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">border-top-style</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre>
+
+<p>The <code>border-top-style</code> property is specified as a single keyword chosen from those available for the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-style"><code>border-style</code></a> property.</p></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td><code>none</code></td></tr><tr><th scope="row">Applies to</th><td>all elements. It also applies to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::first-letter"><code>::first-letter</code></a>.</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance">Inherited</a></th><td>no</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>as specified</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate"><a href="#line-style">&lt;line-style&gt;</a><p style="font-family:Open Sans,Arial,sans-serif; margin: 10px 0 0 0;">where <br><code style="font-family:Consolas,Monaco,&quot;Andale Mono&quot;,monospace;"><span id="line-style">&lt;line-style&gt;</span> = none <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> hidden <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> dotted <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> dashed <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> solid <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> double <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> groove <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> ridge <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> inset <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> outset</code></p></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="setting_border-top-style"><a href="#setting_border-top-style" title="Permalink to Setting border-top-style">Setting border-top-style</a></h3><div><h4 id="html">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>b1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>none<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>b2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>hidden<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>b3<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>dotted<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>b4<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>dashed<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>b5<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>solid<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>b6<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>double<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>b7<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>groove<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>b8<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>ridge<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>b9<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>inset<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>b10<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>outset<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<h4 id="css">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token comment">/* Define look of the table */</span>
+<span class="token selector">table</span> <span class="token punctuation">{</span>
+  <span class="token property">border-width</span><span class="token punctuation">:</span> 2px<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #52E385<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">tr, td</span> <span class="token punctuation">{</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 3px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* border-top-style example classes */</span>
+<span class="token selector">.b1</span> <span class="token punctuation">{</span><span class="token property">border-top-style</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span><span class="token punctuation">}</span>
+<span class="token selector">.b2</span> <span class="token punctuation">{</span><span class="token property">border-top-style</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span><span class="token punctuation">}</span>
+<span class="token selector">.b3</span> <span class="token punctuation">{</span><span class="token property">border-top-style</span><span class="token punctuation">:</span> dotted<span class="token punctuation">;</span><span class="token punctuation">}</span>
+<span class="token selector">.b4</span> <span class="token punctuation">{</span><span class="token property">border-top-style</span><span class="token punctuation">:</span> dashed<span class="token punctuation">;</span><span class="token punctuation">}</span>
+<span class="token selector">.b5</span> <span class="token punctuation">{</span><span class="token property">border-top-style</span><span class="token punctuation">:</span> solid<span class="token punctuation">;</span><span class="token punctuation">}</span>
+<span class="token selector">.b6</span> <span class="token punctuation">{</span><span class="token property">border-top-style</span><span class="token punctuation">:</span> double<span class="token punctuation">;</span><span class="token punctuation">}</span>
+<span class="token selector">.b7</span> <span class="token punctuation">{</span><span class="token property">border-top-style</span><span class="token punctuation">:</span> groove<span class="token punctuation">;</span><span class="token punctuation">}</span>
+<span class="token selector">.b8</span> <span class="token punctuation">{</span><span class="token property">border-top-style</span><span class="token punctuation">:</span> ridge<span class="token punctuation">;</span><span class="token punctuation">}</span>
+<span class="token selector">.b9</span> <span class="token punctuation">{</span><span class="token property">border-top-style</span><span class="token punctuation">:</span> inset<span class="token punctuation">;</span><span class="token punctuation">}</span>
+<span class="token selector">.b10</span> <span class="token punctuation">{</span><span class="token property">border-top-style</span><span class="token punctuation">:</span> outset<span class="token punctuation">;</span><span class="token punctuation">}</span></code></pre>
+
+<h4 id="result">Result</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Examples" width="300" height="200" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/border-top-style/_sample_.Examples.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-backgrounds-3/#the-border-style" hreflang="en" lang="en" class="external" rel=" noopener">CSS Backgrounds and Borders Module Level&nbsp;3<br><small lang="en-US">The definition of 'border-top-style' in that specification.</small></a></td>
+   <td><span class="spec-cr">Candidate Recommendation</span></td>
+   <td>No significant change.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/CSS2/box.html#border-style-properties" hreflang="en" lang="en" class="external" rel=" noopener">CSS Level&nbsp;2 (Revision&nbsp;1)<br><small lang="en-US">The definition of 'border-top-style' in that specification.</small></a></td>
+   <td><span class="spec-rec">Recommendation</span></td>
+   <td>Initial definition.</td>
+  </tr>
+ </tbody>
+</table>
+
+<p></p><table class="properties"><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td><code>none</code></td></tr><tr><th scope="row">Applies to</th><td>all elements. It also applies to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::first-letter"><code>::first-letter</code></a>.</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance">Inherited</a></th><td>no</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>as specified</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li>The other style-related border properties: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-left-style"><code>border-left-style</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-right-style"><code>border-right-style</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom-style"><code>border-bottom-style</code></a>, and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-style"><code>border-style</code></a>.</li>
+ <li>The other top-border-related properties: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-top"><code>border-top</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-top-color"><code>border-top-color</code></a>, and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-top-width"><code>border-top-width</code></a>.</li>
+</ul></div>

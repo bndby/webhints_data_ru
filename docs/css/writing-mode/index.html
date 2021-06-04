@@ -1,0 +1,63 @@
+<h1>writing-mode</h1><div><p></p><div class="notecard experimental">
+    <h4 id="experimental">Experimental</h4>
+    <p><strong>Это экспериментальная технология</strong><br>Так как спецификация этой технологии ещё не стабилизировалась, смотрите <a href="#browser_compatibility">таблицу совместимости</a> по поводу использования в различных браузерах. Также заметьте, что синтаксис и поведение экспериментальной технологии может измениться в будущих версиях браузеров, вслед за изменениями спецификации.</p>
+</div><p></p></div><h2 id="summary"><a href="#summary" title="Permalink to Summary">Summary</a></h2><div><p>Свойство&nbsp;<strong><code>writing-mode</code></strong>&nbsp;устанавливает горизонтальное или вертикальное положение текста&nbsp;также как и направление блока.</p>
+
+<p>Свойство определяет направление потока блока, в каком направлении складываются контейнеры уровня блока и направление в котором инлайновый контент находится в родительском блоке. Также свойство&nbsp;<code>writing-mode</code> определяет порядок контента блочного уровня.</p>
+
+<p></p><table class="properties"><tbody><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td><code>horizontal-tb</code></td></tr><tr><th scope="row">Применяется к</th><td>все элементы, кроме групп табличных строк, групп табличных столбцов, табличных строк и табличных колонок</td></tr><tr><th scope="row"><a href="/css/inheritance/">Наследуется</a></th><td>да</td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>как указано</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="brush:css notranslate"><code><span class="token comment">/* Keyword values */</span>
+<span class="token property">writing-mode</span><span class="token punctuation">:</span> horizontal-tb<span class="token punctuation">;</span>
+<span class="token property">writing-mode</span><span class="token punctuation">:</span> horizontal-bt<span class="token punctuation">;</span>
+<span class="token property">writing-mode</span><span class="token punctuation">:</span> vertical-rl<span class="token punctuation">;</span>
+<span class="token property">writing-mode</span><span class="token punctuation">:</span> vertical-lr<span class="token punctuation">;</span>
+
+<span class="token comment">/* Global values */</span>
+<span class="token property">writing-mode</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">writing-mode</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">writing-mode</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre></div><h3 id="значения"><a href="#значения" title="Permalink to Значения">Значения</a></h3><div><dl>
+ <dt><code>horizontal-tb</code></dt>
+ <dd>Content flows horizontally from left to right, vertically from top to bottom. The next horizontal line is positioned below the previous line.</dd>
+ <dt><code>horizontal-bt</code></dt>
+ <dd>Content flows horizontally from left to right, vertically from bottom to top. The next horizontal line is positioned above&nbsp;the previous line.</dd>
+ <dt><code>vertical-rl</code></dt>
+ <dd>Content flows vertically from top to bottom, horizontally from right to left. The next vertical line is positioned to the left of the previous line.</dd>
+ <dt><code>vertical-lr</code></dt>
+ <dd>Content flows vertically from top to bottom, horizontally from left to right. The next vertical line is positioned to the right of the previous line.</dd>
+ <dt><code>lr</code> </dt>
+ <dd>Deprecated except for SVG1 documents. For CSS, use <code>horizontal-tb</code>.</dd>
+ <dt><code>lr-tb</code> </dt>
+ <dd>Deprecated except for SVG1 documents. For CSS, use <code>horizontal-tb</code>.</dd>
+ <dt><code>rl</code> </dt>
+ <dd>Deprecated except for SVG1 documents. For CSS, use <code>horizontal-tb</code>.</dd>
+ <dt><code>tb</code> </dt>
+ <dd>Deprecated except for SVG1 documents. For CSS, use <code>vertical-rl</code>.</dd>
+ <dt><code>tb-rl</code> </dt>
+ <dd>Deprecated except for SVG1 documents. For CSS, use <code>vertical-rl</code>.</dd>
+</dl></div><h3 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h3><div><pre class="notranslate">horizontal-tb <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> vertical-rl <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> vertical-lr <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> sideways-rl <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> sideways-lr</pre></div><h2 id="пример"><a href="#пример" title="Permalink to Пример">Пример</a></h2><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>exampleText<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Example text<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<pre class="brush: css notranslate"><code><span class="token selector">.exampleText</span> <span class="token punctuation">{</span>
+  <span class="token property">writing-mode</span><span class="token punctuation">:</span> vertical-rl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<p><iframe class="sample-code-frame" id="frame_Example" width="100" height="160" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/writing-mode/_sample_.Example.html" loading="lazy"></iframe></p></div><h2 id="specification"><a href="#specification" title="Permalink to Specification">Specification</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-writing-modes-3/#block-flow" hreflang="en" lang="en" class="external" rel=" noopener">CSS Writing Modes Module Level&nbsp;3<br><small lang="ru">Определение 'writing-mode' в этой спецификации.</small></a></td>
+   <td><span class="spec-pr">Предложенная рекомендация</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li>SVG <code><a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/writing-mode">writing-mode</a></code> attribute</li>
+ <li><a href="/css/direction/"><code>direction</code></a></li>
+ <li><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/unicode-bidi"><code>unicode-bidi</code> <span>(en-US)</span></a></li>
+</ul></div>

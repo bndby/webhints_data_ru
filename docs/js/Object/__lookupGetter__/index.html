@@ -1,0 +1,42 @@
+<h1>Object.prototype.__lookupGetter__()</h1><div><div> <div class="notecard deprecated">
+            <h4 id="deprecated">Deprecated</h4>
+            <p>This feature is no longer recommended. Though some browsers might still support it, it may have already been removed from the relevant web standards, may be in the process of being dropped, or may only be kept for compatibility purposes. Avoid using it, and update existing code if possible; see the <a href="#browser_compatibility">compatibility table</a> at the bottom of this page to guide your decision. Be aware that this feature may cease to work at any time.</p>
+        </div></div>
+
+<p>The <strong><code>__lookupGetter__</code></strong> method returns the function bound as
+  a getter to the specified property.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: js notranslate"><code><span class="token function">__lookupGetter__</span><span class="token punctuation">(</span>sprop<span class="token punctuation">)</span></code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Parameters">Parameters</a></h3><div><dl>
+  <dt><code><var>sprop</var></code></dt>
+  <dd>A string containing the name of the property whose getter should be returned.</dd>
+</dl></div><h3 id="return_value"><a href="#return_value" title="Permalink to Return value">Return value</a></h3><div><p>The function bound as a getter to the specified property.</p></div><h2 id="description"><a href="#description" title="Permalink to Description">Description</a></h2><div><p>If a getter has been defined for an object's property, it's not possible to reference
+  the getter function through that property, because that property refers to the return
+  value of that function. <code>__lookupGetter__</code> can be used to obtain a reference
+  to the getter function.</p>
+
+<p>It is now possible to do this in a standardized way using
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptor"><code>Object.getOwnPropertyDescriptor()</code></a> and
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getPrototypeOf"><code>Object.getPrototypeOf()</code></a>.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="standard-compliant_and_non-standard_ways_to_get_a_property_getter"><a href="#standard-compliant_and_non-standard_ways_to_get_a_property_getter" title="Permalink to 
+  Standard-compliant and non-standard ways to get a property getter">
+  Standard-compliant and non-standard ways to get a property getter</a></h3><div><pre class="brush: js notranslate"><code><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token keyword">get</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">0.5</span> <span class="token operator">?</span> <span class="token string">'foo'</span> <span class="token operator">:</span> <span class="token string">'bar'</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Non-standard and deprecated way</span>
+obj<span class="token punctuation">.</span><span class="token function">__lookupGetter__</span><span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// (function() { return Math.random() &gt; 0.5 ? 'foo' : 'bar'; })</span>
+
+<span class="token comment">// Standard-compliant way</span>
+Object<span class="token punctuation">.</span><span class="token function">getOwnPropertyDescriptor</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token string">"foo"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>get<span class="token punctuation">;</span>
+<span class="token comment">// (function() { return Math.random() &gt; 0.5 ? 'foo' : 'bar'; })</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://tc39.es/ecma262/#sec-object.prototype.__lookupGetter__">Unknown specification<!-- --> <br><small># <!-- -->sec-object.prototype.__lookupGetter__</small></a></td></tr></tbody></table><div></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+  <li>A polyfill of <code>Object.prototype.__lookupGetter__</code> is available in <a href="https://github.com/zloirock/core-js#ecmascript-object" class="external" rel=" noopener"><code>core-js</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupSetter__"><code>Object.prototype.__lookupSetter__()</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get"><code>get</code></a> operator</li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptor"><code>Object.getOwnPropertyDescriptor()</code></a> and
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getPrototypeOf"><code>Object.getPrototypeOf()</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineGetter__"><code>Object.prototype.__defineGetter__()</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineSetter__"><code>Object.prototype.__defineSetter__()</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects#defining_getters_and_setters">JS
+      Guide: Defining Getters and Setters</a></li>
+</ul></div>

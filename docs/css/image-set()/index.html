@@ -1,0 +1,43 @@
+<h1>image-set()</h1><div><div></div>
+
+<p class="summary">CSS функция&nbsp;<code>image-set()</code>&nbsp;это способ позволить браузеру выбрать наиболее подходящее изображение CSS из заданного набора, в первую очередь для экранов с высокой плотностью пикселей.</p>
+
+<p>Разрешение экрана и пропускная способность могут&nbsp;отличаться в зависимости&nbsp;от устройства и доступа к сети. Функция&nbsp;<code>image-set()</code>&nbsp; обеспечивает наиболее подходящее разрешение изображения для устройства пользователя, предоставляя набор параметров изображения — каждый с соответствующим объявлением разрешения — из которых браузер выбирает наиболее подходящее для устройства и настроек. Разрешение может использоваться в качестве прокси для размера файла — клиент на медленном мобильном соединении с экраном высокого разрешения может предпочесть получать изображения с более низким разрешением, а не ждать загрузки изображения с более высоким разрешением.</p>
+
+<p><code>image-set()</code> позволяет автору предоставлять параметры, а не определять, что нужно каждому отдельному пользователю.</p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate">image-set() = image-set( &lt;image-set-option&gt;# )
+где &lt;image-set-option&gt; = [ &lt;image&gt; | &lt;string&gt; ] &lt;resolution&gt; и
+      &lt;string&gt; в качестве &lt;url&gt;
+</pre></div><h3 id="значения"><a href="#значения" title="Permalink to Значения">Значения</a></h3><div><p>Чаще всего вы можете увидеть значение <code>url()</code> как <code>&lt;string&gt;</code>, но&nbsp;<code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/image">&lt;image&gt;</a></code> может быть любым типом изображения, кроме набора изображений. Функция <code>image-set()</code> не может быть вложена в другую функцию <code>image-set()</code>.</p>
+
+<p>Блоки&nbsp;<code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/resolution">&lt;resolution&gt;</a></code>&nbsp;включают в себя&nbsp;<code>x</code> или&nbsp;<code>ddpx,</code>&nbsp;для точек на пиксель, <code>dpi</code>&nbsp;для точек на дюйм, и <code>dpcm</code> для точек на сантиметр.&nbsp;Каждое изображение в наборе&nbsp;<code>image-set()</code> должно иметь уникальное разрешение.</p></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div><pre class="brush: css notranslate"><code><span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token function">image-set</span><span class="token punctuation">(</span> <span class="token string">"cat.png"</span> 1x<span class="token punctuation">,</span>
+                             <span class="token string">"cat-2x.png"</span> 2x<span class="token punctuation">,</span>
+                             <span class="token string">"cat-print.png"</span> 600dpi<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+<p>Этот пример демонстрирует использование&nbsp;<code><a class="css external" href="https://drafts.csswg.org/css-images-4/#funcdef-image-set" id="ref-for-funcdef-image-set⑨" rel=" noopener">image-set()</a></code> для обеспечения двух альтернативных&nbsp;<a href="/css/background-image/"><code>background-image</code></a> свойств, из которых будет выбрано более подходящее по разрешению: обычная версия и версия с высоким разрешением.</p></div><h2 id="вопросы_доступности"><a href="#вопросы_доступности" title="Permalink to Вопросы доступности">Вопросы доступности</a></h2><div><p>Браузеры не предоставляют никакой специальной информации о фоновых изображениях для вспомогательных технологий.&nbsp;Это важно прежде всего для экранных считывающих технологий, так как они не&nbsp;объявят&nbsp;о своём присутствии и поэтому ничего не передадут своим пользователям. Если изображение содержит информацию, критически важную для понимания общего назначения страницы, лучше описать её семантически в документе.</p>
+
+<ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/Understanding_WCAG/Perceivable#Guideline_1.1_%E2%80%94_Providing_text_alternatives_for_non-text_content">MDN Understanding WCAG, Guideline 1.1 explanations</a></li>
+ <li><a class="external external-icon" href="https://www.w3.org/TR/2016/NOTE-UNDERSTANDING-WCAG20-20161007/text-equiv-all.html" rel="noopener">Understanding Success Criterion 1.1.1 &nbsp;| W3C Understanding WCAG 2.0</a></li>
+</ul></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th>Спецификация</th>
+   <th>Статус</th>
+   <th>Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-images-4/#image-set-notation" hreflang="en" lang="en" class="external" rel=" noopener">CSS Images Module Level&nbsp;4<br><small lang="ru">Определение 'The image-set() notation' в этой спецификации.</small></a></td>
+   <td><span class="spec-wd">Рабочий черновик</span></td>
+   <td>&nbsp;</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Поддержка браузерами">Поддержка браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/image"><code>image</code> <span>(en-US)</span></a></li>
+ <li><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/image()"><code>image()</code> <span>(en-US)</span></a></li>
+ <li><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/element()"><code>element</code> <span>(en-US)</span></a></li>
+ <li><a href="https://developer.mozilla.org/ru/docs/conflicting/Web/CSS/url()_168028c4e5edd9e19c061adb4b604d4f"><code>url</code></a></li>
+ <li><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/gradient"><code>&lt;gradient&gt;</code> <span>(en-US)</span></a></li>
+ <li><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/cross-fade()"><code>cross-fade</code> <span>(en-US)</span></a></li>
+</ul></div>

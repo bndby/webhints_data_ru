@@ -1,0 +1,408 @@
+<h1>Прокси</h1><div><div><font><font>Объект </font></font><code>Proxy</code><font><font> позволяет создать прокси</font><font>&nbsp;для другого объекта, может перехватывать и переопределить основные операции для данного объекта.</font></font></div></div><h2 id="введение"><a href="#введение" title="Permalink to Введение">Введение</a></h2><div><p>Прокси используются программистами для объявления расширенной семантики JavaScript объектов. Стандартная семантика реализована в движке JavaScript, который обычно написан на низкоуровневом языке программирования, например C++. Прокси позволяют программисту определить поведение объекта при помощи JavaScript. Другими словами они являются <strong>инструментом метапрограммирования</strong>.</p>
+
+<p><strong>Примечание</strong>: реализация прокси в SpiderMonkey является прототипом, в котором прокси API и семантика не стабильны. Также, реализация в SpiderMonkey может не соответствовать последней версии спецификации. Она может быть изменена в любой момент и предоставляется исключительно как экспериментальная функция. <strong>Не полагайтесь на неё в производственном коде.</strong></p>
+
+<p>Эта страница описывает новый API (называемый «непосредственным проксированием»), который является частью Firefox 18. Для просмотра старого API (Firefox 17 и ниже) посетите страницу описания <a href="https://developer.mozilla.org/en-US/docs/JavaScript/Old_Proxy_API" title="This is a link to an unwritten page" class="page-not-created">старого прокси API</a>.</p></div><h2 id="терминология"><a href="#терминология" title="Permalink to Терминология">Терминология</a></h2><div><dl>
+ <dt>механизм полного перехвата (или "intercession API")</dt>
+ <dd>Технический термин для этой функции.</dd>
+ <dt>прокси (proxy)</dt>
+ <dd>Объект, оборачивающий исходный объект.</dd>
+ <dt>обработчик (handler)</dt>
+ <dd>Объект-заменитель, содержащий ловушки. О<span class="VIiyi" lang="ru"><span class="ChMk0b JLqJ4b"><span>пределяет, какие операции будут перехвачены, также переопределяет перехваченные операции.</span></span></span></dd>
+ <dt>ловушки (traps)</dt>
+ <dd>Методы, которые предоставляют доступ к свойствам. Это аналогично концепции ловушек в операционных системах.</dd>
+ <dt>цель (target)</dt>
+ <dd>Исходный объект, который виртуализируется прокси. Он часто используется в качестве источника данных в прокси. Для него проверяются инварианты относительно расширяемости и настраиваемости свойств.</dd>
+</dl></div><h2 id="прокси"><a href="#прокси" title="Permalink to Прокси">Прокси</a></h2><div><p>Прокси - это новые объекты; невозможно выполнить "проксирование" существующего объекта. Пример создания прокси:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span> handler<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+<p>Где:</p>
+
+<ul>
+ <li><code>target</code> — исходный объект (может быть объектом любого типа, включая массив, функцию и даже другой прокси объект).</li>
+ <li><code>handler</code> — объект-обработчик, методы (ловушки) которого определяют поведение прокси во время выполнения операции над ним.</li>
+</ul></div><h2 id="обработчик"><a href="#обработчик" title="Permalink to Обработчик">Обработчик</a></h2><div><p>Все ловушки опциональны. В случае, если ловушка не задана, то стандартным поведением будет перенаправление операции к объекту-цели.</p>
+
+<table class="standard-table">
+ <thead>
+  <tr>
+   <th>JavaScript код</th>
+   <th>Метод обработчика</th>
+   <th>Описание</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><code>Object.getOwnPropertyDescriptor(proxy, name)</code></td>
+   <td><code><strong>getOwnPropertyDescriptor</strong><br>
+    function(target, name) -&gt; PropertyDescriptor | undefined</code></td>
+   <td>Должен возвращать верный объект-описание свойства или&nbsp;<code>undefined</code>, чтобы показать, что свойство с именем&nbsp;<code>name</code> существует в эмулируемом объекте.</td>
+  </tr>
+  <tr>
+   <td>
+    <p><code>Object.getOwnPropertyNames(proxy)</code><br>
+     <code><code>Object.getOwnPropertySymbols(proxy)</code></code><br>
+     <code><code><code>Object.keys(proxy)</code></code></code></p>
+   </td>
+   <td><code><code><strong>ownKeys</strong></code> function(target) -&gt; [string | symbol]</code></td>
+   <td>Возвращает массив всех собственных (не унаследованных) имён свойств эмулируемого объекта.</td>
+  </tr>
+  <tr>
+   <td><code>Object.defineProperty(proxy,name,pd)</code></td>
+   <td><code><strong>defineProperty</strong> function(target, name, propertyDescriptor) -&gt; any</code></td>
+   <td>Задаёт новое свойство, атрибуты которого определяются предоставленным&nbsp;<code>propertyDescriptor</code>. Возвращаемое значение метода игнорируется.</td>
+  </tr>
+  <tr>
+   <td><code>delete proxy.name</code></td>
+   <td><code><strong>deleteProperty</strong> function(target, name) -&gt; boolean</code></td>
+   <td>Удаляет именованное свойство из прокси. Возвращает <code>true</code>&nbsp;в случае успешного удаления свойства&nbsp;<code>name</code>.</td>
+  </tr>
+  <tr>
+   <td><code>Object.preventExtensions(proxy)</code></td>
+   <td><code><strong>preventExtensions</strong> function(target) -&gt; boolean</code></td>
+   <td>Делает объект нерасширяемым. Возвращает <code>true</code> при успешном выполнении.</td>
+  </tr>
+  <tr>
+   <td><code>name in proxy</code></td>
+   <td><code><strong>has</strong> function(target, name) -&gt; boolean</code></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td>
+    <p><code>proxy.name</code> (in the context of "getting the value")</p>
+
+    <p><code>receiver.name</code> (if <code>receiver</code> inherits from a proxy and does not override <code>name</code>)</p>
+   </td>
+   <td><code><strong>get</strong> function(target, name, receiver) -&gt; any</code></td>
+   <td><code>receiver</code>&nbsp;— это прокси или объект, унаследованный от прокси.</td>
+  </tr>
+  <tr>
+   <td>
+    <p><code>proxy.name = val</code> (in the context of "setting the value")</p>
+
+    <p><code>receiver.name = val</code> (if <code>receiver</code> inherits from a proxy and does not override <code>name</code>)</p>
+   </td>
+   <td><code><strong>set</strong> function(target, name, val, receiver) -&gt; boolean</code></td>
+   <td><code style="font-style: normal;">receiver</code>&nbsp;— это прокси или объект, унаследованный от прокси.</td>
+  </tr>
+  <tr>
+   <td>
+    <p><code>proxy(...args)<br>
+     proxy.apply(thisValue, args)<br>
+     proxy.call(thisValue, ...args)</code></p>
+   </td>
+   <td><code><strong>apply</strong> function(target, thisValue, args) -&gt; any</code></td>
+   <td><code>target</code>&nbsp;должен быть функцией.</td>
+  </tr>
+  <tr>
+   <td><code>new proxy(...args)</code></td>
+   <td><code><strong>construct</strong> function(target, args) -&gt; object</code></td>
+   <td><code>target</code>&nbsp;должен быть функцией.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="инварианты"><a href="#инварианты" title="Permalink to Инварианты">Инварианты</a></h2><div><p>Несмотря на то, что прокси предоставляют много возможностей пользователям, некоторые операции не перехватываются для сохранения&nbsp;постоянства языка:</p>
+
+<ul>
+ <li>Простой и строгий оператор равенства (<code>==</code>, <code>===</code>) не перехватывается. <code>p1 === p2</code>&nbsp;равны, только если&nbsp;<code>p1</code> и <code>p2</code> ссылаются на один и тот же прокси.</li>
+ <li>Текущая реализация&nbsp;<code>Object.getPrototypeOf(proxy)</code>&nbsp;всегда возвращает&nbsp;<code>Object.getPrototypeOf(target)</code>, потому что в ES2015 перехватчик getPrototypeOf пока&nbsp;не реализован.</li>
+ <li><code>typeof proxy</code> всегда возвращает&nbsp; <code>typeof target</code>. В частности, <code>proxy</code> может быть использован как функция только если&nbsp;<code>target&nbsp;</code>является функцией.</li>
+ <li><code>Array.isArray(proxy)</code> всегда возвращает&nbsp; <code>Array.isArray(target)</code>.</li>
+ <li><code>Object.prototype.toString.call(proxy)</code> всегда возвращает&nbsp;<code>Object.prototype.toString.call(target)</code>, потому что в&nbsp; ES2015 перехватчик Symbol.toStringTag пока не реализован.</li>
+</ul></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="простой_пример"><a href="#простой_пример" title="Permalink to Простой пример">Простой пример</a></h3><div><p>Объект, возвращающий значение <code>37</code>, в случае отсутствия свойства с указанным именем:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> handler <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">get</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">target<span class="token punctuation">,</span> name</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> name <span class="token keyword">in</span> target<span class="token operator">?</span>
+            target<span class="token punctuation">[</span>name<span class="token punctuation">]</span> <span class="token operator">:</span>
+            <span class="token number">37</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> handler<span class="token punctuation">)</span><span class="token punctuation">;</span>
+p<span class="token punctuation">.</span>a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+p<span class="token punctuation">.</span>b <span class="token operator">=</span> <span class="token keyword">undefined</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>a<span class="token punctuation">,</span> p<span class="token punctuation">.</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 1, undefined</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'c'</span> <span class="token keyword">in</span> p<span class="token punctuation">,</span> p<span class="token punctuation">.</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// false, 37</span>
+</code></pre></div><h3 id="перенаправляющий_прокси"><a href="#перенаправляющий_прокси" title="Permalink to Перенаправляющий прокси">Перенаправляющий прокси</a></h3><div><p>В данном примере мы используем JavaScript объект, к которому наш прокси направляет все запросы:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> target <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+p<span class="token punctuation">.</span>a <span class="token operator">=</span> <span class="token number">37</span><span class="token punctuation">;</span> <span class="token comment">// операция перенаправлена прокси</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>target<span class="token punctuation">.</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 37. Операция была успешно перенаправлена</span>
+</code></pre></div><h3 id="проверка"><a href="#проверка" title="Permalink to Проверка">Проверка</a></h3><div><p>При помощи&nbsp;<code>Proxy</code>&nbsp;вы можете легко проверять передаваемые объекту значения:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">let</span> validator <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">set</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">obj<span class="token punctuation">,</span> prop<span class="token punctuation">,</span> value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>prop <span class="token operator">===</span> <span class="token string">'age'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>Number<span class="token punctuation">.</span><span class="token function">isInteger</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">TypeError</span><span class="token punctuation">(</span><span class="token string">'The age is not an integer'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>value <span class="token operator">&gt;</span> <span class="token number">200</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">RangeError</span><span class="token punctuation">(</span><span class="token string">'The age seems invalid'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// Стандартное сохранение значения</span>
+    obj<span class="token punctuation">[</span>prop<span class="token punctuation">]</span> <span class="token operator">=</span> value<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> person <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> validator<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+person<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>person<span class="token punctuation">.</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 100</span>
+person<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token string">'young'</span><span class="token punctuation">;</span> <span class="token comment">// Вызовет исключение</span>
+person<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">300</span><span class="token punctuation">;</span> <span class="token comment">// Вызовет исключение</span>
+</code></pre></div><h3 id="дополнение_конструктора"><a href="#дополнение_конструктора" title="Permalink to Дополнение конструктора">Дополнение конструктора</a></h3><div><p>Функция прокси может легко дополнить конструктор новым:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">function</span> <span class="token function">extend</span><span class="token punctuation">(</span><span class="token parameter">sup<span class="token punctuation">,</span> base</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> descriptor <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">getOwnPropertyDescriptor</span><span class="token punctuation">(</span>
+        base<span class="token punctuation">.</span>prototype<span class="token punctuation">,</span> <span class="token string">'constructor'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">const</span> prototype <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token operator">...</span>base<span class="token punctuation">.</span>prototype<span class="token punctuation">}</span>
+
+    base<span class="token punctuation">.</span>prototype <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>sup<span class="token punctuation">.</span>prototype<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    base<span class="token punctuation">.</span>prototype <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span>base<span class="token punctuation">.</span>prototype<span class="token punctuation">,</span> prototype<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">var</span> handler <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token function-variable function">construct</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">target<span class="token punctuation">,</span> args</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">var</span> obj <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>base<span class="token punctuation">.</span>prototype<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span> obj<span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> obj<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token function-variable function">apply</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">target<span class="token punctuation">,</span> that<span class="token punctuation">,</span> args</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">sup</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>that<span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">base</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>that<span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> proxy <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span>base<span class="token punctuation">,</span> handler<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    descriptor<span class="token punctuation">.</span>value <span class="token operator">=</span> proxy<span class="token punctuation">;</span>
+    Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span>base<span class="token punctuation">.</span>prototype<span class="token punctuation">,</span> <span class="token string">'constructor'</span><span class="token punctuation">,</span> descriptor<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> proxy<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> <span class="token function-variable function">Person</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> Boy <span class="token operator">=</span> <span class="token function">extend</span><span class="token punctuation">(</span>Person<span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> age</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token class-name">Boy</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>sex <span class="token operator">=</span> <span class="token string">'M'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> Peter <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Boy</span><span class="token punctuation">(</span><span class="token string">'Peter'</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Peter<span class="token punctuation">.</span>sex<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "M"</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Peter<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "Peter"</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Peter<span class="token punctuation">.</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 13</span>
+</code></pre></div><h3 id="манипуляция_dom_элементами"><a href="#манипуляция_dom_элементами" title="Permalink to Манипуляция&nbsp;DOM&nbsp;элементами">Манипуляция<span style="font-size: 1.71428571428571rem;">&nbsp;DOM&nbsp;</span><span style="font-size: 1.71428571428571rem;">элементами</span></a></h3><div><p>Иногда возникает необходимость переключить атрибут или имя класса у двух разных элементов:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">let</span> view <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  selected<span class="token operator">:</span> <span class="token keyword">null</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">{</span>
+  <span class="token function-variable function">set</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">obj<span class="token punctuation">,</span> prop<span class="token punctuation">,</span> newval</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> oldval <span class="token operator">=</span> obj<span class="token punctuation">[</span>prop<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>prop <span class="token operator">===</span> <span class="token string">'selected'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>oldval<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        oldval<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">'aria-selected'</span><span class="token punctuation">,</span> <span class="token string">'false'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>newval<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        newval<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">'aria-selected'</span><span class="token punctuation">,</span> <span class="token string">'true'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// Стандартное сохранение значения</span>
+    obj<span class="token punctuation">[</span>prop<span class="token punctuation">]</span> <span class="token operator">=</span> newval<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> i1 <span class="token operator">=</span> view<span class="token punctuation">.</span>selected <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'item-1'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>i1<span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span><span class="token string">'aria-selected'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 'true'</span>
+
+<span class="token keyword">let</span> i2 <span class="token operator">=</span> view<span class="token punctuation">.</span>selected <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'item-2'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>i1<span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span><span class="token string">'aria-selected'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 'false'</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>i2<span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span><span class="token string">'aria-selected'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 'true'</span>
+</code></pre></div><h3 id="изменение_значений_и_дополнительные_свойства"><a href="#изменение_значений_и_дополнительные_свойства" title="Permalink to Изменение значений и дополнительные свойства">Изменение значений и дополнительные свойства</a></h3><div><p>Прокси объект&nbsp;<code>products</code> проверяет передаваемые значения и преобразует их в массив в случае необходимости. Объект также поддерживает дополнительное свойство&nbsp;<code>latestBrowser</code> на чтение и запись.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">let</span> products <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  browsers<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'Internet Explorer'</span><span class="token punctuation">,</span> <span class="token string">'Netscape'</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">{</span>
+  <span class="token function-variable function">get</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">obj<span class="token punctuation">,</span> prop</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Дополнительное свойство</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>prop <span class="token operator">===</span> <span class="token string">'latestBrowser'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> obj<span class="token punctuation">.</span>browsers<span class="token punctuation">[</span>obj<span class="token punctuation">.</span>browsers<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// Стандартный возврат значения</span>
+    <span class="token keyword">return</span> obj<span class="token punctuation">[</span>prop<span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">set</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">obj<span class="token punctuation">,</span> prop<span class="token punctuation">,</span> value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Дополнительное свойство</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>prop <span class="token operator">===</span> <span class="token string">'latestBrowser'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      obj<span class="token punctuation">.</span>browsers<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// Преобразование значения, если оно не массив</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> value <span class="token operator">===</span> <span class="token string">'string'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      value <span class="token operator">=</span> <span class="token punctuation">[</span>value<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// Стандартное сохранение значения</span>
+    obj<span class="token punctuation">[</span>prop<span class="token punctuation">]</span> <span class="token operator">=</span> value<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>products<span class="token punctuation">.</span>browsers<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ['Internet Explorer', 'Netscape']</span>
+products<span class="token punctuation">.</span>browsers <span class="token operator">=</span> <span class="token string">'Firefox'</span><span class="token punctuation">;</span> <span class="token comment">// передаётся как строка (по ошибке)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>products<span class="token punctuation">.</span>browsers<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ['Firefox'] &lt;- проблем нет, значение - массив</span>
+
+products<span class="token punctuation">.</span>latestBrowser <span class="token operator">=</span> <span class="token string">'Chrome'</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>products<span class="token punctuation">.</span>browsers<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ['Firefox', 'Chrome']</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>products<span class="token punctuation">.</span>latestBrowser<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 'Chrome'</span>
+</code></pre></div><h3 id="поиск_элемента_массива_по_его_свойству"><a href="#поиск_элемента_массива_по_его_свойству" title="Permalink to Поиск элемента массива по его свойству">Поиск элемента массива по его свойству</a></h3><div><p>Данный прокси расширяет массив дополнительными возможностями. Как вы видите, вы можете гибко "задавать" свойства без использования&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperties"><code>Object.defineProperties</code></a>. Данный пример также может быть использован для поиска строки таблицы по её ячейке. В этом случае целью будет&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/rows"><code>table.rows</code></a>.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">let</span> products <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+  <span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">'Firefox'</span><span class="token punctuation">,</span> type<span class="token operator">:</span> <span class="token string">'browser'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">'SeaMonkey'</span><span class="token punctuation">,</span> type<span class="token operator">:</span> <span class="token string">'browser'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">'Thunderbird'</span><span class="token punctuation">,</span> type<span class="token operator">:</span> <span class="token string">'mailer'</span> <span class="token punctuation">}</span>
+<span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">{</span>
+  <span class="token function-variable function">get</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">obj<span class="token punctuation">,</span> prop</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Стандартное возвращение значения; prop обычно является числом</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>prop <span class="token keyword">in</span> obj<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> obj<span class="token punctuation">[</span>prop<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// Получение количества продуктов; псевдоним products.length</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>prop <span class="token operator">===</span> <span class="token string">'number'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> obj<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">let</span> result<span class="token punctuation">,</span> types <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> product <span class="token keyword">of</span> obj<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>product<span class="token punctuation">.</span>name <span class="token operator">===</span> prop<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        result <span class="token operator">=</span> product<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>types<span class="token punctuation">[</span>product<span class="token punctuation">.</span>type<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        types<span class="token punctuation">[</span>product<span class="token punctuation">.</span>type<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>product<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        types<span class="token punctuation">[</span>product<span class="token punctuation">.</span>type<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>product<span class="token punctuation">]</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// Получение продукта по имени</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>result<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// Получение продуктов по типу</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>prop <span class="token keyword">in</span> types<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> types<span class="token punctuation">[</span>prop<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// Получение типов продуктов</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>prop <span class="token operator">===</span> <span class="token string">'types'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>types<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> <span class="token keyword">undefined</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>products<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// { name: 'Firefox', type: 'browser' }</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>products<span class="token punctuation">[</span><span class="token string">'Firefox'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// { name: 'Firefox', type: 'browser' }</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>products<span class="token punctuation">[</span><span class="token string">'Chrome'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// undefined</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>products<span class="token punctuation">.</span>browser<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [{ name: 'Firefox', type: 'browser' }, { name: 'SeaMonkey', type: 'browser' }]</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>products<span class="token punctuation">.</span>types<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ['browser', 'mailer']</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>products<span class="token punctuation">.</span>number<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 3</span>
+</code></pre></div><h3 id="пример_использования_всех_перехватчиков"><a href="#пример_использования_всех_перехватчиков" title="Permalink to Пример использования всех перехватчиков">Пример использования всех перехватчиков</a></h3><div><p>В данном примере, использующем все виды перехватчиков, мы попытаемся проксировать&nbsp;<em>не нативный</em>&nbsp;объект, который частично приспособлен для этого -&nbsp;<code>docCookies,</code> созданном в разделе&nbsp;<a href="https://developer.mozilla.org/en-US/docs/DOM/document.cookie#A_little_framework.3A_a_complete_cookies_reader.2Fwriter_with_full_unicode_support" title="https://developer.mozilla.org/en-US/docs/DOM/document.cookie#A_little_framework.3A_a_complete_cookies_reader.2Fwriter_with_full_unicode_support">"little framework" и опубликованном на странице&nbsp;<code>document.cookie</code></a>.</p>
+
+<pre class="brush: js notranslate"><code><span class="token comment">/*
+  var docCookies = ... получить объект "docCookies" можно здесь:
+  https://developer.mozilla.org/en-US/docs/DOM/document.cookie#A_little_framework.3A_a_complete_cookies_reader.2Fwriter_with_full_unicode_support
+*/</span>
+
+<span class="token keyword">var</span> docCookies <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span>docCookies<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token string">"get"</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">oTarget<span class="token punctuation">,</span> sKey</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> oTarget<span class="token punctuation">[</span>sKey<span class="token punctuation">]</span> <span class="token operator">||</span> oTarget<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span>sKey<span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token keyword">undefined</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">"set"</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">oTarget<span class="token punctuation">,</span> sKey<span class="token punctuation">,</span> vValue</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>sKey <span class="token keyword">in</span> oTarget<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> oTarget<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span>sKey<span class="token punctuation">,</span> vValue<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">"deleteProperty"</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">oTarget<span class="token punctuation">,</span> sKey</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>sKey <span class="token keyword">in</span> oTarget<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> oTarget<span class="token punctuation">.</span><span class="token function">removeItem</span><span class="token punctuation">(</span>sKey<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">"enumerate"</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">oTarget<span class="token punctuation">,</span> sKey</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> oTarget<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">"iterate"</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">oTarget<span class="token punctuation">,</span> sKey</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> oTarget<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">"ownKeys"</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">oTarget<span class="token punctuation">,</span> sKey</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> oTarget<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">"has"</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">oTarget<span class="token punctuation">,</span> sKey</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> sKey <span class="token keyword">in</span> oTarget <span class="token operator">||</span> oTarget<span class="token punctuation">.</span><span class="token function">hasItem</span><span class="token punctuation">(</span>sKey<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">"hasOwn"</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">oTarget<span class="token punctuation">,</span> sKey</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> oTarget<span class="token punctuation">.</span><span class="token function">hasItem</span><span class="token punctuation">(</span>sKey<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">"defineProperty"</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">oTarget<span class="token punctuation">,</span> sKey<span class="token punctuation">,</span> oDesc</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>oDesc <span class="token operator">&amp;&amp;</span> <span class="token string">"value"</span> <span class="token keyword">in</span> oDesc<span class="token punctuation">)</span> <span class="token punctuation">{</span> oTarget<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span>sKey<span class="token punctuation">,</span> oDesc<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> oTarget<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">"getPropertyNames"</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">oTarget</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> Object<span class="token punctuation">.</span><span class="token function">getPropertyNames</span><span class="token punctuation">(</span>oTarget<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>oTarget<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">"getOwnPropertyNames"</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">oTarget</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> Object<span class="token punctuation">.</span><span class="token function">getOwnPropertyNames</span><span class="token punctuation">(</span>oTarget<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>oTarget<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">"getPropertyDescriptor"</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">oTarget<span class="token punctuation">,</span> sKey</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> vValue <span class="token operator">=</span> oTarget<span class="token punctuation">[</span>sKey<span class="token punctuation">]</span> <span class="token operator">||</span> oTarget<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span>sKey<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> vValue <span class="token operator">?</span> <span class="token punctuation">{</span>
+      <span class="token string">"value"</span><span class="token operator">:</span> vValue<span class="token punctuation">,</span>
+      <span class="token string">"writable"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token string">"enumerable"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token string">"configurable"</span><span class="token operator">:</span> <span class="token boolean">false</span>
+    <span class="token punctuation">}</span> <span class="token operator">:</span> <span class="token keyword">undefined</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">"getOwnPropertyDescriptor"</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">oTarget<span class="token punctuation">,</span> sKey</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> vValue <span class="token operator">=</span> oTarget<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span>sKey<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> vValue <span class="token operator">?</span> <span class="token punctuation">{</span>
+      <span class="token string">"value"</span><span class="token operator">:</span> vValue<span class="token punctuation">,</span>
+      <span class="token string">"writable"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token string">"enumerable"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token string">"configurable"</span><span class="token operator">:</span> <span class="token boolean">false</span>
+    <span class="token punctuation">}</span> <span class="token operator">:</span> <span class="token keyword">undefined</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">"fix"</span><span class="token operator">:</span>  <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">oTarget</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token string">"not implemented yet!"</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">/* Проверка cookies */</span>
+
+<span class="token function">alert</span><span class="token punctuation">(</span>docCookies<span class="token punctuation">.</span>my_cookie1 <span class="token operator">=</span> <span class="token string">"First value"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">alert</span><span class="token punctuation">(</span>docCookies<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">"my_cookie1"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+docCookies<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"my_cookie1"</span><span class="token punctuation">,</span> <span class="token string">"Changed value"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">alert</span><span class="token punctuation">(</span>docCookies<span class="token punctuation">.</span>my_cookie1<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a class="external" href="http://jsconf.eu/2010/speaker/be_proxy_objects.html" rel=" noopener">"Proxies are awesome" презентация Brendan Eich на JSConf</a> (<a class="external" href="https://www.slideshare.net/BrendanEich/metaprog-5303821" rel=" noopener">слайды</a>)</li>
+ <li><a class="external" href="http://wiki.ecmascript.org/doku.php?id=harmony:proxies" rel=" noopener">Страница предложения ECMAScript Harmony Proxy</a>&nbsp;и <a class="external" href="http://wiki.ecmascript.org/doku.php?id=harmony:proxies_semantics" rel=" noopener">страница ECMAScript Harmony proxy semantics</a></li>
+ <li><a class="external" href="http://soft.vub.ac.be/~tvcutsem/proxies/" rel=" noopener">Руководство по прокси</a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/JavaScript/Old_Proxy_API" title="This is a link to an unwritten page" class="page-not-created">Старая страница Proxy API</a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/Object/watch" class="page-not-created" title="This is a link to an unwritten page"><code>Object.watch</code></a>&nbsp;- не стандартная возможность, поддерживается только в движке Gecko.</li>
+</ul></div><h2 id="лицензионные_примечания"><a href="#лицензионные_примечания" title="Permalink to Лицензионные примечания">Лицензионные примечания</a></h2><div><p>Некоторое содержимое (текст, примеры) данной страницы было скопировано или адаптировано со страниц&nbsp;<a class="external" href="http://wiki.ecmascript.org/doku.php" rel=" noopener">вики ECMAScript</a>,&nbsp;имеющей лицензию&nbsp;<a class="external" href="https://creativecommons.org/licenses/by-nc-sa/2.0/" rel=" noopener">CC 2.0 BY-NC-SA</a></p></div>

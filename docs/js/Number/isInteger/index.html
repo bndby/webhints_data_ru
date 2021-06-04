@@ -1,0 +1,45 @@
+<h1>Number.isInteger()</h1><div><div></div>
+
+<p>Метод <strong><code>Number.isInteger()</code></strong> определяет, является ли переданное значение целым числом.</p>
+
+<p><iframe class="interactive" width="100%" height="490" src="https://interactive-examples.mdn.mozilla.net/pages/js/number-isinteger.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code>Number.isInteger(<var>value</var>)</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>value</code></dt>
+ <dd>Значение, проверяемое на целочисленность.</dd>
+</dl></div><h3 id="возвращаемое_значение"><a href="#возвращаемое_значение" title="Permalink to Возвращаемое значение">Возвращаемое значение</a></h3><div><p><a href="/js/Boolean/"><code>Boolean</code></a> сообщающий о том, является ли переданное значение целочисленным числом.</p></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Если целевое значение является целым числом, возвращает <code>true</code>. Если значение <a href="/js/NaN/"><code>NaN</code></a> или <a href="/js/Infinity/"><code>Infinity</code></a>, то возвращает <code>false</code>. Метод также возвращает <code>true</code>, если это вещественное число с точкой, которое может быть представлено в целочисленном виде.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div><pre class="brush: js notranslate"><code>Number<span class="token punctuation">.</span><span class="token function">isInteger</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token comment">// true</span>
+Number<span class="token punctuation">.</span><span class="token function">isInteger</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token comment">// true</span>
+Number<span class="token punctuation">.</span><span class="token function">isInteger</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">100000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// true</span>
+Number<span class="token punctuation">.</span><span class="token function">isInteger</span><span class="token punctuation">(</span><span class="token number">99999999999999999999999</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
+
+Number<span class="token punctuation">.</span><span class="token function">isInteger</span><span class="token punctuation">(</span><span class="token number">0.1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment">// false</span>
+Number<span class="token punctuation">.</span><span class="token function">isInteger</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token constant">PI</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// false</span>
+
+Number<span class="token punctuation">.</span><span class="token function">isInteger</span><span class="token punctuation">(</span><span class="token number">NaN</span><span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment">// false</span>
+Number<span class="token punctuation">.</span><span class="token function">isInteger</span><span class="token punctuation">(</span><span class="token number">Infinity</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// false</span>
+Number<span class="token punctuation">.</span><span class="token function">isInteger</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">Infinity</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// false</span>
+Number<span class="token punctuation">.</span><span class="token function">isInteger</span><span class="token punctuation">(</span><span class="token string">'10'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">// false</span>
+Number<span class="token punctuation">.</span><span class="token function">isInteger</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">// false</span>
+Number<span class="token punctuation">.</span><span class="token function">isInteger</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">// false</span>
+Number<span class="token punctuation">.</span><span class="token function">isInteger</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment">// false</span>
+
+Number<span class="token punctuation">.</span><span class="token function">isInteger</span><span class="token punctuation">(</span><span class="token number">5.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment">// true</span>
+Number<span class="token punctuation">.</span><span class="token function">isInteger</span><span class="token punctuation">(</span><span class="token number">5.000000000000001</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// false</span>
+Number<span class="token punctuation">.</span><span class="token function">isInteger</span><span class="token punctuation">(</span><span class="token number">5.0000000000000001</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span></code></pre></div><h2 id="polyfill"><a href="#polyfill" title="Permalink to Полифил">Полифил</a></h2><div><pre class="brush: js notranslate"><code>Number<span class="token punctuation">.</span>isInteger <span class="token operator">=</span> Number<span class="token punctuation">.</span>isInteger <span class="token operator">||</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">typeof</span> value <span class="token operator">===</span> <span class="token string">'number'</span> <span class="token operator">&amp;&amp;</span>
+    <span class="token function">isFinite</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span>
+    Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token operator">===</span> value<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+  </tr>
+  <tr>
+   <td>
+    <p><a href="https://tc39.es/ecma262/#sec-number.isinteger" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript (ECMA-262)<br><small lang="ru">Определение 'Number.isInteger' в этой спецификации.</small></a></p>
+   </td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><div></div>
+
+<div></div></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li>Объект <a href="/js/Number/"><code>Number</code></a>, которому принадлежит этот метод.</li>
+</ul></div>

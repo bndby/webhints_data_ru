@@ -1,0 +1,54 @@
+<h1>border-image-outset</h1><div><div></div></div><h2 id="описание"><a href="#описание" title="Permalink to Описание">Описание</a></h2><div><p>The <strong><code>border-image-outset</code></strong> property describes by what amount the <dfn>border image area</dfn> extends beyond the border box.</p>
+
+<p>Portions of the border image that are rendered outside the border box as a result of this property do not cause scrolling to be triggered. These areas also don't capture or cause mouse events to occur on behalf of the bordered element.</p>
+
+<div><table class="properties"><tbody><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td><code>0</code></td></tr><tr><th scope="row">Применяется к</th><td>все элементы, кроме внутренних табличных элементов, когда <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-collapse" class="only-in-en-us" title="Currently only available in English (US)">border-collapse (en-US)</a>:<code>collapse</code>. Это также применяется к <a href="/css/::first-letter/"><code>::first-letter</code></a>.</td></tr><tr><th scope="row"><a href="/css/inheritance/">Наследуется</a></th><td>нет</td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>как указано, но с относительной длиной, конвертируемой в абсолютные длины</td></tr><tr><th scope="row">Animation type</th><td>by computed value type</td></tr></tbody></table></div></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="brush:css notranslate"><code><span class="token comment">/* border-image-outset: sides */</span>
+<span class="token property">border-image-outset</span><span class="token punctuation">:</span> 1.5<span class="token punctuation">;</span>
+
+<span class="token comment">/* border-image-outset: vertical horizontal */</span>
+<span class="token property">border-image-outset</span><span class="token punctuation">:</span> 1 1.2<span class="token punctuation">;</span>
+
+<span class="token comment">/* border-image-outset: top horizontal bottom */</span>
+<span class="token property">border-image-outset</span><span class="token punctuation">:</span> 30px 2 45px<span class="token punctuation">;</span>
+
+<span class="token comment">/* border-image-outset: top right bottom left */</span>
+<span class="token property">border-image-outset</span><span class="token punctuation">:</span> 7px 12px 14px 5px<span class="token punctuation">;</span>
+
+<span class="token property">border-image-repeat</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+</code></pre></div><h3 id="значения"><a href="#значения" title="Permalink to Значения">Значения</a></h3><div><div class="note notecard">
+<p>When a value is specified as a unitless <a href="/css/number/"><code>&lt;number&gt;</code></a>, that value is multiplied by the corresponding computed <a href="/css/border-width/"><code>border-width</code></a> to determine the <code>border-image-outset</code>. Negative values are invalid.</p>
+</div>
+
+<dl>
+ <dt><em>sides</em></dt>
+ <dd>Is a <a href="/css/length/"><code>&lt;length&gt;</code></a> or a <a href="/css/number/"><code>&lt;number&gt;</code></a> of the amount by which the border image area extends beyond the border box in all four directions.</dd>
+ <dt><em>horizontal</em></dt>
+ <dd>Is a <a href="/css/length/"><code>&lt;length&gt;</code></a> or a <a href="/css/number/"><code>&lt;number&gt;</code></a> of the amount by which the border image area extends beyond the border box in both horizontal directions&nbsp;(left and right).</dd>
+ <dt><em>vertical</em></dt>
+ <dd>Is a <a href="/css/length/"><code>&lt;length&gt;</code></a> or a <a href="/css/number/"><code>&lt;number&gt;</code></a> of the amount by which the border image area extends beyond the border box in both vertical directions&nbsp;(top and bottom).</dd>
+ <dt><em>top</em></dt>
+ <dd>Is a <a href="/css/length/"><code>&lt;length&gt;</code></a> or a <a href="/css/number/"><code>&lt;number&gt;</code></a> of the amount by which the border image area extends beyond the border box past its top edge.</dd>
+ <dt><em>bottom</em></dt>
+ <dd>Is a <a href="/css/length/"><code>&lt;length&gt;</code></a> or a <a href="/css/number/"><code>&lt;number&gt;</code></a> of the amount by which the border image area extends beyond the border box past its bottom edge.</dd>
+ <dt><em>right</em></dt>
+ <dd>Is a <a href="/css/length/"><code>&lt;length&gt;</code></a> or a <a href="/css/number/"><code>&lt;number&gt;</code></a> of the amount by which the border image area extends beyond the border box past its right edge.</dd>
+ <dt><em>left</em></dt>
+ <dd>Is a <a href="/css/length/"><code>&lt;length&gt;</code></a> or a <a href="/css/number/"><code>&lt;number&gt;</code></a> of the amount by which the border image area extends beyond the border box past its left edge.</dd>
+ <dt><code>inherit</code></dt>
+ <dd>Is a keyword indicating that all four values are inherited from each parent&nbsp;elements' calculated value.</dd>
+</dl></div><h3 id="формальный_синтаксис"><a href="#формальный_синтаксис" title="Permalink to Формальный синтаксис">Формальный синтаксис</a></h3><div><pre class="notranslate"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> <a href="/css/length/" title="Возможные значения: a number followed by'em', 'ex', 'ch', 'rem', 'px', 'cm', 'mm', 'in', 'vh', 'vw', 'vmin', 'vmax', 'pt', 'pc' или 'px', как 3px, 1.5cm, -0.5em или 0">&lt;length&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <a href="/css/number/" title>&lt;number&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#curly_braces_(_)" title="Currently only available in English (US)" class="only-in-en-us">{ (en-US)</a>1,4<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#curly_braces_(_)" title="Currently only available in English (US)" class="only-in-en-us">} (en-US)</a></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-backgrounds-3/#border-image-outset" hreflang="en" lang="en" class="external" rel=" noopener">CSS Backgrounds and Borders Module Level&nbsp;3<br><small lang="ru">Определение 'border-image-outset' в этой спецификации.</small></a></td>
+   <td><span class="spec-cr">Кандидат в рекомендации</span></td>
+   <td>Первоначальное определение</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="совместимость_с_браузерами"><a href="#совместимость_с_браузерами" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div>

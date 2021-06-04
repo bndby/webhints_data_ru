@@ -1,0 +1,86 @@
+<h1>ruby-position</h1><div><div></div>
+
+<p>The <code><strong>ruby-position</strong></code> CSS property defines the position of a ruby element relatives to its base element. It can be positioned over the element (<code>over</code>), under it (<code>under</code>), or between the characters on their right side (<code>inter-character</code>).</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* Keyword values */</span>
+<span class="token property">ruby-position</span><span class="token punctuation">:</span> over<span class="token punctuation">;</span>
+<span class="token property">ruby-position</span><span class="token punctuation">:</span> under<span class="token punctuation">;</span>
+<span class="token property">ruby-position</span><span class="token punctuation">:</span> inter-character<span class="token punctuation">;</span>
+<span class="token property">ruby-position</span><span class="token punctuation">:</span> alternate<span class="token punctuation">;</span>
+
+<span class="token comment">/* Global values */</span>
+<span class="token property">ruby-position</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">ruby-position</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">ruby-position</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+ <dt><code>over</code></dt>
+ <dd><img alt="Over example" src="/en-US/docs/Web/CSS/ruby-position/screen_shot_2015-03-04_at_13.02.20.png" width="154" height="62" loading="lazy">Is a keyword indicating that the ruby has to be placed over the main text for horizontal scripts and right to it for vertical scripts.</dd>
+ <dt><code>under</code></dt>
+ <dd><img alt="Under example" src="/en-US/docs/Web/CSS/ruby-position/screen_shot_2015-03-04_at_13.02.07.png" width="156" height="68" loading="lazy">Is a keyword indicating that the ruby has to be placed under the main text for horizontal scripts and left to it for vertical scripts.</dd>
+ <dt><code>inter-character</code></dt>
+ <dd>Is a keyword indicating that the ruby has to be placed between the different characters.</dd>
+ <dt><code>alternate</code></dt>
+ <dd>Is a keyword indicating that the ruby alternates between over and under, when there are multiple levels of annotaion.</dd>
+</dl></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td><code>alternate</code></td></tr><tr><th scope="row">Applies to</th><td>ruby annotations containers</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance">Inherited</a></th><td>yes</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>as specified</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">[</a> alternate <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_bar" title="Double bar: one or several of the entities must be present, in any order">||</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">[</a> over <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> under <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">]</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">]</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> inter-character</pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="ruby_positioned_over_the_text"><a href="#ruby_positioned_over_the_text" title="Permalink to Ruby positioned over the text">Ruby positioned over the text</a></h3><div><h4 id="html">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ruby</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rb</span><span class="token punctuation">&gt;</span></span>超電磁砲<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rb</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rp</span><span class="token punctuation">&gt;</span></span>（<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rp</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rt</span><span class="token punctuation">&gt;</span></span>レールガン<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rt</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rp</span><span class="token punctuation">&gt;</span></span>）<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rp</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ruby</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<h4 id="css">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token selector">ruby</span> <span class="token punctuation">{</span>
+    <span class="token property">ruby-position</span><span class="token punctuation">:</span>over<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<h4 id="result">Result</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Ruby_positioned_over_the_text" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/ruby-position/_sample_.Ruby_positioned_over_the_text.html" loading="lazy"></iframe></p></div><h3 id="ruby_positioned_under_the_text"><a href="#ruby_positioned_under_the_text" title="Permalink to Ruby positioned under the text">Ruby positioned under the text</a></h3><div><h4 id="html_2">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ruby</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rb</span><span class="token punctuation">&gt;</span></span>超電磁砲<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rb</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rp</span><span class="token punctuation">&gt;</span></span>（<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rp</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rt</span><span class="token punctuation">&gt;</span></span>レールガン<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rt</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rp</span><span class="token punctuation">&gt;</span></span>）<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rp</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ruby</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<h4 id="css_2">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token selector">ruby</span> <span class="token punctuation">{</span>
+    <span class="token property">ruby-position</span><span class="token punctuation">:</span>under<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<h4 id="result_2">Result</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Ruby_positioned_under_the_text" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/ruby-position/_sample_.Ruby_positioned_under_the_text.html" loading="lazy"></iframe></p></div><h3 id="ruby_alternate"><a href="#ruby_alternate" title="Permalink to Ruby alternate">Ruby alternate</a></h3><div><h4 id="html_3">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ruby</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rb</span><span class="token punctuation">&gt;</span></span>A<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rb</span><span class="token punctuation">&gt;</span></span>B<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rb</span><span class="token punctuation">&gt;</span></span>C<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rb</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rtc</span><span class="token punctuation">&gt;</span></span>Above<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rtc</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rtc</span><span class="token punctuation">&gt;</span></span>Below<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rtc</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ruby</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<h4 id="css_3">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token selector">ruby</span> <span class="token punctuation">{</span>
+    <span class="token property">ruby-position</span><span class="token punctuation">:</span> alternate<span class="token punctuation">;</span> <span class="token comment">/* this is also the initial value */</span>
+<span class="token punctuation">}</span></code></pre>
+
+<h4 id="result_3">Result</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Ruby_alternate" width="100" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/ruby-position/_sample_.Ruby_alternate.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-ruby/#rubypos" hreflang="en" lang="en" class="external" rel=" noopener">CSS Ruby Layout Module Level&nbsp;1<br><small lang="en-US">The definition of 'ruby-position' in that specification.</small></a></td>
+   <td><span class="spec-wd">Working Draft</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li>HTML Ruby elements: <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ruby"><code>&lt;ruby&gt;</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/rt"><code>&lt;rt&gt;</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/rp"><code>&lt;rp&gt;</code></a>, and <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/rtc"><code>&lt;rtc&gt;</code></a>.</li>
+ <li>CSS Ruby properties: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/ruby-align"><code>ruby-align</code></a>, <a class="page-not-created" title="The documentation about this has not yet been written; please consider contributing!"><code>ruby-merge</code></a>.</li>
+</ul></div>

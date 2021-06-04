@@ -1,0 +1,55 @@
+<h1>order</h1><div><div></div>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a>&nbsp;свойство&nbsp; <strong><code>order</code></strong>&nbsp;определяет порядок, используемый для размещения flex элементов&nbsp;в их flex контейнере. Элементы располагаются в восходящем порядке по значению&nbsp;<code>order</code>. Элементы с одинаковым значением&nbsp;<code>order</code>&nbsp; располагаются в том порядке, в каком&nbsp;они находятся в исходном коде.</p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/order.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+</div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* Числовые значения, в том числе отрицательные */</span>
+<span class="token property">order</span><span class="token punctuation">:</span> 5<span class="token punctuation">;</span>
+<span class="token property">order</span><span class="token punctuation">:</span> -5<span class="token punctuation">;</span>
+
+<span class="token comment">/* Глобальные значения */</span>
+<span class="token property">order</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">order</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">order</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span></code></pre>
+
+<div class="note notecard">
+<p><strong>Важно</strong>: <code>order</code>&nbsp;воздействует только на&nbsp;<strong>визуальный порядок</strong>&nbsp;элементов, но не логический порядок или табуляцию. <code><strong>order</strong></code>&nbsp;не должен применяться к&nbsp;невизуальным медиаданным, таким&nbsp;как речь.</p>
+</div>
+
+<p>Посмотрите&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox">Используем CSS flexible boxes</a> для более подробной информации и дополнительных свойствах.</p></div><h3 id="значения"><a href="#значения" title="Permalink to Значения">Значения</a></h3><div><dl>
+ <dt><code>&lt;integer&gt;</code></dt>
+ <dd>Представляет порядковую группу, которая&nbsp;присвоена flex элементу.</dd>
+</dl></div><h3 id="формальный_синтаксис"><a href="#формальный_синтаксис" title="Permalink to Формальный синтаксис">Формальный синтаксис</a></h3><div><pre class="notranslate"><a href="/css/integer/" title>&lt;integer&gt;</a></pre></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div><p>Имеется базовый&nbsp;отрывок HTML кода:</p>
+
+<pre class="brush:html; notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span><span class="token punctuation">&gt;</span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>header</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>main</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>article</span><span class="token punctuation">&gt;</span></span>Article<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>article</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nav</span><span class="token punctuation">&gt;</span></span>Nav<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nav</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>aside</span><span class="token punctuation">&gt;</span></span>Aside<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>aside</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>main</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>footer</span><span class="token punctuation">&gt;</span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>footer</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<p>Следующий&nbsp;CSS код&nbsp;должен создать классический блок контента окружённый боковыми панелями. Flexible Box Layout Module автоматически создаёт блоки одинаковой высоты и максимально допустимой ширины.</p>
+
+<pre class="brush:css; notranslate"><code><span class="token selector">main</span> <span class="token punctuation">{</span> <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>  <span class="token property">text-align</span><span class="token punctuation">:</span>center<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token selector">main &gt; article</span> <span class="token punctuation">{</span> <span class="token property">flex</span><span class="token punctuation">:</span>1<span class="token punctuation">;</span>        <span class="token property">order</span><span class="token punctuation">:</span> 2<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token selector">main &gt; nav</span>     <span class="token punctuation">{</span> <span class="token property">width</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>  <span class="token property">order</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token selector">main &gt; aside</span>   <span class="token punctuation">{</span> <span class="token property">width</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>  <span class="token property">order</span><span class="token punctuation">:</span> 3<span class="token punctuation">;</span> <span class="token punctuation">}</span></code></pre></div><h3 id="результат"><a href="#результат" title="Permalink to Результат">Результат</a></h3><div><p><iframe class="sample-code-frame" id="frame_Example" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/order/_sample_.Example.html" loading="lazy"></iframe></p></div><h2 id="спецификация"><a href="#спецификация" title="Permalink to Спецификация">Спецификация</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-flexbox-1/#order-property" hreflang="en" lang="en" class="external" rel=" noopener">CSS Flexible Box Layout Module<br><small lang="ru">Определение 'order' в этой спецификации.</small></a></td>
+   <td><span class="spec-cr">Кандидат в рекомендации</span></td>
+   <td>Начальное определение</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="совместимость_с_браузерами"><a href="#совместимость_с_браузерами" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/docs/Web/Guide/CSS/Flexible_boxes" class="page-not-created" title="This is a link to an unwritten page">Используя&nbsp;CSS flexible boxes</a></li>
+</ul></div>

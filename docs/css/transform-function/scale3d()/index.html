@@ -1,0 +1,76 @@
+<h1>scale3d()</h1><div><div></div>
+
+<p><code>scale3d()</code>&nbsp;CSS функция&nbsp;изменяет размер элемента. Благодаря величине&nbsp;масштабирования определённой&nbsp;вектором, может изменять различные размеры в разных масштабах.</p>
+
+<p>Это преобразование характеризуется вектором, координаты которого определяют, сколько масштабирования выполняется в каждом направлении. Если все три координаты вектора равны, масштабирование равномерно или изотропно, а форма элемента сохраняется. В этом случае функция масштабирования определяет гомотетическое преобразование.</p>
+
+<p>Когда вне диапазона [-1, 1], масштабирование увеличивает элемент в направлении координаты; Когда внутри диапазона он сжимает элемент в этом направлении. При равном 1 он ничего не делает, а когда отрицательный, он выполняет точечное отражение и модификацию размера.</p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate">scale3d(<em>sx</em>, <em>sy</em>, <em>sz</em>)
+</pre></div><h2 id="значения"><a href="#значения" title="Permalink to Значения">Значения</a></h2><div><dl>
+ <dt><em>sx</em></dt>
+ <dd>Является &nbsp;<a href="/css/number/"><code>&lt;number&gt;</code></a> , представляющим абсцисс вектора масштабирования.</dd>
+ <dt><em>sy</em></dt>
+ <dd>Является &nbsp;<a href="/css/number/"><code>&lt;number&gt;</code></a> , представляющим ординату вектора масштабирования.</dd>
+ <dt><em>sz</em></dt>
+ <dd>Является &nbsp;<a href="/css/number/"><code>&lt;number&gt;</code></a>, представляющим z-компонент масштабирующего вектора.</dd>
+</dl>
+
+<table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Cartesian coordinates on ℝ<sup>2</sup></th>
+   <th scope="col">Homogeneous coordinates on ℝℙ<sup>2</sup></th>
+   <th scope="col">Cartesian coordinates on ℝ<sup>3</sup></th>
+   <th scope="col">Homogeneous coordinates on ℝℙ<sup>3</sup></th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td colspan="2" rowspan="2">Это преобразование применяется к пространству 3D и не может быть представлено на плоскости.</td>
+   <td colspan="1" rowspan="2"><math> <mfenced><mtable><mtr>sx<mtd>0</mtd><mtd>0</mtd></mtr><mtr>0<mtd>sy</mtd><mtd>0</mtd></mtr><mtr><mtd>0</mtd><mtd>0</mtd><mtd>sz</mtd></mtr></mtable> </mfenced> </math></td>
+   <td colspan="1" rowspan="2"><math> <mfenced><mtable><mtr>sx<mtd>0</mtd><mtd>0</mtd><mtd>0</mtd></mtr><mtr>0<mtd>sy</mtd><mtd>0</mtd><mtd>0</mtd></mtr><mtr><mtd>0</mtd><mtd>0</mtd><mtd>sz</mtd><mtd>0</mtd></mtr><mtr><mtd>0</mtd><mtd>0</mtd><mtd>0</mtd><mtd>1</mtd></mtr></mtable> </mfenced> </math></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="without_changing_the_origin"><a href="#without_changing_the_origin" title="Permalink to Without changing the origin">Without changing the origin</a></h3><div><h4 id="html">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>foo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>transformed<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>bar<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<h4 id="css">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token selector">p</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> teal<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.transformed</span> <span class="token punctuation">{</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">perspective</span><span class="token punctuation">(</span>500px<span class="token punctuation">)</span> <span class="token function">scale3d</span><span class="token punctuation">(</span>0.8<span class="token punctuation">,</span> 2<span class="token punctuation">,</span> 0.2<span class="token punctuation">)</span> <span class="token function">translateZ</span><span class="token punctuation">(</span>100px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<h4 id="result">Result</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Without_changing_the_origin" width="100%" height="200" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/transform-function/scale3d()/_sample_.Without_changing_the_origin.html" loading="lazy"></iframe></p></div><h3 id="translating_the_origin_of_the_transformation"><a href="#translating_the_origin_of_the_transformation" title="Permalink to Translating the origin of the transformation">Translating the origin of the transformation</a></h3><div><h4 id="html_2">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>foo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>transformed<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>bar<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<h4 id="css_2">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token selector">p</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> teal<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.transformed</span> <span class="token punctuation">{</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">scale3d</span><span class="token punctuation">(</span>2<span class="token punctuation">,</span> 3<span class="token punctuation">,</span> 0<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">transform-origin</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<h4 id="result_2">Result</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Translating_the_origin_of_the_transformation" width="100%" height="200" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/transform-function/scale3d()/_sample_.Translating_the_origin_of_the_transformation.html" loading="lazy"></iframe></p></div>

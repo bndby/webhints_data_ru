@@ -1,0 +1,94 @@
+<h1>offset-rotate</h1><div><div></div>
+
+<p>The <strong><code>offset-rotate</code></strong> CSS property defines the orientation/direction of the element as it is positioned along the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/offset-path"><code>offset-path</code></a>.</p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/offset-rotate.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+<div class="notecard note">
+<p><strong>Note</strong>: Early versions of the spec called this property <code>motion-rotation</code>.</p>
+</div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: css notranslate"><code><span class="token comment">/* Follow the path direction, with optional additional angle */</span>
+<span class="token property">offset-rotate</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+<span class="token property">offset-rotate</span><span class="token punctuation">:</span> auto 45deg<span class="token punctuation">;</span>
+
+<span class="token comment">/* Follow the path direction but facing the opposite direction of `auto` */</span>
+<span class="token property">offset-rotate</span><span class="token punctuation">:</span> reverse<span class="token punctuation">;</span>
+
+<span class="token comment">/* Keep a constant rotation regardless the position on the path */</span>
+<span class="token property">offset-rotate</span><span class="token punctuation">:</span> 90deg<span class="token punctuation">;</span>
+<span class="token property">offset-rotate</span><span class="token punctuation">:</span> .5turn<span class="token punctuation">;</span></code></pre>
+
+<dl>
+ <dt><code><dfn>auto</dfn></code></dt>
+ <dd>
+ <p>The element is rotated by the angle of the direction of the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/offset-path"><code>offset-path</code></a>, relative to the positive x-axis. This is the default value.</p>
+ </dd>
+ <dt><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/angle"><code>&lt;angle&gt;</code></a></code></dt>
+ <dd>
+ <p>The element has a constant clockwise rotation transformation applied to it by the specified rotation angle.</p>
+ </dd>
+ <dt><code><dfn>auto &lt;angle&gt;</dfn></code></dt>
+ <dd>
+ <p>If <code>auto</code> is followed by an <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/angle"><code>&lt;angle&gt;</code></a>, the computed value of <span class="production" id="ref-for-angle-value①③" title="Expands to: turn | rad | grad | deg">the angle</span> is added to the computed value of <code>auto</code>.</p>
+ </dd>
+ <dt><code><dfn>reverse</dfn></code></dt>
+ <dd>
+ <p>The element is rotated similar to <code>auto</code>, except it faces the opposite direction. It is the same as specifying a value of <code>auto 180deg</code>.</p>
+ </dd>
+</dl></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td><code>auto</code></td></tr><tr><th scope="row">Applies to</th><td>transformable elements</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance">Inherited</a></th><td>no</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>as specified</td></tr><tr><th scope="row">Animation type</th><td>as &lt;angle&gt;, &lt;basic-shape&gt; or &lt;path()&gt;</td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">[</a> auto <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> reverse <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">]</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_bar" title="Double bar: one or several of the entities must be present, in any order">||</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/angle" title="Possible values: a number followed by'deg', 'grad', 'rad' or 'turn', like 2turn, 1.3rad, -60deg or 0grad.">&lt;angle&gt;</a></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="setting_element_orientation_along_its_offset_path"><a href="#setting_element_orientation_along_its_offset_path" title="Permalink to Setting element orientation along its offset path">Setting element orientation along its offset path</a></h3><div><h4 id="html">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<h4 id="css">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token selector">div</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 40px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 40px<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> #2BC4A2<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+  <span class="token property">clip-path</span><span class="token punctuation">:</span> <span class="token function">polygon</span><span class="token punctuation">(</span>0% 0%<span class="token punctuation">,</span> 70% 0%<span class="token punctuation">,</span> 100% 50%<span class="token punctuation">,</span> 70% 100%<span class="token punctuation">,</span> 0% 100%<span class="token punctuation">,</span> 30% 50%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">animation</span><span class="token punctuation">:</span> move 5000ms infinite alternate ease-in-out<span class="token punctuation">;</span>
+
+  <span class="token property">offset-path</span><span class="token punctuation">:</span> <span class="token function">path</span><span class="token punctuation">(</span><span class="token string">'M20,20 C20,50 180,-10 180,20'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">div:nth-child(1)</span> <span class="token punctuation">{</span>
+  <span class="token property">offset-rotate</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">div:nth-child(2)</span> <span class="token punctuation">{</span>
+  <span class="token property">offset-rotate</span><span class="token punctuation">:</span> auto 90deg<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">div:nth-child(3)</span> <span class="token punctuation">{</span>
+  <span class="token property">offset-rotate</span><span class="token punctuation">:</span> 30deg<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token atrule"><span class="token rule">@keyframes</span> move</span> <span class="token punctuation">{</span>
+  <span class="token selector">100%</span> <span class="token punctuation">{</span>
+    <span class="token property">offset-distance</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+
+<h4 id="result">Result</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Setting_element_orientation_along_its_offset_path" width="100%" height="200" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/offset-rotate/_sample_.Setting_element_orientation_along_its_offset_path.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th>Specification</th>
+   <th>Status</th>
+   <th>Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.fxtf.org/motion-1/#offset-rotate-property" hreflang="en" lang="en" class="external" rel=" noopener">Motion Path Module Level 1<br><small lang="en-US">The definition of 'offset-rotate' in that specification.</small></a></td>
+   <td><span class="spec-wd">Working Draft</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/offset"><code>offset</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/offset-anchor"><code>offset-anchor</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/offset-distance"><code>offset-distance</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/offset-path"><code>offset-path</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/offset-position"><code>offset-position</code></a></li>
+</ul></div>

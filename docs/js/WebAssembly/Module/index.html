@@ -1,0 +1,43 @@
+<h1>WebAssembly.Module</h1><div><div></div>
+
+<p><span class="seoSummary">A <strong><code>WebAssembly.Module</code></strong> object contains stateless WebAssembly code that has already been compiled by the browser — this can be efficiently <a href="https://developer.mozilla.org/en-US/docs/Web/API/Worker/postMessage">shared with Workers</a>, and instantiated multiple times. </span></p></div><h2 id="constructor"><a href="#constructor" title="Permalink to Constructor">Constructor</a></h2><div><dl>
+ <dt><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Module/Module"><code>WebAssembly.Module()</code></a></dt>
+ <dd>Creates a new <code>Module</code> object.</dd>
+</dl></div><h2 id="static_properties"><a href="#static_properties" title="Permalink to Static properties">Static properties</a></h2><div><dl>
+ <dt><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Module/customSections"><code>WebAssembly.Module.customSections()</code></a></dt>
+ <dd>Given a <code>Module</code> and string, returns a copy of the contents of all custom sections in the&nbsp;module with the given string name.</dd>
+ <dt><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Module/exports"><code>WebAssembly.Module.exports()</code></a></dt>
+ <dd>Given a <code>Module</code>, returns an array containing descriptions of all the declared exports.</dd>
+ <dt><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Module/imports"><code>WebAssembly.Module.imports()</code></a></dt>
+ <dd>Given a <code>Module</code>, returns an array containing descriptions of all the declared imports.</dd>
+</dl></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="sending_a_compiled_module_to_a_worker"><a href="#sending_a_compiled_module_to_a_worker" title="Permalink to Sending a compiled module to a worker">Sending a compiled module to a worker</a></h3><div><p>The following example (see our <a href="https://github.com/mdn/webassembly-examples/blob/master/js-api-examples/index-compile.html" class="external" rel=" noopener">index-compile.html</a> demo on GitHub, and <a href="https://mdn.github.io/webassembly-examples/js-api-examples/index-compile.html" class="external" rel=" noopener">view it live</a> also) compiles the loaded <code>simple.wasm</code> byte code using the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/compileStreaming"><code>WebAssembly.compileStreaming()</code></a> method and then sends the resulting <code>Module</code> instance to a <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API">worker</a> using <a href="https://developer.mozilla.org/en-US/docs/Web/API/Worker/postMessage" title="postMessage()"><code>postMessage()</code></a>.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> worker <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Worker</span><span class="token punctuation">(</span><span class="token string">"wasm_worker.js"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+WebAssembly<span class="token punctuation">.</span><span class="token function">compileStreaming</span><span class="token punctuation">(</span><span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">'simple.wasm'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">mod</span> <span class="token operator">=&gt;</span>
+  worker<span class="token punctuation">.</span><span class="token function">postMessage</span><span class="token punctuation">(</span>mod<span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+<p>In the worker (see <code><a href="https://github.com/mdn/webassembly-examples/blob/master/js-api-examples/wasm_worker.js" class="external" rel=" noopener">wasm_worker.js</a></code>) we define an import object for the module to use, then set up an event handler to receive the module from the main thread. When the module is received, we create an instance from it using the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/instantiate"><code>WebAssembly.instantiate()</code></a> method and invoke an exported function from inside it.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> importObject <span class="token operator">=</span> <span class="token punctuation">{</span>
+  imports<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">imported_func</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">arg</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token function-variable function">onmessage</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'module received from main thread'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">var</span> mod <span class="token operator">=</span> e<span class="token punctuation">.</span>data<span class="token punctuation">;</span>
+
+  WebAssembly<span class="token punctuation">.</span><span class="token function">instantiate</span><span class="token punctuation">(</span>mod<span class="token punctuation">,</span> importObject<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">instance</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    instance<span class="token punctuation">.</span>exports<span class="token punctuation">.</span><span class="token function">exported_func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://webassembly.github.io/spec/js-api/#modules">WebAssembly JavaScript Interface<!-- --> <br><small># <!-- -->modules</small></a></td></tr></tbody></table><div></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/WebAssembly">WebAssembly</a> overview page</li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/WebAssembly/Concepts">WebAssembly concepts</a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/WebAssembly/Using_the_JavaScript_API">Using the WebAssembly JavaScript API</a></li>
+</ul></div>

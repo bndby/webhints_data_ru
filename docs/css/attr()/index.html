@@ -1,0 +1,165 @@
+<h1>attr</h1><div><div></div></div><h2 id="описание"><a href="#описание" title="Permalink to Описание">Описание</a></h2><div><p>С помощью функции&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> <code>attr()</code>&nbsp;можно извлекать значение атрибута выбранного элемента и использовать это значение в таблице стилей. Функция работает и с псевдо-элементами. В этом случае возвращается значение атрибута элемента, для которого формируется <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements">псевдо-элемент</a>.</p>
+
+<p>Функцию&nbsp;<code>attr()</code>&nbsp;можно использовать с любым свойством CSS, но поддержка иных свойств, кроме <a href="/css/content/"><code>content</code></a>, является экспериментальной.</p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="brush:js notranslate"><code><span class="token comment">/* Пример простого использования */</span>
+<span class="token function">attr</span><span class="token punctuation">(</span>data<span class="token operator">-</span>count<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">attr</span><span class="token punctuation">(</span>title<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">/* С типом */</span>
+<span class="token function">attr</span><span class="token punctuation">(</span>src url<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">attr</span><span class="token punctuation">(</span>data<span class="token operator">-</span>count number<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">attr</span><span class="token punctuation">(</span>data<span class="token operator">-</span>width px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">/* с фоллбэком */</span>
+<span class="token function">attr</span><span class="token punctuation">(</span>data<span class="token operator">-</span>count number<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">attr</span><span class="token punctuation">(</span>src url<span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">attr</span><span class="token punctuation">(</span>data<span class="token operator">-</span>width px<span class="token punctuation">,</span> inherit<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">attr</span><span class="token punctuation">(</span>data<span class="token operator">-</span>something<span class="token punctuation">,</span> <span class="token string">'default'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="значения"><a href="#значения" title="Permalink to Значения">Значения</a></h3><div><dl>
+ <dt><code>attribute-name</code></dt>
+ <dd>Название атрибута элемента HTML, на который ссылаемся в CSS.</dd>
+ <dt><code style="white-space: nowrap;">&lt;type-or-unit&gt;</code> </dt>
+ <dd>
+ <div class="translate-form__result-text typo typo_text_l i-bem typo_js_inited">Является ключевым словом, представляющим либо тип значения атрибута, либо его единицу, так как в HTML некоторые атрибуты имеют неявные единицы. Если использование <code>&lt;type-or-unit&gt;</code> в качестве значения для данного атрибута недопустимо, выражение <code>attr()</code> также будет недопустимым. Если этот параметр опущен, по умолчанию используется <code>string</code> . Список допустимых значений:</div>
+
+ <table class="standard-table">
+  <thead>
+   <tr>
+    <th scope="col">Ключевое слово</th>
+    <th scope="col">Тип</th>
+    <th scope="col">Комментарий</th>
+    <th scope="col">Значение по умолчанию</th>
+   </tr>
+  </thead>
+  <tbody>
+   <tr>
+    <td><code>string</code></td>
+    <td><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/string"><code>&lt;string&gt;</code> <span>(en-US)</span></a></td>
+    <td>The attribute value is treated as a CSS <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/string"><code>&lt;string&gt;</code> <span>(en-US)</span></a>.&nbsp; It is NOT reparsed, and in particular the characters are used as-is instead of CSS escapes being turned into different characters.</td>
+    <td>An empty string</td>
+   </tr>
+   <tr>
+    <td><code>color</code> </td>
+    <td><a href="/css/color_value/"><code>&lt;color&gt;</code></a></td>
+    <td>The attribute value is parsed as a hash (3- or 6-value hash) or a keyword. It must be a valid CSS <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/string"><code>&lt;string&gt;</code> <span>(en-US)</span></a> value.<br>
+     Leading and trailing spaces are stripped.</td>
+    <td><code>currentColor</code></td>
+   </tr>
+   <tr>
+    <td><code>url</code> </td>
+    <td><a href="https://developer.mozilla.org/ru/docs/conflicting/Web/CSS/url()_168028c4e5edd9e19c061adb4b604d4f"><code>&lt;url&gt;</code></a></td>
+    <td>The attribute value is parsed as a string that is used inside a CSS <code>url()</code>function.<br>
+     Relative URL are resolved relatively to the original document, not relatively to the style sheet.<br>
+     Leading and trailing spaces are stripped.</td>
+    <td>The url <code>about:invalid</code> that points to a non-existent document with a generic error condition.</td>
+   </tr>
+   <tr>
+    <td><code>integer</code> </td>
+    <td><a href="/css/integer/"><code>&lt;integer&gt;</code></a></td>
+    <td>The attribute value is parsed as a CSS <a href="/css/integer/"><code>&lt;integer&gt;</code></a>. If it is not valid, that is not an integer or out of the range accepted by the CSS property, the default value is used.<br>
+     Leading and trailing spaces are stripped.</td>
+    <td><code>0</code>, or, if <code>0</code> is not a valid value for the property, the property's minimum value.</td>
+   </tr>
+   <tr>
+    <td><code>number</code> </td>
+    <td><a href="/css/number/"><code>&lt;number&gt;</code></a></td>
+    <td>The attribute value is parsed as a CSS <a href="/css/number/"><code>&lt;number&gt;</code></a>. If it is not valid, that is not a number or out of the range accepted by the CSS property, the default value is used.<br>
+     Leading and trailing spaces are stripped.</td>
+    <td><code>0</code>, or, if <code>0</code> is not a valid value for the property, the property's minimum value.</td>
+   </tr>
+   <tr>
+    <td><code>length</code> </td>
+    <td><a href="/css/length/"><code>&lt;length&gt;</code></a></td>
+    <td>The attribute value is parsed as a CSS <a href="/css/length/"><code>&lt;length&gt;</code></a> dimension, that is including the unit (e.g. <code>12.5em</code>). If it is not valid, that is not a length or out of the range accepted by the CSS property, the default value is used.<br>
+     If the given unit is a relative length, <code>attr()</code>computes it to an absolute length.<br>
+     Leading and trailing spaces are stripped.</td>
+    <td><code>0</code>, or, if <code>0</code> is not a valid value for the property, the property's minimum value.</td>
+   </tr>
+   <tr>
+    <td><code>em</code>, <code>ex</code>, <code>px</code>, <code>rem</code>, <code>vw</code>, <code>vh</code>, <code>vmin</code>, <code>vmax</code>, <code>mm</code>, <code>cm</code>, <code>in</code>, <code>pt</code>, or <code>pc</code> </td>
+    <td><a href="/css/length/"><code>&lt;length&gt;</code></a></td>
+    <td>The attribute value is parsed as a CSS <a href="/css/number/"><code>&lt;number&gt;</code></a>, that is without the unit (e.g. <code>12.5</code>), and interpreted as a <a href="/css/length/"><code>&lt;length&gt;</code></a> with the specified unit. If it is not valid, that is not a number or out of the range accepted by the CSS property, the default value is used.<br>
+     If the given unit is a relative length, <code>attr()</code>computes it to an absolute length.<br>
+     Leading and trailing spaces are stripped.</td>
+    <td><code>0</code>, or, if <code>0</code> is not a valid value for the property, the property's minimum value.</td>
+   </tr>
+   <tr>
+    <td><code>angle</code> </td>
+    <td><a href="/css/angle/"><code>&lt;angle&gt;</code></a></td>
+    <td>The attribute value is parsed as a CSS <a href="/css/angle/"><code>&lt;angle&gt;</code></a> dimension, that is including the unit (e.g. <code>30.5deg</code>). If it is not valid, that is not an angle or out of the range accepted by the CSS property, the default value is used.<br>
+     Leading and trailing spaces are stripped.</td>
+    <td><code>0deg</code>, or, if <code>0deg</code> is not a valid value for the property, the property's minimum value.</td>
+   </tr>
+   <tr>
+    <td><code>deg</code>, <code>grad</code>, <code>rad</code> </td>
+    <td><a href="/css/angle/"><code>&lt;angle&gt;</code></a></td>
+    <td>The attribute value is parsed as a CSS <a href="/css/number/"><code>&lt;number&gt;</code></a>, that is without the unit (e.g. <code>12.5</code>), and interpreted as an <a href="/css/angle/"><code>&lt;angle&gt;</code></a> with the specified unit. If it is not valid, that is not a number or out of the range accepted by the CSS property, the default value is used.<br>
+     Leading and trailing spaces are stripped.</td>
+    <td><code>0deg</code>, or, if <code>0deg</code> is not a valid value for the property, the property's minimum value.</td>
+   </tr>
+   <tr>
+    <td><code>time</code> </td>
+    <td><a href="/css/time/"><code>&lt;time&gt;</code></a></td>
+    <td>The attribute value is parsed as a CSS <a href="/css/time/"><code>&lt;time&gt;</code></a> dimension, that is including the unit (e.g. <code>30.5ms</code>). If it is not valid, that is not a time or out of the range accepted by the CSS property, the default value is used.<br>
+     Leading and trailing spaces are stripped.</td>
+    <td><code>0s</code>, or, if <code>0s</code> is not a valid value for the property, the property's minimum value.</td>
+   </tr>
+   <tr>
+    <td><code>s</code>, <code>ms</code> </td>
+    <td><a href="/css/time/"><code>&lt;time&gt;</code></a></td>
+    <td>The attribute value is parsed as a CSS <a href="/css/number/"><code>&lt;number&gt;</code></a>, that is without the unit (e.g. <code>12.5</code>), and interpreted as an<a href="/css/time/"><code>&lt;time&gt;</code></a> with the specified unit. If it is not valid, that is not a number or out of the range accepted by the CSS property, the default value is used.<br>
+     Leading and trailing spaces are stripped.</td>
+    <td><code>0s</code>, or, if <code>0s</code> is not a valid value for the property, the property's minimum value.</td>
+   </tr>
+   <tr>
+    <td><code>frequency</code> </td>
+    <td><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/frequency"><code>&lt;frequency&gt;</code> <span>(en-US)</span></a></td>
+    <td>The attribute value is parsed as a CSS <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/frequency"><code>&lt;frequency&gt;</code> <span>(en-US)</span></a> dimension, that is including the unit (e.g. <code>30.5kHz</code>). If it is not valid, that is not a frequency or out of the range accepted by the CSS property, the default value is used.</td>
+    <td><code>0Hz</code>, or, if <code>0Hz</code> is not a valid value for the property, the property's minimum value.</td>
+   </tr>
+   <tr>
+    <td><code>Hz</code>, <code>kHz</code> </td>
+    <td><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/frequency"><code>&lt;frequency&gt;</code> <span>(en-US)</span></a></td>
+    <td>The attribute value is parsed as a CSS <a href="/css/number/"><code>&lt;number&gt;</code></a>, that is without the unit (e.g. <code>12.5</code>), and interpreted as a <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/frequency"><code>&lt;frequency&gt;</code> <span>(en-US)</span></a> with the specified unit. If it is not valid, that is not a number or out of the range accepted by the CSS property, the default value is used.<br>
+     Leading and trailing spaces are stripped.</td>
+    <td><code>0Hz</code>, or, if <code>0Hz</code> is not a valid value for the property, the property's minimum value.</td>
+   </tr>
+   <tr>
+    <td><code>%</code> </td>
+    <td><a href="/css/percentage/"><code>&lt;percentage&gt;</code></a></td>
+    <td>The attribute value is parsed as a CSS <a href="/css/number/"><code>&lt;number&gt;</code></a>, that is without the unit (e.g. <code>12.5</code>), and interpreted as a <a href="/css/percentage/"><code>&lt;percentage&gt;</code></a>. If it is not valid, that is not a number or out of the range accepted by the CSS property, the default value is used.<br>
+     If the given value is used as a length, <code>attr()</code>computes it to an absolute length.<br>
+     Leading and trailing spaces are stripped.</td>
+    <td><code>0%</code>, or, if <code>0%</code> is not a valid value for the property, the property's minimum value.</td>
+   </tr>
+  </tbody>
+ </table>
+ </dd>
+ <dt><code>&lt;fallback&gt;</code> </dt>
+ <dd>The value to be used if the associated attribute is missing or contains an invalid value. The fallback value must be valid where <code>attr()</code> is used, even if it is not used, and must not contain another <code>attr()</code> expression. If <code>attr()</code> is not the sole component value of a property, its <code>&lt;fallback&gt;</code> value must be of the type defined by <code>&lt;type-or-unit&gt;</code>. If not set, CSS will use the default value defined for each <code>&lt;type-or-unit&gt;</code>.</dd>
+</dl></div><h3 id="формальный_синтаксис"><a href="#формальный_синтаксис" title="Permalink to Формальный синтаксис">Формальный синтаксис</a></h3><div><pre class="notranslate">attr( &lt;attr-name&gt; <a href="#type-or-unit">&lt;type-or-unit&gt;</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#question_mark_()" title="Currently only available in English (US)" class="only-in-en-us">? (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a>, &lt;attr-fallback&gt; <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#question_mark_()" title="Currently only available in English (US)" class="only-in-en-us">? (en-US)</a> )<p style="font-family:Open Sans,Arial,sans-serif; margin: 10px 0 0 0;">где <br><code style="font-family:Consolas,Monaco,&quot;Andale Mono&quot;,monospace;"><span id="type-or-unit">&lt;type-or-unit&gt;</span> = string <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> color <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> url <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> integer <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> number <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> length <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> angle <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> time <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> frequency <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> cap <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> ch <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> em <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> ex <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> ic <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> lh <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> rlh <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> rem <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> vb <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> vi <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> vw <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> vh <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> vmin <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> vmax <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> mm <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> Q <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> cm <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> in <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> pt <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> pc <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> px <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> deg <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> grad <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> rad <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> turn <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> ms <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> s <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> Hz <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> kHz <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> %</code></p></pre></div><h2 id="пример"><a href="#пример" title="Permalink to Пример">Пример</a></h2><div><pre class="brush: css notranslate"><code><span class="token selector">p::before</span> <span class="token punctuation">{</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token function">attr</span><span class="token punctuation">(</span>data-foo<span class="token punctuation">)</span> <span class="token string">" "</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-foo</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>hello<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>world<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h3 id="результат"><a href="#результат" title="Permalink to Результат">Результат</a></h3><div><p><iframe class="sample-code-frame" id="frame_Examples" width="100%" height="80" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/attr()/_sample_.Examples.html" loading="lazy"></iframe></p></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-values-3/#attr" hreflang="en" lang="en" class="external" rel=" noopener">CSS Values and Units Module Level&nbsp;3<br><small lang="ru">Определение 'attr()' в этой спецификации.</small></a></td>
+   <td><span class="spec-cr">Кандидат в рекомендации</span></td>
+   <td>Added two optional parameters; can be used on all properties; may return other values than <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/string"><code>&lt;string&gt;</code> <span>(en-US)</span></a>. These changes are experimental and may be dropped during the CR phase if browser support is too small.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/CSS2/generate.html#x18" hreflang="en" lang="en" class="external" rel=" noopener">CSS Level&nbsp;2 (Revision&nbsp;1)<br><small lang="ru">Определение 'attr()' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Limited to the <a href="/css/content/"><code>content</code></a> property; always return a <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/string"><code>&lt;string&gt;</code> <span>(en-US)</span></a>.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="совместимость_с_браузерами"><a href="#совместимость_с_браузерами" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div>

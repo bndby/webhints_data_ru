@@ -1,0 +1,102 @@
+<h1>outline</h1><div><div></div>
+
+<p>The <strong><code>outline</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties">shorthand property</a> set all the outline properties in a single declaration.</p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/outline.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div></div><h2 id="constituent_properties"><a href="#constituent_properties" title="Permalink to Constituent properties">Constituent properties</a></h2><div><p>This property is a shorthand for the following CSS properties:</p>
+
+<ul>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/outline-color"><code>outline-color</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/outline-style"><code>outline-style</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/outline-width"><code>outline-width</code></a></li>
+</ul></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: css no-line-numbers notranslate"><code><span class="token comment">/* style */</span>
+<span class="token property">outline</span><span class="token punctuation">:</span> solid<span class="token punctuation">;</span>
+
+<span class="token comment">/* color | style */</span>
+<span class="token property">outline</span><span class="token punctuation">:</span> #f66 dashed<span class="token punctuation">;</span>
+
+<span class="token comment">/* style | width */</span>
+<span class="token property">outline</span><span class="token punctuation">:</span> inset thick<span class="token punctuation">;</span>
+
+<span class="token comment">/* color | style | width */</span>
+<span class="token property">outline</span><span class="token punctuation">:</span> green solid 3px<span class="token punctuation">;</span>
+
+<span class="token comment">/* Global values */</span>
+<span class="token property">outline</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">outline</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">outline</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre>
+
+<p>The <code>outline</code> property may be specified using one, two, or three of the values listed below. The order of the values does not matter.</p>
+
+<div class="note notecard">
+<p><strong>Note:</strong> The outline will be invisible for many elements if its style is not defined. This is because the style defaults to <code>none</code>. A notable exception is <code>input</code> elements, which are given default styling by browsers.</p>
+</div></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+ <dt><code>&lt;'outline-color'&gt;</code></dt>
+ <dd>Sets the color of the outline. Defaults to <code>currentcolor</code> if absent. See <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/outline-color"><code>outline-color</code></a>.</dd>
+ <dt><code>&lt;'outline-style'&gt;</code></dt>
+ <dd>Sets the style of the outline. Defaults to <code>none</code> if absent. See <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/outline-style"><code>outline-style</code></a>.</dd>
+ <dt><code>&lt;'outline-width'&gt;</code></dt>
+ <dd>Sets the thickness of the outline. Defaults to <code>medium</code> if absent. See <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/outline-width"><code>outline-width</code></a>.</dd>
+</dl></div><h2 id="description"><a href="#description" title="Permalink to Description">Description</a></h2><div><p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border">Borders</a> and outlines are very similar. However, outlines differ from borders in the following ways:</p>
+
+<ul>
+ <li>Outlines never take up space, as they are drawn outside of an element's content.</li>
+ <li>According to the spec, outlines don't have to be rectangular, although they usually are.</li>
+</ul>
+
+<p>As with all shorthand properties, any omitted sub-values will be set to their <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">initial value</a>.</p></div><h2 id="accessibility_concerns"><a href="#accessibility_concerns" title="Permalink to Accessibility concerns">Accessibility concerns</a></h2><div><p>Assigning <code>outline</code> a value of <code>0</code> or <code>none</code> will remove the browser's default focus style. If an element can be interacted with it must have a visible focus indicator. Provide obvious focus styling if the default focus style is removed.</p>
+
+<ul>
+ <li><a href="https://www.deque.com/blog/give-site-focus-tips-designing-usable-focus-indicators/" class="external" rel=" noopener">How to Design Useful and Usable Focus Indicators</a></li>
+ <li>
+  <p><abbr>WCAG</abbr> 2.1:&nbsp;<a href="https://www.w3.org/WAI/WCAG21/Understanding/focus-visible.html" class="external" rel=" noopener">Understanding Success Criterion 2.4.7: Focus Visible</a></p>
+ </li>
+</ul></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td>as each of the properties of the shorthand:<br><ul><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/outline-color"><code>outline-color</code></a>: <code>invert</code>, for browsers supporting it, <code>currentColor</code> for the other</li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/outline-style"><code>outline-style</code></a>: <code>none</code></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/outline-width"><code>outline-width</code></a>: <code>medium</code></li></ul></td></tr><tr><th scope="row">Applies to</th><td>all elements</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance">Inherited</a></th><td>no</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>as each of the properties of the shorthand:<br><ul><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/outline-color"><code>outline-color</code></a>: For the keyword <code>invert</code>, the computed value is <code>invert</code>. For the color value, if the value is translucent, the computed value will be the <code>rgba()</code> corresponding one. If it isn't, it will be the <code>rgb()</code> corresponding one. The <code>transparent</code> keyword maps to <code>rgba(0,0,0,0)</code>.</li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/outline-width"><code>outline-width</code></a>: an absolute length; if the keyword <code>none</code> is specified, the computed value is <code>0</code></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/outline-style"><code>outline-style</code></a>: as specified</li></ul></td></tr><tr><th scope="row">Animation type</th><td>as each of the properties of the shorthand:<br><ul><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/outline-color"><code>outline-color</code></a>: a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#interpolation" title="Values of the <color> CSS data type are interpolated on each of their red, green, blue components, each handled as a real, floating-point number. Note that interpolation of colors happens in the alpha-premultiplied sRGBA color space to prevent unexpected grey colors to appear.">color</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/outline-width"><code>outline-width</code></a>: a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length#interpolation" title="Values of the <length> CSS data type are interpolated as real, floating-point numbers.">length</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/outline-style"><code>outline-style</code></a>: discrete</li></ul></td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">[</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/outline-color" title="<color> | invert">&lt;'outline-color'&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_bar" title="Double bar: one or several of the entities must be present, in any order">||</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/outline-style" title="auto | <'border-style'>">&lt;'outline-style'&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_bar" title="Double bar: one or several of the entities must be present, in any order">||</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/outline-width" title="<line-width>">&lt;'outline-width'&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">]</a></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="using_outline_to_set_a_focus_style"><a href="#using_outline_to_set_a_focus_style" title="Permalink to Using outline to set a focus style">Using outline to set a focus style</a></h3><div><h4 id="html">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This link has a special focus style.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<h4 id="css">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token selector">a</span> <span class="token punctuation">{</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 1px solid<span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 3px<span class="token punctuation">;</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 5px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">a:focus</span> <span class="token punctuation">{</span>
+  <span class="token property">outline</span><span class="token punctuation">:</span> 4px dotted #e73<span class="token punctuation">;</span>
+  <span class="token property">outline-offset</span><span class="token punctuation">:</span> 4px<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> #ffa<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<h4 id="result">Result</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Using_outline_to_set_a_focus_style" width="100%" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/outline/_sample_.Using_outline_to_set_a_focus_style.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-ui-3/#outline" hreflang="en" lang="en" class="external" rel=" noopener">CSS Basic User Interface Module Level&nbsp;3<br><small lang="en-US">The definition of 'outline' in that specification.</small></a></td>
+   <td><span class="spec-rec">Recommendation</span></td>
+   <td>No change.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/CSS2/ui.html#propdef-outline" hreflang="en" lang="en" class="external" rel=" noopener">CSS Level&nbsp;2 (Revision&nbsp;1)<br><small lang="en-US">The definition of 'outline' in that specification.</small></a></td>
+   <td><span class="spec-rec">Recommendation</span></td>
+   <td>Initial definition.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/outline-color"><code>outline-color</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/outline-style"><code>outline-style</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/outline-width"><code>outline-width</code></a></li>
+</ul></div>

@@ -1,0 +1,27 @@
+<h1>TypedArray.prototype.toString()</h1><div><div></div>
+
+<p>The <strong><code>toString()</code></strong> method returns a string representing the
+  specified array and its elements. This method has the same algorithm as
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toString"><code>Array.prototype.toString()</code></a>. <em>TypedArray</em> is one of the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray#typedarray_objects">typed
+    array types</a> here.</p>
+
+<div><iframe class="interactive" width="100%" height="410" src="https://interactive-examples.mdn.mozilla.net/pages/js/typedarray-tostring.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: js notranslate"><code><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre></div><h3 id="return_value"><a href="#return_value" title="Permalink to Return value">Return value</a></h3><div><p>A string representing the elements of the typed array.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div><p>The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray"><code>TypedArray</code></a> objects override the <code>toString</code> method of
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object"><code>Object</code></a>. For <code>TypedArray</code> objects, the <code>toString</code>
+  method joins the array and returns one string containing each typed array element
+  separated by commas. For example, the following code creates a typed array and uses
+  <code>toString</code> to convert the array to a string.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> numbers <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Uint8Array</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+numbers<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "2,5,8,1,4"</span>
+</code></pre>
+
+<p>JavaScript calls the <code>toString</code> method automatically when a typed array is
+  to be represented as a text value or when an array is referred to in a string
+  concatenation.</p></div><h3 id="compatibility"><a href="#compatibility" title="Permalink to Compatibility">Compatibility</a></h3><div><p>If a browser doesn't support the <code>TypedArray.prototype.toString()</code> method
+  yet, JavaScript will call the <code>toString</code> method of <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object"><code>Object</code></a>:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> numbers <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Uint8Array</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+numbers<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "[object Uint8Array]"</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://tc39.es/ecma262/#sec-%typedarray%.prototype.tostring">Unknown specification<!-- --> <br><small># <!-- -->sec-%typedarray%.prototype.tostring</small></a></td></tr></tbody></table><div></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/join"><code>TypedArray.prototype.join()</code></a></li>
+</ul></div>

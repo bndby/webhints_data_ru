@@ -1,0 +1,49 @@
+<h1>ascent-override</h1><div><p></p><p></p>
+
+<p>The <strong><code>ascent-override</code></strong> CSS descriptor defines the ascent metric for the font. The ascent metric is the height above the baseline that CSS uses to lay out line boxes in an inline formatting context.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: css notranslate"><code><span class="token property">ascent-override</span><span class="token punctuation">:</span> normal<span class="token punctuation">;</span>
+<span class="token property">ascent-override</span><span class="token punctuation">:</span> 90%<span class="token punctuation">;</span></code></pre></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+ <dt><code>normal</code></dt>
+ <dd>The default value. When used the metric value is obtained from the font file.</dd>
+ <dt><code>&lt;percentage&gt;</code></dt>
+ <dd>A <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/percentage"><code>&lt;percentage&gt;</code></a> value.</dd>
+</dl></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row">Related <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule">at-rule</a></th><td><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face"><code>@font-face</code></a></td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td><code>normal</code></td></tr><tr><th scope="row">Percentages</th><td>as specified</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>as specified</td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate">normal <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/percentage" title>&lt;percentage&gt;</a></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="overriding_metrics_of_a_fallback_font"><a href="#overriding_metrics_of_a_fallback_font" title="Permalink to Overriding metrics of a fallback font">Overriding metrics of a fallback font</a></h3><div><p>The <code>ascent-override</code> property can help when overriding the metrics of a fallback font to better match those of a primary web font.</p>
+
+<pre class="brush: css notranslate"><code><span class="token atrule"><span class="token rule">@font-face</span></span> <span class="token punctuation">{</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> web-font<span class="token punctuation">;</span>
+  <span class="token property">src</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string url">"https://example.com/font.woff"</span><span class="token punctuation">)</span></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token atrule"><span class="token rule">@font-face</span></span> <span class="token punctuation">{</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> local-font<span class="token punctuation">;</span>
+  <span class="token property">src</span><span class="token punctuation">:</span> <span class="token function">local</span><span class="token punctuation">(</span>Local Font<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">ascent-override</span><span class="token punctuation">:</span> 125%<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-fonts-4/#descdef-font-face-ascent-override" hreflang="en" lang="en" class="external" rel=" noopener">CSS Fonts Module Level&nbsp;4<br><small lang="en-US">The definition of 'ascent-override' in that specification.</small></a></td>
+   <td><span class="spec-wd">Working Draft</span></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/descent-override"><code>descent-override</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display"><code>font-display</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-family"><code>font-family</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-weight"><code>font-weight</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-style"><code>font-style</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-stretch"><code>font-stretch</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-variant"><code>font-variant</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-feature-settings"><code>font-feature-settings</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-variation-settings"><code>font-variation-settings</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/line-gap-override"><code>line-gap-override</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/src"><code>src</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/size-adjust"><code>size-adjust</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/unicode-range"><code>unicode-range descriptor</code></a></li>
+</ul></div>

@@ -1,0 +1,267 @@
+<h1>Дата</h1><div><div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Создаёт экземпляр объекта <strong><code>Date</code></strong>, представляющего собой момент времени. Объект Дата содержит число миллисекунд прошедших с 1 января 1970 г. UTC</p>
+
+
+
+<p><iframe class="interactive" width="100%" height="490" src="https://interactive-examples.mdn.mozilla.net/pages/js/date-constructor.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code>new Date();
+new Date(<var>value</var>);
+new Date(<var>dateString</var>);
+new Date(<var>year</var>, <var>month</var>[, <var>day</var>[, <var>hour</var>[, <var>minute</var>[, <var>second</var>[, <var>millisecond</var>]]]]]);
+</code></pre>
+
+<div class="note notecard">
+<p><strong>Обратите внимание:</strong> объекты <code>Date</code> могут быть созданы только путём вызова функции <code>Date</code> в качестве конструктора: обычный вызов функции (то есть, без использования оператора <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/new"><code>new</code></a>) вернёт строку вместо объекта <code>Date</code>; в отличие от других объектных типов JavaScript, объекты <code>Date</code> не имеют литерального синтаксиса.</p>
+</div></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><div class="note notecard">
+<p><strong>Обратите внимание:</strong> если функция <code>Date</code> вызывается в качестве конструктора с более, чем одним аргументом, значения, большие логического диапазона (например, 13 в качестве номера месяца или 70 для значения минут) «переметнутся» на соседние значения. Например, вызов <code>new Date(2013, 13, 1)</code> эквивалентен вызову <code>new Date(2014, 1, 1)</code>, оба создадут дату <code>2014-02-01</code> (нумерация месяцев начинается с нуля). Тоже самое действует и для других значений: вызов <code>new Date(2013, 2, 1, 0, 70)</code> эквивалентен вызову <code>new Date(2013, 2, 1, 1, 10)</code>&nbsp;— оба вызова создадут дату <code>2013-03-01T01:10:00</code>.</p>
+</div>
+
+<div class="note notecard">
+<p><strong>Обратите внимание:</strong> если функция Date вызывается в качестве конструктора с более чем одним аргументом, то указанные аргументы интерпретируются как локальное время. Если аргументы указывают время в UTC, используйте <code>new Date(<a href="/js/Date/UTC/"><code>Date.UTC(...)</code></a>)</code> с теми же аргументами.</p>
+</div>
+
+<dl>
+ <dt><code>value</code></dt>
+ <dd>Целое значение, представляющее количество миллисекунд, прошедших с 1 января 1970 00:00:00 по UTC (эпохи Unix).</dd>
+ <dt><code>dateString</code></dt>
+ <dd>Строковое значение, представляющее дату. Строка должна быть в одном из форматов, распознаваемых методом <a href="/js/Date/parse/"><code>Date.parse()</code></a> (совместимые с IETF RFC 2822 временные метки [<a href="https://tools.ietf.org/html/rfc2822#page-14" class="external" rel=" noopener">на английском</a>, <a href="http://rfc2.ru/5322.rfc/print#p3.3" class="external" rel=" noopener">на русском</a>], а также версия ISO8601 [<a href="https://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15" class="external" rel=" noopener">на английском</a>, <a href="http://es5.javascript.ru/x15.9.html#x15.9.1.15" class="external" rel=" noopener">на русском</a>]).</dd>
+ <dt><code>year</code></dt>
+ <dd>Целое значение, представляющее год. Значения с 0 по 99 отображаются на года с 1900 по 1999. Смотрите <a href="#example:_two_digit_years_map_to_1900_-_1999">пример ниже</a>.</dd>
+ <dt><code>month</code></dt>
+ <dd>Целое значение, представляющее месяц, начинается с 0 для января и кончается 11 для декабря.</dd>
+ <dt><code>day</code></dt>
+ <dd>Необязательный параметр. Целое значение, представляющее день месяца.</dd>
+ <dt><code>hour</code></dt>
+ <dd>Необязательный параметр. Целое значение, представляющее часы дня.</dd>
+ <dt><code>minute</code></dt>
+ <dd>Необязательный параметр. Целое значение, представляющее минуты времени.</dd>
+ <dt><code>second</code></dt>
+ <dd>Необязательный параметр. Целое значение, представляющее секунды времени.</dd>
+ <dt><code>millisecond</code></dt>
+ <dd>Необязательный параметр. Целое значение, представляющее миллисекунды времени.</dd>
+</dl></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><ul>
+ <li>Если никаких аргументов передано не было, конструктор создаёт объект <code>Date</code>&nbsp; для текущих даты и времени, согласно системным настройкам.</li>
+ <li>Если передано как минимум два аргумента, отсутствующие аргументы устанавливаются в стартовые значения - день месяца 1 и&nbsp;время полуночи.</li>
+ <li>Дата в JavaScript измеряется в миллисекундах, прошедших с полуночи 1 января 1970 года по UTC. День содержит 86&nbsp;400&nbsp;000 миллисекунд. Диапазон дат объекта <code>Date</code> варьируется от -100&nbsp;000&nbsp;000 до 100&nbsp;000&nbsp;000 дней относительно 1 января 1970 года по UTC.</li>
+ <li>Объект <code>Date</code> обеспечивает универсальное поведение на всех платформах. Значение времени может передаваться между системами для представления одинакового момента во времени и, если оно используется для создания локального объекта даты, будет отражать местный эквивалент времени.</li>
+ <li>Объект <code>Date</code> поддерживает несколько методов для работы с UTC (всемирным координированным временем), наряду с методами работы с местным временем. UTC, также известное как среднее время по Гринвичу (GMT), ссылается на время, установленное Всемирным стандартом времени. Местное время&nbsp;— это время на компьютере, на котором выполняется JavaScript.</li>
+ <li>Вызов объекта <code>Date</code> в качестве функции (то есть, без использования оператора <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/new"><code>new</code></a>) вернёт строку, представляющую текущие дату и время.</li>
+</ul></div><h2 id="properties"><a href="#properties" title="Permalink to Свойства">Свойства</a></h2><div><dl>
+ <dt><a href="https://developer.mozilla.org/ru/docs/conflicting/Web/JavaScript/Reference/Global_Objects/Date"><code>Date.prototype</code></a></dt>
+ <dd>Позволяет добавлять свойства к объекту <code>Date</code>.</dd>
+ <dt><code>Date.length</code></dt>
+ <dd>Значение свойства <code>Date.length</code> равно 7. Это количество аргументов, обрабатываемых конструктором.</dd>
+</dl>
+
+<div><div class="notecard note">
+
+<div><span>Свойства, унаследованные из <a href="/js/Function/"><code>Function</code></a>:</span></div>
+<div><a class="internal" href="/js/Function/Arity/"><code>arity</code></a>, <a class="internal" href="/js/Function/caller/"><code>caller</code></a>, <a class="internal only-in-en-us" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" title="Currently only available in English (US)">constructor (en-US)</a>, <a class="internal" href="/js/Function/length/"><code>length</code></a>, <a class="internal" href="/js/Function/name/"><code>name</code></a></div>
+</div></div></div><h2 id="methods"><a href="#methods" title="Permalink to Методы">Методы</a></h2><div><dl>
+ <dt><a href="/js/Date/now/"><code>Date.now()</code></a></dt>
+ <dd>Возвращает числовое значение, соответствующее текущему времени&nbsp;— количество миллисекунд, прошедших с 1 января 1970 года 00:00:00 по UTC.</dd>
+ <dt><a href="/js/Date/parse/"><code>Date.parse()</code></a></dt>
+ <dd>Разбирает строковое представление даты и возвращает количество миллисекунд с 1 января 1970 года 00:00:00 по местному времени.</dd>
+ <dt><a href="/js/Date/UTC/"><code>Date.UTC()</code></a></dt>
+ <dd>Принимает те же самые параметры, что и самый длинный вариант конструктора (то есть, от 2 до 7) и возвращает количество миллисекунд, прошедших с 1 января 1970 года 00:00:00 по UTC.</dd>
+</dl>
+
+<div><div class="notecard note">
+
+<div><span>Методы, унаследованные из <a href="/js/Function/"><code>Function</code></a>:</span></div>
+<div><a class="internal" href="/js/Function/apply/"><code>apply</code></a>, <a class="internal" href="/js/Function/call/"><code>call</code></a>, <a class="internal" href="/js/Function/toSource/"><code>toSource</code></a>, <a class="internal" href="/js/Function/toString/"><code>toString</code></a></div>
+</div></div></div><h2 id="date_instances"><a href="#date_instances" title="Permalink to Экземпляры объекта Date">Экземпляры объекта <code>Date</code></a></h2><div><p>Все экземпляры объекта <code>Date</code> наследуются от <a href="https://developer.mozilla.org/ru/docs/conflicting/Web/JavaScript/Reference/Global_Objects/Date"><code>Date.prototype</code></a>. Объект прототипа конструктора <code>Date</code> может быть изменён, чтобы затронуть все экземпляры объекта <code>Date</code>.</p></div><h3 id="методы"><a href="#методы" title="Permalink to Методы">Методы</a></h3><div><div><h3 id="Getter" name="Getter">Получения значения</h3><dl>
+ <dt><a href="/js/Date/getDate/"><code>Date.prototype.getDate()</code></a></dt>
+ <dd>Возвращает день месяца (1-31) указанной даты по местному времени.</dd>
+ <dt><a href="/js/Date/getDay/"><code>Date.prototype.getDay()</code></a></dt>
+ <dd>Возвращает день недели (0-6) указанной даты по местному времени.</dd>
+ <dt><a href="/js/Date/getFullYear/"><code>Date.prototype.getFullYear()</code></a></dt>
+ <dd>Возвращает год (4 цифры для 4-х значного года) указанной даты по местному времени.</dd>
+ <dt><a href="/js/Date/getHours/"><code>Date.prototype.getHours()</code></a></dt>
+ <dd>Возвращает часы (0-23) указанной даты по местному времени.</dd>
+ <dt><a href="/js/Date/getMilliseconds/"><code>Date.prototype.getMilliseconds()</code></a></dt>
+ <dd>Возвращает миллисекунды (0-999) указанной даты по местному времени.</dd>
+ <dt><a href="/js/Date/getMinutes/"><code>Date.prototype.getMinutes()</code></a></dt>
+ <dd>Возвращает минуты (0-59) указанной даты по местному времени.</dd>
+ <dt><a href="/js/Date/getMonth/"><code>Date.prototype.getMonth()</code></a></dt>
+ <dd>Возвращает месяц (0-11) указанной даты по местному времени.</dd>
+ <dt><a href="/js/Date/getSeconds/"><code>Date.prototype.getSeconds()</code></a></dt>
+ <dd>Возвращает секунды (0-59) указанной даты по местному времени.</dd>
+ <dt><a href="/js/Date/getTime/"><code>Date.prototype.getTime()</code></a></dt>
+ <dd>Возвращает числовое значение указанной даты как количество миллисекунд, прошедших с 1 января 1970 года 00:00:00 по UTC (отрицательное значение для даты до этого момента).</dd>
+ <dt><a href="/js/Date/getTimezoneOffset/"><code>Date.prototype.getTimezoneOffset()</code></a></dt>
+ <dd>Возвращает смещение часового пояса в минутах для текущей локали.</dd>
+ <dt><a href="/js/Date/getUTCDate/"><code>Date.prototype.getUTCDate()</code></a></dt>
+ <dd>Возвращает день месяца (1-31) указанной даты по всемирному координированному времени.</dd>
+ <dt><a href="/js/Date/getUTCDay/"><code>Date.prototype.getUTCDay()</code></a></dt>
+ <dd>Возвращает день недели (0-6) указанной даты по всемирному координированному времени.</dd>
+ <dt><a href="/js/Date/getUTCFullYear/"><code>Date.prototype.getUTCFullYear()</code></a></dt>
+ <dd>Возвращает год (4 цифры для 4-х значного года) указанной даты по всемирному координированному времени.</dd>
+ <dt><a href="/js/Date/getUTCHours/"><code>Date.prototype.getUTCHours()</code></a></dt>
+ <dd>Возвращает часы (0-23) указанной даты по всемирному координированному времени.</dd>
+ <dt><a href="/js/Date/getUTCMilliseconds/"><code>Date.prototype.getUTCMilliseconds()</code></a></dt>
+ <dd>Возвращает миллисекунды (0-999) указанной даты по всемирному координированному времени.</dd>
+ <dt><a href="/js/Date/getUTCMinutes/"><code>Date.prototype.getUTCMinutes()</code></a></dt>
+ <dd>Возвращает минуты (0-59) указанной даты по всемирному координированному времени.</dd>
+ <dt><a href="/js/Date/getUTCMonth/"><code>Date.prototype.getUTCMonth()</code></a></dt>
+ <dd>Возвращает месяц (0-11) указанной даты по всемирному координированному времени.</dd>
+ <dt><a href="/js/Date/getUTCSeconds/"><code>Date.prototype.getUTCSeconds()</code></a></dt>
+ <dd>Возвращает секунды (0-59) указанной даты по всемирному координированному времени.</dd>
+ <dt><a href="/js/Date/getYear/"><code>Date.prototype.getYear()</code></a> </dt>
+ <dd>Возвращает год (обычно 2-3 цифры) указанной даты по всемирному координированному времени. Вместо него используйте метод <a href="/js/Date/getFullYear/"><code>getFullYear()</code></a>.</dd>
+</dl><h3 id="Setter" name="Setter">Установки значения</h3><dl>
+ <dt><a href="/js/Date/setDate/"><code>Date.prototype.setDate()</code></a></dt>
+ <dd>Устанавливает день месяца указанной даты по местному времени.</dd>
+ <dt><a href="/js/Date/setFullYear/"><code>Date.prototype.setFullYear()</code></a></dt>
+ <dd>Устанавливает полный год (4 цифры для 4-х значного года) указанной даты по местному времени.</dd>
+ <dt><a href="/js/Date/setHours/"><code>Date.prototype.setHours()</code></a></dt>
+ <dd>Устанавливает часы указанной даты по местному времени.</dd>
+ <dt><a href="/js/Date/setMilliseconds/"><code>Date.prototype.setMilliseconds()</code></a></dt>
+ <dd>Устанавливает миллисекунды указанной даты по местному времени.</dd>
+ <dt><a href="/js/Date/setMinutes/"><code>Date.prototype.setMinutes()</code></a></dt>
+ <dd>Устанавливает минуты указанной даты по местному времени.</dd>
+ <dt><a href="/js/Date/setMonth/"><code>Date.prototype.setMonth()</code></a></dt>
+ <dd>Устанавливает месяц указанной даты по местному времени.</dd>
+ <dt><a href="/js/Date/setSeconds/"><code>Date.prototype.setSeconds()</code></a></dt>
+ <dd>Устанавливает секунды указанной даты по местному времени.</dd>
+ <dt><a href="/js/Date/setTime/"><code>Date.prototype.setTime()</code></a></dt>
+ <dd>Устанавливает объект <a href="/js/Date/" aria-current="page"><code>Date</code></a> во время, представляемое количеством миллисекунд, прошедших с 1 января 1970 года 00:00:00 по UTC (отрицательное значение устанавливает даты до этого момента).</dd>
+ <dt><a href="/js/Date/setUTCDate/"><code>Date.prototype.setUTCDate()</code></a></dt>
+ <dd>Устанавливает день месяца указанной даты по всемирному координированному времени.</dd>
+ <dt><a href="/js/Date/setUTCFullYear/"><code>Date.prototype.setUTCFullYear()</code></a></dt>
+ <dd>Устанавливает полный год (4 цифры для 4-х значного года) указанной даты по всемирному координированному времени.</dd>
+ <dt><a href="/js/Date/setUTCHours/"><code>Date.prototype.setUTCHours()</code></a></dt>
+ <dd>Устанавливает часы указанной даты по всемирному координированному времени.</dd>
+ <dt><a href="/js/Date/setUTCMilliseconds/"><code>Date.prototype.setUTCMilliseconds()</code></a></dt>
+ <dd>Устанавливает миллисекунды указанной даты по всемирному координированному времени.</dd>
+ <dt><a href="/js/Date/setUTCMinutes/"><code>Date.prototype.setUTCMinutes()</code></a></dt>
+ <dd>Устанавливает минуты указанной даты по всемирному координированному времени.</dd>
+ <dt><a href="/js/Date/setUTCMonth/"><code>Date.prototype.setUTCMonth()</code></a></dt>
+ <dd>Устанавливает месяц указанной даты по всемирному координированному времени.</dd>
+ <dt><a href="/js/Date/setUTCSeconds/"><code>Date.prototype.setUTCSeconds()</code></a></dt>
+ <dd>Устанавливает секунды указанной даты по всемирному координированному времени.</dd>
+ <dt><a href="/js/Date/setYear/"><code>Date.prototype.setYear()</code></a> </dt>
+ <dd>Устанавливает год (обычно 2-3 цифры) указанной даты по всемирному координированному времени. Вместо него используйте метод <a href="/js/Date/setFullYear/"><code>setFullYear()</code></a>.</dd>
+</dl><h3 id="Conversion_getter" name="Conversion_getter">Получения преобразованного значения</h3><dl>
+ <dt><a href="/js/Date/toDateString/"><code>Date.prototype.toDateString()</code></a></dt>
+ <dd>Возвращает часть, содержащую только дату объекта <a href="/js/Date/" aria-current="page"><code>Date</code></a> в качестве человеко-читаемой строки.</dd>
+ <dt><a href="/js/Date/toISOString/"><code>Date.prototype.toISOString()</code></a></dt>
+ <dd>Преобразует дату в строку, следуя расширенному формату ISO 8601.</dd>
+ <dt><a href="/js/Date/toJSON/"><code>Date.prototype.toJSON()</code></a></dt>
+ <dd>Возвращает строку, представляющую объект <a href="/js/Date/" aria-current="page"><code>Date</code></a>, используя метод <a href="/js/Date/toISOString/"><code>toISOString()</code></a>. Предназначен для использования методом <a href="/js/JSON/stringify/"><code>JSON.stringify()</code></a>.</dd>
+ <dt><a href="/js/Date/toGMTString/"><code>Date.prototype.toGMTString()</code></a> </dt>
+ <dd>Возвращает строку, представляющую объект <a href="/js/Date/" aria-current="page"><code>Date</code></a>, на основе часового пояса GMT (всемирное время). Вместо него используйте метод <a href="/js/Date/toUTCString/"><code>toUTCString()</code></a>.</dd>
+ <dt><a href="/js/Date/toLocaleDateString/"><code>Date.prototype.toLocaleDateString()</code></a></dt>
+ <dd>Возвращает строку с датой, чьё представление зависит от системных настроек локали.</dd>
+ <dt><a class="page-not-created" title="Документация об этом ещё не написана; пожалуйста, поспособствуйте её написанию!"><code>Date.prototype.toLocaleFormat()</code></a> </dt>
+ <dd>Преобразует дату в строку, используя строку форматирования.</dd>
+ <dt><a href="/js/Date/toLocaleString/"><code>Date.prototype.toLocaleString()</code></a></dt>
+ <dd>Возвращает строку, чьё представление зависит от настроек локали. Переопределяет метод <a href="/js/Object/toLocaleString/"><code>Object.prototype.toLocaleString()</code></a>.</dd>
+ <dt><a href="/js/Date/toLocaleTimeString/"><code>Date.prototype.toLocaleTimeString()</code></a></dt>
+ <dd>Возвращает строку со временем, чьё представление зависит от системных настроек локали.</dd>
+ <dt><a href="/js/Date/toSource/"><code>Date.prototype.toSource()</code></a> </dt>
+ <dd>Возвращает строковое представление исходного кода эквивалентного объекта <a href="/js/Date/" aria-current="page"><code>Date</code></a>; вы можете использовать это значение для создания нового объекта. Переопределяет метод <a href="/js/Object/toSource/"><code>Object.prototype.toSource()</code></a>.</dd>
+ <dt><a href="/js/Date/toString/"><code>Date.prototype.toString()</code></a></dt>
+ <dd>Возвращает строковое представление указанного объекта <a href="/js/Date/" aria-current="page"><code>Date</code></a>. Переопределяет метод <a href="/js/Object/toString/"><code>Object.prototype.toString()</code></a>.</dd>
+ <dt><a href="/js/Date/toTimeString/"><code>Date.prototype.toTimeString()</code></a></dt>
+ <dd>Возвращает часть, содержащую только время объекта <a href="/js/Date/" aria-current="page"><code>Date</code></a> в качестве человеко-читаемой строки.</dd>
+ <dt><a href="/js/Date/toUTCString/"><code>Date.prototype.toUTCString()</code></a></dt>
+ <dd>Преобразует дату в строку, используя часовой пояс UTC.</dd>
+ <dt><a href="/js/Date/valueOf/"><code>Date.prototype.valueOf()</code></a></dt>
+ <dd>Возвращает примитивное значение объекта <a href="/js/Date/" aria-current="page"><code>Date</code></a>. Переопределяет метод <a href="/js/Object/valueOf/"><code>Object.prototype.valueOf()</code></a>.</dd>
+</dl><div><div class="notecard note">
+
+<div><span>Методы, унаследованные из <a href="/js/Object/"><code>Object</code></a>:</span></div>
+<div><a class="internal only-in-en-us" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineGetter__" title="Currently only available in English (US)">defineGetter (en-US)</a>, <a class="internal only-in-en-us" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineSetter__" title="Currently only available in English (US)">defineSetter (en-US)</a>, <a class="internal" href="/js/Object/hasOwnProperty/"><code>hasOwnProperty</code></a>, <a class="internal" href="/js/Object/isPrototypeOf/"><code>isPrototypeOf</code></a>, <a class="internal only-in-en-us" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupGetter__" title="Currently only available in English (US)">lookupGetter (en-US)</a>, <a class="internal only-in-en-us" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupSetter__" title="Currently only available in English (US)">lookupSetter (en-US)</a>, <a class="internal" href="/js/Object/Nosuchmethod/"><code>noSuchMethod</code></a>, <a class="internal" href="/js/Object/propertyIsEnumerable/"><code>propertyIsEnumerable</code></a>, <a class="internal" href="/js/Object/Unwatch/"><code>unwatch</code></a>, <a class="internal" href="/js/Object/Watch/"><code>watch</code></a></div>
+</div></div></div></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_several_ways_to_assign_dates"><a href="#example_several_ways_to_assign_dates" title="Permalink to Пример: несколько способов создания объекта Date">Пример: несколько способов создания объекта <code>Date</code></a></h3><div><p>Следующие примеры показывают несколько способов создания дат в JavaScript:</p>
+
+<div class="note notecard">
+<p><strong>Обратите внимание:</strong>&nbsp;разбор строкового представления дат с помощью конструктора&nbsp;<code>Date</code>&nbsp;(так же как эквивалентный ему метод&nbsp;<code>Date.parse</code>) может иметь&nbsp;различия&nbsp;и несоответствия в&nbsp;браузерах.</p>
+</div>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> today <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> birthday <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">'December 17, 1995 03:24:00'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> birthday <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">'1995-12-17T03:24:00'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> birthday <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token number">1995</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">17</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> birthday <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token number">1995</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">17</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">24</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="example_two_digit_years_map_to_1900_-_1999"><a href="#example_two_digit_years_map_to_1900_-_1999" title="Permalink to Пример: двухциферный год отображается на 1900 - 1999 года">Пример: двухциферный год отображается на 1900 - 1999 года</a></h3><div><p>Для того, чтобы создать и получить даты между 0 и 99 годом, нужно использовать&nbsp;методы <a href="/js/Date/setFullYear/"><code>Date.prototype.setFullYear()</code></a> и <a href="/js/Date/getFullYear/"><code>Date.prototype.getFullYear()</code></a>.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> date <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token number">98</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Sun Feb 01 1998 00:00:00 GMT+0000 (GMT)</span>
+
+<span class="token comment">// Устаревший метод, 98 отображается на 1998 год</span>
+date<span class="token punctuation">.</span><span class="token function">setYear</span><span class="token punctuation">(</span><span class="token number">98</span><span class="token punctuation">)</span><span class="token punctuation">;</span>           <span class="token comment">// Sun Feb 01 1998 00:00:00 GMT+0000 (GMT)</span>
+
+date<span class="token punctuation">.</span><span class="token function">setFullYear</span><span class="token punctuation">(</span><span class="token number">98</span><span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment">// Sat Feb 01 0098 00:00:00 GMT+0000 (BST)</span>
+</code></pre></div><h3 id="example_calculating_elapsed_time"><a href="#example_calculating_elapsed_time" title="Permalink to Пример: вычисление затраченного времени">Пример: вычисление затраченного времени</a></h3><div><p>Следующие примеры показывают, как определить разницу во времени между двумя датами в JavaScript:</p>
+
+<pre class="brush: js notranslate"><code><span class="token comment">// Используя объекты Date</span>
+<span class="token keyword">var</span> start <span class="token operator">=</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Событие, для которого замеряется время, происходит тут:</span>
+<span class="token function">doSomethingForALongTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> end <span class="token operator">=</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> elapsed <span class="token operator">=</span> end <span class="token operator">-</span> start<span class="token punctuation">;</span> <span class="token comment">// затраченное время в миллисекундах</span>
+</code></pre>
+
+<pre class="brush: js notranslate"><code><span class="token comment">// Используя встроенные методы</span>
+<span class="token keyword">var</span> start <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Событие, для которого замеряется время, происходит тут:</span>
+<span class="token function">doSomethingForALongTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> end <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> elapsed <span class="token operator">=</span> end<span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> start<span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// затраченное время в миллисекундах</span>
+</code></pre>
+
+<pre class="brush: js notranslate"><code><span class="token comment">// Проверяет функцию и возвращает её возвращаемое значение</span>
+<span class="token keyword">function</span> <span class="token function">printElapsedTime</span><span class="token punctuation">(</span><span class="token parameter">fTest</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> nStartTime <span class="token operator">=</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      vReturn <span class="token operator">=</span> <span class="token function">fTest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      nEndTime <span class="token operator">=</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Затраченное время: '</span> <span class="token operator">+</span> <span class="token function">String</span><span class="token punctuation">(</span>nEndTime <span class="token operator">-</span> nStartTime<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">' миллисекунд'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> vReturn<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+yourFunctionReturn <span class="token operator">=</span> <span class="token function">printElapsedTime</span><span class="token punctuation">(</span>yourFunction<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+</code></pre>
+
+<div class="note notecard">
+<p><strong>Обратите внимание:</strong> в браузерах, поддерживающих высокое временное разрешение с помощью <a href="https://developer.mozilla.org/ru/docs/Web/API/Window/performance" title="API замера производительности">API замера производительности</a>, метод <a href="https://developer.mozilla.org/ru/docs/Web/API/Performance/now"><code>Performance.now()</code></a> может обеспечить более надёжные и точные замеры затраченного времени, нежели метод <a href="/js/Date/now/"><code>Date.now()</code></a>.</p>
+</div></div><h3 id="получить_количество_секунд_с_начало_эпохи_unix"><a href="#получить_количество_секунд_с_начало_эпохи_unix" title="Permalink to Получить количество секунд с начало эпохи Unix">Получить количество секунд с начало эпохи Unix</a></h3><div><pre class="notranslate"><code>var seconds = Math.floor(Date.now() / 1000);</code></pre>
+
+<p>В этом случае важно возвращать только целое число (так что простое деление не подойдёт), а также возвращать только фактически прошедшие секунды (поэтому этот код использует <a href="/js/Math/floor/"><code>Math.floor ()</code></a> а&nbsp;не <a href="/js/Math/round/"><code>Math.round ()</code></a>).</p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-262,%201st%20edition,%20June%201997.pdf" hreflang="en" lang="en" class="external" title="Спецификация 'ECMAScript 1st Edition (ECMA-262)'" rel=" noopener">ECMAScript 1st Edition (ECMA-262)</a></td>
+   <td>
+    <table>
+     <tbody>
+      <tr>
+       <td><span class="spec-standard">Стандарт</span></td>
+      </tr>
+     </tbody>
+    </table>
+   </td>
+   <td>Изначальное определение. Реализована в JavaScript 1.1.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-15.9" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 5.1 (ECMA-262)<br><small lang="ru">Определение 'Date' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-date-objects" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Date' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td><a href="https://tc39.es/ecma262/#sec-date-objects" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript (ECMA-262)<br><small lang="ru">Определение 'Date' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div>

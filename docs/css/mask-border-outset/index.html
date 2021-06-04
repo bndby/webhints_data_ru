@@ -1,0 +1,67 @@
+<h1>mask-border-outset</h1><div><div></div>
+
+<p>The <strong><code>mask-border-outset</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> property specifies the distance by which an element's <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/mask-border">mask border</a> is set out from its border box.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* &lt;length&gt; value */</span>
+<span class="token property">mask-border-outset</span><span class="token punctuation">:</span> 1rem<span class="token punctuation">;</span>
+
+<span class="token comment">/* &lt;number&gt; value */</span>
+<span class="token property">mask-border-outset</span><span class="token punctuation">:</span> 1.5<span class="token punctuation">;</span>
+
+<span class="token comment">/* vertical | horizontal */</span>
+<span class="token property">mask-border-outset</span><span class="token punctuation">:</span> 1 1.2<span class="token punctuation">;</span>
+
+<span class="token comment">/* top | horizontal | bottom */</span>
+<span class="token property">mask-border-outset</span><span class="token punctuation">:</span> 30px 2 45px<span class="token punctuation">;</span>
+
+<span class="token comment">/* top | right | bottom | left */</span>
+<span class="token property">mask-border-outset</span><span class="token punctuation">:</span> 7px 12px 14px 5px<span class="token punctuation">;</span>
+
+<span class="token comment">/* Global values */</span>
+<span class="token property">mask-border-outset</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">mask-border-outset</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">mask-border-outset</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre>
+
+<p>The <code>mask-border-outset</code> property may be specified as one, two, three, or four values. Each value is a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length"><code>&lt;length&gt;</code></a> or <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/number"><code>&lt;number&gt;</code></a>. Negative values are invalid.</p>
+
+<ul>
+ <li>When <strong>one</strong> value is specified, it applies the same outset to <strong>all four sides</strong>.</li>
+ <li>When <strong>two</strong> values are specified, the first outset applies to the <strong>top and bottom</strong>, the second to the <strong>left and right</strong>.</li>
+ <li>When <strong>three</strong> values are specified, the first outset applies to the <strong>top</strong>, the second to the <strong>left and right</strong>, the third to the <strong>bottom</strong>.</li>
+ <li>When <strong>four</strong> values are specified, the outsets apply to the <strong>top</strong>, <strong>right</strong>, <strong>bottom</strong>, and <strong>left</strong> in that order (clockwise).</li>
+</ul></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+ <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length"><code>&lt;length&gt;</code></a></dt>
+ <dd>The size of the mask border outset as a dimension.</dd>
+ <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/number"><code>&lt;number&gt;</code></a></dt>
+ <dd>The size of the mask border outset as a multiple of the corresponding <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-width"><code>border-width</code></a>.</dd>
+</dl></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td><code>0</code></td></tr><tr><th scope="row">Applies to</th><td>all elements; In SVG, it applies to container elements excluding the <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/defs"><code>defs</code></a> element and all graphics elements</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance">Inherited</a></th><td>no</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>as specified, but with relative lengths converted into absolute lengths</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">[</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length" title="Possible values: a number followed by'em', 'ex', 'ch', 'rem', 'px', 'cm', 'mm', 'in', 'vh', 'vw', 'vmin', 'vmax', 'pt', 'pc' or 'px', like 3px, 1.5cm, -0.5em or 0">&lt;length&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/number" title>&lt;number&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">]</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#curly_braces_(_)" title="Curly braces: encloses two integers defining the minimal and maximal numbers of occurrences of the entity">{</a>1,4<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#curly_braces_(_)" title="Curly braces: encloses two integers defining the minimal and maximal numbers of occurrences of the entity">}</a></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="basic_usage"><a href="#basic_usage" title="Permalink to Basic usage">Basic usage</a></h3><div><p>This property doesn't appear to be supported anywhere yet. When it eventually starts to be supported, it will serve to move the mask away from the inner edge of the element's border box — you can use it to make the mask start from part way across the border, rather than the inside of it.</p>
+
+<pre class="brush: css notranslate"><code><span class="token property">mask-border-outset</span><span class="token punctuation">:</span> 1rem<span class="token punctuation">;</span></code></pre>
+
+<p>Chromium-based browsers support an outdated version of this property — <code>mask-box-image-outset</code> — with a prefix:</p>
+
+<pre class="brush: css notranslate"><code><span class="token property">-webkit-mask-box-image-outset</span><span class="token punctuation">:</span> 1rem<span class="token punctuation">;</span></code></pre>
+
+<div class="notecard note">
+<p><strong>Note</strong>: The <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/mask-border">mask-border</a></code> page features a working example (using the out-of-date prefixed border mask properties supported in Chromium), so you can get an idea of the effect.</p>
+</div></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.fxtf.org/css-masking-1/#propdef-mask-border-outset" hreflang="en" lang="en" class="external" rel=" noopener">CSS Masking Module Level&nbsp;1<br><small lang="en-US">The definition of 'mask-border-outset' in that specification.</small></a></td>
+   <td><span class="spec-cr">Candidate Recommendation</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/mask-border"><code>mask-border</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/mask-border-mode"><code>mask-border-mode</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/mask-border-repeat"><code>mask-border-repeat</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/mask-border-source"><code>mask-border-source</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/mask-border-width"><code>mask-border-width</code></a></li>
+</ul></div>

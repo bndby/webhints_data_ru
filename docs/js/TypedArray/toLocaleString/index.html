@@ -1,0 +1,35 @@
+<h1>TypedArray.prototype.toLocaleString()</h1><div><div></div>
+
+<p>The <strong><code>toLocaleString()</code></strong> method returns a string representing
+  the elements of the typed array. The elements are converted to strings and are separated
+  by a locale-specific string (such as a comma “,”). This method has the same algorithm as
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toLocaleString"><code>Array.prototype.toLocaleString()</code></a> and, as the typed array elements are
+  numbers, the same algorithm as&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString"><code>Number.prototype.toLocaleString()</code></a> applies
+  for each element. <em>TypedArray</em> is one of the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray#typedarray_objects">typed
+    array types</a> here.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: js notranslate"><code><span class="token function">toLocaleString</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token function">toLocaleString</span><span class="token punctuation">(</span>locales<span class="token punctuation">)</span>
+<span class="token function">toLocaleString</span><span class="token punctuation">(</span>locales<span class="token punctuation">,</span> options<span class="token punctuation">)</span>
+</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Parameters">Parameters</a></h3><div><div>
+  <p>The <code>locales</code> and <code>options</code> arguments customize the behavior of
+    the function and let applications specify the language whose formatting conventions
+    should be used. In implementations, which ignore the <code>locales</code> and
+    <code>options</code> arguments, the locale used and the form of the string returned
+    are entirely implementation dependent.</p>
+
+  <div>See the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat"><code>Intl.NumberFormat()</code></a>
+    constructor for details on these parameters and how to use them.</div>
+</div></div><h3 id="return_value"><a href="#return_value" title="Permalink to Return value">Return value</a></h3><div><p>A string representing the elements of the typed array.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="using_tolocalestring"><a href="#using_tolocalestring" title="Permalink to Using toLocaleString">Using toLocaleString</a></h3><div><pre class="brush: js notranslate"><code><span class="token keyword">var</span> uint <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Uint32Array</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">2000</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">,</span> <span class="token number">8123</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">4212</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+uint<span class="token punctuation">.</span><span class="token function">toLocaleString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// if run in a de-DE locale</span>
+<span class="token comment">// "2.000,500,8.123,12,4.212"</span>
+
+uint<span class="token punctuation">.</span><span class="token function">toLocaleString</span><span class="token punctuation">(</span><span class="token string">'en-US'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// "2,000,500,8,123,12,4,212"</span>
+
+uint<span class="token punctuation">.</span><span class="token function">toLocaleString</span><span class="token punctuation">(</span><span class="token string">'ja-JP'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> style<span class="token operator">:</span> <span class="token string">'currency'</span><span class="token punctuation">,</span> currency<span class="token operator">:</span> <span class="token string">'JPY'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// "￥2,000,￥500,￥8,123,￥12,￥4,212"</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://tc39.es/ecma262/#sec-%typedarray%.prototype.tolocalestring">Unknown specification<!-- --> <br><small># <!-- -->sec-%typedarray%.prototype.tolocalestring</small></a></td></tr></tbody></table><div></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toLocaleString"><code>Array.prototype.toLocaleString()</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString"><code>Number.prototype.toLocaleString()</code></a></li>
+</ul></div>

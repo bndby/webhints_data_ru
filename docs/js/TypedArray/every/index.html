@@ -1,0 +1,76 @@
+<h1>TypedArray.prototype.every()</h1><div><div></div>
+
+<p>The <strong><code>every()</code></strong> method tests whether all elements in the
+  typed array pass the test implemented by the provided function. This method has the same
+  algorithm as <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every"><code>Array.prototype.every()</code></a><em>.</em> <em>TypedArray</em> is one
+  of the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray#typedarray_objects">typed
+    array types</a> here.</p>
+
+<div><iframe class="interactive" width="100%" height="490" src="https://interactive-examples.mdn.mozilla.net/pages/js/typedarray-every.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: js notranslate"><code><span class="token comment">// Arrow function</span>
+<span class="token function">every</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">element</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span> <span class="token punctuation">)</span>
+<span class="token function">every</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">element<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span> <span class="token punctuation">)</span>
+<span class="token function">every</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">element<span class="token punctuation">,</span> index<span class="token punctuation">,</span> array</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span> <span class="token punctuation">)</span>
+
+<span class="token comment">// Callback function</span>
+<span class="token function">every</span><span class="token punctuation">(</span>callbackFn<span class="token punctuation">)</span>
+<span class="token function">every</span><span class="token punctuation">(</span>callbackFn<span class="token punctuation">,</span> thisArg<span class="token punctuation">)</span>
+
+<span class="token comment">// Inline callback function</span>
+<span class="token function">every</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token function">callbackFn</span><span class="token punctuation">(</span><span class="token parameter">element</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token function">every</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token function">callbackFn</span><span class="token punctuation">(</span><span class="token parameter">element<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token function">every</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token function">callbackFn</span><span class="token punctuation">(</span><span class="token parameter">element<span class="token punctuation">,</span> index<span class="token punctuation">,</span> array</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token function">every</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token function">callbackFn</span><span class="token punctuation">(</span><span class="token parameter">element<span class="token punctuation">,</span> index<span class="token punctuation">,</span> array</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> thisArg<span class="token punctuation">)</span>
+</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Parameters">Parameters</a></h3><div><dl>
+  <dt><code><var>callbackFn</var></code></dt>
+  <dd>A function to test for each element, taking three arguments:
+    <dl>
+      <dt><code><var>element</var></code></dt>
+      <dd>The current element being processed in the typed array.</dd>
+      <dt><code><var>index</var></code> <span class="badge inline optional">Optional</span></dt>
+      <dd>The index of the current element being processed in the typed array.</dd>
+      <dt><code><var>array</var></code> <span class="badge inline optional">Optional</span></dt>
+      <dd>The typed array <code>every</code> was called upon.</dd>
+    </dl>
+  </dd>
+  <dt><code><var>thisArg</var></code> <span class="badge inline optional">Optional</span></dt>
+  <dd>A value to use as <code>this</code> when executing <code><var>callbackFn</var></code>.
+  </dd>
+</dl></div><h3 id="return_value"><a href="#return_value" title="Permalink to Return value">Return value</a></h3><div><p><code>true</code> if the callback function returns a <a href="https://developer.mozilla.org/en-US/docs/Glossary/Truthy">truthy</a> value for
+  every array element; otherwise, <code>false</code>.</p></div><h2 id="description"><a href="#description" title="Permalink to Description">Description</a></h2><div><p>The <code>every</code> method executes the provided <code><var>callbackFn</var></code>
+  function once for each element present in the typed array until it finds the one where
+  <code><var>callbackFn</var></code> returns a <a href="https://developer.mozilla.org/en-US/docs/Glossary/Falsy">falsy</a> value. If such an
+  element is found, the <code>every</code> method immediately returns <code>false</code>.
+  Otherwise, if <code><var>callbackFn</var></code> returns a <a href="https://developer.mozilla.org/en-US/docs/Glossary/Truthy">truthy</a> value
+  for all elements, <code>every</code> returns <code>true</code>.</p>
+
+<p><code><var>callbackFn</var></code> is invoked with three arguments: the value of the
+  element, the index of the element, and the typed array object being traversed.</p>
+
+<p>If a <code><var>thisArg</var></code> parameter is provided to <code>every</code>, it
+  will be used as callback's <code>this</code> value. Otherwise, the value
+  <code>undefined</code> will be used as its <code>this</code> value. The
+  <code>this</code> value ultimately observable by <code><var>callbackFn</var></code> is
+  determined according to <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this">the usual rules for
+    determining the <code>this</code> seen by a function</a>.</p>
+
+<p><code>every</code> does not mutate the typed array on which it is called.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="testing_size_of_all_typed_array_elements"><a href="#testing_size_of_all_typed_array_elements" title="Permalink to Testing size of all typed array elements
+">Testing size of all typed array elements
+</a></h3><div><p>The following example tests whether all elements in the typed array are bigger than 9.
+</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">function</span> <span class="token function">isBigEnough</span><span class="token punctuation">(</span><span class="token parameter">element<span class="token punctuation">,</span> index<span class="token punctuation">,</span> array</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> element <span class="token operator">&gt;=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">new</span> <span class="token class-name">Uint8Array</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">130</span><span class="token punctuation">,</span> <span class="token number">44</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">every</span><span class="token punctuation">(</span>isBigEnough<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// false</span>
+<span class="token keyword">new</span> <span class="token class-name">Uint8Array</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">54</span><span class="token punctuation">,</span> <span class="token number">18</span><span class="token punctuation">,</span> <span class="token number">130</span><span class="token punctuation">,</span> <span class="token number">44</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">every</span><span class="token punctuation">(</span>isBigEnough<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
+</code></pre></div><h3 id="testing_typed_array_elements_using_arrow_functions"><a href="#testing_typed_array_elements_using_arrow_functions" title="Permalink to Testing typed array elements
+  using arrow functions">Testing typed array elements
+  using arrow functions</a></h3><div><p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions">Arrow
+    functions</a> provide a shorter syntax for the same test.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">new</span> <span class="token class-name">Uint8Array</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">130</span><span class="token punctuation">,</span> <span class="token number">44</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">every</span><span class="token punctuation">(</span><span class="token parameter">elem</span> <span class="token operator">=&gt;</span> elem <span class="token operator">&gt;=</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// false</span>
+<span class="token keyword">new</span> <span class="token class-name">Uint8Array</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">54</span><span class="token punctuation">,</span> <span class="token number">18</span><span class="token punctuation">,</span> <span class="token number">130</span><span class="token punctuation">,</span> <span class="token number">44</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">every</span><span class="token punctuation">(</span><span class="token parameter">elem</span> <span class="token operator">=&gt;</span> elem <span class="token operator">&gt;=</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span></code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://tc39.es/ecma262/#sec-%typedarray%.prototype.every">Unknown specification<!-- --> <br><small># <!-- -->sec-%typedarray%.prototype.every</small></a></td></tr></tbody></table><div></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+  <li>A polyfill of <code>TypedArray.prototype.every</code> is available in <a href="https://github.com/zloirock/core-js#ecmascript-typed-arrays" class="external" rel=" noopener"><code>core-js</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/some"><code>TypedArray.prototype.some()</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every"><code>Array.prototype.every()</code></a></li>
+</ul></div>

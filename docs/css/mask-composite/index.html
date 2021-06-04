@@ -1,0 +1,43 @@
+<h1>mask-composite</h1><div><div></div>
+
+<p>The <strong><code>mask-composite</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> property represents a compositing operation used on the current mask layer with the mask layers below it.</p>
+
+<pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* Keyword values */</span>
+<span class="token property">mask-composite</span><span class="token punctuation">:</span> add<span class="token punctuation">;</span>
+<span class="token property">mask-composite</span><span class="token punctuation">:</span> subtract<span class="token punctuation">;</span>
+<span class="token property">mask-composite</span><span class="token punctuation">:</span> intersect<span class="token punctuation">;</span>
+<span class="token property">mask-composite</span><span class="token punctuation">:</span> exclude<span class="token punctuation">;</span>
+
+<span class="token comment">/* Global values */</span>
+<span class="token property">mask-composite</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">mask-composite</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">mask-composite</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><p>One or more of the keyword values listed below, separated by commas.</p></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><p>For the composition the current mask layer is referred to as <em>source</em>, while all layers below it are referred to as <em>destination</em>.</p>
+
+<dl>
+ <dt><code>add</code></dt>
+ <dd>The source is placed over the destination.</dd>
+ <dt><code>subtract</code></dt>
+ <dd>The source is placed, where it falls outside of the destination.</dd>
+ <dt><code>intersect</code></dt>
+ <dd>The parts of source that overlap the destination, replace the destination.</dd>
+ <dt><code>exclude</code></dt>
+ <dd>The non-overlapping regions of source and destination are combined.</dd>
+</dl></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td><code>add</code></td></tr><tr><th scope="row">Applies to</th><td>all elements; In SVG, it applies to container elements excluding the <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/defs"><code>defs</code></a> element and all graphics elements</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance">Inherited</a></th><td>no</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>as specified</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate"><a href="#compositing-operator">&lt;compositing-operator&gt;</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#hash_mark_()" title="Hash mark: the entity is repeated one or several times, each occurence separated by a comma">#</a><p style="font-family:Open Sans,Arial,sans-serif; margin: 10px 0 0 0;">where <br><code style="font-family:Consolas,Monaco,&quot;Andale Mono&quot;,monospace;"><span id="compositing-operator">&lt;compositing-operator&gt;</span> = add <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> subtract <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> intersect <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> exclude</code></p></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="compositing_mask_layers_with_addition"><a href="#compositing_mask_layers_with_addition" title="Permalink to Compositing mask layers with addition">Compositing mask layers with addition</a></h3><div><p><iframe width="100%" height="550" src="https://mdn.github.io/css-examples/masking/mask-composite.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.fxtf.org/css-masking-1/#the-mask-composite" hreflang="en" lang="en" class="external" rel=" noopener">CSS Masking Module Level&nbsp;1<br><small lang="en-US">The definition of 'mask-composite' in that specification.</small></a></td>
+   <td><span class="spec-cr">Candidate Recommendation</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+  <li><a href="https://css-tricks.com/clipping-masking-css/" class="external" rel=" noopener">Clipping and Masking in CSS</a></li>
+</ul></div>

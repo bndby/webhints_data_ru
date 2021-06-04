@@ -1,0 +1,47 @@
+<h1>overscroll-behavior-y</h1><div><div></div>
+
+<p><span class="seoSummary">The <strong><code>overscroll-behavior-y</code></strong> CSS property sets the browser's behavior when the vertical boundary of a scrolling area is reached.</span></p>
+
+<p>See <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/overscroll-behavior"><code>overscroll-behavior</code></a> for a full explanation.</p>
+
+<pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* Keyword values */</span>
+<span class="token property">overscroll-behavior-y</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span> <span class="token comment">/* default */</span>
+<span class="token property">overscroll-behavior-y</span><span class="token punctuation">:</span> contain<span class="token punctuation">;</span>
+<span class="token property">overscroll-behavior-y</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+
+<span class="token comment">/* Global values */</span>
+<span class="token property">overscroll-behavior-y</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">overscroll-behavior-y</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">overscroll-behavior-y</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><p>The <code>overscroll-behavior-y</code> property is specified as a keyword chosen from the list of values below.</p></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+ <dt><code>auto</code></dt>
+ <dd>The default scroll overflow behavior occurs as normal.</dd>
+ <dt><code>contain</code></dt>
+ <dd>Default scroll overflow behavior is observed inside the element this value is set on (e.g. "bounce" effects or refreshes), but no scroll chaining occurs to neighboring scrolling areas, e.g. underlying elements will not scroll.</dd>
+ <dt><code>none</code></dt>
+ <dd>No scroll chaining occurs to neighboring scrolling areas, and default scroll overflow behavior is prevented.</dd>
+</dl></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td><code>auto</code></td></tr><tr><th scope="row">Applies to</th><td>non-replaced block-level elements and non-replaced inline-block elements</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance">Inherited</a></th><td>no</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>as specified</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate">contain <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> none <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> auto</pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="preventing_an_underlying_element_from_scrolling_vertically"><a href="#preventing_an_underlying_element_from_scrolling_vertically" title="Permalink to Preventing an underlying element from scrolling vertically">Preventing an underlying element from scrolling vertically</a></h3><div><pre class="brush: css notranslate"><code><span class="token selector">.messages</span> <span class="token punctuation">{</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 220px<span class="token punctuation">;</span>
+  <span class="token property">overflow</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+  <span class="token property">overscroll-behavior-y</span><span class="token punctuation">:</span> contain<span class="token punctuation">;</span>
+<span class="token punctuation">}</span> </code></pre>
+
+<p>See <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/overscroll-behavior"><code>overscroll-behavior</code></a> for a full example and explanation.</p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-overscroll-1/#propdef-overscroll-behavior-y" hreflang="en" lang="en" class="external" rel=" noopener">CSS Overscroll Behavior Module Level 1<br><small lang="en-US">The definition of 'overscroll-behavior-y' in that specification.</small></a></td>
+   <td><span class="spec-wd">Working Draft</span></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developers.google.com/web/updates/2017/11/overscroll-behavior#demo" class="external" rel=" noopener">Take control of your scroll: customizing pull-to-refresh and overflow effects</a></li>
+ <li>The mapped logical properties: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/overscroll-behavior-inline"><code>overscroll-behavior-inline</code></a>,&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/overscroll-behavior-block"><code>overscroll-behavior-block</code></a></li>
+</ul></div>

@@ -1,0 +1,550 @@
+<h1>RegExp</h1><div><div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Конструктор <strong><code>RegExp</code></strong> создаёт объект регулярного выражения для сопоставления текста с шаблоном.</p>
+
+<p>Введение в то, что представляют собой регулярные выражения, читайте в <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Regular_Expressions">главе «Регулярные выражения» в руководстве по JavaScript</a>.</p>
+
+<div><iframe class="interactive" width="100%" height="490" src="https://interactive-examples.mdn.mozilla.net/pages/js/regexp-constructor.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+</div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><p>Возможны как литеральная запись, так и запись через конструктор:</p>
+
+<pre class="syntaxbox notranslate"><code>/<var>pattern</var>/<var>flags</var>
+new RegExp(<var>pattern</var>, <var>flags</var>)</code>
+</pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>pattern</code></dt>
+ <dd>Текст регулярного выражения.</dd>
+ <dt><code>flags</code></dt>
+ <dd>
+ <p>Если определён, может принимать любую комбинацию нижеследующих значений:</p>
+
+ <dl>
+  <dt><code>g</code></dt>
+  <dd>глобальное сопоставление</dd>
+  <dt><code>i</code></dt>
+  <dd>игнорирование регистра при сопоставлении</dd>
+  <dt><code>m</code></dt>
+  <dd>сопоставление по нескольким строкам; символы начала и конца (^ и $) начинают работать по нескольким строкам (то есть, происходит сопоставление с началом или концом <em>каждой</em> строки (строки разделяются символами \n или \r), а не только с началом или концом всей вводимой строки)</dd>
+  <dt><code>y</code> </dt>
+  <dd>«липкий» поиск; сопоставление в целевой строке начинается с индекса, на который указывает свойство <code>lastIndex</code> этого регулярного выражения (и не пытается сопоставиться с любого более позднего индекса).</dd>
+ </dl>
+ </dd>
+</dl></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Существует два способа создания объекта <code>RegExp</code>: литеральная запись и использование конструктора. При записи строк параметры в литеральной записи не используют символы кавычек, в то время как параметры функции-конструктора используют кавычки. Так что следующие выражения создают одинаковые регулярные выражения:</p>
+
+<pre class="brush: js notranslate"><code><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">ab+c</span><span class="token regex-delimiter">/</span><span class="token regex-flags">i</span></span><span class="token punctuation">;</span>
+<span class="token keyword">new</span> <span class="token class-name">RegExp</span><span class="token punctuation">(</span><span class="token string">'ab+c'</span><span class="token punctuation">,</span> <span class="token string">'i'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+<p>Литеральная запись обеспечивает компиляцию регулярного выражения при вычислении выражения. Используйте литеральную запись если регулярное выражение будет неизменным. Например, если вы используете литеральную запись для конструирования регулярного выражения, используемого в цикле, регулярное выражение не будет перекомпилироваться на каждой итерации.</p>
+
+<p>Конструктор объекта регулярного выражения, например, <code>new RegExp('ab+c')</code>, обеспечивает компиляцию регулярного выражения во время выполнения. Используйте функцию-конструктор, если вы знаете, что шаблон регулярного выражения будет меняться или если вы не знаете шаблон и получаете его из внешних источников, например, из пользовательского ввода.</p>
+
+<p>При использовании функции-конструктора необходимо использовать обычные правила экранирования в строках (предварять специальные символы символом обратного слеша «\»). Например, следующие выражения эквивалентны:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> re <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\w+</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> re <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">RegExp</span><span class="token punctuation">(</span><span class="token string">'\\w+'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="special_characters_meaning_in_regular_expressions"><a href="#special_characters_meaning_in_regular_expressions" title="Permalink to Значение специальных символов в регулярных выражениях">Значение специальных символов в регулярных выражениях</a></h2><div><ul>
+ <li><a href="#character-classes">Символьные классы</a></li>
+ <li><a href="#character-sets">Наборы символов</a></li>
+ <li><a href="#boundaries">Границы</a></li>
+ <li><a href="#grouping-back-references">Группировка и обратные ссылки</a></li>
+ <li><a href="#quantifiers">Квантификаторы</a></li>
+</ul>
+
+<table class="fullwidth-table">
+ <tbody>
+  <tr id="character-classes">
+   <th colspan="2">Символьные классы</th>
+  </tr>
+  <tr>
+   <th>Символ</th>
+   <th>Значение</th>
+  </tr>
+  <tr>
+   <td><code>.</code></td>
+   <td>
+    <p>(Точка, десятичная запятая) сопоставляется с любым символом <em>за исключением</em> символов новой строки: <code>\n</code>, <code>\r</code>, <code>\u2028</code> или <code>\u2029</code>.</p>
+
+    <p>Обратите внимание, что флаг многострочности <code>m</code> не изменяет поведение точки. Так что для сопоставления с шаблона с несколькими строками используйте набор символов <code>[^]</code> (конечно, если только вам не нужно поддерживать старые версии IE), он сопоставляется с любым символом, включая символы новой строки.</p>
+
+    <p>Например, шаблон <code>/.н/</code> сопоставляется с подстрокой «ан», но не подстрокой «ну», во фразе «ну что, потанцуем».</p>
+   </td>
+  </tr>
+  <tr>
+   <td><code>\d</code></td>
+   <td>
+    <p>Сопоставляется с символом цифры в базовом латинском алфавите. Эквивалентен набору символов <code>[0-9]</code>.</p>
+
+    <p>Например, шаблоны <code>/\d/</code> и <code>/[0-9]/</code> сопоставляются с подстрокой «2» в строке «B2&nbsp;— это номер люкс».</p>
+   </td>
+  </tr>
+  <tr>
+   <td><code>\D</code></td>
+   <td>
+    <p>Сопоставляется с любым символом, который не является цифрой в базовом латинском алфавите. Эквивалентен набору символов <code>[^0-9]</code>.</p>
+
+    <p>Например, шаблоны <code>/\D/</code> и <code>/[^0-9]/</code> сопоставляются с подстрокой «B» в строке «B2&nbsp;— это номер люкс».</p>
+   </td>
+  </tr>
+  <tr>
+   <td><code>\w</code></td>
+   <td>
+    <p>Сопоставляется с любым алфавитно-цифровым символом из базового латинского алфавита, включая символ подчёркивания. Эквивалентен набору символов <code>[A-Za-z0-9_]</code>.</p>
+
+    <p>Например, шаблон <code>/\w/</code> сопоставляется с подстрокой «a» в строке «apple», с подстрокой «5» в строке «$5.28» и с подстрокой «3» в строке «3D».</p>
+   </td>
+  </tr>
+  <tr>
+   <td><code>\W</code></td>
+   <td>
+    <p>Сопоставляется с любым символом из базового латинского алфавита, не являющимся символом, из которых состоят слова. Эквивалентен набору символов <code>[^A-Za-z0-9_]</code>.</p>
+
+    <p>Например, шаблоны <code>/\W/</code> и <code>/[^A-Za-z0-9_]/</code> сопоставляются с подстрокой «%» в строке «50%».</p>
+   </td>
+  </tr>
+  <tr>
+   <td><code>\s</code></td>
+   <td>
+    <p>Сопоставляется с&nbsp;одиночным пробельным символом, который включает в себя пробел, табуляцию, подачу страницы, перевод строки и другие пробельные символы Юникода. Эквивалентен набору символов <code>[ \f\n\r\t\v​\u00a0\u1680​\u180e\u2000​\u2001\u2002​\u2003\u2004​\u2005\u2006​\u2007\u2008​\u2009\u200a​\u2028\u2029​​\u202f\u205f​\u3000]</code>.</p>
+
+    <p>Например, шаблон <code>/\s\w*/</code> сопоставляется с подстрокой « bar» в строке «foo bar».</p>
+   </td>
+  </tr>
+  <tr>
+   <td><code>\S</code></td>
+   <td>
+    <p>Сопоставляется с&nbsp;одиночным символом, не являющимся пробельным. Эквивалентен набору символов <code>[^ \f\n\r\t\v​\u00a0\u1680​\u180e\u2000​\u2001\u2002​\u2003\u2004​\u2005\u2006​\u2007\u2008​\u2009\u200a​\u2028\u2029​\u202f\u205f​\u3000]</code>.</p>
+
+    <p>Например, шаблон <code>/\S\w*/</code> сопоставляется с подстрокой «foo» в строке «foo bar».</p>
+   </td>
+  </tr>
+  <tr>
+   <td><code>\t</code></td>
+   <td>Сопоставляется с символом табуляции.</td>
+  </tr>
+  <tr>
+   <td><code>\r</code></td>
+   <td>Сопоставляется с символом возврата каретки.</td>
+  </tr>
+  <tr>
+   <td><code>\n</code></td>
+   <td>Сопоставляется с символом перевода строки.</td>
+  </tr>
+  <tr>
+   <td><code>\v</code></td>
+   <td>Сопоставляется с символом вертикальной табуляции.</td>
+  </tr>
+  <tr>
+   <td><code>\f</code></td>
+   <td>Сопоставляется с символом подачи страницы.</td>
+  </tr>
+  <tr>
+   <td><code>[\b]</code></td>
+   <td>Сопоставляется с символом забоя (не перепутайте его с символьным классом <code>\b</code>).</td>
+  </tr>
+  <tr>
+   <td><code>\0</code></td>
+   <td>Сопоставляется с нулевым символом. Не ставьте за ним другую цифру.</td>
+  </tr>
+  <tr>
+   <td><code>\c<em>X</em></code></td>
+   <td>
+    <p>Где <code><em>X</em></code> является буквой от «A» до «Z». Сопоставляется с управляющим символом в строке.</p>
+
+    <p>Например, шаблон <code>/\cM/</code> сопоставляется с символом control-M в строке.</p>
+   </td>
+  </tr>
+  <tr>
+   <td><code>\x<em>hh</em></code></td>
+   <td>Сопоставляется с символом с кодом <code><em>hh</em></code> (две шестнадцатеричные цифры).</td>
+  </tr>
+  <tr>
+   <td><code>\u<em>hhhh</em></code></td>
+   <td>Сопоставляется с символом со значением Юникода <code><em>hhhh</em></code> (четыре шестнадцатеричные цифры).</td>
+  </tr>
+  <tr>
+   <td><code>\</code></td>
+   <td>
+    <p>Для символов, которые обычно трактуются буквально, указывает, что следующий символ является специальным и не должен интерпретироваться буквально.</p>
+
+    <p>Например, шаблон <code>/b/</code> сопоставляется с символом «b». Поместив перед ним символ обратного слеша, то есть превратив шаблон в <code>/\b/</code>, символ приобретёт специальное значение, обозначающее сопоставление с границей слова.</p>
+
+    <p><em>или</em></p>
+
+    <p>Для символов, которые обычно трактуются специальным образом, указывает, что следующий символ не является специальным и должен интерпретироваться буквально.</p>
+
+    <p>Например, звёздочка «*» является специальным символом, обозначающим ноль или более вхождений предшествующего символа при сопоставлении; поэтому шаблон <code>/a*/</code> означает сопоставление с нулём или более символов «a». Для буквального сопоставления со звёздочкой <code>*</code> предварите её символом обратного слеша; например, шаблон <code>/a\*/</code> сопоставляется со строкой «a*».</p>
+   </td>
+  </tr>
+ </tbody>
+ <tbody>
+  <tr id="character-sets">
+   <th colspan="2">Наборы символов</th>
+  </tr>
+  <tr>
+   <th>Символ</th>
+   <th>Значение</th>
+  </tr>
+  <tr>
+   <td><code>[xyz]</code></td>
+   <td>
+    <p>Набор символов. Сопоставляется с любым из заключённых в квадратные скобки символов. С помощью дефиса вы можете определить диапазон символов.</p>
+
+    <p>Например, шаблон <code>[абвгд]</code> означает тоже самое, что и шаблон <code>[а-д]</code>. Они сопоставляются с символом «г» в слове «грудинка» и символом «б» в слове «отбивная».</p>
+   </td>
+  </tr>
+  <tr>
+   <td><code>[^xyz]</code></td>
+   <td>
+    <p>Отрицательный или дополнительный набор символов. То есть он сопоставляется со всеми символами, что не заключены в квадратные скобки. С помощью дефиса вы можете определить диапазон символов.</p>
+
+    <p>Например, шаблон <code>[^абвгд]</code> означает тоже самое, что и шаблон <code>[^а-д]</code>. Они сопоставляются с символом «е» в слове «бекон» и символом «о» в слове «отбивная».</p>
+   </td>
+  </tr>
+ </tbody>
+ <tbody>
+  <tr id="boundaries">
+   <th colspan="2">Границы</th>
+  </tr>
+  <tr>
+   <th>Символ</th>
+   <th>Значение</th>
+  </tr>
+  <tr>
+   <td><code>^</code></td>
+   <td>
+    <p>Сопоставляется c&nbsp;началом ввода. Если установлен флаг многострочности, также сопоставляется с позицией сразу за символом переноса строки.</p>
+
+    <p>Например, шаблон <code>/^Б/</code> не сопоставляется с буквой «Б» в строке «буква Б», но сопоставляется с первой буквой «Б» в строке «Буква Б».</p>
+   </td>
+  </tr>
+  <tr>
+   <td><code>$</code></td>
+   <td>
+    <p>Сопоставляется c концом ввода. Если установлен флаг многострочности, также сопоставляется с позицией сразу перед символом переноса строки.</p>
+
+    <p>Например, шаблон <code>/т$/</code> не сопоставляется с буквой «т» в слове «кормить», но сопоставляется с ней в слове «кормит».</p>
+   </td>
+  </tr>
+  <tr>
+   <td><code>\b</code></td>
+   <td>
+    <p>Сопоставляется с границей слова нулевой ширины, например с позицией между буквой и пробелом (не путайте его с набором символов <code>[\b]</code>).</p>
+
+    <p>Например, шаблон <code>/\bпол/</code> сопоставляется с подстрокой «пол» в строке «в полдень»; шаблон <code>/но\b/</code> сопоставляется с подстрокой «но» в строке «возможно завтра».</p>
+   </td>
+  </tr>
+  <tr>
+   <td><code>\B</code></td>
+   <td>
+    <p>Сопоставляется с границей не-слов нулевой ширины, например с позицией между двумя буквами или двумя пробелами.</p>
+
+    <p>Например, шаблон <code>/\Bдень/</code> сопоставляется с подстрокой «день» в строке «в полдень»; шаблон <code>/за\B/</code> сопоставляется с подстрокой «за» в строке «возможно завтра».</p>
+   </td>
+  </tr>
+ </tbody>
+ <tbody>
+  <tr id="grouping-back-references">
+   <th colspan="2">Группировка и обратные ссылки</th>
+  </tr>
+  <tr>
+   <th>Символ</th>
+   <th>Значение</th>
+  </tr>
+  <tr>
+   <td><code>(<em>x</em>)</code></td>
+   <td>
+    <p>Сопоставляется с <code><em>x</em></code> и запоминает сопоставление. Называется «захватывающие скобки».</p>
+
+    <p>Например, шаблон <code>/(foo)/</code> сопоставляется с подстрокой «foo» и запоминает её в строке «foo bar». Сопоставленную подстроку можно достать из элементов <code>[1], ..., [n]</code> результирующего массива или из предопределённых свойств <code>$1, ..., $9</code> объекта <code>RegExp</code>.</p>
+
+    <p>Захват групп ведёт к проседанию производительности. Если вам не нужно повторно ссылаться на захваченную подстроку, лучше использовать скобки без захвата (смотрите ниже).</p>
+   </td>
+  </tr>
+  <tr>
+   <td><code>\<em>n</em></code></td>
+   <td>
+    <p>Где <code><em>n</em></code> является целым положительным числом. Обратная ссылка на последнюю сопоставившуюся подстроку в <em>n</em>-ных по счёту круглых скобках в регулярном выражении (нумерация скобок идёт слева направо).</p>
+
+    <p>Например, шаблон <code>/яблоко(,)\sапельсин\1/</code> сопоставится подстроке «яблоко, апельсин,» в строке «яблоко, апельсин, вишня, персик». Более подробный пример смотрите после этой таблицы.</p>
+   </td>
+  </tr>
+  <tr>
+   <td><code>(?:<em>x</em>)</code></td>
+   <td>Сопоставляется с <code><em>x</em></code>, но не запоминает сопоставление. Называется «незахватывающие скобки». Сопоставленную подстроку нельзя достать из элементов <code>[1], ..., [n]</code> результирующего массива или из предопределённых свойств <code>$1, ..., $9</code> объекта <code>RegExp</code>.</td>
+  </tr>
+ </tbody>
+ <tbody>
+  <tr id="quantifiers">
+   <th colspan="2">Квантификаторы</th>
+  </tr>
+  <tr>
+   <th>Символ</th>
+   <th>Значение</th>
+  </tr>
+  <tr>
+   <td><code><em>x</em>*</code></td>
+   <td>
+    <p>Сопоставляется с предшествующим элементом <em>x</em> ноль или более раз.</p>
+
+    <p>Например, шаблон <code>/ела*/</code> сопоставляется с подстрокой «ел» в строке «Призрак просвистел» и подстрокой «ела» в строке «Птица пропела», но ни с чем не сопоставится в строке «Козёл хмыкнул».</p>
+   </td>
+  </tr>
+  <tr>
+   <td><code><em>x</em>+</code></td>
+   <td>
+    <p>Сопоставляется с предшествующим элементом <em>x</em> один или более раз. Эквивалентен квантификатору <code>{1,}</code>.</p>
+
+    <p>Например, шаблон <code>/о+/</code> сопоставляется с символом «о» в строке «конфета» и со всеми символами «о» в строке «коооооонфета».</p>
+   </td>
+  </tr>
+  <tr>
+   <td><code><em>x</em>*?</code><br>
+    <code><em>x</em>+?</code></td>
+   <td>
+    <p>Сопоставляется с предшествующим элементом <em>x</em> подобно квантификаторам <code>*</code> и <code>+</code>, описанным выше, однако ищет минимально возможное сопоставление.</p>
+
+    <p>Например, шаблон <code>/".*?"/</code> сопоставляется с подстрокой «"foo"» в строке «"foo" "bar"» и не сопоставляется со строкой «"foo" "bar"», поскольку за звёздочкой <code>*</code> следует символ вопроса <code>?</code>.</p>
+   </td>
+  </tr>
+  <tr>
+   <td><code><em>x</em>?</code></td>
+   <td>
+    <p>Сопоставляется с предшествующим элементом <em>x</em> ноль или один раз.</p>
+
+    <p>Например, шаблон <code>/о?то?/</code> сопоставляется с подстрокой «от» в строке «кот» и подстрокой «то» в строке «ток».</p>
+
+    <p>Если символ используется сразу после какого-то из квантификаторов <code>*</code>, <code>+</code>, <code>?</code>, или <code>{}</code>, то он делает этот квантификатор «нежадным» (сопоставление происходит минимально возможное количество раз), в противоположность «жадному» поведению квантификатора по умолчанию (сопоставление происходит максимально возможное количество раз).</p>
+
+    <p>Также символ используется в квантификаторах предпросмотра <code>(?=)</code>, <code>(?!)</code> и <code>(?:)</code>, также описанных в этой таблице.</p>
+   </td>
+  </tr>
+  <tr>
+   <td><code><em>x</em>(?=<em>y</em>)</code></td>
+   <td>Сопоставляется с <code><em>x</em></code>, только если за <code><em>x</em></code> следует <code><em>y</em></code>. Например, шаблон <code>/Джек(?=Шпрот)/</code> сопоставляется со строкой «Джек» только если за ней следует строка «Шпрот». Шаблон <code>/Джек(?=Шпрот|Мороз)/</code> сопоставляется со строкой «Джек» только если за ней следуют строки «Шпрот» или «Мороз». Однако, ни «Шпрот», ни «Мороз» не являются частью результата сопоставления.</td>
+  </tr>
+  <tr>
+   <td><code><em>x</em>(?!<em>y</em>)</code></td>
+   <td>
+    <p>Сопоставляется с <code><em>x</em></code>, только если за <code><em>x</em></code> не следует <code><em>y</em></code>. Например, шаблон <code>/\d+(?!\.)/</code> сопоставляется с числом только если за ним не следует десятичная запятая.</p>
+
+    <p>Выражение <code>/\d+(?!\.)/.exec('3.141')</code> сопоставится с «141» но не с «3.141».</p>
+   </td>
+  </tr>
+  <tr>
+   <td><code>(?&lt;=<em>y</em>)<em>x</em></code></td>
+   <td>
+    <p><code><font face="Arial, x-locale-body, sans-serif"><span style="background-color: #ffffff;">Сопоставляется с&nbsp;</span></font><em>x</em></code>, только если&nbsp;<code><em>x</em></code>&nbsp;предшествует&nbsp;<code><em>y</em></code></p>
+
+    <p>Например, /<code>(?&lt;=Пётр)Иванов/</code>&nbsp;сопоставится с&nbsp;"Иванов" только если ему будет предшествовать&nbsp;"Петр".<br>
+     <code>/(?&lt;=Пётр|Владислав)Иванов/</code>&nbsp;сопоставится с&nbsp;"Иванов" только если ему будет предшествовать&nbsp;"Пётр" или&nbsp;"Владислав".<br>
+     В любом случае, ни&nbsp;"Пётр" ни&nbsp;"Владислав" не войдут в результат&nbsp;сопоставления.</p>
+   </td>
+  </tr>
+  <tr>
+   <td><code>(?&lt;!<em>y</em>)<em>x</em></code></td>
+   <td>
+    <table>
+     <tbody>
+      <tr>
+       <td>
+        <p><code><font face="Arial, x-locale-body, sans-serif"><span style="background-color: #ffffff;">Сопоставляется с&nbsp;</span></font><em>x</em></code>, только если&nbsp;<code><em>x</em></code>&nbsp;не предшествует&nbsp;<code><em>y</em></code></p>
+
+        <p>Например,&nbsp;<code>/(?&lt;!-)\d+/</code>&nbsp;сопоставится с цифрой, только если ей не предшествует минус.<br>
+         <code>/(?&lt;!-)\d+/.exec('3')</code>&nbsp;вернёт&nbsp;"3".<br>
+         &nbsp;<code>/(?&lt;!-)\d+/.exec('-3')</code>&nbsp; не сопоставится с цифрой, тк цифре перед цифрой 3 присутствует минус.</p>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </td>
+  </tr>
+  <tr>
+   <td><code><em>x</em>|<em>y</em></code></td>
+   <td>
+    <p>Сопоставляется либо с <code><em>x</em></code>, либо с <code><em>y</em></code>.</p>
+
+    <p>Например, шаблон <code>/зелёное|красное/</code> сопоставится с подстрокой «зелёное» в строке «зелёное яблоко» и подстрокой «красное» в строке «красное яблоко».</p>
+   </td>
+  </tr>
+  <tr>
+   <td><code><em>x</em>{<em>n</em>}</code></td>
+   <td>
+    <p>Где <code><em>n</em></code> является целым положительным числом. Сопоставляется точно с <code><em>n</em></code> вхождениями предшествующего элемента <em>x</em>.</p>
+
+    <p>Например, шаблон <code>/о{2}/</code> не сопоставится с символом «о» в слове «конфета», но сопоставится со всеми символами «о» в слове «коонфета» и с первыми двумя символами «о» в слове «кооонфета».</p>
+   </td>
+  </tr>
+  <tr>
+   <td><code><em>x</em>{<em>n</em>,}</code></td>
+   <td>
+    <p>Где <code><em>n</em></code> является целым положительным числом. Сопоставляется по крайней мере с <code><em>n</em></code> вхождениями предшествующего элемента <em>x</em>.</p>
+
+    <p>Например, шаблон <code>/о{2,}/</code> не сопоставится с символом «о» в слове «конфета», но сопоставится со всеми символами «о» в словах «коонфета» и даже в «кооооооонфета».</p>
+   </td>
+  </tr>
+  <tr>
+   <td><code><em>x</em>{<em>n</em>,<em>m</em>}</code></td>
+   <td>
+    <p>Где <code><em>n</em></code> и <code><em>m</em></code> являются целыми положительными числами. Сопоставляется по крайней мере с <code><em>n</em></code> но не более, чем с <code><em>m</em></code> вхождениями предшествующего элемента <em>x</em>.</p>
+
+    <p>Например, шаблон <code>/о{1,3}/</code> ни с чем не сопоставится в слове «кнфета», с символом «о» в слове «конфета», с двумя символами «о» в слове «коонфета» и с первыми тремя символами «о» в слове «кооооооонфета». Обратите внимание, что при сопоставлении со словом «кооооооонфета» сопоставимость только подстрока «ооо», хотя слово содержало гораздо больше символов «о».</p>
+   </td>
+  </tr>
+ </tbody>
+</table></div><h2 id="properties"><a href="#properties" title="Permalink to Свойства">Свойства</a></h2><div><dl>
+ <dt><a href="https://developer.mozilla.org/ru/docs/conflicting/Web/JavaScript/Reference/Global_Objects/RegExp"><code>RegExp.prototype</code></a></dt>
+ <dd>Позволяет добавлять свойства ко всем объектам регулярных выражений.</dd>
+ <dt><code>RegExp.length</code></dt>
+ <dd>Значение <code>RegExp.length</code> равно 2.</dd>
+</dl>
+
+<div><div class="notecard note">
+
+<div><span>Свойства, унаследованные из <a href="/js/Function/"><code>Function</code></a>:</span></div>
+<div><a class="internal" href="/js/Function/Arity/"><code>arity</code></a>, <a class="internal" href="/js/Function/caller/"><code>caller</code></a>, <a class="internal only-in-en-us" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" title="Currently only available in English (US)">constructor (en-US)</a>, <a class="internal" href="/js/Function/length/"><code>length</code></a>, <a class="internal" href="/js/Function/name/"><code>name</code></a></div>
+</div></div></div><h2 id="methods"><a href="#methods" title="Permalink to Методы">Методы</a></h2><div><p>Глобальный объект <code>RegExp</code> не имеет собственных методов, однако, он наследует некоторые методы через цепочку прототипов.</p>
+
+<div><div class="notecard note">
+
+<div><span>Методы, унаследованные из <a href="/js/Function/"><code>Function</code></a>:</span></div>
+<div><a class="internal" href="/js/Function/apply/"><code>apply</code></a>, <a class="internal" href="/js/Function/call/"><code>call</code></a>, <a class="internal" href="/js/Function/toSource/"><code>toSource</code></a>, <a class="internal" href="/js/Function/toString/"><code>toString</code></a></div>
+</div></div></div><h2 id="regexp_prototype_objects_and_instances"><a href="#regexp_prototype_objects_and_instances" title="Permalink to Экземпляры регулярного выражения">Экземпляры регулярного выражения</a></h2><div></div><h3 id="properties_of_regexp_instance"><a href="#properties_of_regexp_instance" title="Permalink to Свойства">Свойства</a></h3><div><div><p>Также смотрите <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Deprecated_and_obsolete_features#regexp_properties">устаревшие свойства объекта <code>RegExp</code></a></p><p>Обратите внимание, что некоторые свойства объекта <a href="/js/RegExp/" aria-current="page"><code>RegExp</code></a> имеют как длинные, так и короткие (Perl-подобные) имена. Оба имени всегда ссылаются на одно и тоже значение. Perl&nbsp;— это язык программирования, откуда JavaScript взял свои регулярные выражения.</p><dl>
+ <dt><code>RegExp.prototype.constructor</code></dt>
+ <dd>Определяет функцию, создающую прототип объекта.</dd>
+ <dt><a href="/js/RegExp/global/"><code>RegExp.prototype.global</code></a></dt>
+ <dd>Определяет, надо ли проверять регулярное выражение на все возможные сопоставления со строкой, или достаточно только первый раз.</dd>
+ <dt><a href="/js/RegExp/ignoreCase/"><code>RegExp.prototype.ignoreCase</code></a></dt>
+ <dd>Определяет, надо ли игнорировать регистр символов при попытке сопоставления со строкой.</dd>
+ <dt><a href="/js/RegExp/lastIndex/"><code>RegExp.prototype.lastIndex</code></a></dt>
+ <dd>Индекс, по которому начинается следующее сопоставление.</dd>
+ <dt><a href="/js/RegExp/multiline/"><code>RegExp.prototype.multiline</code></a></dt>
+ <dd>Определяет, надо ли искать по нескольким строкам.</dd>
+ <dt><a href="/js/RegExp/source/"><code>RegExp.prototype.source</code></a></dt>
+ <dd>Текст шаблона.</dd>
+ <dt><a href="/js/RegExp/sticky/"><code>RegExp.prototype.sticky</code></a> </dt>
+ <dd>Определяет, включён ли режим «липкого» поиска.</dd>
+ <dt><a href="/js/RegExp/flags/"><code>RegExp.prototype.flags</code></a> </dt>
+ <dd>Строка, состоящая из флагов объекта регулярного выражения.</dd>
+</dl><div><div class="notecard note">
+
+<div><span>Свойства, унаследованные из <a href="/js/Object/"><code>Object</code></a>:</span></div>
+<div><a class="internal" href="/js/Object/Parent/"><code>parent</code></a>, <a class="internal" href="/js/Object/proto/"><code>proto</code></a></div>
+</div></div></div></div><h3 id="methods_of_regexp_instance"><a href="#methods_of_regexp_instance" title="Permalink to Методы">Методы</a></h3><div><div><p>Также смотрите <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Deprecated_and_obsolete_features#regexp_methods">устаревшие методы объекта <code>RegExp</code></a></p><dl>
+ <dt><a href="/js/RegExp/exec/"><code>RegExp.prototype.exec()</code></a></dt>
+ <dd>Выполняет поиск сопоставлений регулярного выражения в своём строковом параметре.</dd>
+ <dt><a href="/js/RegExp/test/"><code>RegExp.prototype.test()</code></a></dt>
+ <dd>Пытается сопоставить регулярное выражение своему строковому параметру.</dd>
+ <dt><a href="/js/RegExp/toSource/"><code>RegExp.prototype.toSource()</code></a> </dt>
+ <dd>Возвращает объектный литерал, представляющий указанный объект; вы можете использовать это значение для создания нового объекта. Переопределяет метод <a href="/js/Object/toSource/"><code>Object.prototype.toSource()</code></a>.</dd>
+ <dt><a href="/js/RegExp/toString/"><code>RegExp.prototype.toString()</code></a></dt>
+ <dd>Возвращает строку, представляющую указанный объект. Переопределяет метод <a href="/js/Object/toString/"><code>Object.prototype.toString()</code></a>.</dd>
+</dl><div><div class="notecard note">
+
+<div><span>Методы, унаследованные из <a href="/js/Object/"><code>Object</code></a>:</span></div>
+<div><a class="internal only-in-en-us" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineGetter__" title="Currently only available in English (US)">defineGetter (en-US)</a>, <a class="internal only-in-en-us" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineSetter__" title="Currently only available in English (US)">defineSetter (en-US)</a>, <a class="internal" href="/js/Object/hasOwnProperty/"><code>hasOwnProperty</code></a>, <a class="internal" href="/js/Object/isPrototypeOf/"><code>isPrototypeOf</code></a>, <a class="internal only-in-en-us" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupGetter__" title="Currently only available in English (US)">lookupGetter (en-US)</a>, <a class="internal only-in-en-us" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupSetter__" title="Currently only available in English (US)">lookupSetter (en-US)</a>, <a class="internal" href="/js/Object/Nosuchmethod/"><code>noSuchMethod</code></a>, <a class="internal" href="/js/Object/propertyIsEnumerable/"><code>propertyIsEnumerable</code></a>, <a class="internal" href="/js/Object/toLocaleString/"><code>toLocaleString</code></a>, <a class="internal" href="/js/Object/Unwatch/"><code>unwatch</code></a>, <a class="internal" href="/js/Object/valueOf/"><code>valueOf</code></a>, <a class="internal" href="/js/Object/Watch/"><code>watch</code></a></div>
+</div></div></div></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_using_a_regular_expression_to_change_data_format"><a href="#example_using_a_regular_expression_to_change_data_format" title="Permalink to Пример: использование регулярных выражений для смены формата данных">Пример: использование регулярных выражений для смены формата данных</a></h3><div><p>Следующий скрипт использует метод <a href="/js/String/replace/"><code>replace()</code></a> экземпляра строки <a href="/js/String/"><code>String</code></a> для сопоставления с именем в формате <em>имя фамилия</em> и выводит его в формате <em>фамилия, имя</em>. В тесте замены скрипт использует заменители <code>$1</code> и <code>$2</code>, которые заменяются на результаты соответствующих сопоставившихся подгрупп регулярного выражения.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> re <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">(\w+)\s(\w+)</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">'John Smith'</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> newstr <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span>re<span class="token punctuation">,</span> <span class="token string">'$2, $1'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>newstr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// пример с русскими буквами</span>
+<span class="token keyword">var</span> re <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">([а-яё]+)\s([а-яё]+)</span><span class="token regex-delimiter">/</span><span class="token regex-flags">i</span></span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">'Джон Смит'</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> newstr <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span>re<span class="token punctuation">,</span> <span class="token string">'$2, $1'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>newstr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+<p>Пример выведет «Smith, John» и&nbsp;«Смит, Джон»</p></div><h3 id="example_using_regular_expression_to_split_lines"><a href="#example_using_regular_expression_to_split_lines" title="Permalink to Пример: использование регулярного выражения для разбиения строк с различными символами конца строки">Пример: использование регулярного выражения для разбиения строк с различными символами конца строки</a></h3><div><p>Символы конца строки различаются на различных платформах (Unix, Windows и так далее). Разбиение строк из этого примера работает на всех платформах.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> text <span class="token operator">=</span> <span class="token string">'Некоторый текст\nЕщё текст\r\nИ ещё\rЭто конец'</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> lines <span class="token operator">=</span> text<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\r\n|\r|\n</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>lines<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// выведет [ 'Некоторый текст', 'Ещё текст', 'И ещё', 'Это конец' ]</span>
+</code></pre>
+
+<p>Обратите внимание, что порядок шаблонов в регулярном выражении имеет значение.</p></div><h3 id="example_using_regular_expression_on_multiple_lines"><a href="#example_using_regular_expression_on_multiple_lines" title="Permalink to Пример: использование регулярных выражений на нескольких строках">Пример: использование регулярных выражений на нескольких строках</a></h3><div><pre class="brush: js notranslate"><code><span class="token keyword">var</span> s <span class="token operator">=</span> <span class="token string">'Please yes\nmake my day!'</span><span class="token punctuation">;</span>
+s<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">yes.*day</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Вернёт null</span>
+s<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">yes[^]*day</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Вернёт 'yes\nmake my day'</span>
+</code></pre></div><h3 id="example_using_a_regular_expression_with_the_.22sticky.22_flag"><a href="#example_using_a_regular_expression_with_the_.22sticky.22_flag" title="Permalink to Пример: использование регулярных выражений с флагом «липучести»">Пример: использование регулярных выражений с флагом «липучести»</a></h3><div><p>Этот пример демонстрирует, как можно использовать флаг «липучести» регулярных выражений для сопоставления с отдельными строками многострочного ввода.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> text <span class="token operator">=</span> <span class="token string">'Первая строка\nВторая строка'</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> regex <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">(\S+) строка\n?</span><span class="token regex-delimiter">/</span><span class="token regex-flags">y</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> match <span class="token operator">=</span> regex<span class="token punctuation">.</span><span class="token function">exec</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>match<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment">// напечатает 'Первая'</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>regex<span class="token punctuation">.</span>lastIndex<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// напечатает '14'</span>
+
+<span class="token keyword">var</span> match2 <span class="token operator">=</span> regex<span class="token punctuation">.</span><span class="token function">exec</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>match2<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment">// напечатает 'Вторая'</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>regex<span class="token punctuation">.</span>lastIndex<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// напечатает '27'</span>
+
+<span class="token keyword">var</span> match3 <span class="token operator">=</span> regex<span class="token punctuation">.</span><span class="token function">exec</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>match3 <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// напечатает 'true'</span>
+</code></pre>
+
+<p>Во время выполнения можно проверить, поддерживается ли флаг «липучести», при помощи блока <code>try { … } catch { … }</code>. Для этого надо использовать либо выражение с <code>eval(…)</code>, либо конструктор <code>RegExp(<var>строка-регулярки</var>, <var>строка-с-флагами</var>)</code> (поскольку нотация <code>/<var>регулярка</var>/<var>флаги</var></code> обрабатывается во время компиляции, исключение будет выброшено до того, как выполнение достигнет блока <code>catch</code>). Например:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> supports_sticky<span class="token punctuation">;</span>
+<span class="token keyword">try</span> <span class="token punctuation">{</span> <span class="token function">RegExp</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">,</span> <span class="token string">'y'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> supports_sticky <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token keyword">catch</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span> supports_sticky <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>supports_sticky<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// напечатает 'true'</span>
+</code></pre></div><h3 id="example_regular_expression_and_unicode_characters"><a href="#example_regular_expression_and_unicode_characters" title="Permalink to Пример: регулярные выражения и символы Юникода">Пример: регулярные выражения и символы Юникода</a></h3><div><p>Как уже сказано выше, символьные классы <code>\w</code> и <code>\W</code> сопоставляются только с базовыми символами ASCII; то есть, с символами от «a» до «z», от «A» до «Z», от «0» до «9» и символом «_». Для сопоставления с символами из других языков, например, с кириллическими или иврита, используйте форму <code>\uhhhh</code>, где «hhhh»&nbsp;— это значение символа Юникода, записанное в шестнадцатеричной форме. Этот пример демонстрирует, как можно выделить символы Юникода, составляющие слова.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> text <span class="token operator">=</span> <span class="token string">'Образец text на русском языке'</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> regex <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">[\u0400-\u04FF]+</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> match <span class="token operator">=</span> regex<span class="token punctuation">.</span><span class="token function">exec</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>match<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment">// напечатает 'Образец'</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>regex<span class="token punctuation">.</span>lastIndex<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// напечатает '7'</span>
+
+<span class="token keyword">var</span> match2 <span class="token operator">=</span> regex<span class="token punctuation">.</span><span class="token function">exec</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>match2<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment">// напечатает 'на' [не 'text']</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>regex<span class="token punctuation">.</span>lastIndex<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// напечатает '15'</span>
+
+<span class="token comment">// и так далее</span>
+</code></pre>
+
+<p>Вот на этом внешнем ресурсе можно составить полный диапазон блоков Юникода для различных письменностей: <a href="http://kourge.net/projects/regexp-unicode-block" class="external" rel=" noopener">regexp-unicode-block</a>.</p></div><h3 id="example_extracting_subdomain_name_from_url"><a href="#example_extracting_subdomain_name_from_url" title="Permalink to Пример: извлечение имени поддомена из URL">Пример: извлечение имени поддомена из URL</a></h3><div><pre class="brush: js notranslate"><code><span class="token keyword">var</span> url <span class="token operator">=</span> <span class="token string">'http://xxx.domain.com'</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">[^.]+</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">.</span><span class="token function">exec</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// напечатает 'xxx'</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td>ECMAScript 1-е издание.</td>
+   <td>Стандарт</td>
+   <td>Изначальное определение. Реализована в JavaScript 1.1.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-15.10" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 5.1 (ECMA-262)<br><small lang="ru">Определение 'RegExp' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-regexp-regular-expression-objects" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'RegExp' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h3 id="gecko_specific_notes"><a href="#gecko_specific_notes" title="Permalink to Примечания по Gecko">Примечания по Gecko</a></h3><div><p>Начиная с Gecko 34 (Firefox 34 / Thunderbird 34 / SeaMonkey 2.31), в случае захвата группы с квантификаторами, предотвращающими появление группы в результате сопоставления, сопоставившийся текст для захваченной группы теперь имеет значение <code>undefined</code> вместо пустой строки:</p>
+
+<pre class="brush: js notranslate"><code><span class="token comment">// Firefox 33 или более ранние</span>
+<span class="token string">'x'</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">x(.)?</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">m<span class="token punctuation">,</span> group</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"'group:"</span> <span class="token operator">+</span> group <span class="token operator">+</span> <span class="token string">"'"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 'group:'</span>
+
+<span class="token comment">// Firefox 34 или более новые</span>
+<span class="token string">'x'</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">x(.)?</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">m<span class="token punctuation">,</span> group</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"'group:"</span> <span class="token operator">+</span> group <span class="token operator">+</span> <span class="token string">"'"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 'group:undefined'</span>
+</code></pre>
+
+<p>Обратите внимание, что для поддержания обратной совместимости, свойства <code>RegExp.$N</code> по-прежнему возвращают пустую строку вместо значения <code>undefined</code> (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1053944" class="external" rel=" noopener">bug 1053944</a>).</p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li>Глава про <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Regular_Expressions">регулярные выражения</a> в <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide">руководстве по JavaScript</a></li>
+ <li><a href="/js/String/match/"><code>String.prototype.match()</code></a></li>
+ <li><a href="/js/String/replace/"><code>String.prototype.replace()</code></a></li>
+</ul></div>

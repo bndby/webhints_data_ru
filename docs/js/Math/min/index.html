@@ -1,0 +1,51 @@
+<h1>Math.min()</h1><div><div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Метод <strong><code>Math.min()</code></strong> возвращает наименьшее из нуля или более чисел.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code>Math.min([<var>value1</var>[, <var>value2</var>[, ...]]])</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>value1, value2, ...</code></dt>
+ <dd>Числа.</dd>
+</dl></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Поскольку метод <code>min()</code> является статическим методом объекта <code>Math</code>, вы всегда должны использовать его как <code>Math.min()</code>, а не пытаться вызывать метод на созданном экземпляре объекта <code>Math</code> (поскольку объект <code>Math</code> не является конструктором).</p>
+
+<p>При вызове без аргументов результатом вызова будет значение <a href="/js/Infinity/"><code>Infinity</code></a>.</p>
+
+<p>Если хотя бы один из аргументов не может быть преобразован в число, результатом будет <a href="/js/NaN/"><code>NaN</code></a>.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_using_math.min"><a href="#example_using_math.min" title="Permalink to Пример: использование метода Math.min()">Пример: использование метода <code>Math.min()</code></a></h3><div><p>В этом примере ищется минимум из <code>x</code> и <code>y</code> и присваивается переменной <code>z</code>:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">,</span> y <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">20</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> z <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">min</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="example_clipping_a_value_with_math.min"><a href="#example_clipping_a_value_with_math.min" title="Permalink to Пример: обрезание значения при помощи метода Math.min()">Пример: обрезание значения при помощи метода <code>Math.min()</code></a></h3><div><p>Метод <code>Math.min()</code> часто используется для обрезания значения таким образом, чтобы оно всегда не превосходило некоторую границу. Например, такое условие</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token function">f</span><span class="token punctuation">(</span>foo<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span>x <span class="token operator">&gt;</span> boundary<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  x <span class="token operator">=</span> boundary<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p>может быть переписано в виде</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> x <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">min</span><span class="token punctuation">(</span><span class="token function">f</span><span class="token punctuation">(</span>foo<span class="token punctuation">)</span><span class="token punctuation">,</span> boundary<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+<p>Подобным образом может использоваться и метод <a href="/js/Math/max/"><code>Math.max()</code></a> для обрезания значения по нижней границе.</p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td>ECMAScript 1-е издание.</td>
+   <td>Стандарт</td>
+   <td>Изначальное определение. Реализована в JavaScript 1.0.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-15.8.2.12" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 5.1 (ECMA-262)<br><small lang="ru">Определение 'Math.min' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-math.min" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Math.min' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/Math/max/"><code>Math.max()</code></a></li>
+</ul></div>

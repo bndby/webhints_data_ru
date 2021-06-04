@@ -1,0 +1,68 @@
+<h1>TypedArray.prototype.values()</h1><div><div></div>
+
+<p>The <strong><code>values()</code></strong> method returns a new array iterator object
+  that contains the values for each index in the array.</p>
+
+<div><iframe class="interactive" width="100%" height="490" src="https://interactive-examples.mdn.mozilla.net/pages/js/array-values.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: js notranslate"><code><span class="token function">values</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre></div><h3 id="return_value"><a href="#return_value" title="Permalink to Return value">Return value</a></h3><div><p>A new array iterator object.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="iteration_using_for...of_loop"><a href="#iteration_using_for...of_loop" title="Permalink to Iteration using for...of loop">Iteration using for...of loop</a></h3><div><pre class="brush: js notranslate"><code><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">,</span> <span class="token string">'d'</span><span class="token punctuation">,</span> <span class="token string">'e'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> iterator <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> letter <span class="token keyword">of</span> iterator<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>letter<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>  <span class="token comment">//"a" "b" "c" "d" "e"</span>
+</code></pre>
+
+<p><code>Array.prototype.values</code> is default implementation of
+  <code>Array.prototype[Symbol.iterator]</code>.</p>
+
+<pre class="brush: js notranslate"><code><span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>values <span class="token operator">===</span> <span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">[</span>Symbol<span class="token punctuation">.</span>iterator<span class="token punctuation">]</span>      <span class="token comment">//true</span></code></pre></div><h3 id="iteration_using_.next"><a href="#iteration_using_.next" title="Permalink to Iteration using .next()">Iteration using .next()</a></h3><div><pre class="brush: js notranslate"><code><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">,</span> <span class="token string">'d'</span><span class="token punctuation">,</span> <span class="token string">'e'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> iterator <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+iterator<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>               <span class="token comment">// Object { value: "a", done: false }</span>
+iterator<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>value<span class="token punctuation">;</span>         <span class="token comment">// "b"</span>
+iterator<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token string">"value"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>      <span class="token comment">// "c"</span>
+iterator<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>               <span class="token comment">// Object { value: "d", done: false }</span>
+iterator<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>               <span class="token comment">// Object { value: "e", done: false }</span>
+iterator<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>               <span class="token comment">// Object { value: undefined, done: true }</span>
+iteraror<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>value<span class="token punctuation">;</span>         <span class="token comment">// undefined </span></code></pre>
+
+<div class="notecard warning">
+  <p><strong>Warning:</strong> One-use: the array iterator object is one use or temporary object</p>
+</div>
+
+<p>example:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">,</span> <span class="token string">'d'</span><span class="token punctuation">,</span> <span class="token string">'e'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+ <span class="token keyword">var</span> iterator <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> letter <span class="token keyword">of</span> iterator<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>letter<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token comment">//"a" "b" "c" "d" "e"</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> letter <span class="token keyword">of</span> iterator<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>letter<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token comment">// undefined</span>
+</code></pre>
+
+<p><strong>reason:</strong> When <code>next().done=true</code>&nbsp; or&nbsp;
+  <code>currentIndex&gt;length</code> the <code>for..of</code> loop ends. See <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols">Iteration
+    protocols.</a></p>
+
+<p><strong>Value</strong>: there are no values stored in the array Iterator
+  object;&nbsp;instead it stores&nbsp;the address of the array used in its creation and&nbsp;so depends
+  on the values stored in&nbsp;that array.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">,</span> <span class="token string">'d'</span><span class="token punctuation">,</span> <span class="token string">'e'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> iterator <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>iterator<span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment">// Array Iterator {  }</span>
+iterator<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>value<span class="token punctuation">;</span>        <span class="token comment">// "a"</span>
+arr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token string">'n'</span><span class="token punctuation">;</span>
+iterator<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>value<span class="token punctuation">;</span>        <span class="token comment">//  "n"</span>
+</code></pre>
+
+<div class="notecard note">
+  <p><strong>Note:</strong> If the values in the array changed the array iterator object values change too.</p>
+</div></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://tc39.es/ecma262/#sec-%typedarray%.prototype.values">Unknown specification<!-- --> <br><small># <!-- -->sec-%typedarray%.prototype.values</small></a></td></tr></tbody></table><div></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+  <li>A polyfill of <code>TypedArray.prototype.values</code> is available in <a href="https://github.com/zloirock/core-js#ecmascript-typed-arrays" class="external" rel=" noopener"><code>core-js</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/keys"><code>Array.prototype.keys()</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/entries"><code>Array.prototype.entries()</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach"><code>Array.prototype.forEach()</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every"><code>Array.prototype.every()</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some"><code>Array.prototype.some()</code></a></li>
+</ul></div>

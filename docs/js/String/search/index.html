@@ -1,0 +1,48 @@
+<h1>String.prototype.search()</h1><div><div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Метод <strong><code>search()</code></strong> выполняет поиск сопоставления между регулярным выражением и этим объектом <a href="/js/String/"><code>String</code></a>.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><var>str</var>.search([<var>regexp</var>])</pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>regexp</code></dt>
+ <dd>Необязательный параметр. Объект регулярного выражения. Если будет передан не объект регулярного выражения, он будет неявно преобразован в объект <a href="/js/RegExp/"><code>RegExp</code></a> через вызов конструктора <code>new RegExp(regexp)</code>.</dd>
+</dl></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>При успехе метод <code>search()</code> возвращает индекс первого сопоставления с регулярным выражением внутри строки. В противном случае метод вернёт -1.</p>
+
+<p>Если вы хотите узнать, находится ли шаблон в строке, используйте метод <code>search()</code> (он работает почти так же, как и метод <a href="/js/RegExp/test/"><code>test()</code></a> регулярного выражения, но вместо наличия подстроки возвращает её индекс); для получения дополнительной информации (за счёт более медленного выполнения) используйте метод <a href="/js/String/match/"><code>match()</code></a> (работает так же, как метод <a href="/js/RegExp/exec/"><code>exec()</code></a> регулярного выражения).</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_using_search"><a href="#example_using_search" title="Permalink to Пример: использование метода search()">Пример: использование метода <code>search()</code></a></h3><div><p>В следующем примере в журнал попадает сообщение, зависящее от успешности или неуспешности прохождения проверки.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">function</span> <span class="token function">testInput</span><span class="token punctuation">(</span><span class="token parameter">re<span class="token punctuation">,</span> str</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> midstring<span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">search</span><span class="token punctuation">(</span>re<span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    midstring <span class="token operator">=</span> <span class="token string">' содержит '</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    midstring <span class="token operator">=</span> <span class="token string">' не содержит '</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>str <span class="token operator">+</span> midstring <span class="token operator">+</span> re<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> testString  <span class="token operator">=</span> <span class="token string">'hey JuDe'</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> re <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">[A-Z]</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">;</span>
+
+<span class="token function">testInput</span><span class="token punctuation">(</span>re<span class="token punctuation">,</span> testString<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// выведет: hey Jude содержит /[A-Z]/g</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td>ECMAScript 3-е издание.</td>
+   <td>Стандарт</td>
+   <td>Изначальное определение. Реализована в JavaScript 1.2.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-15.5.4.12" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 5.1 (ECMA-262)<br><small lang="ru">Определение 'String.prototype.search' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-string.prototype.search" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'String.prototype.search' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/String/match/"><code>String.prototype.match()</code></a></li>
+ <li><a href="/js/RegExp/exec/"><code>RegExp.prototype.exec()</code></a></li>
+</ul></div>

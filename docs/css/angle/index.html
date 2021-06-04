@@ -1,0 +1,63 @@
+<h1>&lt;angle&gt;</h1><div><div></div>
+
+<p dir="ltr"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Types">Тип данных</a>&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a>&nbsp;<strong><code>&lt;angle&gt;</code></strong>&nbsp;представляет собой значение угла, выраженное в градусах, градах, радианах или оборотах.&nbsp;Он используется, например, в <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/gradient"><code>&lt;gradient&gt;</code> <span>(en-US)</span></a> &nbsp;и в некоторых функциях <a href="/css/transform/"><code>transform</code></a>.</p>
+
+<p dir="ltr"><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/type-angle.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><p>Тип данных&nbsp;<code>&lt;angle&gt;</code> состоит из числа (<a href="/css/number/"><code>&lt;number&gt;</code></a>), за которым следует одна из единиц измерения, представленные&nbsp;ниже.&nbsp;Между литералом единицы измерения и цифрой нет пробела. После&nbsp;<code>0</code>&nbsp;указывать единицу&nbsp;измерения необязательно.</p>
+
+<p>Опционально&nbsp;перед числом может стоять знак <code>+</code> или <code>-</code> . Положительное значение отмеряется по часовой стрелке, а отрицательные –&nbsp;против часовой. Чтобы достичь статистических свойств, каждый угол может быть представлен разными значениями, эквивалентными друг другу. Например, <code>90deg</code> равняется&nbsp;<code>-270deg</code>, а&nbsp;<code>1turn</code> равняется&nbsp;<code>4turn</code>. Тем не менее, для достижения&nbsp;динамических свойств эффект будет другим. Например,&nbsp;при применении <a href="/css/animation/"><code>animation</code></a> или <a href="/css/transition/"><code>transition</code></a>.&nbsp;</p></div><h3 id="единицы_измерения"><a href="#единицы_измерения" title="Permalink to Единицы измерения">Единицы измерения</a></h3><div><dl>
+ <dt><font face="consolas, Liberation Mono, courier, monospace"><span style="background-color: rgba(220, 220, 220, 0.498039);">deg</span></font></dt>
+ <dd>
+ <p dir="ltr" id="tw-target-text">Представляет угол в <a href="https://ru.wikipedia.org/wiki/%D0%93%D1%80%D0%B0%D0%B4%D1%83%D1%81_(%D0%B3%D0%B5%D0%BE%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D1%8F)" class="external" rel=" noopener">градусах</a>. Один полный круг равен&nbsp;<code>360deg</code>. Например:&nbsp;<code>0deg</code>, <code>90deg</code>, <code>14.23deg</code>.</p>
+ </dd>
+ <dt id="grad"><font face="consolas, Liberation Mono, courier, monospace"><span style="background-color: rgba(220, 220, 220, 0.498039);">grad</span></font></dt>
+ <dd>Представляет угол в <a href="https://ru.wikipedia.org/wiki/%D0%93%D1%80%D0%B0%D0%B4,_%D0%BC%D0%B8%D0%BD%D1%83%D1%82%D0%B0,_%D1%81%D0%B5%D0%BA%D1%83%D0%BD%D0%B4%D0%B0" class="external" rel=" noopener">градах</a>. Один полный круг равен&nbsp;<code>400grad</code>. Например:&nbsp;<code>0grad</code>,&nbsp;<code>100grad</code>,&nbsp;<code>38.8grad</code>.</dd>
+ <dt id="rad"><font face="consolas, Liberation Mono, courier, monospace"><span style="background-color: rgba(220, 220, 220, 0.498039);">rad</span></font></dt>
+ <dd>Представляет угол в <a href="https://ru.wikipedia.org/wiki/%D0%A0%D0%B0%D0%B4%D0%B8%D0%B0%D0%BD" class="external" rel=" noopener">радианах</a>. Один полный круг равен 2π или примерно&nbsp;<code>6.2832rad</code>.&nbsp;<code>1rad</code>&nbsp;- это 180/π градусов. Например:&nbsp;<code>0rad</code>,&nbsp;<code>1.0708rad</code>,&nbsp;<code>6.2832rad</code>.</dd>
+ <dt id="turn"><font face="consolas, Liberation Mono, courier, monospace"><span style="background-color: rgba(220, 220, 220, 0.498039);">turn</span></font></dt>
+ <dd>Представляет угол в количестве <a href="https://ru.wikipedia.org/wiki/%D0%9E%D0%B1%D0%BE%D1%80%D0%BE%D1%82_(%D0%B5%D0%B4%D0%B8%D0%BD%D0%B8%D1%86%D0%B0_%D0%B8%D0%B7%D0%BC%D0%B5%D1%80%D0%B5%D0%BD%D0%B8%D1%8F)" class="external" rel=" noopener">оборотов</a>.&nbsp;Один полный круг равен&nbsp;<code>1turn</code>. Например:&nbsp;<code>0turn</code>,&nbsp;<code>0.25turn</code>,&nbsp;<code>1.2turn</code>.</dd>
+</dl></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div><table style="width: 100%;">
+ <tbody>
+  <tr>
+   <td><img alt="Angle90.png" class="default internal" src="/@api/deki/files/5704/=Angle90.png" loading="lazy"></td>
+   <td>
+    <p>Прямой угол: <code>90deg = 100grad = 0.25turn</code><code style="white-space: nowrap;">≈</code><code> 1.5708rad</code></p>
+   </td>
+  </tr>
+  <tr>
+   <td><img alt="Angle180.png" class="default internal" src="/@api/deki/files/5706/=Angle180.png" loading="lazy"></td>
+   <td>Развёрнутый угол: <code>180deg = 200grad = 0.5turn</code><code> </code><code style="white-space: nowrap;">≈</code><code> 3.1416rad</code></td>
+  </tr>
+  <tr>
+   <td><img alt="AngleMinus90.png" class="default internal" src="/@api/deki/files/5707/=AngleMinus90.png" loading="lazy"></td>
+   <td>Прямой угол (против часовой стрелки): <code>-90deg = -100grad = -0.25turn</code> <code style="white-space: nowrap;">≈</code><code> -1.5708rad</code></td>
+  </tr>
+  <tr>
+   <td><img alt="Angle0.png" class="default internal" src="/@api/deki/files/5708/=Angle0.png" loading="lazy"></td>
+   <td>
+    <p>Нулевой угол: <code>0deg = 0grad = 0turn</code><code> </code><code style="white-space: nowrap;">=</code><code> 0rad</code></p>
+   </td>
+  </tr>
+ </tbody>
+</table></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-values-4/#angles" hreflang="en" lang="en" class="external" rel=" noopener">CSS Values and Units Module Level&nbsp;4<br><small lang="ru">Определение '&lt;angle&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-ed">Редакторский черновик</span></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-values-3/#angles" hreflang="en" lang="en" class="external" rel=" noopener">CSS Values and Units Module Level&nbsp;3<br><small lang="ru">Определение '&lt;angle&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-cr">Кандидат в рекомендации</span></td>
+   <td>Изначальное определение.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="совместимость_с_браузерами"><a href="#совместимость_с_браузерами" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p>
+
+<div id="compat-mobile"></div></div>

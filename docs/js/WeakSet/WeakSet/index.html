@@ -1,0 +1,30 @@
+<h1>WeakSet() constructor</h1><div><div></div>
+
+<p>The <strong><code>WeakSet</code></strong> constructor lets you create
+  <code>WeakSet</code> objects that store weakly held <em>objects</em> in a collection.
+</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: js notranslate"><code><span class="token keyword">new</span> <span class="token class-name">WeakSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">new</span> <span class="token class-name">WeakSet</span><span class="token punctuation">(</span>iterable<span class="token punctuation">)</span>
+</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Parameters">Parameters</a></h3><div><dl>
+  <dt><var>iterable</var></dt>
+  <dd>If an <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of">iterable
+      object</a> is passed, all of its elements will be added to the new
+    <code>WeakSet</code>. null is treated as undefined.</dd>
+</dl></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="using_the_weakset_object"><a href="#using_the_weakset_object" title="Permalink to Using the WeakSet&nbsp;object">Using the WeakSet&nbsp;object</a></h3><div><pre class="brush: js notranslate"><code><span class="token keyword">var</span> ws <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">WeakSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> foo <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> bar <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+ws<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>foo<span class="token punctuation">)</span><span class="token punctuation">;</span>
+ws<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>bar<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ws<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>foo<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// true</span>
+ws<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>bar<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// true</span>
+
+ws<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span>foo<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// removes foo from the set</span>
+ws<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>foo<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// false, foo has been removed</span>
+ws<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>bar<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// true, bar is retained</span></code></pre>
+
+<p>Note that <code>foo !== bar</code>. While they are similar objects, <em>they are not
+    <strong>the same object</strong></em>. And so they are both added to the set.</p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://tc39.es/ecma262/#sec-weakset-constructor">Unknown specification<!-- --> <br><small># <!-- -->sec-weakset-constructor</small></a></td></tr></tbody></table><div></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+  <li>A polyfill of <code>WeakSet</code> is available in <a href="https://github.com/zloirock/core-js#weakset" class="external" rel=" noopener"><code>core-js</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet"><code>WeakSet</code></a></li>
+</ul></div>

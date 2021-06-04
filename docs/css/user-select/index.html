@@ -1,0 +1,101 @@
+<h1>user-select</h1><div><div></div>
+
+<p>Свойство&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> <code><strong>user-select</strong></code> определяет может ли пользователь выбрать текст.&nbsp; Оно не влияет на контент, загруженный как <a href="https://developer.mozilla.org/ru/docs/Glossary/Chrome">chrome</a>, за исключением текстовых блоков.</p>
+
+<pre class="brush:css notranslate"><code><span class="token comment">/* Ключевые слова в значении */</span>
+<span class="token property">user-select</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token property">user-select</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+<span class="token property">user-select</span><span class="token punctuation">:</span> text<span class="token punctuation">;</span>
+<span class="token property">user-select</span><span class="token punctuation">:</span> contain<span class="token punctuation">;</span>
+<span class="token property">user-select</span><span class="token punctuation">:</span> all<span class="token punctuation">;</span>
+
+<span class="token comment">/* Глобальные значения */</span>
+<span class="token property">user-select</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">user-select</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">user-select</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+
+<span class="token comment">/* Специфичные для Mozilla значения */</span>
+<span class="token property">-moz-user-select</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token property">-moz-user-select</span><span class="token punctuation">:</span> text<span class="token punctuation">;</span>
+<span class="token property">-moz-user-select</span><span class="token punctuation">:</span> all<span class="token punctuation">;</span>
+
+<span class="token comment">/* Специфичные для WebKit значения */</span>
+<span class="token property">-webkit-user-select</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token property">-webkit-user-select</span><span class="token punctuation">:</span> text<span class="token punctuation">;</span>
+<span class="token property">-webkit-user-select</span><span class="token punctuation">:</span> all<span class="token punctuation">;</span> <span class="token comment">/*Не работает Safari; используйте только
+                             "none" или "text", или, в противном случае, оно
+                             будет разрешать ввод в &lt;html&gt; контейнер */</span>
+
+<span class="token comment">/* Специфичные для Microsoft значения */</span>
+<span class="token property">-ms-user-select</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token property">-ms-user-select</span><span class="token punctuation">:</span> text<span class="token punctuation">;</span>
+<span class="token property">-ms-user-select</span><span class="token punctuation">:</span> element<span class="token punctuation">;</span>
+</code></pre>
+
+<p></p><table class="properties"><tbody><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td><code>auto</code></td></tr><tr><th scope="row">Применяется к</th><td>все элементы</td></tr><tr><th scope="row"><a href="/css/inheritance/">Наследуется</a></th><td>нет</td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>как указано</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><dl>
+ <dt><code>none</code></dt>
+ <dd>Текст элемента и вложенных в него элементов не выбирается. Обратите внимание, что объект <a href="https://developer.mozilla.org/ru/docs/Web/API/Selection"><code>Selection</code></a> может содержать эти элементы.</dd>
+ <dt><code>auto</code></dt>
+ <dd>
+ <p>Вычисляемое значение, автоматически определяется следующим образом:</p>
+
+ <ul>
+  <li>Для псевдо-элементов <code>::before</code> и <code>::after</code> вычисляемое значение -&nbsp; <code>none</code></li>
+  <li>Если элемент&nbsp; является редактируемым, вычисляемое значение - <code>contain</code></li>
+  <li>Иначе, если вычисляемое значение <code>user-select</code> для родителя этого элемента - <code>all</code>, вычисляемое значение - <code>all</code></li>
+  <li>Иначе, если вычисляемое значение <code>user-select</code> для родителя этого элемента - <code>none</code>, вычисляемое значение - <code>none</code></li>
+  <li>Иначе, вычисляемое значение - <code>text</code></li>
+ </ul>
+ </dd>
+ <dt><code>text</code></dt>
+ <dd>Текст может быть выбран пользователем.</dd>
+ <dt><code>all</code></dt>
+ <dd>В HTML-редакторе, если двойной клик или контекстный клик произошёл во вложенном элементе, будет выбрано все содержимое коренного предка с этим значением свойства.</dd>
+ <dt><code>contain</code></dt>
+ <dd>Позволяет начать выбор внутри элемента; однако, выбор будет содержаться внутри границ данного элемента.</dd>
+ <dt><code>element</code> (IE-specific alias)</dt>
+ <dd>Аналогичен <code>contain</code>. Поддерживается только в Internet Explorer.</dd>
+</dl>
+
+<div class="note notecard">
+<p id="Formal_syntax"><strong>Примечание:</strong> CSS UI 4 <a href="https://github.com/w3c/csswg-drafts/commit/3f1d9db96fad8d9fc787d3ed66e2d5ad8cfadd05" class="external" rel=" noopener">renames user-select: element to contain</a>.</p>
+</div></div><h3 id="формальный_синтаксис"><a href="#формальный_синтаксис" title="Permalink to Формальный синтаксис">Формальный синтаксис</a></h3><div><pre class="notranslate">auto <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> text <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> none <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> contain <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> all</pre></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="html"><a href="#html" title="Permalink to HTML">HTML</a></h3><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>You should be able to select this text.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>unselectable<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Hey, you can't select this text!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>all<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Clicking once will select all of this text.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h3 id="css"><a href="#css" title="Permalink to CSS">CSS</a></h3><div><pre class="brush: css notranslate"><code><span class="token selector">.unselectable</span> <span class="token punctuation">{</span>
+  <span class="token property">-moz-user-select</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+  <span class="token property">-webkit-user-select</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+  <span class="token property">-ms-user-select</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+  <span class="token property">user-select</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.all</span> <span class="token punctuation">{</span>
+  <span class="token property">-moz-user-select</span><span class="token punctuation">:</span> all<span class="token punctuation">;</span>
+  <span class="token property">-webkit-user-select</span><span class="token punctuation">:</span> all<span class="token punctuation">;</span>
+  <span class="token property">-ms-user-select</span><span class="token punctuation">:</span> all<span class="token punctuation">;</span>
+  <span class="token property">user-select</span><span class="token punctuation">:</span> all<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="результат"><a href="#результат" title="Permalink to Результат">Результат</a></h3><div><p><iframe class="sample-code-frame" id="frame_Examples" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/user-select/_sample_.Examples.html" loading="lazy"></iframe></p></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-ui-4/#propdef-user-select" hreflang="en" lang="en" class="external" rel=" noopener">CSS Basic User Interface Module Level&nbsp;4<br><small lang="ru">Определение 'user-select' в этой спецификации.</small></a></td>
+   <td><span class="spec-wd">Рабочий черновик</span></td>
+   <td>Первое определение. Также определение <code>-webkit-user-select</code> как устаревшего псевдонима <code>user-select</code>.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="поддержка_браузерами"><a href="#поддержка_браузерами" title="Permalink to Поддержка браузерами">Поддержка браузерами</a></h2><p>BCD tables only load in the browser</p><div><div>
+
+
+<p></p><p></p>
+</div></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/css/::selection/"><code>::selection</code></a></li>
+ <li>Объект JavaScript <a href="https://developer.mozilla.org/ru/docs/Web/API/Selection"><code>Selection</code></a>.</li>
+ <li><a href="https://www.w3.org/TR/css-ui-4/#propdef-user-select" class="external" rel=" noopener">user-select</a> in <a href="https://www.w3.org/TR/css-ui-4/" class="external" rel=" noopener">CSS Basic User Interface Module Level 4</a>.</li>
+</ul></div>

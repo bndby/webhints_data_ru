@@ -1,0 +1,45 @@
+<h1>Reflect.deleteProperty()</h1><div><div></div>
+
+<p>Статический метод&nbsp;<code><strong>Reflect</strong></code><strong><code>.deleteProperty()</code></strong> позволяет удалять свойства из объекта. Реализация данной функции схожа с оператором&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete"><code>delete</code></a>.</p>
+
+<div><iframe class="interactive" width="100%" height="692" src="https://interactive-examples.mdn.mozilla.net/pages/js/reflect-deleteproperty.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate">Reflect.deleteProperty(<em>target</em>, <em>propertyKey</em>)
+</pre></div><h3 id="параметры"><a href="#параметры" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>target</code></dt>
+ <dd>Целевой объект в котором будет удалено свойство.</dd>
+ <dt><code>propertyKey</code></dt>
+ <dd>Имя удаляемого свойства.</dd>
+</dl></div><h3 id="возвращаемое_значение"><a href="#возвращаемое_значение" title="Permalink to Возвращаемое значение">Возвращаемое значение</a></h3><div><p><a href="/js/Boolean/"><code>Boolean</code></a> указывающий, было ли свойство успешно удалено.</p></div><h3 id="исключения"><a href="#исключения" title="Permalink to Исключения">Исключения</a></h3><div><p>Исключение <a href="/js/TypeError/"><code>TypeError</code></a>, если&nbsp;<code>target</code> не является <a href="/js/Object/"><code>Object</code></a>.</p></div><h2 id="описание"><a href="#описание" title="Permalink to Описание">Описание</a></h2><div><p>Метод&nbsp;<code>Reflect.deleteProperty</code> позволяет вам удалить свойство объекта.&nbsp;Он возвращает&nbsp;<a href="/js/Boolean/"><code>Boolean</code></a> указывающий, было ли свойство успешно удалено.&nbsp;Он так же идентичен оператору&nbsp;<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete">delete</a></code>&nbsp;без использования строгого режима.</p></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="использования_reflect.deleteproperty()"><a href="#использования_reflect.deleteproperty()" title="Permalink to Использования&nbsp;Reflect.deleteProperty()">Использования&nbsp;<code>Reflect.deleteProperty()</code></a></h3><div><pre class="brush: js notranslate"><code><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span> x<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> y<span class="token operator">:</span> <span class="token number">2</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+Reflect<span class="token punctuation">.</span><span class="token function">deleteProperty</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token string">'x'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
+obj<span class="token punctuation">;</span> <span class="token comment">// { y: 2 }</span>
+
+<span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+Reflect<span class="token punctuation">.</span><span class="token function">deleteProperty</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> <span class="token string">'3'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
+arr<span class="token punctuation">;</span> <span class="token comment">// [1, 2, 3, , 5]</span>
+
+<span class="token comment">// Возвращает true даже если такого свойства не существует</span>
+Reflect<span class="token punctuation">.</span><span class="token function">deleteProperty</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token string">'foo'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
+
+<span class="token comment">// Возвращает false если такое свойство ненастраиваемое</span>
+Reflect<span class="token punctuation">.</span><span class="token function">deleteProperty</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span><span class="token function">freeze</span><span class="token punctuation">(</span><span class="token punctuation">{</span>foo<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'foo'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// false</span>
+</code></pre></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-reflect.deleteproperty" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Reflect.deleteProperty' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Начальное определение.</td>
+  </tr>
+  <tr>
+   <td><a href="https://tc39.es/ecma262/#sec-reflect.deleteproperty" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript (ECMA-262)<br><small lang="ru">Определение 'Reflect.deleteProperty' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="совместимость_с_браузерами"><a href="#совместимость_с_браузерами" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/Reflect/"><code>Reflect</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete"><code>delete</code> operator</a></li>
+</ul></div>

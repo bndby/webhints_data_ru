@@ -1,0 +1,72 @@
+<h1>&lt;display-inside&gt;</h1><div><div></div>
+
+<p class="summary">These keywords specify the element’s inner <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display"><code>display</code></a> type, which defines the type of formatting context that lays out its contents (assuming it is a non-replaced element). These keywords are used as values of the <code>display</code> property, and can be used for legacy purposes as a single keyword, or as defined in the Level 3 specification alongside a value from the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display-outside"><code>&lt;display-outside&gt;</code></a> keywords.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><p>Valid <code>&lt;display-inside&gt;</code> values:</p>
+
+<dl>
+ <dt><code>flow</code> </dt>
+ <dd>The element lays out its contents using flow layout (block-and-inline layout).
+ <p>If its outer display type is <code>inline</code> or <code>run-in</code>, and it is participating in a block or inline formatting context, then it generates an inline box. Otherwise it generates a block container box.</p>
+
+ <p>Depending on the value of other properties (such as <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position"><code>position</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/float"><code>float</code></a>, or <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/overflow"><code>overflow</code></a>) and whether it is itself participating in a block or inline formatting context, it either establishes a new <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context">block formatting context</a> (BFC) for its contents or integrates its contents into its parent formatting context.</p>
+ </dd>
+ <dt><code>flow-root</code></dt>
+ <dd>The element generates a block element box that establishes a new <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context">block formatting context</a>, defining where the formatting root lies.</dd>
+ <dt><code>table</code></dt>
+ <dd>These elements behave like HTML <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table"><code>&lt;table&gt;</code></a> elements. It defines a block-level box.</dd>
+ <dt><code>flex</code></dt>
+ <dd>The element behaves like a block element and lays out its content according to the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout">flexbox model</a>.</dd>
+ <dt><code>grid</code></dt>
+ <dd>The element behaves like a block element and lays out its content according to the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout">grid model</a>.</dd>
+ <dt><code>ruby</code> </dt>
+ <dd>The element behaves like an inline element and lays out its content according to the ruby formatting model. It behaves like the corresponding HTML <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ruby"><code>&lt;ruby&gt;</code></a> elements.</dd>
+</dl>
+
+<div class="note notecard">
+<p><strong>Note</strong>: Browsers that support the two value syntax, on finding the inner value only, such as when <code>display: flex</code> or <code>display: grid</code> is specified, will set their outer value to <code>block</code>. This will result in expected behavior; for example if you specify an element to be <code>display: grid</code>, you would expect that the box created on the grid container would be a block level box.</p>
+</div></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div><p>In this example the parent box has been given <code>display: flow-root</code> and so establishes a new BFC and contains the floated item.</p></div><h3 id="html"><a href="#html" title="Permalink to HTML">HTML</a></h3><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>box<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>float<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>I am a floated box!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>I am content inside the container.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h3 id="css"><a href="#css" title="Permalink to CSS">CSS</a></h3><div><pre class="brush: css notranslate"><code><span class="token selector">.box</span> <span class="token punctuation">{</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">rgb</span><span class="token punctuation">(</span>224<span class="token punctuation">,</span> 206<span class="token punctuation">,</span> 247<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">border</span><span class="token punctuation">:</span> 5px solid rebeccapurple<span class="token punctuation">;</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> flow-root<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.float</span> <span class="token punctuation">{</span>
+    <span class="token property">float</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 150px<span class="token punctuation">;</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+    <span class="token property">border</span><span class="token punctuation">:</span>1px solid black<span class="token punctuation">;</span>
+    <span class="token property">padding</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div><h3 id="result"><a href="#result" title="Permalink to Result">Result</a></h3><div><p><iframe class="sample-code-frame" id="frame_Examples" width="100%" height="180" src="https://yari-demos.prod.mdn.mozit.cloud/en-us/docs/web/css/display-inside/_sample_.Examples.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-display/#typedef-display-inside" hreflang="en" lang="en" class="external" rel=" noopener">CSS Display Module Level&nbsp;3<br><small lang="en-US">The definition of 'display-inside' in that specification.</small></a></td>
+   <td><span class="spec-cr">Candidate Recommendation</span></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><div></div><h3 id="support_of_multiple_keyword_values"><a href="#support_of_multiple_keyword_values" title="Permalink to Support of multiple keyword values">Support of multiple keyword values</a></h3><p>BCD tables only load in the browser</p><div><p></p><p></p>
+
+<ul>
+ <li>Chromium bug: <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=804600" class="external" rel=" noopener">https://bugs.chromium.org/p/chromium/issues/detail?id=804600</a></li>
+</ul></div><h3 id="support_of_flow-root"><a href="#support_of_flow-root" title="Permalink to Support of flow-root">Support of flow-root</a></h3><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h3 id="support_of_table"><a href="#support_of_table" title="Permalink to Support of table">Support of table</a></h3><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h3 id="support_of_grid"><a href="#support_of_grid" title="Permalink to Support of grid">Support of grid</a></h3><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h3 id="support_of_flex"><a href="#support_of_flex" title="Permalink to Support of flex">Support of flex</a></h3><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h3 id="support_of_ruby"><a href="#support_of_ruby" title="Permalink to Support of ruby">Support of ruby</a></h3><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display"><code>display</code></a>
+  <ul>
+   <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display-outside"><code>&lt;display-outside&gt;</code></a></li>
+   <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display-listitem"><code>&lt;display-listitem&gt;</code></a></li>
+   <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display-internal"><code>&lt;display-internal&gt;</code></a></li>
+   <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display-box"><code>&lt;display-box&gt;</code></a></li>
+   <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display-legacy"><code>&lt;display-legacy&gt;</code></a></li>
+  </ul>
+ </li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox">Basic Concepts of Flexbox</a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout">Basic Concepts of Grid Layout</a></li>
+</ul></div>

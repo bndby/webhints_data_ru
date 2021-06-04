@@ -1,0 +1,81 @@
+<h1>Symbol.isConcatSpreadable</h1><div><div></div>
+
+<p>&nbsp;<strong><code>Symbol.isConcatSpreadable</code></strong> - это известный символ, который используется для&nbsp; определения, должен ли объект редуцироваться к сумме своих элементов при использовании метода <a href="/js/Array/concat/"><code>Array.prototype.concat()</code></a>.</p>
+
+<div><table class="standard-table">
+  <thead>
+    <tr>
+      <th class="header" colspan="2">Атрибуты свойства<code>Symbol.isConcatSpreadable</code></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Записываемое</td>
+      <td>нет</td>
+    </tr>
+    <tr>
+      <td>Перечисляемое</td>
+      <td>нет</td>
+    </tr>
+    <tr>
+      <td>Настраиваемое</td>
+      <td>нет</td>
+    </tr>
+  </tbody>
+</table></div></div><h2 id="описание"><a href="#описание" title="Permalink to Описание">Описание</a></h2><div><p><code>@@isConcatSpreadable-символ</code> (<code>Symbol.isConcatSpreadable</code>) можно определить как собственное или унаследованное свойство с булевым значением. Оно контролирует поведение массивов и массивоподобных объектов:</p>
+
+<ul>
+ <li>Для массивов поведением по умолчанию будет редуцирование к сумме своих элементов. <code>Symbol.isConcatSpreadable</code> поможет избежать редукции в подобных случаях.</li>
+ <li>Для массивоподобных объектов поведением по умолчанию будет <code>сохранение своей структуры.isConcatSpreadable</code> может вызвать редуцирование в подобных случаях.</li>
+</ul></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="массивы"><a href="#массивы" title="Permalink to Массивы">Массивы</a></h3><div><p>По умолчанию, <a href="/js/Array/concat/"><code>Array.prototype.concat()</code></a>&nbsp; возвращает массив, объединяющий&nbsp; элементы исходных массивов:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> alpha <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    numeric <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> alphaNumeric <span class="token operator">=</span> alpha<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>numeric<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>alphaNumeric<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Result: ['a', 'b', 'c', 1, 2, 3]</span>
+</code></pre>
+
+<p>Если значение <code>Symbol.isConcatSpreadable</code>&nbsp; =&nbsp; <code>false</code>, то можно отменить поведение по умолчанию:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> alpha <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    numeric <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+numeric<span class="token punctuation">[</span>Symbol<span class="token punctuation">.</span>isConcatSpreadable<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> alphaNumeric <span class="token operator">=</span> alpha<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>numeric<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>alphaNumeric<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Result: ['a', 'b', 'c', [1, 2, 3] ]</span>
+</code></pre></div><h3 id="массивоподобные_объекты"><a href="#массивоподобные_объекты" title="Permalink to Массивоподобные объекты">Массивоподобные объекты</a></h3><div><p>Для массивоподобных объектов поведением по умолчанию будет <code>сохранение своей структуры. </code>Чтобы вызвать его разложение до суммы&nbsp; элементов&nbsp; в итоговом массиве, нужно задать значение <code>true для Symbol.isConcatSpreadable</code>:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> fakeArray <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">[</span>Symbol<span class="token punctuation">.</span>isConcatSpreadable<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  length<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+  <span class="token number">0</span><span class="token operator">:</span> <span class="token string">'hello'</span><span class="token punctuation">,</span>
+  <span class="token number">1</span><span class="token operator">:</span> <span class="token string">'world'</span>
+<span class="token punctuation">}</span>
+
+x<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>fakeArray<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [1, 2, 3, "hello", "world"]</span>
+</code></pre></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-symbol.isconcatspreadable" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Symbol.isconcatspreadable' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Initial definition.</td>
+  </tr>
+  <tr>
+   <td><a href="https://tc39.es/ecma262/#sec-symbol.isconcatspreadable" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript (ECMA-262)<br><small lang="ru">Определение 'Symbol.isconcatspreadable' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td>No change.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="совместимость_с_браузерами"><a href="#совместимость_с_браузерами" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/Array/concat/"><code>Array.prototype.concat()</code></a></li>
+</ul></div>

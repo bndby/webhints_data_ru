@@ -1,0 +1,35 @@
+<h1>String.prototype.concat()</h1><div><div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Метод <strong><code>concat()</code></strong> объединяет текст из двух или более строк и возвращает новую строку.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code><var>str</var>.concat(<var>string2</var>, <var>string3</var>[, ..., <var>stringN</var>])</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>string2...string<em>N</em></code></dt>
+ <dd>Строки, объединяемые в эту строку.</dd>
+</dl></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Метод <code>concat()</code> объединяет текст из двух или более строк и возвращает новую строку. Изменения в тексте в одной строке не затрагивают остальные строки.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_using_concat"><a href="#example_using_concat" title="Permalink to Пример: использование метода concat()">Пример: использование метода <code>concat()</code></a></h3><div><p>В следующем примере несколько строк объединяются в одну.</p>
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> hello <span class="token operator">=</span> <span class="token string">'Привет, '</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>hello<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span><span class="token string">'Кевин'</span><span class="token punctuation">,</span> <span class="token string">', удачного дня.'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">/* Привет, Кевин, удачного дня. */</span>
+</code></pre></div><h2 id="performance"><a href="#performance" title="Permalink to Производительность">Производительность</a></h2><div><p>Настоятельно рекомендуется вместо метода <code>concat()</code> использовать <a href="https://developer.mozilla.org/ru/docs/conflicting/Web/JavaScript/Reference/Operators_8d54701de06af40a7c984517cbe87b3e">операторы присваивания</a> (<code>+</code>, <code>+=</code>). Смотрите это <a href="http://jsperf.com/concat-vs-plus-vs-join" class="external" rel=" noopener">сравнение производительности</a>.</p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td>ECMAScript 3-е издание.</td>
+   <td>Стандарт</td>
+   <td>Изначальное определение. Реализована в JavaScript 1.2.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-15.5.4.6" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 5.1 (ECMA-262)<br><small lang="ru">Определение 'String.prototype.concat' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-string.prototype.concat" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'String.prototype.concat' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/Array/concat/"><code>Array.prototype.concat()</code></a></li>
+ <li><a href="https://developer.mozilla.org/ru/docs/conflicting/Web/JavaScript/Reference/Operators_8d54701de06af40a7c984517cbe87b3e">Операторы присваивания</a></li>
+</ul></div>

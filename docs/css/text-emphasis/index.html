@@ -1,0 +1,94 @@
+<h1>text-emphasis</h1><div><div></div>
+
+<p>The <strong><code>text-emphasis</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> property applies emphasis marks to text (except spaces and control characters). It is a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties">shorthand</a> for <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-emphasis-style"><code>text-emphasis-style</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-emphasis-color"><code>text-emphasis-color</code></a>.</p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/text-emphasis.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+<p>The <code>text-emphasis</code> property is quite different from <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration"><code>text-decoration</code></a>. The <code>text-decoration</code> property does not inherit, and the decoration specified is applied across the whole element. However, text-emphasis does inherit, which means it is possible to change emphasis marks for descendants.</p>
+
+<p>The size of the emphasis symbol,&nbsp;like ruby symbols, is about 50% of the size of the font, and <code>text-emphasis</code> may affect line height when the current leading is not enough for the marks.</p>
+
+<div class="note notecard">
+<p><code>text-emphasis</code> doesn't reset the value of <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-emphasis-position"><code>text-emphasis-position</code></a>. This is because if the style and the color of emphasis marks may vary in a text, it is extremely unlikely that their position will. In the very rare cases when this is needed, the property <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-emphasis-position"><code>text-emphasis-position</code></a>.</p>
+</div></div><h2 id="constituent_properties"><a href="#constituent_properties" title="Permalink to Constituent properties">Constituent properties</a></h2><div><p>This property is a shorthand for the following CSS properties:</p>
+
+<ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-emphasis-color"><code>text-emphasis-color</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-emphasis-style"><code>text-emphasis-style</code></a></li>
+</ul></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* Initial value */</span>
+<span class="token property">text-emphasis</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span> <span class="token comment">/* No emphasis marks */</span>
+
+<span class="token comment">/* &lt;string&gt; value */</span>
+<span class="token property">text-emphasis</span><span class="token punctuation">:</span> <span class="token string">'x'</span><span class="token punctuation">;</span>
+<span class="token property">text-emphasis</span><span class="token punctuation">:</span> <span class="token string">'点'</span><span class="token punctuation">;</span>
+<span class="token property">text-emphasis</span><span class="token punctuation">:</span> <span class="token string">'\25B2'</span><span class="token punctuation">;</span>
+<span class="token property">text-emphasis</span><span class="token punctuation">:</span> <span class="token string">'*'</span> #555<span class="token punctuation">;</span>
+<span class="token property">text-emphasis</span><span class="token punctuation">:</span> <span class="token string">'foo'</span><span class="token punctuation">;</span> <span class="token comment">/* Should NOT use. It may be computed to or rendered as 'f' only */</span>
+
+<span class="token comment">/* Keywords value */</span>
+<span class="token property">text-emphasis</span><span class="token punctuation">:</span> filled<span class="token punctuation">;</span>
+<span class="token property">text-emphasis</span><span class="token punctuation">:</span> open<span class="token punctuation">;</span>
+<span class="token property">text-emphasis</span><span class="token punctuation">:</span> filled sesame<span class="token punctuation">;</span>
+<span class="token property">text-emphasis</span><span class="token punctuation">:</span> open sesame<span class="token punctuation">;</span>
+
+<span class="token comment">/* Keywords value combined with a color */</span>
+<span class="token property">text-emphasis</span><span class="token punctuation">:</span> filled sesame #555<span class="token punctuation">;</span>
+
+<span class="token comment">/* Global values */</span>
+<span class="token property">text-emphasis</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">text-emphasis</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">text-emphasis</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+ <dt><code>none</code></dt>
+ <dd>No emphasis marks.</dd>
+ <dt><code>filled</code></dt>
+ <dd>The shape is filled with solid color. If neither <code>filled</code> nor <code>open</code> is present, this is the default.</dd>
+ <dt><code>open</code></dt>
+ <dd>The shape is hollow.</dd>
+ <dt><code>dot</code></dt>
+ <dd>Display small circles as marks. The filled dot is <code>'•'</code> (<code>U+2022</code>), and the open dot is <code>'◦'</code> (<code>U+25E6</code>).</dd>
+ <dt><code>circle</code></dt>
+ <dd>Display large circles as marks. The filled circle is <code>'●'</code> (<code>U+25CF</code>), and the open circle is <code>'○'</code> (<code>U+25CB</code>). This is the default shape in horizontal writing modes when no other shape is given.</dd>
+ <dt><code>double-circle</code></dt>
+ <dd>Display double circles as marks. The filled double-circle is <code>'◉'</code> (<code>U+25C9</code>), and the open double-circle is <code>'◎'</code> (<code>U+25CE</code>).</dd>
+ <dt><code>triangle</code></dt>
+ <dd>Display triangles as marks. The filled triangle is <code>'▲'</code> (<code>U+25B2</code>), and the open triangle is <code>'△'</code> (<code>U+25B3</code>).</dd>
+ <dt><code>sesame</code></dt>
+ <dd>Display sesames as marks. The filled sesame is <code>'﹅'</code> (<code>U+FE45</code>), and the open sesame is <code>'﹆'</code> (<code>U+FE46</code>). This is the default shape in vertical writing modes when no other shape is given.</dd>
+ <dt><code>&lt;string&gt;</code></dt>
+ <dd>Display the given string as marks. Authors should not specify more than one <em>character</em> in <code>&lt;string&gt;</code>. The UA may truncate or ignore strings consisting of more than one grapheme cluster.</dd>
+ <dt><code>&lt;color&gt;</code></dt>
+ <dd>Defines the color of the mark. If no color is present, it defaults to <code>currentcolor</code>.</dd>
+</dl></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td>as each of the properties of the shorthand:<br><ul><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-emphasis-style"><code>text-emphasis-style</code></a>: <code>none</code></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-emphasis-color"><code>text-emphasis-color</code></a>: <code>currentcolor</code></li></ul></td></tr><tr><th scope="row">Applies to</th><td>all elements</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance">Inherited</a></th><td>no</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>as each of the properties of the shorthand:<br><ul><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-emphasis-style"><code>text-emphasis-style</code></a>: as specified</li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-emphasis-color"><code>text-emphasis-color</code></a>: computed color</li></ul></td></tr><tr><th scope="row">Animation type</th><td>as each of the properties of the shorthand:<br><ul><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-emphasis-color"><code>text-emphasis-color</code></a>: a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#interpolation" title="Values of the <color> CSS data type are interpolated on each of their red, green, blue components, each handled as a real, floating-point number. Note that interpolation of colors happens in the alpha-premultiplied sRGBA color space to prevent unexpected grey colors to appear.">color</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-emphasis-style"><code>text-emphasis-style</code></a>: discrete</li></ul></td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-emphasis-style" title="none | [ [ filled | open ] || [ dot | circle | double-circle | triangle | sesame ] ] | <string>">&lt;'text-emphasis-style'&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_bar" title="Double bar: one or several of the entities must be present, in any order">||</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-emphasis-color" title="<color>">&lt;'text-emphasis-color'&gt;</a></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="a_heading_with_emphasis_shape_and_color"><a href="#a_heading_with_emphasis_shape_and_color" title="Permalink to A heading with emphasis shape and color">A heading with emphasis shape and color</a></h3><div><p>This example draws a heading with triangles used to emphasize each character.</p>
+
+<h4 id="css">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token selector">h2</span> <span class="token punctuation">{</span>
+  <span class="token property">text-emphasis</span><span class="token punctuation">:</span> triangle #D55<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<h4 id="html">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>This is important!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<h4 id="result">Result</h4>
+
+<p><iframe class="sample-code-frame" id="frame_A_heading_with_emphasis_shape_and_color" width="500" height="70" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/text-emphasis/_sample_.A_heading_with_emphasis_shape_and_color.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-text-decor-3/#text-emphasis-property" hreflang="en" lang="en" class="external" rel=" noopener">CSS Text Decoration Module Level&nbsp;3<br><small lang="en-US">The definition of 'text-emphasis' in that specification.</small></a></td>
+   <td><span class="spec-cr">Candidate Recommendation</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li>The longhand properties <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-emphasis-style"><code>text-emphasis-style</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-emphasis-color"><code>text-emphasis-color</code></a>.</li>
+ <li>The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-emphasis-position"><code>text-emphasis-position</code></a> property allowing to define the position of the emphasis marks.</li>
+</ul></div>

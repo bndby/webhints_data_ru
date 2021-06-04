@@ -1,0 +1,78 @@
+<h1>margin-inline</h1><div><div></div>
+
+<p>The <strong><code>margin-inline</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties">shorthand property</a> is a shorthand property that defines both the logical inline start and end margins of an element, which maps to physical margins depending on the element's writing mode, directionality, and text orientation.</p>
+
+<pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* &lt;length&gt; values */</span>
+<span class="token property">margin-inline</span><span class="token punctuation">:</span> 10px 20px<span class="token punctuation">;</span>  <span class="token comment">/* An absolute length */</span>
+<span class="token property">margin-inline</span><span class="token punctuation">:</span> 1em 2em<span class="token punctuation">;</span>    <span class="token comment">/* relative to the text size */</span>
+<span class="token property">margin-inline</span><span class="token punctuation">:</span> 5% 2%<span class="token punctuation">;</span>      <span class="token comment">/* relative to the nearest block container's width */</span>
+<span class="token property">margin-inline</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>       <span class="token comment">/* sets both start and end values */</span>
+
+<span class="token comment">/* Keyword values */</span>
+<span class="token property">margin-inline</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+
+<span class="token comment">/* Global values */</span>
+<span class="token property">margin-inline</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">margin-inline</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">margin-inline</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre>
+
+<p>This property corresponds to the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/margin-top"><code>margin-top</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/margin-bottom"><code>margin-bottom</code></a>, or the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/margin-right"><code>margin-right</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/margin-left"><code>margin-left</code></a> properties, depending on the values defined for <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode"><code>writing-mode</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/direction"><code>direction</code></a>, and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-orientation"><code>text-orientation</code></a>.</p></div><h2 id="constituent_properties"><a href="#constituent_properties" title="Permalink to Constituent properties">Constituent properties</a></h2><div><p>This property is a shorthand for the following CSS properties:</p>
+
+<ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/margin-inline-start"><code>margin-inline-start</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/margin-inline-end"><code>margin-inline-end</code></a></li>
+</ul>
+
+<p>If 2 values are specified, the first value sets the start, the second value sets the end. If 1 value is specified, it sets both properties with the same value.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><p>The <code>margin-inline</code> property takes the same values as the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/margin-left"><code>margin-left</code></a> property.</p></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td><code>0</code></td></tr><tr><th scope="row">Applies to</th><td>same as <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/margin"><code>margin</code></a></td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance">Inherited</a></th><td>no</td></tr><tr><th scope="row">Percentages</th><td>depends on layout model</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>if specified as a length, the corresponding absolute length; if specified as a percentage, the specified value; otherwise, <code>auto</code></td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/margin-left" title="<length> | <percentage> | auto">&lt;'margin-left'&gt;</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#curly_braces_(_)" title="Curly braces: encloses two integers defining the minimal and maximal numbers of occurrences of the entity">{</a>1,2<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#curly_braces_(_)" title="Curly braces: encloses two integers defining the minimal and maximal numbers of occurrences of the entity">}</a></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="setting_inline_start_and_end_margins"><a href="#setting_inline_start_and_end_margins" title="Permalink to Setting inline start and end margins">Setting inline start and end margins</a></h3><div><h4 id="css">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token selector">div</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 120px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 1px solid green<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">p</span> <span class="token punctuation">{</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">margin-inline</span><span class="token punctuation">:</span> 20px 40px<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> tan<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.verticalExample</span> <span class="token punctuation">{</span>
+  <span class="token property">writing-mode</span><span class="token punctuation">:</span> vertical-rl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<h4 id="html">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Example text<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>verticalExample<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Example text<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<h4 id="result">Result</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Setting_inline_start_and_end_margins" width="140" height="240" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/margin-inline/_sample_.Setting_inline_start_and_end_margins.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-logical/#propdef-margin-inline" hreflang="en" lang="en" class="external" rel=" noopener">CSS Logical Properties and Values Level&nbsp;1<br><small lang="en-US">The definition of 'margin-inline' in that specification.</small></a></td>
+   <td><span class="spec-ed">Editor's Draft</span></td>
+   <td>Initial definition.</td>
+  </tr>
+ </tbody>
+</table>
+
+<p></p><table class="properties"><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td><code>0</code></td></tr><tr><th scope="row">Applies to</th><td>same as <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/margin"><code>margin</code></a></td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance">Inherited</a></th><td>no</td></tr><tr><th scope="row">Percentages</th><td>depends on layout model</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>if specified as a length, the corresponding absolute length; if specified as a percentage, the specified value; otherwise, <code>auto</code></td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li>The mapped physical properties: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/margin-top"><code>margin-top</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/margin-right"><code>margin-right</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/margin-bottom"><code>margin-bottom</code></a>, and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/margin-left"><code>margin-left</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode"><code>writing-mode</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/direction"><code>direction</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-orientation"><code>text-orientation</code></a></li>
+</ul></div>

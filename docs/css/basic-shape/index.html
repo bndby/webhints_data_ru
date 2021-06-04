@@ -1,0 +1,132 @@
+<h1>&lt;basic-shape&gt;</h1><div><div></div>
+
+<p>The <strong><code>&lt;basic-shape&gt;</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Types">data type</a> represents a shape used in the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path"><code>clip-path</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/shape-outside"><code>shape-outside</code></a>, and&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/offset-path"><code>offset-path</code></a> properties.</p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/type-basic-shape.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><p>The <code>&lt;basic-shape&gt;</code> data type is defined with one of the basic shape functions listed below.</p>
+
+<p>When creating a shape, the reference box is defined by each property that uses <code>&lt;basic-shape&gt;</code> values. The coordinate system for the shape has its origin at the top-left corner of the reference box, with the x-axis running to the right and the y-axis running downwards. All the lengths expressed in percentages are resolved from the used dimensions of the reference box.</p>
+
+<p>The default reference box is the <code>margin-box</code>, as demonstrated in the below image which shows a circle created using <code>shape-outside: circle(50%)</code>. The shape is being defined with reference to the margin box.</p>
+
+<p><img alt="An image showing a circle inspected with the Firefox DevTools Shape Inspector. The different parts of the box model are highlighted." src="/en-US/docs/Web/CSS/basic-shape/shapes-reference-box.png" width="1536" height="840" loading="lazy"></p></div><h3 id="shape_functions"><a href="#shape_functions" title="Permalink to Shape functions">Shape functions</a></h3><div><p>The following shapes are supported. All <code>&lt;basic-shape&gt;</code> values use functional notation and are defined here using the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax">value definition syntax</a>.</p>
+
+<dl>
+ <dt><code><a id="inset()"></a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/basic-shape/inset()"><code>inset()</code></a></code></dt>
+ <dd>
+ <pre class="brush: css notranslate"><code><span class="token selector">inset( &lt;shape-arg&gt;</span><span class="token punctuation">{</span>1<span class="token punctuation">,</span>4<span class="token punctuation">}</span> [round &lt;border-radius&gt;]? <span class="token punctuation">)</span></code></pre>
+
+ <p>Defines an inset rectangle.</p>
+
+ <p>When all of the first four arguments are supplied they represent the top, right, bottom and left offsets from the reference box inward that define the positions of the edges of the inset rectangle. These arguments follow the syntax of the margin shorthand, that let you set all four insets with one, two or four values.</p>
+
+ <p>The optional <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius"><code>&lt;border-radius&gt;</code></a> argument(s) define rounded corners for the inset rectangle using the border-radius shorthand syntax.</p>
+
+ <p>A pair of insets in either dimension that add up to more than the used dimension (such as left and right insets of 75% apiece) define a shape enclosing no area. For this specification, this results in an empty float area.</p>
+ </dd>
+ <dt><code><a id="circle()"></a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/basic-shape/circle()"><code>circle()</code></a></code></dt>
+ <dd>
+ <pre class="brush: css notranslate"><code><span class="token function">circle</span><span class="token punctuation">(</span> [&lt;shape-radius&gt;]? [at &lt;position&gt;]? <span class="token punctuation">)</span></code></pre>
+
+ <p>The <code>&lt;shape-radius&gt;</code> argument represents <em>r</em>, the radius of the circle. Negative values are invalid. A percentage value here is resolved from the used width and height of the reference box as <code>sqrt(width^2+height^2)/sqrt(2)</code>.</p>
+
+ <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position_value"><code>&lt;position&gt;</code></a> argument defines the center of the circle. This defaults to center if omitted.</p>
+ </dd>
+ <dt><code><a id="ellipse()"></a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/basic-shape/ellipse()"><code>ellipse()</code></a></code></dt>
+ <dd>
+ <pre class="brush: css notranslate"><code><span class="token selector">ellipse( [&lt;shape-radius&gt;</span><span class="token punctuation">{</span>2<span class="token punctuation">}</span>]? [at &lt;position&gt;]? <span class="token punctuation">)</span></code></pre>
+
+ <p>The <code>&lt;shape-radius&gt;</code> arguments represent r<sub>x</sub> and r<sub>y</sub>, the x-axis and y-axis radii of the ellipse, in that order. Negative values for either radius are invalid. Percentage values here are resolved against the used width (for the r<sub>x</sub> value) and the used height (for the r<sub>y</sub> value) of the reference box.</p>
+
+ <p>The position argument defines the center of the ellipse. This defaults to center if omitted.</p>
+ </dd>
+ <dt><code><a id="polygon()"></a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/basic-shape/polygon()"><code>polygon()</code></a></code></dt>
+ <dd>
+ <pre class="brush: css notranslate"><code><span class="token function">polygon</span><span class="token punctuation">(</span> [&lt;fill-rule&gt;<span class="token punctuation">,</span>]? [&lt;shape-arg&gt; &lt;shape-arg&gt;]# <span class="token punctuation">)</span></code></pre>
+
+ <p><code>&lt;fill-rule&gt;</code> represents the <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/fill-rule">filling rule</a> used to determine the interior of the polygon. Possible values are <code>nonzero</code> and <code>evenodd</code>. Default value when omitted is <code>nonzero</code>.</p>
+
+ <p>Each pair argument in the list represents <em>x<sub>i</sub></em> and <em>y<sub>i</sub></em> - the x and y axis coordinates of the i<sup>th</sup> vertex of the polygon.</p>
+ </dd>
+ <dt><code><a id="path()"></a>path()</code></dt>
+ <dd>
+ <pre class="brush: css notranslate"><code><span class="token function">path</span><span class="token punctuation">(</span> [&lt;fill-rule&gt;<span class="token punctuation">,</span>]? &lt;string&gt;<span class="token punctuation">)</span></code></pre>
+
+ <p>The optional <code>&lt;fill-rule&gt;</code> represents the <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/fill-rule">filling rule</a> used to determine the interior of the path. Possible values are <code>nonzero</code> and <code>evenodd</code>. Default value when omitted is <code>nonzero</code>.</p>
+
+ <p>The required &lt;string&gt; is an <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d">SVG Path</a> string encompassed in quotes</p>
+ </dd>
+</dl>
+
+<p>The arguments not defined above are defined as follows:</p>
+
+<pre class="brush: css notranslate"><code>&lt;shape-arg&gt; = &lt;length&gt; | &lt;percentage&gt;
+&lt;shape-radius&gt; = &lt;length&gt; | &lt;percentage&gt; | closest-side | farthest-side</code></pre>
+
+<p>Defines a radius for a circle or ellipse. If omitted it defaults to <code>closest-side</code>.</p>
+
+<p><code>closest-side</code> uses the length from the center of the shape to the closest side of the reference box. For circles, this is the closest side in any dimension. For ellipses, this is the closest side in the radius dimension.</p>
+
+<p><code>farthest-side</code> uses the length from the center of the shape to the farthest side of the reference box. For circles, this is the farthest side in any dimension. For ellipses, this is the farthest side in the radius dimension.</p></div><h2 id="description"><a href="#description" title="Permalink to Description">Description</a></h2><div></div><h3 id="computed_values_of_basic_shapes"><a href="#computed_values_of_basic_shapes" title="Permalink to Computed values of basic shapes">Computed values of basic shapes</a></h3><div><p>The values in a <code>&lt;basic-shape&gt;</code> function are computed as specified, with these exceptions:</p>
+
+<ul>
+ <li>Omitted values are included and compute to their defaults.</li>
+ <li>A <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position_value"><code>&lt;position&gt;</code></a> value in <code>circle()</code> or <code>ellipse()</code> is computed as a pair of offsets (horizontal then vertical) from the top left origin, each given as a combination of an absolute length and a percentage.</li>
+ <li>A <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius"><code>&lt;border-radius&gt;</code></a> value in <code>inset()</code> is computed as an expanded list of all eight <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length"><code>&lt;length&gt;</code></a> or percentage values.</li>
+</ul></div><h3 id="interpolation_of_basic_shapes"><a href="#interpolation_of_basic_shapes" title="Permalink to Interpolation of basic shapes">Interpolation of basic shapes</a></h3><div><p>When animating between one <code>&lt;basic-shape&gt;</code> and another, the rules below are applied. The values in the shape functions interpolate as a simple list. The list values interpolate as <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length"><code>&lt;length&gt;</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/percentage"><code>&lt;percentage&gt;</code></a>, or <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/calc()"><code>calc()</code></a> where possible. If list values are not one of those types but are identical, those values do interpolate.</p>
+
+<ul>
+ <li>Both shapes must use the same reference box.</li>
+ <li>If both shapes are the same type, that type is <code>ellipse()</code> or <code>circle()</code>, and none of the radii use the <code>closest-side</code> or <code>farthest-side</code> keywords, interpolate between each value in the shape functions.</li>
+ <li>If both shapes are of type <code>inset()</code>, interpolate between each value in the shape functions.</li>
+ <li>If both shapes are of type <code>polygon()</code>, both polygons have the same number of vertices, and use the same <code>&lt;fill-rule&gt;</code>, interpolate between each value in the shape functions.</li>
+ <li>If both shapes are of type <code>path()</code>, both paths strings have the same number and types of path data commands in the same order, interpolate each path data command as real numbers.</li>
+ <li>In all other cases no interpolation occurs.</li>
+</ul></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="animated_polygon"><a href="#animated_polygon" title="Permalink to Animated polygon">Animated polygon</a></h3><div><p>In this example, we use the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes">@keyframes</a> at-rule to animate a clip path between two polygons. Note that both polygons have the same number of vertices, which is necessary for this type of animation to work.</p>
+
+<h4 id="html">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<h4 id="css">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token selector">div</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">repeating-linear-gradient</span><span class="token punctuation">(</span>red<span class="token punctuation">,</span> orange 50px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">clip-path</span><span class="token punctuation">:</span> <span class="token function">polygon</span><span class="token punctuation">(</span>50% 0%<span class="token punctuation">,</span> 60% 40%<span class="token punctuation">,</span> 100% 50%<span class="token punctuation">,</span> 60% 60%<span class="token punctuation">,</span> 50% 100%<span class="token punctuation">,</span> 40% 60%<span class="token punctuation">,</span> 0% 50%<span class="token punctuation">,</span> 40% 40%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">animation</span><span class="token punctuation">:</span> 4s poly infinite alternate ease-in-out<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 10px auto<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token atrule"><span class="token rule">@keyframes</span> poly</span> <span class="token punctuation">{</span>
+  <span class="token selector">from</span> <span class="token punctuation">{</span>
+    <span class="token property">clip-path</span><span class="token punctuation">:</span> <span class="token function">polygon</span><span class="token punctuation">(</span>50% 0%<span class="token punctuation">,</span> 60% 40%<span class="token punctuation">,</span> 100% 50%<span class="token punctuation">,</span> 60% 60%<span class="token punctuation">,</span> 50% 100%<span class="token punctuation">,</span> 40% 60%<span class="token punctuation">,</span> 0% 50%<span class="token punctuation">,</span> 40% 40%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token selector">to</span> <span class="token punctuation">{</span>
+    <span class="token property">clip-path</span><span class="token punctuation">:</span> <span class="token function">polygon</span><span class="token punctuation">(</span>50% 30%<span class="token punctuation">,</span> 100% 0%<span class="token punctuation">,</span> 70% 50%<span class="token punctuation">,</span> 100% 100%<span class="token punctuation">,</span> 50% 70%<span class="token punctuation">,</span> 0% 100%<span class="token punctuation">,</span> 30% 50%<span class="token punctuation">,</span> 0% 0%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+
+<h4 id="result">Result</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Animated_polygon" width="340" height="340" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/basic-shape/_sample_.Animated_polygon.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-shapes/#basic-shape-functions" hreflang="en" lang="en" class="external" rel=" noopener">CSS Shapes Module Level&nbsp;1<br><small lang="en-US">The definition of '&lt;basic-shape&gt;' in that specification.</small></a></td>
+   <td><span class="spec-cr">Candidate Recommendation</span></td>
+   <td>Initial definition.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li>Properties that use this data type: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path"><code>clip-path</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/shape-outside"><code>shape-outside</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Tools/Page_Inspector/How_to/Edit_CSS_shapes">Edit Shape Paths in CSS — Firefox Developer Tools</a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Shapes/Overview_of_CSS_Shapes">Overview of CSS Shapes</a></li>
+</ul></div>

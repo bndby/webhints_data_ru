@@ -1,0 +1,49 @@
+<h1>:user-invalid (:-moz-ui-invalid)</h1><div><div></div>
+
+<p>The <strong><code>:user-invalid</code></strong> CSS <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes">pseudo-class</a> represents any validated form element whose value isn't valid based on their <a href="https://developer.mozilla.org/en-US/docs/Learn/Forms#constraint_validation">validation constraints</a>, after the user has interacted with it.</p>
+
+<p>The <code>:user-invalid</code> pseudo-class must match an <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:invalid"><code>:invalid</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:out-of-range"><code>:out-of-range</code></a>, or blank-but <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:required"><code>:required</code></a> element between the time the user has attempted to submit the form and before the user has interacted again with the form element. </p>
+
+<div class="notecard note">
+  <h4 id="note">Note</h4>
+  <p>The pseudo-class behaves in the same way as the non-standard <code>:-moz-ui-invalid</code> pseudo-class.</p>
+</div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="notranslate">:user-invalid</pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="setting_invalid"><a href="#setting_invalid" title="Permalink to Setting a color and symbol on :user-invalid">Setting a color and symbol on :user-invalid</a></h3><div><p>In the following example, the red border and ❌ only display once the user has interacted with the field.
+Try typing something other than an email address to see it in action.</p>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>email<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Email *: <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>email<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>email<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>email<span class="token punctuation">"</span></span> <span class="token attr-name">required</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<pre class="brush: css notranslate"><code><span class="token selector">input:user-invalid</span> <span class="token punctuation">{</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 2px solid red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">input:user-invalid + span::before</span> <span class="token punctuation">{</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">'✖'</span><span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<p><iframe class="sample-code-frame" id="frame_Setting_invalid" width="140" height="100" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/:user-invalid/_sample_.Setting_invalid.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+	<thead>
+		<tr>
+			<th scope="col">Specification</th>
+			<th scope="col">Status</th>
+			<th scope="col">Comment</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><a href="https://drafts.csswg.org/selectors-4/#user-invalid-pseudo" hreflang="en" lang="en" class="external" rel=" noopener">Selectors Level&nbsp;4<br><small lang="en-US">The definition of ':user-invalid' in that specification.</small></a></td>
+			<td><span class="spec-wd">Working Draft</span></td>
+			<td>Adds :user-invalid</td>
+		</tr>
+	</tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+	<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:valid"><code>:valid</code></a></li>
+	<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:invalid"><code>:invalid</code></a></li>
+	<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:required"><code>:required</code></a></li>
+	<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:optional"><code>:optional</code></a></li>
+	<li><a href="https://developer.mozilla.org/en-US/docs/web/css/:user-valid"><code>:user-valid</code></a></li>
+</ul></div>

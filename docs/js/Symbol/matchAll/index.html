@@ -1,0 +1,51 @@
+<h1>Symbol.matchAll</h1><div><div></div>
+
+<p>The <code><strong>Symbol.matchAll</strong></code> well-known symbol returns an iterator, that yields matches of the regular expression against a string. This function is called by the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/matchAll"><code>String.prototype.matchAll()</code></a> method.</p>
+
+<div><iframe class="interactive" width="100%" height="410" src="https://interactive-examples.mdn.mozilla.net/pages/js/symbol-matchall.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div></div><h2 id="description"><a href="#description" title="Permalink to Description">Description</a></h2><div><p>This Symbol is used for <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/matchAll"><code>String.prototype.matchAll()</code></a> and specifically in <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/@@matchAll"><code>RegExp.prototype[@@matchAll]()</code></a>. The following two examples return same result:</p>
+
+<pre class="brush: js notranslate"><code><span class="token string">'abc'</span><span class="token punctuation">.</span><span class="token function">matchAll</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">a</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token operator">/</span>a<span class="token operator">/</span><span class="token punctuation">[</span>Symbol<span class="token punctuation">.</span>matchAll<span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token string">'abc'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+<p>This method exists for customizing match behavior within <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp"><code>RegExp</code></a> subclasses.</p>
+
+<p></p><table class="standard-table">
+  <thead>
+    <tr>
+      <th class="header" colspan="2">Property attributes of <code>Symbol.matchAll</code></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Writable</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <td>Enumerable</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <td>Configurable</td>
+      <td>no</td>
+    </tr>
+  </tbody>
+</table><p></p></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="using_symbol.matchall"><a href="#using_symbol.matchall" title="Permalink to Using Symbol.matchAll">Using Symbol.matchAll</a></h3><div><pre class="brush: js notranslate"><code><span class="token keyword">let</span> re <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">[0-9]+</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> str <span class="token operator">=</span> <span class="token string">'2016-01-02|2019-03-07'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> numbers <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token operator">*</span><span class="token punctuation">[</span>Symbol<span class="token punctuation">.</span>matchAll<span class="token punctuation">]</span> <span class="token punctuation">(</span><span class="token parameter">str</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> n <span class="token keyword">of</span> str<span class="token punctuation">.</span><span class="token function">matchAll</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">[0-9]+</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+      <span class="token keyword">yield</span> n<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Array<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">matchAll</span><span class="token punctuation">(</span>numbers<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//  Array ["2016", "01", "02", "2019", "03", "07"]</span>
+</code></pre>
+
+<p>See <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/matchAll"><code>String.prototype.matchAll()</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/@@matchAll"><code>RegExp.prototype[@@matchAll]()</code></a> for more examples.</p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://tc39.es/ecma262/#sec-symbol.matchall">Unknown specification<!-- --> <br><small># <!-- -->sec-symbol.matchall</small></a></td></tr></tbody></table><div></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li>A polyfill of <code>Symbol.matchAll</code> is available in <a href="https://github.com/zloirock/core-js#ecmascript-symbol" class="external" rel=" noopener"><code>core-js</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/matchAll"><code>String.prototype.matchAll()</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/@@matchAll"><code>RegExp.prototype[@@matchAll]()</code></a></li>
+</ul></div>

@@ -1,0 +1,70 @@
+<h1>Generator.prototype.next()</h1><div><div></div>
+
+<p>Метод&nbsp;<code><strong>next</strong></code><strong><code>()</code></strong>&nbsp;возвращает объект с двумя свойствами&nbsp;<code>done</code>&nbsp;и&nbsp;<code>value</code>. Также вы&nbsp;можете задать параметр для метода <code>next</code>,&nbsp;чтобы отправить значение в генератор.</p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code><var>gen</var>.next(value)</code></pre></div><h3 id="параметры"><a href="#параметры" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>value</code></dt>
+ <dd>Значение, отправляемое в генератор. Значение будет установлено в виде результата выражения yield, т. е. в [переменная] = yield [выражение] значение, которое было передано в функцию .next будет присвоено [переменной].</dd>
+</dl></div><h3 id="возвращаемое_значение"><a href="#возвращаемое_значение" title="Permalink to Возвращаемое значение">Возвращаемое значение</a></h3><div><p><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>&nbsp;с двумя свойствами:</p>
+
+<ul>
+ <li><code>done</code> (boolean)
+
+  <ul>
+   <li>Имеет значение <code>true</code>, если итератор находится за окончанием итерируемой последовательности. В этом случае <code>value</code> может указывать <em>возвращаемое значение</em> итератора.</li>
+   <li>Имеет значение <code>false</code>, если итератор может создать следующее значение в последовательности. Это эквивалентно вообще&nbsp;не указанному свойству <code>done</code>.</li>
+  </ul>
+ </li>
+ <li><code>value</code> - любое JavaScript значение, возвращаемое итератором. Может быть опущено, когда <code>done</code> имеет значение <code>true</code>.</li>
+</ul></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="использование_next"><a href="#использование_next" title="Permalink to Использование&nbsp;next()">Использование&nbsp;<code>next()</code></a></h3><div><p>Следующий пример показывает простой генератор и объект, который возвращает метод <code>next</code>:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">function</span><span class="token operator">*</span> <span class="token function">gen</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">yield</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token keyword">yield</span> <span class="token number">2</span><span class="token punctuation">;</span>
+  <span class="token keyword">yield</span> <span class="token number">3</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> g <span class="token operator">=</span> <span class="token function">gen</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "Generator { }"</span>
+g<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">// "Object { value: 1, done: false }"</span>
+g<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">// "Object { value: 2, done: false }"</span>
+g<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">// "Object { value: 3, done: false }"</span>
+g<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">// "Object { value: undefined, done: true }"</span>
+</code></pre></div><h3 id="отправка_значения_в_генератор"><a href="#отправка_значения_в_генератор" title="Permalink to Отправка значения в генератор">Отправка значения в генератор</a></h3><div><p>В этом примере <code>next</code> вызывается со значением. Отметим, что первый вызов ничего не вывел, потому что генератор изначально&nbsp;ничего не получил.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">function</span><span class="token operator">*</span> <span class="token function">gen</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> value <span class="token operator">=</span> <span class="token keyword">yield</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> g <span class="token operator">=</span> <span class="token function">gen</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+g<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// "{ value: null, done: false }"</span>
+g<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 2</span>
+<span class="token comment">// "{ value: null, done: false }"</span>
+</code></pre></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-generator.prototype.next" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Generator.prototype.next' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Изначальное определение</td>
+  </tr>
+  <tr>
+   <td><a href="https://tc39.es/ecma262/#sec-generator.prototype.next" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript (ECMA-262)<br><small lang="ru">Определение 'Generator.prototype.next' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="совместимость_с_браузерами"><a href="#совместимость_с_браузерами" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><div>
+
+
+<p></p><p></p>
+</div></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><code><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/function*">function*</a></code></li>
+ <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Iterators_and_Generators">Итераторы и генераторы</a></li>
+</ul></div>

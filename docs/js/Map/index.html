@@ -1,0 +1,203 @@
+<h1>Map</h1><div><div></div>
+
+<p><span class="seoSummary">Объект <strong><code>Map</code></strong> содержит пары ключ-значение и сохраняет порядок вставки.</span> Любое значение (как объекты, так и <a href="https://developer.mozilla.org/ru/docs/Glossary/Primitive">примитивы</a>) могут быть использованы в качестве ключей.</p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate">new Map([<em>iterable</em>])</pre></div><h3 id="параметры"><a href="#параметры" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>iterable</code></dt>
+ <dd>Массив или любой другой&nbsp;<a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Iteration_protocols">итерируемый</a> объект чьими элементами являются пары ключ-значение (массивы из двух элементов, например <code>[[ 1, 'one' ],[ 2, 'two' ]]</code>). Все пары ключ-значение будут добавлены в новый экземпляр <code>Map</code>; <code>null</code> расценивается как <code>undefined</code>.</dd>
+</dl></div><h2 id="описание"><a href="#описание" title="Permalink to Описание">Описание</a></h2><div><p>Объект <code>Map</code> итерируется в порядке вставки его элементов — цикл <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/for...of"><code>for...of</code></a> будет возвращать массив <code>[key, value]</code> на каждой итерации.</p></div><h3 id="key_equality"><a href="#key_equality" title="Permalink to Key equality">Key equality</a></h3><div><p>Сравнение ключей основано на алгоритме "<a class="page-not-created" title="Документация об этом ещё не написана; пожалуйста, поспособствуйте её написанию!">SameValueZero</a>": <code>NaN</code> равно <code>NaN</code> (несмотря на то, что <code>NaN !== NaN</code>), все другие значения рассматриваются равными исходя из семантики оператора строгого&nbsp;равенства <code>===</code>. В текущей спецификации ECMAScript <code>-0</code> и <code>+0</code> принимаются равными, но в ранних версиях обсуждения это было не так (см. "Value equality for -0 and 0" в таблице <a href="#browser_compatibility">совместимости с браузерами</a>).</p></div><h3 id="сравнение_объектов_и_map"><a href="#сравнение_объектов_и_map" title="Permalink to Сравнение Объектов и Map">Сравнение Объектов и Map</a></h3><div><p>Объекты похожи на <code>Map</code> в том, что оба позволяют устанавливать значения по ключам, получать эти значения, удалять ключи и проверять их наличие. В связи с этим (и потому, что не было встроенных альтернатив), <a href="/js/Object/"><code>Объекты</code></a> исторически использовались как <code>Map</code>. Однако, у них есть ряд отличий, который даёт преимущества <code>Map</code> в ряде случаев:</p>
+
+<ul>
+ <li>Ключами <a href="/js/Object/"><code>Объекта</code></a> выступают <a href="/js/String/"><code>Строки</code></a> и <a href="/js/Symbol/"><code>Символы</code></a>, в то время как любое значение может быть ключом <code>Map</code>, включая <a href="/js/Function/"><code>функции</code></a>, <a href="/js/Object/"><code>объекты</code></a> и <a href="https://developer.mozilla.org/ru/docs/Glossary/Primitive">примитивы</a>.</li>
+ <li>В отличие от <a href="/js/Object/"><code>Объектов</code></a>, ключи в <code>Map</code> упорядочены. Таким образом, во время итерации <code>Map</code>, ключи возвращаются в порядке вставки.</li>
+ <li>Вы легко можете получить количество элементов в <code>Map</code> с помощью свойства <code>size</code>, в то время как количество элементов <a href="/js/Object/"><code>Объекта</code></a> может быть определено только вручную.</li>
+ <li><code>Map</code> - <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols">итерируемый</a> объект и может быть итерирован напрямую, в то время как <a href="/js/Object/"><code>Объект</code></a> требует ручного получения списка ключей и их итерации.</li>
+ <li><a href="/js/Object/"><code>Объект</code></a> имеет прототип и поэтому имеет стандартный набор ключей, который, при неосторожности, может пересекаться с вашими ключами. С момента выхода ES5 это может быть изменено с помощью <code>map = Object.create(null)</code>.</li>
+ <li><code>Map</code> может иметь более высокую производительность в случаях частого добавления или удаления ключей.</li>
+</ul></div><h2 id="свойства"><a href="#свойства" title="Permalink to Свойства">Свойства</a></h2><div><dl>
+ <dt><code>Map.length</code></dt>
+ <dd>Значение свойства <code>length</code> всегда равно 0.</dd>
+ <dd>Чтобы узнать количество элементов в <code>Map</code> - используйте <a href="/js/Map/size/"><code>Map.prototype.size</code></a>.</dd>
+ <dt><a href="/js/Map/@@species/"><code>get Map[@@species]</code></a></dt>
+ <dd>Функция-конструктор которая используется для создания производных объектов.</dd>
+ <dt><a href="https://developer.mozilla.org/ru/docs/conflicting/Web/JavaScript/Reference/Global_Objects/Map"><code>Map.prototype</code></a></dt>
+ <dd>Представляет прототип конструктора <code>Map</code>. Позволяет добавлять свойства всем объектам типа <code>Map</code>.</dd>
+</dl></div><h2 id="экземпляры_map"><a href="#экземпляры_map" title="Permalink to Экземпляры Map">Экземпляры <code>Map</code></a></h2><div><p>Все экземпляры <code>Map</code> наследуются от <a href="https://developer.mozilla.org/ru/docs/conflicting/Web/JavaScript/Reference/Global_Objects/Map"><code>Map.prototype</code></a>.</p></div><h3 id="свойства_2"><a href="#свойства_2" title="Permalink to Свойства">Свойства</a></h3><div><dl>
+ <dt><code>Map.prototype.constructor</code></dt>
+ <dd>Возвращает функцию, которая создала прототип экземпляра. Это функция&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map" title="The Map object holds key-value pairs and remembers the original insertion order of the keys."><code>Map</code></a>&nbsp;по умолчанию.</dd>
+ <dt><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/size" title="The size accessor property returns the number of elements in a Map object."><code>Map.prototype.size</code></a></dt>
+ <dd>Возвращает количество пар ключ/значение в объекте&nbsp;<code>Map</code>.</dd>
+</dl></div><h3 id="методы"><a href="#методы" title="Permalink to Методы">Методы</a></h3><div><dl>
+ <dt><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/clear" title="The clear() method removes all elements from a Map object."><code>Map.prototype.clear()</code></a></dt>
+ <dd>Удаляет все пары ключ / значение из объекта&nbsp;<code>Map</code>.</dd>
+ <dt><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/delete" title="The delete() method removes the specified element from a Map object by key."><code>Map.prototype.delete(key)</code></a></dt>
+ <dd>Возвращает <code>true</code>, если элемент в объекте&nbsp;<code>Map</code>&nbsp;существовал и был удалён, или false, если элемент не существует.&nbsp;<code>Map.prototype.has(key)</code>&nbsp;вернёт <code>false</code> позже.</dd>
+ <dt><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/entries" title="The entries() method returns a new Iterator object that contains the [key, value] pairs for each element in the Map object in insertion order."><code>Map.prototype.entries()</code></a></dt>
+ <dd>Возвращает новый объект&nbsp;<code>Iterator</code>&nbsp;который содержит <strong>массив</strong>&nbsp;<strong><code>[key, value]</code></strong>&nbsp;для каждого элемента в объекте&nbsp;<code>Map</code>&nbsp;в порядке вставки.</dd>
+ <dt><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/forEach" title="The forEach() method executes a provided function once per each key/value pair in the Map object, in insertion order."><code>Map.prototype.forEach(callbackFn[, thisArg])</code></a></dt>
+ <dd>Вызывает callbackFn один раз для каждой пары ключ-значение, присутствующей в объекте&nbsp;<code>Map</code>, в порядке вставки. Если для thisArg&nbsp;предоставляется параметр для&nbsp;forEach, он будет использоваться как значение this для каждого колбэка.</dd>
+ <dt><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/get" title="The get() method returns a specified element from a Map object."><code>Map.prototype.get(key)</code></a></dt>
+ <dd>Возвращает значение связанное с&nbsp;<code>key</code>, или&nbsp;<code>undefined</code>&nbsp;если его нет.</dd>
+ <dt><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/has" title="The has() method returns a boolean indicating whether an element with the specified key exists or not."><code>Map.prototype.has(key)</code></a></dt>
+ <dd>Возвращает логическое значение, подтверждающее, было ли значение связано с&nbsp;<code>key</code>&nbsp;в объекте&nbsp;<code>Map</code>&nbsp;или нет.</dd>
+ <dt><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/keys" title="The keys() method returns a new Iterator object that contains the keys for each element in the Map object in insertion order."><code>Map.prototype.keys()</code></a></dt>
+ <dd>Возвращает новый объект&nbsp;<code>Iterator</code>&nbsp;содержащий ключи для каждого элемента в объекте&nbsp;<code>Map</code>&nbsp;в порядке вставки.</dd>
+ <dt><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/set" title="The set() method adds or updates an element&nbsp;with a specified key and a value to a Map object."><code>Map.prototype.set(key, value)</code></a></dt>
+ <dd>Устанавливает значение для&nbsp;<code>key</code>&nbsp;в объекте&nbsp;<code>Map</code>. Возвращает объект&nbsp;<code>Map</code>.</dd>
+ <dt><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/values" title="The values() method returns a new Iterator object that contains the values for each element in the Map object in insertion order."><code>Map.prototype.values()</code></a></dt>
+ <dd>Возвращает новый объект&nbsp;<code>Iterator</code>&nbsp;который содержит значения для каждого элемента в объекте&nbsp;<code>Map</code>&nbsp;в порядке вставки.</dd>
+ <dt><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/@@iterator" title="The initial value of the @@iterator property is the same function object as the initial value of the entries method."><code>Map.prototype[@@iterator]()</code></a></dt>
+ <dd>Возвращает новый объект&nbsp;<code>Iterator</code>&nbsp;который содержит массив<strong>&nbsp;<code>[key, value]</code></strong>&nbsp;для каждого элемента в объекте&nbsp;<code>Map</code>&nbsp;в порядке вставки.</dd>
+</dl></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="использование_объекта_map"><a href="#использование_объекта_map" title="Permalink to Использование объекта&nbsp;Map">Использование объекта&nbsp;<code>Map</code></a></h3><div><pre class="brush: js notranslate"><code><span class="token keyword">const</span> myMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> keyObj <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">keyFunc</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    keyString <span class="token operator">=</span> <span class="token string">'a string'</span><span class="token punctuation">;</span>
+
+<span class="token comment">// задание значений</span>
+myMap<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>keyString<span class="token punctuation">,</span> <span class="token string">'value associated with “a string”'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+myMap<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>keyObj<span class="token punctuation">,</span> <span class="token string">'value associated with keyObj'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+myMap<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>keyFunc<span class="token punctuation">,</span> <span class="token string">'value associated with keyFunc'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+myMap<span class="token punctuation">.</span>size<span class="token punctuation">;</span> <span class="token comment">// 3</span>
+
+<span class="token comment">// получение значений</span>
+myMap<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>keyString<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// value associated with “a string”</span>
+myMap<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>keyObj<span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment">// value associated with keyObj</span>
+myMap<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>keyFunc<span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">// value associated with keyFunc</span>
+
+myMap<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'a string'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// "value associated with 'a string'"</span>
+                         <span class="token comment">// потому что keyString === 'a string'</span>
+myMap<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>           <span class="token comment">// undefined, потому что keyObj !== {} ({} — это литеральная нотация конструктора класса Object)</span>
+myMap<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token comment">// undefined, потому что keyFunc !== function () {}</span>
+</code></pre></div><h3 id="использование_nan_в_качестве_ключей_map"><a href="#использование_nan_в_качестве_ключей_map" title="Permalink to Использование NaN в качестве ключей Map">Использование <code>NaN</code> в качестве ключей <code>Map</code></a></h3><div><p><code>NaN</code> может быть использован в качестве ключа. Несмотря на то, что <code>NaN</code> не равен самому себе (<code>NaN !== NaN</code> вернёт true), следующий пример работает, потому что <code>NaN</code> обрабатывается особым образом:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">const</span> myMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+myMap<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token number">NaN</span><span class="token punctuation">,</span> <span class="token string">'not a number'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+myMap<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">NaN</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// not a number</span>
+
+<span class="token keyword">const</span> otherNaN <span class="token operator">=</span> <span class="token function">Number</span><span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+myMap<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>otherNaN<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// not a number</span>
+</code></pre></div><h3 id="итерация_map_при_помощи_for..of"><a href="#итерация_map_при_помощи_for..of" title="Permalink to Итерация Map при помощи for..of">Итерация <code>Map</code> при помощи <code>for..of</code></a></h3><div><p><code>Map</code> может быть итерирован с помощью <code>for..of</code>:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">const</span> myMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+myMap<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">'zero'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+myMap<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'one'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> <span class="token punctuation">[</span>key<span class="token punctuation">,</span> value<span class="token punctuation">]</span> <span class="token keyword">of</span> myMap<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>key <span class="token operator">+</span> <span class="token string">' = '</span> <span class="token operator">+</span> value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 0 = zero</span>
+<span class="token comment">// 1 = one</span>
+
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> key <span class="token keyword">of</span> myMap<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 0</span>
+<span class="token comment">// 1</span>
+
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> value <span class="token keyword">of</span> myMap<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// zero</span>
+<span class="token comment">// one</span>
+
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> <span class="token punctuation">[</span>key<span class="token punctuation">,</span> value<span class="token punctuation">]</span> <span class="token keyword">of</span> myMap<span class="token punctuation">.</span><span class="token function">entries</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>key <span class="token operator">+</span> <span class="token string">' = '</span> <span class="token operator">+</span> value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 0 = zero</span>
+<span class="token comment">// 1 = one</span>
+</code></pre></div><h3 id="итерация_map_при_помощи_foreach"><a href="#итерация_map_при_помощи_foreach" title="Permalink to Итерация Map&nbsp;при помощи forEach()">Итерация <code>Map</code>&nbsp;при помощи <code>forEach()</code></a></h3><div><p><code>Map</code> может быть итерирован с помощью метода <code>forEach()</code>:</p>
+
+<pre class="brush: js notranslate"><code>myMap<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">value<span class="token punctuation">,</span> key</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>key<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> =&gt; </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>value<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 0 =&gt; zero</span>
+<span class="token comment">// 1 =&gt; one</span>
+</code></pre></div><h3 id="взаимоотношения_с_объектом_array"><a href="#взаимоотношения_с_объектом_array" title="Permalink to Взаимоотношения с объектом&nbsp;Array">Взаимоотношения с объектом&nbsp;<code>Array</code></a></h3><div><pre class="brush: js notranslate"><code><span class="token keyword">const</span> kvArray <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'key1'</span><span class="token punctuation">,</span> <span class="token string">'value1'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'key2'</span><span class="token punctuation">,</span> <span class="token string">'value2'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Используйте конструктор Map для преобразования двумерных массивов в Map</span>
+<span class="token keyword">const</span> myMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span>kvArray<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+myMap<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'key1'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// вернёт “value1”</span>
+
+<span class="token comment">// Используйте функцию Array.from для трансформации Map в двумерный key-value массив</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Array<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>myMap<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Выведет точно такой же массив как kvArray</span>
+
+<span class="token comment">// Или используйте итераторы  keys или values чтобы преобразовать ключи или значения в массивы</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Array<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>myMap<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Выведет ['key1', 'key2']</span>
+</code></pre></div><h3 id="клонирование_и_слияние_map"><a href="#клонирование_и_слияние_map" title="Permalink to Клонирование и слияние Map">Клонирование и слияние <code>Map</code></a></h3><div><p>&nbsp;Равно как и <a href="/js/Array/"><code>Массивы</code></a>, <code>Map</code> могут быть клонированы:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">const</span> original <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+  <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'one'</span><span class="token punctuation">]</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> clone <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span>original<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>clone<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// one</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>original <span class="token operator">===</span> clone<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// false.</span></code></pre>
+
+<p>Следует помнить, что <em>данные</em> не клонируются.</p>
+
+<p><code>Map</code> могут быть слиты, с сохранением уникальности ключей:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">const</span> first <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+  <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'one'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'two'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">'three'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> second <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+  <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'uno'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'dos'</span><span class="token punctuation">]</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Слияние двух Map. Взят будет последний повторившийся ключ.</span>
+<span class="token comment">// Оператор Spread по сути преобразует Map в массив</span>
+<span class="token keyword">const</span> merged <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">...</span>first<span class="token punctuation">,</span> <span class="token operator">...</span>second<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>merged<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// uno</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>merged<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// dos</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>merged<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// three</span></code></pre>
+
+<p>Map могут быть слиты и с <a href="/js/Array/"><code>Массивами</code></a>:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">const</span> first <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+  <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'one'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'two'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">'three'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> second <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+  <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'uno'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'dos'</span><span class="token punctuation">]</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Слияние Map и массива. Как и при слиянии двух Map - взят будет последний повторившийся ключ.</span>
+<span class="token keyword">const</span> merged <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">...</span>first<span class="token punctuation">,</span> <span class="token operator">...</span>second<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'eins'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>merged<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// eins</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>merged<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// dos</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>merged<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// three</span></code></pre></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-map-objects" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Map' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Initial definition.</td>
+  </tr>
+  <tr>
+   <td><a href="https://tc39.es/ecma262/#sec-map-objects" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript (ECMA-262)<br><small lang="ru">Определение 'Map' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="совместимость_с_браузерами"><a href="#совместимость_с_браузерами" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a class="link-https external" href="https://bugzilla.mozilla.org/show_bug.cgi?id=697479" rel=" noopener">Map и Set баг в Mozilla</a></li>
+ <li><a class="external" href="http://wiki.ecmascript.org/doku.php?id=harmony:simple_maps_and_sets" rel=" noopener">Предложение ECMAScript Harmony</a></li>
+ <li><a href="/js/Set/"><code>Set</code></a></li>
+ <li><a href="/js/WeakMap/"><code>WeakMap</code></a></li>
+ <li><a href="/js/WeakSet/"><code>WeakSet</code></a></li>
+</ul></div>

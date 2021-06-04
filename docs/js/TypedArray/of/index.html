@@ -1,0 +1,52 @@
+<h1>TypedArray.of()</h1><div><div></div>
+
+<p>The <strong><code><var>TypedArray</var>.of()</code></strong> method creates a new <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray#typedarray_objects">typed
+    array</a> from a variable number of arguments. This method is nearly the same as
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/of"><code>Array.of()</code></a>.</p>
+
+<div><iframe class="interactive" width="100%" height="410" src="https://interactive-examples.mdn.mozilla.net/pages/js/typedarray-of.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: js notranslate"><code>TypedArray<span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span>element0<span class="token punctuation">)</span>
+TypedArray<span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span>element0<span class="token punctuation">,</span> element1<span class="token punctuation">)</span>
+TypedArray<span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span>element0<span class="token punctuation">,</span> element1<span class="token punctuation">,</span> <span class="token operator">...</span> <span class="token punctuation">,</span> elementN<span class="token punctuation">)</span>
+</code></pre>
+
+<p>Where <code><var>TypedArray</var></code> is one of:</p>
+
+<div class="threecolumns">
+  <ul>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array"><code>Int8Array</code></a></li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array"><code>Uint8Array</code></a></li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray"><code>Uint8ClampedArray</code></a></li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array"><code>Int16Array</code></a></li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array"><code>Uint16Array</code></a></li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array"><code>Int32Array</code></a></li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array"><code>Uint32Array</code></a></li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array"><code>Float32Array</code></a></li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array"><code>Float64Array</code></a></li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt64Array"><code>BigInt64Array</code></a></li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigUint64Array"><code>BigUint64Array</code></a></li>
+  </ul>
+</div></div><h3 id="parameters"><a href="#parameters" title="Permalink to Parameters">Parameters</a></h3><div><dl>
+  <dt><code><var>element<var>N</var></var></code></dt>
+  <dd>Elements of which to create the typed array.</dd>
+</dl></div><h3 id="return_value"><a href="#return_value" title="Permalink to Return value">Return value</a></h3><div><p>A new <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray"><code>TypedArray</code></a> instance.</p></div><h2 id="description"><a href="#description" title="Permalink to Description">Description</a></h2><div><p>Some subtle distinctions between <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/of"><code>Array.of()</code></a> and
+  <code><var>TypedArray</var>.of()</code>:</p>
+
+<ul>
+  <li>If the <code>this</code> value passed to <code><var>TypedArray</var>.of()</code> is
+    not a constructor, <code><var>TypedArray</var>.of()</code> will throw a
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError"><code>TypeError</code></a>, where <code>Array.of()</code> defaults to creating a new
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array"><code>Array</code></a>.</li>
+  <li><code><var>TypedArray</var>.of()</code> uses <code>[[Put]]</code> where
+    <code>Array.of()</code> uses <code>[[DefineProperty]]</code>. Hence, when working with
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy"><code>Proxy</code></a> objects, it calls <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/Proxy/set"><code>handler.set</code></a> to create new elements rather than
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/Proxy/defineProperty"><code>handler.defineProperty()</code></a>.
+  </li>
+</ul></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="using_of"><a href="#using_of" title="Permalink to Using of()">Using of()</a></h3><div><pre class="brush: js notranslate"><code>Uint8Array<span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>            <span class="token comment">// Uint8Array [ 1 ]</span>
+Int8Array<span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token string">'1'</span><span class="token punctuation">,</span> <span class="token string">'2'</span><span class="token punctuation">,</span> <span class="token string">'3'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Int8Array [ 1, 2, 3 ]</span>
+Float32Array<span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// Float32Array [ 1, 2, 3 ]</span>
+Int16Array<span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token keyword">undefined</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// Int16Array [ 0 ]</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://tc39.es/ecma262/#sec-%typedarray%.of">Unknown specification<!-- --> <br><small># <!-- -->sec-%typedarray%.of</small></a></td></tr></tbody></table><div></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+  <li>A polyfill of <code>TypedArray.of</code> is available in <a href="https://github.com/zloirock/core-js#ecmascript-typed-arrays" class="external" rel=" noopener"><code>core-js</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/from"><code>TypedArray.from()</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/of"><code>Array.of()</code></a></li>
+</ul></div>

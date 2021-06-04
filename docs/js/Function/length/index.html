@@ -1,0 +1,68 @@
+<h1>Function.length</h1><div><div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Свойство <code><strong>length</strong></code> определяет количество аргументов, ожидаемых функцией.</p>
+
+<div><table class="standard-table">
+  <thead>
+    <tr>
+      <th class="header" colspan="2">Атрибуты свойства<code>Function.length</code></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Записываемое</td>
+      <td>нет</td>
+    </tr>
+    <tr>
+      <td>Перечисляемое</td>
+      <td>нет</td>
+    </tr>
+    <tr>
+      <td>Настраиваемое</td>
+      <td>да</td>
+    </tr>
+  </tbody>
+</table></div></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Свойство <code>length</code> является свойством объекта функции и указывает, сколько аргументов ожидает функция, то есть, количество формальных параметров. Это количество не включает <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters">остаточные параметры <span>(en-US)</span></a>. В отличие от него, свойство <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments/length"><code>arguments.length</code> <span>(en-US)</span></a> является локальным для функции и предоставляет количество аргументов, реально переданных в функцию.</p></div><h3 id="data_property_of_the_function_constructor"><a href="#data_property_of_the_function_constructor" title="Permalink to Свойство данных конструктора Function">Свойство данных конструктора <code>Function</code></a></h3><div><p>Конструктор <a href="/js/Function/"><code>Function</code></a> сам является объектом <a href="/js/Function/"><code>Function</code></a>. Его свойство данных <code>length</code> имеет значение 1. Атрибуты свойства: записываемое: <code>false</code>, перечисляемое: <code>false</code>, настраиваемое: <code>true</code>.</p></div><h3 id="property_of_the_function_prototype_object"><a href="#property_of_the_function_prototype_object" title="Permalink to Свойство объекта прототипа Function">Свойство объекта прототипа <code>Function</code></a></h3><div><p>Свойство <code>length</code> объекта прототипа <a href="/js/Function/"><code>Function</code></a> имеет значение 0.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div><pre class="brush: js notranslate"><code>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Function<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">/* 1 */</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span>        <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">/* 0 */</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">a</span><span class="token punctuation">)</span>       <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">/* 1 */</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span>    <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">/* 2 и так далее */</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter"><span class="token operator">...</span>args</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">/* 0, остаточные параметры не считаются */</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td>ECMAScript 1-е издание.</td>
+   <td>Стандарт</td>
+   <td>Изначальное определение. Реализована в JavaScript 1.1.</td>
+  </tr>
+  <tr>
+   <td>
+    Свойство <code>length</code> конструктора <a href="/js/Function/"><code>Function</code></a>:<br>
+    <a href="https://www.ecma-international.org/ecma-262/5.1/#sec-15.3.3.2" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 5.1 (ECMA-262)<br><small lang="ru">Определение 'Function.length' в этой спецификации.</small></a><br>
+    Свойство <code>length</code> объекта прототипа <a href="/js/Function/"><code>Function</code></a>:<br>
+    <a href="https://www.ecma-international.org/ecma-262/5.1/#sec-properties-of-the-function-prototype-object" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 5.1 (ECMA-262)<br><small lang="ru">Определение 'Function.length' в этой спецификации.</small></a><br>
+    Свойство <code>length</code> экземпляров объекта <a href="/js/Function/"><code>Function</code></a>:<br>
+    <a href="https://www.ecma-international.org/ecma-262/5.1/#sec-15.3.5.1" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 5.1 (ECMA-262)<br><small lang="ru">Определение 'Function.length' в этой спецификации.</small></a>
+   </td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td>
+    Свойство <code>length</code> конструктора <a href="/js/Function/"><code>Function</code></a>:<br>
+    <a href="https://www.ecma-international.org/ecma-262/6.0/#sec-function.length" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Function.length' в этой спецификации.</small></a><br>
+    Свойство <code>length</code> объекта прототипа <a href="/js/Function/"><code>Function</code></a>:<br>
+    <a href="https://www.ecma-international.org/ecma-262/6.0/#sec-15.3.4" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Function.length' в этой спецификации.</small></a><br>
+    Свойство <code>length</code> экземпляров объекта <a href="/js/Function/"><code>Function</code></a>:<br>
+    <a href="https://www.ecma-international.org/ecma-262/6.0/#sec-function-instances-length" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Function.length' в этой спецификации.</small></a><br>
+   </td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/Function/"><code>Function</code></a></li>
+</ul></div>

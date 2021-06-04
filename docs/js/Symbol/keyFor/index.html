@@ -1,0 +1,43 @@
+<h1>Symbol.keyFor()</h1><div><div></div>
+
+<div>&nbsp;Метод&nbsp;<code><strong>Symbol.keyFor(sym)</strong></code> получает ключ для заданного символа из глобального реестра символов.</div>
+
+<div>&nbsp;</div>
+
+<p><iframe class="interactive" width="100%" height="490" src="https://interactive-examples.mdn.mozilla.net/pages/js/symbol-keyfor.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><var>Symbol.keyFor(sym)</var>;</pre></div><h3 id="параметры"><a href="#параметры" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt>sym</dt>
+ <dd>Символ, обязательный. Символ, ключ которого требуется найти</dd>
+</dl></div><h3 id="возвращаемое_значение"><a href="#возвращаемое_значение" title="Permalink to Возвращаемое значение">Возвращаемое значение</a></h3><div><p>Строка с ключом заданного символа, если он есть в глобальном реестре символов, либо <a href="/js/undefined/"><code>undefined</code></a>, если его там нет.</p></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div><pre class="brush: js notranslate"><code><span class="token keyword">var</span> globalSym <span class="token operator">=</span> Symbol<span class="token punctuation">.</span><span class="token function">for</span><span class="token punctuation">(</span><span class="token string">"foo"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Создаёт новый глобальный символ</span>
+Symbol<span class="token punctuation">.</span><span class="token function">keyFor</span><span class="token punctuation">(</span>globalSym<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "foo"</span>
+
+<span class="token keyword">var</span> localSym <span class="token operator">=</span> <span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Symbol<span class="token punctuation">.</span><span class="token function">keyFor</span><span class="token punctuation">(</span>localSym<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// undefined</span>
+
+<span class="token comment">// Известные символы не является символами,</span>
+<span class="token comment">// которые находятся в глобальном реестре символов</span>
+Symbol<span class="token punctuation">.</span><span class="token function">keyFor</span><span class="token punctuation">(</span>Symbol<span class="token punctuation">.</span>iterator<span class="token punctuation">)</span> <span class="token comment">// undefined</span>
+</code></pre></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-symbol.keyfor" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Symbol.keyFor' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Изначальное определение.</td>
+  </tr>
+  <tr>
+   <td><a href="https://tc39.es/ecma262/#sec-symbol.keyfor" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript (ECMA-262)<br><small lang="ru">Определение 'Symbol.keyFor' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="совместимость_с_браузерами"><a href="#совместимость_с_браузерами" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p>&nbsp;</p>
+
+<p></p><p></p>
+
+<p>&nbsp;</p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/Symbol/for/"><code>Symbol.for()</code></a></li>
+</ul></div>

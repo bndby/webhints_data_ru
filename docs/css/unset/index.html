@@ -1,0 +1,88 @@
+<h1>unset</h1><div><div></div>
+
+<p><span class="seoSummary">The <strong><code>unset</code></strong> CSS keyword resets a property to its inherited value if the property naturally inherits from its parent, and to its <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">initial value</a> if not. </span>In other words, it behaves like the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inherit"><code>inherit</code></a> keyword in the first case, when the property is an <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance#inherited_properties">inherited property</a>, and like the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial"><code>initial</code></a> keyword in the second case, when the property is a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance#non-inherited_properties">non-inherited property</a>.</p>
+
+<p><strong><code>unset</code></strong> can be applied to any CSS property, including the CSS shorthand <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/all"><code>all</code></a>.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="color"><a href="#color" title="Permalink to Color">Color</a></h3><div><h4 id="html">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>This text is red.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>foo<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>This text is also red.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bar<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>This text is green (default inherited value).<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<h4 id="css">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token selector">.foo</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.bar</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">p</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.bar p</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<h4 id="result">Result</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Color" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/unset/_sample_.Color.html" loading="lazy"></iframe></p></div><h3 id="border"><a href="#border" title="Permalink to Border">Border</a></h3><div><h4 id="html_2">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>This text has a red border.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>This text has a red border.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bar<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>This text has a black border (initial default, not inherited).<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<h4 id="css_2">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token selector">div</span> <span class="token punctuation">{</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 1px solid green<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">p</span> <span class="token punctuation">{</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 1px solid red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.bar p</span> <span class="token punctuation">{</span>
+  <span class="token property">border-color</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<h4 id="result_2">Result</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Border" width="auto" height="200" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/unset/_sample_.Border.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-cascade/#inherit-initial" hreflang="en" lang="en" class="external" rel=" noopener">CSS Cascading and Inheritance Level&nbsp;4<br><small lang="en-US">The definition of 'unset' in that specification.</small></a></td>
+   <td><span class="spec-cr">Candidate Recommendation</span></td>
+   <td>No changes from Level 3.</td>
+  </tr>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-cascade-3/#inherit-initial" hreflang="en" lang="en" class="external" rel=" noopener">CSS Cascading and Inheritance Level&nbsp;3<br><small lang="en-US">The definition of 'unset' in that specification.</small></a></td>
+   <td><span class="spec-rec">Recommendation</span></td>
+   <td>Initial definition.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li>Use <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial"><code>initial</code></a> to set a property to its initial value.</li>
+ <li>Use <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/revert"><code>revert</code></a> to reset a property to the value established by the user-agent stylesheet (or by user styles, if any exist).</li>
+ <li>Use <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inherit"><code>inherit</code></a> to make an element's property the same as its parent.</li>
+ <li>The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/all"><code>all</code></a> property lets you reset all properties to their initial, inherited, reverted, or unset state at once.</li>
+</ul></div>

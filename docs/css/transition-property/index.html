@@ -1,0 +1,77 @@
+<h1>transition-property</h1><div><div></div>
+
+<p>The <strong><code>transition-property</code> </strong><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> property sets the CSS properties to which a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions">transition effect</a> should be applied.</p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/transition-property.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+<div class="note notecard"><strong>Note:</strong> The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties">set of properties that can be animated</a> is subject to change. As such, you should avoid including any properties in the list that don't currently animate, as someday they might, causing unexpected results.</div>
+
+<p>If you specify a shorthand property (e.g., <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background"><code>background</code></a>), all of its longhand sub-properties that can be animated will be.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: css no-line-numbers notranslate"><code><span class="token comment">/* Keyword values */</span>
+<span class="token property">transition-property</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token property">transition-property</span><span class="token punctuation">:</span> all<span class="token punctuation">;</span>
+
+<span class="token comment">/* &lt;custom-ident&gt; values */</span>
+<span class="token property">transition-property</span><span class="token punctuation">:</span> test_05<span class="token punctuation">;</span>
+<span class="token property">transition-property</span><span class="token punctuation">:</span> -specific<span class="token punctuation">;</span>
+<span class="token property">transition-property</span><span class="token punctuation">:</span> sliding-vertically<span class="token punctuation">;</span>
+
+<span class="token comment">/* Multiple values */</span>
+<span class="token property">transition-property</span><span class="token punctuation">:</span> test1<span class="token punctuation">,</span> animation4<span class="token punctuation">;</span>
+<span class="token property">transition-property</span><span class="token punctuation">:</span> all<span class="token punctuation">,</span> height<span class="token punctuation">,</span> color<span class="token punctuation">;</span>
+<span class="token property">transition-property</span><span class="token punctuation">:</span> all<span class="token punctuation">,</span> -moz-specific<span class="token punctuation">,</span> sliding<span class="token punctuation">;</span>
+
+<span class="token comment">/* Global values */</span>
+<span class="token property">transition-property</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">transition-property</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">transition-property</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+	<dt><code>none</code></dt>
+	<dd>No properties will transition.</dd>
+	<dt><code>all</code></dt>
+	<dd>All properties that can transition will.</dd>
+	<dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/custom-ident"><code>&lt;custom-ident&gt;</code></a></dt>
+	<dd>A string identifying the property to which a transition effect should be applied when its value changes.</dd>
+</dl></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td>all</td></tr><tr><th scope="row">Applies to</th><td>all elements, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::before"><code>::before</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::after"><code>::after</code></a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements">pseudo-elements</a></td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance">Inherited</a></th><td>no</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>as specified</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate">none <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> <a href="#single-transition-property">&lt;single-transition-property&gt;</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#hash_mark_()" title="Hash mark: the entity is repeated one or several times, each occurence separated by a comma">#</a><p style="font-family:Open Sans,Arial,sans-serif; margin: 10px 0 0 0;">where <br><code style="font-family:Consolas,Monaco,&quot;Andale Mono&quot;,monospace;"><span id="single-transition-property">&lt;single-transition-property&gt;</span> = all <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/custom-ident" title>&lt;custom-ident&gt;</a></code></p></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="simple_example"><a href="#simple_example" title="Permalink to Simple example">Simple example</a></h3><div><p>This example performs a four-second font size transition when the user hovers over the element, the <code>transition-property</code> is the <code>font-size</code>.</p>
+
+<h4 id="html">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>target<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Hover over me<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<h4 id="css">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token selector">.target</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 14px<span class="token punctuation">;</span>
+  <span class="token property">transition-property</span><span class="token punctuation">:</span> font-size<span class="token punctuation">;</span>
+  <span class="token property">transition-duration</span><span class="token punctuation">:</span> 4s<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.target:hover</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 36px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p><iframe class="sample-code-frame" id="frame_Simple_example" width="600" height="100" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/transition-property/_sample_.Simple_example.html" loading="lazy"></iframe></p>
+
+<p>You will find more examples of <code>transition-property</code>&nbsp;included in the main <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions">CSS transitions</a> article.</p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+	<thead>
+		<tr>
+			<th scope="col">Specification</th>
+			<th scope="col">Status</th>
+			<th scope="col">Comment</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><a href="https://drafts.csswg.org/css-transitions/#transition-property-property" hreflang="en" lang="en" class="external" rel=" noopener">CSS Transitions<br><small lang="en-US">The definition of 'transition-property' in that specification.</small></a></td>
+			<td><span class="spec-wd">Working Draft</span></td>
+			<td>Initial definition</td>
+		</tr>
+	</tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+	<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions">Using CSS transitions</a></li>
+	<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transition"><code>transition</code></a></li>
+	<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transition-duration"><code>transition-duration</code></a></li>
+	<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing-function"><code>transition-timing-function</code></a></li>
+	<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transition-delay"><code>transition-delay</code></a></li>
+	<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/TransitionEvent"><code>TransitionEvent</code></a></li>
+</ul></div>

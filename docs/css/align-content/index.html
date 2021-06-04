@@ -1,0 +1,215 @@
+<h1>align-content</h1><div><div></div>
+
+<p>Свойство <a href="/css/"><code>css</code></a> <strong><code>align-content</code></strong> устанавливает распределение пространства между и вокруг элементами контента вдоль поперечной оси&nbsp;<a href="/css/CSS_Flexible_Box_Layout/"><code>flexbox</code></a> контейнера&nbsp;или вдоль блочной оси <a href="/css/CSS_Grid_Layout/"><code>grid</code></a> контейнера.</p>
+
+<p>The interactive example below use Grid Layout to demonstrate some of the values of this property.</p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/align-content.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+
+
+<p>Это свойство не влияет на однострочные flex-контейнеры (т.е. с <code>flex-wrap: nowrap</code>)</p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* Основное позиционное выравнивание */</span>
+<span class="token comment">/* align-content не принимает значения left и right */</span>
+<span class="token property">align-content</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>     <span class="token comment">/* Расположить элементы вокруг центра */</span>
+<span class="token property">align-content</span><span class="token punctuation">:</span> start<span class="token punctuation">;</span>      <span class="token comment">/* Расположить элементы в начале */</span>
+<span class="token property">align-content</span><span class="token punctuation">:</span> end<span class="token punctuation">;</span>        <span class="token comment">/* Расположить элементы в конце */</span>
+<span class="token property">align-content</span><span class="token punctuation">:</span> flex-start<span class="token punctuation">;</span> <span class="token comment">/* Расположить элементы flex в начале */</span>
+<span class="token property">align-content</span><span class="token punctuation">:</span> flex-end<span class="token punctuation">;</span>   <span class="token comment">/* Расположить элементы flex в конце */</span>
+
+<span class="token comment">/* Нормальное выравнивание */</span>
+<span class="token property">align-content</span><span class="token punctuation">:</span> normal<span class="token punctuation">;</span>
+
+<span class="token comment">/* Выравнивание по базовой линии */</span>
+<span class="token property">align-content</span><span class="token punctuation">:</span> baseline<span class="token punctuation">;</span>
+<span class="token property">align-content</span><span class="token punctuation">:</span> first baseline<span class="token punctuation">;</span>
+<span class="token property">align-content</span><span class="token punctuation">:</span> last baseline<span class="token punctuation">;</span>
+
+<span class="token comment">/* Распределённое выравнивание */</span>
+<span class="token property">align-content</span><span class="token punctuation">:</span> space-between<span class="token punctuation">;</span> <span class="token comment">/* Распределить элементы равномерно
+                                 Первый элемент находится на одном уровне с началом,
+                                 последней - совпадает с концом */</span>
+<span class="token property">align-content</span><span class="token punctuation">:</span> space-around<span class="token punctuation">;</span>  <span class="token comment">/* Распределить элементы равномерно
+                                 Элементы имеют половинное пространство
+                                 на каждом конце */</span>
+<span class="token property">align-content</span><span class="token punctuation">:</span> space-evenly<span class="token punctuation">;</span>  <span class="token comment">/* Распределить элементы равномерно
+                                 Элементы имеют одинаковое пространство вокруг них */</span>
+<span class="token property">align-content</span><span class="token punctuation">:</span> stretch<span class="token punctuation">;</span>       <span class="token comment">/* Распределить элементы равномерно
+                                 Растянуть 'auto'-размерные элементы, чтобы заполнить
+                                 контейнер */</span>
+
+<span class="token comment">/* Выравнивание переполнения (overflow) */</span>
+<span class="token property">align-content</span><span class="token punctuation">:</span> safe center<span class="token punctuation">;</span>
+<span class="token property">align-content</span><span class="token punctuation">:</span> unsafe center<span class="token punctuation">;</span>
+
+<span class="token comment">/* Глобальные значения */</span>
+<span class="token property">align-content</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">align-content</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">align-content</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre></div><h3 id="значения"><a href="#значения" title="Permalink to Значения">Значения</a></h3><div><dl>
+ <dt><code>start</code></dt>
+ <dd>Элементы расположены вплотную друг к другу, прижавшись к началу контейнера выравнивания по поперечной оси.</dd>
+ <dt><code>end</code></dt>
+ <dd>Элементы расположены вплотную друг к другу, прижавшись к концу контейнера выравнивания по поперечной оси.</dd>
+ <dt><code>flex-start</code></dt>
+ <dd>Элементы расположены вплотную друг к другу, прижавшись к краю контейнера выравнивания в зависимости от поперечной стороны начала (cross-start) контейнера flex.<br>
+ Это относится только к элементам макета flex. Для элементов, которые не являются потомками flex контейнера, это значение трактуется как <code>start</code>.</dd>
+ <dt><code>flex-end</code></dt>
+ <dd>Элементы расположены вплотную друг к другу, прижавшись к краю контейнера выравнивания в зависимости от поперечной стороны конца (cross-end) контейнера flex.<br>
+ Это относится только к элементам макета flex. Для элементов, которые не являются потомками flex контейнера, это значение трактуется как <code>end</code>.</dd>
+ <dt><code>center</code></dt>
+ <dd>Элементы расположены вплотную друг к другу в центре контейнера выравнивания по поперечной оси.</dd>
+ <dt><code>normal</code></dt>
+ <dd>Элементы расположены в их дефолтной позиции как если бы <code>align-content</code> не было определено.</dd>
+ <dt><code>baseline<br>
+ first baseline</code><br>
+ <code>last baseline</code></dt>
+ <dd><img alt="базовая линия - это линия, на которой «сидит» большинство букв и ниже которой располагаются нижние выносные элементы (свисания)." src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Typography_Line_Terms.svg/410px-Typography_Line_Terms.svg.png" loading="lazy"></dd>
+ <dd>Определяет участие в выравнивании первой или последней базовой линии: выравнивает базовую линию выравнивания первого или последнего базового набора блока с соответствующей базовой линией в общем первом или последнем базовом наборе всех блоков в его группе совместного использования базовой линии.<br>
+ Резервное выравнивание для <code>first baseline</code> равно <code>start</code>, для <code>last baseline</code> - <code>end</code>.</dd>
+ <dd><code>space-between</code></dd>
+ <dd>Элементы равномерно распределены внутри контейнера выравнивания вдоль поперечной оси. Интервал между каждой парой соседних элементов одинаков. Первый элемент находится на одном уровне с начальной кромкой контейнера выравнивания на поперечной оси, а последний элемент находится на одном уровне с конечной кромкой контейнера выравнивания на поперечной оси.</dd>
+ <dt><code>space-around</code></dt>
+ <dd>Элементы равномерно распределены внутри контейнера выравнивания вдоль поперечной оси. Интервал между каждой парой соседних предметов одинаков. Пустое пространство до первого и после последнего элемента равно половине пространства между каждой парой смежных элементов.</dd>
+ <dt><code>space-evenly</code></dt>
+ <dd>Элементы равномерно распределены внутри контейнера выравнивания вдоль поперечной оси. Интервал между каждой парой соседних элементов, начальным краем и первым элементом, а также конечным краем и последним элементом абсолютно одинаков.</dd>
+ <dd><code>stretch</code></dd>
+ <dd>Если объединённый размер элементов вдоль поперечной оси меньше размера контейнера выравнивания, размер любого <code>auto</code>-размерного элемента увеличивается одинаково (не пропорционально), но при этом соблюдаются ограничения, налагаемые <a href="/css/max-height/"><code>max-height</code></a>/<a href="/css/max-width/"><code>max-width</code></a> (или эквивалентной функциональности), так что объединённый размер точно заполняет контейнер выравнивания вдоль поперечной оси.</dd>
+ <dt><code>safe</code></dt>
+ <dd>Используется вместе с ключевым словом выравнивания. Если выбранное ключевое слово означает, что элемент переполняет контейнер выравнивания, что приводит к потере данных, вместо этого элемент выравнивается, как если бы режим выравнивания был <code>start</code>.</dd>
+ <dt><code>unsafe</code></dt>
+ <dd>Используется вместе с ключевым словом выравнивания. Независимо от относительных размеров элемента и контейнера выравнивания и от того, может ли произойти переполнение, которое приводит к потере данных, данное значение выравнивания учитывается.</dd>
+</dl></div><h3 id="формальный_синтаксис"><a href="#формальный_синтаксис" title="Permalink to Формальный синтаксис">Формальный синтаксис</a></h3><div><pre class="notranslate">normal <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <a href="#baseline-position">&lt;baseline-position&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <a href="#content-distribution">&lt;content-distribution&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <a href="#overflow-position">&lt;overflow-position&gt;</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#question_mark_()" title="Currently only available in English (US)" class="only-in-en-us">? (en-US)</a> <a href="#content-position">&lt;content-position&gt;</a><p style="font-family:Open Sans,Arial,sans-serif; margin: 10px 0 0 0;">где <br><code style="font-family:Consolas,Monaco,&quot;Andale Mono&quot;,monospace;"><span id="baseline-position">&lt;baseline-position&gt;</span> = <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> first <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> last <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#question_mark_()" title="Currently only available in English (US)" class="only-in-en-us">? (en-US)</a> baseline<br><span id="content-distribution">&lt;content-distribution&gt;</span> = space-between <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> space-around <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> space-evenly <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> stretch<br><span id="overflow-position">&lt;overflow-position&gt;</span> = unsafe <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> safe<br><span id="content-position">&lt;content-position&gt;</span> = center <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> start <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> end <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> flex-start <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> flex-end</code></p></pre></div><h2 id="пример"><a href="#пример" title="Permalink to Пример">Пример</a></h2><div></div><h3 id="css"><a href="#css" title="Permalink to CSS">CSS</a></h3><div><pre class="brush: css; highlight[4] notranslate"><code><span class="token selector">#container</span> <span class="token punctuation">{</span>
+  <span class="token property">height</span><span class="token punctuation">:</span>200px<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 240px<span class="token punctuation">;</span>
+  <span class="token property">align-content</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span> <span class="token comment">/* Can be changed in the live sample */</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #8c8c8c<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.flex</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+  <span class="token property">flex-wrap</span><span class="token punctuation">:</span> wrap<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.grid</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> grid<span class="token punctuation">;</span>
+  <span class="token property">grid-template-columns</span><span class="token punctuation">:</span> <span class="token function">repeat</span><span class="token punctuation">(</span>auto-fill<span class="token punctuation">,</span> 50px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">div &gt; div</span> <span class="token punctuation">{</span>
+  <span class="token property">box-sizing</span><span class="token punctuation">:</span> border-box<span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 2px solid #8c8c8c<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+  <span class="token property">align-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+  <span class="token property">justify-content</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">#item1</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #8cffa0<span class="token punctuation">;</span>
+  <span class="token property">min-height</span><span class="token punctuation">:</span> 30px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">#item2</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #a0c8ff<span class="token punctuation">;</span>
+  <span class="token property">min-height</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">#item3</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #ffa08c<span class="token punctuation">;</span>
+  <span class="token property">min-height</span><span class="token punctuation">:</span> 40px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">#item4</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #ffff8c<span class="token punctuation">;</span>
+  <span class="token property">min-height</span><span class="token punctuation">:</span> 60px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">#item5</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #ff8cff<span class="token punctuation">;</span>
+  <span class="token property">min-height</span><span class="token punctuation">:</span> 70px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">#item6</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #8cffff<span class="token punctuation">;</span>
+  <span class="token property">min-height</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 30px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">select</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 16px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.row</span> <span class="token punctuation">{</span>
+  <span class="token property">margin-top</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="html"><a href="#html" title="Permalink to HTML">HTML</a></h3><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item3<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item4<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item5<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>5<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item6<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>6<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>row<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>display<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>display: <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>display<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>flex<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>grid<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>grid<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>row<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>values<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>align-content: <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>values<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>normal<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>normal<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stretch<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>stretch<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex-start<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>flex-start<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex-end<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>flex-end<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>center<span class="token punctuation">"</span></span> <span class="token attr-name">selected</span><span class="token punctuation">&gt;</span></span>center<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>space-between<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>space-between<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>space-around<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>space-around<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>space-evenly<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>space-evenly<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>start<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>start<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>end<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>end<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>left<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>left<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>right<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>right<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>baseline<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>baseline<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>first baseline<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>first baseline<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>last baseline<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>last baseline<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>safe center<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>safe center<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>unsafe center<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>unsafe center<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>safe right<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>safe right<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>unsafe right<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>unsafe right<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>safe end<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>safe end<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>unsafe end<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>unsafe end<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>safe flex-end<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>safe flex-end<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>unsafe flex-end<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>unsafe flex-end<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h3 id="результат"><a href="#результат" title="Permalink to Результат">Результат</a></h3><div><p><iframe class="sample-code-frame" id="frame_Пример" width="260" height="290" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/align-content/_sample_.%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80.html" loading="lazy"></iframe></p></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-align-3/#propdef-align-content" hreflang="en" lang="en" class="external" rel=" noopener">CSS Box Alignment Module Level 3<br><small lang="ru">Определение 'align-content' в этой спецификации.</small></a></td>
+   <td><span class="spec-wd">Рабочий черновик</span></td>
+   <td>Добавлены значения [ first | last ]? baseline, start, end, left, right, unsafe | safe.</td>
+  </tr>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-flexbox-1/#align-content" hreflang="en" lang="en" class="external" rel=" noopener">CSS Flexible Box Layout Module<br><small lang="ru">Определение 'align-content' в этой спецификации.</small></a></td>
+   <td><span class="spec-cr">Кандидат в рекомендации</span></td>
+   <td>Начальное определение</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="совместимость_с_браузерами"><a href="#совместимость_с_браузерами" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><div></div><h3 id="support_in_flex_layout"><a href="#support_in_flex_layout" title="Permalink to Support in Flex layout">Support in Flex layout</a></h3><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h3 id="support_in_grid_layout"><a href="#support_in_grid_layout" title="Permalink to Support in Grid layout">Support in Grid layout</a></h3><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/ru/CSS/Using_CSS_flexible_boxes" title="CSS/Using_CSS_flexible_boxes">Использование гибких блоков CSS</a></li>
+</ul></div>

@@ -1,0 +1,67 @@
+<h1>forced-color-adjust</h1><div><div></div>
+
+<p><span class="seoSummary">The <strong><code>forced-color-adjust</code></strong> CSS property allows authors to opt certain elements out of forced colors mode. This then restores the control of those values to CSS.</span></p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: css notranslate"><code><span class="token property">forced-color-adjust</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+<span class="token property">forced-color-adjust</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span></code></pre>
+
+<p>The <code>forced-color-adjust</code> property's value must be one of the following keywords.</p></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+	<dt><code>auto</code></dt>
+	<dd>The element's colors are adjusted by the <a href="https://developer.mozilla.org/en-US/docs/Glossary/User_agent">user agent</a> in forced colors mode. This is the default.</dd>
+	<dt><code><strong>none</strong></code></dt>
+	<dd>The element's colors are not automatically adjusted by the <a href="https://developer.mozilla.org/en-US/docs/Glossary/User_agent">user agent</a> in forced colors mode.</dd>
+</dl></div><h2 id="usage_notes"><a href="#usage_notes" title="Permalink to Usage notes">Usage notes</a></h2><div><p>This property should only be used to makes changes that will support a user's color and contrast requirements. For example, if you become aware that the color optimizations made by the <a href="https://developer.mozilla.org/en-US/docs/Glossary/User_agent">user agent</a> result in a poor experience when in a high contrast or dark mode. Using this property would enable tweaking of the result in that mode to provide a better experience. <strong>It should not be used to prevent user choices being respected</strong>.</p>
+
+<p>The property is a standardized version of the <a href="https://docs.microsoft.com/en-us/previous-versions/hh771863%28v%3dvs.85%29" class="external" rel=" noopener">-ms-high-contrast-adjust</a> property. The prefixed property can be used to achieve similar functionality in Internet Explorer 10 and EdgeHTML versions of Microsoft Edge.</p></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td><code>auto</code></td></tr><tr><th scope="row">Applies to</th><td>all elements and text</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance">Inherited</a></th><td>yes</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>as specified</td></tr><tr><th scope="row">Animation type</th><td>Not animatable</td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate">auto <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> none</pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="preserving_colors"><a href="#preserving_colors" title="Permalink to Preserving colors">Preserving colors</a></h3><div><p>In the example below the first box will use the color scheme that the user has set. For example in Windows High Contrast mode black scheme it will have a black background and white text. The second box will preserve the site colors set on the <code>.box</code> class.</p>
+
+<p>By using the <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/forced-colors">forced-colors</a></code> media feature you could add any other optimizations for forced color mode alongside the <code>forced-color-adjust</code> property.</p>
+
+<h4 id="css">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token selector">.box</span> <span class="token punctuation">{</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 5px solid grey<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #ccc<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">forced-colors</span><span class="token punctuation">:</span> active<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+  <span class="token selector">.forced</span> <span class="token punctuation">{</span>
+    <span class="token property">forced-color-adjust</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+
+<h4 id="html">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>box<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>This is a box which should use your color preferences.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>box forced<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>This is a box which should stay the colors set by the site.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<h4 id="result">Result</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Preserving_colors" width="640" height="260" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/forced-color-adjust/_sample_.Preserving_colors.html" loading="lazy"></iframe></p>
+
+<figure role="figure" aria-label="The example above in Windows High Contrast Mode"><img src="/en-US/docs/Web/CSS/forced-color-adjust/windows-high-contrast.jpg" alt="The example above in high contrast mode shows the first box with a black background the second with the grey background of the CSS." width="677" height="443" loading="lazy">
+<figcaption>The example above in Windows High Contrast Mode</figcaption></figure></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+	<thead>
+		<tr>
+			<th scope="col">Specification</th>
+			<th scope="col">Status</th>
+			<th scope="col">Comment</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><a href="https://drafts.csswg.org/css-color-adjust-1/#forced-color-adjust-prop" hreflang="en" lang="en" class="external" rel=" noopener">CSS Color Adjustment Module Level 1<br><small lang="en-US">The definition of 'forced-color-adjust' in that specification.</small></a></td>
+			<td><span class="spec-ed">Editor's Draft</span></td>
+			<td>Initial definition.</td>
+		</tr>
+	</tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Applying_color">Applying color to HTML elements using CSS</a></li>
+    <li><a href="https://blogs.windows.com/msedgedev/2020/09/17/styling-for-windows-high-contrast-with-new-standards-for-forced-colors/" class="external" rel=" noopener">Styling for Windows high contrast with standards for forced colors.</a></li>
+	<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color-adjust"><code>color-adjust</code></a></li>
+</ul></div>

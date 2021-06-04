@@ -1,0 +1,41 @@
+<h1>color-scheme</h1><div><div></div>
+
+<p><span class="seoSummary">The <strong><code>color-scheme</code></strong> CSS property allows an element to indicate which color schemes it can comfortably be rendered in.</span></p>
+<p>Common choices for operating system color schemes are "light" and "dark", or "day mode" and "night mode". When a user selects one of these color schemes, the operating system makes adjustments to the user interface. This includes form controls, scrollbars, and the used values of CSS system colors.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: css notranslate"><code><span class="token property">color-scheme</span><span class="token punctuation">:</span> normal<span class="token punctuation">;</span>
+<span class="token property">color-scheme</span><span class="token punctuation">:</span> light<span class="token punctuation">;</span>
+<span class="token property">color-scheme</span><span class="token punctuation">:</span> dark<span class="token punctuation">;</span>
+<span class="token property">color-scheme</span><span class="token punctuation">:</span> light dark<span class="token punctuation">;</span></code></pre>
+
+<p>The <code>color-scheme</code> property's value must be one of the following keywords.</p></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+	<dt><code>normal</code></dt>
+	<dd>Indicates that the element isn't aware of any color schemes, and so should be rendered using the browser's default color scheme.</dd>
+	<dt><code>light</code></dt>
+  <dd>Indicates that the element can be rendered using the operating system light color scheme.</dd>
+  <dt><code>dark</code></dt>
+	<dd>Indicates that the element can be rendered using the operating system dark color scheme.</dd>
+</dl></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td><code>normal</code></td></tr><tr><th scope="row">Applies to</th><td>all elements and text</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance">Inherited</a></th><td>yes</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>as specified</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate">normal <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">[</a> light <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> dark <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/custom-ident" title>&lt;custom-ident&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">]</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#plus_()" title="Plus: the entity may occur one or several times">+</a></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="adapting_to_color_schemes"><a href="#adapting_to_color_schemes" title="Permalink to Adapting to color schemes">Adapting to color schemes</a></h3><div><p>To opt the entire page into the user's color scheme preferences declare <code>color-scheme</code> on the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:root"><code>:root</code></a> element.</p>
+
+<pre class="brush: css notranslate"><code><span class="token selector">:root</span> <span class="token punctuation">{</span>
+  <span class="token property">color-scheme</span><span class="token punctuation">:</span> light dark<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+	<thead>
+		<tr>
+			<th scope="col">Specification</th>
+			<th scope="col">Status</th>
+			<th scope="col">Comment</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><a href="https://drafts.csswg.org/css-color-adjust-1/#color-scheme-prop" hreflang="en" lang="en" class="external" rel=" noopener">CSS Color Adjustment Module Level 1<br><small lang="en-US">The definition of 'color-scheme' in that specification.</small></a></td>
+			<td><span class="spec-ed">Editor's Draft</span></td>
+			<td>Initial definition.</td>
+		</tr>
+	</tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+	<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Applying_color">Applying color to HTML elements using CSS</a></li>
+	<li>Other color-related properties: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color"><code>color</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-color"><code>background-color</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-color"><code>border-color</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/outline-color"><code>outline-color</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-color"><code>text-decoration-color</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-emphasis-color"><code>text-emphasis-color</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow"><code>text-shadow</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/caret-color"><code>caret-color</code></a>, and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/column-rule-color"><code>column-rule-color</code></a></li>
+	<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-image"><code>background-image</code></a></li>
+	<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-print-color-adjust"><code>-webkit-print-color-adjust</code></a></li>
+</ul></div>

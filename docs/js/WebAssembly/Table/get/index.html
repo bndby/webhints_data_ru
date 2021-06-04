@@ -1,0 +1,32 @@
+<h1>WebAssembly.Table.prototype.get()</h1><div><div></div>
+
+<p>The <code><strong>get()</strong></code> prototype method of
+  the&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Table"><code>WebAssembly.Table()</code></a> object retrieves a function reference stored at a
+  given index.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: js notranslate"><code><span class="token function">get</span><span class="token punctuation">(</span>index<span class="token punctuation">)</span></code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Parameters">Parameters</a></h3><div><dl>
+  <dt><em>index</em></dt>
+  <dd>The index of the function reference you want to retrieve.</dd>
+</dl></div><h3 id="return_value"><a href="#return_value" title="Permalink to Return value">Return value</a></h3><div><p>A function reference — this is an <a href="https://developer.mozilla.org/en-US/docs/WebAssembly/Exported_functions">exported WebAssembly function</a>, a
+  JavaScript wrapper for an underlying wasm function.</p></div><h3 id="exceptions"><a href="#exceptions" title="Permalink to Exceptions">Exceptions</a></h3><div><p>If <em>index</em> is greater than or equal
+  to&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Table/length"><code>Table.prototype.length</code></a>, a
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError"><code>RangeError</code></a> is thrown.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="using_get"><a href="#using_get" title="Permalink to Using get">Using get</a></h3><div><p>The following example (see <a href="https://github.com/mdn/webassembly-examples/blob/master/js-api-examples/table.html" class="external" rel=" noopener">table.html</a>
+  on GitHub, and <a href="https://mdn.github.io/webassembly-examples/js-api-examples/table.html" class="external" rel=" noopener">view it
+    live</a> also) compiles and instantiates the loaded table.wasm byte code using the
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/instantiateStreaming"><code>WebAssembly.instantiateStreaming()</code></a> method. It then retrieves the
+  references stored in the exported table.</p>
+
+<pre class="brush: js notranslate"><code>WebAssembly<span class="token punctuation">.</span><span class="token function">instantiateStreaming</span><span class="token punctuation">(</span><span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">'table.wasm'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">obj</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> tbl <span class="token operator">=</span> obj<span class="token punctuation">.</span>instance<span class="token punctuation">.</span>exports<span class="token punctuation">.</span>tbl<span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>tbl<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 13</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>tbl<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 42</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+<p>Note how you've got to include a second function invocation operator at the end of the
+  accessor to actually retrieve the value stored inside the reference (e.g.
+  <code>get(0)()</code> rather than <code>get(0)</code>) — it is a function rather than a
+  simple value.</p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://webassembly.github.io/spec/js-api/#dom-table-get">WebAssembly JavaScript Interface<!-- --> <br><small># <!-- -->dom-table-get</small></a></td></tr></tbody></table><div></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+  <li><a href="https://developer.mozilla.org/en-US/docs/WebAssembly">WebAssembly</a> overview page</li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/WebAssembly/Concepts">WebAssembly concepts</a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/WebAssembly/Using_the_JavaScript_API">Using the WebAssembly
+      JavaScript API</a></li>
+</ul></div>

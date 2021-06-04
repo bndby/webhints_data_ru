@@ -1,0 +1,87 @@
+<h1>font-size-adjust</h1><div><p>The <strong><code>font-size-adjust</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> property sets the size of lower-case letters relative to the current font size (which defines the size of upper-case letters).</p>
+
+<pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* Use the specified font size */</span>
+<span class="token property">font-size-adjust</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+
+<span class="token comment">/* Use a font size that makes lowercase
+   letters half the specified font size */</span>
+<span class="token property">font-size-adjust</span><span class="token punctuation">:</span> 0.5<span class="token punctuation">;</span>
+
+<span class="token comment">/* Global values */</span>
+<span class="token property">font-size-adjust</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">font-size-adjust</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">font-size-adjust</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre>
+
+<p>The property is useful since the legibility of fonts, especially at small sizes, is determined more by the size of lowercase letters than by the size of capital letters. Legibility can become an issue when the first-choice <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-family"><code>font-family</code></a> is unavailable and its replacement has a significantly different aspect ratio (the ratio of the size of lowercase letters to the size of the font).</p>
+
+<p>To use this property in a way that is compatible with browsers that do not support <code>font-size-adjust</code>, it is specified as a number that the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-size"><code>font-size</code></a> property is multiplied by. This means the value specified for the property should generally be the aspect ratio of the first choice font. For example, a style sheet that specifies:</p>
+
+<pre class="brush: css notranslate"><code><span class="token property">font-size</span><span class="token punctuation">:</span> 14px<span class="token punctuation">;</span>
+<span class="token property">font-size-adjust</span><span class="token punctuation">:</span> 0.5<span class="token punctuation">;</span>
+</code></pre>
+
+<p>... is really specifying that the lowercase letters of the font should be <code>7px</code> high (0.5 × 14px).&nbsp; This will still produce reasonable results in browsers that do not support <code>font-size-adjust</code>, where a <code>14px</code> font will be used.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+ <dt><code>none</code></dt>
+ <dd>Choose the size of the font based only on the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-size"><code>font-size</code></a> property.</dd>
+ <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/number"><code>&lt;number&gt;</code></a></dt>
+ <dd>
+ <p>Choose the size of the font so that its lowercase letters (as determined by the x-height of the font) are the specified number times the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-size"><code>font-size</code></a>.</p>
+
+ <p>The number specified should generally be the aspect ratio (ratio of x-height to font size) of the first choice <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-family"><code>font-family</code></a>. This means that the first-choice font, when available, will appear the same size in browsers, whether or not they support <code>font-size-adjust</code>.</p>
+
+ <p><code>0</code> yields text of zero height (hidden text).</p>
+ </dd>
+</dl></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td><code>none</code></td></tr><tr><th scope="row">Applies to</th><td>all elements. It also applies to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::first-letter"><code>::first-letter</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::first-line"><code>::first-line</code></a>.</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance">Inherited</a></th><td>yes</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>as specified</td></tr><tr><th scope="row">Animation type</th><td>a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/number#interpolation" title="Values of the <number> CSS data type are interpolated as real, floating-point, numbers.">number</a></td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate">none <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/number" title>&lt;number&gt;</a></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="adjusting_lower-case_letter_sizes"><a href="#adjusting_lower-case_letter_sizes" title="Permalink to Adjusting lower-case letter sizes">Adjusting lower-case letter sizes</a></h3><div><h4 id="html">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>times<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This text uses the Times font (10px), which is hard to read in small sizes.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>verdana<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This text uses the Verdana font (10px), which has relatively large lowercase letters.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>adjtimes<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is the 10px Times, but now adjusted to the same aspect ratio as the Verdana.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<h4 id="css">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token selector">.times</span> <span class="token punctuation">{</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> Times<span class="token punctuation">,</span> serif<span class="token punctuation">;</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.verdana</span> <span class="token punctuation">{</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> Verdana<span class="token punctuation">,</span> sans-serif<span class="token punctuation">;</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.adjtimes</span> <span class="token punctuation">{</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> Times<span class="token punctuation">,</span> serif<span class="token punctuation">;</span>
+  <span class="token property">font-size-adjust</span><span class="token punctuation">:</span> 0.58<span class="token punctuation">;</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<h4 id="results">Results</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Adjusting_lower-case_letter_sizes" width="500" height="200" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/font-size-adjust/_sample_.Adjusting_lower-case_letter_sizes.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-fonts-3/#propdef-font-size-adjust" hreflang="en" lang="en" class="external" rel=" noopener">CSS Fonts Module Level&nbsp;3<br><small lang="en-US">The definition of 'font-size-adjust' in that specification.</small></a></td>
+   <td><span class="spec-rec">Recommendation</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table>
+
+<div class="note notecard">
+<p>The CSS property <code>font-size-adjust</code> was initially defined in CSS 2, but dropped in CSS 2.1. It has been newly defined in CSS 3.</p>
+</div></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p>
+
+<div></div></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-size"><code>font-size</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight"><code>font-weight</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Fundamentals">Fundamental text and font styling</a></li>
+</ul></div>

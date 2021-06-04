@@ -1,0 +1,52 @@
+<h1>text-orientation</h1><div><div></div>
+
+<p><span class="seoSummary">The <strong><code>text-orientation</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> property sets the orientation of the text characters in a line. It only affects text in vertical mode (when <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode"><code>writing-mode</code></a> is not <code>horizontal-tb</code>).</span> It is useful for controlling the display of languages that use vertical script, and also for making vertical table headers.</p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/text-orientation.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* Keyword values */</span>
+<span class="token property">text-orientation</span><span class="token punctuation">:</span> mixed<span class="token punctuation">;</span>
+<span class="token property">text-orientation</span><span class="token punctuation">:</span> upright<span class="token punctuation">;</span>
+<span class="token property">text-orientation</span><span class="token punctuation">:</span> sideways-right<span class="token punctuation">;</span>
+<span class="token property">text-orientation</span><span class="token punctuation">:</span> sideways<span class="token punctuation">;</span>
+<span class="token property">text-orientation</span><span class="token punctuation">:</span> use-glyph-orientation<span class="token punctuation">;</span>
+
+<span class="token comment">/* Global values */</span>
+<span class="token property">text-orientation</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">text-orientation</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">text-orientation</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre>
+
+<p>The <code>text-orientation</code> property is specified as a single keyword from the list below.</p></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+ <dt><code>mixed</code></dt>
+ <dd>Rotates the characters of horizontal scripts 90° clockwise. Lays out the characters of vertical scripts naturally. Default value.</dd>
+ <dt><code>upright</code></dt>
+ <dd>Lays out the characters of horizontal scripts naturally (upright), as well as the glyphs for vertical scripts. Note that this keyword causes all characters to be considered as left-to-right: the used value of <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/direction"><code>direction</code></a> is forced to be <code>ltr</code>.</dd>
+ <dt><code>sideways</code></dt>
+ <dd>Causes characters to be laid out as they would be horizontally, but with the whole line rotated 90° clockwise.</dd>
+ <dt><code>sideways-right</code></dt>
+ <dd>An alias to <code>sideways</code> that is kept for compatibility purposes.</dd>
+ <dt><code>use-glyph-orientation</code></dt>
+ <dd>On SVG elements, this keyword leads to use the value of the deprecated SVG properties <code>glyph-orientation-vertical</code> and <code>glyph-orientation-horizontal</code>.</dd>
+</dl></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td><code>mixed</code></td></tr><tr><th scope="row">Applies to</th><td>all elements, except table row groups, rows, column groups, and columns</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance">Inherited</a></th><td>yes</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>as specified</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate">mixed <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> upright <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> sideways</pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="html"><a href="#html" title="Permalink to HTML">HTML</a></h3><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Lorem ipsum dolet semper quisquam.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span></code></pre></div><h3 id="css"><a href="#css" title="Permalink to CSS">CSS</a></h3><div><pre class="brush: css notranslate"><code><span class="token selector">p</span> <span class="token punctuation">{</span>
+  <span class="token property">writing-mode</span><span class="token punctuation">:</span> vertical-rl<span class="token punctuation">;</span>
+  <span class="token property">text-orientation</span><span class="token punctuation">:</span> upright<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div><h3 id="result"><a href="#result" title="Permalink to Result">Result</a></h3><div><p><iframe class="sample-code-frame" id="frame_Examples" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/text-orientation/_sample_.Examples.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-writing-modes-3/#text-orientation" hreflang="en" lang="en" class="external" rel=" noopener">CSS Writing Modes Module Level&nbsp;3<br><small lang="en-US">The definition of 'text-orientation' in that specification.</small></a></td>
+   <td><span class="spec-pr">Proposed Recommendation</span></td>
+   <td>Initial definition.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li>The other vertical-script related CSS properties: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode"><code>writing-mode</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-combine-upright"><code>text-combine-upright</code></a>, and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/unicode-bidi"><code>unicode-bidi</code></a>.</li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties">CSS Logical properties</a></li>
+ <li><a href="https://www.w3.org/International/articles/vertical-text/" class="external" rel=" noopener">Styling vertical text (Chinese, Japanese, Korean and Mongolian)</a></li>
+ <li>Extensive browsers support test results:&nbsp;<a href="https://w3c.github.io/i18n-tests/results/horizontal-in-vertical.html#text_orientation" class="external" rel=" noopener">https://w3c.github.io/i18n-tests/results/horizontal-in-vertical.html#text_orientation</a></li>
+</ul></div>

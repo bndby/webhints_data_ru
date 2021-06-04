@@ -1,0 +1,97 @@
+<h1>ruby-align</h1><div><div><div class="notecard experimental">
+    <h4 id="experimental">Experimental</h4>
+    <p><strong>Это экспериментальная технология</strong><br>Так как спецификация этой технологии ещё не стабилизировалась, смотрите <a href="#browser_compatibility">таблицу совместимости</a> по поводу использования в различных браузерах. Также заметьте, что синтаксис и поведение экспериментальной технологии может измениться в будущих версиях браузеров, вслед за изменениями спецификации.</p>
+</div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Summary">Summary</a></h2><div><p>The <code><strong>ruby-align</strong></code> CSS property defines the distribution of the different ruby elements over the base.</p>
+
+<p></p><table class="properties"><tbody><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td><code>space-around</code></td></tr><tr><th scope="row">Применяется к</th><td>базовые элементы ruby, аннотации к ruby, базовые ruby контейнеры, контейнеры аннотаций к ruby</td></tr><tr><th scope="row"><a href="/css/inheritance/">Наследуется</a></th><td>да</td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>как указано</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush:css notranslate"><code><span class="token comment">/* Keyword values */</span>
+<span class="token property">ruby-align</span><span class="token punctuation">:</span> start<span class="token punctuation">;</span>
+<span class="token property">ruby-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+<span class="token property">ruby-align</span><span class="token punctuation">:</span> space-between<span class="token punctuation">;</span>
+<span class="token property">ruby-align</span><span class="token punctuation">:</span> space-around<span class="token punctuation">;</span>
+
+<span class="token comment">/* Global values */</span>
+<span class="token property">ruby-align</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">ruby-align</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">ruby-align</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+ <dt><code>start</code></dt>
+ <dd>Is a keyword indicating that the ruby will be aligned with the start of the base text.</dd>
+ <dt><code>center</code></dt>
+ <dd>Is a keyword indicating that the ruby will be aligned at the middle of the base text</dd>
+ <dt><code>space-between</code></dt>
+ <dd>Is a keyword indicating that the extra space will be distributed between the elements of the ruby.</dd>
+ <dt><code>space-around</code></dt>
+ <dd>Is a keyword indicating that the extra space will be distributed between the elements of the ruby, and around it.</dd>
+</dl></div><h3 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h3><div><pre class="notranslate">start <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> center <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> space-between <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> space-around</pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div><p>This HTML will render differently with each value of <code>ruby-align</code>:</p>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ruby</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rb</span><span class="token punctuation">&gt;</span></span>This is a long text to check<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rb</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rp</span><span class="token punctuation">&gt;</span></span>（<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rp</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rt</span><span class="token punctuation">&gt;</span></span>short ruby<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rt</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rp</span><span class="token punctuation">&gt;</span></span>）<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rp</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ruby</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h3 id="ruby_aligned_at_the_start_of_the_base_text"><a href="#ruby_aligned_at_the_start_of_the_base_text" title="Permalink to Ruby aligned at the start of the base text">Ruby aligned at the start of the base text</a></h3><div><pre class="brush: html notranslate" style="display: none;"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ruby</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rb</span><span class="token punctuation">&gt;</span></span>This is a long text to check<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rb</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rp</span><span class="token punctuation">&gt;</span></span>（<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rp</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rt</span><span class="token punctuation">&gt;</span></span>short ruby<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rt</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rp</span><span class="token punctuation">&gt;</span></span>）<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rp</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ruby</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<pre class="brush: css notranslate"><code><span class="token selector">ruby</span> <span class="token punctuation">{</span>
+    <span class="token property">ruby-align</span><span class="token punctuation">:</span>start<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<p>This gives the following result:</p>
+
+<p><iframe class="sample-code-frame" id="frame_Ruby_aligned_at_the_start_of_the_base_text" width="180" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/ruby-align/_sample_.Ruby_aligned_at_the_start_of_the_base_text.html" loading="lazy"></iframe></p></div><h3 id="ruby_aligned_at_the_center_of_the_base_text"><a href="#ruby_aligned_at_the_center_of_the_base_text" title="Permalink to Ruby aligned at the center of the base text">Ruby aligned at the center of the base text</a></h3><div><pre class="brush: html notranslate" style="display: none;"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ruby</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rb</span><span class="token punctuation">&gt;</span></span>This is a long text to check<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rb</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rp</span><span class="token punctuation">&gt;</span></span>（<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rp</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rt</span><span class="token punctuation">&gt;</span></span>short ruby<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rt</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rp</span><span class="token punctuation">&gt;</span></span>）<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rp</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ruby</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<pre class="brush: css notranslate"><code><span class="token selector">ruby</span> <span class="token punctuation">{</span>
+    <span class="token property">ruby-align</span><span class="token punctuation">:</span>center<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<p>This gives the following result:</p>
+
+<p><iframe class="sample-code-frame" id="frame_Ruby_aligned_at_the_center_of_the_base_text" width="180" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/ruby-align/_sample_.Ruby_aligned_at_the_center_of_the_base_text.html" loading="lazy"></iframe></p></div><h3 id="extra_space_distributed_between_ruby_elements"><a href="#extra_space_distributed_between_ruby_elements" title="Permalink to Extra space distributed between ruby elements">Extra space distributed between ruby elements</a></h3><div><pre class="brush: html notranslate" style="display: none;"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ruby</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rb</span><span class="token punctuation">&gt;</span></span>This is a long text to check<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rb</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rp</span><span class="token punctuation">&gt;</span></span>（<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rp</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rt</span><span class="token punctuation">&gt;</span></span>short ruby<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rt</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rp</span><span class="token punctuation">&gt;</span></span>）<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rp</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ruby</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<pre class="brush: css notranslate"><code><span class="token selector">ruby</span> <span class="token punctuation">{</span>
+    <span class="token property">ruby-align</span><span class="token punctuation">:</span>space-between<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<p>This gives the following result:</p>
+
+<p><iframe class="sample-code-frame" id="frame_Extra_space_distributed_between_ruby_elements" width="180" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/ruby-align/_sample_.Extra_space_distributed_between_ruby_elements.html" loading="lazy"></iframe></p></div><h3 id="extra_space_distributed_between_and_around_ruby_element"><a href="#extra_space_distributed_between_and_around_ruby_element" title="Permalink to Extra space distributed between and around ruby element">Extra space distributed between and around ruby element</a></h3><div><pre class="brush: html notranslate" style="display: none;"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ruby</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rb</span><span class="token punctuation">&gt;</span></span>This is a long text to check<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rb</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rp</span><span class="token punctuation">&gt;</span></span>（<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rp</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rt</span><span class="token punctuation">&gt;</span></span>short ruby<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rt</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rp</span><span class="token punctuation">&gt;</span></span>）<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rp</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ruby</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<pre class="brush: css notranslate"><code><span class="token selector">ruby</span> <span class="token punctuation">{</span>
+    <span class="token property">ruby-align</span><span class="token punctuation">:</span>space-around<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<p>This gives the following result:</p>
+
+<p><iframe class="sample-code-frame" id="frame_Extra_space_distributed_between_and_around_ruby_element" width="180" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/ruby-align/_sample_.Extra_space_distributed_between_and_around_ruby_element.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-ruby/#ruby-align-property" hreflang="en" lang="en" class="external" rel=" noopener">CSS Ruby Layout Module Level&nbsp;1<br><small lang="ru">Определение 'ruby-align' в этой спецификации.</small></a></td>
+   <td><span class="spec-wd">Рабочий черновик</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li>HTML Ruby elements: <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/ruby"><code>&lt;ruby&gt;</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/rt" class="only-in-en-us" title="Currently only available in English (US)">&lt;rt&gt; (en-US)</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/rp" class="only-in-en-us" title="Currently only available in English (US)">&lt;rp&gt; (en-US)</a>, and <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/rtc" class="only-in-en-us" title="Currently only available in English (US)">&lt;rtc&gt; (en-US)</a>.</li>
+ <li>CSS Ruby properties: <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/ruby-position"><code>ruby-position</code> <span>(en-US)</span></a>, <a class="page-not-created" title="Документация об этом ещё не написана; пожалуйста, поспособствуйте её написанию!"><code>ruby-merge</code></a>.</li>
+</ul></div>

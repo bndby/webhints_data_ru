@@ -1,0 +1,104 @@
+<h1>String.prototype.charCodeAt()</h1><div><div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Метод <strong><code>charCodeAt()</code></strong> возвращает числовое значение Юникода для символа по указанному индексу (за исключением кодовых точек Юникода, больших 0x10000).</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code><var>str</var>.charCodeAt(<var>index</var>)</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>index</code></dt>
+ <dd>Целое число больше, либо равное 0 и меньше длины строки; если параметр не является числом, он устанавливается в 0.</dd>
+</dl></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Кодовые точки Юникода простираются в диапазоне от 0 до 1114111 (0x10FFFF). Первые 128 кодовых точек Юникода напрямую отображаются в кодировку ASCII. Информацию по Юникоду смотрите в <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Grammar_and_types#unicode">Руководстве по JavaScript</a>.</p>
+
+<p>Обратите внимание, что метод <code>charCodeAt()</code> всегда возвращает значение, меньшее 65536. Так происходит потому, что большие кодовые точки представляются парой (меньших значений) «суррогатных» псевдо-символов, которые используются для составления настоящего символа. Поэтому для того, чтобы получить полный символ для значений символов от 65536 и выше, необходимо получить не только значение <code>charCodeAt(i)</code>, но также значение <code>charCodeAt(i + 1)</code> (как если бы строка состояла из двух букв). Смотрите второй и третий примеры ниже.</p>
+
+<p>Метод <code>charCodeAt()</code> возвращает <a href="/js/NaN/"><code>NaN</code></a>, если указанный индекс меньше нуля или больше длины строки.</p>
+
+<p>Обратная совместимость: в более старых версиях (например, в JavaScript 1.2) метод <code>charCodeAt()</code> возвращал число из кодировки ISO-Latin-1 по указанному индексу. Диапазон символов в кодировке ISO-Latin-1 простирается от 0 до 255. Первые 127 чисел напрямую отображаются в кодировку ASCII.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_using_charcodeat"><a href="#example_using_charcodeat" title="Permalink to Пример: использование метода charCodeAt()">Пример: использование метода <code>charCodeAt()</code></a></h3><div><p>В следующем примере возвращается число 65, значение Unicode для латинского символа «A».</p>
+
+<pre class="brush: js notranslate"><code><span class="token string">'ABC'</span><span class="token punctuation">.</span><span class="token function">charCodeAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// вернёт 65</span>
+</code></pre></div><h3 id="example_fixing_charcodeat_to_handle_non-basic-multilingual-plane_characters_if_their_presence_earlier_in_the_string_is_unknown"><a href="#example_fixing_charcodeat_to_handle_non-basic-multilingual-plane_characters_if_their_presence_earlier_in_the_string_is_unknown" title="Permalink to Пример: исправление метода charCodeAt() для обработки символов не в Базовой многоязыковой плоскости, если их предыдущее присутствие в строке неизвестно">Пример: исправление метода <code>charCodeAt()</code> для обработки символов не в Базовой многоязыковой плоскости, если их предыдущее присутствие в строке неизвестно</a></h3><div><p>Эта версия может использоваться в циклах for, даже когда неизвестно, были ли до указанной позиции символы из не-БМП.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">function</span> <span class="token function">fixedCharCodeAt</span><span class="token punctuation">(</span><span class="token parameter">str<span class="token punctuation">,</span> idx</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// например, fixedCharCodeAt('\uD800\uDC00', 0); // 65536</span>
+  <span class="token comment">// например, fixedCharCodeAt('\uD800\uDC00', 1); // false</span>
+  idx <span class="token operator">=</span> idx <span class="token operator">||</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token keyword">var</span> code <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">charCodeAt</span><span class="token punctuation">(</span>idx<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">var</span> hi<span class="token punctuation">,</span> low<span class="token punctuation">;</span>
+
+  <span class="token comment">// Старшая часть суррогатной пары (последнее число можно изменить на 0xDB7F,</span>
+  <span class="token comment">// чтобы трактовать старшую часть суррогатной пары в частной плоскости как</span>
+  <span class="token comment">// одиночный символ)</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token number">0xD800</span> <span class="token operator">&lt;=</span> code <span class="token operator">&amp;&amp;</span> code <span class="token operator">&lt;=</span> <span class="token number">0xDBFF</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    hi <span class="token operator">=</span> code<span class="token punctuation">;</span>
+    low <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">charCodeAt</span><span class="token punctuation">(</span>idx <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isNaN</span><span class="token punctuation">(</span>low<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">throw</span> <span class="token string">'Старшая часть суррогатной пары без следующей младшей в fixedCharCodeAt()'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>hi <span class="token operator">-</span> <span class="token number">0xD800</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">0x400</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span>low <span class="token operator">-</span> <span class="token number">0xDC00</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">0x10000</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token number">0xDC00</span> <span class="token operator">&lt;=</span> code <span class="token operator">&amp;&amp;</span> code <span class="token operator">&lt;=</span> <span class="token number">0xDFFF</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// Младшая часть суррогатной пары</span>
+    <span class="token comment">// Мы возвращаем false, чтобы цикл пропустил эту итерацию,</span>
+    <span class="token comment">// поскольку суррогатная пара</span>
+    <span class="token comment">// уже обработана в предыдущей итерации</span>
+    <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token comment">// hi = str.charCodeAt(idx - 1);</span>
+    <span class="token comment">// low = code;</span>
+    <span class="token comment">// return ((hi - 0xD800) * 0x400) +</span>
+    <span class="token comment">//   (low - 0xDC00) + 0x10000;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> code<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="example_fixing_charcodeat_to_handle_non-basic-multilingual-plane_characters_if_their_presence_earlier_in_the_string_is_known"><a href="#example_fixing_charcodeat_to_handle_non-basic-multilingual-plane_characters_if_their_presence_earlier_in_the_string_is_known" title="Permalink to Пример: исправление метода charCodeAt() для обработки символов не в Базовой многоязыковой плоскости, если их предыдущее присутствие в строке известно">Пример: исправление метода <code>charCodeAt()</code> для обработки символов не в Базовой многоязыковой плоскости, если их предыдущее присутствие в строке известно</a></h3><div><pre class="brush: js notranslate"><code><span class="token keyword">function</span> <span class="token function">knownCharCodeAt</span><span class="token punctuation">(</span><span class="token parameter">str<span class="token punctuation">,</span> idx</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  str <span class="token operator">+=</span> <span class="token string">''</span><span class="token punctuation">;</span>
+  <span class="token keyword">var</span> code<span class="token punctuation">,</span>
+      end <span class="token operator">=</span> str<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+
+  <span class="token keyword">var</span> surrogatePairs <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">[\uD800-\uDBFF][\uDC00-\uDFFF]</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">;</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>surrogatePairs<span class="token punctuation">.</span><span class="token function">exec</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> li <span class="token operator">=</span> surrogatePairs<span class="token punctuation">.</span>lastIndex<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>li <span class="token operator">-</span> <span class="token number">2</span> <span class="token operator">&lt;</span> idx<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      idx<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token keyword">break</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>idx <span class="token operator">&gt;=</span> end <span class="token operator">||</span> idx <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token number">NaN</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  code <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">charCodeAt</span><span class="token punctuation">(</span>idx<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">var</span> hi<span class="token punctuation">,</span> low<span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token number">0xD800</span> <span class="token operator">&lt;=</span> code <span class="token operator">&amp;&amp;</span> code <span class="token operator">&lt;=</span> <span class="token number">0xDBFF</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    hi <span class="token operator">=</span> code<span class="token punctuation">;</span>
+    low <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">charCodeAt</span><span class="token punctuation">(</span>idx <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// Перешагиваем через один, поскольку один «символ» является частью суррогатной пары</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>hi <span class="token operator">-</span> <span class="token number">0xD800</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">0x400</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span>low <span class="token operator">-</span> <span class="token number">0xDC00</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">0x10000</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> code<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td>ECMAScript 1-е издание.</td>
+   <td>Стандарт</td>
+   <td>Изначальное определение. Реализована в JavaScript 1.2.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-15.5.4.5" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 5.1 (ECMA-262)<br><small lang="ru">Определение 'String.prototype.charCodeAt' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-string.prototype.charcodeat" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'String.prototype.charCodeAt' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/String/fromCharCode/"><code>String.fromCharCode()</code></a></li>
+ <li><a href="/js/String/charAt/"><code>String.prototype.charAt()</code></a></li>
+ <li><a href="/js/String/fromCodePoint/"><code>String.fromCodePoint()</code></a></li>
+ <li><a href="/js/String/codePointAt/"><code>String.prototype.codePointAt()</code></a></li>
+</ul></div>

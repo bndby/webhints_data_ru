@@ -1,0 +1,36 @@
+<h1>String.prototype.link()</h1><div><div>&nbsp;<div class="notecard deprecated">
+            <h4 id="устарело">Устарело</h4>
+            <p>Эта возможность была удалена из веб-стандартов. Хотя некоторые браузеры по-прежнему могут поддерживать её, она находится в процессе удаления. Не используйте её ни в старых, ни в новых проектах. Страницы или веб-приложения, использующие её, могут в любой момент сломаться.</p>
+        </div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Метод <strong><code>link()</code></strong> создаёт HTML-элемент <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/A"><code>&lt;a&gt;</code></a>, заставляющий строку отображаться в виде ссылки на другой URL.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code><var>str</var>.link(<var>url</var>)</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>url</code></dt>
+ <dd>Любая строка, определяющая атрибут <code>href</code> тега <code>&lt;a&gt;</code>; она должна содержать допустимый URL (относительный или абсолютный), символы амперсанда <code>&amp;</code> должны быть закодированы в ней как <code>&amp;amp;</code>, а символы кавычки <code>"</code>&nbsp;— как <code>&amp;quot;</code>.</dd>
+</dl></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Метод <code>link()</code> используется для создания кусочка HTML со ссылкой в гипертексте. Возвращённая строка затем может быть добавлена в документ при помощи метода <a href="https://developer.mozilla.org/ru/docs/Web/API/Document/write"><code>document.write()</code></a> или свойства <a href="https://developer.mozilla.org/ru/docs/Web/API/Element/innerHTML"><code>element.innerHTML</code></a></p>
+
+<p>Ссылки, созданные методом <code>link()</code>, становятся элементами в массиве <a href="https://developer.mozilla.org/ru/docs/Web/API/Document/links"><code>document.links</code></a>.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_using_link"><a href="#example_using_link" title="Permalink to Пример: использование метода link()">Пример: использование метода <code>link()</code></a></h3><div><p>В следующем примере слово «MDN» отображается в виде гипертекстовой ссылки, ведущей на сайт Сети разработчиков Mozilla.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> hotText <span class="token operator">=</span> <span class="token string">'MDN'</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> <span class="token constant">URL</span> <span class="token operator">=</span> <span class="token string">'https://developer.mozilla.org/'</span><span class="token punctuation">;</span>
+
+document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">'Нажмите для возврата на '</span> <span class="token operator">+</span> hotText<span class="token punctuation">.</span><span class="token function">link</span><span class="token punctuation">(</span><span class="token constant">URL</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+<p>Этот пример генерирует такой же вывод, как и следующий HTML:</p>
+
+<pre class="brush: html notranslate"><code>Нажмите для возврата на <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://developer.mozilla.org/<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>MDN<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-string.prototype.link" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'String.prototype.link' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Изначальное определение. Реализована в JavaScript 1.0.<br>
+    Определена в (нормативном) Приложении B по Дополнительным возможностям ECMAScript для веб-браузеров.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/String/anchor/"><code>String.prototype.anchor()</code></a></li>
+</ul></div>

@@ -1,0 +1,37 @@
+<h1>hue-rotate()</h1><div><div></div>
+
+<p>The <strong><code>hue-rotate()</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Functions">function</a> rotates the <a href="https://en.wikipedia.org/wiki/Hue" class="external" rel=" noopener">hue</a> of an element and its contents. Its result is a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function"><code>&lt;filter-function&gt;</code></a>.</p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/function-hue-rotate.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: css notranslate"><code><span class="token function">hue-rotate</span><span class="token punctuation">(</span>angle<span class="token punctuation">)</span></code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Parameters">Parameters</a></h3><div><dl>
+ <dt><code><var>angle</var></code></dt>
+ <dd>The relative change in hue of the input sample, specified as an <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/angle"><code>&lt;angle&gt;</code></a>. A value of <code>0deg</code> leaves the input unchanged. A positive hue rotation increases the hue value, while a negative rotation decreases the hue value. The lacuna value for interpolation is <code>0</code>. There is no minimum or maximum value; <code>hue-rotate(Ndeg)</code> evaluates to <code>N</code> modulo 360.</dd>
+</dl></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="examples_of_correct_values_for_hue-rotate"><a href="#examples_of_correct_values_for_hue-rotate" title="Permalink to Examples of correct values for hue-rotate">Examples of correct values for hue-rotate</a></h3><div><pre class="brush: css notranslate"><code><span class="token function">hue-rotate</span><span class="token punctuation">(</span>-90deg<span class="token punctuation">)</span>  <span class="token comment">/* Same as 270deg rotation */</span>
+<span class="token function">hue-rotate</span><span class="token punctuation">(</span>0deg<span class="token punctuation">)</span>    <span class="token comment">/* No effect */</span>
+<span class="token function">hue-rotate</span><span class="token punctuation">(</span>90deg<span class="token punctuation">)</span>   <span class="token comment">/* 90deg rotation */</span>
+<span class="token function">hue-rotate</span><span class="token punctuation">(</span>.5turn<span class="token punctuation">)</span>  <span class="token comment">/* 180deg rotation */</span>
+<span class="token function">hue-rotate</span><span class="token punctuation">(</span>405deg<span class="token punctuation">)</span>  <span class="token comment">/* Same as 45deg rotation */</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.fxtf.org/filter-effects/#funcdef-filter-hue-rotate" hreflang="en" lang="en" class="external" rel=" noopener">Filter Effects Module Level 1<br><small lang="en-US">The definition of 'hue-rotate()' in that specification.</small></a></td>
+   <td><span class="spec-wd">Working Draft</span></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function"><code>&lt;filter-function&gt;</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/blur()"><code>blur()</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/brightness()"><code>brightness()</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/contrast()"><code>contrast()</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/drop-shadow()"><code>drop-shadow()</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/grayscale()"><code>grayscale()</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/invert()"><code>invert()</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/opacity()"><code>opacity()</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/saturate()"><code>saturate()</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/sepia()"><code>sepia()</code></a></li>
+</ul></div>

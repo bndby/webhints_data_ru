@@ -1,0 +1,77 @@
+<h1>Uint8Array() constructor</h1><div><div></div>
+
+<p>The <strong><code>Uint8Array()</code></strong> constructor creates a typed array of
+  8-bit unsigned integers. The contents are initialized to <code>0</code>. Once
+  established, you can reference elements in the array using the object's methods, or
+  using standard array index syntax (that is, using bracket notation).</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: js notranslate"><code><span class="token keyword">new</span> <span class="token class-name">Uint8Array</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// new in ES2017</span>
+<span class="token keyword">new</span> <span class="token class-name">Uint8Array</span><span class="token punctuation">(</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">new</span> <span class="token class-name">Uint8Array</span><span class="token punctuation">(</span>typedArray<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">new</span> <span class="token class-name">Uint8Array</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">new</span> <span class="token class-name">Uint8Array</span><span class="token punctuation">(</span>buffer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">new</span> <span class="token class-name">Uint8Array</span><span class="token punctuation">(</span>buffer<span class="token punctuation">,</span> byteOffset<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">new</span> <span class="token class-name">Uint8Array</span><span class="token punctuation">(</span>buffer<span class="token punctuation">,</span> byteOffset<span class="token punctuation">,</span> length<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Parameters">Parameters</a></h3><div><dl>
+  <dt><code><var>length</var></code></dt>
+  <dd>When called with a <code><var>length</var></code> argument, an internal array buffer
+    is created in memory, of size <code><var>length</var></code><em> multiplied by
+      <code>BYTES_PER_ELEMENT</code></em> bytes, containing zeros.</dd>
+  <dt><code><var>typedArray</var></code></dt>
+  <dd>When called with a <code>typedArray</code> argument, which can be an object of any
+    of the typed array types (such as <code>Int32Array</code>), the
+    <code><var>typedArray</var></code> gets copied into a new typed array. Each value in
+    <code><var>typedArray</var></code> is converted to the corresponding type of the
+    constructor before being copied into the new array. The length of the new typed array
+    will be same as the length of the <code><var>typedArray</var></code> argument.</dd>
+  <dt><code><var>object</var></code></dt>
+  <dd>When called with an <code><var>object</var></code> argument, a new typed array is
+    created as if by the <code><var>TypedArray</var>.from()</code> method.</dd>
+  <dt><code><var>buffer</var></code>, <code><var>byteOffset</var></code>,
+    <code><var>length</var></code></dt>
+  <dd>When called with a <code><var>buffer</var></code>, and optionally a
+    <code><var>byteOffset</var></code> and a <code><var>length</var></code> argument, a
+    new typed array view is created that views the specified <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer"><code>ArrayBuffer</code></a>.
+    The <code><var>byteOffset</var></code> and <code><var>length</var></code> parameters
+    specify the memory range that will be exposed by the typed array view. If both are
+    omitted, all of <code><var>buffer</var></code> is viewed; if only
+    <code><var>length</var></code> is omitted, the remainder of
+    <code><var>buffer</var></code> is viewed.</dd>
+</dl></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="different_ways_to_create_a_uint8array"><a href="#different_ways_to_create_a_uint8array" title="Permalink to Different ways to create a Uint8Array">Different ways to create a Uint8Array</a></h3><div><pre class="brush: js notranslate"><code><span class="token comment">// From a length</span>
+<span class="token keyword">var</span> uint8 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Uint8Array</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+uint8<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">42</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>uint8<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 42</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>uint8<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 2</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>uint8<span class="token punctuation">.</span><span class="token constant">BYTES_PER_ELEMENT</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 1</span>
+
+<span class="token comment">// From an array</span>
+<span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Uint8Array</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">21</span><span class="token punctuation">,</span><span class="token number">31</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 31</span>
+
+<span class="token comment">// From another TypedArray</span>
+<span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Uint8Array</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">21</span><span class="token punctuation">,</span> <span class="token number">31</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> y <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Uint8Array</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>y<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 21</span>
+
+<span class="token comment">// From an ArrayBuffer</span>
+<span class="token keyword">var</span> buffer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayBuffer</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> z <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Uint8Array</span><span class="token punctuation">(</span>buffer<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// From an iterable</span>
+<span class="token keyword">var</span> <span class="token function-variable function">iterable</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token operator">*</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token keyword">yield</span><span class="token operator">*</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> uint8 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Uint8Array</span><span class="token punctuation">(</span>iterable<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Uint8Array[1, 2, 3]</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://tc39.es/ecma262/#sec-typedarray-constructors">Unknown specification<!-- --> <br><small># <!-- -->sec-typedarray-constructors</small></a></td></tr></tbody></table><div></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h3 id="compatibility_notes"><a href="#compatibility_notes" title="Permalink to Compatibility notes">Compatibility notes</a></h3><div><p>Starting with ECMAScript 2015, <code>Uint8Array</code> constructors require to be
+  constructed with a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new"><code>new</code></a> operator. Calling a
+  <code>Uint8Array</code> constructor as a function without <code>new</code>, will throw a
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError"><code>TypeError</code></a> from now on.</p>
+
+<pre class="brush: js example-bad notranslate"><code><span class="token keyword">var</span> dv <span class="token operator">=</span> <span class="token function">Uint8Array</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// TypeError: calling a builtin Uint8Array constructor</span>
+<span class="token comment">// without new is forbidden</span></code></pre>
+
+<pre class="brush: js example-good notranslate"><code><span class="token keyword">var</span> dv <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Uint8Array</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+  <li>A polyfill of <code>Uint8Array</code> is available in <a href="https://github.com/zloirock/core-js#ecmascript-typed-arrays" class="external" rel=" noopener"><code>core-js</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays">JavaScript typed arrays</a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer"><code>ArrayBuffer</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView"><code>DataView</code></a></li>
+</ul></div>

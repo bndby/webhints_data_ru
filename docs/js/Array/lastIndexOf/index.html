@@ -1,0 +1,109 @@
+<h1>Array.prototype.lastIndexOf()</h1><div><div></div>
+
+<p>Метод <code><strong>lastIndexOf()</strong></code> возвращает последний индекс, по которому данный элемент может быть найден в массиве или -1, если такого индекса нет. Массив просматривается от конца к началу, начиная с индекса <code>fromIndex</code>.</p>
+
+<div><iframe class="interactive" width="100%" height="490" src="https://interactive-examples.mdn.mozilla.net/pages/js/array-lastindexof.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+</div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code><var>arr</var>.lastIndexOf(<var>searchElement</var>[, <var>fromIndex</var> = arr.length])</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>searchElement</code></dt>
+ <dd>Искомый элемент в массиве.</dd>
+ <dt><code>fromIndex</code></dt>
+ <dd>Необязательный параметр. Индекс, с которого начинать поиск в обратном направлении. Если индекс больше или равен длине массива, просматривается весь массив. Если индекс является отрицательным числом, он трактуется как смещение с конца массива. Обратите внимание: если индекс отрицателен, массив всё равно просматривается от конца к началу. Если рассчитанный индекс оказывается меньше 0, массив даже не просматривается. Значение по умолчанию равно длине массива, что означает, что просматривается весь массив.</dd>
+</dl></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Метод <code>lastIndexOf()</code> сравнивает искомый элемент <code>searchElement</code> с элементами в массиве, используя <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#using_the_equality_operators" class="only-in-en-us" title="Currently only available in English (US)">строгое сравнение (en-US)</a> (тот же метод используется оператором <code>===</code>, тройное равно).</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_using_lastindexof"><a href="#example_using_lastindexof" title="Permalink to Пример: использование lastIndexOf()">Пример: использование <code>lastIndexOf()</code></a></h3><div><p>В следующем примере метод <code>lastIndexOf()</code> используется для поиска значений в массиве.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> array <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+array<span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">// 3</span>
+array<span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">// -1</span>
+array<span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 3</span>
+array<span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 0</span>
+array<span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 0</span>
+array<span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 3</span>
+</code></pre></div><h3 id="example_finding_all_the_occurrences_of_an_element"><a href="#example_finding_all_the_occurrences_of_an_element" title="Permalink to Пример: нахождение всех вхождений элемента">Пример: нахождение всех вхождений элемента</a></h3><div><p>В следующем примере метод <code>lastIndexOf()</code> используется для поиска всех индексов элемента в указанном массиве, которые с помощью метода <a href="/js/Array/push/"><code>push()</code></a> добавляются в другой массив.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> indices <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> array <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">,</span> <span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'d'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> element <span class="token operator">=</span> <span class="token string">'a'</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> idx <span class="token operator">=</span> array<span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span>idx <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  indices<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>idx<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  idx <span class="token operator">=</span> <span class="token punctuation">(</span>idx <span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token operator">?</span> array<span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">(</span>element<span class="token punctuation">,</span> idx <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>indices<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// [4, 2, 0]</span>
+</code></pre>
+
+<p>Обратите внимание, что мы обрабатываем случай <code>idx == 0</code> отдельно, поскольку элемент всегда будет найден, независимо от параметра <code>fromIndex</code>, если он является первым элементом в массиве. Этим он отличается от метода <a href="/js/Array/indexOf/"><code>indexOf()</code></a>.</p></div><h2 id="polyfill"><a href="#polyfill" title="Permalink to Полифил">Полифил</a></h2><div><p>Метод <code>lastIndexOf()</code> был добавлен к стандарту ECMA-262 в 5-м издании; поэтому он может отсутствовать в других реализациях стандарта. Вы можете работать с ним, добавив следующий код в начало ваших скриптов, он позволяет использовать <code>lastIndexOf()</code> в реализациях, которые не поддерживают этот метод. Этот алгоритм является точно тем, что описан в ECMA-262 5-го издания; он предполагает, что <a href="/js/Object/"><code>Object</code></a>, <a href="/js/TypeError/"><code>TypeError</code></a>, <a href="/js/Number/"><code>Number</code></a>, <a href="/js/Math/floor/"><code>Math.floor()</code></a>, <a href="/js/Math/abs/"><code>Math.abs()</code></a> и <a href="/js/Math/min/"><code>Math.min()</code></a> имеют свои первоначальные значения.</p>
+
+<pre class="brush: js notranslate"><code><span class="token comment">// Шаги алгоритма ECMA-262, 5-е издание, 15.4.4.15</span>
+<span class="token comment">// Ссылка (en): http://es5.github.io/#x15.4.4.15</span>
+<span class="token comment">// Ссылка (ru): http://es5.javascript.ru/x15.4.html#x15.4.4.15</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>lastIndexOf<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">lastIndexOf</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>searchElement<span class="token comment">/*, fromIndex*/</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token string">'use strict'</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token operator">===</span> <span class="token keyword">void</span> <span class="token number">0</span> <span class="token operator">||</span> <span class="token keyword">this</span> <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">TypeError</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">var</span> n<span class="token punctuation">,</span> k<span class="token punctuation">,</span>
+        t <span class="token operator">=</span> <span class="token function">Object</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        len <span class="token operator">=</span> t<span class="token punctuation">.</span>length <span class="token operator">&gt;&gt;&gt;</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>len <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    n <span class="token operator">=</span> len <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>arguments<span class="token punctuation">.</span>length <span class="token operator">&gt;</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      n <span class="token operator">=</span> <span class="token function">Number</span><span class="token punctuation">(</span>arguments<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">!=</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        n <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">!=</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> n <span class="token operator">!=</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">/</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> n <span class="token operator">!=</span> <span class="token operator">-</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">/</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        n <span class="token operator">=</span> <span class="token punctuation">(</span>n <span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token operator">||</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>k <span class="token operator">=</span> n <span class="token operator">&gt;=</span> <span class="token number">0</span> <span class="token operator">?</span> Math<span class="token punctuation">.</span><span class="token function">min</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span> len <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">:</span> len <span class="token operator">-</span> Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span> k <span class="token operator">&gt;=</span> <span class="token number">0</span><span class="token punctuation">;</span> k<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>k <span class="token keyword">in</span> t <span class="token operator">&amp;&amp;</span> t<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">===</span> searchElement<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> k<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p>И снова обратите внимание, что данная реализация нацелена на абсолютную совместимость с методом <code>lastIndexOf()</code>, реализованным в Firefox и движке JavaScript SpiderMonkey, включая несколько случаев, которые являются спорными крайними случаями. Если вы используете этот код в реальных приложениях, вы можете вычислять параметр <code>from</code> менее сложным образом, игнорируя эти случаи.</p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-15.4.4.15" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 5.1 (ECMA-262)<br><small lang="ru">Определение 'Array.prototype.lastIndexOf' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Изначальное определение. Реализована в JavaScript 1.6.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-array.prototype.lastindexof" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Array.prototype.lastIndexOf' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><a href="https://tc39.es/ecma262/#sec-array.prototype.lastindexof" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript (ECMA-262)<br><small lang="ru">Определение 'Array.prototype.lastIndexOf' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><div>
+<p></p><p></p>
+</div></div><h2 id="замечания_по_совместимости"><a href="#замечания_по_совместимости" title="Permalink to Замечания по совместимости">Замечания по совместимости</a></h2><div><ul>
+ <li>Начиная с Firefox 47 (Firefox 47 / Thunderbird 47 / SeaMonkey 2.44), метод больше не будет возвращать <code>-0</code>. Например, <code>[0].lastIndexOf(0, -0)</code> теперь всегда будет возвращать <code>+0</code> (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1242043" class="external" rel=" noopener">баг&nbsp;1242043</a>).</li>
+</ul></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/String/charAt/"><code>String.prototype.charAt()</code></a></li>
+ <li><a href="/js/String/indexOf/"><code>String.prototype.indexOf()</code></a></li>
+ <li><a href="/js/String/split/"><code>String.prototype.split()</code></a></li>
+ <li><a href="/js/Array/indexOf/"><code>Array.prototype.indexOf()</code></a></li>
+ <li><a href="/js/Array/lastIndexOf/" aria-current="page"><code>Array.prototype.lastIndexOf()</code></a></li>
+</ul></div>

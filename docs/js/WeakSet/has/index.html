@@ -1,0 +1,37 @@
+<h1>WeakSet.prototype.has()</h1><div><div></div>
+
+<p>Метод&nbsp;<code><strong>has()</strong></code>&nbsp;определяет, содержит ли WeakSet определённый элемент, возвращая в зависимости от этого true или false.&nbsp;</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code><em>ws</em>.has(value);</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt>value</dt>
+ <dd>Обязателен. Искомый объект.</dd>
+</dl></div><h3 id="returns"><a href="#returns" title="Permalink to Возвращаемое значение">Возвращаемое значение</a></h3><div><dl>
+ <dt>Boolean</dt>
+ <dd>Если объект был найден в WeakSet вернёт true, иначе false.</dd>
+</dl></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="exampleusing_the_has_method"><a href="#exampleusing_the_has_method" title="Permalink to Использование метода&nbsp;has&nbsp;">Использование метода&nbsp;<code>has</code>&nbsp;</a></h3><div><pre class="brush: js notranslate"><code><span class="token keyword">var</span> ws <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">WeakSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+ws<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>window<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+mySet<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>window<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// вернёт true</span>
+mySet<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">// вернёт false</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-weakset.prototype.has" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'WeakSet.prototype.has' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Изначальное определение.</td>
+  </tr>
+  <tr>
+   <td><a href="https://tc39.es/ecma262/#sec-weakset.prototype.has" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript (ECMA-262)<br><small lang="ru">Определение 'WeakSet.prototype.has' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/WeakSet/"><code>WeakSet</code></a></li>
+ <li><a href="/js/WeakSet/add/"><code>WeakSet.prototype.add()</code></a></li>
+ <li><a href="/js/WeakSet/delete/"><code>WeakSet.prototype.delete()</code></a></li>
+</ul></div>

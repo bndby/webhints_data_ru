@@ -1,0 +1,46 @@
+<h1>Reflect.getOwnPropertyDescriptor()</h1><div><div></div>
+
+<p><span class="seoSummary">The static
+    <strong><code>Reflect.getOwnPropertyDescriptor()</code></strong> method is similar to
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptor"><code>Object.getOwnPropertyDescriptor()</code></a>. It returns a property descriptor of
+    the given property if it exists on the object, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined"><code>undefined</code></a>
+    otherwise.</span></p>
+
+<div><iframe class="interactive" width="100%" height="490" src="https://interactive-examples.mdn.mozilla.net/pages/js/reflect-getownpropertydescriptor.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: js notranslate"><code>Reflect<span class="token punctuation">.</span><span class="token function">getOwnPropertyDescriptor</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span> propertyKey<span class="token punctuation">)</span>
+</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Parameters">Parameters</a></h3><div><dl>
+  <dt><code><var>target</var></code></dt>
+  <dd>The target object in which to look for the property.</dd>
+  <dt><code><var>propertyKey</var></code></dt>
+  <dd>The name of the property to get an own property descriptor for.</dd>
+</dl></div><h3 id="return_value"><a href="#return_value" title="Permalink to Return value">Return value</a></h3><div><p>A property descriptor object if the property exists in <code><var>target</var></code>
+  object; otherwise, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined"><code>undefined</code></a>.</p></div><h3 id="exceptions"><a href="#exceptions" title="Permalink to Exceptions">Exceptions</a></h3><div><p>A <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError"><code>TypeError</code></a>, if <code><var>target</var></code> is not an
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object"><code>Object</code></a>.</p></div><h2 id="description"><a href="#description" title="Permalink to Description">Description</a></h2><div><p>The <code>Reflect.getOwnPropertyDescriptor</code> method returns a property descriptor
+  of the given property if it exists in the <code><var>target</var></code> object,
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined"><code>undefined</code></a> otherwise. The only difference to
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptor"><code>Object.getOwnPropertyDescriptor()</code></a> is how non-object targets are handled.
+</p></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="using_reflect.getownpropertydescriptor"><a href="#using_reflect.getownpropertydescriptor" title="Permalink to Using Reflect.getOwnPropertyDescriptor()
+">Using Reflect.getOwnPropertyDescriptor()
+</a></h3><div><pre class="brush: js notranslate"><code>Reflect<span class="token punctuation">.</span><span class="token function">getOwnPropertyDescriptor</span><span class="token punctuation">(</span><span class="token punctuation">{</span>x<span class="token operator">:</span> <span class="token string">'hello'</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token string">'x'</span><span class="token punctuation">)</span>
+<span class="token comment">// {value: "hello", writable: true, enumerable: true, configurable: true}</span>
+
+Reflect<span class="token punctuation">.</span><span class="token function">getOwnPropertyDescriptor</span><span class="token punctuation">(</span><span class="token punctuation">{</span>x<span class="token operator">:</span> <span class="token string">'hello'</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token string">'y'</span><span class="token punctuation">)</span>
+<span class="token comment">// undefined</span>
+
+Reflect<span class="token punctuation">.</span><span class="token function">getOwnPropertyDescriptor</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'length'</span><span class="token punctuation">)</span>
+<span class="token comment">// {value: 0, writable: true, enumerable: false, configurable: false}</span>
+</code></pre></div><h3 id="difference_to_object.getownpropertydescriptor"><a href="#difference_to_object.getownpropertydescriptor" title="Permalink to Difference to
+  Object.getOwnPropertyDescriptor()">Difference to
+  Object.getOwnPropertyDescriptor()</a></h3><div><p>If the <code><var>target</var></code> argument to this method is not an object (a
+  primitive), then it will cause a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError"><code>TypeError</code></a>. With
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptor"><code>Object.getOwnPropertyDescriptor</code></a>, a non-object first argument will be
+  coerced to an object at first.</p>
+
+<pre class="brush: js notranslate"><code>Reflect<span class="token punctuation">.</span><span class="token function">getOwnPropertyDescriptor</span><span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+<span class="token comment">// TypeError: "foo" is not non-null object</span>
+
+Object<span class="token punctuation">.</span><span class="token function">getOwnPropertyDescriptor</span><span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+<span class="token comment">// { value: "f", writable: false, enumerable: true, configurable: false }</span></code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://tc39.es/ecma262/#sec-reflect.getownpropertydescriptor">Unknown specification<!-- --> <br><small># <!-- -->sec-reflect.getownpropertydescriptor</small></a></td></tr></tbody></table><div></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+  <li>A polyfill of <code>Reflect.getOwnPropertyDescriptor</code> is available in <a href="https://github.com/zloirock/core-js#ecmascript-reflect" class="external" rel=" noopener"><code>core-js</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect"><code>Reflect</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptor"><code>Object.getOwnPropertyDescriptor()</code></a></li>
+</ul></div>

@@ -1,0 +1,86 @@
+<h1>skew()</h1><div><div></div>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a>&nbsp;функция&nbsp;<strong><code>skew()</code></strong>&nbsp;трансформирует элемент, наклоняя его в 2D-пространстве.</p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/function-skew.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+
+
+<p>Данная трансформация&nbsp;является линейным преобразованием векторного пространства (трансвекция или&nbsp;<a href="https://en.wikipedia.org/wiki/Shear_mapping" class="external" rel=" noopener">shear mapping</a>), которое деформирует каждую точку элемента на определённый угол по горизонтали или вертикали. Координаты каждой точки изменяются на величину, пропорциональную указанному углу и расстоянию до точки, относительно которой выполняется трансформация (origin); таким образом, чем больше расстояние до смещаемой точки элемента, тем больше она будет смещена по горизонтали или вертикали.</p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><p>Функция&nbsp;<code>skew()</code>&nbsp;задаётся одним или двумя значениями которые отображают наклон в каждом из направлений.</p>
+
+<pre class="syntaxbox notranslate">skew(<em>ax</em>)
+
+skew(<em>ax</em>, <em>ay</em>)
+</pre></div><h3 id="значения"><a href="#значения" title="Permalink to Значения">Значения</a></h3><div><dl>
+ <dt><code>ax</code></dt>
+ <dd>Указывается значение <a href="/css/angle/"><code>&lt;angle&gt;</code></a>, которое является углом наклона вдоль оси X.</dd>
+ <dt><code>ay</code></dt>
+ <dd>Указывается значение&nbsp;<a href="/css/angle/"><code>&lt;angle&gt;</code></a>, которое является углом наклона вдоль оси Y. Если данное значение не задано, то по умолчанию оно равно&nbsp;<code>0</code>. В этом случае вертикального наклона не будет, а будет только горизонтальный.</dd>
+</dl>
+
+<table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Cartesian coordinates on ℝ<sup>2</sup></th>
+   <th scope="col">Homogeneous coordinates on ℝℙ<sup>2</sup></th>
+   <th scope="col">Cartesian coordinates on ℝ<sup>3</sup></th>
+   <th scope="col">Homogeneous coordinates on ℝℙ<sup>3</sup></th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td colspan="1" rowspan="2"><math> <mfenced><mtable><mtr>1<mtd>tan(ax)</mtd></mtr><mtr>tan(ay)<mtd>1</mtd></mtr></mtable> </mfenced> </math></td>
+   <td><math> <mfenced><mtable><mtr>1<mtd>tan(ax)</mtd><mtd>0</mtd></mtr><mtr>tan(ay)<mtd>1</mtd><mtd>0</mtd></mtr><mtr><mtd>0</mtd><mtd>0</mtd><mtd>1</mtd></mtr><mtr></mtr></mtable> </mfenced> </math></td>
+   <td colspan="1" rowspan="2"><math> <mfenced><mtable><mtr>1<mtd>tan(ax)</mtd><mtd>0</mtd></mtr><mtr>tan(ay)<mtd>1</mtd><mtd>0</mtd></mtr><mtr><mtd>0</mtd><mtd>0</mtd><mtd>1</mtd></mtr></mtable> </mfenced> </math></td>
+   <td colspan="1" rowspan="2"><math> <mfenced><mtable><mtr>1<mtd>tan(ax)</mtd><mtd>0</mtd><mtd>0</mtd></mtr><mtr>tan(ay)<mtd>1</mtd><mtd>0</mtd><mtd>0</mtd></mtr><mtr><mtd>0</mtd><mtd>0</mtd><mtd>1</mtd><mtd>0</mtd></mtr><mtr><mtd>0</mtd><mtd>0</mtd><mtd>0</mtd><mtd>1</mtd></mtr></mtable> </mfenced> </math></td>
+  </tr>
+  <tr>
+   <td><code>[1 tan(ay) tan(ax) 1 0 0]</code></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="используя_только_наклон_по_оси_x"><a href="#используя_только_наклон_по_оси_x" title="Permalink to Используя только наклон по оси x">Используя только наклон по оси x</a></h3><div><h4 id="html">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>Обычный<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>skewed<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Наклонённый<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<h4 id="css">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token selector">div</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 80px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 80px<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> skyblue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.skewed</span> <span class="token punctuation">{</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">skew</span><span class="token punctuation">(</span>10deg<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">/* Equal to skewX(10deg) */</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> pink<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<h4 id="result">Result</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Using_a_single_x-angle" width="200" height="200" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/transform-function/skew()/_sample_.Using_a_single_x-angle.html" loading="lazy"></iframe></p></div><h3 id="используя_два_угла"><a href="#используя_два_угла" title="Permalink to Используя два угла">Используя два угла</a></h3><div><h4 id="html_2">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>Обычный<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>skewed<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Наклонённый<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<h4 id="css_2">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token selector">div</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 80px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 80px<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> skyblue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.skewed</span> <span class="token punctuation">{</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">skew</span><span class="token punctuation">(</span>10deg<span class="token punctuation">,</span> 10deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> pink<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<h4 id="результат">Результат</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Using_two_angles" width="200" height="200" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/transform-function/skew()/_sample_.Using_two_angles.html" loading="lazy"></iframe></p></div><h2 id="поддержка_браузеров"><a href="#поддержка_браузеров" title="Permalink to Поддержка браузеров">Поддержка браузеров</a></h2><div><p>Please see the <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function#browser_compatibility">&lt;transform-function&gt;</a></code> data type for compatibility info.</p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/css/transform/"><code>transform</code></a></li>
+ <li><a href="/css/transform-function/"><code>&lt;transform-function&gt;</code></a></li>
+</ul></div>

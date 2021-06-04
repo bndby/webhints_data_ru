@@ -1,0 +1,63 @@
+<h1>RangeError() constructor</h1><div><div></div>
+
+<p>The <code><strong>RangeError()</strong></code> constructor creates an error
+  when a value is not in the set or range of allowed values.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: js notranslate"><code><span class="token keyword">new</span> <span class="token class-name">RangeError</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">new</span> <span class="token class-name">RangeError</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span>
+<span class="token keyword">new</span> <span class="token class-name">RangeError</span><span class="token punctuation">(</span>message<span class="token punctuation">,</span> fileName<span class="token punctuation">)</span>
+<span class="token keyword">new</span> <span class="token class-name">RangeError</span><span class="token punctuation">(</span>message<span class="token punctuation">,</span> fileName<span class="token punctuation">,</span> lineNumber<span class="token punctuation">)</span>
+</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Parameters">Parameters</a></h3><div><dl>
+    <dt><code><var>message</var></code>&nbsp;<span class="badge inline optional">Optional</span></dt>
+    <dd>Human-readable description of the error.</dd>
+    <dt><code><var>fileName</var></code> <span class="badge inline optional">Optional</span>&nbsp;</dt>
+    <dd>The name of the file containing the code that caused the exception</dd>
+    <dt><code><var>lineNumber</var></code> <span class="badge inline optional">Optional</span>&nbsp;</dt>
+    <dd>The line number of the code that caused the exception</dd>
+</dl></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="using_rangeerror_for_numeric_values"><a href="#using_rangeerror_for_numeric_values" title="Permalink to Using RangeError&nbsp;(for numeric
+    values)">Using <code>RangeError</code>&nbsp;(for numeric
+    values)</a></h3><div><pre class="brush: js notranslate"><code><span class="token keyword">function</span> <span class="token function">check</span><span class="token punctuation">(</span><span class="token parameter">n</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token operator">!</span><span class="token punctuation">(</span>n <span class="token operator">&gt;=</span> <span class="token operator">-</span><span class="token number">500</span> <span class="token operator">&amp;&amp;</span> n <span class="token operator">&lt;=</span> <span class="token number">500</span><span class="token punctuation">)</span> <span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">RangeError</span><span class="token punctuation">(</span><span class="token string">"The argument must be between -500 and 500."</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">try</span>
+<span class="token punctuation">{</span>
+    <span class="token function">check</span><span class="token punctuation">(</span><span class="token number">2000</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">catch</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>error <span class="token keyword">instanceof</span> <span class="token class-name">RangeError</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token comment">// Handle the error</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div><h3 id="using_rangeerror_for_non-numeric_values"><a href="#using_rangeerror_for_non-numeric_values" title="Permalink to Using RangeError&nbsp;(for
+    non-numeric values)">Using <code>RangeError</code>&nbsp;(for
+    non-numeric values)</a></h3><div><pre class="brush: js notranslate"><code><span class="token keyword">function</span> <span class="token function">check</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"apple"</span><span class="token punctuation">,</span> <span class="token string">"banana"</span><span class="token punctuation">,</span> <span class="token string">"carrot"</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">RangeError</span><span class="token punctuation">(</span><span class="token string">'The argument must be an "apple", "banana", or "carrot".'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">try</span>
+<span class="token punctuation">{</span>
+    <span class="token function">check</span><span class="token punctuation">(</span><span class="token string">"cabbage"</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">catch</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>error <span class="token keyword">instanceof</span> <span class="token class-name">RangeError</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token comment">// Handle the error</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://tc39.es/ecma262/#sec-nativeerror-constructors">Unknown specification<!-- --> <br><small># <!-- -->sec-nativeerror-constructors</small></a></td></tr></tbody></table><div></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error"><code>Error</code></a></li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array"><code>Array</code></a></li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toExponential"><code>Number.toExponential()</code></a></li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed"><code>Number.toFixed()</code></a></li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toPrecision"><code>Number.toPrecision()</code></a></li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/normalize"><code>String.prototype.normalize()</code></a></li>
+</ul></div>

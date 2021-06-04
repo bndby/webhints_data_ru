@@ -1,0 +1,29 @@
+<h1>Set() constructor</h1><div><div></div>
+
+<p><span class="seoSummary">The <strong><code>Set</code> constructor</strong> lets you
+    create <code>Set</code> objects that store unique values of any type, whether <a href="https://developer.mozilla.org/en-US/docs/Glossary/Primitive">primitive values</a> or object
+    references.</span></p>
+
+<div><iframe class="interactive" width="100%" height="490" src="https://interactive-examples.mdn.mozilla.net/pages/js/set-prototype-constructor.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: js notranslate"><code><span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span>iterable<span class="token punctuation">)</span>
+</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Parameters">Parameters</a></h3><div><dl>
+  <dt><code><var>iterable</var></code> <span class="badge inline optional">Optional</span></dt>
+  <dd>
+    <p>If an <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of">iterable
+        object</a> is passed, all of its elements will be added to the new
+      <code>Set</code>.</p>
+
+    <p>If you don't specify this parameter, or its value is <code>null</code>, the new
+      <code>Set</code> is empty.</p>
+  </dd>
+</dl></div><h3 id="return_value"><a href="#return_value" title="Permalink to Return value">Return value</a></h3><div><p>A new <code>Set</code> object.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="using_the_set_object"><a href="#using_the_set_object" title="Permalink to Using the Set object">Using the <code>Set</code> object</a></h3><div><pre class="brush: js notranslate"><code><span class="token keyword">let</span> mySet <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+mySet<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>           <span class="token comment">// Set [ 1 ]</span>
+mySet<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>           <span class="token comment">// Set [ 1, 5 ]</span>
+mySet<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>           <span class="token comment">// Set [ 1, 5 ]</span>
+mySet<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">'some text'</span><span class="token punctuation">)</span> <span class="token comment">// Set [ 1, 5, 'some text' ]</span>
+<span class="token keyword">let</span> o <span class="token operator">=</span> <span class="token punctuation">{</span>a<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> b<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">}</span>
+mySet<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>o<span class="token punctuation">)</span></code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://tc39.es/ecma262/#sec-set-constructor">Unknown specification<!-- --> <br><small># <!-- -->sec-set-constructor</small></a></td></tr></tbody></table><div></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+  <li>A polyfill of <code>Set</code> is available in <a href="https://github.com/zloirock/core-js#set" class="external" rel=" noopener"><code>core-js</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set"><code>Set</code></a></li>
+</ul></div>

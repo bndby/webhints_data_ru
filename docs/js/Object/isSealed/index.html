@@ -1,0 +1,75 @@
+<h1>Object.isSealed()</h1><div><div>
+ </div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Метод <code><strong>Object.isSealed()</strong></code> определяет, является ли объект запечатанным.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code>Object.isSealed(<var>obj</var>)</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt>
+  <code>obj</code></dt>
+ <dd>
+  Проверяемый объект.</dd>
+</dl></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Возвращает <code>true</code>, если объект является запечатанным, иначе возвращает <code>false</code>. Объект является запечатанным, если он является не <a href="/js/Object/isExtensible/">расширяемым</a> и если все его свойства являются не настраиваемыми и, следовательно, не удаляемыми (но не обязательно не записываемыми).</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div><pre class="brush: js notranslate"><code><span class="token comment">// По умолчанию объекты не запечатаны.</span>
+<span class="token keyword">var</span> empty <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token function">assert</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span><span class="token function">isSealed</span><span class="token punctuation">(</span>empty<span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Если вы сделаете пустой объект не расширяемым, он по определению станет запечатанным.</span>
+Object<span class="token punctuation">.</span><span class="token function">preventExtensions</span><span class="token punctuation">(</span>empty<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">assert</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span><span class="token function">isSealed</span><span class="token punctuation">(</span>empty<span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// То же самое не верно для не пустого объекта, пока все его свойства не станут не настраиваемыми.</span>
+<span class="token keyword">var</span> hasProp <span class="token operator">=</span> <span class="token punctuation">{</span> fee<span class="token operator">:</span> <span class="token string">'fie foe fum'</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+Object<span class="token punctuation">.</span><span class="token function">preventExtensions</span><span class="token punctuation">(</span>hasProp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">assert</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span><span class="token function">isSealed</span><span class="token punctuation">(</span>hasProp<span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Но сделав все его свойства не настраиваемыми, объект становится запечатанным.</span>
+Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span>hasProp<span class="token punctuation">,</span> <span class="token string">'fee'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> configurable<span class="token operator">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">assert</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span><span class="token function">isSealed</span><span class="token punctuation">(</span>hasProp<span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Простейшим способом запечатать объект, конечно, является использование метода Object.seal.</span>
+<span class="token keyword">var</span> sealed <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+Object<span class="token punctuation">.</span><span class="token function">seal</span><span class="token punctuation">(</span>sealed<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">assert</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span><span class="token function">isSealed</span><span class="token punctuation">(</span>sealed<span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Запечатанный объект по определению является не расширяемым.</span>
+<span class="token function">assert</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span><span class="token function">isExtensible</span><span class="token punctuation">(</span>sealed<span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Запечатанный объект может быть замороженным, но это не всегда так.</span>
+<span class="token function">assert</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span><span class="token function">isFrozen</span><span class="token punctuation">(</span>sealed<span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// все свойства также являются не записываемыми</span>
+
+<span class="token keyword">var</span> s2 <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">seal</span><span class="token punctuation">(</span><span class="token punctuation">{</span> p<span class="token operator">:</span> <span class="token number">3</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">assert</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span><span class="token function">isFrozen</span><span class="token punctuation">(</span>s2<span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// свойство 'p' всё ещё записываемое</span>
+
+<span class="token keyword">var</span> s3 <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">seal</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token keyword">get</span> <span class="token function">p</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">assert</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span><span class="token function">isFrozen</span><span class="token punctuation">(</span>s3<span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// для свойств доступа значение имеет только их настраиваемость</span>
+</code></pre></div><h2 id="notes"><a href="#notes" title="Permalink to Примечания">Примечания</a></h2><div><p>В ES5, если аргумент метода не является объектом (является примитивным значением), будет выброшено исключение <a href="/js/TypeError/"><code>TypeError</code></a>. В ES6 такой аргумент будет рассматриваться, как простой запечатанный объект и метод просто вернёт <code>true</code>.</p>
+<pre class="brush: js notranslate"><code><span class="token operator">&gt;</span> Object<span class="token punctuation">.</span><span class="token function">isSealed</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+TypeError<span class="token operator">:</span> <span class="token number">1</span> is not an object <span class="token comment">// код ES5</span>
+
+<span class="token operator">&gt;</span> Object<span class="token punctuation">.</span><span class="token function">isSealed</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token boolean">true</span>                          <span class="token comment">// код ES6</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-15.2.3.11" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 5.1 (ECMA-262)<br><small lang="ru">Определение 'Object.isSealed' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Изначальное определение. Реализована в JavaScript 1.8.5.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-object.issealed" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Object.isSealed' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+ </tbody>
+</table></div><p>BCD tables only load in the browser</p><div><div>
+<p></p><p></p>
+
+
+<ul>
+ <li><a href="/js/Object/seal/"><code>Object.seal()</code></a></li>
+ <li><a href="/js/Object/preventExtensions/"><code>Object.preventExtensions()</code></a></li>
+ <li><a href="/js/Object/isExtensible/"><code>Object.isExtensible()</code></a></li>
+ <li><a href="/js/Object/freeze/"><code>Object.freeze()</code></a></li>
+ <li><a href="/js/Object/isFrozen/"><code>Object.isFrozen()</code></a></li>
+</ul>
+</div></div>

@@ -1,0 +1,99 @@
+<h1>Object.keys()</h1><div><div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Метод <code><strong>Object.keys()</strong></code> возвращает массив из собственных перечисляемых свойств переданного объекта, в том же порядке, в котором они бы обходились циклом <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/for...in"><code>for...in</code></a> (разница между циклом и методом в том, что цикл перечисляет свойства и из цепочки прототипов).</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code>Object.keys(<var>obj</var>)</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>obj</code></dt>
+ <dd>Объект, чьи собственные перечисляемые свойства будут возвращены.</dd>
+</dl></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Метод <code>Object.keys</code> возвращает массив строковых элементов, соответствующих именам перечисляемых свойств, найденных непосредственно в самом объекте. Порядок свойств такой же, как и при ручном перечислении свойств в объекте через цикл.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div><pre class="brush: js notranslate"><code><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// консоль: ['0', '1', '2']</span>
+
+<span class="token comment">// Массивоподобный объект</span>
+<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token number">0</span><span class="token operator">:</span> <span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token operator">:</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token operator">:</span> <span class="token string">'c'</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// консоль: ['0', '1', '2']</span>
+
+<span class="token comment">// Массивоподобный объект со случайным порядком ключей</span>
+<span class="token keyword">var</span> an_obj <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token number">100</span><span class="token operator">:</span> <span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token operator">:</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token operator">:</span> <span class="token string">'c'</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>an_obj<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// консоль: ['2', '7', '100']</span>
+
+<span class="token comment">// Свойство getFoo является не перечисляемым свойством</span>
+<span class="token keyword">var</span> my_obj <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> getFoo<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token function-variable function">value</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>foo<span class="token punctuation">;</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+my_obj<span class="token punctuation">.</span>foo <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>my_obj<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// консоль: ['foo']</span>
+</code></pre>
+
+<p>Если вы хотите увидеть все свойства, а не только перечисляемые, смотрите метод <a href="/js/Object/getOwnPropertyNames/"><code>Object.getOwnPropertyNames()</code></a>.</p></div><h2 id="notes"><a href="#notes" title="Permalink to Примечания">Примечания</a></h2><div><p>В ES5, если аргумент метода не является объектом (является примитивным значением), будет выброшено исключение <a href="/js/TypeError/"><code>TypeError</code></a>. В ES2015&nbsp;такой аргумент будет приведён к объекту.</p>
+
+<pre class="brush: js notranslate"><code><span class="token operator">&gt;</span> Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">)</span>
+TypeError<span class="token operator">:</span> <span class="token string">'foo'</span> is not an object <span class="token comment">// код ES5</span>
+
+<span class="token operator">&gt;</span> Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">)</span>
+<span class="token punctuation">[</span><span class="token string">'0'</span><span class="token punctuation">,</span> <span class="token string">'1'</span><span class="token punctuation">,</span> <span class="token string">'2'</span><span class="token punctuation">]</span>                   <span class="token comment">// код ES2015</span>
+</code></pre></div><h2 id="polyfill"><a href="#polyfill" title="Permalink to Полифил">Полифил</a></h2><div><p>Для добавления поддержки совместимого метода <code>Object.keys</code> в старых окружениях, которые его ещё не реализуют, скопируйте следующий кусок кода:</p>
+
+<pre class="brush: js notranslate"><code><span class="token comment">// From https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>Object<span class="token punctuation">.</span>keys<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  Object<span class="token punctuation">.</span>keys <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token string">'use strict'</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> hasOwnProperty <span class="token operator">=</span> <span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>hasOwnProperty<span class="token punctuation">,</span>
+        hasDontEnumBug <span class="token operator">=</span> <span class="token operator">!</span><span class="token punctuation">(</span><span class="token punctuation">{</span> toString<span class="token operator">:</span> <span class="token keyword">null</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">propertyIsEnumerable</span><span class="token punctuation">(</span><span class="token string">'toString'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        dontEnums <span class="token operator">=</span> <span class="token punctuation">[</span>
+          <span class="token string">'toString'</span><span class="token punctuation">,</span>
+          <span class="token string">'toLocaleString'</span><span class="token punctuation">,</span>
+          <span class="token string">'valueOf'</span><span class="token punctuation">,</span>
+          <span class="token string">'hasOwnProperty'</span><span class="token punctuation">,</span>
+          <span class="token string">'isPrototypeOf'</span><span class="token punctuation">,</span>
+          <span class="token string">'propertyIsEnumerable'</span><span class="token punctuation">,</span>
+          <span class="token string">'constructor'</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        dontEnumsLength <span class="token operator">=</span> dontEnums<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">obj</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> obj <span class="token operator">!==</span> <span class="token string">'object'</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> obj <span class="token operator">!==</span> <span class="token string">'function'</span> <span class="token operator">||</span> obj <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">TypeError</span><span class="token punctuation">(</span><span class="token string">'Object.keys called on non-object'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+
+      <span class="token keyword">var</span> result <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> prop<span class="token punctuation">,</span> i<span class="token punctuation">;</span>
+
+      <span class="token keyword">for</span> <span class="token punctuation">(</span>prop <span class="token keyword">in</span> obj<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">hasOwnProperty</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> prop<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          result<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>prop<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>hasDontEnumBug<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> dontEnumsLength<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">hasOwnProperty</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> dontEnums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            result<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>dontEnums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p>Пожалуйста, обратите внимание, что вышеприведённый код в IE7 (и, может быть, в IE8) включает и не перечисляемые ключи, если объект передаётся из другого окна.</p>
+
+<p>Более простой полифил может быть найден в статье <a href="https://tokenposts.blogspot.com.au/2012/04/javascript-objectkeys-browser.html" class="external" rel=" noopener">Javascript - Object.keys Browser Compatibility</a> (англ.).</p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-15.2.3.14" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 5.1 (ECMA-262)<br><small lang="ru">Определение 'Object.keys' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Изначальное определение. Реализована в JavaScript 1.8.5.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-object.keys" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Object.keys' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Enumerability_and_ownership_of_properties" class="only-in-en-us" title="Currently only available in English (US)">Перечисляемость и собственность свойств (en-US)</a></li>
+ <li><a href="/js/Object/propertyIsEnumerable/"><code>Object.prototype.propertyIsEnumerable()</code></a></li>
+ <li><a href="/js/Object/create/"><code>Object.create()</code></a></li>
+ <li><a href="/js/Object/getOwnPropertyNames/"><code>Object.getOwnPropertyNames()</code></a></li>
+</ul></div>

@@ -1,0 +1,57 @@
+<h1>String.prototype.lastIndexOf()</h1><div><div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Метод <strong><code>lastIndexOf()</code></strong> возвращает индекс последнего вхождения указанного значения в строковый объект <a href="/js/String/"><code>String</code></a>, на котором он был вызван, или -1, если ничего не было найдено. Поиск по строке ведётся от конца к началу, начиная с индекса <code>fromIndex</code>.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code><var>str</var>.lastIndexOf(<var>searchValue</var>[, <var>fromIndex</var>])</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>searchValue</code></dt>
+ <dd>Строка, представляющая искомое значение.</dd>
+ <dt><code>fromIndex</code></dt>
+ <dd>Необязательный параметр. Местоположение внутри строки, откуда начинать поиск, нумерация индексов идёт слева направо. Может быть любым целым числом. Значение по умолчанию установлено в <code>str.length</code>. Если оно отрицательно, трактуется как 0. Если <code>fromIndex &gt; str.length</code>, параметр <code>fromIndex</code> будет трактоваться как <code>str.length</code>.</dd>
+</dl></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Символы в строке идут слева направо. Индекс первого символа равен 0, а последнего символа в строке <code>stringName</code> равен <code>stringName.length - 1</code>.</p>
+
+<pre class="brush: js notranslate"><code><span class="token string">'канал'</span><span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">(</span><span class="token string">'а'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">// вернёт 3</span>
+<span class="token string">'канал'</span><span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">(</span><span class="token string">'а'</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// вернёт 1</span>
+<span class="token string">'канал'</span><span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">(</span><span class="token string">'а'</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// вернёт -1</span>
+<span class="token string">'канал'</span><span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">(</span><span class="token string">'ч'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">// вернёт -1</span>
+</code></pre></div><h3 id="case-sensitivity"><a href="#case-sensitivity" title="Permalink to Регистрозависимость">Регистрозависимость</a></h3><div><p>Метод <code>lastIndexOf()</code> является регистрозависимым. Например, следующее выражение вернёт -1:</p>
+
+<pre class="brush: js notranslate"><code><span class="token string">'Синий кит, касатка'</span><span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">(</span><span class="token string">'синий'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// вернёт -1</span>
+</code></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_using_indexof_and_lastindexof"><a href="#example_using_indexof_and_lastindexof" title="Permalink to Пример: использование методов indexOf() и lastIndexOf()">Пример: использование методов <code>indexOf()</code> и <code>lastIndexOf()</code></a></h3><div><p>В следующем примере используются методы <a href="/js/String/indexOf/"><code>indexOf()</code></a> и <code>lastIndexOf()</code> для нахождения значений в строке <code>"Дивный новый мир"</code>.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> anyString <span class="token operator">=</span> <span class="token string">'Дивный новый мир'</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Индекс первого вхождения «й» с начала строки равен '</span> <span class="token operator">+</span> anyString<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">'й'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Отобразит 5</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Индекс первого вхождения «й» с конца строки равен '</span> <span class="token operator">+</span> anyString<span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">(</span><span class="token string">'й'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Отобразит 11</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Индекс вхождения «новый» с начала строки равен '</span> <span class="token operator">+</span> anyString<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">'новый'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Отобразит 7</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Индекс вхождения «новый» с конца строки равен '</span> <span class="token operator">+</span> anyString<span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">(</span><span class="token string">'новый'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Отобразит 7</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td>ECMAScript 1-е издание.</td>
+   <td>Стандарт</td>
+   <td>Изначальное определение.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-15.5.4.8" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 5.1 (ECMA-262)<br><small lang="ru">Определение 'String.prototype.lastIndexOf' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-string.prototype.lastindexof" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'String.prototype.lastIndexOf' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/String/charAt/"><code>String.prototype.charAt()</code></a></li>
+ <li><a href="/js/String/indexOf/"><code>String.prototype.indexOf()</code></a></li>
+ <li><a href="/js/String/split/"><code>String.prototype.split()</code></a></li>
+ <li><a href="/js/Array/indexOf/"><code>Array.prototype.indexOf()</code></a></li>
+ <li><a href="/js/Array/lastIndexOf/"><code>Array.prototype.lastIndexOf()</code></a></li>
+</ul></div>

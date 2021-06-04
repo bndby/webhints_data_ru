@@ -1,0 +1,120 @@
+<h1>visibility</h1><div><div></div>
+
+<p>Свойство <strong><code>visibility</code></strong>&nbsp;скрывает или показывает&nbsp;элемент без изменения разметки документа. Также скрывает строки и столбцы <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table" class="only-in-en-us" title="Currently only available in English (US)">&lt;table&gt; (en-US)</a>.</p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/visibility.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+
+
+<p>Чтобы скрыть и удалить элемент из разметки, установите свойству&nbsp;<a href="/css/display/"><code>display</code></a> значение <code>none</code>, вместо использования&nbsp;<code>visibility</code>.</p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="brush: css notranslate"><code><span class="token comment">/* Значения */</span>
+<span class="token property">visibility</span><span class="token punctuation">:</span> visible<span class="token punctuation">;</span>
+<span class="token property">visibility</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+<span class="token property">visibility</span><span class="token punctuation">:</span> collapse<span class="token punctuation">;</span>
+
+<span class="token comment">/* Глобальные значения */</span>
+<span class="token property">visibility</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">visibility</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">visibility</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre>
+
+<p>Свойство&nbsp;<code>visibility</code>&nbsp;указывается в качестве одного из значений ниже.</p></div><h3 id="значения"><a href="#значения" title="Permalink to Значения">Значения</a></h3><div><dl>
+ <dt><code>visible</code></dt>
+ <dd>Значение по умолчанию, элемент виден.</dd>
+ <dt><code>hidden</code></dt>
+ <dd>Элемент не виден (полностью прозрачный, ничего не отображается), но продолжает влиять на шаблон.&nbsp;Потомки элемента могут быть показаны&nbsp;с помощью свойства&nbsp;<code>visibility:visible</code>. Элемент не может получить focus (например, при навигации с помощью <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Global_attributes/tabindex">tabindex</a>).</dd>
+ <dt><code>collapse</code></dt>
+ <dd>
+ <ul>
+  <li>Для строк, столбцов, групп столбцов и групп строк в таблице, которые должны быть удалены (как с помощью&nbsp;<code><a href="/css/display/"><code>display</code></a>: none</code> применённого к столбцу/строке таблицы). Однако, размер других строк и столбцов должен продолжать вычисляться так, словно скрытые строки/столбцы присутствуют. Это создано для быстрого удаления строк/столбцов из таблицы без дополнительного вычисления ширины и высоты частей таблицы.</li>
+  <li>Для XUL элементов размер всегда равен 0, независимо от других стилей, влияющих на размер, хотя отступы продолжают учитываться.</li>
+  <li>Для других элементов&nbsp;<code>collapse</code> обрабатывается также, как <code>hidden</code></li>
+ </ul>
+ </dd>
+</dl></div><h3 id="синтаксис_2"><a href="#синтаксис_2" title="Permalink to Синтаксис">Синтаксис</a></h3><div><pre class="notranslate">visible <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> hidden <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> collapse</pre></div><h2 id="интерполяция"><a href="#интерполяция" title="Permalink to Интерполяция">Интерполяция</a></h2><div><p>Значения видимости изменяются между <em>видим</em> и <em>не видим</em>. Интерполяция будет, если одно из начальных или конечных значений будет видимо или нет. Если одно из значений <code>visible</code>, интерполируется как дискретный шаг, где значения временной функции от <code>0</code> до <code>1</code> для <code>visible</code> и другие значения временной функции (которые происходят только в начале/конце перехода, или как результат функции&nbsp;<code>cubic-bezier()</code>&nbsp;со значениями вне [0, 1]) ближе к конечной точке.</p></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="базовый_пример"><a href="#базовый_пример" title="Permalink to Базовый пример">Базовый пример</a></h3><div><h4 id="html">HTML&nbsp;</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>visible<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Первый параграф виден.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>not-visible<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Второй параграф не виден.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>visible<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Третий параграф также виден. Заметь, второй параграф занимает место.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<h4 id="css">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token selector">.visible</span> <span class="token punctuation">{</span>
+  <span class="token property">visibility</span><span class="token punctuation">:</span> visible<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.not-visible</span> <span class="token punctuation">{</span>
+  <span class="token property">visibility</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p><iframe class="sample-code-frame" id="frame_Базовый_пример" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/visibility/_sample_.%D0%91%D0%B0%D0%B7%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80.html" loading="lazy"></iframe></p></div><h3 id="пример_с_таблицей"><a href="#пример_с_таблицей" title="Permalink to Пример с таблицей">Пример с таблицей</a></h3><div><h4 id="html_2">HTML</h4>
+
+<pre class="notranslate"><code>&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;1.1&lt;/td&gt;
+    &lt;td class="collapse"&gt;1.2&lt;/td&gt;
+    &lt;td&gt;1.3&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr class="collapse"&gt;
+    &lt;td&gt;2.1&lt;/td&gt;
+    &lt;td&gt;2.2&lt;/td&gt;
+    &lt;td&gt;2.3&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;3.1&lt;/td&gt;
+    &lt;td&gt;3.2&lt;/td&gt;
+    &lt;td&gt;3.3&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+
+<h4 id="css_2">CSS</h4>
+
+<pre class="notranslate"><code>.collapse {
+  visibility: collapse;
+}
+
+table {
+  border: 1px solid red;
+}
+
+td {
+  border: 1px solid gray;
+}</code></pre>
+
+<p><iframe class="sample-code-frame" id="frame_Пример_с_таблицой" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/visibility/_sample_.%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80_%D1%81_%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%BE%D0%B9.html" loading="lazy"></iframe></p></div><h2 id="соображения_доступности"><a href="#соображения_доступности" title="Permalink to Соображения доступности">Соображения доступности</a></h2><div><p>Использование&nbsp;<code>visibility</code>&nbsp;со значением&nbsp;<code>hidden</code>&nbsp;на элементе&nbsp;удалит его&nbsp;из <a href="https://developer.mozilla.org/ru/docs/Learn/Accessibility/What_is_accessibility#%d0%a1%d0%bf%d0%b5%d1%86%d0%b8%d0%b0%d0%bb%d1%8c%d0%bd%d1%8b%d0%b5_api_%d0%b4%d0%be%d1%81%d1%82%d1%83%d0%bf%d0%b0">дерева доступности</a>. Это приведёт к тому, что элемент и&nbsp;все его дочерние элементы больше не будут показаны в скринридерах.</p></div><h2 id="примечания"><a href="#примечания" title="Permalink to Примечания">Примечания</a></h2><div><ul>
+ <li>Поддержка&nbsp;<code>visibility:collapse</code> отсутствует или частично не работает в некоторых современных браузерах. Во многих случаях может не корректно работать <code>visibility:hidden</code>&nbsp;со столбцами и строками.</li>
+ <li><code>visibility:collapse</code> может изменить шаблон таблицы, если таблица содержит вложенные таблицы, пока&nbsp;<code>visibility:visible</code> не указан явно для вложенной таблицы.</li>
+</ul></div><h2 id="спецификация"><a href="#спецификация" title="Permalink to Спецификация">Спецификация</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-flexbox-1/#visibility-collapse" hreflang="en" lang="en" class="external" rel=" noopener">CSS Flexible Box Layout Module<br><small lang="ru">Определение 'visibility' в этой спецификации.</small></a></td>
+   <td><span class="spec-cr">Кандидат в рекомендации</span></td>
+   <td>Определяет значение <code>collapse</code> применимым к flex элементам</td>
+  </tr>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-box-3/#the-visibility-property" hreflang="en" lang="en" class="external" rel=" noopener">CSS Box Model<br><small lang="ru">Определение 'visibility' в этой спецификации.</small></a></td>
+   <td><span class="spec-cr">Кандидат в рекомендации</span></td>
+   <td>Без изменений</td>
+  </tr>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-transitions/#animatable-css" hreflang="en" lang="en" class="external" rel=" noopener">CSS Transitions<br><small lang="ru">Определение 'visibility' в этой спецификации.</small></a></td>
+   <td><span class="spec-wd">Рабочий черновик</span></td>
+   <td>Определяет&nbsp;<code>visibility</code>&nbsp;как анимируемое.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/CSS2/visufx.html#visibility" hreflang="en" lang="en" class="external" rel=" noopener">CSS Level&nbsp;2 (Revision&nbsp;1)<br><small lang="ru">Определение 'visibility' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Изначальное определение</td>
+  </tr>
+ </tbody>
+</table>
+
+<p></p><table class="properties"><tbody><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td><code>visible</code></td></tr><tr><th scope="row">Применяется к</th><td>все элементы</td></tr><tr><th scope="row"><a href="/css/inheritance/">Наследуется</a></th><td>да</td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>как указано</td></tr><tr><th scope="row">Animation type</th><td><a href="/css/visibility#Interpolation/" title="Значения свойства CSS visibility интерполируются, если начальное или конечное значение установлено в visible. В этом случае все значения временной функции, равные 1 отображаются, а не равные 1 не отображаются." aria-current="page">видимость</a></td></tr></tbody></table><p></p></div><h2 id="совместимость_с_браузерами"><a href="#совместимость_с_браузерами" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div>

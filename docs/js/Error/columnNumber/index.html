@@ -1,0 +1,17 @@
+<h1>Error.prototype.columnNumber</h1><div><div>
+  <div class="notecard warning">
+        <h4 id="не_стандартно">Не стандартно</h4>
+        <p>Эта возможность не является стандартной и стандартизировать её пока никто не собирается. Не используйте её на сайтах, смотрящих во внешний мир: она будет работать не у всех пользователей. Также могут присутствовать большие несовместимости между реализациями и её поведение может в будущем измениться.</p>
+      </div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Свойство <code><strong>columnNumber</strong></code> содержит номер колонки в строке файла, в котором возникла эта ошибка.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_throwing_a_custom_error"><a href="#example_throwing_a_custom_error" title="Permalink to Пример: использование columnNumber">Пример: использование <code>columnNumber</code></a></h3><div><pre class="brush: js notranslate"><code><span class="token keyword">var</span> e <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'Невозможно разобрать входные данные'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">throw</span> e<span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>columnNumber<span class="token punctuation">)</span> <span class="token comment">// 0</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><p>Не является частью какой-либо спецификации. Не стандартно.</p></div><p>BCD tables only load in the browser</p><div><div>
+<p></p><p></p>
+
+
+<ul>
+ <li><a href="/js/Error/Stack/"><code>Error.prototype.stack</code></a> </li>
+ <li><a href="/js/Error/lineNumber/"><code>Error.prototype.lineNumber</code></a> </li>
+ <li><a href="/js/Error/fileName/"><code>Error.prototype.fileName</code></a> </li>
+</ul>
+</div></div>

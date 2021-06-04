@@ -1,0 +1,82 @@
+<h1>flex</h1><div><div></div></div><h2 id="описание"><a href="#описание" title="Permalink to Описание">Описание</a></h2><div><p>Свойство <a href="/css/" title="CSS">CSS</a> <strong><code>flex</code></strong>&nbsp;- это <a href="/css/Shorthand_properties/">сокращённое свойство</a>, определяющее способность гибкого элемента растягиваться или сжиматься для заполнения собой доступного свободного пространства. Это свойство устанавливает <a href="/css/flex-grow/">flex-grow</a>, <a href="/css/flex-shrink/">flex-shrink</a> и <a href="/css/flex-basis/"> flex-basis</a>.</p>
+
+<p></p><table class="properties"><tbody><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td>как и у каждого из подсвойств этого свойства:<br><ul><li><a href="/css/flex-grow/"><code>flex-grow</code></a>: <code>0</code></li><li><a href="/css/flex-shrink/"><code>flex-shrink</code></a>: <code>1</code></li><li><a href="/css/flex-basis/"><code>flex-basis</code></a>: <code>auto</code></li></ul></td></tr><tr><th scope="row">Применяется к</th><td>flex-элементы, в том числе в потоке псевдоэлементов</td></tr><tr><th scope="row"><a href="/css/inheritance/">Наследуется</a></th><td>нет</td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>как и у каждого из подсвойств этого свойства:<br><ul><li><a href="/css/flex-grow/"><code>flex-grow</code></a>: как указано</li><li><a href="/css/flex-shrink/"><code>flex-shrink</code></a>: как указано</li><li><a href="/css/flex-basis/"><code>flex-basis</code></a>: как указано, но с относительной длиной, конвертируемой в абсолютные длины</li></ul></td></tr><tr><th scope="row">Animation type</th><td>как и у каждого из подсвойств этого свойства:<br><ul><li><a href="/css/flex-grow/"><code>flex-grow</code></a>: <a href="/css/number#interpolation/" title="Значения типа данных CSS <число> интерполируются как вещественные числа с плавающей запятой.">число</a></li><li><a href="/css/flex-shrink/"><code>flex-shrink</code></a>: <a href="/css/number#interpolation/" title="Значения типа данных CSS <число> интерполируются как вещественные числа с плавающей запятой.">число</a></li><li><a href="/css/flex-basis/"><code>flex-basis</code></a>: <a href="/css/length#interpolation/" title="Значения типа данных CSS <длина> интерполируются как вещественные числа с плавающей запятой.">длина</a>, <a href="/css/percentage#interpolation/" title="Значения типа данных CSS <проценты> интерполируются как вещественные числа с плавающей запятой.">проценты</a> или calc();</li></ul></td></tr></tbody></table><p></p>
+
+<p>Для более полной информации читайте&nbsp;<a href="https://developer.mozilla.org/ru/docs/conflicting/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox" title="CSS/Using_CSS_flexible_boxes">Использование flex-контейнеров CSS</a>.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="brush:css notranslate"><code><span class="token comment">/* 0 0 auto */</span>
+<span class="token property">flex</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+
+<span class="token comment">/* Одно значение, число без единиц: flex-grow */</span>
+<span class="token property">flex</span><span class="token punctuation">:</span> 2<span class="token punctuation">;</span>
+
+<span class="token comment">/* Одно значение, ширина/высота: flex-basis */</span>
+<span class="token property">flex</span><span class="token punctuation">:</span> 10em<span class="token punctuation">;</span>
+<span class="token property">flex</span><span class="token punctuation">:</span> 30px<span class="token punctuation">;</span>
+<span class="token property">flex</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+<span class="token property">flex</span><span class="token punctuation">:</span> content<span class="token punctuation">;</span>
+
+<span class="token comment">/* Два значения: flex-grow | flex-basis */</span>
+<span class="token property">flex</span><span class="token punctuation">:</span> 1 30px<span class="token punctuation">;</span>
+
+<span class="token comment">/* Два значения: flex-grow | flex-shrink */</span>
+<span class="token property">flex</span><span class="token punctuation">:</span> 2 2<span class="token punctuation">;</span>
+
+<span class="token comment">/* Три значения: flex-grow | flex-shrink | flex-basis */</span>
+<span class="token property">flex</span><span class="token punctuation">:</span> 2 2 10%<span class="token punctuation">;</span>
+
+<span class="token comment">/* Глобальные значения */</span>
+<span class="token property">flex</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">flex</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">flex</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre></div><h3 id="values"><a href="#values" title="Permalink to Значения">Значения</a></h3><div><dl>
+ <dt><code>&lt;'flex-grow'&gt;</code></dt>
+ <dd>Определяет&nbsp;<code><a href="/css/flex-grow/"><code>flex-grow</code></a></code>&nbsp;для флекс элемента. Смотри <a href="/css/number/"><code>&lt;number&gt;</code></a> для большей информации. Негативные значения считаются недействительными. Значение по умолчанию&nbsp;&nbsp;<code>0</code>,&nbsp;если не указано.</dd>
+ <dt><code>&lt;'flex-shrink'&gt;</code></dt>
+ <dd>Определяет&nbsp;<code><a href="/css/flex-shrink/"><code>flex-shrink</code></a></code>&nbsp;для флекс элемента. Смотри <a href="/css/number/"><code>&lt;number&gt;</code></a> для большей информации. Негативные значения считаются недействительными. Значение по умолчанию&nbsp;&nbsp;<code>1</code>,&nbsp;если не указано.</dd>
+ <dt><code>&lt;'flex-basis'&gt;</code></dt>
+ <dd>Определяет&nbsp;<code><a href="/css/flex-basis/"><code>flex-basis</code></a></code>&nbsp;для флекс элемента. Любое корректное значение для высоты(height) и ширины(width) - корректно и для данного свойства. Предпочтительный размер 0 должен иметь единицу измерения, чтобы не восприниматься как гибкий. Значение по умолчанию &nbsp;<code>0%</code>,&nbsp;если не указано.</dd>
+ <dt><code>none</code></dt>
+ <dd>Размер элемента устанавливается в соответствии с его&nbsp;свойствами&nbsp;<code>width</code>&nbsp;и&nbsp;<code>height</code>. Он полностью негибкий: не сжимается и не увеличивается по отношению к гибкому контейнеру. Эквивалентно&nbsp;значению&nbsp;"<code>flex: 0 0 auto</code>".</dd>
+ <dt>
+ <h3 id="Формальный_синтаксис">Формальный синтаксис</h3>
+ </dt>
+</dl>
+
+<pre class="notranslate">none <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> <a href="/css/flex-grow/" title="<number>">&lt;'flex-grow'&gt;</a> <a href="/css/flex-shrink/" title="<number>">&lt;'flex-shrink'&gt;</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#question_mark_()" title="Currently only available in English (US)" class="only-in-en-us">? (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_bar" title="Currently only available in English (US)" class="only-in-en-us">|| (en-US)</a> <a href="/css/flex-basis/" title="content | <'width'>">&lt;'flex-basis'&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a></pre></div><h2 id="пример"><a href="#пример" title="Permalink to Пример">Пример</a></h2><div><pre class="brush: css notranslate"><code><span class="token selector">#flex-container</span> <span class="token punctuation">{</span>
+	<span class="token property">display</span><span class="token punctuation">:</span> -webkit-flex<span class="token punctuation">;</span>
+	<span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+	<span class="token property">-webkit-flex-direction</span><span class="token punctuation">:</span> row<span class="token punctuation">;</span>
+	<span class="token property">flex-direction</span><span class="token punctuation">:</span> row<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">#flex-container &gt; .flex-item</span> <span class="token punctuation">{</span>
+	<span class="token property">-webkit-flex</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+	<span class="token property">flex</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">#flex-container &gt; .raw-item</span> <span class="token punctuation">{</span>
+	<span class="token property">width</span><span class="token punctuation">:</span> 5rem<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex-container<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex-item<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Flex box (click to toggle raw box)<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>raw-item<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>raw<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Raw box<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h3 id="результат"><a href="#результат" title="Permalink to Результат">Результат</a></h3><div><p><iframe class="sample-code-frame" id="frame_Пример" width="100%" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/flex/_sample_.%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th>Спецификация</th>
+   <th>Статус</th>
+   <th>Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-flexbox-1/#flex" hreflang="en" lang="en" class="external" rel=" noopener">CSS Flexible Box Layout Module<br><small lang="ru">Определение 'flex' в этой спецификации.</small></a></td>
+   <td><span class="spec-cr">Кандидат в рекомендации</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="поддержка_браузерами"><a href="#поддержка_браузерами" title="Permalink to Поддержка браузерами">Поддержка браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox" title="CSS/Using_CSS_flexible_boxes">Using CSS flexible boxes</a></li>
+</ul></div>

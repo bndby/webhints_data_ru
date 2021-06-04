@@ -1,0 +1,58 @@
+<h1>text-decoration-skip</h1><div><div></div>
+
+<p><span class="seoSummary">The <strong><code>text-decoration-skip</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> property specifies what parts of the element’s content any text decoration affecting the element must skip over.</span> It controls all text decoration lines drawn by the element and also any text decoration lines drawn by its ancestors.</p>
+
+<pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* Single keyword */</span>
+<span class="token property">text-decoration-skip</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token property">text-decoration-skip</span><span class="token punctuation">:</span> objects<span class="token punctuation">;</span>
+<span class="token property">text-decoration-skip</span><span class="token punctuation">:</span> spaces<span class="token punctuation">;</span>
+<span class="token property">text-decoration-skip</span><span class="token punctuation">:</span> ink<span class="token punctuation">;</span>
+<span class="token property">text-decoration-skip</span><span class="token punctuation">:</span> edges<span class="token punctuation">;</span>
+<span class="token property">text-decoration-skip</span><span class="token punctuation">:</span> box-decoration<span class="token punctuation">;</span>
+
+<span class="token comment">/* Multiple keywords */</span>
+<span class="token property">text-decoration-skip</span><span class="token punctuation">:</span> objects spaces<span class="token punctuation">;</span>
+<span class="token property">text-decoration-skip</span><span class="token punctuation">:</span> ink edges box-decoration<span class="token punctuation">;</span>
+
+<span class="token comment">/* Global keywords */</span>
+<span class="token property">text-decoration-skip</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">text-decoration-skip</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">text-decoration-skip</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre>
+
+<p></p><table class="properties"><tbody><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td><code>objects</code></td></tr><tr><th scope="row">Применяется к</th><td>все элементы</td></tr><tr><th scope="row"><a href="/css/inheritance/">Наследуется</a></th><td>да</td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>как указано</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div></div><h3 id="значения"><a href="#значения" title="Permalink to Значения">Значения</a></h3><div><dl>
+ <dt><code>none</code></dt>
+ <dd>Nothing is skipped, i.e. text decoration is drawn for all text content and across atomic inline-level boxes.</dd>
+ <dt><code>objects</code></dt>
+ <dd>The entire margin box of the element is skipped if it is an atomic inline such as an image or inline-block.</dd>
+ <dt><code>spaces</code></dt>
+ <dd>All spacing is skipped, i.e. all <a href="https://www.unicode.org/reports/tr44/#White_Space" class="external" rel=" noopener">Unicode white space characters</a> and all word separators, plus any adjacent <a href="/css/letter-spacing/"><code>letter-spacing</code></a> or <a href="/css/word-spacing/"><code>word-spacing</code></a>.</dd>
+ <dt><code>ink</code></dt>
+ <dd>The text decoration is only drawn where it does not touch or closely approach a glyph. I.e. it is interrupted where it would otherwise cross over a glyph.</dd>
+ <dd><img alt="An example of &quot;text-decoration-skip: ink;&quot;." src="https://mdn.mozillademos.org/files/13464/decoration-skip-ink.png" loading="lazy"></dd>
+ <dt><code>edges</code></dt>
+ <dd>The start and end of the text decoration is placed slightly inward (e.g. by half of the line thickness) from the content edge of the decorating box. E.g. two underlined elements side-by-side do not appear to have a single underline. (This is important in Chinese, where underlining is a form of punctuation.)</dd>
+ <dd><img alt="An example of &quot;text-decoration-skip: edges;&quot;." src="https://mdn.mozillademos.org/files/13466/decoration-skip-edges.png" loading="lazy"></dd>
+ <dt><code>box-decoration</code></dt>
+ <dd>The text decoration is skipped over the box's margin, border and padding areas. This only has an effect on decorations imposed by an ancestor; a <em>decorating box</em> never draws over its own box decoration.</dd>
+</dl></div><h3 id="формальный_синтаксис"><a href="#формальный_синтаксис" title="Permalink to Формальный синтаксис">Формальный синтаксис</a></h3><div><p class="syntaxbox"></p><pre class="notranslate">none <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> objects <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_bar" title="Currently only available in English (US)" class="only-in-en-us">|| (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> spaces <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> leading-spaces <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_bar" title="Currently only available in English (US)" class="only-in-en-us">|| (en-US)</a> trailing-spaces <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_bar" title="Currently only available in English (US)" class="only-in-en-us">|| (en-US)</a> edges <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_bar" title="Currently only available in English (US)" class="only-in-en-us">|| (en-US)</a> box-decoration <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a></pre><p></p></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="html_content"><a href="#html_content" title="Permalink to HTML content">HTML content</a></h3><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Hey, grab a cup of coffee!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span></code></pre></div><h3 id="css_content"><a href="#css_content" title="Permalink to CSS content">CSS content</a></h3><div><pre class="brush: css; highlight[4] notranslate"><code><span class="token selector">p</span> <span class="token punctuation">{</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 3em<span class="token punctuation">;</span>
+  <span class="token property">text-decoration</span><span class="token punctuation">:</span> underline<span class="token punctuation">;</span>
+  <span class="token property">text-decoration-skip</span><span class="token punctuation">:</span> ink<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div><h3 id="результат"><a href="#результат" title="Permalink to Результат">Результат</a></h3><div><p><iframe class="sample-code-frame" id="frame_Example" width="100%" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/text-decoration-skip/_sample_.Example.html" loading="lazy"></iframe></p></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-text-decor-3/#text-decoration-skip-property" hreflang="en" lang="en" class="external" rel=" noopener">CSS Text Decoration Module Level&nbsp;3<br><small lang="ru">Определение 'text-decoration-skip' в этой спецификации.</small></a></td>
+   <td><span class="spec-cr">Кандидат в рекомендации</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="поддержка_браузерами"><a href="#поддержка_браузерами" title="Permalink to Поддержка браузерами">Поддержка браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div>

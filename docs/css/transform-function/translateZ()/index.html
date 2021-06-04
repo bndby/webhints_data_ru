@@ -1,0 +1,155 @@
+<h1>translateZ()</h1><div><div></div>
+
+<p>The <strong><code>translateZ()</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Functions">function</a> repositions an element along the z-axis in 3D space, i.e.,
+  closer to or farther away from the viewer. Its result is a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function"><code>&lt;transform-function&gt;</code></a> data type.</p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/function-translateZ.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+
+
+<p>This transformation is defined by a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length"><code>&lt;length&gt;</code></a> which specifies how far inward or outward the
+  element or elements move.</p>
+
+<p>In the above interactive examples, <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/perspective">perspective: 550px;</a></code> (to
+  create a 3D space) and <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-style">transform-style: preserve-3d;</a></code>
+  (so the children, the 6 sides of the cube, are also positioned in the 3D space), have been set on the cube.</p>
+
+<div class="note notecard">
+  <p><strong>Note:</strong> <code>translateZ(tz)</code> is equivalent to
+    <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translate3d()">translate3d</a>(0, 0, tz)</code>.
+  </p>
+</div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: css notranslate"><code><span class="token function">translateZ</span><span class="token punctuation">(</span>tz<span class="token punctuation">)</span>
+</code></pre></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+  <dt><code><var>tz</var></code></dt>
+  <dd>A <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length"><code>&lt;length&gt;</code></a> representing the z-component of the translating vector. A positive value moves the
+    element towards the viewer, and a negative value farther away.</dd>
+</dl>
+
+<table class="standard-table">
+  <thead>
+    <tr>
+      <th scope="col">Cartesian coordinates on ℝ<sup>2</sup></th>
+      <th scope="col">Homogeneous coordinates on ℝℙ<sup>2</sup></th>
+      <th scope="col">Cartesian coordinates on ℝ<sup>3</sup></th>
+      <th scope="col">Homogeneous coordinates on ℝℙ<sup>3</sup></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="2">This transformation applies to the 3D space and can't be represented on the plane.
+      </td>
+      <td>A translation is not a linear transformation in ℝ<sup>3</sup> and can't be represented using a
+        Cartesian-coordinate matrix.</td>
+      <td><math>
+          <mfenced>
+            <mtable>
+              <mtr>
+                <mtd>
+                  <mn>1</mn>
+                </mtd>
+                <mtd>
+                  <mn>0</mn>
+                </mtd>
+                <mtd>
+                  <mn>0</mn>
+                </mtd>
+                <mtd>
+                  <mn>0</mn>
+                </mtd>
+              </mtr>
+              <mtr>
+                <mtd>
+                  <mn>0</mn>
+                </mtd>
+                <mtd>
+                  <mn>1</mn>
+                </mtd>
+                <mtd>
+                  <mn>0</mn>
+                </mtd>
+                <mtd>
+                  <mn>0</mn>
+                </mtd>
+              </mtr>
+              <mtr>
+                <mtd>
+                  <mn>0</mn>
+                </mtd>
+                <mtd>
+                  <mn>0</mn>
+                </mtd>
+                <mtd>
+                  <mn>1</mn>
+                </mtd>
+                <mtd>
+                  <mi>t</mi>
+                </mtd>
+              </mtr>
+              <mtr>
+                <mtd>
+                  <mn>0</mn>
+                </mtd>
+                <mtd>
+                  <mn>0</mn>
+                </mtd>
+                <mtd>
+                  <mn>0</mn>
+                </mtd>
+                <mtd>
+                  <mn>1</mn>
+                </mtd>
+              </mtr>
+            </mtable>
+          </mfenced>
+        </math></td>
+    </tr>
+  </tbody>
+</table></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div><p>In this example, two boxes are created. One is positioned normally on the page, without being translated at all. The
+  second is altered by applying perspective to create a 3D space, then moved towards the user.</p></div><h3 id="html"><a href="#html" title="Permalink to HTML">HTML</a></h3><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>Static<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>moved<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Moved<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre></div><h3 id="css"><a href="#css" title="Permalink to CSS">CSS</a></h3><div><pre class="brush: css notranslate"><code><span class="token selector">div</span> <span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 60px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 60px<span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> skyblue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.moved</span> <span class="token punctuation">{</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">perspective</span><span class="token punctuation">(</span>500px<span class="token punctuation">)</span> <span class="token function">translateZ</span><span class="token punctuation">(</span>200px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> pink<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p>What really matters here is the class "moved"; let's take a look at what it does. First, the
+  <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/perspective()">perspective()</a></code> function positions the
+  viewer relative to the plane that lies where z=0 (in essence, the surface of the screen). A value of
+  <code>500px</code> means the user is 500 pixels "in front of" the imagery located at z=0.
+</p>
+
+<p>Then, the <code>translateZ()</code> function moves the element 200 pixels "outward" from the screen, toward the user.
+  This has the effect of making the element appear larger when viewed on a 2D display, or closer when viewed using a VR
+  headset or other 3D display device.</p>
+
+<p>Note if the <code>perspective()</code> value is less than the <code>translateZ()</code> value, such as
+  <code>transform: perspective(200px) translateZ(300px);</code> the transformed element will not be visible as it is
+  further than the user's viewport. The smaller the difference between the perspective and translateZ values, the closer
+  the user is to the element and the larger the translated element will seem.
+</p></div><h3 id="result"><a href="#result" title="Permalink to Result">Result</a></h3><div><p><iframe class="sample-code-frame" id="frame_Examples" width="250" height="250" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/transform-function/translateZ()/_sample_.Examples.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+  <thead>
+    <tr>
+      <th scope="col">Specification</th>
+      <th scope="col">Status</th>
+      <th scope="col">Comment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://drafts.csswg.org/css-transforms-2/#transform-functions" hreflang="en" lang="en" class="external" rel=" noopener">CSS Transforms Level&nbsp;2<br><small lang="en-US">The definition of 'transform' in that specification.</small></a></td>
+      <td><span class="spec-ed">Editor's Draft</span></td>
+      <td>Adds 3D transform functions to the CSS Transforms standard.</td>
+    </tr>
+  </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform"><code>transform</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function"><code>&lt;transform-function&gt;</code></a></li>
+</ul></div>

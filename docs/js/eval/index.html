@@ -1,0 +1,126 @@
+<h1>eval()</h1><div><div></div>
+
+<div class="warning notecard">
+<p><strong>Warning:</strong>&nbsp;<font>Выполнение кода JavaScript с текстовой строки - это невероятный риск для безопасности.&nbsp;</font><font>Злоумышленнику слишком легко запустить какой угодно код, когда вы используете</font>&nbsp;<code>eval()</code>. Смотрите&nbsp;&nbsp;<a href="#не_используйте_eval_без_необходимости!">Никогда не используйте&nbsp;eval()!</a>, ниже.</p>
+</div>
+
+<p>Метод&nbsp;<code><strong>eval()</strong></code>&nbsp;выполняет&nbsp;JavaScript код, представленный строкой.</p>
+
+<p><iframe class="interactive" width="100%" height="490" src="https://interactive-examples.mdn.mozilla.net/pages/js/globalprops-eval.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code>eval(<em>string</em>)</code></pre></div><h3 id="параметры"><a href="#параметры" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>string</code></dt>
+ <dd>Строка, представленная JavaScript выражением, оператором или последовательностью операторов. Выражение может содержать переменные и свойства существующих объектов.</dd>
+ <dt>
+ <h3 id="Возвращаемое_значение">Возвращаемое значение</h3>
+ </dt>
+ <dd>Возвращает значение выполнения кода, переданного в функцию в виде строки. Если код не возвращает ничего - будет возвращено значение&nbsp;<a href="/js/undefined/"><code>undefined</code></a>.</dd>
+</dl></div><h2 id="описание"><a href="#описание" title="Permalink to Описание">Описание</a></h2><div><p><code>eval()</code> - функция глобального объекта.</p>
+
+<p>Аргумент функции <code>eval()</code>&nbsp;- строка. <code>eval()</code> исполняет содержащееся в строке выражение,&nbsp;один или несколько операторов&nbsp; JavaScript. Не стоит вызывать <code>eval()</code> для определения значения арифметического выражения; JavaScript вычисляет их автоматически.</p>
+
+<p><code>eval()</code> можно использовать для вычисления значения арифметического выражения, записанного в строковом виде, на более поздней стадии исполнения. Предположим, существует переменная&nbsp;<code>x</code>. Можно отложить вычисление выражения, в котором содержится <code>х</code>, если присвоить переменной это выражение в виде строки (допустим, "<code>3 * x + 2</code>"), а затем вызвать <code>eval()</code> в более поздней точке кода.</p>
+
+<p>Если аргумент, переданный <code>eval()</code>, не является строкой, <code>eval() </code>возвращает его неизменным. В следующем примере определён конструктор <code>String</code>, и <code>eval()</code> не вычисляет значение выражения, записанного в строковом виде, а возвращает объект типа <code>String</code>.</p>
+
+<pre class="brush:js notranslate"><code><span class="token function">eval</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">"2 + 2"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// возвращает объект типа String, содержащий "2 + 2"</span>
+<span class="token function">eval</span><span class="token punctuation">(</span><span class="token string">"2 + 2"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>             <span class="token comment">// возвращает 4</span>
+</code></pre>
+
+<p>Это ограничение легко обойти при помощи <code>toString()</code>.</p>
+
+<pre class="brush:js notranslate"><code><span class="token keyword">var</span> expression <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">"2 + 2"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">eval</span><span class="token punctuation">(</span>expression<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+<p>Если вы используете <code>eval</code>&nbsp;косвенно, вызовом его через ссылку, а не&nbsp;просто <code>eval</code>,&nbsp;в<a href="https://www.ecma-international.org/ecma-262/5.1/#sec-10.4.2" class="external" rel=" noopener">&nbsp;ECMAScript 5</a> это работает в глобальной области видимости, а не в локальной; это значит, что&nbsp;<code>eval</code> будет вызван в&nbsp;глобальной области видимости, а код будет выполнен&nbsp;с отсутствием доступа к локальным переменным в пределах области видимости, где он&nbsp;был&nbsp;вызван.</p>
+
+<pre class="brush:js notranslate"><code><span class="token keyword">function</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">,</span> y <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">eval</span><span class="token punctuation">(</span><span class="token string">"x + y"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// Прямой вызов, использует локальную области видимости, результат - 6</span>
+  <span class="token keyword">var</span> geval <span class="token operator">=</span> eval<span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">geval</span><span class="token punctuation">(</span><span class="token string">"x + y"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Непрямой вызов, использует глобальную область видимости, бросит ReferenceError, т.к. `x` - не определён</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="не_используйте_eval_без_необходимости!"><a href="#не_используйте_eval_без_необходимости!" title="Permalink to Не используйте eval без необходимости!"></a><a name="dont-use-it"><code><font face="Open Sans, Arial, sans-serif">Н</font>е используйте eval без необходимости!</code></a></h2><div><p><code>eval()</code>&nbsp;- опасная функция, которая выполняет код, проходящий со всеми привилегиями вызывателя. Если вы запускаете <code>eval()</code> со строкой, на которую могут&nbsp;влиять злоумышленники, то вы можете запустить вредоносный код на устройство пользователя с правами вашей веб-страницы/расширения. Наиболее важно, код третьей стороны может видеть область видимости, в которой был вызван <code>eval()</code>, что может может привести к атакам, похожим на&nbsp;<a href="/js/Function/"><code>Function</code></a>.</p>
+
+<p><code>Также eval(),</code>как правило, медленнее альтернатив, так как вызывает интерпретатор JS, тогда как многие другие конструкции оптимизированы современными JS движками.</p>
+
+<p>Есть безопасные (и быстрые!) альтернативы&nbsp;<code>eval()</code>&nbsp;для общих случаев использования.</p></div><h3 id="доступ_к_свойствам"><a href="#доступ_к_свойствам" title="Permalink to Доступ к свойствам">Доступ к свойствам</a></h3><div><p>Вам не следует использовать&nbsp;<code>eval()</code>, чтобы конвертировать имена свойств в свойства. Рассматривая следующий пример, где свойство объекта используемое&nbsp;для доступа неизвестно до выполнения кода. Это можно сделать с &nbsp;eval:</p>
+
+<pre class="brush:js notranslate"><code><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span> a<span class="token operator">:</span> <span class="token number">20</span><span class="token punctuation">,</span> b<span class="token operator">:</span> <span class="token number">30</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> propname <span class="token operator">=</span> <span class="token function">getPropName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// возвращает "a" или "b"</span>
+
+<span class="token function">eval</span><span class="token punctuation">(</span> <span class="token string">"var result = obj."</span> <span class="token operator">+</span> propname <span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+<p>Однако, <code>eval()</code>&nbsp;здесь не нужен.&nbsp;По факту, использование здесь его удивляет. Вместо него используйте <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Property_Accessors" title="JavaScript/Reference/Operators/Member_Operators">доступ к свойствам</a>, который быстрее и безопаснее:</p>
+
+<pre class="brush:js notranslate"><code><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span> a<span class="token operator">:</span> <span class="token number">20</span><span class="token punctuation">,</span> b<span class="token operator">:</span> <span class="token number">30</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> propname <span class="token operator">=</span> <span class="token function">getPropName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// возвращает "a" или "b"</span>
+<span class="token keyword">var</span> result <span class="token operator">=</span> obj<span class="token punctuation">[</span> propname <span class="token punctuation">]</span><span class="token punctuation">;</span>  <span class="token comment">//  obj[ "a" ] то же, что и obj.a</span>
+</code></pre></div><h3 id="используйте_функции_вместо_исполнения_фрагментов_кода"><a href="#используйте_функции_вместо_исполнения_фрагментов_кода" title="Permalink to Используйте функции вместо исполнения фрагментов кода">Используйте функции вместо исполнения фрагментов кода</a></h3><div><p>У JavaScript <a class="external" href="http://en.wikipedia.org/wiki/First-class_function" title="http://en.wikipedia.org/wiki/First-class_function" rel=" noopener">функции первого класса</a>, что значит, что вы можете передавать функции как аргументы, хранить их в переменных или свойствах объектов и так далее. Многие&nbsp;DOM API созданы с учётом этого, так что вы можете (и вам следует) писать:</p>
+
+<pre class="brush: js notranslate"><code><span class="token comment">// вместо setTimeout(" ... ", 1000) :</span>
+<span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// вместо elt.setAttribute("onclick", "...") использовать:</span>
+elt<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"click"</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span> <span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span> </code></pre>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures" title="JavaScript/Guide/Closures">Замыкания</a>&nbsp;также полезны как способ создания функций с параметрами без конкатенации строк.</p></div><h3 id="разбор_json_конвертирование_строк_в_javascript_объекты"><a href="#разбор_json_конвертирование_строк_в_javascript_объекты" title="Permalink to Разбор JSON (конвертирование строк в JavaScript объекты)">Разбор JSON (конвертирование строк в JavaScript объекты)</a></h3><div><p>Если строка,&nbsp;переданная в&nbsp;<code>eval()</code>,&nbsp;содержит данные (к примеру, массив:&nbsp;<code>"[1, 2, 3]"</code>), а не код, вам следует рассмотреть&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Glossary/JSON" title="JSON">JSON</a>, позволяющий строке использовать подмножество&nbsp;JavaScript синтаксиса для представления данных. Смотрите также:&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Downloading_JSON_and_JavaScript_in_extensions" title="This is a link to an unwritten page" class="page-not-created">Загрузка&nbsp;JSON и&nbsp;JavaScript в расширениях</a>.</p>
+
+<p>Заметьте, что синтаксис JSON ограничен&nbsp;в сравнении с&nbsp;JavaScript синтаксисом, многие валидные&nbsp;JavaScript литералы не распарсятся в&nbsp;JSON. К примеру, лишние запятые в конце выражений не разрешены в&nbsp;JSON, а имена свойств (ключи) в объектах должны быть в двойных кавычках. Будьте уверены использовать сериализацию&nbsp;JSON для создания строк, которые потом будут разбираться как&nbsp;JSON.</p></div><h3 id="передавайте_данные_вместо_кода"><a href="#передавайте_данные_вместо_кода" title="Permalink to Передавайте данные вместо кода">Передавайте данные вместо кода</a></h3><div><p>К примеру, расширение,&nbsp;созданное изменять содержимое веб-страниц, должно иметь правила, определённые в&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/XPath" title="XPath">XPath</a>, а не JS коде.</p></div><h3 id="выполняйте_код_с_ограниченными_правами"><a href="#выполняйте_код_с_ограниченными_правами" title="Permalink to Выполняйте код с ограниченными правами">Выполняйте код с ограниченными правами</a></h3><div><p>Если выполнять код всё-таки необходимо, желательно это делать с уменьшенными привелегиями. Этот совет подходит, главным образом, к расширениям и&nbsp;XUL приложениям, которые могут использовать&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Components.utils.evalInSandbox" title="This is a link to an unwritten page" class="page-not-created">Components.utils.evalInSandbox</a>.</p></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="использование_eval"><a href="#использование_eval" title="Permalink to Использование&nbsp;eval">Использование&nbsp;<code>eval</code></a></h3><div><p>В следующем коде оба выражения содержат&nbsp;<code>eval()</code>, возвращающий&nbsp;42. Первое определяется строкой&nbsp;"<code>x + y + 1</code>"; второе - строкой&nbsp;"<code>42</code>".</p>
+
+<pre class="brush:js notranslate"><code><span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> y <span class="token operator">=</span> <span class="token number">39</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> z <span class="token operator">=</span> <span class="token string">"42"</span><span class="token punctuation">;</span>
+<span class="token function">eval</span><span class="token punctuation">(</span><span class="token string">"x + y + 1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// возвращает 42</span>
+<span class="token function">eval</span><span class="token punctuation">(</span>z<span class="token punctuation">)</span><span class="token punctuation">;</span>           <span class="token comment">// вернёт 42</span>
+</code></pre></div><h3 id="использование_eval_для_исполнения_строки_содержащей_операторы_javascript"><a href="#использование_eval_для_исполнения_строки_содержащей_операторы_javascript" title="Permalink to Использование&nbsp;eval&nbsp;для исполнения строки, содержащей операторы JavaScript">Использование&nbsp;<code>eval</code>&nbsp;для исполнения строки, содержащей операторы JavaScript</a></h3><div><p>Следующий пример использует&nbsp;<code>eval()</code>&nbsp;для получения значения выражения&nbsp;<code>str</code>. Эта строка состоит из JavaScript выражений, печатающих в консоль, и,&nbsp;если x равен пяти, призывающих z значение 42,&nbsp;или 0 в противном случае. Когда второе выражение будет исполнено,&nbsp;<code>eval()</code>&nbsp;будет считать выражения выполненными, а также это установит значение выражению переменной z и вернёт его.</p>
+
+<pre class="brush:js notranslate"><code><span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">"if (x == 5) {console.log('z is 42'); z = 42;} else z = 0; "</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"z is "</span><span class="token punctuation">,</span> <span class="token function">eval</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div><h3 id="последнее_выражение_выполняется"><a href="#последнее_выражение_выполняется" title="Permalink to Последнее выражение выполняется">Последнее выражение выполняется</a></h3><div><p><code>eval()</code>&nbsp;вернёт значение последнего выполняемого выражения</p>
+
+<pre class="brush:js notranslate"><code><span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">"if ( a ) { 1+1; } else { 1+2; }"</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token function">eval</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// вернёт 2</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"b is : "</span> <span class="token operator">+</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+a <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+b <span class="token operator">=</span> <span class="token function">eval</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// вернёт 3</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"b is : "</span> <span class="token operator">+</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div><h3 id="eval_как_строковое_определение_функции_включающее_и_как_префикс_и_суффикс"><a href="#eval_как_строковое_определение_функции_включающее_и_как_префикс_и_суффикс" title="Permalink to eval&nbsp;как строковое определение функции, включающее&nbsp;&quot;(&quot; и &quot;)&quot; как&nbsp;префикс и суффикс"><code>eval</code>&nbsp;как строковое определение функции, включающее&nbsp;"(" и ")" как&nbsp;префикс и суффикс</a></h3><div><pre class="brush:js notranslate"><code><span class="token keyword">var</span> fctStr1 <span class="token operator">=</span> <span class="token string">"function a() {}"</span>
+<span class="token keyword">var</span> fctStr2 <span class="token operator">=</span> <span class="token string">"(function a() {})"</span>
+<span class="token keyword">var</span> fct1 <span class="token operator">=</span> <span class="token function">eval</span><span class="token punctuation">(</span>fctStr1<span class="token punctuation">)</span>  <span class="token comment">// вернёт undefined</span>
+<span class="token keyword">var</span> fct2 <span class="token operator">=</span> <span class="token function">eval</span><span class="token punctuation">(</span>fctStr2<span class="token punctuation">)</span>  <span class="token comment">// вернёт функцию</span>
+</code></pre></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+  <tr>
+   <td>ECMAScript 1st Edition.</td>
+   <td>Стандарт</td>
+   <td>Изначальное определение.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-15.1.2.1" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 5.1 (ECMA-262)<br><small lang="ru">Определение 'eval' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-eval-x" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'eval' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="поддержка_браузерами"><a href="#поддержка_браузерами" title="Permalink to Поддержка браузерами">Поддержка браузерами</a></h2><p>BCD tables only load in the browser</p><div><div id="compat-mobile">
+<p></p><p></p>
+</div></div><h3 id="gecko-специфичные_замечания"><a href="#gecko-специфичные_замечания" title="Permalink to Gecko-специфичные&nbsp;замечания">Gecko-специфичные&nbsp;замечания</a></h3><div><ul>
+ <li>Исторически&nbsp;<code>eval()</code> имел&nbsp;второй необязательный аргумент, указывающий на то, в контексте какого объекта будет выполняться выражение. Этот аргумент не был стандартизован и был удалён из&nbsp;SpiderMonkey в&nbsp;Gecko 1.9.1 (Firefox 3.5). См.&nbsp;<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=442333" class="external" rel=" noopener">баг&nbsp;442333</a>.</li>
+</ul></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/uneval/"><code>uneval()</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Property_Accessors">Доступ к свойствам</a></li>
+</ul></div>

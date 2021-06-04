@@ -1,0 +1,56 @@
+<h1>image-resolution</h1><div><div><div class="notecard experimental">
+    <h4 id="experimental">Experimental</h4>
+    <p><strong>This is an <a href="https://developer.mozilla.org/en-US/docs/MDN/Guidelines/Conventions_definitions#experimental">experimental technology</a></strong><br>Check the <a href="#browser_compatibility">Browser compatibility table</a> carefully before using this in production.</p>
+</div></div>
+
+<p>The <strong><code>image-resolution</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> property specifies the intrinsic resolution of all raster images used in or on the element. It affects content images such as replaced elements and generated content, and decorative images such as <code>background-image</code> images.</p>
+
+<p>The image resolution is defined as the number of image pixels per unit length, e.g., pixels per inch. By default, CSS assumes a resolution of one image pixel per CSS px unit; however, the <code>image-resolution</code> property allows a different resolution to be specified.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: css no-line-numbers notranslate"><code><span class="token property">image-resolution</span><span class="token punctuation">:</span> from-image<span class="token punctuation">;</span>
+<span class="token property">image-resolution</span><span class="token punctuation">:</span> 300dpi<span class="token punctuation">;</span>
+<span class="token property">image-resolution</span><span class="token punctuation">:</span> from-image 300dpi<span class="token punctuation">;</span>
+<span class="token property">image-resolution</span><span class="token punctuation">:</span> 300dpi snap<span class="token punctuation">;</span>
+
+<span class="token comment">/* Global values */</span>
+<span class="token property">image-resolution</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">image-resolution</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">image-resolution</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span></code></pre></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+ <dt><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/resolution"><code>&lt;resolution&gt;</code></a></code></dt>
+ <dd>Specifies the intrinsic resolution explicitly.</dd>
+ <dt><code>from-image</code></dt>
+ <dd>Uses the intrinsic resolution as specified by the image format. If the image does not specify its own resolution, the explicitly specified resolution is used (if given), else it defaults to <code>1dppx</code> (1 image pixel per CSS px unit).</dd>
+ <dt><code>snap</code></dt>
+ <dd>If the <code>snap</code> keyword is provided, the computed resolution is the specified resolution rounded to the nearest value that would map one image pixel to an integer number of device pixels. If the resolution is taken from the image, then the used intrinsic resolution is the image’s native resolution similarly adjusted.</dd>
+</dl>
+
+<div class="notecard note">
+<p><strong>Note:</strong> As vector formats such as SVG do not have an intrinsic resolution, this property has no effect on vector images.</p>
+</div></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td><code>1dppx</code></td></tr><tr><th scope="row">Applies to</th><td>all elements</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance">Inherited</a></th><td>yes</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>as specified, except with &lt;resolution&gt; possibly altered by computed for 'snap' value</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">[</a> from-image <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_bar" title="Double bar: one or several of the entities must be present, in any order">||</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/resolution" title>&lt;resolution&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">]</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_ampersand" title="Double ampersand: all of the entities must be present, in any order">&amp;&amp;</a> snap<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#question_mark_()" title="Question mark: the entity is optional">?</a></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="setting_high_dpi"><a href="#setting_high_dpi" title="Permalink to Setting a high dpi for print">Setting a high dpi for print</a></h3><div><p>When printing the document, use a higher resolution.</p>
+
+<pre class="brush: css notranslate"><code><span class="token atrule"><span class="token rule">@media</span> print</span> <span class="token punctuation">{</span>
+  <span class="token selector">.myimage</span> <span class="token punctuation">{</span>
+    <span class="token property">image-resolution</span><span class="token punctuation">:</span> 300dpi<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="use_image_res"><a href="#use_image_res" title="Permalink to Use image resolution with fallback">Use image resolution with fallback</a></h3><div><p>Uses the resolution from the image. If the image does not have a resolution, use 300dpi rather than the default 1dppx.</p>
+
+<pre class="brush: css notranslate"><code><span class="token selector">.myimage</span> <span class="token punctuation">{</span>
+  <span class="token property">image-resolution</span><span class="token punctuation">:</span> from-image 300dpi<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-images-4/#the-image-resolution" hreflang="en" lang="en" class="external" rel=" noopener">CSS Images Module Level&nbsp;4<br><small lang="en-US">The definition of 'image-resolution' in that specification.</small></a></td>
+   <td><span class="spec-wd">Working Draft</span></td>
+   <td>Initial definition.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><div><p>The <code>image-resolution</code> property is currently unsupported by browsers. <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=1086473" class="external" rel=" noopener">Chromium bug: 1086473</a>.</p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li>Other image-related CSS properties: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit"><code>object-fit</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/object-position"><code>object-position</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/image-orientation"><code>image-orientation</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/image-rendering"><code>image-rendering</code></a>.</li>
+</ul></div>

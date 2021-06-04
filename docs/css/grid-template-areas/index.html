@@ -1,0 +1,86 @@
+<h1>grid-template-areas</h1><div><p>CSS свойство&nbsp;<strong><code>grid-template-areas</code></strong> определяет название&nbsp;<a class="page-not-created" title="Документация об этом ещё не написана; пожалуйста, поспособствуйте её написанию!">grid-области</a>.</p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/grid-template-areas.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+
+
+<p>Области не связаны с конкретным&nbsp;grid элементом, но можно ссылаться с&nbsp;grid-placement свойств <a href="/css/grid-row-start/"><code>grid-row-start</code></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row-end"><code>grid-row-end</code> <span>(en-US)</span></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-start"><code>grid-column-start</code> <span>(en-US)</span></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-end"><code>grid-column-end</code> <span>(en-US)</span></a>, and their shorthands <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row"><code>grid-row</code> <span>(en-US)</span></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column"><code>grid-column</code> <span>(en-US)</span></a>, and <a href="/css/grid-area/"><code>grid-area</code></a>.</p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="brush: css no-line-numbers notranslate"><code><span class="token comment">/* Keyword value */</span>
+<span class="token property">grid-template-areas</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+
+<span class="token comment">/* &lt;string&gt; values */</span>
+<span class="token property">grid-template-areas</span><span class="token punctuation">:</span> <span class="token string">"a b"</span><span class="token punctuation">;</span>
+<span class="token property">grid-template-areas</span><span class="token punctuation">:</span> <span class="token string">"a b b"</span>
+                     <span class="token string">"a c d"</span><span class="token punctuation">;</span>
+
+<span class="token comment">/* Global values */</span>
+<span class="token property">grid-template-areas</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">grid-template-areas</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">grid-template-areas</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre></div><h3 id="значения"><a href="#значения" title="Permalink to Значения">Значения</a></h3><div><dl>
+ <dt><code>none</code></dt>
+ <dd>Контейнер не определяет никаких названий grid-области.</dd>
+ <dt><code><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/string"><code>&lt;string&gt;</code> <span>(en-US)</span></a>+</code></dt>
+ <dd>Строка&nbsp;создаётся каждым переносом строки, тогда как каждая колонка&nbsp;создаётся в каждой из созданных строк.&nbsp;Несколько прописанных маркеров в строке или через строки создаёт одну названную grid-область что покрывает соответствующие ячейки. Прописанные ячейки которые не создают прямоугольник -&nbsp;являются недействительны.</dd>
+</dl></div><h3 id="формальный_синтаксис"><a href="#формальный_синтаксис" title="Permalink to Формальный синтаксис">Формальный синтаксис</a></h3><div><pre class="notranslate">none <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/string" title="Currently only available in English (US)" class="only-in-en-us">&lt;string&gt; (en-US)</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#plus_()" title="Currently only available in English (US)" class="only-in-en-us">+ (en-US)</a></pre></div><h2 id="пример"><a href="#пример" title="Permalink to Пример">Пример</a></h2><div></div><h3 id="html"><a href="#html" title="Permalink to HTML">HTML</a></h3><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>page<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span><span class="token punctuation">&gt;</span></span>Header<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>header</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nav</span><span class="token punctuation">&gt;</span></span>Navigation<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nav</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>main</span><span class="token punctuation">&gt;</span></span>Main area<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>main</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>footer</span><span class="token punctuation">&gt;</span></span>Footer<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>footer</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">&gt;</span></span></code></pre></div><h3 id="css"><a href="#css" title="Permalink to CSS">CSS</a></h3><div><pre class="brush:css; highlight[5-7] notranslate"><code><span class="token selector">#page</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> grid<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 250px<span class="token punctuation">;</span>
+  <span class="token property">grid-template-areas</span><span class="token punctuation">:</span> <span class="token string">"head head"</span>
+                       <span class="token string">"nav  main"</span>
+                       <span class="token string">"nav  foot"</span><span class="token punctuation">;</span>
+  <span class="token property">grid-template-rows</span><span class="token punctuation">:</span> 50px 1fr 30px<span class="token punctuation">;</span>
+  <span class="token property">grid-template-columns</span><span class="token punctuation">:</span> 150px 1fr<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">#page &gt; header</span> <span class="token punctuation">{</span>
+  <span class="token property">grid-area</span><span class="token punctuation">:</span> head<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #8ca0ff<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">#page &gt; nav</span> <span class="token punctuation">{</span>
+  <span class="token property">grid-area</span><span class="token punctuation">:</span> nav<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #ffa08c<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">#page &gt; main</span> <span class="token punctuation">{</span>
+  <span class="token property">grid-area</span><span class="token punctuation">:</span> main<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #ffff64<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">#page &gt; footer</span> <span class="token punctuation">{</span>
+  <span class="token property">grid-area</span><span class="token punctuation">:</span> foot<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #8cffa0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="результат"><a href="#результат" title="Permalink to Результат">Результат</a></h3><div><p><em><iframe class="sample-code-frame" id="frame_Example" width="100%" height="250px" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/grid-template-areas/_sample_.Example.html" loading="lazy"></iframe></em></p></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-grid/#propdef-grid-template-areas" hreflang="en" lang="en" class="external" rel=" noopener">CSS Grid Layout<br><small lang="ru">Определение 'grid-template-areas' в этой спецификации.</small></a></td>
+   <td><span class="spec-cr">Кандидат в рекомендации</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table>
+
+<p></p><table class="properties"><tbody><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td><code>none</code></td></tr><tr><th scope="row">Применяется к</th><td>сеточные контейнеры</td></tr><tr><th scope="row"><a href="/css/inheritance/">Наследуется</a></th><td>нет</td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>как указано</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="совместимость_браузеров"><a href="#совместимость_браузеров" title="Permalink to Совместимость браузеров">Совместимость браузеров</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li>Связанные CSS свойства: <a href="/css/grid-template-rows/"><code>grid-template-rows</code></a>, <a href="/css/grid-template-columns/"><code>grid-template-columns</code></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template"><code>grid-template</code> <span>(en-US)</span></a></li>
+ <li>Grid Layout Guide: <em><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Grid_Template_Areas">Grid template areas</a></em></li>
+ <li>Video tutorial: <em><a href="https://gridbyexample.com/video/grid-template-areas/" class="external" rel=" noopener">Grid Template Areas</a></em></li>
+</ul>
+
+
+
+<div id="gtx-trans" style="position: absolute; left: 536px; top: 42px;">
+<div class="gtx-trans-icon"></div>
+</div></div>

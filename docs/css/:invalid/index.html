@@ -1,0 +1,85 @@
+<h1>:invalid</h1><div><p></p><p></p></div><h2 id="описание"><a href="#описание" title="Permalink to Описание">Описание</a></h2><div><p>CSS <a href="/css/Pseudo-classes/" title="Pseudo-classes">псевдокласс</a> <code>:invalid</code> находит любые <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/Input"><code>&lt;input&gt;</code></a> или <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/form"><code>&lt;form&gt;</code></a> элементы, контент которых не проходит <a href="https://developer.mozilla.org/ru/docs/orphaned/Web/Guide/HTML/HTML5/Constraint_validation" title="en/HTML/HTML5/Constraint_validation">валидацию</a>, в соответствии с типом поля. Он позволяет вам легко менять внешний вид полей, что позволяет пользователю видеть и исправлять ошибки.</p>
+
+<p>По умолчанию, Gecko не применяет стили к псевдоклассу&nbsp;<code>:invalid</code>. Однако, применяет стили (красное "свечение", используя свойство&nbsp;<a href="/css/box-shadow/"><code>box-shadow</code></a>)&nbsp;к псевдоклассу <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/:user-invalid"><code>:-moz-ui-invalid</code> <span>(en-US)</span></a>, который применяется в подгруппе случаев для&nbsp;<code>:invalid</code>.</p>
+
+<p>Вы можете отключить свечение, используя следующий CSS или полностью изменить внешний вид некорректных полей.</p>
+
+<pre class="brush: css notranslate"><code><span class="token selector">:invalid</span> <span class="token punctuation">{</span>
+  <span class="token property">box-shadow</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">:-moz-submit-invalid</span> <span class="token punctuation">{</span>
+  <span class="token property">box-shadow</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">:-moz-ui-invalid</span> <span class="token punctuation">{</span>
+  <span class="token property">box-shadow</span><span class="token punctuation">:</span>none<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="замечания"><a href="#замечания" title="Permalink to Замечания">Замечания</a></h2><div><h4 id="радиокнопки">Радиокнопки</h4>
+
+<p>Если любая из радиокнопок в группе (т.е., с&nbsp;одинаковым атрибутом&nbsp;<code>name</code>) имеет атрибут&nbsp;<code>required</code>, псевдокласс&nbsp;<code>:invalid</code>&nbsp;применяется ко всем из них, если ни одна из кнопок группы не выбрана.</p></div><h2 id="example2"><a href="#example2" title="Permalink to Пример">Пример</a></h2><div><p>Этот пример представляет собой простую форму, цвета элементов которой зелёные, когда данные корректные, и красные, когда нет.</p></div><h3 id="html"><a href="#html" title="Permalink to HTML">HTML</a></h3><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span><span class="token punctuation">&gt;</span></span>Введите URL:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>url<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span> <span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span> <span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span><span class="token punctuation">&gt;</span></span>Введите эл. почту:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>email<span class="token punctuation">"</span></span> <span class="token attr-name">required</span><span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span></code></pre></div><h3 id="css"><a href="#css" title="Permalink to CSS">CSS</a></h3><div><pre class="brush: css notranslate"><code><span class="token selector">input:invalid</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #ffdddd<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">form:invalid</span> <span class="token punctuation">{</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 5px solid #ffdddd<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">input:valid</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #ddffdd<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">form:valid</span> <span class="token punctuation">{</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 5px solid #ddffdd<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">input:required</span> <span class="token punctuation">{</span>
+  <span class="token property">border-color</span><span class="token punctuation">:</span> #800000<span class="token punctuation">;</span>
+  <span class="token property">border-width</span><span class="token punctuation">:</span> 3px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<p><iframe class="sample-code-frame" id="frame_Example2" width="600" height="150" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/:invalid/_sample_.Example2.html" loading="lazy"></iframe></p></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://html.spec.whatwg.org/multipage/#selector-invalid" hreflang="en" lang="en" class="external" rel=" noopener">HTML Living Standard<br><small lang="ru">Определение ':invalid' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td>Без изменений.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html52/#selector-invalid" hreflang="en" lang="en" class="external" rel=" noopener">HTML5<br><small lang="ru">Определение ':invalid' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Определяет семантику в HTML и ограничения проверки.</td>
+  </tr>
+  <tr>
+   <td><a href="https://drafts.csswg.org/selectors-4/#validity-pseudos" hreflang="en" lang="en" class="external" rel=" noopener">Selectors Level&nbsp;4<br><small lang="ru">Определение ':invalid' в этой спецификации.</small></a></td>
+   <td><span class="spec-wd">Рабочий черновик</span></td>
+   <td>Без изменений.</td>
+  </tr>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-ui-3/#pseudo-validity" hreflang="en" lang="en" class="external" rel=" noopener">CSS Basic User Interface Module Level&nbsp;3<br><small lang="ru">Определение ':invalid' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Определяет псевдокласс, но не семантику.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="поддержка_браузерами"><a href="#поддержка_браузерами" title="Permalink to Поддержка браузерами">Поддержка браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/css/:valid/"><code>:valid</code></a></li>
+ <li><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/:-moz-submit-invalid"><code>:-moz-submit-invalid</code> <span>(en-US)</span></a></li>
+ <li><a href="/css/:required/"><code>:required</code></a></li>
+ <li><a href="/css/:optional/"><code>:optional</code></a></li>
+</ul>
+
+<p></p></div>

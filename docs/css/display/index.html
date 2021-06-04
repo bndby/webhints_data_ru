@@ -1,0 +1,162 @@
+<h1>display</h1><div><div></div>
+
+<p class="summary">Свойство <strong><code>display</code></strong> (<a href="/css/">CSS</a>) определяет <dfn><em>тип отображения (display type)</em> элемента</dfn>, имеющий два основных свойства, определяющих генерацию боксов — <strong>внешний тип отображения</strong> определяет расположение бокса в <a href="/css/CSS_Flow_Layout/">схеме потока (flow layout)</a> и <strong>внутренний тип отображения</strong> определяет расположение дочерних элементов бокса (бокс - это прямоугольная область, являющаяся изображением элемента).</p>
+
+<p>Некоторые значения свойства <code>display</code> полностью определены в их индивидуальных спецификациях; смотрите таблицу в конце этого документа со ссылками на все релевантные спецификации. Полный список значений приведён ниже.</p>
+
+<pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* &lt;display-outside&gt; values */</span>
+<span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+<span class="token property">display</span><span class="token punctuation">:</span> inline<span class="token punctuation">;</span>
+<span class="token property">display</span><span class="token punctuation">:</span> run-in<span class="token punctuation">;</span>
+
+<span class="token comment">/* &lt;display-inside&gt; values */</span>
+<span class="token property">display</span><span class="token punctuation">:</span> flow<span class="token punctuation">;</span>
+<span class="token property">display</span><span class="token punctuation">:</span> flow-root<span class="token punctuation">;</span>
+<span class="token property">display</span><span class="token punctuation">:</span> table<span class="token punctuation">;</span>
+<span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+<span class="token property">display</span><span class="token punctuation">:</span> grid<span class="token punctuation">;</span>
+<span class="token property">display</span><span class="token punctuation">:</span> ruby<span class="token punctuation">;</span>
+
+<span class="token comment">/* &lt;display-outside&gt; plus &lt;display-inside&gt; values */</span>
+<span class="token property">display</span><span class="token punctuation">:</span> block flow<span class="token punctuation">;</span>
+<span class="token property">display</span><span class="token punctuation">:</span> inline table<span class="token punctuation">;</span>
+<span class="token property">display</span><span class="token punctuation">:</span> flex run-in<span class="token punctuation">;</span>
+
+<span class="token comment">/* &lt;display-listitem&gt; values */</span>
+<span class="token property">display</span><span class="token punctuation">:</span> list-item<span class="token punctuation">;</span>
+<span class="token property">display</span><span class="token punctuation">:</span> list-item block<span class="token punctuation">;</span>
+<span class="token property">display</span><span class="token punctuation">:</span> list-item inline<span class="token punctuation">;</span>
+<span class="token property">display</span><span class="token punctuation">:</span> list-item flow<span class="token punctuation">;</span>
+<span class="token property">display</span><span class="token punctuation">:</span> list-item flow-root<span class="token punctuation">;</span>
+<span class="token property">display</span><span class="token punctuation">:</span> list-item block flow<span class="token punctuation">;</span>
+<span class="token property">display</span><span class="token punctuation">:</span> list-item block flow-root<span class="token punctuation">;</span>
+<span class="token property">display</span><span class="token punctuation">:</span> flow list-item block<span class="token punctuation">;</span>
+
+<span class="token comment">/* &lt;display-internal&gt; values */</span>
+<span class="token property">display</span><span class="token punctuation">:</span> table-row-group<span class="token punctuation">;</span>
+<span class="token property">display</span><span class="token punctuation">:</span> table-header-group<span class="token punctuation">;</span>
+<span class="token property">display</span><span class="token punctuation">:</span> table-footer-group<span class="token punctuation">;</span>
+<span class="token property">display</span><span class="token punctuation">:</span> table-row<span class="token punctuation">;</span>
+<span class="token property">display</span><span class="token punctuation">:</span> table-cell<span class="token punctuation">;</span>
+<span class="token property">display</span><span class="token punctuation">:</span> table-column-group<span class="token punctuation">;</span>
+<span class="token property">display</span><span class="token punctuation">:</span> table-column<span class="token punctuation">;</span>
+<span class="token property">display</span><span class="token punctuation">:</span> table-caption<span class="token punctuation">;</span>
+<span class="token property">display</span><span class="token punctuation">:</span> ruby-base<span class="token punctuation">;</span>
+<span class="token property">display</span><span class="token punctuation">:</span> ruby-text<span class="token punctuation">;</span>
+<span class="token property">display</span><span class="token punctuation">:</span> ruby-base-container<span class="token punctuation">;</span>
+<span class="token property">display</span><span class="token punctuation">:</span> ruby-text-container<span class="token punctuation">;</span>
+
+<span class="token comment">/* &lt;display-box&gt; values */</span>
+<span class="token property">display</span><span class="token punctuation">:</span> contents<span class="token punctuation">;</span>
+<span class="token property">display</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+
+<span class="token comment">/* &lt;display-legacy&gt; values */</span>
+<span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span>
+<span class="token property">display</span><span class="token punctuation">:</span> inline-table<span class="token punctuation">;</span>
+<span class="token property">display</span><span class="token punctuation">:</span> inline-flex<span class="token punctuation">;</span>
+<span class="token property">display</span><span class="token punctuation">:</span> inline-grid<span class="token punctuation">;</span>
+
+<span class="token comment">/* Global values */</span>
+<span class="token property">display</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">display</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">display</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre>
+
+<p></p><table class="properties"><tbody><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td><code>inline</code></td></tr><tr><th scope="row">Применяется к</th><td>все элементы</td></tr><tr><th scope="row"><a href="/css/inheritance/">Наследуется</a></th><td>нет</td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>как указанное значение, кроме как для позиционированных и плавающих элементов и корневого элемента. В обоих случаях вычисляемое значение может быть ключевым словом, отличным от указанного.</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><p>Свойство <code>display</code> задаётся с помощью ключевых слов. Ключевые слова группируются по шести категориям:</p>
+
+<dl>
+ <dt><a href="/css/display-outside/"><code>&lt;display-outside&gt;</code></a></dt>
+ <dd>Эти ключевые слова определяют внешний тип отображения (outer display type) элемента, который играет существенную роль в схеме потока.</dd>
+ <dt><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/display-inside"><code>&lt;display-inside&gt;</code> <span>(en-US)</span></a></dt>
+ <dd>Эти ключевые слова определяют внутренний тип отображения ( inner display type) элемента, который определяет тип контекста форматирования, в котором располагается его содержимое (при условии, что это незаменяемый элемент).</dd>
+ <dt><a href="/css/display-listitem/"><code>&lt;display-listitem&gt;</code></a></dt>
+ <dd>Создаёт блоковый бокс для контента и отдельный строковый (inline) бокс для элемента списка.</dd>
+ <dt><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/display-internal"><code>&lt;display-internal&gt;</code> <span>(en-US)</span></a></dt>
+ <dd>Некоторые модели разметки, такие как <code><span class="css">table</span></code> и <code>ruby,</code> имеют сложную внутреннюю структуру с несколькими различными ролями, которые могут выполнять их дочерние элементы и потомки. Этот раздел определяет те "внутренние" значения отображения, которые имеют смысл только в рамках этих конкретных методов разметок.</dd>
+ <dt><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/display-box"><code>&lt;display-box&gt;</code> <span>(en-US)</span></a></dt>
+ <dd>Эти значения определяют, генерирует ли элемент отображение боксов вообще.</dd>
+ <dt><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/display-legacy"><code>&lt;display-legacy&gt;</code> <span>(en-US)</span></a></dt>
+ <dd>В CSS 2 используется синтаксис с одним ключевым словом для свойства <code>display</code>, для которого требуются отдельные ключевые слова для блокового и строкового уровней одного способа разметки.</dd>
+ <dt><code><a href="https://developer.mozilla.org/ru/docs/Mozilla/Gecko/Chrome/CSS/display-xul" class="page-not-created" title="This is a link to an unwritten page">&lt;display-xul&gt;</a></code> <span class="notecard inline deprecated" title="(Firefox 62 / Thunderbird 62 / SeaMonkey 2.59)">Устарело Gecko 62</span></dt>
+ <dd>Значения, используемые только в Firefox, в основном, для стилизации. <a href="https://developer.mozilla.org/ru/docs/Mozilla/Tech/XUL">XUL documents</a>.</dd>
+</dl></div><h3 id="наследственные_значения_отображения"><a href="#наследственные_значения_отображения" title="Permalink to &quot;Наследственные&quot; значения отображения">"Наследственные" значения отображения</a></h3><div><p>Спецификация уровня 3 подразумевает два значения для свойства <code>display</code> — позволяет специфицировать внешний и внутренний тип отображения явно — но это поддерживается браузерами пока недостаточно хорошо.</p>
+
+<p>Методы display-legacy позволяют получать такие же результаты с одиночными значениями ключевых слов и должны поддерживаться разработчиками до тех пор, пока два значения ключевых слов не будут лучше поддерживаться. Например, используя два значения, вы можете задать строковый (inline) flex контейнер следующим образом:</p>
+
+<pre class="brush: css notranslate"><code><span class="token selector">.container</span> <span class="token punctuation">{</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> inline flex<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<p><span id="result_box" lang="ru"><span>В настоящее время это можно задать с помощью одного значения</span></span>.</p>
+
+<pre class="brush: css notranslate"><code><span class="token selector">.container</span> <span class="token punctuation">{</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> inline-flex<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="формальный_синтаксис"><a href="#формальный_синтаксис" title="Permalink to Формальный синтаксис">Формальный синтаксис</a></h3><div><pre class="notranslate"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> <a href="#display-outside">&lt;display-outside&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_bar" title="Currently only available in English (US)" class="only-in-en-us">|| (en-US)</a> <a href="#display-inside">&lt;display-inside&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <a href="#display-listitem">&lt;display-listitem&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <a href="#display-internal">&lt;display-internal&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <a href="#display-box">&lt;display-box&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <a href="#display-legacy">&lt;display-legacy&gt;</a><p style="font-family:Open Sans,Arial,sans-serif; margin: 10px 0 0 0;">где <br><code style="font-family:Consolas,Monaco,&quot;Andale Mono&quot;,monospace;"><span id="display-outside">&lt;display-outside&gt;</span> = block <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> inline <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> run-in<br><span id="display-inside">&lt;display-inside&gt;</span> = flow <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> flow-root <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> table <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> flex <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> grid <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> ruby<br><span id="display-listitem">&lt;display-listitem&gt;</span> = <a href="#display-outside">&lt;display-outside&gt;</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#question_mark_()" title="Currently only available in English (US)" class="only-in-en-us">? (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_ampersand" title="Currently only available in English (US)" class="only-in-en-us">&amp;&amp; (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> flow <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> flow-root <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#question_mark_()" title="Currently only available in English (US)" class="only-in-en-us">? (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_ampersand" title="Currently only available in English (US)" class="only-in-en-us">&amp;&amp; (en-US)</a> list-item<br><span id="display-internal">&lt;display-internal&gt;</span> = table-row-group <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> table-header-group <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> table-footer-group <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> table-row <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> table-cell <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> table-column-group <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> table-column <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> table-caption <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> ruby-base <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> ruby-text <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> ruby-base-container <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> ruby-text-container<br><span id="display-box">&lt;display-box&gt;</span> = contents <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> none<br><span id="display-legacy">&lt;display-legacy&gt;</span> = inline-block <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> inline-list-item <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> inline-table <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> inline-flex <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> inline-grid</code></p></pre></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div><p>В разделе <a href="#syntax">Syntax</a> содержатся несколько примеров для разных типов значений <code>display</code>, которые это свойство может принимать.</p>
+
+<p>Кроме того, вы можете найти подробные объяснения способов разметки для определённых значений <code>display</code> в других статьях на MDN:</p>
+
+<ul>
+ <li><a href="/css/CSS_Grid_Layout/">Разметка CSS Grid </a></li>
+ <li><a href="/css/CSS_Flexible_Box_Layout/">Разметка CSS Flexible box</a></li>
+ <li><a href="https://developer.mozilla.org/ru/docs/Learn/CSS/CSS_layout">Разметка CSS</a> (Модуль обучения для начинающих)</li>
+</ul></div><h2 id="доступность"><a href="#доступность" title="Permalink to Доступность">Доступность</a></h2><div></div><h3 id="display_none"><a href="#display_none" title="Permalink to display: none;"><code>display: none;</code></a></h3><div><p>Если свойство <code>display</code> принимает значение <code>none</code> на элементе,&nbsp; то элемент удаляется из <a href="https://developer.mozilla.org/ru/docs/Learn/Accessibility/What_is_accessibility">дерева доступности</a>. Это приводит к тому, что элемент и все его дочерние элементы больше не будут восприниматься технологиями чтения экрана.</p>
+
+<p>Если вы хотите визуально скрыть элемент, более доступной альтернативой является использование <a class="external" href="https://gomakethings.com/hidden-content-for-better-a11y/#hiding-the-link" rel=" noopener">комбинации свойств</a> для визуального удаления изображения с экрана, но это сохраняет его для синтаксического анализа с помощью вспомогательных технологий, таких как считыватели экрана.</p></div><h3 id="display_contents"><a href="#display_contents" title="Permalink to display: contents;"><code>display: contents;</code></a></h3><div><p>Браузеры удаляют любой элемент со свойством <code>display,</code> имеющим значение <code>contents</code> из&nbsp; <a href="https://developer.mozilla.org/ru/docs/Learn/Accessibility/What_is_accessibility">дерева доступности</a>. Это приводит к тому, что элемент (но не его дочерние элементы) больше не будут восприниматься технологиями чтения экрана. <span id="result_box" lang="ru"><span>Дочерние элементы становятся дочерними элементами элемента следующего уровня в DOM</span></span>.</p>
+
+<ul>
+ <li><a class="external" href="https://adrianroselli.com/2018/05/display-contents-is-not-a-css-reset.html" rel=" noopener">Display: Contents Is Not a CSS Reset | Adrian Roselli</a></li>
+ <li><a class="external" href="https://hiddedevries.nl/en/blog/2018-04-21-more-accessible-markup-with-display-contents" rel=" noopener">More accessible markup with display: contents — hiddedevries.nl</a></li>
+</ul></div><h3 id="таблицы"><a href="#таблицы" title="Permalink to Таблицы">Таблицы</a></h3><div><p>Если у элемента <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table" class="only-in-en-us" title="Currently only available in English (US)">&lt;table&gt; (en-US)</a> изменить значение свойства <code>display на </code><code>block</code>, <code>grid</code> или <code>flex, это изменит</code> его представление в&nbsp; <a href="https://developer.mozilla.org/ru/docs/Learn/Accessibility/What_is_accessibility">дереве доступности</a>. Это приводит к тому, что таблица<span id="result_box" lang="ru"><span> не будет объявлена должным образом с помощью технологии чтения экрана.</span></span></p>
+
+<ul>
+ <li><a class="external" href="https://developer.paciellogroup.com/blog/2018/03/short-note-on-what-css-display-properties-do-to-table-semantics/" rel=" noopener">Short note on what CSS display properties do to table semantics — The Paciello Group</a></li>
+ <li><a class="external" href="https://gomakethings.com/hidden-content-for-better-a11y/" rel=" noopener">Hidden content for better a11y | Go Make Things</a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/Understanding_WCAG/Perceivable#guideline_1.3_%e2%80%94_create_content_that_can_be_presented_in_different_ways">MDN Understanding WCAG, Guideline 1.3 explanations</a></li>
+ <li><a class="external" href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/content-structure-separation-programmatic.html" rel=" noopener">Understanding Success Criterion 1.3.1 | W3C Understanding WCAG 2.0</a></li>
+</ul></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-display/#the-display-properties" hreflang="en" lang="en" class="external" rel=" noopener">CSS Display Module Level&nbsp;3<br><small lang="ru">Определение 'display' в этой спецификации.</small></a></td>
+   <td><span class="spec-cr">Кандидат в рекомендации</span></td>
+   <td>Добавлены <code>run-in</code>, <code>flow</code>, <code>flow-root</code>, <code>contents</code> и multi-keyword значения.</td>
+  </tr>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-ruby/#ruby-display" hreflang="en" lang="en" class="external" rel=" noopener">CSS Ruby Layout Module Level&nbsp;1<br><small lang="ru">Определение 'display' в этой спецификации.</small></a></td>
+   <td><span class="spec-wd">Рабочий черновик</span></td>
+   <td>Добавлены <code>ruby</code>, <code>ruby-base</code>, <code>ruby-text</code>, <code>ruby-base-container</code> и <code>ruby-text-container</code>.</td>
+  </tr>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-grid/#grid-containers" hreflang="en" lang="en" class="external" rel=" noopener">CSS Grid Layout<br><small lang="ru">Определение 'display' в этой спецификации.</small></a></td>
+   <td><span class="spec-cr">Кандидат в рекомендации</span></td>
+   <td>Добавлены значения модели grid бокс.</td>
+  </tr>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-flexbox-1/#flex-containers" hreflang="en" lang="en" class="external" rel=" noopener">CSS Flexible Box Layout Module<br><small lang="ru">Определение 'display' в этой спецификации.</small></a></td>
+   <td><span class="spec-cr">Кандидат в рекомендации</span></td>
+   <td>Добавлены значения модели flexible бокс.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/CSS2/visuren.html#display-prop" hreflang="en" lang="en" class="external" rel=" noopener">CSS Level&nbsp;2 (Revision&nbsp;1)<br><small lang="ru">Определение 'display' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Добавлены значения модели table и <code>inline-block<em>.</em></code></td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/CSS1/#display" hreflang="en" lang="en" class="external" rel=" noopener">CSS Level&nbsp;1<br><small lang="ru">Определение 'display' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Начальное определение. Базовые значения: <code>none</code>, <code>block</code>, <code>inline</code> и <code>list-item</code>.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="совместимость_с_браузерами"><a href="#совместимость_с_браузерами" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/css/CSS_Flow_Layout/Block_and_Inline_Layout_in_Normal_Flow/">Блоковая и Inline разметка нормальном потоке</a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout/Intro_to_formatting_contexts">Formatting contexts explained</a></li>
+ <li><a href="/css/visibility/"><code>visibility</code></a>, <a href="/css/float/"><code>float</code></a>, <a href="/css/position/"><code>position</code></a></li>
+ <li><a href="/css/grid/"><code>grid</code></a>, <a href="/css/flex/"><code>flex</code></a></li>
+</ul></div>

@@ -1,0 +1,82 @@
+<h1>text-combine-upright</h1><div><div></div>
+
+<p><span class="seoSummary">The <strong><code>text-combine-upright</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> property sets the combination of characters into the space of a single character.</span> If the combined text is wider than 1em, the user agent must fit the contents within 1em. The resulting composition is treated as a single upright glyph for layout and decoration. This property only has an effect in vertical writing modes.</p>
+
+<p>This is used to produce an effect that is known as tate-chū-yoko (<span lang="ja">縦中横</span>) in Japanese, or as <span lang="zh-Hant">直書橫向</span> in Chinese.</p>
+
+<pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* Keyword values */</span>
+<span class="token property">text-combine-upright</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token property">text-combine-upright</span><span class="token punctuation">:</span> all<span class="token punctuation">;</span>
+
+<span class="token comment">/* Digits values */</span>
+<span class="token property">text-combine-upright</span><span class="token punctuation">:</span> digits<span class="token punctuation">;</span>     <span class="token comment">/* fits 2 consecutive digits horizontally inside vertical text */</span>
+<span class="token property">text-combine-upright</span><span class="token punctuation">:</span> digits 4<span class="token punctuation">;</span>   <span class="token comment">/* fits up to 4 consecutive digits horizontally inside vertical text */</span>
+
+<span class="token comment">/* Global values */</span>
+<span class="token property">text-combine-upright</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">text-combine-upright</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">text-combine-upright</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+ <dt><code>none</code></dt>
+ <dd>There is no special processing.</dd>
+ <dt><code>all</code></dt>
+ <dd>Attempts to typeset all consecutive characters within the box horizontally, such that they take up the space of a single character within the vertical line of the box.</dd>
+ <dt><code>digits &lt;integer&gt;?</code></dt>
+ <dd>Attempts to display a sequence of consecutive ASCII digits (U+0030–U+0039) that has as many or fewer characters than the specified integer, such that it takes up the space of a single character within the vertical line box. If the integer is omitted, it computes to 2. Integers outside the range of 2-4 are invalid.</dd>
+</dl></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td><code>none</code></td></tr><tr><th scope="row">Applies to</th><td>non-replaced inline elements</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance">Inherited</a></th><td>yes</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>specified keyword, plus integer if 'digits'</td></tr><tr><th scope="row">Animation type</th><td>Not animatable</td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate">none <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> all <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">[</a> digits <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/integer" title>&lt;integer&gt;</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#question_mark_()" title="Question mark: the entity is optional">?</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">]</a></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="digits"><a href="#digits" title="Permalink to Digits">Digits</a></h3><div><p>The digits value requires less markup than the all value when digits are being combined, but it is currently not very widely supported by browsers.</p>
+
+<h4 id="html">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ja<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>exampleText<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>平成20年4月16日に<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<h4 id="css">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token selector">.exampleText</span> <span class="token punctuation">{</span>
+  <span class="token property">writing-mode</span><span class="token punctuation">:</span> vertical-lr<span class="token punctuation">;</span>
+  <span class="token property">text-combine-upright</span><span class="token punctuation">:</span> digits 2<span class="token punctuation">;</span>
+  <span class="token property">font</span><span class="token punctuation">:</span> 36px serif<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<h4 id="results">Results</h4>
+
+<p></p><table class="sample-code-table"><thead><tr><th scope="col" style="text-align: center;">Screenshot</th><th scope="col" style="text-align: center;">Live sample</th></tr></thead><tbody><tr><td><img alt class="internal" src="https://mdn.mozillademos.org/files/12127/tate-chu-yoko.png" loading="lazy"></td><td><iframe class="sample-code-frame" id="frame_Digits" width="100" height="350" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/text-combine-upright/_sample_.Digits.html" loading="lazy"></iframe></td></tr></tbody></table><p></p></div><h3 id="all"><a href="#all" title="Permalink to All">All</a></h3><div><p>The all value requires markup around every piece of horizontal text, but it is currently supported by more browsers than the digits value.</p>
+
+<h4 id="html_2">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>zh-Hant<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>民國<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>num<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>105<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span>
+<span class="token punctuation">&gt;</span></span>年<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>num<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span>
+<span class="token punctuation">&gt;</span></span>月<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>num<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>29<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>日<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<h4 id="css_2">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token selector">html</span> <span class="token punctuation">{</span> <span class="token property">writing-mode</span><span class="token punctuation">:</span> vertical-rl<span class="token punctuation">;</span> <span class="token property">font</span><span class="token punctuation">:</span> 24px serif <span class="token punctuation">}</span>
+<span class="token selector">.num</span> <span class="token punctuation">{</span> <span class="token property">text-combine-upright</span><span class="token punctuation">:</span> all <span class="token punctuation">}</span>
+</code></pre>
+
+<h4 id="results_2">Results</h4>
+
+<p></p><table class="sample-code-table"><thead><tr><th scope="col" style="text-align: center;">Screenshot</th><th scope="col" style="text-align: center;">Live sample</th></tr></thead><tbody><tr><td><img alt class="internal" src="https://mdn.mozillademos.org/files/13096/text-combine-upright-all.png" loading="lazy"></td><td><iframe class="sample-code-frame" id="frame_All" width="250" height="300" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/text-combine-upright/_sample_.All.html" loading="lazy"></iframe></td></tr></tbody></table><p></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-writing-modes-4/#propdef-text-combine-upright" hreflang="en" lang="en" class="external" rel=" noopener">CSS Writing Modes Level&nbsp;4<br><small lang="en-US">The definition of 'text-combine-upright' in that specification.</small></a></td>
+   <td><span class="spec-cr">Candidate Recommendation</span></td>
+   <td>Add <code>digits</code> value</td>
+  </tr>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-writing-modes-3/#propdef-text-combine-upright" hreflang="en" lang="en" class="external" rel=" noopener">CSS Writing Modes Module Level&nbsp;3<br><small lang="en-US">The definition of 'text-combine-upright' in that specification.</small></a></td>
+   <td><span class="spec-pr">Proposed Recommendation</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode"><code>writing-mode</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-orientation"><code>text-orientation</code></a></li>
+</ul></div>

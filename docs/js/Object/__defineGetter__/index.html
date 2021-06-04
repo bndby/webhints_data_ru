@@ -1,0 +1,45 @@
+<h1>Object.prototype.__defineGetter__()</h1><div><div></div>
+
+<div class="warning notecard">
+  <p><strong>Warning:</strong> This feature is deprecated in favor of defining getters using the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer">object
+      initializer syntax</a> or the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty"><code>Object.defineProperty()</code></a> API. While this
+    feature is widely implemented, it is only described in the <a href="https://tc39.github.io/ecma262/#sec-additional-ecmascript-features-for-web-browsers" class="external" rel=" noopener">ECMAScript
+      specification</a> because of legacy usage. This method should not be used since
+    better alternatives exist.</p>
+</div>
+
+<p>The <code><strong>__defineGetter__</strong></code> method binds an object's property to
+  a function to be called when that property is looked up.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: js notranslate"><code><span class="token function">__defineGetter__</span><span class="token punctuation">(</span>prop<span class="token punctuation">,</span> func<span class="token punctuation">)</span></code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Parameters">Parameters</a></h3><div><dl>
+  <dt><code><var>prop</var></code></dt>
+  <dd>A string containing the name of the property to bind to the given function.</dd>
+  <dt><code><var>func</var></code></dt>
+  <dd>A function to be bound to a lookup of the specified property.</dd>
+</dl></div><h3 id="return_value"><a href="#return_value" title="Permalink to Return value">Return value</a></h3><div><p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined"><code>undefined</code></a>.</p></div><h2 id="description"><a href="#description" title="Permalink to Description">Description</a></h2><div><p>The <code>__defineGetter__</code> allows a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get">getter</a>
+  to be defined on a pre-existing object.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="non-standard_and_deprecated_way"><a href="#non-standard_and_deprecated_way" title="Permalink to Non-standard and deprecated way">Non-standard and deprecated way</a></h3><div><pre class="brush: js notranslate"><code><span class="token keyword">var</span> o <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+o<span class="token punctuation">.</span><span class="token function">__defineGetter__</span><span class="token punctuation">(</span><span class="token string">'gimmeFive'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token number">5</span><span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>o<span class="token punctuation">.</span>gimmeFive<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 5</span>
+</code></pre></div><h3 id="standard-compliant_ways"><a href="#standard-compliant_ways" title="Permalink to Standard-compliant ways">Standard-compliant ways</a></h3><div><pre class="brush: js notranslate"><code><span class="token comment">// Using the get operator</span>
+<span class="token keyword">var</span> o <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token keyword">get</span> <span class="token function">gimmeFive</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token number">5</span><span class="token punctuation">;</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>o<span class="token punctuation">.</span>gimmeFive<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 5</span>
+
+<span class="token comment">// Using Object.defineProperty</span>
+<span class="token keyword">var</span> o <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span>o<span class="token punctuation">,</span> <span class="token string">'gimmeFive'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">get</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token number">5</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>o<span class="token punctuation">.</span>gimmeFive<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 5</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://tc39.es/ecma262/#sec-object.prototype.__defineGetter__">Unknown specification<!-- --> <br><small># <!-- -->sec-object.prototype.__defineGetter__</small></a></td></tr></tbody></table><div></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+  <li>A polyfill of <code>Object.prototype.__defineGetter__</code> is available in <a href="https://github.com/zloirock/core-js#ecmascript-object" class="external" rel=" noopener"><code>core-js</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineSetter__"><code>Object.prototype.__defineSetter__()</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get"><code>get</code></a> operator</li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty"><code>Object.defineProperty()</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupGetter__"><code>Object.prototype.__lookupGetter__()</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupSetter__"><code>Object.prototype.__lookupSetter__()</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects#defining_getters_and_setters">JS
+      Guide: Defining Getters and Setters</a></li>
+  <li><a href="https://whereswalden.com/2010/04/16/more-spidermonkey-changes-ancient-esoteric-very-rarely-used-syntax-for-creating-getters-and-setters-is-being-removed/" class="external" rel=" noopener">[Blog
+      Post] Deprecation of __defineGetter__ and __defineSetter__</a></li>
+  <li><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=647423" class="external" rel=" noopener">bug&nbsp;647423</a></li>
+</ul></div>

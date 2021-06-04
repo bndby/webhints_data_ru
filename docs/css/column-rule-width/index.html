@@ -1,0 +1,61 @@
+<h1>column-rule-width</h1><div><div></div>
+
+<p>The <strong><code>column-rule-width</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> property sets the width of the line drawn between columns in a multi-column layout.</p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/column-rule-width.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* Keyword values */</span>
+<span class="token property">column-rule-width</span><span class="token punctuation">:</span> thin<span class="token punctuation">;</span>
+<span class="token property">column-rule-width</span><span class="token punctuation">:</span> medium<span class="token punctuation">;</span>
+<span class="token property">column-rule-width</span><span class="token punctuation">:</span> thick<span class="token punctuation">;</span>
+
+<span class="token comment">/* &lt;length&gt; values */</span>
+<span class="token property">column-rule-width</span><span class="token punctuation">:</span> 1px<span class="token punctuation">;</span>
+<span class="token property">column-rule-width</span><span class="token punctuation">:</span> 2.5em<span class="token punctuation">;</span>
+
+<span class="token comment">/* Global values */</span>
+<span class="token property">column-rule-width</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">column-rule-width</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">column-rule-width</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre>
+
+<p>The <code>column-rule-width</code> property is specified as a single <code>&lt;'border-width'&gt;</code> value.</p></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+ <dt><code>&lt;'border-width'&gt;</code></dt>
+ <dd>Is a keyword defined by <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-width"><code>border-width</code></a> describing the width of the rule. It may be either a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length"><code>&lt;length&gt;</code></a> or one of the <code>thin</code>, <code>medium</code>, or <code>thick</code> keywords.</dd>
+</dl></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td><code>medium</code></td></tr><tr><th scope="row">Applies to</th><td>multicol elements</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance">Inherited</a></th><td>no</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>the absolute length; <code>0</code> if the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/column-rule-style"><code>column-rule-style</code></a> is <code>none</code> or <code>hidden</code></td></tr><tr><th scope="row">Animation type</th><td>a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length#interpolation" title="Values of the <length> CSS data type are interpolated as real, floating-point numbers.">length</a></td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-width" title="<line-width>{1,4}">&lt;'border-width'&gt;</a></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="setting_a_thick_column_rule"><a href="#setting_a_thick_column_rule" title="Permalink to Setting a thick column rule">Setting a thick column rule</a></h3><div><h4 id="html">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>This is a bunch of text split into three columns.
+   The `column-rule-width` property is used to change
+   the width of the line that is drawn between columns.
+   Don't you think that's wonderful?<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<h4 id="css">CSS</h4>
+
+<pre class="brush:css notranslate"><code><span class="token selector">p</span> <span class="token punctuation">{</span>
+  <span class="token property">column-count</span><span class="token punctuation">:</span> 3<span class="token punctuation">;</span>
+  <span class="token property">column-rule-style</span><span class="token punctuation">:</span> solid<span class="token punctuation">;</span>
+  <span class="token property">column-rule-width</span><span class="token punctuation">:</span> thick<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<h4 id="result">Result</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Setting_a_thick_column_rule" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/column-rule-width/_sample_.Setting_a_thick_column_rule.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-multicol-1/#crw" hreflang="en" lang="en" class="external" rel=" noopener">CSS Multi-column Layout Module<br><small lang="en-US">The definition of 'column-rule-width' in that specification.</small></a></td>
+   <td><span class="spec-wd">Working Draft</span></td>
+   <td>Initial definition.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Multiple-column_Layout">Multiple-column Layout</a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/column-rule-style"><code>column-rule-style</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/column-rule-color"><code>column-rule-color</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/column-rule"><code>column-rule</code></a></li>
+</ul></div>

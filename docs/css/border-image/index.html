@@ -1,0 +1,122 @@
+<h1>border-image</h1><div><div></div>
+
+<p>The <strong><code>border-image</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> property draws an image around a given element. It replaces the element's regular <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border">border</a>.</p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/border-image.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+<div class="note notecard">
+<p><strong>Note:</strong> You should specify a separate <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-style"><code>border-style</code></a> in case the border image fails to load. Indeed, this is required according to the specification, although not all browsers implement this requirement.</p>
+</div></div><h2 id="constituent_properties"><a href="#constituent_properties" title="Permalink to Constituent properties">Constituent properties</a></h2><div><p>This property is a shorthand for the following CSS properties:</p>
+
+<ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-outset"><code>border-image-outset</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-repeat"><code>border-image-repeat</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-slice"><code>border-image-slice</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-source"><code>border-image-source</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-width"><code>border-image-width</code></a></li>
+</ul></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: css no-line-numbers notranslate"><code><span class="token comment">/* source | slice */</span>
+<span class="token property">border-image</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>red<span class="token punctuation">,</span> blue<span class="token punctuation">)</span> 27<span class="token punctuation">;</span>
+
+<span class="token comment">/* source | slice | repeat */</span>
+<span class="token property">border-image</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string url">"/images/border.png"</span><span class="token punctuation">)</span></span> 27 space<span class="token punctuation">;</span>
+
+<span class="token comment">/* source | slice | width */</span>
+<span class="token property">border-image</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>red<span class="token punctuation">,</span> blue<span class="token punctuation">)</span> 27 / 35px<span class="token punctuation">;</span>
+
+<span class="token comment">/* source | slice | width | outset | repeat */</span>
+<span class="token property">border-image</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string url">"/images/border.png"</span><span class="token punctuation">)</span></span> 27 23 / 50px 30px / 1rem round space<span class="token punctuation">;</span>
+</code></pre>
+
+<p>The <code>border-image</code> property may be specified with anywhere from one to five of the values listed below.</p>
+
+<div class="note notecard">
+<p><strong>Note:</strong> If the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">computed value</a> of <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-source"><code>border-image-source</code></a> is <code>none</code>, or if the image cannot be displayed, the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-style"><code>border-style</code></a> will be displayed instead.</p>
+</div></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+ <dt><code>&lt;'border-image-source'&gt;</code></dt>
+ <dd>The source image. See <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-source"><code>border-image-source</code></a>.</dd>
+ <dt><code>&lt;'border-image-slice'&gt;</code></dt>
+ <dd>The dimensions for slicing the source image into regions. Up to four values may be specified. See <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-slice"><code>border-image-slice</code></a>.</dd>
+ <dt><code>&lt;'border-image-width'&gt;</code></dt>
+ <dd>The width of the border image. Up to four values may be specified. See <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-width"><code>border-image-width</code></a>.</dd>
+ <dt><code>&lt;'border-image-outset'&gt;</code></dt>
+ <dd>The distance of the border image from the element's outside edge. Up to four values may be specified. See <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-outset"><code>border-image-outset</code></a>.</dd>
+ <dt><code>&lt;'border-image-repeat'&gt;</code></dt>
+ <dd>Defines how the edge regions of the source image are adjusted to fit the dimensions of the border image. Up to two values may be specified. See <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-repeat"><code>border-image-repeat</code></a>.</dd>
+</dl></div><h2 id="accessibility_concerns"><a href="#accessibility_concerns" title="Permalink to Accessibility concerns">Accessibility concerns</a></h2><div><p>Assistive technology cannot parse border images. If the image contains information critical to understanding the page's overall purpose, it is better to describe it semantically in the document.</p>
+
+<ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/Understanding_WCAG/Perceivable#guideline_1.1_%e2%80%94_providing_text_alternatives_for_non-text_content">MDN Understanding WCAG, Guideline 1.1 explanations</a></li>
+ <li><a href="https://www.w3.org/TR/2016/NOTE-UNDERSTANDING-WCAG20-20161007/text-equiv-all.html" rel="noopener" class="external">Understanding Success Criterion 1.1.1 &nbsp;| Understanding WCAG 2.0</a></li>
+</ul></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td>as each of the properties of the shorthand:<br><ul><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-source"><code>border-image-source</code></a>: <code>none</code></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-slice"><code>border-image-slice</code></a>: <code>100%</code></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-width"><code>border-image-width</code></a>: <code>1</code></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-outset"><code>border-image-outset</code></a>: <code>0</code></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-repeat"><code>border-image-repeat</code></a>: <code>stretch</code></li></ul></td></tr><tr><th scope="row">Applies to</th><td>all elements, except internal table elements when <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-collapse"><code>border-collapse</code></a> is <code>collapse</code>. It also applies to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::first-letter"><code>::first-letter</code></a>.</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance">Inherited</a></th><td>no</td></tr><tr><th scope="row">Percentages</th><td>as each of the properties of the shorthand:<br><ul><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-slice"><code>border-image-slice</code></a>: refer to the size of the border image</li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-width"><code>border-image-width</code></a>: refer to the width or height of the border image area</li></ul></td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>as each of the properties of the shorthand:<br><ul><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-outset"><code>border-image-outset</code></a>: as specified, but with relative lengths converted into absolute lengths</li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-repeat"><code>border-image-repeat</code></a>: as specified</li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-slice"><code>border-image-slice</code></a>: one to four percentage(s) (as specified) or absolute length(s), plus the keyword <code>fill</code> if specified</li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-source"><code>border-image-source</code></a>: <code>none</code> or the image with its URI made absolute</li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-width"><code>border-image-width</code></a>: as specified, but with relative lengths converted into absolute lengths</li></ul></td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-source" title="none | <image>">&lt;'border-image-source'&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_bar" title="Double bar: one or several of the entities must be present, in any order">||</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-slice" title="<number-percentage>{1,4} &amp;&amp; fill?">&lt;'border-image-slice'&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">[</a> / <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-width" title="[ <length-percentage> | <number> | auto ]{1,4}">&lt;'border-image-width'&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> / <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-width" title="[ <length-percentage> | <number> | auto ]{1,4}">&lt;'border-image-width'&gt;</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#question_mark_()" title="Question mark: the entity is optional">?</a> / <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-outset" title="[ <length> | <number> ]{1,4}">&lt;'border-image-outset'&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">]</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#question_mark_()" title="Question mark: the entity is optional">?</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_bar" title="Double bar: one or several of the entities must be present, in any order">||</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-repeat" title="[ stretch | repeat | round | space ]{1,2}">&lt;'border-image-repeat'&gt;</a></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="bitmap"><a href="#bitmap" title="Permalink to Bitmap">Bitmap</a></h3><div><p>In this example, we will apply a diamond pattern to an element's borders. The source for the border image is a ".png" file of 81 by 81 pixels, with three diamonds going vertically and horizontally:</p>
+
+<p><img alt="an example borderimage" src="/en-US/docs/Web/CSS/border-image/border.png" width="81" height="81" loading="lazy"></p>
+
+<h4 id="html">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bitmap<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This element is surrounded by a bitmap-based border image!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<h4 id="css">CSS</h4>
+
+<p>To match the size of a single diamond, we will use a value of 81 divided by 3, or <code>27</code>, for slicing the image into corner and edge regions. To center the border image on the edge of the element's background, we will make the outset values equal to half of the width values. Finally, a repeat value of <code>round</code> will make the border slices fit evenly, i.e., without clipping or gaps.</p>
+
+<pre class="brush:css notranslate"><code><span class="token selector">#bitmap</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #ffa<span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 36px solid orange<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 30px<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+
+  <span class="token property">border-image</span><span class="token punctuation">:</span>
+      <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string url">"https://mdn.mozillademos.org/files/4127/border.png"</span><span class="token punctuation">)</span></span>  <span class="token comment">/* source */</span>
+      27 /                    <span class="token comment">/* slice */</span>
+      36px 28px 18px 8px /    <span class="token comment">/* width */</span>
+      18px 14px 9px 4px       <span class="token comment">/* outset */</span>
+      round<span class="token punctuation">;</span>                  <span class="token comment">/* repeat */</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<h4 id="result">Result</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Bitmap" width="100%" height="200" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/border-image/_sample_.Bitmap.html" loading="lazy"></iframe></p></div><h3 id="gradient"><a href="#gradient" title="Permalink to Gradient">Gradient</a></h3><div><h4 id="html_2">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>gradient<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This element is surrounded by a gradient-based border image!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<h4 id="css_2">CSS</h4>
+
+<pre class="brush:css notranslate"><code><span class="token selector">#gradient</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 30px solid<span class="token punctuation">;</span>
+  <span class="token property">border-image</span><span class="token punctuation">:</span> <span class="token function">repeating-linear-gradient</span><span class="token punctuation">(</span>45deg<span class="token punctuation">,</span> #f33<span class="token punctuation">,</span> #3bf<span class="token punctuation">,</span> #f33 30px<span class="token punctuation">)</span> 60<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<h4 id="result_2">Result</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Gradient" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/border-image/_sample_.Gradient.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-backgrounds-3/#the-border-image" hreflang="en" lang="en" class="external" rel=" noopener">CSS Backgrounds and Borders Module Level&nbsp;3<br><small lang="en-US">The definition of 'border-image' in that specification.</small></a></td>
+   <td><span class="spec-cr">Candidate Recommendation</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table>
+
+<p></p><table class="properties"><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td>as each of the properties of the shorthand:<br><ul><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-source"><code>border-image-source</code></a>: <code>none</code></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-slice"><code>border-image-slice</code></a>: <code>100%</code></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-width"><code>border-image-width</code></a>: <code>1</code></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-outset"><code>border-image-outset</code></a>: <code>0</code></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-repeat"><code>border-image-repeat</code></a>: <code>stretch</code></li></ul></td></tr><tr><th scope="row">Applies to</th><td>all elements, except internal table elements when <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-collapse"><code>border-collapse</code></a> is <code>collapse</code>. It also applies to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::first-letter"><code>::first-letter</code></a>.</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance">Inherited</a></th><td>no</td></tr><tr><th scope="row">Percentages</th><td>as each of the properties of the shorthand:<br><ul><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-slice"><code>border-image-slice</code></a>: refer to the size of the border image</li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-width"><code>border-image-width</code></a>: refer to the width or height of the border image area</li></ul></td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>as each of the properties of the shorthand:<br><ul><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-outset"><code>border-image-outset</code></a>: as specified, but with relative lengths converted into absolute lengths</li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-repeat"><code>border-image-repeat</code></a>: as specified</li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-slice"><code>border-image-slice</code></a>: one to four percentage(s) (as specified) or absolute length(s), plus the keyword <code>fill</code> if specified</li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-source"><code>border-image-source</code></a>: <code>none</code> or the image with its URI made absolute</li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-width"><code>border-image-width</code></a>: as specified, but with relative lengths converted into absolute lengths</li></ul></td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border"><code>border</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/outline"><code>outline</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow"><code>box-shadow</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-image"><code>background-image</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/url()"><code>url()</code></a> function</li>
+ <li>Gradient functions: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/conic-gradient()"><code>conic-gradient()</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient()"><code>linear-gradient()</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/repeating-linear-gradient()"><code>repeating-linear-gradient()</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/radial-gradient()"><code>radial-gradient()</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/repeating-radial-gradient()"><code>repeating-radial-gradient()</code></a></li>
+</ul></div>

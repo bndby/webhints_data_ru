@@ -1,0 +1,159 @@
+<h1>font-family</h1><div><div></div>
+
+<p>CSS свойство <strong><code>font-family</code></strong> определяет приоритетный список из одного или нескольких названий семейства шрифтов и/или общее имя шрифта для выбранного элемента.</p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/font-family.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+
+
+<p>Значения разделены запятыми, чтобы указать, что они являются альтернативами. Браузер выберет из списка первый шрифт, который установлен или может быть скачан используя правило <a href="/css/@font-face/"><code>@font-face</code></a> .</p>
+
+<p>Часто удобно использовать сокращённое свойство <a href="/css/font/"><code>font</code></a>, чтобы задать <code>font-size</code> и другие свойства, которые относятся к шрифту.</p>
+
+<p>Вы всегда должны добавлять по крайней мере одно имя общего семейства шрифтов, так как нет гарантии, что какой-либо из указанных шрифтов будет доступен. Это позволит браузеру выбрать подходящий запасной шрифт, когда возникнет необходимость.</p>
+
+<p>Свойство <code>font-family</code> определяет список шрифтов в приоритете от высшего к низшему. Процесс выбора шрифта не останавливается после первого шрифта, найденного в системе пользователя. Скорее, выбор шрифта выполняется <em>по одному символу за раз</em>, поэтому если в доступном шрифте нет глифы для нужного символа, пробуются следующие по списку шрифты. (Однако, это не работает в Internet Explorer 6 и ранее.) Когда шрифт доступен только в некоторых <a href="/css/font-style/"><code>стилях</code></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant"><code>видах</code> <span>(en-US)</span></a> или <a href="/css/font-size/"><code>размерах</code></a>, эти свойства могут так же влиять на выбор шрифта.</p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* Имя шрифта и общие семейства шрифтов */</span>
+<span class="token property">font-family</span><span class="token punctuation">:</span> Gill Sans Extrabold<span class="token punctuation">,</span> sans-serif<span class="token punctuation">;</span>
+<span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">"Goudy Bookletter 1911"</span><span class="token punctuation">,</span> sans-serif<span class="token punctuation">;</span>
+
+<span class="token comment">/* Только общие семейства */</span>
+<span class="token property">font-family</span><span class="token punctuation">:</span> serif<span class="token punctuation">;</span>
+<span class="token property">font-family</span><span class="token punctuation">:</span> sans-serif<span class="token punctuation">;</span>
+<span class="token property">font-family</span><span class="token punctuation">:</span> monospace<span class="token punctuation">;</span>
+<span class="token property">font-family</span><span class="token punctuation">:</span> cursive<span class="token punctuation">;</span>
+<span class="token property">font-family</span><span class="token punctuation">:</span> fantasy<span class="token punctuation">;</span>
+<span class="token property">font-family</span><span class="token punctuation">:</span> system-ui<span class="token punctuation">;</span>
+<span class="token property">font-family</span><span class="token punctuation">:</span> emoji<span class="token punctuation">;</span>
+<span class="token property">font-family</span><span class="token punctuation">:</span> math<span class="token punctuation">;</span>
+<span class="token property">font-family</span><span class="token punctuation">:</span> fangsong<span class="token punctuation">;</span>
+
+<span class="token comment">/* Глобальные значения */</span>
+<span class="token property">font-family</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">font-family</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">font-family</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre>
+
+<p>Свойство <code>font-family</code> получает список из одного или более семейства шрифтов, разделённые запятыми. Каждое семейство шрифтов определяется как <code><a href="#<family-name>">&lt;family-name&gt;</a></code> или <code><a href="#<generic-name>">&lt;generic-name&gt;</a></code>.</p>
+
+<p>В приведённом ниже примере перечислены два семейства шрифтов, первое <code><a href="#<family-name>">&lt;family-name&gt;</a></code>, а второе как <code>&lt;generic-name&gt;</code>:</p>
+
+<pre class="brush: css notranslate"><code><span class="token property">font-family</span><span class="token punctuation">:</span> Gill Sans Extrabold<span class="token punctuation">,</span> sans-serif<span class="token punctuation">;</span></code></pre></div><h3 id="значения"><a href="#значения" title="Permalink to Значения">Значения</a></h3><div><dl>
+ <dt><a id="<family-name>" name="<family-name>"><code>&lt;family-name&gt;</code></a></dt>
+ <dd>Имя семейства шрифтов. К примеру, "Times" и "Helvetica" это семейства шрифтов. Названия семейства шрифтов, которые содержат пробелы, должны быть взяты в кавычки.</dd>
+ <dt><a id="<generic-name>" name="<generic-name>"><code>&lt;generic-name&gt;</code></a></dt>
+ <dd>
+ <p>Общие семейства шрифтов используются как резервный механизм для сохранения некоторого авторского стиля в момент, когда ни один из желаемых шрифтов недоступен. Общие семейства шрифтов являются ключевыми словами и <strong>не</strong> должны браться в кавычки. Общее семейство шрифтов должно определяться последним в списке семейств шрифтов. Определены следующие ключевые слова:</p>
+
+ <dl>
+  <dt><code>serif</code></dt>
+  <dd style="font-family: serif;">Глифы имеют завершающие штрихи, расширяющиеся или сужающиеся концы, или имеют фактически зазубренные окончания.<br>
+  Например, "<span style="font-family: lucida bright,serif;">Lucida Bright"</span>, "<span style="font-family: lucida fax,serif;">Lucida Fax"</span>, <span style="font-family: palatino,serif;">Palatino</span>, <span style="font-family: palatino linotype,serif;">"Palatino Linotype"</span>, <span style="font-family: palladio,serif;">Palladio</span>, <span style="font-family: urw palladio,serif;">"URW Palladio"</span>, <span style="font-family: serif;">serif</span>.</dd>
+  <dt><code>sans-serif</code></dt>
+  <dd style="font-family: sans-serif;">Глифы имеют гладкие окончания.<br>
+  Например, <span style="font-family: open sans,sans-serif;">"Open Sans"</span>, <span style="font-family: fira sans,sans-serif;">"Fira Sans"</span>, <span style="font-family: lucida sans,sans-serif;">"Lucida Sans"</span>, <span style="font-family: lucida sans unicode,sans-serif;">"Lucida Sans Unicode"</span>, <span style="font-family: trebuchet ms,sans-serif;">"Trebuchet MS"</span>, <span style="font-family: liberation sans,sans-serif;">"Liberation Sans"</span>, <span style="font-family: nimbus sans l,sans-serif;">"Nimbus Sans L"</span>, <span style="font-family: sans-serif;">sans-serif</span>.</dd>
+  <dt><code>monospace</code></dt>
+  <dd style="font-family: monospace;">Все глифы имеют одинаковую фиксированную ширину.<br>
+  Например, <span style="font-family: fira mono,monospace;">"Fira Mono"</span>, <span style="font-family: dejavu sans mono,monospace;">"DejaVu Sans Mono"</span>, <span style="font-family: menlo,monospace;">Menlo</span>, <span style="font-family: consolas,monospace;">Consolas</span>, <span style="font-family: liberation mono,monospace;">"Liberation Mono"</span>, <span style="font-family: monaco,monospace;">Monaco</span>, <span style="font-family: lucida console,monospace;">"Lucida Console"</span>, <span style="font-family: monospace;">monospace.</span></dd>
+  <dt><code>cursive</code></dt>
+  <dd style="font-family: cursive;">Глифы в курсивных шрифтах обычно имеют либо соединительные штрихи, либо другие рукописные характеристики, отличные от наклонных (italic) шрифтов. Глифы частично или полностью связаны, и результат больше напоминает рукописное перо или кисть, чем печатные буквы. Например, <span style="font-family: brush script mt,cursive;">"Brush Script MT</span>", <span style="font-family: brush script std,cursive;">"Brush Script Std</span>", <span>"Lucida Calligraphy"</span>, <span>"Lucida Handwriting"</span>, <span style="font-family: apple chancery,cursive;">"Apple Chancery"</span>, <span style="font-family: cursive;">cursive</span>.</dd>
+  <dt><code>fantasy</code></dt>
+  <dd style="font-family: fantasy;">Фэнтезийные шрифты - это прежде всего декоративные шрифты, которые содержат игривое представление персонажей. Например, <span style="font-family: papyrus,fantasy;">Papyrus</span>, <span style="font-family: herculanum,fantasy;">Herculanum</span>, <span style="font-family: party let,fantasy;">Party LET</span>, <span style="font-family: curlz mt,fantasy;">Curlz MT</span>, <span style="font-family: harrington,fantasy;">Harrington</span>, <span style="font-family: fantasy;">fantasy</span>.</dd>
+  <dt><code>system-ui</code></dt>
+  <dd>Глифы, взятые из дефолтного шрифта пользовательского интерфейса на данной платформе. Поскольку типографские традиции широко варьируются по всему миру, это общее семейство предназначено для гарнитур, которые не отображаются точно в других общих семействах.</dd>
+  <dt><code>math</code></dt>
+  <dd>Это семейство предназначено для особых стилистических задач представления математики: верхний индекс и нижний индекс, скобки, которые пересекают несколько строк, вложенные выражения и двойные глифы с различными значениями.</dd>
+  <dt><code>emoji</code></dt>
+  <dd>Шрифты, специально предназначенные для отображения эмодзи.</dd>
+  <dt><code>fangsong</code></dt>
+  <dd>Особый стиль китайских иероглифов, который является чем-то средним между стилем с засечками Song и курсивным стилем Кай. Этот стиль часто используется для правительственных документов.</dd>
+ </dl>
+ </dd>
+</dl></div><h3 id="валидные_имена_семейства_шрифтов"><a href="#валидные_имена_семейства_шрифтов" title="Permalink to Валидные имена семейства шрифтов">Валидные имена семейства шрифтов</a></h3><div><p>Имена семейств шрифтов должны быть указаны либо в виде строк в кавычках, либо в виде последовательности одного или нескольких идентификаторов без кавычек. Если имя семейства шрифтов содержит цифры или знаки пунктуации, такое имя должно быть заключено в кавычки.</p>
+
+<p>Например, следующие объявления являются валидными:</p>
+
+<pre class="brush:css notranslate"><code><span class="token property">font-family</span><span class="token punctuation">:</span> Gill Sans Extrabold<span class="token punctuation">,</span> sans-serif<span class="token punctuation">;</span>
+<span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">"Goudy Bookletter 1911"</span><span class="token punctuation">,</span> sans-serif<span class="token punctuation">;</span></code></pre>
+
+<p>Следующие объявления являются <strong>не валидными</strong>:</p>
+
+<pre class="brush:css example-bad notranslate"><code><span class="token property">font-family</span><span class="token punctuation">:</span> Goudy Bookletter 1911<span class="token punctuation">,</span> sans-serif<span class="token punctuation">;</span>
+<span class="token property">font-family</span><span class="token punctuation">:</span> Red/Black<span class="token punctuation">,</span> sans-serif<span class="token punctuation">;</span>
+<span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">"Lucida"</span> Grande<span class="token punctuation">,</span> sans-serif<span class="token punctuation">;</span>
+<span class="token property">font-family</span><span class="token punctuation">:</span> Ahem!<span class="token punctuation">,</span> sans-serif<span class="token punctuation">;</span>
+<span class="token property">font-family</span><span class="token punctuation">:</span> test<span class="token atrule"><span class="token rule">@foo</span><span class="token punctuation">,</span> sans-serif<span class="token punctuation">;</span></span>
+<span class="token property">font-family</span><span class="token punctuation">:</span> #POUND<span class="token punctuation">,</span> sans-serif<span class="token punctuation">;</span>
+<span class="token property">font-family</span><span class="token punctuation">:</span> Hawaii 5-0<span class="token punctuation">,</span> sans-serif<span class="token punctuation">;</span></code></pre></div><h3 id="формальный_синтаксис"><a href="#формальный_синтаксис" title="Permalink to Формальный синтаксис">Формальный синтаксис</a></h3><div><pre class="notranslate"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> <a href="#family-name">&lt;family-name&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <a href="#generic-family">&lt;generic-family&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#hash_mark_()" title="Currently only available in English (US)" class="only-in-en-us"># (en-US)</a><p style="font-family:Open Sans,Arial,sans-serif; margin: 10px 0 0 0;">где <br><code style="font-family:Consolas,Monaco,&quot;Andale Mono&quot;,monospace;"><span id="family-name">&lt;family-name&gt;</span> = <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/string" title="Currently only available in English (US)" class="only-in-en-us">&lt;string&gt; (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <a href="/css/custom-ident/" title>&lt;custom-ident&gt;</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#plus_()" title="Currently only available in English (US)" class="only-in-en-us">+ (en-US)</a><br><span id="generic-family">&lt;generic-family&gt;</span> = serif <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> sans-serif <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> cursive <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> fantasy <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> monospace</code></p></pre></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="некоторые_общие_семейства_шрифтов"><a href="#некоторые_общие_семейства_шрифтов" title="Permalink to Некоторые общие семейства шрифтов">Некоторые общие семейства шрифтов</a></h3><div><pre class="brush: css; notranslate"><code><span class="token selector">.serif</span> <span class="token punctuation">{</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> Times<span class="token punctuation">,</span> Times New Roman<span class="token punctuation">,</span> Georgia<span class="token punctuation">,</span> serif<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.sansserif</span> <span class="token punctuation">{</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> Verdana<span class="token punctuation">,</span> Arial<span class="token punctuation">,</span> Helvetica<span class="token punctuation">,</span> sans-serif<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.monospace</span> <span class="token punctuation">{</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> Lucida Console<span class="token punctuation">,</span> Courier<span class="token punctuation">,</span> monospace<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.cursive</span> <span class="token punctuation">{</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> cursive<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.fantasy</span> <span class="token punctuation">{</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> fantasy<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.emoji</span> <span class="token punctuation">{</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> emoji<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.math</span> <span class="token punctuation">{</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> math<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.fangsong</span> <span class="token punctuation">{</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> fangsong<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+
+
+<p><iframe class="sample-code-frame" id="frame_Некоторые_общие_семейства_шрифтов" width="600" height="120" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/font-family/_sample_.%D0%9D%D0%B5%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B5_%D0%BE%D0%B1%D1%89%D0%B8%D0%B5_%D1%81%D0%B5%D0%BC%D0%B5%D0%B9%D1%81%D1%82%D0%B2%D0%B0_%D1%88%D1%80%D0%B8%D1%84%D1%82%D0%BE%D0%B2.html" loading="lazy"></iframe></p></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-fonts-4/#generic-font-families" hreflang="en" lang="en" class="external" rel=" noopener">CSS Fonts Module Level&nbsp;4<br><small lang="ru">Определение 'generic font families' в этой спецификации.</small></a></td>
+   <td><span class="spec-wd">Рабочий черновик</span></td>
+   <td>Добавляет новые общие семейства шрифтов, в частности: <code>system-ui</code>, <code>emoji</code>, <code>math</code>, and <code>fangsong</code>.</td>
+  </tr>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-fonts-3/#font-family-prop" hreflang="en" lang="en" class="external" rel=" noopener">CSS Fonts Module Level&nbsp;3<br><small lang="ru">Определение 'font-family' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Никаких существенных изменений</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/CSS2/fonts.html#propdef-font-family" hreflang="en" lang="en" class="external" rel=" noopener">CSS Level&nbsp;2 (Revision&nbsp;1)<br><small lang="ru">Определение 'font-family' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Никаких существенных изменений</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/CSS1/#font-family" hreflang="en" lang="en" class="external" rel=" noopener">CSS Level&nbsp;1<br><small lang="ru">Определение 'font-familiy' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Первоначальное определение</td>
+  </tr>
+ </tbody>
+</table>
+
+<p></p><table class="properties"><tbody><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td>зависит от браузера</td></tr><tr><th scope="row">Применяется к</th><td>все элементы. Это также применяется к <a href="/css/::first-letter/"><code>::first-letter</code></a> и <a href="/css/::first-line/"><code>::first-line</code></a>.</td></tr><tr><th scope="row"><a href="/css/inheritance/">Наследуется</a></th><td>да</td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>как указано</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p>
+
+<p>[1]&nbsp;<code>system-ui</code> в данный момент не реализовано, смотри <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1226042" class="external" rel=" noopener">баг&nbsp;1226042</a>.</p>
+
+<p>[2]&nbsp;<code>system-ui</code> реализовано в Safari (<a href="https://bugs.webkit.org/show_bug.cgi?id=151493" class="external" rel=" noopener">wkbug.com/151493</a>), возможно будет выпущено в ближайшем времени.</p>
+
+<p>[3] префиксный алиас <code>-apple-system</code> поддерживается в Safari,&nbsp;начиная с OS X 10.11 и iOS 9, а также в Firefox 43 на macOS (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1201318" class="external" rel=" noopener">баг&nbsp;1201318</a>).</p></div>

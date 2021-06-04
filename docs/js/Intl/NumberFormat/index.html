@@ -1,0 +1,148 @@
+<h1>Intl.NumberFormat</h1><div><div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Объект <strong><code>Intl.NumberFormat</code></strong> является конструктором объектов, включающих языка-зависимое форматирование чисел.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code>new Intl.NumberFormat([<var>locales</var>[, <var>options</var>]])
+Intl.NumberFormat.call(<var>this</var>[, <var>locales</var>[, <var>options</var>]])
+</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>locales</code></dt>
+ <dd>
+ <p>Необязательный параметр. Строка с языковой меткой BCP 47, либо массив таких строк. Описание общей формы и интерпретации аргумента <code>locales</code> смотрите на <a href="/js/Intl#locale_identification_and_negotiation/">странице, посвящённой объекту Intl</a>. Разрешены следующие ключи расширения Unicode:</p>
+
+ <dl>
+  <dt><code>nu</code></dt>
+  <dd>Используемая система нумерации. Возможные значения включают в себя: <code>"arab"</code>, <code>"arabext"</code>, <code>"bali"</code>, <code>"beng"</code>, <code>"deva"</code>, <code>"fullwide"</code>, <code>"gujr"</code>, <code>"guru"</code>, <code>"hanidec"</code>, <code>"khmr"</code>, <code>"knda"</code>, <code>"laoo"</code>, <code>"latn"</code>, <code>"limb"</code>, <code>"mlym"</code>, <code>"mong"</code>, <code>"mymr"</code>, <code>"orya"</code>, <code>"tamldec"</code>, <code>"telu"</code>, <code>"thai"</code>, <code>"tibt"</code>.</dd>
+ </dl>
+ </dd>
+ <dt><code>options</code></dt>
+ <dd>
+ <p>Необязательный параметр. Объект с некоторыми или всеми из следующих свойств:</p>
+
+ <dl>
+  <dt><code>localeMatcher</code></dt>
+  <dd>Используемый алгоритм сопоставления локалей. Возможными значениями являются <code>"lookup"</code> и <code>"best fit"</code>; значением по умолчанию является <code>"best fit"</code>. Информацию по этой опции смотрите на <a href="/js/Intl#locale_negotiation/">странице, посвящённой объекту Intl</a>.</dd>
+  <dt><code>style</code></dt>
+  <dd>Используемый стиль форматирования. Возможными значениями являются <code>"decimal"</code> для простого форматирования числа, <code>"currency"</code> для форматирования валюты и <code>"percent"</code> для форматирования процентов; значением по умолчанию является <code>"decimal"</code>.</dd>
+  <dt><code>currency</code></dt>
+  <dd>Валюта, используемая при форматировании валют. Возможными значениями являются коды валют ISO 4217, например, <code>"USD"</code> для доллара США, <code>"EUR"</code> для евро или <code>"CNY"</code> для китайского юаня&nbsp;— смотрите <a href="https://www.currency-iso.org/en/home/tables/table-a1.html" class="external" rel=" noopener">список кодов текущих валют и денежных средств</a>. Свойство не имеет значения по умолчанию; если свойство <code>style</code> равно <code>"currency"</code>, свойство <code>currency</code> также должно присутствовать.</dd>
+  <dt><code>currencyDisplay</code></dt>
+  <dd>Определяет, как отображать валюту при форматировании валют. Возможными значениями являются <code>"symbol"</code> для использования локализованного символа валюты, например € для евро, <code>"code"</code> для использования кода валюты ISO, <code>"name"</code> для использования локализованного названия валюты, например <code>"доллар США"</code> для доллара; значением по умолчанию является <code>"symbol"</code>.</dd>
+  <dt><code>useGrouping</code></dt>
+  <dd>Определяет, использовать ли разделители групп разрядов, например, разделители тысяч или тысяч/лакх/крор. Возможными значениями являются <code>true</code> и <code>false</code>; значением по умолчанию является <code>true</code>.</dd>
+ </dl>
+
+ <p>Следующие свойства разбиваются на две группы: <code>minimumIntegerDigits</code>, <code>minimumFractionDigits</code> и <code>maximumFractionDigits</code> входят в одну группу, а <code>minimumSignificantDigits</code> и <code>maximumSignificantDigits</code>&nbsp;— в другую. Если определено хотя бы одно свойство из второй группы, свойства первой&nbsp;группы будут проигнорированы.</p>
+
+ <dl>
+  <dt><code>minimumIntegerDigits</code></dt>
+  <dd>Минимальное используемое количество цифр целой части числа. Возможными значениями являются значения от 1 до 21; значением по умолчанию является 1.</dd>
+  <dt><code>minimumFractionDigits</code></dt>
+  <dd>Минимальное используемое количество цифр дробной части числа. Возможными значениями являются значения от 0 до 20; значением по умолчанию для простого и процентного форматирования является 0; значением по умолчанию для форматирования валюты является число цифр младших единиц, определяемое в <a href="https://www.currency-iso.org/en/home/tables/table-a1.html" class="external" rel=" noopener">списке кодов валют ISO 4217</a> (2, если данный список не предоставляет такой информации).</dd>
+  <dt><code>maximumFractionDigits</code></dt>
+  <dd>Максимальное используемое количество цифр дробной части числа. Возможными значениями являются значения от 0 до 20; значением по умолчанию для простого форматирования является наибольшее значение из <code>minimumFractionDigits</code> и 3; значением по умолчанию для форматирования валюты является число цифр младших единиц, определяемое в <a href="https://www.currency-iso.org/en/home/tables/table-a1.html" class="external" rel=" noopener">списке кодов валют ISO 4217</a> (2, если данный список не предоставляет такой информации); значением по умолчанию для процентного форматирования является наибольшее значение из <code>minimumFractionDigits</code> и 0.</dd>
+  <dt><code>minimumSignificantDigits</code></dt>
+  <dd>Минимальное используемое количество значащих цифр числа. Возможными значениями являются значения от 1 до 21; значением по умолчанию является 1.</dd>
+  <dt><code>maximumSignificantDigits</code></dt>
+  <dd>Максимальное используемое количество значащих цифр числа. Возможными значениями являются значения от 1 до 21; значением по умолчанию является <code>minimumSignificantDigits</code>.</dd>
+ </dl>
+ </dd>
+</dl></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div></div><h3 id="properties"><a href="#properties" title="Permalink to Свойства">Свойства</a></h3><div><dl>
+ <dt><a href="https://developer.mozilla.org/ru/docs/conflicting/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat"><code>Intl.NumberFormat.prototype</code></a></dt>
+ <dd>Позволяет добавлять свойства ко всем объектам.</dd>
+</dl></div><h2 id="methods"><a href="#methods" title="Permalink to Методы">Методы</a></h2><div><dl>
+ <dt><a href="/js/Intl/NumberFormat/supportedLocalesOf/"><code>Intl.NumberFormat.supportedLocalesOf()</code></a></dt>
+ <dd>Возвращает массив, содержащий те из предоставленных локалей, которые поддерживаются без отката к локали по умолчанию среды выполнения.</dd>
+</dl></div><h2 id="numberformat_instances"><a href="#numberformat_instances" title="Permalink to Экземпляры объекта NumberFormat">Экземпляры объекта <code>NumberFormat</code></a></h2><div></div><h3 id="properties_of_numberformat_instance"><a href="#properties_of_numberformat_instance" title="Permalink to Свойства">Свойства</a></h3><div><p>Экземпляры <code>NumberFormat</code> наследуют следующие свойства из своего прототипа:</p>
+
+<div><dl>
+ <dt><code>Intl.NumberFormat.prototype.constructor</code></dt>
+ <dd>Ссылка на <a href="/js/Intl/NumberFormat/" aria-current="page"><code>Intl.NumberFormat</code></a>.</dd>
+ <dt><a href="/js/Intl/NumberFormat/format/"><code>Intl.NumberFormat.prototype.format</code></a></dt>
+ <dd>Геттер; возвращает функцию, форматирующую число согласно локали и опциям форматирования этого объекта <a href="/js/Intl/NumberFormat/" aria-current="page"><code>NumberFormat</code></a>.</dd>
+</dl></div></div><h3 id="methods_of_numberformat_instance"><a href="#methods_of_numberformat_instance" title="Permalink to Методы">Методы</a></h3><div><p>Экземпляры <code>NumberFormat</code> наследуют следующие методы из своего прототипа:</p>
+
+<div><dl>
+ <dt><a href="/js/Intl/NumberFormat/resolvedOptions/"><code>Intl.NumberFormat.prototype.resolvedOptions()</code></a></dt>
+ <dd>Возвращает новый объект со свойствами, отражающими локаль и опции сравнения, вычисленные при инициализации объекта.</dd>
+</dl></div></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_basic_usage"><a href="#example_basic_usage" title="Permalink to Пример: базовое использование">Пример: базовое использование</a></h3><div><p>При базовом использовании без определения локали возвращается строка, отформатированная с помощью локали по умолчанию с опциями по умолчанию.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> number <span class="token operator">=</span> <span class="token number">3500</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Intl<span class="token punctuation">.</span>NumberFormat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span>number<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// → '3,500' в локали US English</span>
+</code></pre></div><h3 id="example_using_locales"><a href="#example_using_locales" title="Permalink to Пример: использование аргумента locales">Пример: использование аргумента <code>locales</code></a></h3><div><p>Этот пример показывает некоторые локализованные числовые форматы. Для получения формата языка, используемого в пользовательском интерфейсе вашего приложения, убедитесь, что вы указали этот язык (и, возможно, несколько запасных языков) через аргумент <code>locales</code>:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> number <span class="token operator">=</span> <span class="token number">123456.789</span><span class="token punctuation">;</span>
+
+<span class="token comment">// В Германии в качестве разделителя целой и дробной части используется запятая, а в качестве разделителя разрядов - точка</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Intl<span class="token punctuation">.</span>NumberFormat</span><span class="token punctuation">(</span><span class="token string">'de-DE'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span>number<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// → 123.456,789</span>
+
+<span class="token comment">// В России в качестве разделителя целой и дробной части используется запятая, а в качестве разделителя разрядов - пробел</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Intl<span class="token punctuation">.</span>NumberFormat</span><span class="token punctuation">(</span><span class="token string">'ru-RU'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span>number<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// → 123 456,789</span>
+
+<span class="token comment">// В большинстве арабоговорящих стран используют настоящие арабские цифры</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Intl<span class="token punctuation">.</span>NumberFormat</span><span class="token punctuation">(</span><span class="token string">'ar-EG'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span>number<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// → ١٢٣٤٥٦٫٧٨٩</span>
+
+<span class="token comment">// В Индии используют разделители для тысяч/лакх/крор</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Intl<span class="token punctuation">.</span>NumberFormat</span><span class="token punctuation">(</span><span class="token string">'en-IN'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span>number<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// → 1,23,456.789</span>
+
+<span class="token comment">// Ключ расширения nu запрашивает систему нумерации, например, китайскую десятичную</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Intl<span class="token punctuation">.</span>NumberFormat</span><span class="token punctuation">(</span><span class="token string">'zh-Hans-CN-u-nu-hanidec'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span>number<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// → 一二三,四五六.七八九</span>
+
+<span class="token comment">// Если запрашиваемый язык может не поддерживаться, например</span>
+<span class="token comment">// балийский, откатываемся на запасной язык, в данном случае индонезийский</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Intl<span class="token punctuation">.</span>NumberFormat</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'ban'</span><span class="token punctuation">,</span> <span class="token string">'id'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span>number<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// → 123.456,789</span>
+</code></pre></div><h3 id="example_using_options"><a href="#example_using_options" title="Permalink to Пример: использование аргумента options">Пример: использование аргумента <code>options</code></a></h3><div><p>Результат может быть настроен с помощью аргумента <code>options</code>:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> number <span class="token operator">=</span> <span class="token number">123456.789</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Запрашиваем формат валюты</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Intl<span class="token punctuation">.</span>NumberFormat</span><span class="token punctuation">(</span><span class="token string">'de-DE'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> style<span class="token operator">:</span> <span class="token string">'currency'</span><span class="token punctuation">,</span> currency<span class="token operator">:</span> <span class="token string">'EUR'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span>number<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// → 123.456,79 €</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Intl<span class="token punctuation">.</span>NumberFormat</span><span class="token punctuation">(</span><span class="token string">'ru-RU'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> style<span class="token operator">:</span> <span class="token string">'currency'</span><span class="token punctuation">,</span> currency<span class="token operator">:</span> <span class="token string">'RUB'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span>number<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// → 123 456,79 руб.</span>
+
+<span class="token comment">// Японская йена не использует младшие единицы</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Intl<span class="token punctuation">.</span>NumberFormat</span><span class="token punctuation">(</span><span class="token string">'ja-JP'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> style<span class="token operator">:</span> <span class="token string">'currency'</span><span class="token punctuation">,</span> currency<span class="token operator">:</span> <span class="token string">'JPY'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span>number<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">// → ￥123,457</span>
+
+<span class="token comment">// Ограничиваем до трёх значащих цифр</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Intl<span class="token punctuation">.</span>NumberFormat</span><span class="token punctuation">(</span><span class="token string">'en-IN'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> maximumSignificantDigits<span class="token operator">:</span> <span class="token number">3</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span>number<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// → 1,23,000</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-402/1.0/#sec-11.1" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript Internationalization API 1.0 (ECMA-402)<br><small lang="ru">Определение 'Intl.NumberFormat' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Изначальное определение.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p>
+
+<div id="compat-mobile"></div></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><div><ul>
+ <li>Введение: <a href="http://norbertlindenberg.com/2012/12/ecmascript-internationalization-api/index.html" class="external" rel=" noopener">API интернационализации ECMAScript</a></li>
+ <li>Конструкторы
+  <ul>
+   <li><a href="/js/Intl/Collator/"><code>Intl.Collator</code></a></li>
+   <li><a href="/js/Intl/DateTimeFormat/"><code>Intl.DateTimeFormat</code></a></li>
+   <li><a href="/js/Intl/NumberFormat/" aria-current="page"><code>Intl.NumberFormat</code></a></li>
+  </ul>
+ </li>
+ <li>Методы
+  <ul>
+   <li><a href="/js/String/localeCompare/"><code>String.prototype.localeCompare()</code></a></li>
+   <li><a href="/js/Number/toLocaleString/"><code>Number.prototype.toLocaleString()</code></a></li>
+   <li><a href="/js/Date/toLocaleString/"><code>Date.prototype.toLocaleString()</code></a></li>
+   <li><a href="/js/Date/toLocaleDateString/"><code>Date.prototype.toLocaleDateString()</code></a></li>
+   <li><a href="/js/Date/toLocaleTimeString/"><code>Date.prototype.toLocaleTimeString()</code></a></li>
+  </ul>
+ </li>
+</ul></div></div>

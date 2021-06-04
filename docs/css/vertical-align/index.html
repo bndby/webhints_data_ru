@@ -1,0 +1,139 @@
+<h1>vertical-align</h1><div><div></div>
+
+<p>Свойство&nbsp;<a href="/css/" title="CSS">CSS</a>&nbsp;&nbsp;<code>vertical-align</code>&nbsp;описывает вертикальное позиционирование строчных (inline), строчно-блочных (inline-block)&nbsp;элементов&nbsp;или ячеек таблицы (table-cell).</p>
+
+<pre class="brush: css no-line-numbers notranslate"><code><span class="token comment">/* ключевые значения */</span>
+<span class="token property">vertical-align</span><span class="token punctuation">:</span> baseline<span class="token punctuation">;</span>
+<span class="token property">vertical-align</span><span class="token punctuation">:</span> sub<span class="token punctuation">;</span>
+<span class="token property">vertical-align</span><span class="token punctuation">:</span> super<span class="token punctuation">;</span>
+<span class="token property">vertical-align</span><span class="token punctuation">:</span> text-top<span class="token punctuation">;</span>
+<span class="token property">vertical-align</span><span class="token punctuation">:</span> text-bottom<span class="token punctuation">;</span>
+<span class="token property">vertical-align</span><span class="token punctuation">:</span> middle<span class="token punctuation">;</span>
+<span class="token property">vertical-align</span><span class="token punctuation">:</span> top<span class="token punctuation">;</span>
+<span class="token property">vertical-align</span><span class="token punctuation">:</span> bottom<span class="token punctuation">;</span>
+
+<span class="token comment">/* значения длины (&lt;length&gt;) */</span>
+<span class="token property">vertical-align</span><span class="token punctuation">:</span> 10em<span class="token punctuation">;</span>
+<span class="token property">vertical-align</span><span class="token punctuation">:</span> 4px<span class="token punctuation">;</span>
+
+<span class="token comment">/* процентные значения (&lt;percentage&gt;) */</span>
+<span class="token property">vertical-align</span><span class="token punctuation">:</span> 20%<span class="token punctuation">;</span>
+
+<span class="token comment">/* глобальные значения */</span>
+<span class="token property">vertical-align</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">vertical-align</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">vertical-align</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre>
+
+<p>Свойство <code> vertical-align</code> может использоваться в двух контекстах:</p>
+
+<ul>
+ <li>Для вертикального позиционирования области строчного элемента внутри области содержащей его строки. Например, с помощью него можно вертикально позиционировать <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/img"><code>&lt;img&gt;</code></a> в строке текста:</li>
+</ul>
+
+<div id="vertical-align-inline">
+
+
+
+</div>
+
+<p><iframe class="example-outcome-frame" id="frame_vertical-align-inline" width="1200" height="120" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/vertical-align/_sample_.vertical-align-inline.html" loading="lazy"></iframe></p>
+
+<ul>
+ <li>Для вертикального позиционирования содержимого ячейки таблицы:</li>
+</ul>
+
+<div id="vertical-align-table">
+
+
+
+</div>
+
+<p><iframe class="example-outcome-frame" id="frame_vertical-align-table" width="1200" height="210" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/vertical-align/_sample_.vertical-align-table.html" loading="lazy"></iframe></p>
+
+<div class="note notecard">
+<p><strong>Обратите внимание:</strong> свойство vertical-align применяется только к строчным элементам и элементам ячеек таблицы: его нельзя использовать для вертикального позиционирования <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Block-level_elements">блочных элементов</a>.</p>
+</div>
+
+<p></p><table class="properties"><tbody><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td><code>baseline</code></td></tr><tr><th scope="row">Применяется к</th><td>строчным элементам и ячейкам таблиц. Это также применяется к <a href="/css/::first-letter/"><code>::first-letter</code></a> и <a href="/css/::first-line/"><code>::first-line</code></a>.</td></tr><tr><th scope="row"><a href="/css/inheritance/">Наследуется</a></th><td>нет</td></tr><tr><th scope="row">Проценты</th><td>относятся к <a href="/css/line-height/"><code>line-height</code></a> самого элемента</td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>для процентов и значений длин, абсолютных длин или ключевых слов, если указаны</td></tr><tr><th scope="row">Animation type</th><td><a href="/css/length#interpolation/" title="Значения типа данных CSS <длина> интерполируются как вещественные числа с плавающей запятой.">длина</a></td></tr></tbody></table><p></p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><p>Свойство <code>vertical-align</code> задаётся одним из ключевых значений, указанных ниже.</p></div><h3 id="значения_для_строчных_элементов"><a href="#значения_для_строчных_элементов" title="Permalink to Значения для строчных элементов">Значения для строчных элементов</a></h3><div><h4 id="значения_относительно_родительского_элемента">Значения относительно родительского элемента</h4>
+
+<p>Данные значения позиционируют элемент по вертикали относительно родительского элемента:</p>
+
+<dl>
+ <dt><code>baseline</code></dt>
+ <dd>Выравнивает базовую линию элемента с базовой линией родительского элемента. Базовая линия некоторых <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Replaced_element" class="only-in-en-us" title="Currently only available in English (US)">замещаемых элементов (en-US)</a>, таких как <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea" class="only-in-en-us" title="Currently only available in English (US)">&lt;textarea&gt; (en-US)</a>, не описана в спецификации HTML, что означает, что их поведение при указании данного ключевого слова может отличаться в зависимости от браузера.</dd>
+ <dt><code>sub</code></dt>
+ <dd><span id="result_box" lang="ru"><span class="hps">Выравнивает</span> <span class="hps">базовую линию</span> <span class="hps">элемента с</span> <span class="alt-edited hps">базовой линией подстрочного индекса </span><span class="alt-edited hps">своего</span> <span class="hps">родителя.</span></span></dd>
+ <dt><code>super</code></dt>
+ <dd><span id="result_box" lang="ru"><span class="hps">Выравнивает</span> <span class="hps">базовую линию</span> <span class="hps">элемента с</span> базовой линией <span class="alt-edited hps">надстрочного индекса </span><span class="alt-edited hps">своего</span> <span class="hps">родителя</span></span>.</dd>
+ <dt><code>text-top</code></dt>
+ <dd>Выравнивает верхний край элемента с верхним краем шрифта родительского элемента.</dd>
+ <dt><code>text-bottom</code></dt>
+ <dd>Выравнивает нижний край элемента с нижним краем шрифта родительского элемента.</dd>
+ <dt><code>middle</code></dt>
+ <dd>Выравнивает середину элемента с базовой линией своего родителя плюс половина от его высоты (x-height).</dd>
+ <dt><a href="/css/length/"><code>&lt;length&gt;</code></a></dt>
+ <dd>Поднимает базовую линию элемента на указанную величину над базовой линией родительского элемента. Допустимы отрицательные значения.</dd>
+ <dt><a href="/css/percentage/"><code>&lt;percentage&gt;</code></a></dt>
+ <dd>Поднимает базовую линию элемента на указанную в процентах величину (вычисляется относительно значения свойства <a href="/css/line-height/"><code>line-height</code></a>) над базовой линией родительского элемента. Допустимы отрицательные значения.</dd>
+</dl>
+
+<h4 id="значения_относительно_строки">Значения относительно строки</h4>
+
+<p>Следующие значения позиционируют элемент по вертикали относительно всей строки:</p>
+
+<dl>
+ <dt><code>top</code></dt>
+ <dd>Выравнивает верхний край элемента и его потомков с верхним краем всей строки.</dd>
+ <dt><code>bottom</code></dt>
+ <dd>Выравнивает нижний край элемента и его потомков с нижним краем всей строки.</dd>
+</dl>
+
+<p>Для элементов, у которых нет базовой линии, вместо неё используется нижняя граница внешнего отступа (margin).</p></div><h3 id="значения_для_ячеек_таблицы"><a href="#значения_для_ячеек_таблицы" title="Permalink to Значения для ячеек таблицы">Значения для ячеек таблицы</a></h3><div><dl>
+ <dt><code>baseline</code> (и <code>sub</code>, <code>super</code>, <code>text-top</code>, <code>text-bottom</code>, <code>&lt;length&gt;</code>, и <code>&lt;percentage&gt;</code>)</dt>
+ <dd>Выравнивает базовую линию ячейки с базовой линией всех остальных ячеек этой строки, которые выравнены относительно базовой линии.</dd>
+ <dt><code>top</code></dt>
+ <dd>Выравнивает верхнюю границу внутреннего отступа (padding) ячейки с верхним краем строки таблицы.</dd>
+ <dt><code>middle</code></dt>
+ <dd>Выравнивает внутреннее поле (padding box) ячейки по центру относительно строки таблицы.</dd>
+ <dt><code>bottom</code></dt>
+ <dd>Выравнивает нижнюю границу внутреннего отступа (padding) ячейки с нижним краем строки таблицы.</dd>
+</dl>
+
+<p>Допустимы отрицательные значения.</p></div><h3 id="формальный_синтаксис"><a href="#формальный_синтаксис" title="Permalink to Формальный синтаксис">Формальный синтаксис</a></h3><div><pre class="notranslate">baseline <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> sub <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> super <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> text-top <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> text-bottom <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> middle <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> top <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> bottom <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <a href="/css/percentage/" title>&lt;percentage&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <a href="/css/length/" title="Возможные значения: a number followed by'em', 'ex', 'ch', 'rem', 'px', 'cm', 'mm', 'in', 'vh', 'vw', 'vmin', 'vmax', 'pt', 'pc' или 'px', как 3px, 1.5cm, -0.5em или 0">&lt;length&gt;</a></pre></div><h2 id="пример"><a href="#пример" title="Permalink to Пример">Пример</a></h2><div></div><h3 id="html"><a href="#html" title="Permalink to HTML">HTML</a></h3><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>Изображение <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://mdn.mozillademos.org/files/12245/frame_image.svg<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>link<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>32<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>32<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span> с выравниванием по умолчанию.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>Изображение <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>top<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://mdn.mozillademos.org/files/12245/frame_image.svg<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>link<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>32<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>32<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span> с выравниванием по верхнему краю.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>Изображение <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bottom<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://mdn.mozillademos.org/files/12245/frame_image.svg<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>link<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>32<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>32<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span> с выравниванием по нижнему краю.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>Изображение <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>middle<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://mdn.mozillademos.org/files/12245/frame_image.svg<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>link<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>32<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>32<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span> с выравниванием по центру.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h3 id="css"><a href="#css" title="Permalink to CSS">CSS</a></h3><div><pre class="brush: css notranslate"><code><span class="token selector">img.top</span> <span class="token punctuation">{</span> <span class="token property">vertical-align</span><span class="token punctuation">:</span> text-top<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token selector">img.bottom</span> <span class="token punctuation">{</span> <span class="token property">vertical-align</span><span class="token punctuation">:</span> text-bottom<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token selector">img.middle</span> <span class="token punctuation">{</span> <span class="token property">vertical-align</span><span class="token punctuation">:</span> middle<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+</code></pre></div><h3 id="результат"><a href="#результат" title="Permalink to Результат">Результат</a></h3><div><p><iframe class="sample-code-frame" id="frame_Пример" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/vertical-align/_sample_.%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80.html" loading="lazy"></iframe></p></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-transitions/#animatable-css" hreflang="en" lang="en" class="external" rel=" noopener">CSS Transitions<br><small lang="ru">Определение 'vertical-align' в этой спецификации.</small></a></td>
+   <td><span class="spec-wd">Рабочий черновик</span></td>
+   <td>Определяет <code>vertical-align</code> как анимируемый.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/CSS2/visudet.html#propdef-vertical-align" hreflang="en" lang="en" class="external" rel=" noopener">CSS Level&nbsp;2 (Revision&nbsp;1)<br><small lang="ru">Определение 'vertical-align' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Добавляет значение <a href="/css/length/"><code>&lt;length&gt;</code></a> и позволяет применять его к элементам с типом <code>table-cell</code> – <a href="/css/display/"><code>display</code></a>.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/CSS1/#vertical-align" hreflang="en" lang="en" class="external" rel=" noopener">CSS Level&nbsp;1<br><small lang="ru">Определение 'vertical-align' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Изначальное определение.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/css/line-height/"><code>line-height</code></a>, <a href="/css/text-align/"><code>text-align</code></a>, <a href="/css/margin/"><code>margin</code></a></li>
+ <li><a href="http://phrogz.net/css/vertical-align/index.html" title="http://phrogz.net/css/vertical-align/index.html" class="external" rel=" noopener">Understanding <code>vertical-align</code>, or "How (Not) To Vertically Center Content"</a></li>
+ <li><a href="http://christopheraue.net/2014/03/05/vertical-align/" title="http://christopheraue.net/2014/03/05/vertical-align/" class="external" rel=" noopener">All You Need To Know About Vertical-Align</a></li>
+</ul></div>

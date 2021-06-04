@@ -1,0 +1,62 @@
+<h1>RegExp.prototype.dotAll</h1><div><p></p><p></p>
+
+<p>The&nbsp;<strong><code>dotAll</code></strong>&nbsp;property indicates whether or not the "<code>s</code>" flag is used with the regular expression.&nbsp;<code>dotAll</code>&nbsp;is a read-only property of an individual regular expression instance.</p>
+
+<div><iframe class="interactive" width="100%" height="490" src="https://interactive-examples.mdn.mozilla.net/pages/js/regexp-prototype-dotall.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+<p></p><table class="standard-table">
+  <thead>
+    <tr>
+      <th class="header" colspan="2">Property attributes of <code>RegExp.prototype.dotAll</code></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Writable</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <td>Enumerable</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <td>Configurable</td>
+      <td>yes</td>
+    </tr>
+  </tbody>
+</table><p></p></div><h2 id="description"><a href="#description" title="Permalink to Description">Description</a></h2><div><p>The value of&nbsp;<code>dotAll</code>&nbsp;is a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean"><code>Boolean</code></a> and&nbsp;<code>true</code>&nbsp;if the "<code>s</code>" flag was used; otherwise,&nbsp;<code>false</code>. The "<code>s</code>" flag indicates that the dot special character ("<code>.</code>") should additionally match the following line terminator ("newline") characters in a string, which it would not match otherwise:</p>
+
+<ul>
+ <li>U+000A LINE FEED (LF) ("<code>\n</code>")</li>
+ <li>U+000D CARRIAGE RETURN (CR) ("<code>\r</code>")</li>
+ <li>U+2028 LINE SEPARATOR</li>
+ <li>U+2029 PARAGRAPH SEPARATOR</li>
+</ul>
+
+<p>This effectively means the dot will&nbsp;match any character on the Unicode Basic Multilingual Plane (BMP). To allow it to match astral characters, the "<code>u</code>" (unicode) flag should be used. Using both flags in conjunction allows the dot to match any&nbsp;Unicode character, without exceptions.</p>
+
+<p>You cannot change this property directly.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="using_dotall"><a href="#using_dotall" title="Permalink to Using&nbsp;dotAll">Using&nbsp;<code>dotAll</code></a></h3><div><pre class="brush: js notranslate"><code><span class="token keyword">var</span> str1 <span class="token operator">=</span> <span class="token string">'bar\nexample foo example'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> regex1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">RegExp</span><span class="token punctuation">(</span><span class="token string">'bar.example'</span><span class="token punctuation">,</span><span class="token string">'s'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>regex1<span class="token punctuation">.</span>dotAll<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Output: true</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>str1<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span>regex1<span class="token punctuation">,</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Output: foo example</span>
+
+<span class="token keyword">var</span> str2 <span class="token operator">=</span> <span class="token string">'bar\nexample foo example'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> regex2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">RegExp</span><span class="token punctuation">(</span><span class="token string">'bar.example'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>regex2<span class="token punctuation">.</span>dotAll<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Output: false</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>str2<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span>regex2<span class="token punctuation">,</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Output: bar</span>
+                                      <span class="token comment">//         example foo example</span></code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://tc39.es/ecma262/#sec-get-regexp.prototype.dotAll">Unknown specification<!-- --> <br><small># <!-- -->sec-get-regexp.prototype.dotAll</small></a></td></tr></tbody></table><div></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/lastIndex"><code>RegExp.lastIndex</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/global"><code>RegExp.prototype.global</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/hasIndices"><code>RegExp.prototype.hasIndices</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/ignoreCase"><code>RegExp.prototype.ignoreCase</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/multiline"><code>RegExp.prototype.multiline</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/source"><code>RegExp.prototype.source</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/sticky"><code>RegExp.prototype.sticky</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/unicode"><code>RegExp.prototype.unicode</code></a></li>
+</ul></div>

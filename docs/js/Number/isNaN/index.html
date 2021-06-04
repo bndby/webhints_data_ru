@@ -1,0 +1,45 @@
+<h1>Number.isNaN()</h1><div><div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Метод <strong><code>Number.isNaN()</code></strong> определяет, является ли переданное значение <a href="/js/NaN/"><code>NaN</code></a>. Это более надёжная версия оригинальной глобальной функции <a href="/js/isNaN/"><code>isNaN()</code></a>.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code>Number.isNaN(<var>value</var>)</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>value</code></dt>
+ <dd>Значение, проверяемое на <a href="/js/NaN/"><code>NaN</code></a>.</dd>
+</dl></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Поскольку оба оператора проверки на равенство, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators"><code>==</code> <span>(en-US)</span></a> и <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators"><code>===</code> <span>(en-US)</span></a>, вычисляются в <code>false</code> при проверке, что <a href="/js/NaN/"><code>NaN</code></a> <em>и есть</em> <a href="/js/NaN/"><code>NaN</code></a>, появляется необходимость в функции <code>Number.isNaN()</code>. Эта ситуация отличается от всех других возможных сравнений в JavaScript.</p>
+
+<p>В отличие от глобальной функции <a href="/js/isNaN/"><code>isNaN()</code></a>, <code>Number.isNaN()</code> не имеет проблемы принудительного преобразования параметра в число. Это значит, что в него безопасно передавать значения, которые обычно превращаются в <a href="/js/NaN/"><code>NaN</code></a>, но на самом деле <a href="/js/NaN/"><code>NaN</code></a> не являются. Также это значит, что метод возвращает <code>true</code> только для числовых значений, имеющих значение <a href="/js/NaN/"><code>NaN</code></a>.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div><pre class="brush: js notranslate"><code>Number<span class="token punctuation">.</span><span class="token function">isNaN</span><span class="token punctuation">(</span><span class="token number">NaN</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
+Number<span class="token punctuation">.</span><span class="token function">isNaN</span><span class="token punctuation">(</span>Number<span class="token punctuation">.</span><span class="token number">NaN</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
+Number<span class="token punctuation">.</span><span class="token function">isNaN</span><span class="token punctuation">(</span><span class="token number">0</span> <span class="token operator">/</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token comment">// true</span>
+
+<span class="token comment">// При использовании глобальной функции isNaN() это всё будет true</span>
+Number<span class="token punctuation">.</span><span class="token function">isNaN</span><span class="token punctuation">(</span><span class="token string">'NaN'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">// false</span>
+Number<span class="token punctuation">.</span><span class="token function">isNaN</span><span class="token punctuation">(</span><span class="token keyword">undefined</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// false</span>
+Number<span class="token punctuation">.</span><span class="token function">isNaN</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token comment">// false</span>
+Number<span class="token punctuation">.</span><span class="token function">isNaN</span><span class="token punctuation">(</span><span class="token string">'blabla'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// false</span>
+
+<span class="token comment">// А это всё в любом случае будет false</span>
+Number<span class="token punctuation">.</span><span class="token function">isNaN</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Number<span class="token punctuation">.</span><span class="token function">isNaN</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Number<span class="token punctuation">.</span><span class="token function">isNaN</span><span class="token punctuation">(</span><span class="token number">37</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Number<span class="token punctuation">.</span><span class="token function">isNaN</span><span class="token punctuation">(</span><span class="token string">'37'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Number<span class="token punctuation">.</span><span class="token function">isNaN</span><span class="token punctuation">(</span><span class="token string">'37.37'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Number<span class="token punctuation">.</span><span class="token function">isNaN</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Number<span class="token punctuation">.</span><span class="token function">isNaN</span><span class="token punctuation">(</span><span class="token string">' '</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="polyfill"><a href="#polyfill" title="Permalink to Полифил">Полифил</a></h2><div><pre class="brush: js notranslate"><code>Number<span class="token punctuation">.</span>isNaN <span class="token operator">=</span> Number<span class="token punctuation">.</span>isNaN <span class="token operator">||</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">typeof</span> value <span class="token operator">===</span> <span class="token string">'number'</span> <span class="token operator">&amp;&amp;</span> <span class="token function">isNaN</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td>
+    <p><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-number.isnan" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Number.isnan' в этой спецификации.</small></a></p>
+   </td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Изначальное определение.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="совместимость_с_браузерами"><a href="#совместимость_с_браузерами" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/Number/"><code>Number</code></a></li>
+ <li><a href="/js/isNaN/"><code>isNaN()</code></a></li>
+</ul></div>

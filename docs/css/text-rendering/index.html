@@ -1,0 +1,103 @@
+<h1>text-rendering</h1><div><div></div>
+
+<p><span class="seoSummary">The <strong><code>text-rendering</code></strong> CSS property provides information to the rendering engine about what to optimize for when rendering text.</span></p>
+
+<p>The browser makes trade-offs among speed, legibility, and geometric precision.</p>
+
+<pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* Keyword values */</span>
+<span class="token property">text-rendering</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+<span class="token property">text-rendering</span><span class="token punctuation">:</span> optimizeSpeed<span class="token punctuation">;</span>
+<span class="token property">text-rendering</span><span class="token punctuation">:</span> optimizeLegibility<span class="token punctuation">;</span>
+<span class="token property">text-rendering</span><span class="token punctuation">:</span> geometricPrecision<span class="token punctuation">;</span>
+
+<span class="token comment">/* Global values */</span>
+<span class="token property">text-rendering</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">text-rendering</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">text-rendering</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre>
+
+<div class="note notecard">
+<p><strong>Note:</strong> The <code>text-rendering</code> property is an SVG property that is not defined in any CSS standard. However, Gecko and WebKit browsers let you apply this property to HTML and XML content on Windows, macOS, and Linux.</p>
+</div>
+
+<p>One very visible effect is <code>optimizeLegibility</code>, which enables ligatures (ff, fi, fl, etc.) in text smaller than 20px for some fonts (for example, Microsoft's <em>Calibri</em>, <em>Candara</em>, <em>Constantia</em>, and <em>Corbel</em>, or the <em>DejaVu</em> font family).</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+ <dt><code>auto</code></dt>
+ <dd>The browser makes educated guesses about when to optimize for speed, legibility, and geometric precision while drawing text. For differences in how this value is interpreted by the browser, see the compatibility table.</dd>
+ <dt><code>optimizeSpeed</code></dt>
+ <dd>The browser emphasizes rendering speed over legibility and geometric precision when drawing text. It disables kerning and ligatures.</dd>
+ <dt><code>optimizeLegibility</code></dt>
+ <dd>The browser emphasizes legibility over rendering speed and geometric precision. This enables kerning and optional ligatures.</dd>
+ <dt><code>geometricPrecision</code></dt>
+ <dd>
+ <p>The browser emphasizes geometric precision over rendering speed and legibility. Certain aspects of fonts — such as kerning — don't scale linearly. So this value can make text using those fonts look good.</p>
+
+ <p>In SVG, when text is scaled up or down, browsers calculate the final size of the text (which is determined by the specified font size and the applied scale) and request a font of that computed size from the platform's font system. But if you request a font size of, say, 9 with a scale of 140%, the resulting font size of 12.6 doesn't explicitly exist in the font system, so the browser rounds the font size to 12 instead. This results in stair-step scaling of text.</p>
+
+ <p>But the <code>geometricPrecision</code> property — when fully supported by the rendering engine — lets you scale your text fluidly. For large scale factors, you might see less-than-beautiful text rendering, but the size is what you would expect—neither rounded up nor down to the nearest font size supported by Windows or Linux.</p>
+
+ <p class="note"><strong>Note</strong>: WebKit precisely applies the specified value, but Gecko treats the value the same as <code>optimizeLegibility</code>.</p>
+ </dd>
+</dl></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td><code>auto</code></td></tr><tr><th scope="row">Applies to</th><td>text elements</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance">Inherited</a></th><td>yes</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>as specified</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate">auto <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> optimizeSpeed <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> optimizeLegibility <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> geometricPrecision</pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="automatic_application_of_optimizelegibility"><a href="#automatic_application_of_optimizelegibility" title="Permalink to Automatic application of optimizeLegibility">Automatic application of optimizeLegibility</a></h3><div><p>This demonstrates how <code>optimizeLegibility</code> is used by browsers automatically when the <code>font-size</code> is smaller than <code>20px</code>.</p>
+
+<h4 id="html">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>small<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>LYoWAT - ff fi fl ffl<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>big<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>LYoWAT - ff fi fl ffl<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<h4 id="css">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token selector">.small</span> <span class="token punctuation">{</span> <span class="token property">font</span><span class="token punctuation">:</span> 19.9px <span class="token string">"Constantia"</span><span class="token punctuation">,</span> <span class="token string">"Times New Roman"</span><span class="token punctuation">,</span> <span class="token string">"Georgia"</span><span class="token punctuation">,</span> <span class="token string">"Palatino"</span><span class="token punctuation">,</span> serif<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token selector">.big</span>   <span class="token punctuation">{</span> <span class="token property">font</span><span class="token punctuation">:</span> 20px <span class="token string">"Constantia"</span><span class="token punctuation">,</span> <span class="token string">"Times New Roman"</span><span class="token punctuation">,</span> <span class="token string">"Georgia"</span><span class="token punctuation">,</span> <span class="token string">"Palatino"</span><span class="token punctuation">,</span> serif<span class="token punctuation">;</span> <span class="token punctuation">}</span></code></pre>
+
+<h4 id="result">Result</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Automatic_application_of_optimizeLegibility" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/text-rendering/_sample_.Automatic_application_of_optimizeLegibility.html" loading="lazy"></iframe></p></div><h3 id="optimizespeed_vs_optimizelegibility"><a href="#optimizespeed_vs_optimizelegibility" title="Permalink to optimizeSpeed vs optimizeLegibility">optimizeSpeed vs optimizeLegibility</a></h3><div><p>This example shows the difference between the appearance of <code>optimizeSpeed</code> and <code>optimizeLegibility</code> (in your browser; other browsers may vary).</p>
+
+<h4 id="html_2">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>speed<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>LYoWAT - ff fi fl ffl<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>legibility<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>LYoWAT - ff fi fl ffl<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<h4 id="css_2">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token selector">p</span> <span class="token punctuation">{</span> <span class="token property">font</span><span class="token punctuation">:</span> 1.5em <span class="token string">"Constantia"</span><span class="token punctuation">,</span> <span class="token string">"Times New Roman"</span><span class="token punctuation">,</span> <span class="token string">"Georgia"</span><span class="token punctuation">,</span> <span class="token string">"Palatino"</span><span class="token punctuation">,</span> serif <span class="token punctuation">}</span>
+
+<span class="token selector">.speed</span>       <span class="token punctuation">{</span> <span class="token property">text-rendering</span><span class="token punctuation">:</span> optimizeSpeed<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token selector">.legibility</span>  <span class="token punctuation">{</span> <span class="token property">text-rendering</span><span class="token punctuation">:</span> optimizeLegibility<span class="token punctuation">;</span> <span class="token punctuation">}</span></code></pre>
+
+<h4 id="result_2">Result</h4>
+
+<p><iframe class="sample-code-frame" id="frame_optimizeSpeed_vs_optimizeLegibility" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/text-rendering/_sample_.optimizeSpeed_vs_optimizeLegibility.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://svgwg.org/svg2-draft/painting.html#TextRenderingProperty" hreflang="en" lang="en" class="external" rel=" noopener">Scalable Vector Graphics (SVG) 2<br><small lang="en-US">The definition of 'text-rendering' in that specification.</small></a></td>
+   <td><span class="spec-cr">Candidate Recommendation</span></td>
+   <td>No change</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/SVG11/painting.html#TextRenderingProperty" hreflang="en" lang="en" class="external" rel=" noopener">Scalable Vector Graphics (SVG) 1.1 (Second Edition)<br><small lang="en-US">The definition of 'text-rendering' in that specification.</small></a></td>
+   <td><span class="spec-rec">Recommendation</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_text">Drawing text in a <code>&lt;canvas&gt;</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Text_Decoration">CSS Text Decoration</a> CSS module</li>
+ <li>Related CSS properties
+  <ul>
+   <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration">text-decoration</a></code> (and its longhand properties, such as <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-line">text-decoration-line</a></code>, <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-style">text-decoration-style</a></code>, and <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-thickness">text-decoration-thickness</a></code>)</li>
+   <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-emphasis">text-emphasis</a></code> (and its longhand properties, including <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-emphasis-color">text-emphasis-color</a></code>, <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-emphasis-position">text-emphasis-position</a></code>, and <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-emphasis-style">text-emphasis-style</a></code>)</li>
+   <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow">text-shadow</a></code></li>
+   <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform">text-transform</a></code></li>
+  </ul>
+ </li>
+ <li>The <a href="https://developer.mozilla.org/en-US/docs/Web/SVG">SVG</a> <code><a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/text-rendering">text-rendering</a></code> attribute</li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/SVG_and_CSS">SVG and CSS</a></li>
+</ul></div>

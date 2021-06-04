@@ -1,0 +1,86 @@
+<h1>background-position-y</h1><div><div></div>
+
+<p>The <strong><code>background-position-y</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> property sets the initial vertical position for each background image. The position is relative to the position layer set by <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-origin"><code>background-origin</code></a>.</p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/background-position-y.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+<!-- The source for this interactive example is stored in a GitHub repository. If you'd like to contribute to the interactive examples project, please clone https://github.com/mdn/interactive-examples and send us a pull request. -->
+
+<p>The value of this property is overridden by any declaration of the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background"><code>background</code></a> or <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-position"><code>background-position</code></a> shorthand properties applied to the element after it.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* Keyword values */</span>
+<span class="token property">background-position-y</span><span class="token punctuation">:</span> top<span class="token punctuation">;</span>
+<span class="token property">background-position-y</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+<span class="token property">background-position-y</span><span class="token punctuation">:</span> bottom<span class="token punctuation">;</span>
+
+<span class="token comment">/* &lt;percentage&gt; values */</span>
+<span class="token property">background-position-y</span><span class="token punctuation">:</span> 25%<span class="token punctuation">;</span>
+
+<span class="token comment">/* &lt;length&gt; values */</span>
+<span class="token property">background-position-y</span><span class="token punctuation">:</span> 0px<span class="token punctuation">;</span>
+<span class="token property">background-position-y</span><span class="token punctuation">:</span> 1cm<span class="token punctuation">;</span>
+<span class="token property">background-position-y</span><span class="token punctuation">:</span> 8em<span class="token punctuation">;</span>
+
+<span class="token comment">/* Side-relative values */</span>
+<span class="token property">background-position-y</span><span class="token punctuation">:</span> bottom 3px<span class="token punctuation">;</span>
+<span class="token property">background-position-y</span><span class="token punctuation">:</span> bottom 10%<span class="token punctuation">;</span>
+
+<span class="token comment">/* Multiple values */</span>
+<span class="token property">background-position-y</span><span class="token punctuation">:</span> 0px<span class="token punctuation">,</span> center<span class="token punctuation">;</span>
+
+<span class="token comment">/* Global values */</span>
+<span class="token property">background-position-y</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">background-position-y</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">background-position-y</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre>
+
+<p>The <code>background-position-y</code> property is specified as one or more values, separated by commas.</p></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+ <dt><code>top</code></dt>
+ <dd>Aligns the top edge of the background image with the top edge of the background position layer.</dd>
+ <dt><code>center</code></dt>
+ <dd>Aligns the vertical center of the background image with the vertical center of the background position layer.</dd>
+ <dt><code>bottom</code></dt>
+ <dd>Aligns the bottom edge of the background image with the bottom edge of the background position layer.</dd>
+ <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length"><code>&lt;length&gt;</code></a></dt>
+ <dd>The offset of the given background image's horizontal&nbsp;edge from the corresponding background position layer's top horizontal edge.&nbsp;(Some browsers allow assigning the bottom edge for offset).</dd>
+ <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/percentage"><code>&lt;percentage&gt;</code></a></dt>
+ <dd>The offset of the given background image's vertical position relative to the container. A value of 0% means&nbsp;that the top edge of the background image is aligned with the top edge of the container, and a value of 100%&nbsp;means&nbsp;that the&nbsp;<em>bottom</em> edge of the background image is aligned with the&nbsp;<em>bottom</em> edge of the container, thus a value of 50% vertically centers the&nbsp;background image.</dd>
+</dl></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td><code>top</code></td></tr><tr><th scope="row">Applies to</th><td>all elements</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance">Inherited</a></th><td>no</td></tr><tr><th scope="row">Percentages</th><td>refer to height of background positioning area minus height of background image</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>A list, each item consisting of: an offset given as a combination of an absolute length and a percentage, plus an origin keyword</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">[</a> center <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">[</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">[</a> top <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> bottom <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> y-start <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> y-end <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">]</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#question_mark_()" title="Question mark: the entity is optional">?</a> <a href="#length-percentage">&lt;length-percentage&gt;</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#question_mark_()" title="Question mark: the entity is optional">?</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">]</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax##exclamation_point_(!)" title="Exclamation point: the group must produce at least one value">!</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">]</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#hash_mark_()" title="Hash mark: the entity is repeated one or several times, each occurence separated by a comma">#</a><p style="font-family:Open Sans,Arial,sans-serif; margin: 10px 0 0 0;">where <br><code style="font-family:Consolas,Monaco,&quot;Andale Mono&quot;,monospace;"><span id="length-percentage">&lt;length-percentage&gt;</span> = <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length" title="Possible values: a number followed by'em', 'ex', 'ch', 'rem', 'px', 'cm', 'mm', 'in', 'vh', 'vw', 'vmin', 'vmax', 'pt', 'pc' or 'px', like 3px, 1.5cm, -0.5em or 0">&lt;length&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/percentage" title>&lt;percentage&gt;</a></code></p></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="basic_example"><a href="#basic_example" title="Permalink to Basic example">Basic example</a></h3><div><p>The following example shows a simple background image implementation, with background-position-x and background-position-y used to define the image's horizontal and vertical positions separately.</p>
+
+<h4 id="html">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<h4 id="css">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token selector">div</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> skyblue<span class="token punctuation">;</span>
+  <span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>https://media.prod.mdn.mozit.cloud/attachments/2020/07/29/17350/3b4892b7e820122ac6dd7678891d4507/firefox.png<span class="token punctuation">)</span></span><span class="token punctuation">;</span>
+  <span class="token property">background-repeat</span><span class="token punctuation">:</span> no-repeat<span class="token punctuation">;</span>
+  <span class="token property">background-position-x</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+  <span class="token property">background-position-y</span><span class="token punctuation">:</span> bottom 10px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<h4 id="result">Result</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Basic_example" width="100%" height="300" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/background-position-y/_sample_.Basic_example.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-backgrounds-4/#background-position-longhands" hreflang="en" lang="en" class="external" rel=" noopener">CSS Backgrounds and Borders Module Level&nbsp;4<br><small lang="en-US">The definition of 'background-position-y' in that specification.</small></a></td>
+   <td><span class="spec-ed">Editor's Draft</span></td>
+   <td>Initial specification of longhand sub-properties of <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-position"><code>background-position</code></a> to match longstanding implementations.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><div></div></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-position"><code>background-position</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-position-x"><code>background-position-x</code></a></li>
+ <li><a class="page-not-created" title="The documentation about this has not yet been written; please consider contributing!"><code>background-position-inline</code></a></li>
+ <li><a class="page-not-created" title="The documentation about this has not yet been written; please consider contributing!"><code>background-position-block</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Backgrounds_and_Borders/Using_multiple_backgrounds">Using multiple backgrounds</a></li>
+</ul></div>

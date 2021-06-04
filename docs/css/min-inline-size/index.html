@@ -1,0 +1,57 @@
+<h1>min-inline-size</h1><div><div></div>
+
+<p>The <strong><code>min-inline-size</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> property defines the horizontal or vertical minimal size of an element's block, depending on its writing mode. It corresponds to either the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/min-width"><code>min-width</code></a> or the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/min-height"><code>min-height</code></a> property, depending on the value of <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode"><code>writing-mode</code></a>.</p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/min-inline-size.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* &lt;length&gt; values */</span>
+<span class="token property">min-inline-size</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+<span class="token property">min-inline-size</span><span class="token punctuation">:</span> 5em<span class="token punctuation">;</span>
+
+<span class="token comment">/* &lt;percentage&gt; values */</span>
+<span class="token property">min-inline-size</span><span class="token punctuation">:</span> 10%<span class="token punctuation">;</span>
+
+<span class="token comment">/* Keyword values */</span>
+<span class="token property">min-inline-size</span><span class="token punctuation">:</span> max-content<span class="token punctuation">;</span>
+<span class="token property">min-inline-size</span><span class="token punctuation">:</span> min-content<span class="token punctuation">;</span>
+<span class="token property">min-inline-size</span><span class="token punctuation">:</span> <span class="token function">fit-content</span><span class="token punctuation">(</span>20em<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">/* Global values */</span>
+<span class="token property">min-inline-size</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">min-inline-size</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">min-inline-size</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre>
+
+<p>If the writing mode is vertically oriented, the value of <code>min-inline-size</code> relates to the minimum height of the element; otherwise, it relates to the minimum width of the element. A related property is <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/min-block-size"><code>min-block-size</code></a>, which defines the other dimension of the element.</p></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><p>The <code>min-inline-size</code> property takes the same values as the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/min-width"><code>min-width</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/min-height"><code>min-height</code></a> properties.</p></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td><code>0</code></td></tr><tr><th scope="row">Applies to</th><td>same as <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/width"><code>width</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/height"><code>height</code></a></td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance">Inherited</a></th><td>no</td></tr><tr><th scope="row">Percentages</th><td>inline-size of containing block</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>same as <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/min-width"><code>min-width</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/min-height"><code>min-height</code></a></td></tr><tr><th scope="row">Animation type</th><td>a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length#interpolation" title="Values of the <length> CSS data type are interpolated as real, floating-point numbers.">length</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/percentage#interpolation" title="Values of the <percentage> CSS data type are interpolated as real, floating-point numbers.">percentage</a> or calc();</td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/min-width" title="auto | <length> | <percentage> | min-content | max-content | fit-content | fit-content(<length-percentage>)">&lt;'min-width'&gt;</a></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="setting_minimum_inline_size_for_vertical_text"><a href="#setting_minimum_inline_size_for_vertical_text" title="Permalink to Setting minimum inline size for vertical text">Setting minimum inline size for vertical text</a></h3><div><h4 id="html">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>exampleText<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Example text<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<h4 id="css">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token selector">.exampleText</span> <span class="token punctuation">{</span>
+  <span class="token property">writing-mode</span><span class="token punctuation">:</span> vertical-rl<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span>
+  <span class="token property">block-size</span><span class="token punctuation">:</span> 5%<span class="token punctuation">;</span>
+  <span class="token property">min-inline-size</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<h4 id="result">Result</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Setting_minimum_inline_size_for_vertical_text" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/min-inline-size/_sample_.Setting_minimum_inline_size_for_vertical_text.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-logical/#propdef-min-inline-size" hreflang="en" lang="en" class="external" rel=" noopener">CSS Logical Properties and Values Level&nbsp;1<br><small lang="en-US">The definition of 'min-inline-size' in that specification.</small></a></td>
+   <td><span class="spec-ed">Editor's Draft</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li>The mapped physical properties: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/min-width"><code>min-width</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/min-height"><code>min-height</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode"><code>writing-mode</code></a></li>
+</ul></div>

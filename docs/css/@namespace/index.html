@@ -1,0 +1,46 @@
+<h1>@namespace</h1><div><p></p><p></p></div><h2 id="описание"><a href="#описание" title="Permalink to Описание">Описание</a></h2><div><p><code>@namespace</code>&nbsp;- это правила (<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule">at-rule</a>) определяющие&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Namespaces">пространства имён XML</a>, которые будут использованы в <a href="https://developer.mozilla.org/en-US/docs/Web/API/StyleSheet">таблице стилей</a>. Они&nbsp;применяются чтобы ограничить CSS селекторы только элементами принадлежащими конкретному пространству имён. Пространства имён полезны, в основном, когда идёт взаимодействие с документами содержащими множество пространств имён, такими как HTML5 со встроенным SVG,&nbsp;MathML или XML.</p>
+
+<pre class="brush: css notranslate"><code><span class="token atrule"><span class="token rule">@namespace</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>http://www.w3.org/1999/xhtml<span class="token punctuation">)</span></span><span class="token punctuation">;</span></span>
+<span class="token atrule"><span class="token rule">@namespace</span> svg <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>http://www.w3.org/2000/svg<span class="token punctuation">)</span></span><span class="token punctuation">;</span></span>
+
+<span class="token comment">/* This matches all XHTML &lt;a&gt; elements, as XHTML is the default unprefixed namespace */</span>
+<span class="token selector">a</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token comment">/* This matches all SVG &lt;a&gt; elements */</span>
+<span class="token selector">svg|a</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token comment">/* This matches both XHTML and SVG &lt;a&gt; elements */</span>
+<span class="token selector">*|a</span> <span class="token punctuation">{</span><span class="token punctuation">}</span></code></pre>
+
+<p>Любое&nbsp;<code>@namespace</code> правило обязано следовать всем <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/%40charset">@charset</a> и <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/%40import">@import</a> правилам, а так же&nbsp;всем <a href="https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration">описаниям стилей</a> в таблице стилей.</p>
+
+<p><code>@namespace</code>&nbsp;может быть использован для определения стандартного пространства имён для конкретной таблице стилей. Когда стандартное пространство имён определено, все селекторы (но не атрибуты селекторов, смотрите заметку ниже) применяются только к элементам в этом пространстве имён.</p>
+
+<p><code>@namespace</code>&nbsp;правила можно использовать для определения префиксов имён. Когда селектор имеет префикс, он будет выбирать элементы совпадающие по пространству имён и именам или атрибутам.</p>
+
+<p>В <a href="https://developer.mozilla.org/ru/docs/orphaned/Web/Guide/HTML/HTML5">HTML5</a> существуют <a href="https://html.spec.whatwg.org/#foreign-elements" class="external" rel=" noopener">сторонние элементы</a> которые автоматически ассоциируются с соответствующими пространствами имён. Это значит, что HTML элементы будут действовать так, как если бы они находились в пространстве имён (<code>http://www.w3.org/1999/xhtml</code>), также если они не имеют&nbsp;<code>xmlns</code>&nbsp;атрибута где-либо в документе, то такие элементы как&nbsp;<a href="https://developer.mozilla.org/ru/docs/Glossary/SVG">&lt;svg&gt;</a> и <a href="https://developer.mozilla.org/ru/docs/Web/MathML/Element/math">&lt;math&gt;</a> будут ассоциироваться с их стандартными пространствами имён&nbsp;(<code>http://www.w3.org/2000/svg</code>&nbsp;and&nbsp;<code>http://www.w3.org/1998/Math/MathML</code>).</p>
+
+<div class="note notecard">
+<p>Примечание: В XML, если префикс отличается от атрибута (Например,&nbsp;<code>xlink:href</code>), то атрибут не будет иметь пространства имён. Другими словами, атрибуты не могут наследовать пространство имён элемента в котором они находятся.</p>
+</div></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="brush: css notranslate"><code><span class="token comment">/* Default namespace */</span>
+<span class="token atrule"><span class="token rule">@namespace</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>XML-namespace-URL<span class="token punctuation">)</span></span><span class="token punctuation">;</span></span>
+<span class="token atrule"><span class="token rule">@namespace</span> <span class="token string">"XML-namespace-URL"</span><span class="token punctuation">;</span></span>
+
+<span class="token comment">/* Prefixed namespace */</span>
+<span class="token atrule"><span class="token rule">@namespace</span> prefix <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>XML-namespace-URL<span class="token punctuation">)</span></span><span class="token punctuation">;</span></span>
+<span class="token atrule"><span class="token rule">@namespace</span> prefix <span class="token string">"XML-namespace-URL"</span><span class="token punctuation">;</span></span></code></pre></div><h3 id="формальный_синтаксис"><a href="#формальный_синтаксис" title="Permalink to Формальный синтаксис">Формальный синтаксис</a></h3><div><pre class="notranslate">@namespace <a href="#namespace-prefix">&lt;namespace-prefix&gt;</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#question_mark_()" title="Currently only available in English (US)" class="only-in-en-us">? (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/string" title="Currently only available in English (US)" class="only-in-en-us">&lt;string&gt; (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <a href="https://developer.mozilla.org/ru/docs/conflicting/Web/CSS/url()_168028c4e5edd9e19c061adb4b604d4f" title>&lt;url&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a>;<p style="font-family:Open Sans,Arial,sans-serif; margin: 10px 0 0 0;">где <br><code style="font-family:Consolas,Monaco,&quot;Andale Mono&quot;,monospace;"><span id="namespace-prefix">&lt;namespace-prefix&gt;</span> = <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/ident" title="Currently only available in English (US)" class="only-in-en-us">&lt;ident&gt; (en-US)</a></code></p></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-namespaces-3/#declaration" hreflang="en" lang="en" class="external" rel=" noopener">CSS Namespaces Module<br><small lang="ru">Определение '@namespace' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div>

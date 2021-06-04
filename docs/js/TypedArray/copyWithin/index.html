@@ -1,0 +1,30 @@
+<h1>TypedArray.prototype.copyWithin()</h1><div><div></div>
+
+<p>The <code><strong>copyWithin()</strong></code> method copies the sequence of array
+  elements within the array to the position starting at <code><var>target</var></code>.
+  The copy is taken from the index positions of the second and third arguments
+  <code><var>start</var></code> and <code><var>end</var></code>. The
+  <code><var>end</var></code> argument is optional and defaults to the length of the
+  array. This method has the same algorithm as <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/copyWithin"><code>Array.prototype.copyWithin</code></a>.
+  <em>TypedArray</em> is one of the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray#typedarray_objects">typed
+    array types</a> here.</p>
+
+<div><iframe class="interactive" width="100%" height="490" src="https://interactive-examples.mdn.mozilla.net/pages/js/typedarray-copywithin.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: js notranslate"><code><span class="token function">copyWithin</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span> start<span class="token punctuation">)</span>
+<span class="token function">copyWithin</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span> start<span class="token punctuation">,</span> end<span class="token punctuation">)</span>
+</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Parameters">Parameters</a></h3><div><dl>
+  <dt><code><var>target</var></code></dt>
+  <dd>Target start index position where to copy the elements to.</dd>
+  <dt><code><var>start</var></code></dt>
+  <dd>Source start index position where to start copying elements from.</dd>
+  <dt><code><var>end</var></code> <span class="badge inline optional">Optional</span></dt>
+  <dd>Optional. Source end index position where to end copying elements from.</dd>
+</dl></div><h3 id="return_value"><a href="#return_value" title="Permalink to Return value">Return value</a></h3><div><p>The modified array.</p></div><h2 id="description"><a href="#description" title="Permalink to Description">Description</a></h2><div><p>See <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/copyWithin"><code>Array.prototype.copyWithin</code></a> for more details.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="using_copywithin"><a href="#using_copywithin" title="Permalink to Using copyWithin">Using copyWithin</a></h3><div><pre class="brush: js notranslate"><code><span class="token keyword">var</span> buffer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayBuffer</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> uint8 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Uint8Array</span><span class="token punctuation">(</span>buffer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+uint8<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>uint8<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Uint8Array [ 1, 2, 3, 0, 0, 0, 0, 0 ]</span>
+uint8<span class="token punctuation">.</span><span class="token function">copyWithin</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>uint8<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Uint8Array [ 1, 2, 3, 1, 2, 3, 0, 0 ]</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://tc39.es/ecma262/#sec-%typedarray%.prototype.copywithin">Unknown specification<!-- --> <br><small># <!-- -->sec-%typedarray%.prototype.copywithin</small></a></td></tr></tbody></table><div></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+  <li>A polyfill of <code>TypedArray.prototype.copyWithin</code> is available in <a href="https://github.com/zloirock/core-js#ecmascript-typed-arrays" class="external" rel=" noopener"><code>core-js</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray"><code>TypedArray</code></a></li>
+</ul></div>

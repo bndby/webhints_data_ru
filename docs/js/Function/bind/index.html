@@ -1,0 +1,194 @@
+<h1>Function.prototype.bind()</h1><div><div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Метод <code><strong>bind()</strong></code> создаёт новую функцию, которая при вызове устанавливает в качестве контекста выполнения <code>this</code> предоставленное значение. В метод также передаётся набор аргументов, которые будут установлены перед переданными в привязанную функцию аргументами при её вызове.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code><var>fun</var>.bind(<var>thisArg</var>[, <var>arg1</var>[, <var>arg2</var>[, ...]]])</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>thisArg</code></dt>
+ <dd>Значение, передаваемое в качестве <code>this</code> в целевую функцию при вызове привязанной функции. Значение игнорируется, если привязанная функция конструируется с помощью оператора <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/new"><code>new</code></a>.</dd>
+ <dt><code>arg1, arg2, ...</code></dt>
+ <dd>Аргументы целевой функции, передаваемые перед аргументами привязанной функции при вызове целевой функции.</dd>
+</dl></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Метод <code>bind()</code> создаёт новую "<strong>привязанную функцию</strong>" (<strong>ПФ</strong>).&nbsp; <strong>ПФ</strong> <span class="translation-chunk">- это "необычный </span> <span class="translation-chunk">функциональный объект" ( термин из </span> <strong>ECMAScript 6</strong> <span class="translation-chunk"> ), который является обёрткой над исходным </span> <span class="translation-chunk">функциональным объектом. Вызов </span> <strong>ПФ</strong> <span class="translation-chunk">&nbsp; приводит к исполнению кода обёрнутой функции.</span></p>
+
+<p><strong>ПФ</strong> <span class="translation-chunk"> имеет следующие внутренние ( скрытые ) свойства:</span></p>
+
+<ul>
+ <li><span class="translation-chunk"><strong>[[BoundTargetFunction]]</strong> - оборачиваемый&nbsp; (целевой ) </span> <span class="translation-chunk">функциональный </span><span class="translation-chunk">объект</span></li>
+ <li><span class="translation-chunk"><strong>[[BoundThis]]</strong> - значение, которое всегда передаётся в качестве значения&nbsp;&nbsp; <strong>this </strong>при вызове обёрнутой функции.</span></li>
+ <li><span class="translation-chunk"><strong>[[BoundArguments]] </strong>- список значений, элементы которого используются в качестве первого аргумента при вызове оборачиваемой функции.</span></li>
+ <li><strong><span class="translation-chunk">[[</span>Call</strong><span class="translation-chunk"><strong>]] </strong>- внутренний метод. Выполняет код (функциональное выражение), связанный с функциональным объектом.&nbsp;</span></li>
+</ul>
+
+<p><span class="translation-chunk">Когда <strong>ПФ </strong>вызывается, исполняется её внутренний метод </span> <strong>[[Call]]</strong> <span class="translation-chunk"> со следующими аргументами </span> <strong>Call(<em>target</em>, <em>boundThis</em>, <em>args</em>).</strong></p>
+
+<ul>
+ <li><strong><em>target</em></strong> <span class="translation-chunk">&nbsp; - &nbsp;&nbsp; <strong>[[BoundTargetFunction]]</strong>;</span></li>
+ <li><span class="translation-chunk"><em><strong>boundThis </strong></em></span><em><strong> <span class="translation-chunk"> </span> </strong></em><span class="translation-chunk"><em><strong>&nbsp; </strong></em>- &nbsp;&nbsp; </span><strong> </strong><span class="translation-chunk"><strong>[[BoundThis]]</strong>;</span></li>
+ <li><em><strong>args&nbsp; </strong></em> - &nbsp;<strong> <span class="translation-chunk">[[BoundArguments]].</span></strong></li>
+</ul>
+
+<p>Привязанная функция также может быть сконструирована с помощью оператора <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/new"><code>new</code></a>: это работает так, как если бы вместо неё конструировалась целевая функция. Предоставляемое значение <code>this</code> в этом случае игнорируется, хотя ведущие аргументы всё ещё передаются в эмулируемую функцию.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_creating_a_bound_function"><a href="#example_creating_a_bound_function" title="Permalink to Пример: создание привязанной функции">Пример: создание привязанной функции</a></h3><div><p>Простейшим способом использования <code>bind()</code> является создание функции, которая, вне зависимости от способа&nbsp;её вызова, вызывается с определённым значением <code>this</code>. Обычным заблуждением для новичков в JavaScript является извлечение метода из объекта с целью его дальнейшего вызова в качестве функции и ожидание того, что он будет использовать оригинальный объект в качестве своего значения <code>this</code> (например, такое может случиться при использовании метода как колбэк-функции). Однако, без специальной обработки, оригинальный объект зачастую теряется. Создание привязанной функции из функции, использующей оригинальный объект, изящно решает эту проблему:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">this</span><span class="token punctuation">.</span>x <span class="token operator">=</span> <span class="token number">9</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> module <span class="token operator">=</span> <span class="token punctuation">{</span>
+  x<span class="token operator">:</span> <span class="token number">81</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">getX</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>x<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+module<span class="token punctuation">.</span><span class="token function">getX</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 81</span>
+
+<span class="token keyword">var</span> getX <span class="token operator">=</span> module<span class="token punctuation">.</span>getX<span class="token punctuation">;</span>
+<span class="token function">getX</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 9, поскольку в этом случае this ссылается на глобальный объект</span>
+
+<span class="token comment">// создаём новую функцию с this, привязанным к module</span>
+<span class="token keyword">var</span> boundGetX <span class="token operator">=</span> <span class="token function">getX</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span>module<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">boundGetX</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 81</span>
+</code></pre></div><h3 id="example_partial_functions"><a href="#example_partial_functions" title="Permalink to Пример: частичные функции">Пример: частичные функции</a></h3><div><p>Следующим простейшим способом использования <code>bind()</code> является создание функции с предопределёнными аргументами. Эти аргументы (если они есть) передаются после значения <code>this</code> и вставляются перед аргументами, передаваемыми в целевую функцию при вызове привязанной функции.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">function</span> <span class="token function">list</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>arguments<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> list1 <span class="token operator">=</span> <span class="token function">list</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [1, 2, 3]</span>
+
+<span class="token comment">// Создаём функцию с предустановленным ведущим аргументом</span>
+<span class="token keyword">var</span> leadingThirtysevenList <span class="token operator">=</span> <span class="token function">list</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">undefined</span><span class="token punctuation">,</span> <span class="token number">37</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> list2 <span class="token operator">=</span> <span class="token function">leadingThirtysevenList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [37]</span>
+<span class="token keyword">var</span> list3 <span class="token operator">=</span> <span class="token function">leadingThirtysevenList</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [37, 1, 2, 3]</span>
+</code></pre></div><h3 id="example_with_settimeout"><a href="#example_with_settimeout" title="Permalink to Пример: с setTimeout">Пример: с <code>setTimeout</code></a></h3><div><p>По умолчанию, внутри <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout"><code>window.setTimeout()</code> <span>(en-US)</span></a> контекст <code>this</code> устанавливается в объект <a href="https://developer.mozilla.org/ru/docs/Web/API/Window"><code>window</code></a> (или <code>global</code>). При работе с методами класса, требующими <code>this</code> для ссылки на экземпляры класса, вы можете явно привязать <code>this</code> к колбэк-функции для сохранения экземпляра.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">function</span> <span class="token function">LateBloomer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>petalCount <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">ceil</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">12</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Объявляем цветение с задержкой в 1 секунду</span>
+<span class="token class-name">LateBloomer</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">bloom</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  window<span class="token punctuation">.</span><span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">declare</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token class-name">LateBloomer</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">declare</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Я прекрасный цветок с '</span> <span class="token operator">+</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>petalCount <span class="token operator">+</span> <span class="token string">' лепестками!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="example_bound_functions_used_as_constructors"><a href="#example_bound_functions_used_as_constructors" title="Permalink to Пример: привязывание функций, используемых в качестве конструкторов">Пример: привязывание функций, используемых в качестве конструкторов</a></h3><div><div class="warning notecard">
+<p><strong>Предупреждение:</strong> этот раздел демонстрирует возможности JavaScript и документирует некоторые граничные случаи использования метода <code>bind()</code>. Показанные ниже методы не являются лучшей практикой и, вероятно, их не следует использовать в рабочем окружении.</p>
+</div>
+
+<p>Привязанные функции автоматически подходят для использования вместе с оператором <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/new"><code>new</code></a> для конструирования новых экземпляров, создаваемых целевой функцией. Когда привязанная функция используется для конструирования значения, предоставляемое значение <code>this</code> игнорируется. Однако, предоставляемые аргументы всё так же вставляются перед аргументами конструктора:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">function</span> <span class="token function">Point</span><span class="token punctuation">(</span><span class="token parameter">x<span class="token punctuation">,</span> y</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>x <span class="token operator">=</span> x<span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>y <span class="token operator">=</span> y<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token class-name">Point</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">toString</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>x <span class="token operator">+</span> <span class="token string">','</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>y<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Point</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+p<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// '1,2'</span>
+
+
+<span class="token keyword">var</span> emptyObj <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> YAxisPoint <span class="token operator">=</span> <span class="token function">Point</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span>emptyObj<span class="token punctuation">,</span> <span class="token number">0</span><span class="token comment">/*x*/</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// не поддерживается полифилом, приведённым ниже,</span>
+<span class="token comment">// но отлично работает с родным bind:</span>
+<span class="token keyword">var</span> YAxisPoint <span class="token operator">=</span> <span class="token function">Point</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token comment">/*x*/</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> axisPoint <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">YAxisPoint</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+axisPoint<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// '0,5'</span>
+
+axisPoint <span class="token keyword">instanceof</span> <span class="token class-name">Point</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
+axisPoint <span class="token keyword">instanceof</span> <span class="token class-name">YAxisPoint</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
+<span class="token keyword">new</span> <span class="token class-name">Point</span><span class="token punctuation">(</span><span class="token number">17</span><span class="token punctuation">,</span> <span class="token number">42</span><span class="token punctuation">)</span> <span class="token keyword">instanceof</span> <span class="token class-name">YAxisPoint</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
+</code></pre>
+
+<p>Обратите внимание, что вам не нужно делать ничего особенного для создания привязанной функции, используемой с оператором <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/new"><code>new</code></a>. В итоге, для создания явно вызываемой привязанной функции, вам тоже не нужно делать ничего особенного, даже если вам требуется, чтобы привязанная функция вызывалась только с помощью оператора <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/new"><code>new</code></a>.</p>
+
+<pre class="brush: js notranslate"><code><span class="token comment">// Пример может быть запущен прямо в вашей консоли JavaScript</span>
+<span class="token comment">// ...продолжение примера выше</span>
+
+<span class="token comment">// Всё ещё можно вызывать как нормальную функцию</span>
+<span class="token comment">// (хотя обычно это не предполагается)</span>
+<span class="token function">YAxisPoint</span><span class="token punctuation">(</span><span class="token number">13</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+emptyObj<span class="token punctuation">.</span>x <span class="token operator">+</span> <span class="token string">','</span> <span class="token operator">+</span> emptyObj<span class="token punctuation">.</span>y<span class="token punctuation">;</span>
+<span class="token comment">// &gt;  '0,13'</span>
+</code></pre>
+
+<p>Если вы хотите поддерживать использование привязанной функции только с помощью оператора <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/new"><code>new</code></a>, либо только с помощью прямого вызова, целевая функция должна предусматривать такие ограничения.</p></div><h3 id="example_creating_shortcuts"><a href="#example_creating_shortcuts" title="Permalink to Пример: создание сокращений">Пример: создание сокращений</a></h3><div><p>Метод <code>bind()</code> также полезен в случаях, если вы хотите создать сокращение для функции, требующей определённое значение <code>this</code>.</p>
+
+<p>Возьмём, например, метод <a href="/js/Array/slice/"><code>Array.prototype.slice</code></a>, который вы можете использовать для преобразования массивоподобного объекта в настоящий массив. Вы можете создать подобное сокращение:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> slice <span class="token operator">=</span> <span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>slice<span class="token punctuation">;</span>
+
+<span class="token comment">// ...</span>
+
+<span class="token function">slice</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>arguments<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+<p>С помощью метода <code>bind()</code>, это сокращение может быть упрощено. В следующем куске кода <code>slice</code> является функцией, привязанной к функции <a href="/js/Function/call/"><code>call()</code></a> объекта <a href="https://developer.mozilla.org/ru/docs/conflicting/Web/JavaScript/Reference/Global_Objects/Function"><code>Function.prototype</code></a>, со значением <code>this</code>, установленным в функцию <a href="/js/Array/slice/"><code>slice()</code></a> объекта <a href="https://developer.mozilla.org/ru/docs/orphaned/Web/JavaScript/Reference/Global_Objects/Array/prototype"><code>Array.prototype</code></a>. Это означает, что дополнительный вызов <code>call()</code> может быть устранён:</p>
+
+<pre class="brush: js notranslate"><code><span class="token comment">// Тоже самое, что и slice в предыдущем примере</span>
+<span class="token keyword">var</span> unboundSlice <span class="token operator">=</span> <span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>slice<span class="token punctuation">;</span>
+<span class="token keyword">var</span> slice <span class="token operator">=</span> <span class="token class-name">Function</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span>unboundSlice<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// ...</span>
+
+<span class="token function">slice</span><span class="token punctuation">(</span>arguments<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="polyfill"><a href="#polyfill" title="Permalink to Полифил">Полифил</a></h2><div><p>Функция <code>bind</code> является дополнением к стандарту ECMA-262 5-го издания; поэтому она может присутствовать не во всех браузерах. Вы можете частично обойти это ограничение, вставив следующий код в начало ваших скриптов, он позволяет использовать большую часть возможностей <code>bind()</code> в реализациях, не имеющих его родной поддержки.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token class-name">Function</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>bind<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token class-name">Function</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">bind</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">oThis</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> <span class="token keyword">this</span> <span class="token operator">!==</span> <span class="token string">'function'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// ближайший аналог внутренней функции</span>
+      <span class="token comment">// IsCallable в ECMAScript 5</span>
+      <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">TypeError</span><span class="token punctuation">(</span><span class="token string">'Function.prototype.bind - what is trying to be bound is not callable'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">var</span> aArgs <span class="token operator">=</span> <span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>arguments<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        fToBind <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">,</span>
+        <span class="token function-variable function">fNOP</span>    <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token function-variable function">fBound</span>  <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">return</span> <span class="token function">fToBind</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token keyword">instanceof</span> <span class="token class-name">fNOP</span> <span class="token operator">&amp;&amp;</span> oThis
+                 <span class="token operator">?</span> <span class="token keyword">this</span>
+                 <span class="token operator">:</span> oThis<span class="token punctuation">,</span>
+                 aArgs<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span><span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>arguments<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    fNOP<span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>prototype<span class="token punctuation">;</span>
+    fBound<span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">fNOP</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> fBound<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p>Некоторые из многих отличий (так же могут быть и другие, данный список далеко не исчерпывающий) между этой реализацией и реализацией по умолчанию:</p>
+
+<ul>
+ <li>Частичная реализация предполагает, что методы <a href="/js/Array/slice/"><code>Array.prototype.slice()</code></a>, <a href="/js/Array/concat/"><code>Array.prototype.concat()</code></a>, <a href="/js/Function/call/"><code>Function.prototype.call()</code></a> и <a href="/js/Function/apply/"><code>Function.prototype.apply()</code></a> являются встроенными, имеют своё первоначальное значение.</li>
+ <li>Частичная реализация создаёт функции, не имеющие неизменяемых свойств «отравленной пилюли»&nbsp;— <a href="/js/Function/caller/"><code>caller</code></a> и <code>arguments</code>&nbsp;— которые выбрасывают исключение <a href="/js/TypeError/"><code>TypeError</code></a> при попытке получить, установить или удалить эти свойства. (Такие свойства могут быть добавлены, если реализация поддерживает <a href="/js/Object/defineProperty/"><code>Object.defineProperty</code></a>, либо частично реализованы [без поведения исключение-при-попытке-удаления], если реализация поддерживает расширения <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineGetter__"><code>__defineGetter__</code> <span>(en-US)</span></a> и <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineSetter__"><code>__defineSetter__</code> <span>(en-US)</span></a>.)</li>
+ <li>Частичная реализация создаёт функции, имеющие свойство <code>prototype</code>. (Правильная привязанная функция его не имеет.)</li>
+ <li>Частичная реализация создаёт привязанные функции, чьё свойство <a href="/js/Function/length/"><code>length</code></a> не соответствует с определением в ECMA-262; оно равно 0, в то время, как полная реализация, в зависимости от значения свойства <code>length</code> целевой функции и количества предопределённых аргументов, может вернуть значение, отличное от нуля.</li>
+</ul>
+
+<p>Если вы решили использовать частичную реализацию, <strong>не рассчитывайте на корректную работу в тех случаях, когда реализация отклоняется от спецификации ECMA-262 5-го издания!</strong> Однако, в определённых случаях (и, возможно, с дополнительными модификациями для отдельных нужд), применение данной частичной реализации может быть вполне оправданным до тех пор, пока <code>bind()</code> не станет широко реализован в соответствии со спецификацией.</p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-15.3.4.5" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 5.1 (ECMA-262)<br><small lang="ru">Определение 'Function.prototype.bind' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Изначальное определение. Реализована в JavaScript 1.8.5.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-function.prototype.bind" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Function.prototype.bind' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><div><p>{{Compat}}</p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/Function/apply/"><code>Function.prototype.apply()</code></a></li>
+ <li><a href="/js/Function/call/"><code>Function.prototype.call()</code></a></li>
+ <li><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions">Функции и их область видимости <span>(en-US)</span></a></li>
+</ul></div>

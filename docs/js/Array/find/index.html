@@ -1,0 +1,109 @@
+<h1>Array.prototype.find()</h1><div><p></p><p></p></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Метод <code><strong>find()</strong></code> возвращает <strong>значение</strong>&nbsp;первого найденного&nbsp;в массиве элемента, которое&nbsp;удовлетворяет условию переданному в callback функции.&nbsp;&nbsp;В противном случае возвращается <a href="/js/undefined/"><code>undefined</code></a>.</p>
+
+<p>Также смотрите метод <a href="/js/Array/findIndex/"><code>findIndex()</code></a>, который возвращает <strong>индекс</strong> найденного в массиве элемента вместо его значения.</p>
+
+<p>Если вам нужно найти позицию элемента или наличие элемента в массиве, используйте&nbsp;<a href="/js/Array/indexOf/"><code>Array.prototype.indexOf()</code></a> или&nbsp;<a href="/js/Array/includes/"><code>Array.prototype.includes()</code></a> соответственно.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code><var>arr</var>.find(<var>callback</var>[, <var>thisArg</var>])</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>callback</code></dt>
+ <dd>Функция, вызывающаяся для каждого значения в массиве, принимает три аргумента:
+ <dl>
+  <dt><code>element</code></dt>
+  <dd>Текущий обрабатываемый элемент в массиве.</dd>
+  <dt><code>index</code></dt>
+  <dd>Индекс текущего обрабатываемого элемента в массиве.</dd>
+  <dt><code>array</code></dt>
+  <dd>Массив, по которому осуществляется проход.</dd>
+ </dl>
+ </dd>
+ <dt><code>thisArg</code></dt>
+ <dd>Необязательный параметр. Значение, используемое в качестве <code>this</code> при выполнении функции <code>callback</code>.</dd>
+</dl></div><h3 id="возвращаемое_значение"><a href="#возвращаемое_значение" title="Permalink to Возвращаемое значение">Возвращаемое значение</a></h3><div><p>Значение элемента из массива, если элемент прошёл проверку, иначе&nbsp;<a href="/js/undefined/"><code>undefined</code></a>.</p></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Метод <code>find</code> вызывает переданную функцию <code>callback</code> один раз для каждого элемента, присутствующего в массиве, до тех пор, пока она не вернёт <code>true</code>. Если такой элемент найден, метод <code>find</code> немедленно вернёт значение этого элемента. В противном случае, метод <code>find</code> вернёт <a href="/js/undefined/"><code>undefined</code></a>. До Firefox 34 функция <code>callback</code> не вызывалась для «дырок» в массивах (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1058394" class="external" rel=" noopener">bug 1058394</a>).</p>
+
+<p>Функция <code>callback</code> вызывается с тремя аргументами: значением элемента, индексом элемента и массивом, по которому осуществляется проход.</p>
+
+<p>Если в метод <code>find</code> был передан параметр <code>thisArg</code>, при вызове <code>callback</code> он будет использоваться в качестве значения <code>this</code>. В противном случае в качестве значения <code>this</code> будет использоваться значение <a href="/js/undefined/"><code>undefined</code></a>.</p>
+
+<p>Метод <code>find</code> не изменяет массив, для которого он был вызван.</p>
+
+<p>Диапазон элементов, обрабатываемых методом <code>find</code>, устанавливается до первого вызова функции <code>callback</code>. Элементы, добавленные в массив после начала выполнения метода <code>find</code>, не будут посещены функцией <code>callback</code>. Если существующие, непосещение элементы массива изменяются функцией <code>callback</code>, их значения, переданные в функцию, будут значениями на тот момент времени когда метод <code>find</code> посетит их; удалённые элементы все ещё будут посещены.&nbsp;</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_testing_size_of_all_array_elements"><a href="#example_testing_size_of_all_array_elements" title="Permalink to Пример: поиск простого числа в массиве">Пример: поиск простого числа в массиве</a></h3><div><p>Следующий пример находит в массиве положительных чисел элемент, являющийся простым числом (либо возвращает <a href="/js/undefined/"><code>undefined</code></a>, если в массиве нет простых чисел).</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">function</span> <span class="token function">isPrime</span><span class="token punctuation">(</span><span class="token parameter">element<span class="token punctuation">,</span> index<span class="token punctuation">,</span> array</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> start <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span>start <span class="token operator">&lt;=</span> Math<span class="token punctuation">.</span><span class="token function">sqrt</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>element <span class="token operator">%</span> start<span class="token operator">++</span> <span class="token operator">&lt;</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> element <span class="token operator">&gt;</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>isPrime<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// undefined, не найдено</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>isPrime<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 5</span>
+</code></pre></div><h2 id="polyfill"><a href="#polyfill" title="Permalink to Полифил">Полифил</a></h2><div><p>Этот метод был добавлен в спецификации ECMAScript 6 и пока может быть недоступен во всех реализациях JavaScript. Однако, вы можете использовать следующий сниппет в качестве полифила:</p>
+
+<pre class="notranslate"><code>// https://tc39.github.io/ecma262/#sec-array.prototype.find
+if (!Array.prototype.find) {
+  Object.defineProperty(Array.prototype, 'find', {
+    value: function(predicate) {
+     // 1. Let O be ? ToObject(this value).
+      if (this == null) {
+        throw new TypeError('"this" is null or not defined');
+      }
+
+      var o = Object(this);
+
+      // 2. Let len be ? ToLength(? Get(O, "length")).
+      var len = o.length &gt;&gt;&gt; 0;
+
+      // 3. If IsCallable(predicate) is false, throw a TypeError exception.
+      if (typeof predicate !== 'function') {
+        throw new TypeError('predicate must be a function');
+      }
+
+      // 4. If thisArg was supplied, let T be thisArg; else let T be undefined.
+      var thisArg = arguments[1];
+
+      // 5. Let k be 0.
+      var k = 0;
+
+      // 6. Repeat, while k &lt; len
+      while (k &lt; len) {
+        // a. Let Pk be ! ToString(k).
+        // b. Let kValue be ? Get(O, Pk).
+        // c. Let testResult be ToBoolean(? Call(predicate, T, « kValue, k, O »)).
+        // d. If testResult is true, return kValue.
+        var kValue = o[k];
+        if (predicate.call(thisArg, kValue, k, o)) {
+          return kValue;
+        }
+        // e. Increase k by 1.
+        k++;
+      }
+
+      // 7. Return undefined.
+      return undefined;
+    },
+    configurable: true,
+    writable: true
+  });
+}</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-array.prototype.find" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Array.prototype.find' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Изначальное определение.</td>
+  </tr>
+  <tr>
+   <td><a href="https://tc39.es/ecma262/#sec-array.prototype.find" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript (ECMA-262)<br><small lang="ru">Определение 'Array.prototype.find' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/Array/findIndex/"><code>Array.prototype.findIndex()</code></a> </li>
+ <li><a href="/js/Array/every/"><code>Array.prototype.every()</code></a></li>
+</ul></div>

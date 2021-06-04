@@ -1,0 +1,182 @@
+<h1>Array.prototype.slice()</h1><div><div></div>
+
+<p>Метод <code><strong>slice()</strong></code> возвращает новый массив, содержащий&nbsp;копию части исходного массива.</p>
+
+<div><iframe class="interactive" width="100%" height="490" src="https://interactive-examples.mdn.mozilla.net/pages/js/array-slice.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+</div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code><var>arr</var>.slice([<var>begin</var>[, <var>end</var>]])</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>begin</code> <span class="badge inline optional">Необязательный</span></dt>
+ <dd>Индекс (счёт начинается с нуля), по которому начинать извлечение.</dd>
+ <dd>Если индекс отрицательный, <code>begin</code> указывает смещение от конца последовательности. Вызов <code>slice(-2)</code> извлечёт два последних элемента последовательности.</dd>
+ <dd>Если <code>begin</code>&nbsp;не определён, <code>slice()</code> начинает работать с индекса <code>0</code>.</dd>
+ <dd>Если&nbsp;<code>begin</code>&nbsp;больше длины последовательности вернётся пустой массив.</dd>
+ <dt><code>end</code> <span class="badge inline optional">Необязательный</span></dt>
+ <dd>Индекс (счёт начинается с нуля), по которому заканчивать извлечение. Метод <code>slice()</code> извлекает элементы с&nbsp;индексом меньше&nbsp;<code>end</code>.</dd>
+ <dd>Вызов <code>slice(1, 4)</code> извлечёт элементы со второго по четвёртый (элементы по индексам 1, 2 и 3).</dd>
+ <dd>Если индекс отрицательный, <code>end</code> указывает смещение от конца последовательности. Вызов <code>slice(2, -1)</code> извлечёт из последовательности элементы начиная с третьего элемента с начала&nbsp;и заканчивая вторым&nbsp;с конца.</dd>
+ <dd>Если <code>end</code> опущен, <code>slice()</code> извлекает все элементы до конца последовательности (<code>arr.length</code>).</dd>
+</dl></div><h3 id="возвращаемое_значение"><a href="#возвращаемое_значение" title="Permalink to Возвращаемое значение">Возвращаемое значение</a></h3><div><p>Новый массив,&nbsp;содержащий извлечённые элементы.</p></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Метод <code>slice()</code> не изменяет исходный массив, а возвращает новую «одноуровневую» копию, содержащую копии элементов, вырезанных из исходного массива. Элементы исходного массива копируются в новый массив по следующим правилам:</p>
+
+<ul>
+ <li>Ссылки на объекты (но не фактические объекты): метод <code>slice()</code> копирует ссылки на объекты в новый массив. И оригинал, и новый массив ссылаются на один и тот же объект. То есть, если объект по ссылке будет изменён, изменения будут видны и в новом, и в исходном массивах.</li>
+ <li>Строки и числа (но не объекты <a href="/js/String/"><code>String</code></a> и <a href="/js/Number/"><code>Number</code></a>): метод <code>slice()</code> копирует значения строк и чисел в новый массив. Изменения строки или числа в одном массиве никак не затрагивает другой.</li>
+</ul>
+
+<p>Если к любому массиву будет добавлен новый элемент, это никак не повлияет на другой массив.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_return_a_portion_of_an_existing_array"><a href="#example_return_a_portion_of_an_existing_array" title="Permalink to Пример: возврат части существующего массива">Пример: возврат части существующего массива</a></h3><div><pre class="brush: js notranslate"><code><span class="token comment">// Пример: наши хорошие друзья цитрусовые среди фруктов</span>
+<span class="token keyword">var</span> fruits <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'Банан'</span><span class="token punctuation">,</span> <span class="token string">'Апельсин'</span><span class="token punctuation">,</span> <span class="token string">'Лимон'</span><span class="token punctuation">,</span> <span class="token string">'Яблоко'</span><span class="token punctuation">,</span> <span class="token string">'Манго'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> citrus <span class="token operator">=</span> fruits<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// citrus содержит ['Апельсин', 'Лимон']</span>
+</code></pre></div><h3 id="example_using_slice"><a href="#example_using_slice" title="Permalink to Пример: использование метода slice()">Пример: использование метода <code>slice()</code></a></h3><div><p>В следующем примере метод <code>slice()</code> создаёт новый массив, <code>newCar</code>, из массива <code>myCar</code>. Оба содержат ссылку на объект <code>myHonda</code>. Когда цвет в объекте <code>myHonda</code> изменяется на багровый, оба массива замечают это изменение.</p>
+
+<pre class="brush: js notranslate"><code><span class="token comment">// Используя slice, создаём newCar из myCar.</span>
+<span class="token keyword">var</span> myHonda <span class="token operator">=</span> <span class="token punctuation">{</span> color<span class="token operator">:</span> <span class="token string">'красный'</span><span class="token punctuation">,</span> wheels<span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span> engine<span class="token operator">:</span> <span class="token punctuation">{</span> cylinders<span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span> size<span class="token operator">:</span> <span class="token number">2.2</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> myCar <span class="token operator">=</span> <span class="token punctuation">[</span>myHonda<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'в хорошем состоянии'</span><span class="token punctuation">,</span> <span class="token string">'приобретена в 1997'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> newCar <span class="token operator">=</span> myCar<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Отображаем значения myCar, newCar и цвет myHonda</span>
+<span class="token comment">//  по ссылкам из обоих массивов.</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'myCar = '</span> <span class="token operator">+</span> myCar<span class="token punctuation">.</span><span class="token function">toSource</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'newCar = '</span> <span class="token operator">+</span> newCar<span class="token punctuation">.</span><span class="token function">toSource</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'myCar[0].color = '</span> <span class="token operator">+</span> myCar<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>color<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'newCar[0].color = '</span> <span class="token operator">+</span> newCar<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>color<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Изменяем цвет myHonda.</span>
+myHonda<span class="token punctuation">.</span>color <span class="token operator">=</span> <span class="token string">'багровый'</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Новый цвет моей Honda - '</span> <span class="token operator">+</span> myHonda<span class="token punctuation">.</span>color<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Отображаем цвет myHonda по ссылкам из обоих массивов.</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'myCar[0].color = '</span> <span class="token operator">+</span> myCar<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>color<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'newCar[0].color = '</span> <span class="token operator">+</span> newCar<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>color<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+<p>Этот скрипт выведет:</p>
+
+<pre class="brush: js notranslate"><code>myCar <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>color<span class="token operator">:</span><span class="token string">'красный'</span><span class="token punctuation">,</span> wheels<span class="token operator">:</span><span class="token number">4</span><span class="token punctuation">,</span> engine<span class="token operator">:</span><span class="token punctuation">{</span>cylinders<span class="token operator">:</span><span class="token number">4</span><span class="token punctuation">,</span> size<span class="token operator">:</span><span class="token number">2.2</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span>
+         <span class="token string">'в хорошем состоянии'</span><span class="token punctuation">,</span> <span class="token string">'приобретена в 1997'</span><span class="token punctuation">]</span>
+newCar <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>color<span class="token operator">:</span><span class="token string">'красный'</span><span class="token punctuation">,</span> wheels<span class="token operator">:</span><span class="token number">4</span><span class="token punctuation">,</span> engine<span class="token operator">:</span><span class="token punctuation">{</span>cylinders<span class="token operator">:</span><span class="token number">4</span><span class="token punctuation">,</span> size<span class="token operator">:</span><span class="token number">2.2</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span>
+myCar<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>color <span class="token operator">=</span> красный
+newCar<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>color <span class="token operator">=</span> красный
+Новый цвет моей Honda <span class="token operator">-</span> багровый
+myCar<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>color <span class="token operator">=</span> багровый
+newCar<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>color <span class="token operator">=</span> багровый
+</code></pre></div><h2 id="array-like"><a href="#array-like" title="Permalink to Массивоподобные объекты">Массивоподобные объекты</a></h2><div><p>Метод <code>slice()</code> также может использоваться для преобразования массивоподобных объектов / коллекций в новый массив <code>Array</code>. Вам просто нужно привязать метод к объекту. Псевдомассив <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments"><code>arguments</code> <span>(en-US)</span></a> внутри функции как раз является примером «массивоподобного объекта».</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">function</span> <span class="token function">list</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>arguments<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> list1 <span class="token operator">=</span> <span class="token function">list</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [1, 2, 3]</span>
+</code></pre>
+
+<p>Привязка может быть осуществлена посредством функции .<code>call()</code> из прототипа функции <a href="https://developer.mozilla.org/ru/docs/conflicting/Web/JavaScript/Reference/Global_Objects/Function"><code>Function.prototype</code></a>, также запись может быть сокращена до <code>[].slice.call(arguments)</code> вместо использования <code>Array.prototype.slice.call()</code>. В любом случае, она может быть упрощена посредством использования функции <a href="/js/Function/bind/"><code>bind()</code></a>.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> unboundSlice <span class="token operator">=</span> <span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>slice<span class="token punctuation">;</span>
+<span class="token keyword">var</span> slice <span class="token operator">=</span> <span class="token class-name">Function</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span>unboundSlice<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">list</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token function">slice</span><span class="token punctuation">(</span>arguments<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> list1 <span class="token operator">=</span> <span class="token function">list</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [1, 2, 3]</span>
+</code></pre></div><h2 id="streamlining_cross-browser_behavior"><a href="#streamlining_cross-browser_behavior" title="Permalink to Совершенствование кросс-браузерного поведения">Совершенствование кросс-браузерного поведения</a></h2><div><p>Хотя спецификация не требует от хост-объектов (например, объектов DOM) следовать поведению Mozilla при преобразовании с помощью <code>Array.prototype.slice()</code> и IE &lt; 9 так не делает, версии IE, начиная с 9-й это умеют. «Прокладывание» позволяет добиться надёжного кросс-браузерного поведения. Пока другие современные браузеры будут поддерживать эту способность, что и делают в настоящее время IE, Mozilla, Chrome, Safari и Opera, разработчики, читая (поддерживающий DOM) код функции <code>slice()</code>, опирающийся на эту прокладку, не будут вводиться в заблуждение его семантикой; они могут смело полагаться на текущую семантику, являющуюся, видимо, <em>де-факто</em> стандартным поведением. (Прокладка также исправляет поведение IE, позволяя работать со вторым аргументом <code>slice()</code>, явно определённым как <a href="/js/null/"><code>null</code></a>/<a href="/js/undefined/"><code>undefined</code></a>, поскольку более ранние версии IE такое не позволяют, но все современные браузеры, в том числе IE &gt;= 9, поддерживают данное поведение.)</p>
+
+<pre class="brush: js notranslate"><code><span class="token comment">/**
+ * Прокладка для "исправления" отсутствия поддержки в IE &lt; 9 применения slice
+ * к хост-объектам вроде NamedNodeMap, NodeList и HTMLCollection
+ * (технически, поскольку хост-объекты зависят от реализации,
+ * по крайней мере, до ES2015, IE не обязан так работать).
+ * Также работает для строк, исправляет поведение IE &lt; 9, позволяя явно указывать undefined
+ * вторым аргументом (как в Firefox), и предотвращает ошибки, возникающие при
+ * вызове на других объектах DOM.
+ */</span>
+<span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token string">'use strict'</span><span class="token punctuation">;</span>
+  <span class="token keyword">var</span> _slice <span class="token operator">=</span> <span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>slice<span class="token punctuation">;</span>
+
+  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Не может использоваться с элементами DOM в IE &lt; 9</span>
+    <span class="token function">_slice</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span>documentElement<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// В IE &lt; 9 кидается исключение</span>
+    <span class="token comment">// Функция будет работать для истинных массивов, массивоподобных объектов,</span>
+    <span class="token comment">// NamedNodeMap (атрибуты, сущности, примечания),</span>
+    <span class="token comment">// NodeList (например, getElementsByTagName), HTMLCollection (например, childNodes)</span>
+    <span class="token comment">// и не будет падать на других объектах DOM (как это происходит на элементах DOM в IE &lt; 9)</span>
+    <span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">slice</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">begin<span class="token punctuation">,</span> end</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// IE &lt; 9 будет недоволен аргументом end, равным undefined</span>
+      end <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> end <span class="token operator">!==</span> <span class="token string">'undefined'</span><span class="token punctuation">)</span> <span class="token operator">?</span> end <span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+
+      <span class="token comment">// Для родных объектов Array мы используем родную функцию slice</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'[object Array]'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">_slice</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> begin<span class="token punctuation">,</span> end<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+
+      <span class="token comment">// Массивоподобные объекты мы обрабатываем самостоятельно</span>
+      <span class="token keyword">var</span> i<span class="token punctuation">,</span> cloned <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+          size<span class="token punctuation">,</span> len <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+
+      <span class="token comment">// Обрабатываем отрицательное значение begin</span>
+      <span class="token keyword">var</span> start <span class="token operator">=</span> begin <span class="token operator">||</span> <span class="token number">0</span><span class="token punctuation">;</span>
+      start <span class="token operator">=</span> <span class="token punctuation">(</span>start <span class="token operator">&gt;=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">?</span> start<span class="token operator">:</span> len <span class="token operator">+</span> start<span class="token punctuation">;</span>
+
+      <span class="token comment">// Обрабатываем отрицательное значение end</span>
+      <span class="token keyword">var</span> upTo <span class="token operator">=</span> <span class="token punctuation">(</span>end<span class="token punctuation">)</span> <span class="token operator">?</span> end <span class="token operator">:</span> len<span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>end <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        upTo <span class="token operator">=</span> len <span class="token operator">+</span> end<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+
+      <span class="token comment">// Фактически ожидаемый размер среза</span>
+      size <span class="token operator">=</span> upTo <span class="token operator">-</span> start<span class="token punctuation">;</span>
+
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>size <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        cloned <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span>size<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>charAt<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> size<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            cloned<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>start <span class="token operator">+</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+          <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> size<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            cloned<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">[</span>start <span class="token operator">+</span> i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+
+      <span class="token keyword">return</span> cloned<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-262,%203rd%20edition,%20December%201999.pdf" hreflang="en" lang="en" class="external" title="Спецификация 'ECMAScript 3rd Edition (ECMA-262)'" rel=" noopener">ECMAScript 3rd Edition (ECMA-262)</a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Изначальное определение. Реализована в JavaScript 1.2.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-15.4.4.10" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 5.1 (ECMA-262)<br><small lang="ru">Определение 'Array.prototype.slice' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-array.prototype.slice" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Array.prototype.slice' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td><a href="https://tc39.es/ecma262/#sec-array.prototype.slice" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript (ECMA-262)<br><small lang="ru">Определение 'Array.prototype.slice' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><div>
+<p></p><p></p>
+</div></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/Array/splice/"><code>Array.prototype.splice()</code></a></li>
+ <li><a href="/js/Function/call/"><code>Function.prototype.call()</code></a></li>
+ <li><a href="/js/Function/bind/"><code>Function.prototype.bind()</code></a></li>
+</ul></div>

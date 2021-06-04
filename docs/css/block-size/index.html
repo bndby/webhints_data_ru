@@ -1,0 +1,60 @@
+<h1>block-size</h1><div><div><div class="notecard experimental">
+    <h4 id="experimental">Experimental</h4>
+    <p><strong>Это экспериментальная технология</strong><br>Так как спецификация этой технологии ещё не стабилизировалась, смотрите <a href="#browser_compatibility">таблицу совместимости</a> по поводу использования в различных браузерах. Также заметьте, что синтаксис и поведение экспериментальной технологии может измениться в будущих версиях браузеров, вслед за изменениями спецификации.</p>
+</div></div>
+
+<p>Свойство <strong><code>block-size</code></strong> <a href="/css/" title="CSS">CSS</a> задаёт горизонтальный и вертикальный размер блока элемента, в зависимости от режима его записи (writing mode). Оно соответствует свойствам <a href="/css/width/"><code>width</code></a> и <a href="/css/height/"><code>height</code></a> и зависит от значения свойства <a href="/css/writing-mode/"><code>writing-mode</code></a>.</p>
+
+<pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* &lt;length&gt; values */</span>
+<span class="token property">block-size</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+<span class="token property">block-size</span><span class="token punctuation">:</span> 25em<span class="token punctuation">;</span>
+
+<span class="token comment">/* &lt;percentage&gt; values */</span>
+<span class="token property">block-size</span><span class="token punctuation">:</span> 75%<span class="token punctuation">;</span>
+
+<span class="token comment">/* Keyword values */</span>
+<span class="token property">block-size</span><span class="token punctuation">:</span> 25em border-box<span class="token punctuation">;</span>
+<span class="token property">block-size</span><span class="token punctuation">:</span> 75% content-box<span class="token punctuation">;</span>
+<span class="token property">block-size</span><span class="token punctuation">:</span> max-content<span class="token punctuation">;</span>
+<span class="token property">block-size</span><span class="token punctuation">:</span> min-content<span class="token punctuation">;</span>
+<span class="token property">block-size</span><span class="token punctuation">:</span> available<span class="token punctuation">;</span>
+<span class="token property">block-size</span><span class="token punctuation">:</span> fit-content<span class="token punctuation">;</span>
+<span class="token property">block-size</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+
+<span class="token comment">/* Global values */</span>
+<span class="token property">block-size</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">block-size</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">block-size</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre>
+
+<p>Если режим записи (writing mode) ориентирован по вертикали, то значение <code> block-size  относится к ширине элемента; в противном случае это относится к высоте элемента. С данным свойством связано свойство <a href="/css/inline-size/"><code>inline-size</code></a>, которое задаёт другое измерение элемента.</code></p>
+
+<p><code></code></p><table class="properties"><tbody><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td><code>auto</code></td></tr><tr><th scope="row">Применяется к</th><td>с такими же <a href="/css/width/"><code>width</code></a> и <a href="/css/height/"><code>height</code></a></td></tr><tr><th scope="row"><a href="/css/inheritance/">Наследуется</a></th><td>нет</td></tr><tr><th scope="row">Проценты</th><td>размер блока, содержащего элемент</td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>с такими же <a href="/css/width/"><code>width</code></a> и <a href="/css/height/"><code>height</code></a></td></tr><tr><th scope="row">Animation type</th><td><a href="/css/length#interpolation/" title="Значения типа данных CSS <длина> интерполируются как вещественные числа с плавающей запятой.">длина</a>, <a href="/css/percentage#interpolation/" title="Значения типа данных CSS <проценты> интерполируются как вещественные числа с плавающей запятой.">проценты</a> или calc();</td></tr></tbody></table><p></p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис"><code>Синтаксис</code></a></h2><div></div><h3 id="значения"><a href="#значения" title="Permalink to Значения"><code>Значения</code></a></h3><div><p><code>Свойство <code>block-size</code> принимает те же значения, что и свойства <a href="/css/width/"><code>width</code></a>, <a href="/css/height/"><code>height</code></a> </code></p></div><h3 id="формальный_синтаксис"><a href="#формальный_синтаксис" title="Permalink to Формальный синтаксис"><code>Формальный синтаксис</code></a></h3><div><pre class="syntaxbox notranslate"><code>
+<pre class="notranslate"><a href="/css/width/" title="auto | <length> | <percentage> | min-content | max-content | fit-content | fit-content(<length-percentage>)">&lt;'width'&gt;</a></pre></code></pre></div><h2 id="пример"><a href="#пример" title="Permalink to Пример"><code>Пример</code></a></h2><div></div><h3 id="html"><a href="#html" title="Permalink to HTML"><code>HTML</code></a></h3><div><pre class="brush: html notranslate"><code>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>exampleText<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Example text<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h3 id="css"><a href="#css" title="Permalink to CSS"><code>CSS</code></a></h3><div><pre class="brush: css notranslate"><code>
+<span class="token selector">.exampleText</span> <span class="token punctuation">{</span>
+  <span class="token property">writing-mode</span><span class="token punctuation">:</span> vertical-rl<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span>
+  <span class="token property">block-size</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<p><code><iframe class="sample-code-frame" id="frame_Example" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/block-size/_sample_.Example.html" loading="lazy"></iframe></code></p></div><h2 id="спецификация"><a href="#спецификация" title="Permalink to Спецификация"><code>Спецификация</code></a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col"><code>Specification</code></th>
+   <th scope="col"><code>Status</code></th>
+   <th scope="col"><code>Comment</code></th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><code><a href="https://drafts.csswg.org/css-logical/#logical-dimension-properties" hreflang="en" lang="en" class="external" rel=" noopener">CSS Logical Properties and Values Level&nbsp;1<br><small lang="ru">Определение 'block-size' в этой спецификации.</small></a></code></td>
+   <td><code><span class="spec-ed">Редакторский черновик</span></code></td>
+   <td><code>Initial definition</code></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="совместимость_с_браузерами"><a href="#совместимость_с_браузерами" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p><code></code></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также"><code>Смотрите также</code></a></h2><div><ul>
+ <li><code>Отображаемые физические свойства: <a href="/css/width/"><code>width</code></a> and <a href="/css/height/"><code>height</code></a></code></li>
+ <li><code><a href="/css/writing-mode/"><code>writing-mode</code></a></code></li>
+</ul></div>

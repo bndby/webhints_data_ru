@@ -1,0 +1,21 @@
+<h1>Symbol.prototype.toSource()</h1><div><div> <div class="notecard deprecated">
+            <h4 id="deprecated">Deprecated</h4>
+            <p>This feature is no longer recommended. Though some browsers might still support it, it may have already been removed from the relevant web standards, may be in the process of being dropped, or may only be kept for compatibility purposes. Avoid using it, and update existing code if possible; see the <a href="#browser_compatibility">compatibility table</a> at the bottom of this page to guide your decision. Be aware that this feature may cease to work at any time.</p>
+        </div></div>
+
+<p>The <strong><code>toSource()</code></strong> method returns a string representing the
+  source code of the object.</p>
+
+<p>This method is usually called internally by JavaScript.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: js notranslate"><code><span class="token function">toSource</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre></div><h3 id="return_value"><a href="#return_value" title="Permalink to Return value">Return value</a></h3><div><p>A string representing the source code of the object.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="native_function"><a href="#native_function" title="Permalink to Native function">Native function</a></h3><div><p>For the built-in <code>Symbol</code> object, <code>toSource</code> returns the
+  following string indicating that the source code is not available:</p>
+
+<pre class="brush: js notranslate"><code>"<span class="token keyword">function</span> <span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token punctuation">[</span>native code<span class="token punctuation">]</span>
+<span class="token punctuation">}</span>"</code></pre>
+
+<p>For instances of <code>Symbol</code>, <code>toSource</code> returns a string
+  representing the source code.</p>
+
+<pre class="brush: js notranslate"><code><span class="token string">"Symbol()"</span></code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><p>Not part of any standard.</p></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toSource"><code>Object.prototype.toSource()</code></a></li>
+</ul></div>

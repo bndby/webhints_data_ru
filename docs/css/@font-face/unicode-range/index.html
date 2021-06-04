@@ -1,0 +1,64 @@
+<h1>unicode-range</h1><div><div></div>
+
+<p>The <strong><code>unicode-range</code></strong> CSS descriptor sets the specific range of characters to be used from a font defined by <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face"><code>@font-face</code></a> and made available for use on the current page. If the page doesn't use any character in this range, the font is not downloaded; if it uses at least one, the whole font is downloaded.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush:css notranslate"><code><span class="token comment">/* &lt;unicode-range&gt; values */</span>
+<span class="token property">unicode-range</span><span class="token punctuation">:</span> U+26<span class="token punctuation">;</span>               <span class="token comment">/* single codepoint */</span>
+<span class="token property">unicode-range</span><span class="token punctuation">:</span> U+0-7F<span class="token punctuation">;</span>
+<span class="token property">unicode-range</span><span class="token punctuation">:</span> U+0025-00FF<span class="token punctuation">;</span>        <span class="token comment">/* codepoint range */</span>
+<span class="token property">unicode-range</span><span class="token punctuation">:</span> U+4??<span class="token punctuation">;</span>              <span class="token comment">/* wildcard range */</span>
+<span class="token property">unicode-range</span><span class="token punctuation">:</span> U+0025-00FF<span class="token punctuation">,</span> U+4??<span class="token punctuation">;</span> <span class="token comment">/* multiple values */</span>
+</code></pre></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+ <dt><em><strong>single codepoint</strong></em></dt>
+ <dd>A single Unicode character code point, for example <code>U+26</code>.</dd>
+ <dt><em><strong>codepoint range</strong></em></dt>
+ <dd>A range of Unicode code points. So for example, <code>U+0025-00FF</code> means <em>include all characters in the range <code>U+0025</code> to <code>U+00FF</code></em>.</dd>
+ <dt><em><strong>wildcard range</strong></em></dt>
+ <dd>A range of Unicode code points containing wildcard characters, that is using the <code>'?'</code> character, so for example <code>U+4??</code> means <em>include all characters in the range <code>U+400</code> to <code>U+4FF</code></em>.</dd>
+</dl></div><h2 id="description"><a href="#description" title="Permalink to Description">Description</a></h2><div><p>The purpose of this descriptor is to allow the font resources to be segmented so that a browser only needs to download the font resource needed for the text content of a particular page. For example, a site with many localizations could provide separate font resources for English, Greek and Japanese. For users viewing the English version of a page, the font resources for Greek and Japanese fonts wouldn't need to be downloaded, saving bandwidth.</p></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row">Related <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule">at-rule</a></th><td><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face"><code>@font-face</code></a></td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td><code>U+0-10FFFF</code></td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>as specified</td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate">&lt;unicode-range&gt;<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#hash_mark_()" title="Hash mark: the entity is repeated one or several times, each occurence separated by a comma">#</a></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="using_a_different_font_for_a_single_character"><a href="#using_a_different_font_for_a_single_character" title="Permalink to Using a different font for a single character">Using a different font for a single character</a></h3><div><p>In this example we create a simple HTML containing a single <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div"><code>&lt;div&gt;</code></a> element, including an ampersand, that we want to style with a different font. To make it obvious, we will use a sans-serif font, <em>Helvetica</em>, for the text, and a serif font, <em>Times New Roman</em>, for the ampersand.</p>
+
+<p>In the CSS we are in effect defining a completely separate <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face"><code>@font-face</code></a> that only includes a single character in it, meaning that only this character will be styled with this font. We could also have done this by wrapping the ampersand in a <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/span"><code>&lt;span&gt;</code></a> and applying a different font just to that, but that is an extra element and rule set.</p>
+
+<h4 id="html">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>Me &amp; You = Us<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<h4 id="css">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token atrule"><span class="token rule">@font-face</span></span> <span class="token punctuation">{</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">'Ampersand'</span><span class="token punctuation">;</span>
+  <span class="token property">src</span><span class="token punctuation">:</span> <span class="token function">local</span><span class="token punctuation">(</span><span class="token string">'Times New Roman'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">unicode-range</span><span class="token punctuation">:</span> U+26<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">div</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 4em<span class="token punctuation">;</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> Ampersand<span class="token punctuation">,</span> Helvetica<span class="token punctuation">,</span> sans-serif<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<h4 id="result">Result</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Using_a_different_font_for_a_single_character" width="500" height="104" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/@font-face/unicode-range/_sample_.Using_a_different_font_for_a_single_character.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-fonts-3/#unicode-range-desc" hreflang="en" lang="en" class="external" rel=" noopener">CSS Fonts Module Level&nbsp;3<br><small lang="en-US">The definition of 'unicode-range' in that specification.</small></a></td>
+   <td><span class="spec-rec">Recommendation</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display"><code>font-display</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-family"><code>font-family</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-stretch"><code>font-stretch</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-style"><code>font-style</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-weight"><code>font-weight</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-variant"><code>font-variant</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-feature-settings"><code>font-feature-settings</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-variation-settings"><code>font-variation-settings</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/src"><code>src</code></a></li>
+</ul></div>

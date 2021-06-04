@@ -1,0 +1,107 @@
+<h1>Intl.NumberFormat.prototype.formatToParts()</h1><div><div></div>
+
+<p>The <strong><code>Intl.Numberformat.prototype.formatToParts()</code></strong> method
+	allows locale-aware formatting of strings produced by <code>NumberFormat</code>
+	formatters.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: js notranslate"><code><span class="token function">formatToParts</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token function">formatToParts</span><span class="token punctuation">(</span>number<span class="token punctuation">)</span>
+</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Parameters">Parameters</a></h3><div><dl>
+	<dt><code><var>number</var></code> <span class="badge inline optional">Optional</span></dt>
+	<dd>A <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number"><code>Number</code></a> or <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt"><code>BigInt</code></a> to format.</dd>
+</dl></div><h3 id="return_value"><a href="#return_value" title="Permalink to Return value">Return value</a></h3><div><p>An <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array"><code>Array</code></a> of objects containing the formatted number in parts.</p></div><h2 id="description"><a href="#description" title="Permalink to Description">Description</a></h2><div><p>The <code>formatToParts()</code> method is useful for custom formatting of number
+	strings. It returns an <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array"><code>Array</code></a> of objects containing the locale-specific
+	tokens from which it possible to build custom strings while preserving the
+	locale-specific parts. The structure the <code>formatToParts()</code> method returns,
+	looks like this:</p>
+
+<pre class="brush: js notranslate"><code><span class="token punctuation">[</span>
+  <span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token string">"integer"</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token string">"3"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token string">"group"</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token string">"."</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token string">"integer"</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token string">"500"</span> <span class="token punctuation">}</span>
+<span class="token punctuation">]</span></code></pre>
+
+<p>Possible types are the following:</p>
+
+<dl>
+	<dt>currency</dt>
+	<dd>The currency string, such as the symbols "$" and "€" or the name "Dollar", "Euro"
+		depending on how <code>currencyDisplay</code> is specified.</dd>
+	<dt>decimal</dt>
+	<dd>The decimal separator string (".").</dd>
+	<dt>fraction</dt>
+	<dd>The fraction number.</dd>
+	<dt>group</dt>
+	<dd>The group separator string (",").</dd>
+	<dt>infinity</dt>
+	<dd>The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity"><code>Infinity</code></a> string ("∞").</dd>
+	<dt>integer</dt>
+	<dd>The integer number.</dd>
+	<dt>literal</dt>
+	<dd>Any literal strings or whitespace in the formatted number.</dd>
+	<dt>minusSign</dt>
+	<dd>The minus sign string ("-").</dd>
+	<dt>nan</dt>
+	<dd>The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN"><code>NaN</code></a> string ("NaN").</dd>
+	<dt>plusSign</dt>
+	<dd>The plus sign string ("+").</dd>
+	<dt>percentSign</dt>
+	<dd>The percent sign string ("%").</dd>
+	<dt>unit</dt>
+	<dd>The unit string, such as the "l" or "litres", depending on how
+		<code>unitDisplay</code> is specified.</dd>
+</dl></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="comparing_format_and_formattoparts"><a href="#comparing_format_and_formattoparts" title="Permalink to Comparing format and formatToParts">Comparing format and formatToParts</a></h3><div><p><code>NumberFormat</code> outputs localized, opaque strings that cannot be manipulated
+	directly:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> number <span class="token operator">=</span> <span class="token number">3500</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> formatter <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Intl<span class="token punctuation">.</span>NumberFormat</span><span class="token punctuation">(</span><span class="token string">'de-DE'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  style<span class="token operator">:</span> <span class="token string">'currency'</span><span class="token punctuation">,</span>
+  currency<span class="token operator">:</span> <span class="token string">'EUR'</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+formatter<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span>number<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// "3.500,00 €"</span>
+</code></pre>
+
+<p>However, in many User Interfaces there is a desire to customize the formatting of this
+	string. The <code>formatToParts</code> method enables locale-aware formatting of
+	strings produced by <code>NumberFormat</code> formatters by providing you the string
+	in parts:</p>
+
+<pre class="brush: js notranslate"><code>formatter<span class="token punctuation">.</span><span class="token function">formatToParts</span><span class="token punctuation">(</span>number<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// return value:</span>
+<span class="token punctuation">[</span>
+  <span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token string">"integer"</span><span class="token punctuation">,</span>  value<span class="token operator">:</span> <span class="token string">"3"</span>   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token string">"group"</span><span class="token punctuation">,</span>    value<span class="token operator">:</span> <span class="token string">"."</span>   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token string">"integer"</span><span class="token punctuation">,</span>  value<span class="token operator">:</span> <span class="token string">"500"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token string">"decimal"</span><span class="token punctuation">,</span>  value<span class="token operator">:</span> <span class="token string">","</span>   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token string">"fraction"</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token string">"00"</span>  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token string">"literal"</span><span class="token punctuation">,</span>  value<span class="token operator">:</span> <span class="token string">" "</span>   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token string">"currency"</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token string">"€"</span>   <span class="token punctuation">}</span>
+<span class="token punctuation">]</span>
+</code></pre>
+
+<p>Now the information is available separately and it can be formatted and concatenated
+	again in a customized way. For example by using <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map"><code>Array.prototype.map()</code></a>,
+	<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions">arrow
+		functions</a>, a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch">switch
+		statement</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals">template
+		literals</a>, and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce"><code>Array.prototype.reduce()</code></a>.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> numberString <span class="token operator">=</span> formatter<span class="token punctuation">.</span><span class="token function">formatToParts</span><span class="token punctuation">(</span>number<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span>type<span class="token punctuation">,</span> value<span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">switch</span> <span class="token punctuation">(</span>type<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> <span class="token string">'currency'</span><span class="token operator">:</span> <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">&lt;strong&gt;</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>value<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">&lt;/strong&gt;</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+    <span class="token keyword">default</span> <span class="token operator">:</span> <span class="token keyword">return</span> value<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">string<span class="token punctuation">,</span> part</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> string <span class="token operator">+</span> part<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+<p>This will make the currency bold, when using the <code>formatToParts()</code> method.
+</p>
+
+<pre class="brush: js notranslate"><code>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>numberString<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// "3.500,00 &lt;strong&gt;€&lt;/strong&gt;"</span></code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://tc39.es/ecma402/#sec-intl.numberformat.prototype.formattoparts">ECMAScript Internationalization API Specification<!-- --> <!-- -->(ECMAScript Internationalization API)<br><small># <!-- -->sec-intl.numberformat.prototype.formattoparts</small></a></td></tr></tbody></table><div></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><div></div></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+	<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat"><code>Intl.NumberFormat</code></a></li>
+	<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/format"><code>Intl.NumberFormat.prototype.format</code></a></li>
+	<li>Formatting dates: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/formatToParts"><code>Intl.DateTimeFormat.prototype.formatToParts()</code></a></li>
+</ul></div>

@@ -1,0 +1,52 @@
+<h1>Number.prototype.toString()</h1><div><div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Метод <strong><code>toString()</code></strong> возвращает строковое представление указанного объекта <a href="/js/Number/"><code>Number</code></a>.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code><var>numObj</var>.toString([<var>radix</var>])</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>radix</code></dt>
+ <dd>Необязательный параметр. Целое число между 2 и 36, определяющее основание системы счисления, используемой для представления числового значения.</dd>
+</dl></div><h3 id="throws"><a href="#throws" title="Permalink to Выбрасываемые исключения">Выбрасываемые исключения</a></h3><div><dl>
+ <dt><a href="/js/RangeError/"><code>RangeError</code></a></dt>
+ <dd>Если в метод <code>toString()</code> передано основание не в диапазоне от 2 до 36, будет выброшено исключение <a href="/js/RangeError/"><code>RangeError</code></a>.</dd>
+</dl></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Объект <a href="/js/Number/"><code>Number</code></a> переопределяет метод <a href="/js/Object/toString/"><code>toString</code></a>, унаследованный из объекта <a href="/js/Object/"><code>Object</code></a>; он не наследует метод <a href="/js/Object/toString/"><code>Object.prototype.toString</code></a>. Для объектов <a href="/js/Number/"><code>Number</code></a> метод <code>toString()</code> возвращает строку, представляющую объект в определённой системе счисления.</p>
+
+<p>Метод <code>toString()</code> разбирает свой первый аргумент и пытается вернуть строковое представление в системе счисления с указанным основанием. Для оснований, больших 10, при обозначении цифр, больших 9, используются буквы латинского алфавита. Например, для шестнадцатеричных чисел (основание 16), используются буквы с <code>a</code> по <code>f</code>.</p>
+
+<p>Если параметр <code>radix</code> не указан, предпочитаемое основание предполагается равным 10.</p>
+
+<p>Если число <code>numObj</code> отрицательно, его знак сохраняется. Это правило действует даже если основание равно 2; возвращённая строка является двоичным представлением положительного числа <code>numObj</code>, перед которым ставится знак <code>-</code>, а <strong>не</strong> дополнительным кодом числа <code>numObj</code>.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_using_tostring"><a href="#example_using_tostring" title="Permalink to Пример: использование toString">Пример: использование <code>toString</code></a></h3><div><pre class="brush: js notranslate"><code><span class="token keyword">var</span> count <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>count<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// Выведет '10'</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">17</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">// Выведет '17'</span>
+
+<span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">6</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment">// Выведет '110'</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">254</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// Выведет 'fe'</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// Выведет '-1010'</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">0xff</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Выведет '-11111111'</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td>ECMAScript 1-е издание.</td>
+   <td>Стандарт</td>
+   <td>Изначальное определение. Реализована в JavaScript 1.1.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-15.7.4.2" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 5.1 (ECMA-262)<br><small lang="ru">Определение 'Number.prototype.tostring' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-number.prototype.tostring" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Number.prototype.tostring' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><div></div></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/Number/toFixed/"><code>Number.prototype.toFixed()</code></a></li>
+ <li><a href="/js/Number/toExponential/"><code>Number.prototype.toExponential()</code></a></li>
+ <li><a href="/js/Number/toPrecision/"><code>Number.prototype.toPrecision()</code></a></li>
+</ul></div>

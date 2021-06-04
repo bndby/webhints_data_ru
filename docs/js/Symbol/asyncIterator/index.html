@@ -1,0 +1,49 @@
+<h1>Symbol.asyncIterator</h1><div><div></div>
+
+<p>The <code><strong>Symbol.asyncIterator</strong></code> well-known symbol specifies the default AsyncIterator for an object.&nbsp;If this property is set on an object, it is an async iterable and can be used in a&nbsp;<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for-await...of">for await...of</a></code>&nbsp;loop.</p></div><h2 id="description"><a href="#description" title="Permalink to Description">Description</a></h2><div><p>The <code>Symbol.asyncIterator</code>&nbsp;symbol is a builtin symbol that is&nbsp;used to access an object's <code>@@asyncIterator</code> method. In order for an object to be async iterable, it must&nbsp;have a <code>Symbol.asyncIterator</code> key.</p>
+
+<p></p><table class="standard-table">
+  <thead>
+    <tr>
+      <th class="header" colspan="2">Property attributes of <code>Symbol.asyncIterator</code></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Writable</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <td>Enumerable</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <td>Configurable</td>
+      <td>no</td>
+    </tr>
+  </tbody>
+</table><p></p></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="user-defined_async_iterables"><a href="#user-defined_async_iterables" title="Permalink to User-defined Async&nbsp;Iterables">User-defined Async&nbsp;Iterables</a></h3><div><p>You can define your own async iterable by setting the <code>[Symbol.asyncIterator]</code> property on an object.&nbsp;</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">const</span> myAsyncIterable <span class="token operator">=</span> <span class="token punctuation">{</span>
+    async<span class="token operator">*</span> <span class="token punctuation">[</span>Symbol<span class="token punctuation">.</span>asyncIterator<span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">yield</span> <span class="token string">"hello"</span><span class="token punctuation">;</span>
+        <span class="token keyword">yield</span> <span class="token string">"async"</span><span class="token punctuation">;</span>
+        <span class="token keyword">yield</span> <span class="token string">"iteration!"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">for</span> <span class="token keyword">await</span> <span class="token punctuation">(</span><span class="token keyword">const</span> x <span class="token keyword">of</span> myAsyncIterable<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// expected output:</span>
+        <span class="token comment">//    "hello"</span>
+        <span class="token comment">//    "async"</span>
+        <span class="token comment">//    "iteration!"</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+<p>When creating an API, remember that async iterables are designed to represent something <em>iterable</em> — like a stream of data or a list —, not to completely replace callbacks and events in most situations.</p></div><h3 id="built-in_async_iterables"><a href="#built-in_async_iterables" title="Permalink to Built-in Async Iterables">Built-in Async Iterables</a></h3><div><p>There are currently no built-in JavaScript objects that have the <code>[Symbol.asyncIterator]</code> key set by default. However, WHATWG Streams are set to be the first built-in object to be async iterable, with <code>[Symbol.asyncIterator]</code> recently landing in the spec.</p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://tc39.es/ecma262/#sec-symbol.asynciterator">Unknown specification<!-- --> <br><small># <!-- -->sec-symbol.asynciterator</small></a></td></tr></tbody></table><div></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols">Iteration protocols</a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for-await...of">for await... of</a></li>
+</ul></div>

@@ -1,0 +1,63 @@
+<h1>align-tracks</h1><div><div></div>
+
+<p></p><div class="notecard experimental">
+    <h4 id="experimental">Experimental</h4>
+    <p><strong>This is an <a href="https://developer.mozilla.org/en-US/docs/MDN/Guidelines/Conventions_definitions#experimental">experimental technology</a></strong><br>Check the <a href="#browser_compatibility">Browser compatibility table</a> carefully before using this in production.</p>
+</div><p></p>
+
+<p>The <strong><code>align-tracks</code></strong>&nbsp;CSS property sets the alignment in the masonry axis for grid containers that have <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Masonry_Layout">masonry</a> in their block axis.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: css notranslate"><code><span class="token comment">/* Keyword values */</span>
+<span class="token property">align-tracks</span><span class="token punctuation">:</span> start<span class="token punctuation">;</span>
+<span class="token property">align-tracks</span><span class="token punctuation">:</span> space-between<span class="token punctuation">;</span>
+<span class="token property">align-tracks</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+<span class="token property">align-tracks</span><span class="token punctuation">:</span> start<span class="token punctuation">,</span>center<span class="token punctuation">,</span>end<span class="token punctuation">;</span>
+
+<span class="token comment">/* Global values */</span>
+<span class="token property">align-tracks</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">align-tracks</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">align-tracks</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre>
+
+<p>The property can take a single value, in which case all tracks are aligned in the same way. If a list of values is used then the first value applies to the first track in the grid axis, the second to the next and so on.</p>
+
+<p>If there are fewer values than tracks, the last value is used for all remaining tracks. If there are more values than tracks, any additional values are ignored.</p></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+ <dt><code>start</code></dt>
+ <dd>The items are packed flush to each other toward the start edge of the alignment container in the masonry&nbsp;axis.</dd>
+ <dt><code>end</code></dt>
+ <dd>The items are packed flush to each other toward the end edge of the alignment container in the masonry&nbsp;axis.</dd>
+ <dt><code>center</code></dt>
+ <dd>The items are packed flush to each other toward the center of the alignment container along the masonry axis.</dd>
+ <dt><code>normal</code></dt>
+ <dd>Acts as <code>start</code>.</dd>
+ <dt><code>baseline<br>
+ first baseline</code><br>
+ <code>last baseline</code></dt>
+ <dd>Specifies participation in first- or last-baseline alignment: aligns the alignment baseline of the box’s first or last baseline set with the corresponding baseline in the shared first or last baseline set of all the boxes in its baseline-sharing group.<br>
+ The fallback alignment for&nbsp;<code>first baseline</code>&nbsp;is&nbsp;<code>start</code>, the one for&nbsp;<code>last baseline</code>&nbsp;is&nbsp;<code>end</code>.</dd>
+ <dt><code>space-between</code></dt>
+ <dd>The items are evenly distributed within the alignment container along the masonry&nbsp;axis. The spacing between each pair of adjacent items is the same. The first item is flush with the main-start edge, and the last item is flush with the main-end edge.</dd>
+ <dt><code>space-around</code></dt>
+ <dd>The items are evenly distributed within the alignment container along the masonry&nbsp;axis. The spacing between each pair of adjacent items is the same. The empty space before the first and after the last item equals half of the space between each pair of adjacent items.</dd>
+ <dt><code>space-evenly</code></dt>
+ <dd>The items are evenly distributed within the alignment container along the masonry&nbsp;axis. The spacing between each pair of adjacent items, the main-start edge and the first item, and the main-end edge and the last item, are all exactly the same.</dd>
+ <dt><code>stretch</code></dt>
+ <dd>
+ <p>The items stretch along the masonry axis to fill the content box. Items with definite size do not stretch.</p>
+ </dd>
+</dl></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td><code>normal</code></td></tr><tr><th scope="row">Applies to</th><td>Grid containers with masonry layout in their block axis</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance">Inherited</a></th><td>no</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>as specified</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">[</a> normal <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> <a href="#baseline-position">&lt;baseline-position&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> <a href="#content-distribution">&lt;content-distribution&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> <a href="#overflow-position">&lt;overflow-position&gt;</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#question_mark_()" title="Question mark: the entity is optional">?</a> <a href="#content-position">&lt;content-position&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">]</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#hash_mark_()" title="Hash mark: the entity is repeated one or several times, each occurence separated by a comma">#</a><p style="font-family:Open Sans,Arial,sans-serif; margin: 10px 0 0 0;">where <br><code style="font-family:Consolas,Monaco,&quot;Andale Mono&quot;,monospace;"><span id="baseline-position">&lt;baseline-position&gt;</span> = <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">[</a> first <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> last <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">]</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#question_mark_()" title="Question mark: the entity is optional">?</a> baseline<br><span id="content-distribution">&lt;content-distribution&gt;</span> = space-between <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> space-around <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> space-evenly <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> stretch<br><span id="overflow-position">&lt;overflow-position&gt;</span> = unsafe <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> safe<br><span id="content-position">&lt;content-position&gt;</span> = center <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> start <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> end <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> flex-start <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> flex-end</code></p></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="masonry_layout_with_multiple_values_for_align-tracks"><a href="#masonry_layout_with_multiple_values_for_align-tracks" title="Permalink to Masonry layout with multiple values for align-tracks">Masonry layout with multiple values for align-tracks</a></h3><div><p><iframe width="100%" height="900" src="https://mdn.github.io/css-examples/grid/masonry/align-tracks.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table>
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-grid-3/#propdef-align-tracks" hreflang="en" lang="en" class="external" rel=" noopener">CSS Grid Layout Module Level 3<br><small lang="en-US">The definition of 'align-tracks' in that specification.</small></a></td>
+   <td><span class="spec-ed">Editor's Draft</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li>Related CSS properties: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/justify-tracks"><code>justify-tracks</code></a>,&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/masonry-auto-flow"><code>masonry-auto-flow</code></a></li>
+</ul></div>

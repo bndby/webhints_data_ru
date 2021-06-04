@@ -1,0 +1,162 @@
+<h1>Атрибут justify-items</h1><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><div class="boxed translate-rendered text-content">
+<div></div>
+
+<p>Атрибут <a href="/css/">CSS</a> <code><strong>justify-items</strong></code> определяет атрибут по умолчанию <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/justify-self"><code>justify-self</code> <span>(en-US)</span></a> для всех элементов блока, предоставляя всем им способ выравнивания по умолчанию каждого блока вдоль соответствующей оси.</p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/justify-items.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+
+
+<p>Эффект этого атрибута зависит от выбранного способа разметки:</p>
+
+<ul>
+ <li>Используя разметку с помощью блоков (block-level layout), элементы выравниваются внутри содержащего их блока по внутренней оси.</li>
+ <li>Для абсолютно позиционированых элементов выравнивание происходит внутри содержащего их блока по внутренней оси, учитывая значения смещения сверху, слева, снизу и справа.</li>
+ <li>Используя разметку с помощью ячеек таблицы (table cell layout), этот атрибут игнорируется (<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Alignment/Box_Alignment_In_Block_Abspos_Tables">подробнее</a> о выравнивании в блочной структуре, абсолютном позиционировании и о табличной разметке).</li>
+ <li>Используя разметку с помощью гибких или адаптивных блоков (flexbox layout), этот атрибут игнорируется (<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Alignment/Box_Alignment_in_Flexbox">подробнее</a> о выравнивании в разметке flexbox).</li>
+ <li>Используя разметку с помощью сетки (grid layout), элементы выравниваются внутри их сеточной области по внутренней оси (<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Alignment/Box_Alignment_In_Grid_Layout">подробнее</a> о выравнивании в разметке grid).</li>
+</ul>
+
+
+
+<pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* Основные ключевые слова */</span>
+<span class="token property">justify-items</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+<span class="token property">justify-items</span><span class="token punctuation">:</span> normal<span class="token punctuation">;</span>
+<span class="token property">justify-items</span><span class="token punctuation">:</span> stretch<span class="token punctuation">;</span>
+
+<span class="token comment">/* Выравнивание положения */</span>
+<span class="token property">justify-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>     <span class="token comment">/* Выровнять элементы по центру */</span>
+<span class="token property">justify-items</span><span class="token punctuation">:</span> start<span class="token punctuation">;</span>      <span class="token comment">/* Выровнять элементы в начале */</span>
+<span class="token property">justify-items</span><span class="token punctuation">:</span> end<span class="token punctuation">;</span>        <span class="token comment">/* Выровнять элементы в конце */</span>
+<span class="token property">justify-items</span><span class="token punctuation">:</span> flex-start<span class="token punctuation">;</span> <span class="token comment">/* Эквивалентно 'start'. Обратите внимание, что justify-items игнорируется в разметке Flexbox. */</span>
+<span class="token property">justify-items</span><span class="token punctuation">:</span> flex-end<span class="token punctuation">;</span>   <span class="token comment">/* Эквивалентно 'end'. Обратите внимание, что justify-items игнорируется в разметке Flexbox. */</span>
+<span class="token property">justify-items</span><span class="token punctuation">:</span> self-start<span class="token punctuation">;</span>
+<span class="token property">justify-items</span><span class="token punctuation">:</span> self-end<span class="token punctuation">;</span>
+<span class="token property">justify-items</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span>       <span class="token comment">/* Выровнять элементы по левому краю */</span>
+<span class="token property">justify-items</span><span class="token punctuation">:</span> right<span class="token punctuation">;</span>      <span class="token comment">/* Выровнять элементы по правому краю */</span>
+
+<span class="token comment">/* Исходное выравнивание */</span>
+<span class="token property">justify-items</span><span class="token punctuation">:</span> baseline<span class="token punctuation">;</span>
+<span class="token property">justify-items</span><span class="token punctuation">:</span> first baseline<span class="token punctuation">;</span>
+<span class="token property">justify-items</span><span class="token punctuation">:</span> last baseline<span class="token punctuation">;</span>
+
+<span class="token comment">/* Выравнивание при переполнении (только для выравнивания положения) */</span>
+<span class="token property">justify-items</span><span class="token punctuation">:</span> safe center<span class="token punctuation">;</span>
+<span class="token property">justify-items</span><span class="token punctuation">:</span> unsafe center<span class="token punctuation">;</span>
+
+<span class="token comment">/* Унаследованное выравнивание */</span>
+<span class="token property">justify-items</span><span class="token punctuation">:</span> legacy right<span class="token punctuation">;</span>
+<span class="token property">justify-items</span><span class="token punctuation">:</span> legacy left<span class="token punctuation">;</span>
+<span class="token property">justify-items</span><span class="token punctuation">:</span> legacy center<span class="token punctuation">;</span>
+
+<span class="token comment">/* Глобальные значения */</span>
+<span class="token property">justify-items</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">justify-items</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">justify-items</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre>
+
+<p>Этот атрибут может принимать одну из четырёх различных форм:</p>
+
+<ul>
+ <li>Основные ключевые слова: одно из значений ключевого слова: <code>normal</code>, <code>auto</code>, или <code>stretch</code>.</li>
+ <li>Исходное выравнивание: ключевое слово <code>baseline</code>&nbsp; плюс одно ключевое слово по выбору: <code>first</code> или <code>last</code>.</li>
+ <li>Выравнивание положения: одно из ключевых слов: <code>center</code>, <code>start</code>, <code>end</code>, <code>flex-start</code>, <code>flex-end</code>, <code>self-start</code>, <code>self-end</code>, <code>left</code>, или <code>right</code>. Плюс ключевое слово по выбору: <code>safe</code> или <code>unsafe</code>.</li>
+ <li>Унаследованное выравнивание: ключевое слово <code>legacy</code>, за которым следует ключевое слово <code>left</code> или <code>right</code>.</li>
+</ul>
+
+<h3 id="Значения">Значения</h3>
+
+<dl>
+ <dt><code>auto</code></dt>
+ <dd>Используемое значение является значением атрибута <code>justify-items</code> родительского блока. Если у блока нет родительского элемента или он абсолютно спозиционирован, то в этих случаях значение <code>auto</code> представляет собой значение <code>normal</code>.</dd>
+ <dt><code>normal</code></dt>
+ <dd>Эффект этого атрибута зависит от выбранного способа разметки:
+ <ul>
+  <li>Используя разметку с помощью блоков (block-level layout), это ключевое слово является синонимом слова <code>start</code></li>
+  <li>Для разметки с абсолютно позиционированный элементами, это ключевое слово ведёт себя как <code>start</code> на заменённых блоках с абсолютным позиционированием и как <code>stretch</code> на всех остальных блоках с абсолютным позиционированием</li>
+  <li>Используя разметку с помощью ячеек таблицы (table cell layout), это ключевое слово не имеет значения, так как этот атрибут <em>игнорируется</em></li>
+  <li>Используя разметку с помощью гибких блоков (flexbox layout), это ключевое слово не имеет значения, так как этот атрибут <em>игнорируется</em></li>
+  <li>Используя разметку с помощью сетки (grid layout), это ключевое слово приводит к поведению, аналогичному поведению <code>stretch</code>, за исключением блоков с соотношением сторон или внутренних размеров, где оно ведёт себя как <code>start</code></li>
+ </ul>
+ </dd>
+ <dt><code>start</code></dt>
+ <dd>Элемент выравнивается на одном уровне друг с другом по направлению к начальной границе контейнера выравнивания по соответствующей оси.</dd>
+ <dt><code>end</code></dt>
+ <dd>Элемент выравнивается на одном уровне друг с другом по направлению к конечной границе&nbsp; контейнера выравнивания по соответствующей оси.</dd>
+ <dt><code>flex-start</code></dt>
+ <dd>Для элементов, которые не являются потомками flex контейнера, это значение обрабатывается как <code>start</code>.</dd>
+ <dt><code>flex-end</code></dt>
+ <dd>Для элементов, которые не являются потомками flex контейнера, это значение обрабатывается как <code>end</code>.</dd>
+ <dt><code>self-start</code></dt>
+ <dd>Элемент выравнивается на одном уровне с границей контейнера выравнивания начальной стороны элемента по соответствующей оси.</dd>
+ <dt><code>self-end</code></dt>
+ <dd>Элемент выравнивается на одном уровне с границей контейнера выравнивания конечной стороны элемента по соответствующей оси.</dd>
+ <dt><code>center</code></dt>
+ <dd>Элементы выравниваются на одном уровне друг с другом по направлению к центру контейнера выравнивания.</dd>
+ <dt><code>left</code></dt>
+ <dd>Элементы выравниваются на одном уровне друг с другом по направлению к левой границе контейнера выравнивания. Если ось свойства не параллельна внутренней оси, это значение ведёт себя как <code>start</code>.</dd>
+ <dt><code>right</code></dt>
+ <dd>Элементы выравниваются на одном уровне друг с другом по направлению к правой границе контейнера выравнивания по соответствующей оси. Если ось свойства не параллельна внутренней оси, это значение ведёт себя как <code>start</code>.</dd>
+ <dt><code>baseline<br>
+ first baseline</code><br>
+ <code>last baseline</code></dt>
+ <dd>Определяет участие значений <code>first baseline</code> или <code>last baseline</code> в исходном выравнивании. Значение <code>baseline</code> выравнивает первый или последний блок набора в соответствии с исходным выравниванием в общем первом или последнем наборе всех блоков в его совместной группе исходного выравнивания.</dd>
+ <dd>Возвратным выравниванием для <code>first baseline</code> является значение <code>start</code>, для <code>last baseline</code> является значение <code>end</code>.</dd>
+ <dt><code>stretch</code></dt>
+ <dd>Если объединённый размер элементов меньше, чем размер контейнера выравнивания, то размер любого элемента со значением <code>auto</code> увеличивается одинаково (не пропорционально), но при этом соблюдаются ограничения, налагаемые <a href="/css/max-height/"><code>max-height</code></a>/<a href="/css/max-width/"><code>max-width</code></a> (или эквивалентной функциональностью), таким образом, что объединённый размер точно заполняет контейнер выравнивания.</dd>
+ <dt><code>safe</code></dt>
+ <dd>Если размер элемента выходит за пределы контейнера выравнивания, элемент выравнивается, как если бы режим выравнивания имел значение <code>start</code>.</dd>
+ <dt><code>unsafe</code></dt>
+ <dd>Независимо от относительных размеров элемента и контейнера выравнивания, данное значение выравнивания учитывается.</dd>
+ <dt><code>legacy</code></dt>
+ <dd>Создаёт значение, унаследованное потомками блока. Обратите внимание, что если потомок имеет значение <code>justify-self: auto</code>, ключевое слово <code>legacy</code> не учитывается по нисходящему наследованию. Действует только со значением <code>left</code>, <code>right</code>, или <code>center</code>, связанным с ним.</dd>
+</dl>
+
+<h3 id="Формальный_синтаксис">Формальный синтаксис</h3>
+
+<pre class="notranslate">normal <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> stretch <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <a href="#baseline-position">&lt;baseline-position&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <a href="#overflow-position">&lt;overflow-position&gt;</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#question_mark_()" title="Currently only available in English (US)" class="only-in-en-us">? (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> <a href="#self-position">&lt;self-position&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> left <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> right <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> legacy <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> legacy <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_ampersand" title="Currently only available in English (US)" class="only-in-en-us">&amp;&amp; (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> left <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> right <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> center <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a><p style="font-family:Open Sans,Arial,sans-serif; margin: 10px 0 0 0;">где <br><code style="font-family:Consolas,Monaco,&quot;Andale Mono&quot;,monospace;"><span id="baseline-position">&lt;baseline-position&gt;</span> = <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> first <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> last <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#question_mark_()" title="Currently only available in English (US)" class="only-in-en-us">? (en-US)</a> baseline<br><span id="overflow-position">&lt;overflow-position&gt;</span> = unsafe <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> safe<br><span id="self-position">&lt;self-position&gt;</span> = center <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> start <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> end <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> self-start <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> self-end <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> flex-start <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> flex-end</code></p></pre>
+
+<h2 id="Спецификации">Спецификации</h2>
+
+<table class="standard-table">
+ <thead>
+  <tr>
+   <th>Спецификация</th>
+   <th>Статус</th>
+   <th>Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-align-3/#propdef-justify-items" hreflang="en" lang="en" class="external" rel=" noopener">CSS Box Alignment Module Level 3<br><small lang="ru">Определение 'justify-items' в этой спецификации.</small></a></td>
+   <td><span class="spec-wd">Рабочий черновик</span></td>
+   <td>Первоначальное определение</td>
+  </tr>
+ </tbody>
+</table>
+
+<p></p><table class="properties"><tbody><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td><code>legacy</code></td></tr><tr><th scope="row">Применяется к</th><td>все элементы</td></tr><tr><th scope="row"><a href="/css/inheritance/">Наследуется</a></th><td>нет</td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>как указано</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p>
+
+<h2 id="Поддержка_браузерами">Поддержка браузерами</h2>
+<h3 id="Поддержка_в_разметке_Flex">Поддержка в разметке Flex</h3>
+
+<p></p><div class="bc-data" id="bcd:css.properties.justify-items.flex_context" data-depth="1">
+  If you're able to see this, something went wrong on this page.
+</div><p></p>
+
+<h3 id="Поддержка_в_разметке_Grid">Поддержка в разметке Grid</h3>
+
+<p></p><div class="bc-data" id="bcd:css.properties.justify-items.grid_context" data-depth="1">
+  If you're able to see this, something went wrong on this page.
+</div><p></p>
+
+<h2 id="Смотрите_также">Смотрите также</h2>
+
+<ul>
+ <li>CSS Руководство по Grid: <em><a href="/css/CSS_Grid_Layout/Box_Alignment_in_CSS_Grid_Layout/">Выравнивание блоков в разметке Grid</a></em></li>
+ <li><a href="/css/CSS_Box_Alignment/">CSS Выравнивание блоков</a></li>
+ <li>Сокращённый атрибут <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/place-items"><code>place-items</code> <span>(en-US)</span></a></li>
+ <li>Атрибут <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/justify-self"><code>justify-self</code> <span>(en-US)</span></a></li>
+ <li>Атрибут <a href="/css/align-items/"><code>align-items</code></a></li>
+</ul>
+</div></div>

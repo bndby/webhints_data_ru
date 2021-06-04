@@ -1,0 +1,20 @@
+<h1>WebAssembly.Table.prototype.length</h1><div><div></div>
+
+<p>The <code><strong>length</strong></code> prototype property of the
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Table"><code>WebAssembly.Table</code></a>&nbsp;object returns the length of the table, i.e. the number
+  of elements in the table.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="using_length"><a href="#using_length" title="Permalink to Using length">Using length</a></h3><div><p>The following example creates a new WebAssembly Table instance with an initial size of
+  2 and a maximum size of 10.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> table <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">WebAssembly<span class="token punctuation">.</span>Table</span><span class="token punctuation">(</span><span class="token punctuation">{</span> element<span class="token operator">:</span> <span class="token string">"anyfunc"</span><span class="token punctuation">,</span> initial<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span> maximum<span class="token operator">:</span> <span class="token number">10</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+<p>You can then grow the table by 1 with the following:</p>
+
+<pre class="brush: js notranslate"><code>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>table<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// "2"</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>table<span class="token punctuation">.</span><span class="token function">grow</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// "2"</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>table<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// "3"</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://webassembly.github.io/spec/js-api/#dom-table-length">WebAssembly JavaScript Interface<!-- --> <br><small># <!-- -->dom-table-length</small></a></td></tr></tbody></table><div></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+  <li><a href="https://developer.mozilla.org/en-US/docs/WebAssembly">WebAssembly</a> overview page</li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/WebAssembly/Concepts">WebAssembly concepts</a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/WebAssembly/Using_the_JavaScript_API">Using the WebAssembly
+      JavaScript API</a></li>
+</ul></div>

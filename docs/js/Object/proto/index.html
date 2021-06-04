@@ -1,0 +1,111 @@
+<h1>Object.prototype.__proto__</h1><div><div></div>
+
+<div class="warning notecard">
+<p><strong>Предупреждение:</strong> Изменение прототипа <code>[[Prototype]]</code> объекта является, по самой природе оптимизации доступа к свойствам в современных движках JavaScript, очень медленной операцией, это справедливо для <strong><em>любого</em></strong> браузера и движка JavaScript. Изменение прототипов очень тонко и обширно влияет на производительность, причём это влияние не ограничивается просто временем для операции присваивания <code>obj.__proto__ = ...</code>, оно может распространяться на <strong><em>любой</em></strong> код, который имеет доступ к <strong><em>любому</em></strong> объекту, чей прототип <code>[[Prototype]]</code> был изменён. Если вы заботитесь о производительности, вы никогда не должны изменять прототип <code>[[Prototype]]</code> объекта. Вместо этого создайте объект с нужным прототипом <code>[[Prototype]]</code>, с помощью метода <a href="/js/Object/create/"><code>Object.create()</code></a>.</p>
+</div>
+
+<div class="warning notecard">
+<p><strong>Предупреждение:</strong> хотя на сегодняшний момент большинство браузеров поддерживают свойство <code>Object.prototype.__proto__</code>, его поведение только недавно было стандартизировано в новой спецификации ECMAScript 6. Если вам требуется поддержка браузеров до этой спецификации, рекомендуется использовать вместо него метод <a href="/js/Object/getPrototypeOf/"><code>Object.getPrototypeOf()</code></a>.</p>
+</div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Свойство <code>__proto__</code> объекта <a href="https://developer.mozilla.org/ru/docs/conflicting/Web/JavaScript/Reference/Global_Objects/Object"><code>Object.prototype</code></a> является свойством доступа (комбинацией геттера и сеттера), которое расширяет внутренний прототип <code>[[Prototype]]</code> объекта (являющийся объектом или <a href="/js/null/"><code>null</code></a>), через который осуществлялся доступ.</p>
+
+<p>Использование свойства <code>__proto__</code> вызывает споры и многих оно разочаровало. Ранее оно никогда не включалось в спецификацию EcmaScript, но современные браузеры всё равно решили его реализовать. Сегодня свойство <code>__proto__</code> стандартизировано в спецификации ECMAScript 6 и будет поддерживаться в будущем. Тем не менее, изменение прототипа <code>[[Prototype]]</code> объекта всё ещё остаётся медленной операцией, которую следует избегать, если вы беспокоитесь о производительности.</p>
+
+<p>Свойство <code>__proto__</code> также может использоваться при определении литерала объекта, устанавливая прототип <code>[[Prototype]]</code> объекта при его создании. Этот способ может рассматриваться как альтернатива методу <a href="/js/Object/create/"><code>Object.create()</code></a>. Смотрите также <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Object_initializer">литеральный синтаксис инициализации объекта</a>.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="brush: js notranslate"><code><span class="token keyword">var</span> shape <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> circle <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Circle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Установка прототипа объекта</span>
+shape<span class="token punctuation">.</span>__proto__ <span class="token operator">=</span> circle<span class="token punctuation">;</span>
+<span class="token comment">// Получение прототипа объекта</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>shape<span class="token punctuation">.</span>__proto__ <span class="token operator">===</span> circle<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
+</code></pre>
+
+<p>Обратите внимание: название свойства состоит из двух подчёркиваний, следующих за ними пяти символов «proto» и следующих за ними ещё двух подчёркиваний.</p></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Геттер свойства <code>__proto__</code> расширяет значение внутреннего прототипа <code>[[Prototype]]</code> объекта. Для объектов, созданных с использованием литеральной формы создания объекта, это значение равно <a href="https://developer.mozilla.org/ru/docs/conflicting/Web/JavaScript/Reference/Global_Objects/Object"><code>Object.prototype</code></a>. Для функций это значение равно <a href="https://developer.mozilla.org/ru/docs/conflicting/Web/JavaScript/Reference/Global_Objects/Function"><code>Function.prototype</code></a>. Для объектов, созданных с использованием формы <code>new fun</code>, где <code>fun</code> является одной из встроенных функций-конструкторов, предоставляемых JavaScript (<a href="/js/Array/"><code>Array</code></a>, <a href="/js/Boolean/"><code>Boolean</code></a>, <a href="/js/Date/"><code>Date</code></a>, <a href="/js/Number/"><code>Number</code></a>, <a href="/js/Object/"><code>Object</code></a>, <a href="/js/String/"><code>String</code></a> и так далее&nbsp;— включая новые конструкторы, добавленные в процессе развития JavaScript), это значение равно <code>fun.prototype</code>. Для объектов, созданных с использованием формы <code>new fun</code>, где <code>fun</code> является функцией, определённой в скрипте, это значение равно значению <code>fun.prototype</code> во время вычисления <code>new fun</code>. Именно поэтому при присваивании <code>fun.prototype</code> нового значения, ранее созданные экземпляры <code>fun</code> продолжат использовать предыдущее значение в качестве своего прототипа <code>[[Prototype]]</code>, а последующие вызовы <code>new fun</code> будут использовать вновь присвоенное значение в качестве своего прототипа <code>[[Prototype]]</code>.</p>
+
+<p>Геттер <code>__proto__</code> позволяет прототипу <code>[[Prototype]]</code> объекта быть изменяемым. Объект должен быть расширяемым в соответствии с <a href="/js/Object/isExtensible/"><code>Object.isExtensible()</code></a>: если это не так, выкидывается исключение <a href="/js/TypeError/"><code>TypeError</code></a>. Предоставляемое значение должно быть объектом или <a href="/js/null/"><code>null</code></a>. Предоставление любого другого значения ничего не даст.</p>
+
+<p>Для понимания того, как прототипы используются для наследования, смотрите статью руководства <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Inheritance_and_the_prototype_chain">«Наследование и цепочки прототипов»</a>.</p>
+
+<p>Свойство <code>__proto__</code> является простым свойством доступа на объекте <a href="https://developer.mozilla.org/ru/docs/conflicting/Web/JavaScript/Reference/Global_Objects/Object"><code>Object.prototype</code></a>&nbsp;— свойством, состоящим из геттера и сеттера. Свойство <code>__proto__</code> будет найдено, если, в конечном итоге, его поиск пройдёт через <a href="https://developer.mozilla.org/ru/docs/conflicting/Web/JavaScript/Reference/Global_Objects/Object"><code>Object.prototype</code></a>, но при доступе к нему не через <a href="https://developer.mozilla.org/ru/docs/conflicting/Web/JavaScript/Reference/Global_Objects/Object"><code>Object.prototype</code></a>, оно найдено не будет. Если перед просмотром <a href="https://developer.mozilla.org/ru/docs/conflicting/Web/JavaScript/Reference/Global_Objects/Object"><code>Object.prototype</code></a> буден найдено какое-нибудь другое свойство <code>__proto__</code>, оно скроет искомое свойство <a href="https://developer.mozilla.org/ru/docs/conflicting/Web/JavaScript/Reference/Global_Objects/Object"><code>Object.prototype</code></a>.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> noProto <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> noProto<span class="token punctuation">.</span>__proto__<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// undefined</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span><span class="token function">getPrototypeOf</span><span class="token punctuation">(</span>noProto<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// null</span>
+
+noProto<span class="token punctuation">.</span>__proto__ <span class="token operator">=</span> <span class="token number">17</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>noProto<span class="token punctuation">.</span>__proto__<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 17</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span><span class="token function">getPrototypeOf</span><span class="token punctuation">(</span>noProto<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// null</span>
+
+<span class="token keyword">var</span> protoHidden <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span>protoHidden<span class="token punctuation">,</span> <span class="token string">'__proto__'</span><span class="token punctuation">,</span>
+                      <span class="token punctuation">{</span> value<span class="token operator">:</span> <span class="token number">42</span><span class="token punctuation">,</span> writable<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> configurable<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> enumerable<span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>protoHidden<span class="token punctuation">.</span>__proto__<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 42</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span><span class="token function">getPrototypeOf</span><span class="token punctuation">(</span>protoHidden<span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
+</code></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div><p>В следующем примере создаётся новый экземпляр <code>Employee</code>, а затем проверяется, что его свойство <code>__proto__</code> является тем же самым объектом, что и его конструктор <code>prototype</code>.</p>
+
+<pre class="brush: js notranslate"><code><span class="token comment">// Декларируем функцию, используемую как конструктор</span>
+<span class="token keyword">function</span> <span class="token function">Employee</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">/* инициализируем экземпляр */</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Создаём новый экземпляр Employee</span>
+<span class="token keyword">var</span> fred <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Employee</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Проверка на эквивалентность</span>
+fred<span class="token punctuation">.</span>__proto__ <span class="token operator">===</span> <span class="token class-name">Employee</span><span class="token punctuation">.</span>prototype<span class="token punctuation">;</span> <span class="token comment">// true</span>
+</code></pre>
+
+<p>В этот момент <code>fred</code> унаследован от <code>Employee</code>, однако присваивание другого объекта в <code>fred.__proto__</code> может изменить это:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">function</span> <span class="token function">Cow</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">/* инициализируем экземпляр */</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Присваиваем __proto__ новый объект</span>
+fred<span class="token punctuation">.</span>__proto__ <span class="token operator">=</span> <span class="token class-name">Cow</span><span class="token punctuation">.</span>prototype<span class="token punctuation">;</span>
+</code></pre>
+
+<p>Теперь <code>fred</code> наследуется непосредственно от <code>Cow.prototype</code>, а не от <code>Employee.prototype</code>, и теряет свойства, изначально унаследованные от <code>Employee.prototype</code>.</p>
+
+<p>Однако, это применяется только к <a href="/js/Object/isExtensible/">расширяемым</a> объектам, у нерасширяемых объектов свойство <code>__proto__</code> не может быть изменено:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+Object<span class="token punctuation">.</span><span class="token function">preventExtensions</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+obj<span class="token punctuation">.</span>__proto__ <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token comment">// выкинет TypeError</span>
+</code></pre>
+
+<p>Обратите внимание, что свойство <code>__proto__</code> может быть переопределено даже у объекта <code>Object.prototype</code>, если новая цепочка заканчивается <a href="/js/null/"><code>null</code></a>:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>__proto__ <span class="token operator">=</span>
+  Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token comment">// [[Prototype]]</span>
+                <span class="token punctuation">{</span> hi<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token function-variable function">value</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'hi'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+b<span class="token punctuation">.</span><span class="token function">hi</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+<p>Если свойство <code>__proto__</code> объекта <a href="https://developer.mozilla.org/ru/docs/conflicting/Web/JavaScript/Reference/Global_Objects/Object"><code>Object.prototype</code></a> не установлено в <a href="/js/null/"><code>null</code></a>, или в другой объект, чья цепочка прототипов, в конечном итоге, явно не заканчивается значением <a href="/js/null/"><code>null</code></a>, будет выкинуто исключение <a href="/js/TypeError/"><code>TypeError</code></a> «циклическое значение __proto__», поскольку цепочка должна заканчиваться <a href="/js/null/"><code>null</code></a> (как это и происходит на <a href="https://developer.mozilla.org/ru/docs/conflicting/Web/JavaScript/Reference/Global_Objects/Object"><code>Object.prototype</code></a> при нормальных обстоятельствах).</p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-additional-properties-of-the-object.prototype-object" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Object.prototype.__proto__' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Включён в (нормативное) приложение для дополнительных возможностей ECMAScript для веб-браузеров (обратите внимание, что спецификация закрепляет то, что уже реализовано).</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><div class="note notecard">
+<p><strong>Примечание:</strong> спецификация ES6 требует поддержку свойства <code>__proto__</code> только в браузерах и не требует его поддержку в других окружениях (хотя оно и рекомендуется в качестве обязательного). Если ваш код должен работать в не-браузерных окружениях, вместо свойства рекомендуется использовать методы <a href="/js/Object/getPrototypeOf/"><code>Object.getPrototypeOf()</code></a> и <a href="/js/Object/setPrototypeOf/"><code>Object.setPrototypeOf()</code></a>.</p>
+</div>
+
+<div></div></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/Object/isPrototypeOf/"><code>Object.prototype.isPrototypeOf()</code></a></li>
+ <li><a href="/js/Object/getPrototypeOf/"><code>Object.getPrototypeOf()</code></a></li>
+ <li><a href="/js/Object/setPrototypeOf/"><code>Object.setPrototypeOf()</code></a></li>
+</ul></div>

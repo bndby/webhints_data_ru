@@ -1,0 +1,36 @@
+<h1>Number.parseInt()</h1><div><div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Метод <strong><code>Number.parseInt()</code></strong> разбирает строковый аргумент и возвращает целое число. Этот метод ведёт себя идентично глобальной функции <a href="/js/parseInt/"><code>parseInt()</code></a> и является частью ECMAScript 6 (его целью является модуляризация глобальных сущностей).</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code>Number.parseInt(<var>string</var>[, <var>radix</var>])</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>string</code></dt>
+ <dd>Значение для разбора. Если параметр не является строкой, он будет в неё преобразован. Ведущие пробельные символы в строке игнорируются.</dd>
+ <dt><code>radix</code></dt>
+ <dd>Необязательный параметр. Целое число, представляющее основание системы счисления для числа в указанной выше строке. Для избежания непонятностей при чтении кода и гарантии предсказуемого поведения <strong>всегда определяйте этот параметр</strong>. Различные реализации дадут разные результаты, если основание системы счисления не будет указано.</dd>
+</dl></div><h3 id="возвращаемое_значение"><a href="#возвращаемое_значение" title="Permalink to Возвращаемое значение">Возвращаемое значение</a></h3><div><p>Целое число, полученное парсингом (разбором и интерпретацией) переданной строки. Если первый символ строки не может быть преобразован в число, то возвращается&nbsp;<a href="/js/NaN/" title="Глобальное свойство NaN является значением, представляющим не-число (Not-A-Number)."><code>NaN</code></a>.&nbsp;</p></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Этот метод имеет ту же функциональность, что и глобальная функция <a href="/js/parseInt/"><code>parseInt()</code></a>:</p>
+
+<pre class="brush: js notranslate"><code>Number<span class="token punctuation">.</span>parseInt <span class="token operator">===</span> parseInt<span class="token punctuation">;</span> <span class="token comment">// true</span></code></pre>
+
+<p>Пожалуйста, обратитесь к документации по глобальной функции <a href="/js/parseInt/"><code>parseInt()</code></a> для просмотра подробного описания и примеров.</p></div><h2 id="полифил"><a href="#полифил" title="Permalink to Полифил">Полифил</a></h2><div><pre class="brush: js notranslate"><code><span class="token keyword">if</span> <span class="token punctuation">(</span>Number<span class="token punctuation">.</span>parseInt <span class="token operator">===</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    Number<span class="token punctuation">.</span>parseInt <span class="token operator">=</span> window<span class="token punctuation">.</span>parseInt<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td>
+    <p><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-number.parseint" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Number.parseInt' в этой спецификации.</small></a></p>
+   </td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Изначальное определение.</td>
+  </tr>
+  <tr>
+   <td><a href="https://tc39.es/ecma262/#sec-number.parseint" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript (ECMA-262)<br><small lang="ru">Определение 'Number.parseInt' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li>Объект <a href="/js/Number/"><code>Number</code></a>, которому принадлежит этот метод.</li>
+ <li>Глобальная функция <a href="/js/parseInt/"><code>parseInt()</code></a>.</li>
+</ul></div>

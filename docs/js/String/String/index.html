@@ -1,0 +1,23 @@
+<h1>String() constructor</h1><div><div></div>
+
+<p>The <strong><code>String</code></strong> constructor is used to create a new
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String"><code>String</code></a> object. When called instead as a function, it performs type
+  conversion to a <a href="https://developer.mozilla.org/en-US/docs/Glossary/String">primitive string</a>, which is usually more
+  useful.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: js notranslate"><code><span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span>thing<span class="token punctuation">)</span>
+<span class="token function">String</span><span class="token punctuation">(</span>thing<span class="token punctuation">)</span></code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Parameters">Parameters</a></h3><div><dl>
+  <dt><code><var>thing</var></code></dt>
+  <dd>Anything to be converted to a string.</dd>
+</dl></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="string_constructor_and_string_function"><a href="#string_constructor_and_string_function" title="Permalink to String constructor and String function
+">String constructor and String function
+</a></h3><div><p>String function and String constructor produce different results:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">typeof</span> <span class="token function">String</span><span class="token punctuation">(</span><span class="token string">'Hello world'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// string</span>
+<span class="token keyword">typeof</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">'Hello world'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// object</span>
+</code></pre>
+
+<p>Here, the function produces a string (the <a href="https://developer.mozilla.org/en-US/docs/Glossary/Primitive">primitive</a> type) as promised.
+  However, the constructor produces an instance of the type String (an object wrapper) and
+  that's why you rarely want to use the String constructor at all.</p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://tc39.es/ecma262/#sec-string-constructor">Unknown specification<!-- --> <br><small># <!-- -->sec-string-constructor</small></a></td></tr></tbody></table><div></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Text_formatting">Text formatting in the
+      JavaScript Guide</a></li>
+</ul></div>

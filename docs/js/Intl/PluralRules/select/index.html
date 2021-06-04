@@ -1,0 +1,26 @@
+<h1>Intl.PluralRules.select()</h1><div><div></div>
+
+<p>The <strong><code>Intl.PluralRules.prototype.select()</code></strong> method returns a
+	string indicating which plural rule to use for locale-aware formatting.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: js notranslate"><code><span class="token function">select</span><span class="token punctuation">(</span>number<span class="token punctuation">)</span></code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Parameters">Parameters</a></h3><div><dl>
+	<dt><code><var>number</var></code></dt>
+	<dd>The number to get a plural rule for.</dd>
+</dl></div><h3 id="return_value"><a href="#return_value" title="Permalink to Return value">Return value</a></h3><div><p>A string representing the pluralization category of the <code>number</code>, can be one
+	of <code>zero</code>, <code>one</code>, <code>two</code>, <code>few</code>,
+	<code>many</code> or <code>other</code>.</p></div><h2 id="description"><a href="#description" title="Permalink to Description">Description</a></h2><div><p>This function selects a pluralization category according to the locale and formatting
+	options of a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/PluralRules"><code>Intl/PluralRules</code></a> object.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="using_select"><a href="#using_select" title="Permalink to Using select()">Using select()</a></h3><div><pre class="brush: js notranslate"><code> <span class="token keyword">new</span> <span class="token class-name">Intl<span class="token punctuation">.</span>PluralRules</span><span class="token punctuation">(</span><span class="token string">'ar-EG'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// → 'zero'</span>
+
+<span class="token keyword">new</span> <span class="token class-name">Intl<span class="token punctuation">.</span>PluralRules</span><span class="token punctuation">(</span><span class="token string">'ar-EG'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// → 'one'</span>
+
+<span class="token keyword">new</span> <span class="token class-name">Intl<span class="token punctuation">.</span>PluralRules</span><span class="token punctuation">(</span><span class="token string">'ar-EG'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// → 'two'</span>
+
+<span class="token keyword">new</span> <span class="token class-name">Intl<span class="token punctuation">.</span>PluralRules</span><span class="token punctuation">(</span><span class="token string">'ar-EG'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// → 'few'</span>
+
+<span class="token keyword">new</span> <span class="token class-name">Intl<span class="token punctuation">.</span>PluralRules</span><span class="token punctuation">(</span><span class="token string">'ar-EG'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token number">18</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// → 'many'</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://tc39.es/ecma402/#sec-intl.pluralrules.prototype.select">ECMAScript Internationalization API Specification<!-- --> <!-- -->(ECMAScript Internationalization API)<br><small># <!-- -->sec-intl.pluralrules.prototype.select</small></a></td></tr></tbody></table><div></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><div></div></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+	<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/PluralRules"><code>Intl.PluralRules</code></a></li>
+</ul></div>

@@ -1,0 +1,71 @@
+<h1>::selection</h1><div><div><div class="notecard experimental">
+    <h4 id="experimental">Experimental</h4>
+    <p><strong>Это экспериментальная технология</strong><br>Так как спецификация этой технологии ещё не стабилизировалась, смотрите <a href="#browser_compatibility">таблицу совместимости</a> по поводу использования в различных браузерах. Также заметьте, что синтаксис и поведение экспериментальной технологии может измениться в будущих версиях браузеров, вслед за изменениями спецификации.</p>
+</div></div>
+
+<p><span class="seoSummary"><a href="/css/Pseudo-elements/">Псевдоэлемент</a>&nbsp;<strong><code>::selection</code>&nbsp;</strong>позволяет применить стили к части документа, который был выделен пользователем (например, с помощью мыши).</span></p>
+
+<pre class="brush: css no-line-numbers notranslate"><code><span class="token selector">::selection</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> cyan<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div><h2 id="разрешённые_свойства"><a href="#разрешённые_свойства" title="Permalink to Разрешённые свойства">Разрешённые свойства</a></h2><div><p>Только небольшое подмножество CSS-свойств может быть использовано с псевдоэлементом&nbsp;<code>::selection</code> :</p>
+
+<ul>
+ <li><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/color"><code>color</code> <span>(en-US)</span></a></li>
+ <li><a href="/css/background-color/"><code>background-color</code></a></li>
+ <li><a href="/css/cursor/"><code>cursor</code></a></li>
+ <li><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/caret-color"><code>caret-color</code> <span>(en-US)</span></a></li>
+ <li><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/outline"><code>outline</code> <span>(en-US)</span></a> и его длинные&nbsp;записи</li>
+ <li><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration"><code>text-decoration</code> <span>(en-US)</span></a> и связанные свойства</li>
+ <li><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-emphasis-color"><code>text-emphasis-color</code> <span>(en-US)</span></a></li>
+ <li><a href="/css/text-shadow/"><code>text-shadow</code></a></li>
+</ul>
+
+<div class="warning notecard">
+<p>Заметим, что, в частности, свойство <a href="/css/background-image/"><code>background-image</code></a> игнорируется.</p>
+</div></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate">/* синтаксис Firefox */
+::-moz-selection
+
+<pre class="notranslate">::selection</pre>
+</pre></div><h2 id="пример"><a href="#пример" title="Permalink to Пример">Пример</a></h2><div></div><h3 id="html"><a href="#html" title="Permalink to HTML">HTML</a></h3><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>Этот текст будет стилизован особым образом при выделении.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Также попробуйте выделить текст в этом параграфе.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span></code></pre></div><h3 id="css"><a href="#css" title="Permalink to CSS">CSS</a></h3><div><pre class="brush: css notranslate"><code><span class="token comment">/* Сделаем выделенный текст золотым с красным фоном */</span>
+<span class="token selector">::-moz-selection</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> gold<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">::selection</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> gold<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* Сделаем выделенный в параграфе текст белым на синем фоне */</span>
+<span class="token selector">p::-moz-selection</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">p::selection</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div><h3 id="результат"><a href="#результат" title="Permalink to Результат">Результат</a></h3><div><p><iframe class="sample-code-frame" id="frame_Пример" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/::selection/_sample_.%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80.html" loading="lazy"></iframe></p></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-pseudo-4/#selectordef-selection" hreflang="en" lang="en" class="external" rel=" noopener">CSS Pseudo-Elements Level&nbsp;4<br><small lang="ru">Определение '::selection' в этой спецификации.</small></a></td>
+   <td><span class="spec-wd">Рабочий черновик</span></td>
+   <td>Изначальное определение.</td>
+  </tr>
+ </tbody>
+</table>
+
+<div class="note notecard">
+<p><strong>Примечание:</strong> Хотя псевдоэлемент&nbsp;<code>::selection</code>&nbsp;присутствовал в черновиках&nbsp;стандарта CSS Selectors Level 3, он был убран в течение фазы&nbsp;Candidate Recommendation, так как его поведение было недостаточно проработано (особенно с вложенным элементами) и согласованность не была достигнута&nbsp;<a class="external" href="https://lists.w3.org/Archives/Public/www-style/2008Oct/0268.html" rel=" noopener">(основываясь на обсуждении в списке&nbsp;рассылки&nbsp;W3C Style)</a>. Этот псевдоэлемент был возвращён в&nbsp;<a href="https://dev.w3.org/csswg/css-pseudo-4/" class="external" rel=" noopener">Pseudo-Elements Level 4</a>.</p>
+</div></div><h2 id="поддержка_браузерами"><a href="#поддержка_браузерами" title="Permalink to Поддержка браузерами">Поддержка браузерами</a></h2><p>BCD tables only load in the browser</p><div><div>
+<p></p><p></p>
+</div></div>

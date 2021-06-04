@@ -1,0 +1,72 @@
+<h1>shape-margin</h1><div><div></div>
+
+<p><span class="seoSummary">The <strong><code>shape-margin</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> property sets a margin for a CSS shape created using <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/shape-outside"><code>shape-outside</code></a>.</span></p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/shape-margin.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+<p>The margin lets you adjust the distance between the edges of the shape (the <strong>float element</strong>) and the surrounding content.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* &lt;length&gt; values */</span>
+<span class="token property">shape-margin</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+<span class="token property">shape-margin</span><span class="token punctuation">:</span> 20mm<span class="token punctuation">;</span>
+
+<span class="token comment">/* &lt;percentage&gt; value */</span>
+<span class="token property">shape-margin</span><span class="token punctuation">:</span> 60%<span class="token punctuation">;</span>
+
+<span class="token comment">/* Global values */</span>
+<span class="token property">shape-margin</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">shape-margin</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">shape-margin</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+ <dt><code>&lt;length-percentage&gt;</code></dt>
+ <dd>Sets the margin of the shape to a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length"><code>&lt;length&gt;</code></a> value or to a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/percentage"><code>&lt;percentage&gt;</code></a> of the width of the element's containing block.</dd>
+</dl></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td><code>0</code></td></tr><tr><th scope="row">Applies to</th><td>floats</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance">Inherited</a></th><td>no</td></tr><tr><th scope="row">Percentages</th><td>refer to the width of the containing block</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>as specified, but with relative lengths converted into absolute lengths</td></tr><tr><th scope="row">Animation type</th><td>a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length#interpolation" title="Values of the <length> CSS data type are interpolated as real, floating-point numbers.">length</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/percentage#interpolation" title="Values of the <percentage> CSS data type are interpolated as real, floating-point numbers.">percentage</a> or calc();</td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate"><a href="#length-percentage">&lt;length-percentage&gt;</a><p style="font-family:Open Sans,Arial,sans-serif; margin: 10px 0 0 0;">where <br><code style="font-family:Consolas,Monaco,&quot;Andale Mono&quot;,monospace;"><span id="length-percentage">&lt;length-percentage&gt;</span> = <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length" title="Possible values: a number followed by'em', 'ex', 'ch', 'rem', 'px', 'cm', 'mm', 'in', 'vh', 'vw', 'vmin', 'vmax', 'pt', 'pc' or 'px', like 3px, 1.5cm, -0.5em or 0">&lt;length&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/percentage" title>&lt;percentage&gt;</a></code></p></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="adding_a_margin_to_a_polygon"><a href="#adding_a_margin_to_a_polygon" title="Permalink to Adding a margin to a polygon">Adding a margin to a polygon</a></h3><div><h4 id="html">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>shape<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+We are not quite sure of any one thing in biology; our knowledge of geology
+is relatively very slight, and the economic laws of society are
+uncertain to every one except some individual who attempts to set them
+forth; but before the world was fashioned the square on the hypotenuse
+was equal to the sum of the squares on the other two sides of a right
+triangle, and it will be so after this world is dead; and the inhabitant
+of Mars, if one exists, probably knows its truth as we know it.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<h4 id="css">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token selector">section</span> <span class="token punctuation">{</span>
+  <span class="token property">max-width</span><span class="token punctuation">:</span> 400px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.shape</span> <span class="token punctuation">{</span>
+  <span class="token property">float</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 150px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 150px<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> maroon<span class="token punctuation">;</span>
+  <span class="token property">clip-path</span><span class="token punctuation">:</span> <span class="token function">polygon</span><span class="token punctuation">(</span>0 0<span class="token punctuation">,</span> 150px 150px<span class="token punctuation">,</span> 0 150px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">shape-outside</span><span class="token punctuation">:</span> <span class="token function">polygon</span><span class="token punctuation">(</span>0 0<span class="token punctuation">,</span> 150px 150px<span class="token punctuation">,</span> 0 150px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">shape-margin</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<h4 id="result">Result</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Adding_a_margin_to_a_polygon" width="500" height="250" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/shape-margin/_sample_.Adding_a_margin_to_a_polygon.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-shapes/#shape-margin-property" hreflang="en" lang="en" class="external" rel=" noopener">CSS Shapes Module Level&nbsp;1<br><small lang="en-US">The definition of 'shape-margin' in that specification.</small></a></td>
+   <td><span class="spec-cr">Candidate Recommendation</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Shapes">CSS Shapes</a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Shapes/Overview_of_CSS_Shapes">Overview of CSS Shapes</a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/shape-outside"><code>shape-outside</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/shape-image-threshold"><code>shape-image-threshold</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/basic-shape"><code>&lt;basic-shape&gt;</code></a></li>
+</ul></div>

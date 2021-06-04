@@ -1,0 +1,41 @@
+<h1>scroll-snap-align</h1><div><div></div>
+
+<p>The <code>scroll-snap-align</code> property specifies the box’s snap position as an alignment of its snap area (as the alignment subject) within its snap container’s snapport (as the alignment container). The two values specify the snapping alignment in the block axis and inline axis, respectively. If only one value is specified, the second value defaults to the same value.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: css notranslate"><code><span class="token comment">/* Keyword values */</span>
+<span class="token property">scroll-snap-align</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token property">scroll-snap-align</span><span class="token punctuation">:</span> start end<span class="token punctuation">;</span> <span class="token comment">/* when two values set first is block, second inline */</span>
+<span class="token property">scroll-snap-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+
+<span class="token comment">/* Global values */</span>
+<span class="token property">scroll-snap-align</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">scroll-snap-align</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">scroll-snap-align</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+ <dt><code>none</code></dt>
+ <dd>The box does not define a snap position in that axis.</dd>
+ <dt><code>start</code></dt>
+ <dd>The start alignment of this box's scroll snap area, within the scroll container's snapport is a snap position in this axis.</dd>
+ <dt><code>end</code></dt>
+ <dd>The end alignment of this box's scroll snap area, within the scroll container's snapport is a snap position in this axis.</dd>
+ <dt><code>center</code></dt>
+ <dd>The center&nbsp;alignment of this box's scroll snap area, within the scroll container's snapport is a snap position in this axis.</dd>
+</dl>
+
+<p>Safari currently has the two value syntax in the wrong order, the first value being inline the second block. See <a href="https://bugs.webkit.org/show_bug.cgi?id=191865" class="external" rel=" noopener">bug #191865</a>.</p></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td><code>none</code></td></tr><tr><th scope="row">Applies to</th><td>all elements</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance">Inherited</a></th><td>no</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>as specified</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">[</a> none <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> start <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> end <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> center <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">]</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#curly_braces_(_)" title="Curly braces: encloses two integers defining the minimal and maximal numbers of occurrences of the entity">{</a>1,2<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#curly_braces_(_)" title="Curly braces: encloses two integers defining the minimal and maximal numbers of occurrences of the entity">}</a></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-scroll-snap-1/#propdef-scroll-snap-align" hreflang="en" lang="en" class="external" rel=" noopener">CSS Scroll Snap Module Level&nbsp;1<br><small lang="en-US">The definition of 'scroll-snap-align' in that specification.</small></a></td>
+   <td><span class="spec-cr">Candidate Recommendation</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Scroll_Snap">CSS Scroll Snap</a></li>
+  <li><a href="https://developers.google.com/web/updates/2018/07/css-scroll-snap" class="external" rel=" noopener">Well-Controlled Scrolling with CSS Scroll Snap</a></li>
+</ul></div>

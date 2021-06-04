@@ -1,0 +1,63 @@
+<h1>Math.random()</h1><div><div></div>
+
+<p>Метод <strong><code>Math.random()</code></strong> возвращает псевдослучайное число с плавающей запятой из диапазона <code>[0,&nbsp;1)</code>, то есть, от 0 (включительно) до 1 (но не включая 1), которое затем можно отмасштабировать до нужного диапазона. Реализация сама выбирает начальное зерно для алгоритма генерации случайных чисел; оно не может быть выбрано или сброшено пользователем.</p>
+
+<p><iframe class="interactive" width="100%" height="490" src="https://interactive-examples.mdn.mozilla.net/pages/js/math-random.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></p>
+
+<div class="note notecard">
+<p><strong>Примечание:</strong> метод <code>Math.random()</code> <em>не предоставляет</em> криптографически стойкие случайные числа. Не используйте его ни для чего, связанного с безопасностью. Вместо него используйте Web Crypto API (API криптографии в вебе) и более точный метод <a href="https://developer.mozilla.org/ru/docs/Web/API/Crypto/getRandomValues" title="window.crypto.getRandomValues()"><code>window.crypto.getRandomValues()</code></a>.</p>
+</div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code>Math.random()</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Возвращаемое значение">Возвращаемое значение</a></h3><div><p>Псевдослучайное число с плавающей запятой&nbsp;от <code>0</code> (включительно) до 1 (не считая).</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div><p>Обратите внимание, что поскольку числа в JavaScript являются числами с плавающей запятой стандарта IEEE 754 с поведением при округлении к ближайшему чётному, все эти диапазоны (исключая диапазон с простым вызовом <code>Math.random()</code>), не точны. Если заданы очень большие границы (2<sup>53</sup> или выше), возможен <em>крайне</em> редкий случай вычисления обычно исключённой верхней границы.</p></div><h3 id="получение_случайного_числа_от_0_(включительно)_до_1_(не_включая)"><a href="#получение_случайного_числа_от_0_(включительно)_до_1_(не_включая)" title="Permalink to Получение случайного числа от 0 (включительно) до 1 (не включая)">Получение случайного числа от 0 (включительно) до 1 (не включая)</a></h3><div><pre class="brush: js notranslate"><code><span class="token keyword">function</span> <span class="token function">getRandom</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div><h3 id="получение_случайного_числа_в_заданном_интервале"><a href="#получение_случайного_числа_в_заданном_интервале" title="Permalink to Получение случайного числа в заданном интервале">Получение случайного числа в заданном интервале</a></h3><div><p>Этот пример возвращает случайное число в заданном интервале. Возвращаемое значение не менее (и может быть равно) <code>min</code>&nbsp;и не более (и не равно)&nbsp;<code>max</code>.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">function</span> <span class="token function">getRandomArbitrary</span><span class="token punctuation">(</span><span class="token parameter">min<span class="token punctuation">,</span> max</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span>max <span class="token operator">-</span> min<span class="token punctuation">)</span> <span class="token operator">+</span> min<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div><h3 id="получение_случайного_целого_числа_в_заданном_интервале"><a href="#получение_случайного_целого_числа_в_заданном_интервале" title="Permalink to Получение случайного целого числа&nbsp;в заданном интервале">Получение случайного целого числа&nbsp;в заданном интервале</a></h3><div><p>Этот пример возвращает случайное <em>целое </em>число в заданном интервале. Возвращаемое значение не менее <code>min</code> (или следующее целое число, которое больше <code>min</code>, если <code>min</code> не целое) и не более (но не равно) <code>max</code>.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">function</span> <span class="token function">getRandomInt</span><span class="token punctuation">(</span><span class="token parameter">min<span class="token punctuation">,</span> max</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  min <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">ceil</span><span class="token punctuation">(</span>min<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  max <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>max<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span>max <span class="token operator">-</span> min<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> min<span class="token punctuation">;</span> <span class="token comment">//Максимум не включается, минимум включается</span>
+<span class="token punctuation">}</span></code></pre>
+
+<div class="note notecard">
+<p>Может показаться заманчивым использовать <code>Math.round()</code> для округления, но это может сделать распределение неравномерным, что может оказаться неприемлемым для ваших нужд.</p>
+</div></div><h3 id="получение_случайного_целого_числа_в_заданном_интервале_включительно"><a href="#получение_случайного_целого_числа_в_заданном_интервале_включительно" title="Permalink to Получение случайного целого числа&nbsp;в заданном интервале, включительно">Получение случайного целого числа&nbsp;в заданном интервале, включительно</a></h3><div><p>Функция&nbsp;<code>getRandomInt()</code>&nbsp;выше включает минимальное значение, но не включает максимальное. Но что если вам нужно, чтобы включалось и минимальное, и максимальное значение? Функция&nbsp;<code>getRandomIntInclusive()</code>&nbsp;решает этот вопрос.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">function</span> <span class="token function">getRandomIntInclusive</span><span class="token punctuation">(</span><span class="token parameter">min<span class="token punctuation">,</span> max</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  min <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">ceil</span><span class="token punctuation">(</span>min<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  max <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>max<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span>max <span class="token operator">-</span> min <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> min<span class="token punctuation">;</span> <span class="token comment">//Максимум и минимум включаются</span>
+<span class="token punctuation">}</span></code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-262,%201st%20edition,%20June%201997.pdf" hreflang="en" lang="en" class="external" title="Спецификация 'ECMAScript 1st Edition (ECMA-262)'" rel=" noopener">ECMAScript 1st Edition (ECMA-262)</a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Изначальное определение. JavaScript 1.0 (только UNIX) / JavaScript 1.1 (все платформы).</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-15.8.2.14" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 5.1 (ECMA-262)<br><small lang="ru">Определение 'Math.random' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-math.random" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Math.random' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td><a href="https://tc39.es/ecma262/#sec-math.random" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript (ECMA-262)<br><small lang="ru">Определение 'Math.random' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p>
+
+<div></div>
+
+<div id="compat-mobile"></div></div>

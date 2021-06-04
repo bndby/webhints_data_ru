@@ -1,0 +1,178 @@
+<h1>Array.prototype.sort()</h1><div><div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Метод <code><strong>sort()</strong></code> <em>на месте</em> сортирует элементы массива и возвращает отсортированный массив. Сортировка не обязательно <a href="https://ru.wikipedia.org/wiki/%D0%A3%D1%81%D1%82%D0%BE%D0%B9%D1%87%D0%B8%D0%B2%D0%B0%D1%8F_%D1%81%D0%BE%D1%80%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0" class="external" rel=" noopener">устойчива</a> (<a href="https://en.wikipedia.org/wiki/Sorting_algorithm#Stability" class="external" rel=" noopener">англ.</a>). Порядок сортировки по умолчанию соответствует порядку кодовых точек Unicode.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code><var>arr</var>.sort([<var>compareFunction</var>])</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>compareFunction</code></dt>
+ <dd>Необязательный параметр. Указывает функцию, определяющую порядок сортировки. Если опущен, массив сортируется в соответствии со значениями кодовых точек каждого символа <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Grammar_and_types#unicode">Unicode</a>, полученных путём преобразования каждого элемента в строку.</dd>
+</dl></div><h3 id="возвращаемое_значение"><a href="#возвращаемое_значение" title="Permalink to Возвращаемое значение">Возвращаемое значение</a></h3><div><p>Отсортированный массив. Важно, что копия массива не создаётся - массив сортируется <em><a href="https://en.wikipedia.org/wiki/In-place_algorithm" class="external" rel=" noopener">на месте</a></em>.</p></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Если функция сравнения <code>compareFunction</code> не предоставляется, элементы сортируются путём преобразования их в строки и сравнения строк в порядке следования кодовых точек Unicode. Например,&nbsp;слово "Вишня" идёт перед словом "бананы". При числовой сортировке, 9 идёт перед 80, но поскольку числа преобразуются в строки, то "80" идёт перед "9" в соответствии с порядком в Unicode.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> fruit <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'арбузы'</span><span class="token punctuation">,</span> <span class="token string">'бананы'</span><span class="token punctuation">,</span> <span class="token string">'Вишня'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+fruit<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ['Вишня', 'арбузы', 'бананы']</span>
+
+<span class="token keyword">var</span> scores <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">21</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+scores<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [1, 10, 2, 21]</span>
+
+<span class="token keyword">var</span> things <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'слово'</span><span class="token punctuation">,</span> <span class="token string">'Слово'</span><span class="token punctuation">,</span> <span class="token string">'1 Слово'</span><span class="token punctuation">,</span> <span class="token string">'2 Слова'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+things<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ['1 Слово', '2 Слова', 'Слово', 'слово']</span>
+<span class="token comment">// В Unicode, числа находятся перед буквами в верхнем регистре,</span>
+<span class="token comment">// а те, в свою очередь, перед буквами в нижнем регистре.</span>
+</code></pre>
+
+<p>Если функция сравнения <code>compareFunction</code> предоставлена, элементы массива сортируются в соответствии с её возвращаемым значением. Если сравниваются два элемента <code>a</code> и <code>b</code>, то:</p>
+
+<ul>
+ <li>Если <code>compareFunction(a, b)</code> меньше 0, сортировка поставит <code>a</code> по меньшему индексу, чем <code>b</code>, то есть, <code>a</code> идёт первым.</li>
+ <li>Если <code>compareFunction(a, b)</code> вернёт 0, сортировка оставит <code>a</code> и <code>b</code> неизменными по отношению друг к другу, но отсортирует их по отношению ко всем другим элементам. Обратите внимание: стандарт ECMAscript не гарантирует данное поведение, и ему следуют не все браузеры (например, версии Mozilla по крайней мере, до 2003 года).</li>
+ <li>Если <code>compareFunction(a, b)</code> больше 0, сортировка поставит <code>b</code> по меньшему индексу, чем <code>a</code>.</li>
+ <li>Функция <code>compareFunction(a, b)</code> должна всегда возвращать одинаковое значение для определённой пары элементов <code>a</code> и <code>b</code>. Если будут возвращаться непоследовательные результаты, порядок сортировки будет не определён.</li>
+</ul>
+
+<p>Итак, функция сравнения имеет следующую форму:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">function</span> <span class="token function">compare</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>a меньше b по некоторому критерию сортировки<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>a больше b по некоторому критерию сортировки<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// a должно быть равным b</span>
+  <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p>Для числового сравнения, вместо строкового, функция сравнения может просто вычитать <code>b</code> из <code>a</code>. Следующая функция будет сортировать массив по возрастанию:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">function</span> <span class="token function">compareNumbers</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> a <span class="token operator">-</span> b<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p>Метод <code>sort</code> можно удобно использовать с <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/function">функциональными выражениями</a> (и <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Closures">замыканиями</a>):</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> numbers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+numbers<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> a <span class="token operator">-</span> b<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>numbers<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [1, 2, 3, 4, 5]</span>
+</code></pre>
+
+<p>Объекты могут быть отсортированы по значению одного из своих свойств.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> items <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">'Edward'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">21</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">'Sharpe'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">37</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">'And'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">45</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">'The'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token operator">-</span><span class="token number">12</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">'Magnetic'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">'Zeros'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">37</span> <span class="token punctuation">}</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+items<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>a<span class="token punctuation">.</span>name <span class="token operator">&gt;</span> b<span class="token punctuation">.</span>name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>a<span class="token punctuation">.</span>name <span class="token operator">&lt;</span> b<span class="token punctuation">.</span>name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// a должно быть равным b</span>
+  <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_creating.2c_displaying.2c_and_sorting_an_array"><a href="#example_creating.2c_displaying.2c_and_sorting_an_array" title="Permalink to Пример: создание, отображение и сортировка массива">Пример: создание, отображение и сортировка массива</a></h3><div><p>В следующем примере создаётся четыре массива, сначала отображается первоначальный массив, а затем они сортируются. Числовые массивы сортируются сначала без, а потом с функцией сравнения.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> stringArray <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'Голубая'</span><span class="token punctuation">,</span> <span class="token string">'Горбатая'</span><span class="token punctuation">,</span> <span class="token string">'Белуга'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> numericStringArray <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'80'</span><span class="token punctuation">,</span> <span class="token string">'9'</span><span class="token punctuation">,</span> <span class="token string">'700'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> numberArray <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">40</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> mixedNumericArray <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'80'</span><span class="token punctuation">,</span> <span class="token string">'9'</span><span class="token punctuation">,</span> <span class="token string">'700'</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">compareNumbers</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> a <span class="token operator">-</span> b<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// снова предполагаем, что функция печати определена</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'stringArray:'</span><span class="token punctuation">,</span> stringArray<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Сортировка:'</span><span class="token punctuation">,</span> stringArray<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'numberArray:'</span><span class="token punctuation">,</span> numberArray<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Сортировка без функции сравнения:'</span><span class="token punctuation">,</span> numberArray<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Сортировка с функцией compareNumbers:'</span><span class="token punctuation">,</span> numberArray<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>compareNumbers<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'numericStringArray:'</span><span class="token punctuation">,</span> numericStringArray<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Сортировка без функции сравнения:'</span><span class="token punctuation">,</span> numericStringArray<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Сортировка с функцией compareNumbers:'</span><span class="token punctuation">,</span> numericStringArray<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>compareNumbers<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'mixedNumericArray:'</span><span class="token punctuation">,</span> mixedNumericArray<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Сортировка без функции сравнения:'</span><span class="token punctuation">,</span> mixedNumericArray<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Сортировка с функцией compareNumbers:'</span><span class="token punctuation">,</span> mixedNumericArray<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>compareNumbers<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+<p>Этот пример произведёт следующий вывод. Как показывает вывод, когда используется функция сравнения, числа сортируются корректно вне зависимости от того, являются ли они собственно числами или строками с числами.</p>
+
+<pre class="notranslate">stringArray: Голубая,Горбатая,Белуга
+Сортировка: Белуга,Голубая,Горбатая
+
+numberArray: 40,1,5,200
+Сортировка без функции сравнения: 1,200,40,5
+Сортировка с функцией compareNumbers: 1,5,40,200
+
+numericStringArray: 80,9,700
+Сортировка без функции сравнения: 700,80,9
+Сортировка с функцией compareNumbers: 9,80,700
+
+mixedNumericArray: 80,9,700,40,1,5,200
+Сортировка без функции сравнения: 1,200,40,5,700,80,9
+Сортировка с функцией compareNumbers: 1,5,9,40,80,200,700
+</pre></div><h3 id="example_sorting_non-ascii_characters"><a href="#example_sorting_non-ascii_characters" title="Permalink to Пример: сортировка не-ASCII символов">Пример: сортировка не-ASCII символов</a></h3><div><p>Для сортировки строк с не-ASCII символами, то есть строк с символами акцента (e, é, è, a, ä и т.д.), строк, с языками, отличными от английского: используйте <a href="/js/String/localeCompare/"><code>String.localeCompare</code></a>. Эта функция может сравнивать эти символы, чтобы они становились в правильном порядке.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'réservé'</span><span class="token punctuation">,</span> <span class="token string">'premier'</span><span class="token punctuation">,</span> <span class="token string">'cliché'</span><span class="token punctuation">,</span> <span class="token string">'communiqué'</span><span class="token punctuation">,</span> <span class="token string">'café'</span><span class="token punctuation">,</span> <span class="token string">'adieu'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+items<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> a<span class="token punctuation">.</span><span class="token function">localeCompare</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// items равен ['adieu', 'café', 'cliché', 'communiqué', 'premier', 'réservé']</span>
+</code></pre></div><h3 id="example_sorting_maps"><a href="#example_sorting_maps" title="Permalink to Пример: сортировка c помощью map">Пример: сортировка c помощью map</a></h3><div><p>Функция сравнения <code>(compareFunction)</code> может вызываться несколько раз для каждого элемента в массиве. В зависимости от природы функции сравнения, это может привести к высоким расходам ресурсов. Чем более сложна функция сравнения и чем больше элементов требуется отсортировать, тем разумнее использовать&nbsp;<a href="/js/Array/map/">map</a> для сортировки.&nbsp;Идея состоит в том, чтобы обойти&nbsp;массив один раз, чтобы извлечь фактические значения, используемые для сортировки,&nbsp;во временный массив, отсортировать&nbsp;временный массив, а затем обойти временный массив для получения правильного порядка.</p>
+
+<pre class="brush: js notranslate"><code><span class="token comment">// массив для сортировки</span>
+<span class="token keyword">var</span> list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'Дельта'</span><span class="token punctuation">,</span> <span class="token string">'альфа'</span><span class="token punctuation">,</span> <span class="token string">'ЧАРЛИ'</span><span class="token punctuation">,</span> <span class="token string">'браво'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token comment">// временный массив содержит объекты с позицией и значением сортировки</span>
+<span class="token keyword">var</span> mapped <span class="token operator">=</span> list<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">el<span class="token punctuation">,</span> i</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">return</span> <span class="token punctuation">{</span> index<span class="token operator">:</span> i<span class="token punctuation">,</span> value<span class="token operator">:</span> el<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// сортируем массив, содержащий уменьшенные значения</span>
+mapped<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>a<span class="token punctuation">.</span>value <span class="token operator">&gt;</span> b<span class="token punctuation">.</span>value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>a<span class="token punctuation">.</span>value <span class="token operator">&lt;</span> b<span class="token punctuation">.</span>value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// контейнер для результа</span>
+<span class="token keyword">var</span> result <span class="token operator">=</span> mapped<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">el</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> list<span class="token punctuation">[</span>el<span class="token punctuation">.</span>index<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td>ECMAScript 1-е издание.</td>
+   <td>Стандарт</td>
+   <td>Изначальное определение.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-15.4.4.11" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 5.1 (ECMA-262)<br><small lang="ru">Определение 'Array.prototype.sort' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-array.prototype.sort" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Array.prototype.sort' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><div></div></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/Array/reverse/"><code>Array.prototype.reverse()</code></a></li>
+ <li><a href="/js/String/localeCompare/"><code>String.prototype.localeCompare()</code></a></li>
+</ul></div>

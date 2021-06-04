@@ -1,0 +1,79 @@
+<h1>:focus-visible</h1><div><div>Псевдокласс&nbsp;<strong><code>:focus-visible</code></strong>&nbsp;применяется, в то время как элемент соответствует псевдоклассу <font face="consolas, Liberation Mono, courier, monospace"><span style="background-color: rgba(220, 220, 220, 0.5);">:focus</span></font>, и UA&nbsp;(<a href="https://developer.mozilla.org/ru/docs/Glossary/User_agent">User Agent</a>) определяет с помощью эвристики, что фокус должен быть сделан очевидным для элемента.</div>
+
+<p>Этот селектор полезен для предоставления другого индикатора фокуса, основанного на модальности ввода пользователя (мышь против клавиатуры).</p>
+
+<p>Обратите внимание, что Firefox поддерживает аналогичную функциональность через старый псевдокласс с префиксом&nbsp;<code>:-moz-focusring</code>.</p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="notranslate">:focus-visible</pre></div><h2 id="пример"><a href="#пример" title="Permalink to Пример">Пример</a></h2><div></div><h3 id="базовый_пример"><a href="#базовый_пример" title="Permalink to Базовый пример">Базовый пример</a></h3><div><p>В этом примере селектор <code>:focus-visible</code> использует поведение UA, чтобы определить, когда соответствовать. Сравните, что происходит, когда вы щёлкаете мышью по разным элементам управления, и что происходит при переходе по ним с помощью клавиатуры. Обратите внимание на разницу в поведении элементов, оформленных с помощью&nbsp;<code>:focus</code>.</p>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Default styles<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><span class="token punctuation">&gt;</span></span>Default styles<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>focus-only<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>:focus only<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>focus-only<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>:focus only<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>focus-visible-only<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>:focus-visible only<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>focus-visible-only<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>:focus-visible only<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<pre class="brush: css highlight[9] notranslate"><code><span class="token selector">input, button</span> <span class="token punctuation">{</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.focus-only:focus</span> <span class="token punctuation">{</span>
+  <span class="token property">outline</span><span class="token punctuation">:</span> 2px solid black<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.focus-visible-only:focus-visible</span> <span class="token punctuation">{</span>
+  <span class="token property">outline</span><span class="token punctuation">:</span> 4px dashed darkorange<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p><iframe class="sample-code-frame" id="frame_Basic_example" width="100%" height="300" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/:focus-visible/_sample_.Basic_example.html" loading="lazy"></iframe></p></div><h3 id="выборочное_отображение_индикатора_фокусировки"><a href="#выборочное_отображение_индикатора_фокусировки" title="Permalink to Выборочное отображение индикатора фокусировки">Выборочное отображение индикатора фокусировки</a></h3><div><p>Пользовательский элемент управления, такой как кнопка <a href="https://developer.mozilla.org/en-US/docs/User:Andreas_Wuest/Custom_Elements" class="page-not-created" title="This is a link to an unwritten page">настраиваемого элемента</a>, может использовать: focus-visible для выборочного применения индикатора фокуса только к фокусу клавиатуры. Это соответствует собственному поведению фокуса для таких элементов управления, как <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/button"><code>&lt;button&gt;</code></a>.</p>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>custom-button</span> <span class="token attr-name">tabindex</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Click Me<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>custom-button</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<pre class="brush: css highlight[13, 19] notranslate"><code><span class="token selector">custom-button</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">custom-button:focus</span> <span class="token punctuation">{</span>
+  <span class="token comment">/* Обеспечьте резервный стиль для браузеров,
+которые не поддерживают: focus-visible */</span>
+  <span class="token property">outline</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> lightgrey<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">custom-button:focus:not(:focus-visible)</span> <span class="token punctuation">{</span>
+  <span class="token comment">/* Remove the focus indicator on mouse-focus for browsers
+     that do support :focus-visible */</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> transparent<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">custom-button:focus-visible</span> <span class="token punctuation">{</span>
+  <span class="token comment">/* Draw a very noticeable focus style for
+     keyboard-focus on browsers that do support
+     :focus-visible */</span>
+  <span class="token property">outline</span><span class="token punctuation">:</span> 4px dashed darkorange<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> transparent<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<p><iframe class="sample-code-frame" id="frame_Selectively_showing_the_focus_indicator" width="100%" height="300" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/:focus-visible/_sample_.Selectively_showing_the_focus_indicator.html" loading="lazy"></iframe></p></div><h2 id="polyfill"><a href="#polyfill" title="Permalink to Polyfill">Polyfill</a></h2><div><p>You can polyfill <code>:focus-visible</code> using <a href="https://github.com/WICG/focus-visible" class="external" rel=" noopener">focus-visible.js</a>.</p></div><h2 id="accessibility_concerns"><a href="#accessibility_concerns" title="Permalink to Accessibility concerns">Accessibility concerns</a></h2><div></div><h3 id="low_vision"><a href="#low_vision" title="Permalink to Low vision">Low vision</a></h3><div><p>Make sure the visual focus indicator can be seen by people with low vision. This will also benefit anyone use a screen in a brightly lit space (like outside in the sun). <a href="https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast.html" class="external" rel=" noopener">WCAG 2.1 SC 1.4.11 Non-Text Contrast</a> requires that the visual focus indicator be at least 3 to 1.</p>
+
+<ul>
+ <li>Accessible Visual Focus Indicators:&nbsp;<a href="https://www.deque.com/blog/give-site-focus-tips-designing-usable-focus-indicators/" class="external" rel=" noopener">Give Your Site Some Focus! Tips for Designing Useful and Usable Focus Indicators</a></li>
+</ul></div><h3 id="cognition"><a href="#cognition" title="Permalink to Cognition">Cognition</a></h3><div><p>It may not be obvious as to why the focus indicator is appearing and disappearing if a person is using mixed forms of input. For users with cognitive concerns, or who are less technologically literate, this lack of consistent behavior for interactive elements may be confusing.</p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/selectors-4/#the-focus-visible-pseudo" hreflang="en" lang="en" class="external" rel=" noopener">Selectors Level&nbsp;4<br><small lang="ru">Определение ':focus-visible' в этой спецификации.</small></a></td>
+   <td><span class="spec-wd">Рабочий черновик</span></td>
+   <td>Initial definition.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="/css/:focus/"><code>:focus</code></a></li>
+ <li><a href="/css/:focus-within/"><code>:focus-within</code></a></li>
+</ul></div>

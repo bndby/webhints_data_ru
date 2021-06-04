@@ -1,0 +1,44 @@
+<h1>aspect-ratio</h1><div><div></div>
+
+<p>The <strong><code>aspect-ratio</code></strong>&nbsp;&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> property sets a <strong>preferred aspect ratio</strong> for the box, which will be used in the calculation of auto sizes and some other layout functions.</p>
+
+<pre class="brush:css no-line-numbers notranslate"><code><span class="token property">aspect-ratio</span><span class="token punctuation">:</span> 1 / 1<span class="token punctuation">;</span>
+
+<span class="token comment">/* Global values */</span>
+<span class="token property">aspect-ratio</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">aspect-ratio</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">aspect-ratio</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+ <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/width"><code>&lt;auto&gt;</code></a></dt>
+ <dd><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Replaced_element">Replaced elements</a> with an intrinsic aspect ratio use <em>that</em> aspect ratio, otherwise the box has no preferred aspect ratio. Size calculations involving intrinsic aspect ratio always work with the content box dimensions.</dd>
+ <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/ratio"><code>&lt;ratio&gt;</code></a></dt>
+ <dd>The box’s preferred aspect ratio is the specified ratio of <code>width</code> / <code>height</code>. Size calculations involving preferred aspect ratio work with the dimensions of the box specified by <code>box-sizing</code>.</dd>
+</dl></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td><code>auto</code></td></tr><tr><th scope="row">Applies to</th><td>all elements except inline boxes and internal ruby or table boxes</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance">Inherited</a></th><td>no</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>as specified</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate">auto <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> &lt;ratio&gt;</pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="examples_of_values_for_aspect-ratio"><a href="#examples_of_values_for_aspect-ratio" title="Permalink to Examples of values for aspect-ratio">Examples of values for aspect-ratio</a></h3><div><pre class="brush: css notranslate"><code><span class="token property">aspect-ratio</span><span class="token punctuation">:</span> 1 / 1<span class="token punctuation">;</span>
+<span class="token property">aspect-ratio</span><span class="token punctuation">:</span> 16 / 9<span class="token punctuation">;</span>
+</code></pre></div><h2 id="mapping_width_and_height_to_aspect-ratio"><a href="#mapping_width_and_height_to_aspect-ratio" title="Permalink to Mapping width and height to aspect-ratio">Mapping width and height to aspect-ratio</a></h2><div><p>Browsers have added an internal&nbsp;<code>aspect-ratio</code>&nbsp;property that applies to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Replaced_element">replaced elements</a> and other related elements that accept <code>width</code> and <code>height</code> attributes. This appears in the browser's internal UA stylesheet.&nbsp;</p>
+
+<p>In Firefox, the internal stylesheet rule looks like this:</p>
+
+<pre class="brush: css notranslate"><code><span class="token selector">img, input[type="image"], video, embed, iframe, marquee, object, table</span> <span class="token punctuation">{</span>
+  <span class="token property">aspect-ratio</span><span class="token punctuation">:</span> <span class="token function">attr</span><span class="token punctuation">(</span>width<span class="token punctuation">)</span> / <span class="token function">attr</span><span class="token punctuation">(</span>height<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<p>You can read more about this feature in <a href="https://www.smashingmagazine.com/2020/03/setting-height-width-images-important-again/" class="external" rel=" noopener">Setting Height And Width On Images Is Important Again</a>.</p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-sizing-4/#aspect-ratio" hreflang="en" lang="en" class="external" rel=" noopener">CSS Box Sizing Module Level&nbsp;4<br><small lang="en-US">The definition of 'aspect-ratio' in that specification.</small></a></td>
+   <td><span class="spec-ed">Editor's Draft</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/Media/images/aspect_ratio_mapping">Mapping the width and height attributes of media container elements to their aspect-ratio</a></li>
+ <li><a href="https://www.smashingmagazine.com/2019/03/aspect-ratio-unit-css/" class="external" rel=" noopener">Designing an aspect ratio unit for CSS</a></li>
+</ul></div>

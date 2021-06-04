@@ -1,0 +1,85 @@
+<h1>TypedArray.prototype.find()</h1><div><div></div>
+
+<p>The <strong><code>find()</code></strong> method returns a value of an element in the
+  typed array, if it satisfies the provided testing function. Otherwise
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined"><code>undefined</code></a> is returned. <em>TypedArray</em> is one of the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray#typedarray_objects">typed
+    array types</a> here.</p>
+
+<p>See also the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/findIndex"><code>findIndex()</code></a> method, which returns
+  the <strong>index</strong> of a found element in the typed array instead of its value.
+</p>
+
+<div><iframe class="interactive" width="100%" height="490" src="https://interactive-examples.mdn.mozilla.net/pages/js/typedarray-find.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: js notranslate"><code><span class="token comment">// Arrow function</span>
+<span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">element</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span> <span class="token punctuation">)</span>
+<span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">element<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span> <span class="token punctuation">)</span>
+<span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">element<span class="token punctuation">,</span> index<span class="token punctuation">,</span> array</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span> <span class="token punctuation">)</span>
+
+<span class="token comment">// Callback function</span>
+<span class="token function">find</span><span class="token punctuation">(</span>callbackFn<span class="token punctuation">)</span>
+<span class="token function">find</span><span class="token punctuation">(</span>callbackFn<span class="token punctuation">,</span> thisArg<span class="token punctuation">)</span>
+
+<span class="token comment">// Inline callback function</span>
+<span class="token function">find</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token function">callbackFn</span><span class="token punctuation">(</span><span class="token parameter">element</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token function">find</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token function">callbackFn</span><span class="token punctuation">(</span><span class="token parameter">element<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token function">find</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token function">callbackFn</span><span class="token punctuation">(</span><span class="token parameter">element<span class="token punctuation">,</span> index<span class="token punctuation">,</span> array</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token function">find</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token function">callbackFn</span><span class="token punctuation">(</span><span class="token parameter">element<span class="token punctuation">,</span> index<span class="token punctuation">,</span> array</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> thisArg<span class="token punctuation">)</span>
+</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Parameters">Parameters</a></h3><div><dl>
+  <dt><code><var>callbackFn</var></code></dt>
+  <dd>Function to execute on each value in the typed array, taking three arguments:
+    <dl>
+      <dt><code><var>element</var></code></dt>
+      <dd>The current element being processed in the typed array.</dd>
+      <dt><code><var>index</var></code></dt>
+      <dd>The index of the current element being processed in the typed array.</dd>
+      <dt><code><var>array</var></code></dt>
+      <dd>The array <code>find()</code> was called upon.</dd>
+    </dl>
+  </dd>
+  <dt><code><var>thisArg</var></code> <span class="badge inline optional">Optional</span></dt>
+  <dd>Object to use as <code>this</code> when executing <code><var>callbackFn</var></code>.
+  </dd>
+</dl></div><h3 id="return_value"><a href="#return_value" title="Permalink to Return value">Return value</a></h3><div><p>A value in the array if an element passes the test; otherwise, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined"><code>undefined</code></a>.
+</p></div><h2 id="description"><a href="#description" title="Permalink to Description">Description</a></h2><div><p>The <code>find()</code> method executes the <code><var>callbackFn</var></code> function
+  once for each element present in the typed array until it finds one where
+  <code><var>callbackFn</var></code> returns a true value. If such an element is found,
+  <code>find()</code> immediately returns the value of that element. Otherwise,
+  <code>find()</code> returns <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined"><code>undefined</code></a>. <code><var>callbackFn</var></code> is
+  invoked only for indexes of the typed array which have assigned values; it is not
+  invoked for indexes which have been deleted or which have never been assigned values.
+</p>
+
+<p><code><var>callbackFn</var></code> is invoked with three arguments: the value of the
+  element, the index of the element, and the typed array object being traversed.</p>
+
+<p>If a <code><var>thisArg</var></code> parameter is provided to <code>find()</code>, it
+  will be used as the <code>this</code> for each invocation of the
+  <code><var>callbackFn</var></code>. If it is not provided, then <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined"><code>undefined</code></a> is
+  used.</p>
+
+<p><code>find()</code> does not mutate the typed array on which it is called.</p>
+
+<p>The range of elements processed by <code>find()</code> is set before the first
+  invocation of <code><var>callbackFn</var></code>. Elements that are appended to the typed
+  array after the call to <code>find()</code> begins will not be visited by
+  <code><var>callbackFn</var></code>. If an existing, unvisited element of the typed array
+  is changed by <code><var>callbackFn</var></code>, its value passed to the visiting
+  <code><var>callbackFn</var></code> will be the value at the time that <code>find()</code>
+  visits that element's index; elements that are deleted are not visited.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="find_a_prime_number_in_a_typed_array"><a href="#find_a_prime_number_in_a_typed_array" title="Permalink to Find a prime number in a typed array">Find a prime number in a typed array</a></h3><div><p>The following example finds an element in the typed array that is a prime number (or
+  returns <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined"><code>undefined</code></a> if there is no prime number).</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">function</span> <span class="token function">isPrime</span><span class="token punctuation">(</span><span class="token parameter">element<span class="token punctuation">,</span> index<span class="token punctuation">,</span> array</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> start <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span>start <span class="token operator">&lt;=</span> Math<span class="token punctuation">.</span><span class="token function">sqrt</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>element <span class="token operator">%</span> start<span class="token operator">++</span> <span class="token operator">&lt;</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> element <span class="token operator">&gt;</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> uint8 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Uint8Array</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>uint8<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>isPrime<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 5</span></code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://tc39.es/ecma262/#sec-%typedarray%.prototype.find">Unknown specification<!-- --> <br><small># <!-- -->sec-%typedarray%.prototype.find</small></a></td></tr></tbody></table><div></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+  <li>A polyfill of <code>TypedArray.prototype.find</code> is available in <a href="https://github.com/zloirock/core-js#ecmascript-typed-arrays" class="external" rel=" noopener"><code>core-js</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/findIndex"><code>TypedArray.prototype.findIndex()</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/every"><code>TypedArray.prototype.every()</code></a></li>
+</ul></div>

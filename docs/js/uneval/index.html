@@ -1,0 +1,36 @@
+<h1>uneval()</h1><div><p></p><div class="notecard warning">
+        <h4 id="не_стандартно">Не стандартно</h4>
+        <p>Эта возможность не является стандартной и стандартизировать её пока никто не собирается. Не используйте её на сайтах, смотрящих во внешний мир: она будет работать не у всех пользователей. Также могут присутствовать большие несовместимости между реализациями и её поведение может в будущем измениться.</p>
+      </div><p></p>
+
+<div><strong style="font-size: 2.14285714285714rem; font-weight: 700; letter-spacing: -1px; line-height: 30px;">Сводка</strong></div>
+
+<p><code style="font-style: normal; line-height: 1.5;"><strong>uneval()</strong></code><span style="line-height: 1.5;"> метод создаёт строковое представление исходного кода объекта.</span></p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate">uneval(object)</pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>object</code></dt>
+ <dd>JavaScript-выражение или оператор.</dd>
+</dl>
+
+<div class="note notecard"><strong>Примечание:</strong> вы не получите корректное JSON-представление объекта.</div></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p><code>uneval()</code> является функцией высшего порядка и не связана с любым объектом.</p></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div><pre class="brush:js notranslate"><code><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token function">uneval</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// возвращает строку, содержащую 1</span>
+
+<span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token string">"1"</span><span class="token punctuation">;</span>
+<span class="token function">uneval</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span> <span class="token comment">// возвращает строку, содержащую "1"</span>
+
+<span class="token function">uneval</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// возвращает "(function foo(){})"</span>
+
+
+<span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token function">uneval</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token keyword">return</span> <span class="token string">'привет'</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> foo <span class="token operator">=</span> <span class="token function">eval</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// возвращает "привет"</span>
+</code></pre></div><h2 id="see_also"><a href="#see_also" title="Permalink to Технические характеристики">Технические характеристики</a></h2><div><p>Не является частью какой-либо спецификации.</p></div><h2 id="совместимость_браузеров"><a href="#совместимость_браузеров" title="Permalink to Совместимость браузеров">Совместимость браузеров</a></h2><p>BCD tables only load in the browser</p><div><p>&nbsp;</p>
+
+<p></p><p></p>
+
+<p>&nbsp;</p>
+
+<div id="compat-mobile">&nbsp;</div></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/eval/"><code>eval()</code></a></li>
+ <li><a href="/js/JSON/stringify/"><code>JSON.stringify</code></a></li>
+ <li><a href="/js/JSON/parse/"><code>JSON.parse</code></a></li>
+ <li><a href="/js/Object/toSource/"><code>Object.toSource</code></a></li>
+</ul></div>

@@ -1,0 +1,43 @@
+<h1>font-variation-settings</h1><div><div></div>
+
+<p>The <strong><code>font-variation-settings</code></strong> CSS descriptor allows authors to specify low-level OpenType or TrueType font variations in the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face"><code>@font-face</code></a> rule.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: css notranslate"><code><span class="token comment">/* Use the default settings */</span>
+<span class="token property">font-variation-settings</span><span class="token punctuation">:</span> normal<span class="token punctuation">;</span>
+
+<span class="token comment">/* Set values for OpenType axis names */</span>
+<span class="token property">font-variation-settings</span><span class="token punctuation">:</span> <span class="token string">"xhgt"</span> 0.7<span class="token punctuation">;</span></code></pre></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+ <dt><code>normal</code></dt>
+ <dd>Text is laid out using default settings.</dd>
+ <dt><code>&lt;string&gt; &lt;number&gt;</code></dt>
+ <dd>When rendering text, the list of OpenType axis names is passed to the text layout engine to enable or disable font features. Each setting is always a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/string"><code>&lt;string&gt;</code></a> of 4 ASCII characters, followed by a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/number"><code>&lt;number&gt;</code></a> indicating the axis value. If the <code>&lt;string&gt;</code> has more or fewer characters or contains characters outside the U+20 - U+7E codepoint range, the whole property is invalid. The <code>&lt;number&gt;</code> can be fractional or negative.</dd>
+</dl></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row">Related <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule">at-rule</a></th><td><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face"><code>@font-face</code></a></td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td><code>normal</code></td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>as specified</td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate">normal <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">[</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/string" title>&lt;string&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/number" title>&lt;number&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">]</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#hash_mark_()" title="Hash mark: the entity is repeated one or several times, each occurence separated by a comma">#</a></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="setting_font_weight_and_stretch_in_a_font-face_rule"><a href="#setting_font_weight_and_stretch_in_a_font-face_rule" title="Permalink to Setting font weight and stretch in a @font-face rule">Setting font weight and stretch in a @font-face rule</a></h3><div><pre class="brush: css notranslate"><code><span class="token atrule"><span class="token rule">@font-face</span></span> <span class="token punctuation">{</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">'OpenTypeFont'</span><span class="token punctuation">;</span>
+  <span class="token property">src</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string url">'open_type_font.woff2'</span><span class="token punctuation">)</span></span> <span class="token function">format</span><span class="token punctuation">(</span><span class="token string">'woff2'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">font-weight</span><span class="token punctuation">:</span> normal<span class="token punctuation">;</span>
+  <span class="token property">font-style</span><span class="token punctuation">:</span> normal<span class="token punctuation">;</span>
+  <span class="token property">font-variation-settings</span><span class="token punctuation">:</span> <span class="token string">'wght'</span> 400<span class="token punctuation">,</span> <span class="token string">'wdth'</span> 300<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-fonts-4/#font-rend-desc" hreflang="en" lang="en" class="external" rel=" noopener">CSS Fonts Module Level&nbsp;4<br><small lang="en-US">The definition of 'font-variation-settings' in that specification.</small></a></td>
+   <td><span class="spec-wd">Working Draft</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display"><code>font-display</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-family"><code>font-family</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-stretch"><code>font-stretch</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-style"><code>font-style</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-weight"><code>font-weight</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-variant"><code>font-variant</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-feature-settings"><code>font-feature-settings</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/src"><code>src</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/unicode-range"><code>unicode-range</code></a></li>
+</ul></div>

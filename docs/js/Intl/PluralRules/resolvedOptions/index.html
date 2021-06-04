@@ -1,0 +1,47 @@
+<h1>Intl.PluralRules.prototype.resolvedOptions()</h1><div><div></div>
+
+<p>The <strong><code>Intl.PluralRules.prototype.resolvedOptions()</code></strong> method
+	returns a new object with properties reflecting the locale and plural formatting
+	options computed during initialization of this <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/PluralRules"><code>Intl/PluralRules</code></a> object.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: js notranslate"><code><span class="token function">resolvedOptions</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre></div><h3 id="return_value"><a href="#return_value" title="Permalink to Return value">Return value</a></h3><div><p>A new object with properties reflecting the locale and plural formatting options
+	computed during the initialization of the given <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/PluralRules"><code>Intl/PluralRules</code></a> object.</p></div><h2 id="description"><a href="#description" title="Permalink to Description">Description</a></h2><div><p>The resulting object has the following properties:</p>
+
+<dl>
+	<dt><code>locale</code></dt>
+	<dd>The BCP 47 language tag for the locale actually used. If any Unicode extension
+		values were requested in the input BCP 47 language tag that led to this locale,
+		the key-value pairs that were requested and are supported for this locale are
+		included in <code>locale</code>.</dd>
+	<dt><code>pluralCategories</code></dt>
+	<dd>An <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array"><code>Array</code></a> of plural categories used by the given locale, seleced from
+		the list "<code>zero</code>", "<code>one</code>", "<code>two</code>",
+		"<code>few</code>", "<code>many</code>" and "<code>other</code>".</dd>
+	<dt><code>type</code></dt>
+	<dd>The type used (<code>cardinal</code> or <code>ordinal</code>).</dd>
+</dl>
+
+<p>Only one of the following two groups of properties is included:</p>
+
+<dl>
+	<dt><code>minimumIntegerDigits</code>, <code>minimumFractionDigits</code>, <code>maximumFractionDigits</code></dt>
+	<dd>The values provided for these properties in the <code>options</code> argument or
+		filled in as defaults. These properties are present only if neither
+		<code>minimumSignificantDigits</code> nor <code>maximumSignificantDigits</code>
+		was provided in the <code>options</code> argument.</dd>
+	<dt><code>minimumSignificantDigits</code>, <code>maximumSignificantDigits</code></dt>
+	<dd>The values provided for these properties in the <code>options</code> argument or
+		filled in as defaults. These properties are present only if at least one of them
+		was provided in the <code>options</code> argument.</dd>
+</dl></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="using_the_resolvedoptions_method"><a href="#using_the_resolvedoptions_method" title="Permalink to Using the resolvedOptions method
+">Using the <code>resolvedOptions</code> method
+</a></h3><div><pre class="brush: js notranslate"><code><span class="token keyword">var</span> de <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Intl<span class="token punctuation">.</span>PluralRules</span><span class="token punctuation">(</span><span class="token string">'de-DE'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> usedOptions <span class="token operator">=</span> de<span class="token punctuation">.</span><span class="token function">resolvedOptions</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+usedOptions<span class="token punctuation">.</span>locale<span class="token punctuation">;</span>                <span class="token comment">// "de-DE"</span>
+usedOptions<span class="token punctuation">.</span>maximumFractionDigits<span class="token punctuation">;</span> <span class="token comment">// 3</span>
+usedOptions<span class="token punctuation">.</span>minimumFractionDigits<span class="token punctuation">;</span> <span class="token comment">// 0</span>
+usedOptions<span class="token punctuation">.</span>minimumIntegerDigits<span class="token punctuation">;</span>  <span class="token comment">// 1</span>
+usedOptions<span class="token punctuation">.</span>pluralCategories<span class="token punctuation">;</span>      <span class="token comment">// Array [ "one", "other" ]</span>
+usedOptions<span class="token punctuation">.</span>type<span class="token punctuation">;</span>                  <span class="token comment">// "cardinal"</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://tc39.es/ecma402/#sec-intl.pluralrules.prototype.resolvedoptions">ECMAScript Internationalization API Specification<!-- --> <!-- -->(ECMAScript Internationalization API)<br><small># <!-- -->sec-intl.pluralrules.prototype.resolvedoptions</small></a></td></tr></tbody></table><div></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><div></div></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+	<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/PluralRules"><code>Intl.PluralRules</code></a></li>
+</ul></div>

@@ -1,0 +1,49 @@
+<h1>:nth-last-of-type()</h1><div><div></div>
+
+<p><a href="/css/">CSS</a> <a href="/css/Pseudo-classes/">псевдокласс</a>&nbsp;<strong><code>:nth-last-of-type()</code></strong>&nbsp;находит один или более элементов с заданным&nbsp;тегом, основываясь на их позиции среди группы соседних элементов, считая с конца.</p>
+
+<pre class="brush: css no-line-numbers notranslate"><code><span class="token comment">/* Выбирает каждый четвёртый элемент &lt;p&gt;
+   среди любой группы соседних элементов,
+   отсчёт начинается с последнего элемента */</span>
+<span class="token selector">p:nth-last-of-type(4n)</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> lime<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<div class="note notecard">
+<p><strong>Примечание:</strong>&nbsp;Этот псевдокласс практически такой же как&nbsp;<a href="/css/:nth-of-type/"><code>:nth-of-type</code></a>, за исключением того, что счёт элементов производится в обратном порядке начиная с <em>конца</em>, а не в обычном порядке с начала.</p>
+</div></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><p>Псевдокласс&nbsp;<code>nth-last-of-type</code>&nbsp;указывается с единственным аргументом, описывающим паттерн для выбирания элементов, начиная с конца.</p>
+
+<p>Более детальное описание синтаксиса может быть найдено на странице псевдокласса&nbsp;<a href="/css/:nth-last-child/"><code>:nth-last-child</code></a>.</p></div><h3 id="формальный_синтаксис"><a href="#формальный_синтаксис" title="Permalink to Формальный синтаксис">Формальный синтаксис</a></h3><div><pre class="notranslate">:nth-last-of-type( <a href="#nth">&lt;nth&gt;</a> )<p style="font-family:Open Sans,Arial,sans-serif; margin: 10px 0 0 0;">где <br><code style="font-family:Consolas,Monaco,&quot;Andale Mono&quot;,monospace;"><span id="nth">&lt;nth&gt;</span> = &lt;an-plus-b&gt; <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> even <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> odd</code></p></pre></div><h2 id="пример"><a href="#пример" title="Permalink to Пример">Пример</a></h2><div></div><h3 id="html"><a href="#html" title="Permalink to HTML">HTML</a></h3><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span>Это span.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span>Это другой span.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>em</span><span class="token punctuation">&gt;</span></span>Это текст будет подчёркнут.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>em</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span>Круто, этот span лаймовый!!!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strike</span><span class="token punctuation">&gt;</span></span>Это вообще не span.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>strike</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span>Это ещё один последний span.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre></div><h3 id="css"><a href="#css" title="Permalink to CSS">CSS</a></h3><div><pre class="brush: css notranslate"><code><span class="token selector">span:nth-last-of-type(2)</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> lime<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div><h3 id="результат"><a href="#результат" title="Permalink to Результат">Результат</a></h3><div><p><iframe class="sample-code-frame" id="frame_Пример" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/:nth-last-of-type/_sample_.%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80.html" loading="lazy"></iframe></p></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/selectors-4/#nth-last-of-type-pseudo" hreflang="en" lang="en" class="external" rel=" noopener">Selectors Level&nbsp;4<br><small lang="ru">Определение ':nth-last-of-type' в этой спецификации.</small></a></td>
+   <td><span class="spec-wd">Рабочий черновик</span></td>
+   <td>Теперь выбранные элементы не обязательно должны иметь родителя.</td>
+  </tr>
+  <tr>
+   <td><a href="https://drafts.csswg.org/selectors-3/#nth-last-of-type-pseudo" hreflang="en" lang="en" class="external" rel=" noopener">Selectors Level&nbsp;3<br><small lang="ru">Определение ':nth-last-of-type' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Изначальное определение.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="поддержка_браузерами"><a href="#поддержка_браузерами" title="Permalink to Поддержка браузерами">Поддержка браузерами</a></h2><p>BCD tables only load in the browser</p><div><div>
+<p></p><p></p>
+</div></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/css/:nth-last-child/"><code>:nth-last-child</code></a>, <a href="/css/:nth-of-type/"><code>:nth-of-type</code></a></li>
+</ul></div>

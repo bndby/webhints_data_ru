@@ -1,0 +1,118 @@
+<h1>Object.freeze()</h1><div><div></div>
+
+<p>Метод <code><strong>Object.freeze()</strong></code> замораживает объект: это значит, что он предотвращает добавление новых свойств к объекту, удаление старых свойств из объекта и изменение существующих свойств или значения их атрибутов перечисляемости, настраиваемости и записываемости. В сущности, объект становится эффективно неизменным. Метод возвращает замороженный объект.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code>Object.freeze(<var>obj</var>)</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>obj</code></dt>
+ <dd>Объект для заморозки.</dd>
+</dl></div><h3 id="возвращаемое_значение"><a href="#возвращаемое_значение" title="Permalink to Возвращаемое значение">Возвращаемое значение</a></h3><div><p>Замороженный объект</p></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>К замороженному объекту нельзя добавить никаких свойств, так же как и удалить свойства из замороженного объекта. Любые попытки сделать это потерпят неудачу, либо молча, либо выбросив исключение <a href="/js/TypeError/"><code>TypeError</code></a> (как правило, но не обязательно, это происходит в <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode">строгом режиме <span>(en-US)</span></a>).</p>
+
+<p>Значения свойств-данных не могут быть изменены. Свойства-доступы (геттеры и сеттеры) работают как положено (и всё ещё создают иллюзию, что вы изменили значение). Обратите внимание, что значения, являющиеся объектами, всё ещё могут быть изменены, если только они так же не были заморожены.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div><pre class="brush: js notranslate"><code><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">prop</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  foo<span class="token operator">:</span> <span class="token string">'bar'</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Можно добавлять новые свойства, существующие свойства можно изменять или удалять</span>
+obj<span class="token punctuation">.</span>foo <span class="token operator">=</span> <span class="token string">'baz'</span><span class="token punctuation">;</span>
+obj<span class="token punctuation">.</span>lumpy <span class="token operator">=</span> <span class="token string">'woof'</span><span class="token punctuation">;</span>
+<span class="token keyword">delete</span> obj<span class="token punctuation">.</span>prop<span class="token punctuation">;</span>
+
+<span class="token comment">// Оба объекта эквивалентны, а также возвращаемый объект будет заморожен.</span>
+<span class="token comment">// Необязательно сохранять возвращаемый объект при заморозке оригинала.</span>
+<span class="token keyword">var</span> o <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">freeze</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+o <span class="token operator">===</span> obj<span class="token punctuation">;</span> <span class="token comment">// true</span>
+Object<span class="token punctuation">.</span><span class="token function">isFrozen</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// === true;</span>
+
+<span class="token comment">// Теперь все изменения будут заканчиваться с ошибкой</span>
+obj<span class="token punctuation">.</span>foo <span class="token operator">=</span> <span class="token string">'quux'</span><span class="token punctuation">;</span> <span class="token comment">// тихо ничего не делает</span>
+obj<span class="token punctuation">.</span>quaxxor <span class="token operator">=</span> <span class="token string">'the friendly duck'</span><span class="token punctuation">;</span> <span class="token comment">// тихо не добавляет свойство</span>
+
+<span class="token comment">// ...а в строгом режиме такие попытки вызовут выброс исключения TypeError</span>
+<span class="token keyword">function</span> <span class="token function">fail</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token string">'use strict'</span><span class="token punctuation">;</span>
+  obj<span class="token punctuation">.</span>foo <span class="token operator">=</span> <span class="token string">'sparky'</span><span class="token punctuation">;</span> <span class="token comment">// выбросит TypeError</span>
+  <span class="token keyword">delete</span> obj<span class="token punctuation">.</span>quaxxor<span class="token punctuation">;</span> <span class="token comment">// выбросит TypeError</span>
+  obj<span class="token punctuation">.</span>sparky <span class="token operator">=</span> <span class="token string">'arf'</span><span class="token punctuation">;</span> <span class="token comment">// выбросит TypeError</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">fail</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Попытки внести изменения через метод Object.defineProperty также выбросят исключение</span>
+Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token string">'ohai'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> value<span class="token operator">:</span> <span class="token number">17</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// выбросит TypeError</span>
+Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token string">'foo'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> value<span class="token operator">:</span> <span class="token string">'eit'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// выбросит TypeError</span>
+</code></pre>
+
+<p>Следующий пример показывает, что значения-объекты в замороженном объекте могут быть изменены (заморозка неглубокая).</p>
+
+<pre class="brush: js notranslate"><code>obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+  internal<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+Object<span class="token punctuation">.</span><span class="token function">freeze</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+obj<span class="token punctuation">.</span>internal<span class="token punctuation">.</span>a <span class="token operator">=</span> <span class="token string">'значениеA'</span><span class="token punctuation">;</span>
+
+obj<span class="token punctuation">.</span>internal<span class="token punctuation">.</span>a <span class="token comment">// 'значениеA'</span>
+
+<span class="token comment">// Чтобы сделать объект obj полностью неизменяемым, замораживаем каждый объект в объекте obj.</span>
+<span class="token comment">// Для этого воспользуемся этой функцией.</span>
+<span class="token keyword">function</span> <span class="token function">deepFreeze</span><span class="token punctuation">(</span><span class="token parameter">obj</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+  <span class="token comment">// Получаем имена свойств из объекта obj</span>
+  <span class="token keyword">var</span> propNames <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">getOwnPropertyNames</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// Замораживаем свойства для заморозки самого объекта</span>
+  propNames<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> prop <span class="token operator">=</span> obj<span class="token punctuation">[</span>name<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Заморозка свойства prop, если оно объект</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> prop <span class="token operator">==</span> <span class="token string">'object'</span> <span class="token operator">&amp;&amp;</span> prop <span class="token operator">!==</span> <span class="token keyword">null</span><span class="token punctuation">)</span>
+      <span class="token function">deepFreeze</span><span class="token punctuation">(</span>prop<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// Заморозить сам объект obj (ничего не произойдёт, если он уже заморожен)</span>
+  <span class="token keyword">return</span> Object<span class="token punctuation">.</span><span class="token function">freeze</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+obj2 <span class="token operator">=</span> <span class="token punctuation">{</span>
+  internal<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token function">deepFreeze</span><span class="token punctuation">(</span>obj2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+obj2<span class="token punctuation">.</span>internal<span class="token punctuation">.</span>a <span class="token operator">=</span> <span class="token string">'другоеЗначение'</span><span class="token punctuation">;</span>
+obj2<span class="token punctuation">.</span>internal<span class="token punctuation">.</span>a<span class="token punctuation">;</span> <span class="token comment">// undefined</span>
+</code></pre></div><h2 id="notes"><a href="#notes" title="Permalink to Примечания">Примечания</a></h2><div><p>В ES5 если аргумент метода не является объектом (является примитивным значением), будет выброшено исключение <a href="/js/TypeError/"><code>TypeError</code></a>. В ES2015&nbsp;такой аргумент будет рассматриваться, как простой замороженный объект и метод его просто вернёт.</p>
+
+<pre class="brush: js notranslate"><code><span class="token operator">&gt;</span> Object<span class="token punctuation">.</span><span class="token function">freeze</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+TypeError<span class="token operator">:</span> <span class="token number">1</span> is not an object <span class="token comment">// код ES5</span>
+
+<span class="token operator">&gt;</span> Object<span class="token punctuation">.</span><span class="token function">freeze</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token number">1</span>                             <span class="token comment">// код ES2015</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-15.2.3.9" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 5.1 (ECMA-262)<br><small lang="ru">Определение 'Object.freeze' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Изначальное определение. Реализована в JavaScript 1.8.5.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-object.freeze" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Object.freeze' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td><a href="https://tc39.es/ecma262/#sec-object.freeze" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript (ECMA-262)<br><small lang="ru">Определение 'Object.freeze' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><div></div></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/Object/isFrozen/"><code>Object.isFrozen()</code></a></li>
+ <li><a href="/js/Object/preventExtensions/"><code>Object.preventExtensions()</code></a></li>
+ <li><a href="/js/Object/isExtensible/"><code>Object.isExtensible()</code></a></li>
+ <li><a href="/js/Object/seal/"><code>Object.seal()</code></a></li>
+ <li><a href="/js/Object/isSealed/"><code>Object.isSealed()</code></a></li>
+</ul></div>

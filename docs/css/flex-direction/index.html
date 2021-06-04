@@ -1,0 +1,54 @@
+<h1>flex-direction</h1><div><p></p><p></p></div><h2 id="резюме"><a href="#резюме" title="Permalink to Резюме">Резюме</a></h2><div><p><code>flex-direction -</code>&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/CSS" title="CSS">CSS</a> свойство&nbsp;, указывающее на то,как&nbsp;flex-элементы располагаются во flex-контейнере по&nbsp;главной оси&nbsp;и направлению (normal или reversed).</p>
+
+<p>Обратите внимание, что значения <code>row</code> и <code>row-reverse</code>&nbsp;зависят от направления flex-контейнера. Если его атрибут&nbsp;<code>dir</code> равен&nbsp;<code>ltr</code>, <code>row</code> представляет собой горизонтальную ось, ориентированную слева направо, а&nbsp;<code>row-reverse</code>&nbsp;- справа налево; если атрибут&nbsp;<code>dir</code> равен&nbsp;<code>rtl</code>, <code>row</code> представляет собой горизонтальную ось, ориентированную справа налево, а&nbsp;<code>row-reverse</code> - слева направо.</p>
+
+<p></p><table class="properties"><tbody><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td><code>row</code></td></tr><tr><th scope="row">Применяется к</th><td>flex-контейнеры</td></tr><tr><th scope="row"><a href="/css/inheritance/">Наследуется</a></th><td>нет</td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>как указано</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p>
+
+<p>См.&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox" title="/en/CSS/Using_CSS_flexible_boxes">Using CSS flexible boxes</a> для детализации по свойствам и дополнительной информации.</p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="brush:css notranslate"><code><span class="token comment">/* The direction text is laid out in a line */</span>
+<span class="token property">flex-direction</span><span class="token punctuation">:</span> row<span class="token punctuation">;</span>
+
+<span class="token comment">/* Как &lt;row&gt;, но наоборот */</span>
+<span class="token property">flex-direction</span><span class="token punctuation">:</span> row-reverse<span class="token punctuation">;</span>
+
+<span class="token comment">/* The direction in which lines of text are stacked */</span>
+<span class="token property">flex-direction</span><span class="token punctuation">:</span> column<span class="token punctuation">;</span>
+
+<span class="token comment">/* Как &lt;column&gt;, но наоборот */</span>
+<span class="token property">flex-direction</span><span class="token punctuation">:</span> column-reverse<span class="token punctuation">;</span>
+
+<span class="token comment">/* Общие значения */</span>
+<span class="token property">flex-direction</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">flex-direction</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">flex-direction</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre></div><h3 id="значения"><a href="#значения" title="Permalink to Значения">Значения</a></h3><div><p>Может принимать следующие значения::</p>
+
+<dl>
+ <dt><code>row</code></dt>
+ <dd>Главная ось flex-контейнера определена точно так же, как направление текста. Точки&nbsp;<strong>main-start</strong> и&nbsp;<strong>main-end</strong> совпадают с направлением контента.</dd>
+ <dt><code>row-reverse</code></dt>
+ <dd>Ведёт себя аналогично&nbsp;<code>row</code> , но точки&nbsp;<strong>main-start</strong> и <strong>main-end</strong> поменяны местами.</dd>
+ <dt><code>column</code></dt>
+ <dd>Главная ось flex-контейнера такая же, как ось блока (block-axis). Точки&nbsp;<strong>main-start</strong> и <strong>main-end</strong> такие же, как точки&nbsp;<strong>before</strong> и <strong>after</strong> режима записи (writing-mode).</dd>
+ <dt><code>column-reverse</code></dt>
+ <dd>Ведёт себя, как&nbsp;<code>column</code>&nbsp;, но точки&nbsp;<strong>main-start</strong> и <strong>main-end</strong> поменяны местами.</dd>
+</dl></div><h3 id="формальный_синтаксис"><a href="#формальный_синтаксис" title="Permalink to Формальный синтаксис">Формальный синтаксис</a></h3><div><pre class="notranslate">row <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> row-reverse <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> column <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> column-reverse</pre></div><h2 id="пример"><a href="#пример" title="Permalink to Пример">Пример</a></h2><div><pre class="brush:css;highlight:[2] notranslate"><code><span class="token selector">element</span> <span class="token punctuation">{</span>
+  <span class="token property">flex-direction</span><span class="token punctuation">:</span> row-reverse<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th>Спецификация</th>
+   <th>Статус</th>
+   <th>Примечание</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-flexbox-1/#flex-direction" hreflang="en" lang="en" class="external" rel=" noopener">CSS Flexible Box Layout Module<br><small lang="ru">Определение 'flex-direction' в этой спецификации.</small></a></td>
+   <td><span class="spec-cr">Кандидат в рекомендации</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="поддержка_браузеров"><a href="#поддержка_браузеров" title="Permalink to Поддержка браузеров">Поддержка браузеров</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также:">Смотрите также:</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox" title="/en-US/docs/CSS/Using_CSS_flexible_boxes">Using CSS flexible boxes</a></li>
+</ul></div>

@@ -1,0 +1,51 @@
+<h1>Reflect.apply()</h1><div><div></div>
+
+<p>Статический метод <code><strong>Reflect</strong></code><strong><code>.apply()</code></strong> вызывает переданную ему функцию с указанными аргументами.</p>
+
+<div><iframe class="interactive" width="100%" height="490" src="https://interactive-examples.mdn.mozilla.net/pages/js/reflect-apply.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+</div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate">Reflect.apply(target, thisArgument, argumentsList)
+</pre></div><h3 id="параметры"><a href="#параметры" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt>target</dt>
+ <dd>Функция, которую необходимо вызвать.</dd>
+ <dt>thisArgument</dt>
+ <dd>Значение переменной <code>this</code> во время вызова функции <em><code>target</code></em>.</dd>
+ <dt>argumentsList</dt>
+ <dd>Объект, подобный массиву, содержащий аргументы, с которыми должна быть вызвана функция <em><code>target</code></em>.</dd>
+</dl></div><h3 id="возвращаемое_значение"><a href="#возвращаемое_значение" title="Permalink to Возвращаемое значение">Возвращаемое значение</a></h3><div><p>Возвращается значение, которое вернёт функция <em><code>target</code></em> с указанным значением переменной <code><strong>this</strong></code> и аргументами.</p></div><h3 id="исключения"><a href="#исключения" title="Permalink to Исключения">Исключения</a></h3><div><p><a href="/js/TypeError/"><code>TypeError</code></a>, если функция <code><em>target</em></code> не может быть вызвана.</p></div><h2 id="описание"><a href="#описание" title="Permalink to Описание">Описание</a></h2><div><p>В ES5, обычно используется метод <a href="/js/Function/apply/"><code>Function.prototype.apply()</code></a>, чтобы вызвать функцию с указанным значением переменной <code>this</code> и <code>arguments</code>, переданными как массив (или <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Indexed_collections#working_with_array-like_objects">массивоподобный объект</a>).</p>
+
+<pre class="brush: js notranslate"><code><span class="token class-name">Function</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span>floor<span class="token punctuation">,</span> <span class="token keyword">undefined</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1.75</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+<p>С использованием <code>Reflect.apply</code> это действие становится более понятным и занимает меньше места в коде.</p></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="использование_reflect.apply()"><a href="#использование_reflect.apply()" title="Permalink to Использование Reflect.apply()">Использование <code>Reflect.apply()</code></a></h3><div><pre class="brush: js notranslate"><code><span class="token function">Reflect</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span>floor<span class="token punctuation">,</span> <span class="token keyword">undefined</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1.75</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 1;</span>
+
+<span class="token function">Reflect</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>String<span class="token punctuation">.</span>fromCharCode<span class="token punctuation">,</span> <span class="token keyword">undefined</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">104</span><span class="token punctuation">,</span> <span class="token number">101</span><span class="token punctuation">,</span> <span class="token number">108</span><span class="token punctuation">,</span> <span class="token number">108</span><span class="token punctuation">,</span> <span class="token number">111</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// "hello"</span>
+
+<span class="token function">Reflect</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span><span class="token class-name">RegExp</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>exec<span class="token punctuation">,</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">вы</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'превысокомногорассмотрительствующий'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span>index<span class="token punctuation">;</span>
+<span class="token comment">// 4</span>
+
+<span class="token function">Reflect</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">.</span>charAt<span class="token punctuation">,</span> <span class="token string">'пони'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// "и"</span>
+</code></pre></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-reflect.apply" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Reflect.apply' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Изначальное определение.</td>
+  </tr>
+  <tr>
+   <td><a href="https://tc39.es/ecma262/#sec-reflect.apply" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript (ECMA-262)<br><small lang="ru">Определение 'Reflect.apply' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="поддержка_браузерами"><a href="#поддержка_браузерами" title="Permalink to Поддержка браузерами">Поддержка браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/Reflect/"><code>Reflect</code></a></li>
+ <li><a href="/js/Function/apply/"><code>Function.prototype.apply()</code></a></li>
+</ul></div>

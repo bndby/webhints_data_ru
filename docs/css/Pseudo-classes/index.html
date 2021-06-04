@@ -1,0 +1,120 @@
+<h1>Псевдоклассы</h1><div><div></div>
+
+<p><strong>Псевдокласс</strong> в&nbsp;CSS —&nbsp;<dfn>это ключевое слово, добавленное к селектору,</dfn>&nbsp;которое определяет его особое состояние. Например, <a href="/css/:hover/"><code>:hover</code></a> может быть использован для изменения цвета кнопки при наведении курсора на неё.</p>
+
+<pre class="brush: css no-line-numbers notranslate"><code><span class="token selector">div:hover</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #F89B4D<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<p>Псевдоклассы дают возможность стилизовать элемент на основе не только отношений в DOM-дереве, но и основываясь на внешних факторах, таких как история посещений&nbsp;(например, <a href="/css/:visited/"><code>:visited</code></a>), состояние содержимого (вроде&nbsp;<a href="/css/:checked/"><code>:checked</code></a> у некоторых элементов формы) или позиции курсора мыши (например,&nbsp;<a href="/css/:hover/"><code>:hover</code></a> определяет, находится ли курсор мыши над элементом).</p>
+
+<div class="note notecard">
+<p><strong>Примечание:</strong>&nbsp;В отличие&nbsp;от псевдоклассов, <a href="/css/Pseudo-elements/">псевдоэлементы</a>&nbsp;могут быть использованы для стилизации <em>определённой части</em> элемента.</p>
+</div></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate">selector:pseudo-class {
+  property: value;
+}
+</pre>
+
+<p>Как и с обычными классами, можно совмещать вместе в одном селекторе любое число псевдоклассов.</p></div><h2 id="список_стандартных_псевдоклассов"><a href="#список_стандартных_псевдоклассов" title="Permalink to Список стандартных псевдоклассов">Список стандартных псевдоклассов</a></h2><div><div class="index">
+<ul>
+ <li><a href="/css/:active/"><code>:active</code></a></li>
+ <li><a href="https://developer.mozilla.org/ru/docs/conflicting/Web/CSS/:is"><code>:any</code></a></li>
+ <li><a href="/css/:any-link/"><code>:any-link</code></a></li>
+ <li><a href="/css/:checked/"><code>:checked</code></a></li>
+ <li><a href="/css/:default/"><code>:default</code></a></li>
+ <li><a href="/css/:defined/"><code>:defined</code></a></li>
+ <li><a href="/css/:dir/"><code>:dir()</code></a></li>
+ <li><a href="/css/:disabled/"><code>:disabled</code></a></li>
+ <li><a href="/css/:empty/"><code>:empty</code></a></li>
+ <li><a href="/css/:enabled/"><code>:enabled</code></a></li>
+ <li><a href="/css/:first/"><code>:first</code></a></li>
+ <li><a href="/css/:first-child/"><code>:first-child</code></a></li>
+ <li><a href="/css/:first-of-type/"><code>:first-of-type</code></a></li>
+ <li><a href="/css/:fullscreen/"><code>:fullscreen</code></a></li>
+ <li><a href="/css/:focus/"><code>:focus</code></a></li>
+ <li><a href="/css/:hover/"><code>:hover</code></a></li>
+ <li><a href="/css/:indeterminate/"><code>:indeterminate</code></a></li>
+ <li><a href="/css/:in-range/"><code>:in-range</code></a></li>
+ <li><a href="/css/:invalid/"><code>:invalid</code></a></li>
+ <li><a href="/css/:lang/"><code>:lang()</code></a></li>
+ <li><a href="/css/:last-child/"><code>:last-child</code></a></li>
+ <li><a href="/css/:last-of-type/"><code>:last-of-type</code></a></li>
+ <li><a href="/css/:left/"><code>:left</code></a></li>
+ <li><a href="/css/:link/"><code>:link</code></a></li>
+ <li><a href="/css/:not/"><code>:not()</code></a></li>
+ <li><a href="/css/:nth-child/"><code>:nth-child()</code></a></li>
+ <li><a href="/css/:nth-last-child/"><code>:nth-last-child()</code></a></li>
+ <li><a href="/css/:nth-last-of-type/"><code>:nth-last-of-type()</code></a></li>
+ <li><a href="/css/:nth-of-type/"><code>:nth-of-type()</code></a></li>
+ <li><a href="/css/:only-child/"><code>:only-child</code></a></li>
+ <li><a href="/css/:only-of-type/"><code>:only-of-type</code></a></li>
+ <li><a href="/css/:optional/"><code>:optional</code></a></li>
+ <li><a href="/css/:out-of-range/"><code>:out-of-range</code></a></li>
+ <li><a href="/css/:read-only/"><code>:read-only</code></a></li>
+ <li><a href="/css/:read-write/"><code>:read-write</code></a></li>
+ <li><a href="/css/:required/"><code>:required</code></a></li>
+ <li><a href="/css/:right/"><code>:right</code></a></li>
+ <li><a href="/css/:root/"><code>:root</code></a></li>
+ <li><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/:scope"><code>:scope</code> <span>(en-US)</span></a></li>
+ <li><a href="/css/:target/"><code>:target</code></a></li>
+ <li><a href="/css/:valid/"><code>:valid</code></a></li>
+ <li><a href="/css/:visited/"><code>:visited</code></a></li>
+</ul>
+</div></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://fullscreen.spec.whatwg.org/" hreflang="en" lang="en" class="external" title="Спецификация 'Fullscreen API'" rel=" noopener">Fullscreen API</a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td>Определён&nbsp;<code>:fullscreen</code>.</td>
+  </tr>
+  <tr>
+   <td><a href="https://html.spec.whatwg.org/multipage/" hreflang="en" lang="en" class="external" title="Спецификация 'HTML Living Standard'" rel=" noopener">HTML Living Standard</a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td>Нет изменений от <a href="https://www.w3.org/TR/html52/" hreflang="en" lang="en" class="external" title="Спецификация 'HTML5'" rel=" noopener">HTML5</a>.</td>
+  </tr>
+  <tr>
+   <td><a href="https://drafts.csswg.org/selectors-4/" hreflang="en" lang="en" class="external" title="Спецификация 'Selectors Level&nbsp;4'" rel=" noopener">Selectors Level&nbsp;4</a></td>
+   <td><span class="spec-wd">Рабочий черновик</span></td>
+   <td>Определены&nbsp;<code>:any-link</code>, <code>:local-link</code>, <code>:scope</code>, <code>:active-drop-target</code>, <code>:valid-drop-target</code>, <code>:invalid-drop-target</code>, <code>:current</code>, <code>:past</code>, <code>:future</code>, <code>:placeholder-shown</code>, <code>:user-error</code>, <code>:blank</code>, <code>:nth-match()</code>, <code>:nth-last-match()</code>, <code>:nth-column()</code>, <code>:nth-last-column()</code>&nbsp;и&nbsp;<code>:matches()</code>.<br>
+    Нет существенных изменений для псевдоклассов, определённых в <a href="https://drafts.csswg.org/selectors-3/" hreflang="en" lang="en" class="external" title="Спецификация 'Selectors Level&nbsp;3'" rel=" noopener">Selectors Level&nbsp;3</a> и <a href="https://www.w3.org/TR/html52/" hreflang="en" lang="en" class="external" title="Спецификация 'HTML5'" rel=" noopener">HTML5</a> (не рассматривая семантическое значение).</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html52/" hreflang="en" lang="en" class="external" title="Спецификация 'HTML5'" rel=" noopener">HTML5</a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Определено семантическое значение в&nbsp;HTML контексте для&nbsp; <code>:link</code>, <code>:visited</code>, <code>:active</code>, <code>:enabled</code>, <code>:disabled</code>, <code>:checked</code>&nbsp;и <code>:indeterminate</code>.<br>
+    Определены&nbsp;<code>:default</code>, <code>:valid</code>, <code>:invalid</code>, <code>:in-range</code>, <code>:out-of-range</code>, <code>:required</code>, <code>:optional</code>, <code>:read-only</code>, <code>:read-write</code>&nbsp;и <code>:dir()</code>.</td>
+  </tr>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-ui-3/" hreflang="en" lang="en" class="external" title="Спецификация 'CSS Basic User Interface Module Level&nbsp;3'" rel=" noopener">CSS Basic User Interface Module Level&nbsp;3</a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Определены&nbsp;<code>:default</code>, <code>:valid</code>, <code>:invalid</code>, <code>:in-range</code>, <code>:out-of-range</code>, <code>:required</code>, <code>:optional</code>, <code>:read-only</code>&nbsp;и <code>:read-write</code>, но без связанного семантического значения.</td>
+  </tr>
+  <tr>
+   <td><a href="https://drafts.csswg.org/selectors-3/" hreflang="en" lang="en" class="external" title="Спецификация 'Selectors Level&nbsp;3'" rel=" noopener">Selectors Level&nbsp;3</a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Определены&nbsp;<code>:target</code>, <code>:root</code>, <code>:nth-child()</code>, <code>:nth-last-of-child()</code>, <code>:nth-of-type()</code>, <code>:nth-last-of-type()</code>, <code>:last-child</code>, <code>:first-of-type</code>, <code>:last-of-type</code>, <code>:only-child</code>, <code>:only-of-type</code>, <code>:empty</code>&nbsp;и <code>:not()</code>.<br>
+    Определён синтаксис для&nbsp;<code>:enabled</code>, <code>:disabled</code>, <code>:checked</code>&nbsp;и <code>:indeterminate</code>, но без связанного семантического значения.<br>
+    Нет значительных изменений для псевдоклассов, определённых в&nbsp;<a href="https://www.w3.org/TR/CSS2/" hreflang="en" lang="en" class="external" title="Спецификация 'CSS Level&nbsp;2 (Revision&nbsp;1)'" rel=" noopener">CSS Level&nbsp;2 (Revision&nbsp;1)</a>.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/CSS2/" hreflang="en" lang="en" class="external" title="Спецификация 'CSS Level&nbsp;2 (Revision&nbsp;1)'" rel=" noopener">CSS Level&nbsp;2 (Revision&nbsp;1)</a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Определены&nbsp;<code>:lang()</code>, <code>:first-child</code>, <code>:hover</code>&nbsp;и <code>:focus</code>.<br>
+    Нет значительных изменений для псевдоклассов, определённых в <a href="https://www.w3.org/TR/CSS1/" hreflang="en" lang="en" class="external" title="Спецификация 'CSS Level&nbsp;1'" rel=" noopener">CSS Level&nbsp;1</a>.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/CSS1/" hreflang="en" lang="en" class="external" title="Спецификация 'CSS Level&nbsp;1'" rel=" noopener">CSS Level&nbsp;1</a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Определены&nbsp;<code>:link</code>, <code>:visited</code>&nbsp;и <code>:active</code>, но без связанного семантического значения.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/css/Pseudo-elements/">Псевдоэлементы</a></li>
+</ul></div>

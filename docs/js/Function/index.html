@@ -1,0 +1,161 @@
+<h1>Function</h1><div><div></div>
+
+<p></p><p></p>
+
+<p><strong><code>Function</code>&nbsp;constructor</strong>&nbsp;создаёт новый объект&nbsp;<code>Function</code>. Вызов&nbsp;<code>constructor</code>&nbsp;создаёт функцию динамически, но страдает от проблем безопасности и аналогичных (но гораздо менее значительных) проблем производительности <a href="/js/eval/"><code>eval</code></a>. Однако, в отличие от eval, конструктор функций создаёт функции, которые выполняются только в глобальной области..</p>
+
+<p><iframe class="interactive" width="100%" height="490" src="https://interactive-examples.mdn.mozilla.net/pages/js/function-constructor.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></p>
+
+
+
+<p>Каждая функция JavaScript на самом деле является объектом функции. Это можно увидеть с помощью кода&nbsp;<code>(function(){}).constructor === Function</code>&nbsp;которая возвращает true.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code>new Function([<var>arg1</var>[, <var>arg2</var>[, ...<var>argN</var>]],] <var>functionBody</var>)</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>arg1, arg2, ... arg<em>N</em></code></dt>
+ <dd>Имена, используемые функцией в качестве имён формальных аргументов. Каждое имя должно быть строкой, представляющий допустимый идентификатор JavaScript, либо списком таких строк, разделённых запятой; например "<code>x</code>", "<code>theValue</code>" или "<code>a,b</code>".</dd>
+ <dt><code>functionBody</code></dt>
+ <dd>Строка, содержащая инструкции JavaScript, составляющие определение функции.</dd>
+</dl></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Объекты <code>Function</code>, созданные конструктором <code>Function</code>, разбираются при создании функции. Это менее эффективно определения функции при помощи <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/function">выражения <code>function</code></a> или <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/function">инструкции <code>function</code></a> и вызова её внутри вашего кода, поскольку такие функции разбираются вместе с остальным кодом.</p>
+
+<p>Все аргументы, переданные в функцию, трактуются как имена идентификаторов параметров создаваемой функции, и имеют тот же порядок следования, что и при их передаче в конструктор функции.</p>
+
+<div class="note notecard">
+<p><strong>Примечание:</strong> функции, созданные конструктором <code>Function</code>, не создают замыканий на их контексты создания; они всегда создаются в глобальной области видимости. При их вызове, они получат доступ только к своим локальным переменным и переменным из глобальной области видимости, но не к переменным в той области видимости, в которой вызывался конструктор <code>Function</code>. Это поведение отличается от поведения при использовании функции <a href="/js/eval/"><code>eval</code></a> с кодом создания функции.</p>
+</div>
+
+<p>Вызов конструктора <code>Function</code> как функции (без использования оператора <code>new</code>) имеет тот же самый эффект, что и вызов его как конструктора.</p></div><h2 id="properties_and_methods_of_function"><a href="#properties_and_methods_of_function" title="Permalink to Свойства и методы объекта Function">Свойства и методы объекта <code>Function</code></a></h2><div><p>Глобальный объект <code>Function</code> не имеет собственных методов или свойств, однако, поскольку он сам является функцией, он наследует некоторые методы и свойства через цепочку прототипов объекта <a href="https://developer.mozilla.org/ru/docs/conflicting/Web/JavaScript/Reference/Global_Objects/Function"><code>Function.prototype</code></a>.</p></div><h2 id="function_prototype_object"><a href="#function_prototype_object" title="Permalink to Прототип объекта Function">Прототип объекта <code>Function</code></a></h2><div></div><h3 id="properties"><a href="#properties" title="Permalink to Свойства">Свойства</a></h3><div><div><dl>
+ <dt><a href="/js/Function/arguments/"><code>Function.arguments</code></a> </dt>
+ <dd>Массив, соответствующий аргументам, переданным в функцию. Это устаревшее свойство <a href="/js/Function/" aria-current="page"><code>Function</code></a>, используйте вместо него объект <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments"><code>arguments</code> <span>(en-US)</span></a>, доступный внутри функции.</dd>
+ <dt><s class="obsoleteElement"><a class="page-not-created" title="Документация об этом ещё не написана; пожалуйста, поспособствуйте её написанию!"><code>Function.arity</code></a> </s></dt>
+ <dd><s class="obsoleteElement">Использовалось для определения количества аргументов, ожидаемых функцией, но было удалено. Вместо него используйте свойство <a href="/js/Function/length/"><code>length</code></a>.</s></dd>
+ <dt><a href="/js/Function/caller/"><code>Function.caller</code></a> </dt>
+ <dd>Определяет функцию, вызвавшую текущую выполняющуюся функцию.</dd>
+ <dt><a href="/js/Function/length/"><code>Function.length</code></a></dt>
+ <dd>Определяет количество аргументов, ожидаемых функцией.</dd>
+ <dt><a href="/js/Function/name/"><code>Function.name</code></a> </dt>
+ <dd>Имя функции.</dd>
+ <dt><a href="/js/Function/displayName/"><code>Function.displayName</code></a> </dt>
+ <dd>Отображаемое имя функции.</dd>
+ <dt><code>Function.prototype.constructor</code></dt>
+ <dd>Определяет функцию, создающую прототип объекта. Смотрите документацию по <a href="/js/Object/constructor/"><code>Object.prototype.constructor</code></a>.</dd>
+</dl></div></div><h3 id="methods"><a href="#methods" title="Permalink to Методы">Методы</a></h3><div><div><dl>
+ <dt><a href="/js/Function/apply/"><code>Function.prototype.apply()</code></a></dt>
+ <dd>Вызывает функцию и устанавливает <strong><code>this </code></strong>в контекст предоставленного значения; аргументы передаются объектом <a href="/js/Array/"><code>Array</code></a>.</dd>
+ <dt><a href="/js/Function/bind/"><code>Function.prototype.bind()</code></a></dt>
+ <dd>Создаёт новую функцию, которая, при вызове, самостоятельно вызывает эту функцию в контексте предоставленного значения, с данной последовательностью аргументов, предшествующих любым аргументам, переданным в новую функцию при её вызове. Устанавливает <strong><code>this </code></strong>в контекст предоставленного значения.</dd>
+ <dt><a href="/js/Function/call/"><code>Function.prototype.call()</code></a></dt>
+ <dd>Вызывает (выполняет) функцию и устанавливает <strong><code>this </code></strong>в контекст предоставленного значения; аргументы передаются как есть.</dd>
+ <dt><a class="page-not-created" title="Документация об этом ещё не написана; пожалуйста, поспособствуйте её написанию!"><code>Function.prototype.isGenerator()</code></a> </dt>
+ <dd>Возвращает <code>true</code>, если функция является <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Iterators_and_Generators">генератором</a>; в противном случае возвращает <code>false</code>.</dd>
+ <dt><a href="/js/Function/toSource/"><code>Function.prototype.toSource()</code></a> </dt>
+ <dd>Возвращает строку, представляющую исходный код функции. Переопределяет метод <a href="/js/Object/toSource/"><code>Object.prototype.toSource</code></a>.</dd>
+ <dt><a href="/js/Function/toString/"><code>Function.prototype.toString()</code></a></dt>
+ <dd>Возвращает строку, представляющую исходный код функции. Переопределяет метод <a href="/js/Object/toString/"><code>Object.prototype.toString</code></a>.</dd>
+</dl></div></div><h2 id="function_instances"><a href="#function_instances" title="Permalink to Экземпляры объекта Function">Экземпляры объекта <code>Function</code></a></h2><div><p>Экземпляры объекта <code>Function</code> наследуют методы и свойства из объекта <a href="https://developer.mozilla.org/ru/docs/conflicting/Web/JavaScript/Reference/Global_Objects/Function"><code>Function.prototype</code></a>. Как и со всеми другими конструкторами, вы можете изменить объект прототипа конструктора для применения изменений ко всем экземплярам объекта <code>Function</code>.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_specifying_arguments_with_the_function_constructor"><a href="#example_specifying_arguments_with_the_function_constructor" title="Permalink to Пример: указание аргументов в конструкторе Function">Пример: указание аргументов в конструкторе <code>Function</code></a></h3><div><p>Следующий код создаёт объект <code>Function</code>, который принимает два аргумента.</p>
+
+<pre class="brush: js notranslate"><code><span class="token comment">// Пример может быть запущен непосредственно в вашей консоли JavaScript</span>
+
+<span class="token comment">// Создаём функцию, принимающую два аргумента, и возвращающую их сумму</span>
+<span class="token keyword">var</span> adder <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Function</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'return a + b'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Вызываем функцию</span>
+<span class="token function">adder</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// &gt; 8</span>
+</code></pre>
+
+<p>Аргументы "<code>a</code>" и "<code>b</code>" являются именами формальных аргументов, которые используются в теле функции, "<code>return a + b</code>".</p></div><h3 id="example_a_recursive_shortcut_to_massively_modify_the_dom"><a href="#example_a_recursive_shortcut_to_massively_modify_the_dom" title="Permalink to Пример: рекурсивное сокращение для массового изменения DOM">Пример: рекурсивное сокращение для массового изменения DOM</a></h3><div><p>Создание функции через конструктор <code>Function</code> - это один из способов динамического создания из функции неизвестного количества новых объектов с некоторым выполняемым кодом в глобальной области видимости. Следующий пример (a рекурсивное сокращение для массового изменения DOM) был бы невозможен без вызова конструктора <code>Function</code> для каждого нового запроса, если вы хотите избежать использования замыканий.</p>
+
+<pre class="brush: html notranslate"><code><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token name">doctype</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Content-Type<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/html; charset=UTF-8<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>Пример MDN - рекурсивное сокращение для массового изменения DOM<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">var</span> domQuery <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> aDOMFunc <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token class-name">Element</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>removeAttribute<span class="token punctuation">,</span>
+    <span class="token class-name">Element</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>setAttribute<span class="token punctuation">,</span>
+    <span class="token class-name">CSSStyleDeclaration</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>removeProperty<span class="token punctuation">,</span>
+    <span class="token class-name">CSSStyleDeclaration</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>setProperty
+  <span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">function</span> <span class="token function">setSomething</span><span class="token punctuation">(</span><span class="token parameter">bStyle<span class="token punctuation">,</span> sProp<span class="token punctuation">,</span> sVal</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> bSet <span class="token operator">=</span> <span class="token function">Boolean</span><span class="token punctuation">(</span>sVal<span class="token punctuation">)</span><span class="token punctuation">,</span> fAction <span class="token operator">=</span> aDOMFunc<span class="token punctuation">[</span>bSet <span class="token operator">|</span> bStyle <span class="token operator">&lt;&lt;</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        aArgs <span class="token operator">=</span> <span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>arguments<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> bSet <span class="token operator">?</span> <span class="token number">3</span> <span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        aNodeList <span class="token operator">=</span> bStyle <span class="token operator">?</span> <span class="token keyword">this</span><span class="token punctuation">.</span>cssNodes <span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>nodes<span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>bSet <span class="token operator">&amp;&amp;</span> bStyle<span class="token punctuation">)</span> <span class="token punctuation">{</span> aArgs<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>
+      <span class="token keyword">var</span> nItem <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> nLen <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>nodes<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+      nItem <span class="token operator">&lt;</span> nLen<span class="token punctuation">;</span>
+      <span class="token function">fAction</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>aNodeList<span class="token punctuation">[</span>nItem<span class="token operator">++</span><span class="token punctuation">]</span><span class="token punctuation">,</span> aArgs<span class="token punctuation">)</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>follow <span class="token operator">=</span> setSomething<span class="token punctuation">.</span>caller<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">function</span> <span class="token function">setStyles</span><span class="token punctuation">(</span><span class="token parameter">sProp<span class="token punctuation">,</span> sVal</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token function">setSomething</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">,</span> sProp<span class="token punctuation">,</span> sVal<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+  <span class="token keyword">function</span> <span class="token function">setAttribs</span><span class="token punctuation">(</span><span class="token parameter">sProp<span class="token punctuation">,</span> sVal</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token function">setSomething</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">,</span> sProp<span class="token punctuation">,</span> sVal<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+  <span class="token keyword">function</span> <span class="token function">getSelectors</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>selectors<span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token keyword">function</span> <span class="token function">getNodes</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>nodes<span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">sSelectors</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> oQuery <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Function</span><span class="token punctuation">(</span><span class="token string">'return arguments.callee.follow.apply(arguments.callee, arguments);'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    oQuery<span class="token punctuation">.</span>selectors <span class="token operator">=</span> sSelectors<span class="token punctuation">;</span>
+    oQuery<span class="token punctuation">.</span>nodes <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span>sSelectors<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    oQuery<span class="token punctuation">.</span>cssNodes <span class="token operator">=</span> <span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>oQuery<span class="token punctuation">.</span>nodes<span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">oInlineCSS</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> oInlineCSS<span class="token punctuation">.</span>style<span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    oQuery<span class="token punctuation">.</span>attributes <span class="token operator">=</span> setAttribs<span class="token punctuation">;</span>
+    oQuery<span class="token punctuation">.</span>inlineStyle <span class="token operator">=</span> setStyles<span class="token punctuation">;</span>
+    oQuery<span class="token punctuation">.</span>follow <span class="token operator">=</span> getNodes<span class="token punctuation">;</span>
+    oQuery<span class="token punctuation">.</span>toString <span class="token operator">=</span> getSelectors<span class="token punctuation">;</span>
+    oQuery<span class="token punctuation">.</span>valueOf <span class="token operator">=</span> getNodes<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> oQuery<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>testClass<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Lorem ipsum<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Некоторый текст<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>testClass<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>dolor sit amet<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token function">domQuery</span><span class="token punctuation">(</span><span class="token string">'.testClass'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">attributes</span><span class="token punctuation">(</span><span class="token string">'lang'</span><span class="token punctuation">,</span> <span class="token string">'en'</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token string">'title'</span><span class="token punctuation">,</span> <span class="token string">'Risus abundat in ore stultorum'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">inlineStyle</span><span class="token punctuation">(</span><span class="token string">'background-color'</span><span class="token punctuation">,</span> <span class="token string">'black'</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token string">'color'</span><span class="token punctuation">,</span> <span class="token string">'white'</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token string">'width'</span><span class="token punctuation">,</span> <span class="token string">'100px'</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token string">'height'</span><span class="token punctuation">,</span> <span class="token string">'50px'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td>ECMAScript 1-е издание.</td>
+   <td>Стандарт</td>
+   <td>Изначальное определение. Реализована в JavaScript 1.0.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-15.3" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 5.1 (ECMA-262)<br><small lang="ru">Определение 'Function' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-function-objects" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Function' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions">Функции и их область видимости <span>(en-US)</span></a></li>
+ <li><a href="/js/Function/" aria-current="page"><code>Function</code></a></li>
+ <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/function">инструкция function</a></li>
+ <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/function">выражение function</a></li>
+ <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/function*">инструкция function*</a></li>
+ <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/function*">выражение function*</a></li>
+ <li><a href="/js/GeneratorFunction/"><code>GeneratorFunction</code></a></li>
+</ul></div>

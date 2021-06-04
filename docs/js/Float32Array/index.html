@@ -1,0 +1,147 @@
+<h1>Float32Array</h1><div><div></div>
+
+<p>Объект<strong><code> Float32Array</code></strong> представляет типизированный массив 32-битных чисел с плавающей запятой (соответствует типу float в языке C)&nbsp; с платформо-зависимым порядком байт. Если необходим контроль за порядком байт, то вместо этого объекта используйте <a class="new" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/DataView" rel="nofollow" title="Документация об этом ещё не написана; пожалуйста, поспособствуйте её написанию!"><code>DataView</code></a>. Содержимое инициализируется значением <code>0</code>. Создав экземпляр <strong><code>Float32Array</code></strong>, можно получить доступ к элементам массива, используя методы объекта или стандартный синтаксис доступа к элементу массива по его индексу&nbsp;(с помощью скобочной&nbsp;нотации - квадратные скобки).</p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate">new Float32Array(); // new in ES2017
+new Float32Array(length);
+new Float32Array(typedArray);
+new Float32Array(object);
+new Float32Array(buffer [, byteOffset [, length]]);</pre>
+
+<p>Для более подробной информации о синтаксисе конструктора и его параметрах смотрите&nbsp;<em><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray#syntax">TypedArray</a></em>.</p></div><h2 id="свойства"><a href="#свойства" title="Permalink to Свойства">Свойства</a></h2><div><dl>
+ <dt><a href="/js/TypedArray/BYTES_PER_ELEMENT/"><code>Float32Array.BYTES_PER_ELEMENT</code></a></dt>
+ <dd>Возвращает число, соответствующее размеру элемента массива в байтах. Для&nbsp;<code>Float32Array</code> это <code>4</code>.</dd>
+ <dt>Float32Array.length</dt>
+ <dd>Статическое свойство "длина" со значением 0.&nbsp;Если хотите получить актуальную длину&nbsp;массива&nbsp;(число&nbsp;элементов)&nbsp;используйте&nbsp;<a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/length"><code>Float32Array.prototype.length</code> <span>(en-US)</span></a>.</dd>
+ <dt><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/name"><code>Float32Array.name</code> <span>(en-US)</span></a></dt>
+ <dd>Возвращает строковое представление названия конструктора.&nbsp;В данном случае&nbsp;<code>Float32Array</code>&nbsp;вернёт <code>"Float32Array"</code>.</dd>
+ <dt><a href="https://developer.mozilla.org/ru/docs/conflicting/Web/JavaScript/Reference/Global_Objects/TypedArray"><code>Float32Array.prototype</code></a></dt>
+ <dd>Прототип объекта <code>TypedArray</code>.</dd>
+</dl></div><h2 id="методы"><a href="#методы" title="Permalink to Методы">Методы</a></h2><div><dl>
+ <dt><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/from"><code>Float32Array.from()</code> <span>(en-US)</span></a></dt>
+ <dd>Создаёт новый <code>Float32Array</code>&nbsp;из массивоподобного или итерируемого объекта. Смотрите также&nbsp;<a href="/js/Array/from/"><code>Array.from()</code></a>.</dd>
+ <dt><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/of"><code>Float32Array.of()</code> <span>(en-US)</span></a></dt>
+ <dd>Создаёт новый&nbsp;<code>Float32Array</code> с заданным числом элементов. Смотрите также&nbsp;<a href="/js/Array/of/"><code>Array.of()</code></a>.</dd>
+</dl></div><h2 id="float32array_prototype"><a href="#float32array_prototype" title="Permalink to Float32Array prototype"><code>Float32Array</code> prototype</a></h2><div><p><code>&nbsp; </code>Любые <code>Float32Array</code>&nbsp;объекты наследуются от&nbsp;<a href="https://developer.mozilla.org/ru/docs/conflicting/Web/JavaScript/Reference/Global_Objects/TypedArray"><code>%TypedArray%.prototype</code></a>.</p></div><h3 id="свойства_2"><a href="#свойства_2" title="Permalink to Свойства">Свойства</a></h3><div><dl>
+ <dt><code>Float32Array.prototype.constructor</code></dt>
+ <dd>Возвращает функцию, которая создаёт экземпляр прототипа.&nbsp;В данном случае это&nbsp;конструктор&nbsp;<code>Float32Array</code>.</dd>
+ <dt><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/buffer"><code>Float32Array.prototype.buffer</code> <span>(en-US)</span></a> <span title="Это значение изменять нельзя." class="badge inline readonly">Только для чтения </span></dt>
+ <dd>Возвращает <a href="/js/ArrayBuffer/"><code>ArrayBuffer</code></a>, на который ссылается&nbsp;<code>Float32Array.</code> Автоматически изменяется при операциях над массивом&nbsp;и поэтому доступен <strong>только для чтения</strong>.</dd>
+ <dt><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/byteLength"><code>Float32Array.prototype.byteLength</code> <span>(en-US)</span></a> <span title="Это значение изменять нельзя." class="badge inline readonly">Только для чтения </span></dt>
+ <dd>Возвращает длину в байтах для&nbsp;<code>Float32Array</code>&nbsp;с начала его&nbsp;<a href="/js/ArrayBuffer/"><code>ArrayBuffer</code></a>. Автоматически изменяется при операциях над массивом&nbsp;и поэтому доступен <strong>только для чтения</strong>.</dd>
+ <dt><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/byteOffset"><code>Float32Array.prototype.byteOffset</code> <span>(en-US)</span></a> <span title="Это значение изменять нельзя." class="badge inline readonly">Только для чтения </span></dt>
+ <dd>Возвращает смещение (в байтах) <code>Float32Array</code>&nbsp;относительно начала&nbsp;<a href="/js/ArrayBuffer/"><code>ArrayBuffer</code></a>. Автоматически изменяется при операциях над массивом&nbsp;и поэтому доступен <strong>только для чтения</strong>.</dd>
+ <dt><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/length"><code>Float32Array.prototype.length</code> <span>(en-US)</span></a> <span title="Это значение изменять нельзя." class="badge inline readonly">Только для чтения </span></dt>
+ <dd>Возвращает число элементов, хранящихся в&nbsp;<code>Float32Array</code>. Автоматически изменяется при операциях над массивом&nbsp;и поэтому доступен <strong>только для чтения</strong>.</dd>
+</dl></div><h3 id="методы_2"><a href="#методы_2" title="Permalink to Методы">Методы</a></h3><div><dl>
+ <dt><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/copyWithin"><code>Float32Array.prototype.copyWithin()</code> <span>(en-US)</span></a></dt>
+ <dd>Копирует последовательность элементов в массив. Смотрите также&nbsp;<a href="/js/Array/copyWithin/"><code>Array.prototype.copyWithin()</code></a>.</dd>
+ <dt><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/entries"><code>Float32Array.prototype.entries()</code> <span>(en-US)</span></a></dt>
+ <dd>Возвращает новый объект&nbsp;<code>Array Iterator</code>, который содержит пары ключ-значение для каждого элемента в массиве. Смотрите также&nbsp;<a href="/js/Array/entries/"><code>Array.prototype.entries()</code></a>.</dd>
+ <dt><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/every"><code>Float32Array.prototype.every()</code> <span>(en-US)</span></a></dt>
+ <dd>Проверяет, что все элементы в массиве соответствуют условию. Смотрите также&nbsp;<a href="/js/Array/every/"><code>Array.prototype.every()</code></a>.</dd>
+ <dt><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/fill"><code>Float32Array.prototype.fill()</code> <span>(en-US)</span></a></dt>
+ <dd>Заполняет весь массив от начального до последнего индекса одинаковыми элементами. Смотрите также&nbsp;<a href="/js/Array/fill/"><code>Array.prototype.fill()</code></a>.</dd>
+ <dt><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/filter"><code>Float32Array.prototype.filter()</code> <span>(en-US)</span></a></dt>
+ <dd>Возвращает новый массив со всеми элементами удовлетворяющей условию. Смотрите также&nbsp;<a href="/js/Array/filter/"><code>Array.prototype.filter()</code></a>.</dd>
+ <dt><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/find"><code>Float32Array.prototype.find()</code> <span>(en-US)</span></a></dt>
+ <dd>Возвращает найденное значение в массиве, если найден элемент соответствующий&nbsp;условию, в противном случае возвращает <code>undefined</code>. Смотрите также&nbsp;<a href="/js/Array/find/"><code>Array.prototype.find()</code></a>.</dd>
+ <dt><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/findIndex"><code>Float32Array.prototype.findIndex()</code> <span>(en-US)</span></a></dt>
+ <dd>Возвращает индекс найденного&nbsp;значения&nbsp;в массиве, если найден элемент соответствующий&nbsp;условию, в противном случае возвращает <font face="Consolas, Liberation Mono, Courier, monospace">-1</font>. Смотрите также <a href="/js/Array/findIndex/"><code>Array.prototype.findIndex()</code></a>.</dd>
+ <dt><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/forEach"><code>Float32Array.prototype.forEach()</code> <span>(en-US)</span></a></dt>
+ <dd>Вызывает функцию для каждого элемента в массиве.&nbsp;Смотрите также&nbsp;<a href="/js/Array/forEach/"><code>Array.prototype.forEach()</code></a>.</dd>
+ <dt><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/includes"><code>Float32Array.prototype.includes()</code> <span>(en-US)</span></a> </dt>
+ <dd>Проверяет что массив включает себя элемент, возвращает соответственно true или false.&nbsp;Смотрите также&nbsp;<a href="/js/Array/includes/"><code>Array.prototype.includes()</code></a>.</dd>
+ <dt><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/indexOf"><code>Float32Array.prototype.indexOf()</code> <span>(en-US)</span></a></dt>
+ <dd>Возвращает индекс элемента соответствующего условию (равен значению), в противном случае возвращает -1.&nbsp;Смотрите также&nbsp;<a href="/js/Array/indexOf/"><code>Array.prototype.indexOf()</code></a>.</dd>
+ <dt><a href="/js/TypedArray/join/"><code>Float32Array.prototype.join()</code></a></dt>
+ <dd>Объединяет элементы массива в строку. Смотрите также&nbsp;<a href="/js/Array/join/"><code>Array.prototype.join()</code></a>.</dd>
+ <dt><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/keys"><code>Float32Array.prototype.keys()</code> <span>(en-US)</span></a></dt>
+ <dd>Возвращает новый&nbsp;<code>Array Iterator,</code> который содержит ключи элементов в массиве. Смотрите также&nbsp;<a href="/js/Array/keys/"><code>Array.prototype.keys()</code></a>.</dd>
+ <dt><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/lastIndexOf"><code>Float32Array.prototype.lastIndexOf()</code> <span>(en-US)</span></a></dt>
+ <dd>Возвращает последний найденный индекс соответствующий искомому значению, в противном случае возвращает - 1. Смотрите также&nbsp;<a href="/js/Array/lastIndexOf/"><code>Array.prototype.lastIndexOf()</code></a>.</dd>
+ <dt><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/map"><code>Float32Array.prototype.map()</code> <span>(en-US)</span></a></dt>
+ <dd>Возвращает новый массив с результатом применения функции к каждому элементу в этом массиве. Смотрите также&nbsp;<a href="/js/Array/map/"><code>Array.prototype.map()</code></a>.</dd>
+ <dt><a class="page-not-created" title="Документация об этом ещё не написана; пожалуйста, поспособствуйте её написанию!"><code>Float32Array.prototype.move()</code></a>  <span class="notecard inline warning">Не реализовано</span></dt>
+ <dd>Нестандартизированная версия <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/copyWithin"><code>Float32Array.prototype.copyWithin()</code> <span>(en-US)</span></a>.</dd>
+ <dt><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/reduce"><code>Float32Array.prototype.reduce()</code> <span>(en-US)</span></a></dt>
+ <dd>Применяет функцию к каждому элементу в массиве (слева-направо)&nbsp;и накапливает результат в переменной. Смотрите также&nbsp;<a href="/js/Array/Reduce/"><code>Array.prototype.reduce()</code></a>.</dd>
+ <dt><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/reduceRight"><code>Float32Array.prototype.reduceRight()</code> <span>(en-US)</span></a></dt>
+ <dd>Применяет функцию к каждому элементу в массиве (справа-налево)&nbsp;и накапливает результат в переменной. Смотрите также <a href="/js/Array/reduceRight/"><code>Array.prototype.reduceRight()</code></a>.</dd>
+ <dt><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/reverse"><code>Float32Array.prototype.reverse()</code> <span>(en-US)</span></a></dt>
+ <dd>Переставляет элементы массива в обратном порядке - первый становится последним и так далее. Смотрите также&nbsp;<a href="/js/Array/reverse/"><code>Array.prototype.reverse()</code></a>.</dd>
+ <dt><a href="/js/TypedArray/set/"><code>Float32Array.prototype.set()</code></a></dt>
+ <dd>Сохраняет значения в массиве.</dd>
+ <dt><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/slice"><code>Float32Array.prototype.slice()</code> <span>(en-US)</span></a></dt>
+ <dd>Выделяет часть массива и возвращает новый с этими значениями. Смотрите также&nbsp;<a href="/js/Array/slice/"><code>Array.prototype.slice()</code></a>.</dd>
+ <dt><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/some"><code>Float32Array.prototype.some()</code> <span>(en-US)</span></a></dt>
+ <dd>Возвращает true если хотя бы один элемент удовлетворяет условию. Смотрите также&nbsp;<a href="/js/Array/some/"><code>Array.prototype.some()</code></a>.</dd>
+ <dt><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/sort"><code>Float32Array.prototype.sort()</code> <span>(en-US)</span></a></dt>
+ <dd>Сортирует элементы массива по порядку и возвращает этот массив. Смотрите также&nbsp;<a href="/js/Array/sort/"><code>Array.prototype.sort()</code></a>.</dd>
+ <dt><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/subarray"><code>Float32Array.prototype.subarray()</code> <span>(en-US)</span></a></dt>
+ <dd><code>Возваращает новый Float32Array</code>&nbsp;с заданного начального по конечный индекс.</dd>
+ <dt><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/values"><code>Float32Array.prototype.values()</code> <span>(en-US)</span></a></dt>
+ <dd>Возвращает новый объект&nbsp;<code>Array Iterator</code>&nbsp;который содержит значения всех элементов в массиве. Смотрите также&nbsp;<a href="/js/Array/values/"><code>Array.prototype.values()</code></a>.</dd>
+ <dt><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/toLocaleString"><code>Float32Array.prototype.toLocaleString()</code> <span>(en-US)</span></a></dt>
+ <dd>Возвращает локализированную строку представляющую массив и его элементы.&nbsp;Смотрите также&nbsp;<a href="/js/Array/toLocaleString/"><code>Array.prototype.toLocaleString()</code></a>.</dd>
+ <dt><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/toString"><code>Float32Array.prototype.toString()</code> <span>(en-US)</span></a></dt>
+ <dd>Возвращает строку представляющую массив и его элементы. Смотрите также&nbsp;<a href="/js/Array/toString/"><code>Array.prototype.toString()</code></a>.</dd>
+ <dt><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/@@iterator"><code>Float32Array.prototype[@@iterator]()</code> <span>(en-US)</span></a></dt>
+ <dd><code>Возвращает новый объект Array Iterator который содержит значения всех элементов в массиве.</code></dd>
+</dl></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div><p>Разные способы создания <code>Float32Array</code>:</p>
+
+<pre class="brush: js notranslate"><code><span class="token comment">// Используя указание длины</span>
+<span class="token keyword">var</span> float32 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Float32Array</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+float32<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">42</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>float32<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 42</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>float32<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 2</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>float32<span class="token punctuation">.</span><span class="token constant">BYTES_PER_ELEMENT</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 4</span>
+
+<span class="token comment">// Из массива</span>
+<span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Float32Array</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">21</span><span class="token punctuation">,</span><span class="token number">31</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 31</span>
+
+<span class="token comment">// Из другого TypedArray</span>
+<span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Float32Array</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">21</span><span class="token punctuation">,</span> <span class="token number">31</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> y <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Float32Array</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>y<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 21</span>
+
+<span class="token comment">// Из другого ArrayBuffer</span>
+<span class="token keyword">var</span> buffer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayBuffer</span><span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> z <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Float32Array</span><span class="token punctuation">(</span>buffer<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Из итератора </span>
+<span class="token keyword">var</span> <span class="token function-variable function">iterable</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token operator">*</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token keyword">yield</span><span class="token operator">*</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> float32 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Float32Array</span><span class="token punctuation">(</span>iterable<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Float32Array[1, 2, 3]</span></code></pre></div><h2 id="спецификация"><a href="#спецификация" title="Permalink to Спецификация">Спецификация</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+  <tr>
+   <td><a href="https://www.khronos.org/registry/typedarray/specs/latest/" hreflang="en" lang="en" class="external" title="Спецификация 'Typed Array Specification'" rel=" noopener">Typed Array Specification</a></td>
+   <td><span class="spec-obsolete">Устаревшая</span></td>
+   <td>Заменены в ECMAScript 6.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#table-49" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'TypedArray constructors' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Первоначальное появление в стандарте ECMA. Показывает что <code>new обязательно</code>.</td>
+  </tr>
+  <tr>
+   <td><a href="https://tc39.es/ecma262/#table-49" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript (ECMA-262)<br><small lang="ru">Определение 'TypedArray constructors' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td>ECMAScript 2017 changed the <code>Float32Array</code> constructor to use the <code>ToIndex</code> operation and allows constructors with no arguments.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="браузерная_совместимость"><a href="#браузерная_совместимость" title="Permalink to Браузерная совместимость">Браузерная совместимость</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="примечания_по_совместимости"><a href="#примечания_по_совместимости" title="Permalink to Примечания по совместимости">Примечания по совместимости</a></h2><div><p>Начиная с&nbsp;ECMAScript 2015 (ES6), <code>Float32Array</code>&nbsp;конструктор обязательно должен вызываться с ключевым словом&nbsp;<a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/new"><code>new</code></a>. Вызов&nbsp;<code>Float32Array</code>&nbsp;конструктора как функцию приведёт к исключению&nbsp;<a href="/js/TypeError/"><code>TypeError</code></a>.</p>
+
+<pre class="brush: js example-bad notranslate"><code><span class="token keyword">var</span> dv <span class="token operator">=</span> <span class="token function">Float32Array</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// TypeError: calling a builtin Float32Array constructor</span>
+<span class="token comment">// without new is forbidden</span></code></pre>
+
+<pre class="brush: js example-good notranslate"><code><span class="token keyword">var</span> dv <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Float32Array</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays" title="en/JavaScript typed arrays">JavaScript typed arrays</a></li>
+ <li><a href="/js/ArrayBuffer/"><code>ArrayBuffer</code></a></li>
+ <li><a href="/js/DataView/"><code>DataView</code></a></li>
+</ul></div>

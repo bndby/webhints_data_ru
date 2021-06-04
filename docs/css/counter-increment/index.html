@@ -1,0 +1,70 @@
+<h1>counter-increment</h1><div><div></div>
+
+<p>The <strong><code>counter-increment</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> property increases or decreases the value of a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Lists_and_Counters/Using_CSS_counters">CSS counter</a> by a given value.</p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/counter-increment.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+<div class="note notecard">
+<p><strong>Note:</strong> The counter's value can be reset to an arbitrary number using the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/counter-reset"><code>counter-reset</code></a> CSS property.</p>
+</div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* Increment "my-counter" by 1 */</span>
+<span class="token property">counter-increment</span><span class="token punctuation">:</span> my-counter<span class="token punctuation">;</span>
+
+<span class="token comment">/* Decrement "my-counter" by 1 */</span>
+<span class="token property">counter-increment</span><span class="token punctuation">:</span> my-counter -1<span class="token punctuation">;</span>
+
+<span class="token comment">/* Increment "counter1" by 1, and decrement "counter2" by 4 */</span>
+<span class="token property">counter-increment</span><span class="token punctuation">:</span> counter1 counter2 -4<span class="token punctuation">;</span>
+
+<span class="token comment">/* Do not increment/decrement anything: used to override less specific rules */</span>
+<span class="token property">counter-increment</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+
+<span class="token comment">/* Global values */</span>
+<span class="token property">counter-increment</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">counter-increment</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">counter-increment</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre>
+
+<p>The <code>counter-increment</code> property is specified as either one of the following:</p>
+
+<ul>
+ <li>A <code>&lt;custom-ident&gt;</code> naming the counter, followed optionally by an <code>&lt;integer&gt;</code>. You may specify as many counters to increment as you want, with each name or name-number pair separated by a space.</li>
+ <li>The keyword value <code>none</code>.</li>
+</ul></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+ <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/custom-ident"><code>&lt;custom-ident&gt;</code></a></dt>
+ <dd>The name of the counter to increment.</dd>
+ <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/integer"><code>&lt;integer&gt;</code></a></dt>
+ <dd>The value to add to the counter. Defaults to <code>1</code> if not specified.</dd>
+ <dt><code>none</code></dt>
+ <dd>No counter must be incremented. This is used as the default value, or to cancel an increment in more specific rules.</dd>
+</dl></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td><code>none</code></td></tr><tr><th scope="row">Applies to</th><td>all elements</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance">Inherited</a></th><td>no</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>as specified</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">[</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/custom-ident" title>&lt;custom-ident&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/integer" title>&lt;integer&gt;</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#question_mark_()" title="Question mark: the entity is optional">?</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">]</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#plus_()" title="Plus: the entity may occur one or several times">+</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> none</pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="incrementing_named_counters"><a href="#incrementing_named_counters" title="Permalink to Incrementing named counters">Incrementing named counters</a></h3><div><pre class="brush: css notranslate"><code><span class="token selector">h1</span> <span class="token punctuation">{</span>
+  <span class="token property">counter-increment</span><span class="token punctuation">:</span> chapter section 2 page<span class="token punctuation">;</span>
+  <span class="token comment">/* Increases the value of the chapter and page counters by 1,
+     and the section counter by 2 */</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-lists-3/#propdef-counter-increment" hreflang="en" lang="en" class="external" rel=" noopener">CSS Lists Module Level&nbsp;3<br><small lang="en-US">The definition of 'counter-increment' in that specification.</small></a></td>
+   <td><span class="spec-wd">Working Draft</span></td>
+   <td>No change.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/CSS2/generate.html#propdef-counter-increment" hreflang="en" lang="en" class="external" rel=" noopener">CSS Level&nbsp;2 (Revision&nbsp;1)<br><small lang="en-US">The definition of 'counter-increment' in that specification.</small></a></td>
+   <td><span class="spec-rec">Recommendation</span></td>
+   <td>Initial definition.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Lists_and_Counters/Using_CSS_counters">Using CSS Counters</a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/counter-reset"><code>counter-reset</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/counter-set"><code>counter-set</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@counter-style"><code>@counter-style</code></a></li>
+ <li>The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/counter()"><code>counter()</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/counters()"><code>counters()</code></a> functions</li>
+</ul></div>

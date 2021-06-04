@@ -1,0 +1,42 @@
+<h1>&lt;number&gt;</h1><div><div></div>
+
+<p><strong><code>&lt;number&gt;</code></strong>&nbsp;- <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Types">тип хранения данных</a> в&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> &nbsp;представляющий собой число:&nbsp;либо целое, либо с дробной частью.</p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><p>Синтаксис&nbsp;<code>&lt;number&gt;</code>&nbsp;расширяет синтаксис&nbsp;<a href="/css/integer/"><code>&lt;integer&gt;</code></a>. Дробное значение представлено с помощью&nbsp;<code>.</code>, после которой стоит&nbsp;одна (или более) цифра, и может быть присоединено к целочисленному типу данных. Не существует единицы измерения, связанной с числами.</p></div><h2 id="интерполяция"><a href="#интерполяция" title="Permalink to Интерполяция">Интерполяция</a></h2><div><p>Во время анимации, значения&nbsp;типа данных&nbsp;CSS&nbsp;<code>&lt;number&gt;</code>&nbsp;являются интерполированными как числа&nbsp;вещественные или с плавающей точкой. Скорость интерполяции определена&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/easing-function">timing function</a>, связанной с анимацией.</p></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="корректные_числа"><a href="#корректные_числа" title="Permalink to Корректные числа">Корректные числа</a></h3><div><pre class="notranslate">12          Ряд, состоящий из &lt;integer&gt;, также является &lt;number&gt;.
+4.01        Положительное число с плавающей точкой
+-456.8      Отрицательно число с плавающей точкой
+0.0         Нуль
++0.0        Нуль, с + перед ним
+-0.0        Нуль, с - перед ним
+.60         Дробное число без присутствия нуля
+10e3        Научное обозначение
+-3.4e-2     Сложное научное обозначение
+</pre></div><h3 id="некорректные_числа"><a href="#некорректные_числа" title="Permalink to Некорректные числа">Некорректные числа</a></h3><div><pre class="example-bad notranslate">12.         После дробных чисел должна присутствовать как минимум 1 цифра.
++-12.2      Одновременно перед числом допустимо ставить только один из символов +/-.
+12.1.1      Разрешена только одна "дробная" точка.
+</pre></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-values-3/#numbers" hreflang="en" lang="en" class="external" rel=" noopener">CSS Values and Units Module Level&nbsp;3<br><small lang="ru">Определение '&lt;number&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-cr">Кандидат в рекомендации</span></td>
+   <td>Нет значительных изменений.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/CSS2/syndata.html#numbers" hreflang="en" lang="en" class="external" rel=" noopener">CSS Level&nbsp;2 (Revision&nbsp;1)<br><small lang="ru">Определение '&lt;number&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Явное определение.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/CSS1/" hreflang="en" lang="en" class="external" rel=" noopener">CSS Level&nbsp;1<br><small lang="ru">Определение '&lt;number&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Неявное определение.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="совместимость_с_браузерами"><a href="#совместимость_с_браузерами" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/css/integer/"><code>&lt;integer&gt;</code></a></li>
+</ul></div>

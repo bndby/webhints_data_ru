@@ -1,0 +1,55 @@
+<h1>Symbol.for()</h1><div><div></div>
+
+<p>Метод&nbsp;<code><strong>Symbol.for(key)</strong></code> ищет ранее созданный разделяемый символ по заданному ключу и возвращает его, если он найден. В противном случае создаётся новый разделяемый символ для данного ключа в глобальном реестре символов.</p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><var>Symbol.for(key)</var>;</pre></div><h3 id="параметры"><a href="#параметры" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt>key</dt>
+ <dd>Строка, обязательный. Идентификатор символа (также используется в качестве описания символа).</dd>
+</dl></div><h2 id="описание"><a href="#описание" title="Permalink to Описание">Описание</a></h2><div><p>В противоположность вызову&nbsp;<code>Symbol()</code>, функция&nbsp;<code>Symbol.for()</code> создаёт символ, доступный в глобальном списке реестра&nbsp;символов. <code>Symbol.for()</code> не создаёт новый символ при каждом вызове, вместо этого, метод сначала проверяет, существует ли символ с заданным идентификатором в реестре — и возвращает его, если тот присутствует. Если символ с заданным ключом не найден, <code>Symbol.for()</code>&nbsp;создаст новый глобальный символ.</p></div><h3 id="глобальный_реестр"><a href="#глобальный_реестр" title="Permalink to Глобальный реестр">Глобальный реестр</a></h3><div><p>Глобальный реестр символов — это список со следующей структурой записей&nbsp;и пустой при инициализации:</p>
+
+<table class="standard-table">
+ <caption>Элемент глобального реестра символов</caption>
+ <tbody>
+  <tr>
+   <th>Поле</th>
+   <th>Значение</th>
+  </tr>
+  <tr>
+   <td>[[key]]</td>
+   <td>Строка, используемая в качестве идентификатора.</td>
+  </tr>
+  <tr>
+   <td>[[symbol]]</td>
+   <td>Символ, хранящийся глобально.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div><pre class="brush: js notranslate"><code>Symbol<span class="token punctuation">.</span><span class="token function">for</span><span class="token punctuation">(</span><span class="token string">"foo"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// создаёт новый глобальный символ</span>
+Symbol<span class="token punctuation">.</span><span class="token function">for</span><span class="token punctuation">(</span><span class="token string">"foo"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// возвращает символ, созданный прежде</span>
+
+<span class="token comment">// Одинаковый глобальный символ, но не локальный</span>
+Symbol<span class="token punctuation">.</span><span class="token function">for</span><span class="token punctuation">(</span><span class="token string">"bar"</span><span class="token punctuation">)</span> <span class="token operator">===</span> Symbol<span class="token punctuation">.</span><span class="token function">for</span><span class="token punctuation">(</span><span class="token string">"bar"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
+<span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token string">"bar"</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token string">"bar"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// false</span>
+
+<span class="token comment">// Идентификатор также используется в качестве описания</span>
+<span class="token keyword">var</span> sym <span class="token operator">=</span> Symbol<span class="token punctuation">.</span><span class="token function">for</span><span class="token punctuation">(</span><span class="token string">"mario"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+sym<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "Symbol(mario)"</span>
+</code></pre>
+
+<p>Чтобы предотвратить конфликт имён&nbsp;ваших глобальных символов&nbsp;и глобальных символов из других библиотек, может оказаться неплохой идеей&nbsp;использование префиксов:</p>
+
+<pre class="brush: js notranslate"><code>Symbol<span class="token punctuation">.</span><span class="token function">for</span><span class="token punctuation">(</span><span class="token string">"mdn.foo"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Symbol<span class="token punctuation">.</span><span class="token function">for</span><span class="token punctuation">(</span><span class="token string">"mdn.bar"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-symbol.for" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Symbol.for' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Изначальное определение.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="поддержка_браузерами"><a href="#поддержка_браузерами" title="Permalink to Поддержка браузерами">Поддержка браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/Symbol/keyFor/"><code>Symbol.prototype.keyFor()</code></a></li>
+</ul></div>

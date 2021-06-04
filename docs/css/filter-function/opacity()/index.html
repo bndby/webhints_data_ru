@@ -1,0 +1,41 @@
+<h1>opacity()</h1><div><div></div>
+
+<p>The <strong><code>opacity()</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Functions">function</a> applies transparency to the samples in the input image. Its result is a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function"><code>&lt;filter-function&gt;</code></a>.</p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/function-opacity.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+
+
+<div class="note notecard">
+<p><strong>Note:</strong> This function is similar to the more established <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/opacity"><code>opacity</code></a> property. The difference is that with filters, some browsers provide hardware acceleration for better performance.</p>
+</div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: css notranslate"><code><span class="token function">opacity</span><span class="token punctuation">(</span>amount<span class="token punctuation">)</span></code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Parameters">Parameters</a></h3><div><dl>
+ <dt><code><var>amount</var></code></dt>
+ <dd>The amount of the conversion, specified as a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/number"><code>&lt;number&gt;</code></a> or a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/percentage"><code>&lt;percentage&gt;</code></a>. A value of <code>0%</code> is completely transparent, while a value of <code>100%</code> leaves the input unchanged. Values between <code>0%</code> and <code>100%</code> are linear multipliers on the effect. The lacuna value for interpolation is <code>1</code>.</dd>
+</dl></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="examples_of_correct_values_for_opacity"><a href="#examples_of_correct_values_for_opacity" title="Permalink to Examples of correct values for opacity()">Examples of correct values for opacity()</a></h3><div><pre class="brush: css notranslate"><code><span class="token function">opacity</span><span class="token punctuation">(</span>0%<span class="token punctuation">)</span>   <span class="token comment">/* Completely transparent */</span>
+<span class="token function">opacity</span><span class="token punctuation">(</span>50%<span class="token punctuation">)</span>  <span class="token comment">/* 50% transparent */</span>
+<span class="token function">opacity</span><span class="token punctuation">(</span>1<span class="token punctuation">)</span>    <span class="token comment">/* No effect */</span></code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.fxtf.org/filter-effects/#funcdef-filter-opacity" hreflang="en" lang="en" class="external" rel=" noopener">Filter Effects Module Level 1<br><small lang="en-US">The definition of 'opacity()' in that specification.</small></a></td>
+   <td><span class="spec-wd">Working Draft</span></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function"><code>&lt;filter-function&gt;</code></a></li>
+ <li>CSS <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/opacity"><code>opacity</code></a> property</li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/blur()"><code>blur()</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/brightness()"><code>brightness()</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/contrast()"><code>contrast()</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/drop-shadow()"><code>drop-shadow()</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/grayscale()"><code>grayscale()</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/hue-rotate()"><code>hue-rotate()</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/invert()"><code>invert()</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/saturate()"><code>saturate()</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/sepia()"><code>sepia()</code></a></li>
+</ul></div>

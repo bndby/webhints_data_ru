@@ -1,0 +1,87 @@
+<h1>Object.prototype.hasOwnProperty()</h1><div><div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Метод <code><strong>hasOwnProperty()</strong></code> возвращает логическое значение, указывающее, содержит ли объект указанное свойство.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code><var>obj</var>.hasOwnProperty(<var>prop</var>)</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>prop</code></dt>
+ <dd>Имя проверяемого свойства.</dd>
+</dl></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Каждый объект, произошедший от <a href="/js/Object/"><code>Object</code></a>, наследует метод <code>hasOwnProperty</code>. Этот метод может использоваться для определения того, содержит ли объект указанное свойство в качестве собственного свойства объекта; в отличие от оператора <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/in"><code>in</code></a>, этот метод не проверяет существование свойств в цепочке прототипов объекта.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_using_hasownproperty_to_test_for_a_property.27s_existence"><a href="#example_using_hasownproperty_to_test_for_a_property.27s_existence" title="Permalink to Пример: использование hasOwnProperty для проверки существования свойства">Пример: использование <code>hasOwnProperty</code> для проверки существования свойства</a></h3><div><p>В следующем примере определяется, содержит ли объект <code>o</code> свойство с именем <code>prop</code>:</p>
+
+<pre class="brush: js notranslate"><code>o <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+o<span class="token punctuation">.</span>prop <span class="token operator">=</span> <span class="token string">'существует'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">changeO</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  o<span class="token punctuation">.</span>newprop <span class="token operator">=</span> o<span class="token punctuation">.</span>prop<span class="token punctuation">;</span>
+  <span class="token keyword">delete</span> o<span class="token punctuation">.</span>prop<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+o<span class="token punctuation">.</span><span class="token function">hasOwnProperty</span><span class="token punctuation">(</span><span class="token string">'prop'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// вернёт true</span>
+<span class="token function">changeO</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+o<span class="token punctuation">.</span><span class="token function">hasOwnProperty</span><span class="token punctuation">(</span><span class="token string">'prop'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// вернёт false</span>
+</code></pre></div><h3 id="example_direct_versus_inherited_properties"><a href="#example_direct_versus_inherited_properties" title="Permalink to Пример: собственные и унаследованные свойства">Пример: собственные и унаследованные свойства</a></h3><div><p>Следующий пример показывает разницу между собственными свойствами и свойствами, унаследованными через цепочку прототипов:</p>
+
+<pre class="brush: js notranslate"><code>o <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+o<span class="token punctuation">.</span>prop <span class="token operator">=</span> <span class="token string">'существует'</span><span class="token punctuation">;</span>
+o<span class="token punctuation">.</span><span class="token function">hasOwnProperty</span><span class="token punctuation">(</span><span class="token string">'prop'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>             <span class="token comment">// вернёт true</span>
+o<span class="token punctuation">.</span><span class="token function">hasOwnProperty</span><span class="token punctuation">(</span><span class="token string">'toString'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token comment">// вернёт false</span>
+o<span class="token punctuation">.</span><span class="token function">hasOwnProperty</span><span class="token punctuation">(</span><span class="token string">'hasOwnProperty'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// вернёт false</span>
+</code></pre></div><h3 id="example_itarate_over_properties_not_considering_inherited_properties"><a href="#example_itarate_over_properties_not_considering_inherited_properties" title="Permalink to Пример: обход свойств объекта">Пример: обход свойств объекта</a></h3><div><p>Следующий пример показывает, как итерироваться по свойствам объекта с пропуском унаследованных свойств. Обратите внимание, что цикл <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/for...in"><code>for...in</code></a> уже проходит только по перечисляемым элементам, так что не надо на основании отсутствия не перечисляемых свойств, показываемых в цикле, считать, что метод <code>hasOwnProperty</code> сам ограничивает свойства только перечисляемыми элементами (как это делает метод <a href="/js/Object/getOwnPropertyNames/"><code>Object.getOwnPropertyNames()</code></a>).</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> buz <span class="token operator">=</span> <span class="token punctuation">{</span>
+  fog<span class="token operator">:</span> <span class="token string">'stack'</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> name <span class="token keyword">in</span> buz<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>buz<span class="token punctuation">.</span><span class="token function">hasOwnProperty</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'это точно туман ('</span> <span class="token operator">+</span> name <span class="token operator">+</span> <span class="token string">'). Значение: '</span> <span class="token operator">+</span> buz<span class="token punctuation">[</span>name<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token function">alert</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// toString или что-то ещё</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="example_hasownproperty_as_a_property"><a href="#example_hasownproperty_as_a_property" title="Permalink to Пример: hasOwnProperty как свойство">Пример: <code>hasOwnProperty</code> как свойство</a></h3><div><p>JavaScript не защищает имя свойства <code>hasOwnProperty</code>; таким образом, вполне может существовать объект с таким свойством, поэтому для получения правильного результата нужно использовать <em>внешний</em> метод <code>hasOwnProperty</code>:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> foo <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">hasOwnProperty</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  bar<span class="token operator">:</span> <span class="token string">'Тут драконы'</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+foo<span class="token punctuation">.</span><span class="token function">hasOwnProperty</span><span class="token punctuation">(</span><span class="token string">'bar'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// всегда возвращает false</span>
+
+<span class="token comment">// Используем метод hasOwnProperty другого объекта и вызываем его с передачей foo в качестве this</span>
+<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">hasOwnProperty</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>foo<span class="token punctuation">,</span> <span class="token string">'bar'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
+
+<span class="token comment">// Также для этих целей можно использовать свойство hasOwnProperty из прототипа Object</span>
+<span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">hasOwnProperty</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>foo<span class="token punctuation">,</span> <span class="token string">'bar'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
+</code></pre>
+
+<p>Обратите внимание, что в последнем случае новые объекты не создаются.</p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td>ECMAScript 3rd Edition.</td>
+   <td>Стандарт</td>
+   <td>Изначальное определение. Реализована в JavaScript 1.5.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-15.2.4.5" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 5.1 (ECMA-262)<br><small lang="ru">Определение 'Object.prototype.hasOwnProperty' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-object.prototype.hasownproperty" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Object.prototype.hasOwnProperty' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><div>
+<p></p><p></p>
+</div></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Enumerability_and_ownership_of_properties" class="only-in-en-us" title="Currently only available in English (US)">Перечисляемость и собственность свойств (en-US)</a></li>
+ <li><a href="/js/Object/getOwnPropertyNames/"><code>Object.getOwnPropertyNames()</code></a></li>
+ <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/for...in"><code>for...in</code></a></li>
+ <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/in"><code>in</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain" class="only-in-en-us" title="Currently only available in English (US)">Руководство по JavaScript: повторное наследование (en-US)</a></li>
+</ul></div>

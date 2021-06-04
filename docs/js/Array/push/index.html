@@ -1,0 +1,59 @@
+<h1>Array.prototype.push()</h1><div><div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Метод <code><strong>push()</strong></code> добавляет один или более элементов в конец массива и возвращает новую длину массива.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code><var>arr</var>.push(<var>element1</var>, ..., <var>elementN</var>)</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>element<em>N</em></code></dt>
+ <dd>Элементы, добавляемые в конец массива.</dd>
+</dl></div><h3 id="returns"><a href="#returns" title="Permalink to Возвращаемое значение">Возвращаемое значение</a></h3><div><p>Новое значение свойства <a href="/js/Array/length/"><code>length</code></a> объекта, для которого был вызван данный метод.</p></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Метод <code>push</code> присоединяет значения к массиву.</p>
+
+<p>Метод <code>push</code> не является привязанным к типу; этот метод может быть <a href="/js/Function/call/">вызван</a> или <a href="/js/Function/apply/">применён</a> к объектам, напоминающим массив. Метод опирается на свойство <code>length</code> для определения места вставки значений. Если свойство <code>length</code> не может быть преобразовано в число, будет использовать индекс 0. Сюда входит случай несуществования свойства <code>length</code>, в этом случае оно также будет создано.</p>
+
+<p>Единственными родными массивоподобными объектами являются <a href="/js/String/">строки</a>, хотя к ним он не может быть применён, поскольку строки являются неизменяемыми.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_adding_elements_to_an_array"><a href="#example_adding_elements_to_an_array" title="Permalink to Пример: добавление элементов в массив">Пример: добавление элементов в массив</a></h3><div><p>Следующий код создаёт массив <code>sports</code>, содержащий два элемента, а затем добавляет к нему ещё два элемента. Переменная <code>total</code> будет содержать новую длину массива.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> sports <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'футбол'</span><span class="token punctuation">,</span> <span class="token string">'бейсбол'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> total <span class="token operator">=</span> sports<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">'американский футбол'</span><span class="token punctuation">,</span> <span class="token string">'плавание'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>sports<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ['футбол', 'бейсбол', 'американский футбол', 'плавание']</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>total<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 4</span>
+</code></pre></div><h3 id="example_merging_two_arrays"><a href="#example_merging_two_arrays" title="Permalink to Пример: слияние двух массивов">Пример: слияние двух массивов</a></h3><div><p>В этом примере используется функция <a href="/js/Function/apply/"><code>apply()</code></a> для помещения всех элементов из&nbsp;второго&nbsp;массива в первый.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> vegetables <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'пастернак'</span><span class="token punctuation">,</span> <span class="token string">'картошка'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> moreVegs <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'сельдерей'</span><span class="token punctuation">,</span> <span class="token string">'свёкла'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Сливает второй массив с первым</span>
+<span class="token comment">// Эквивалентно вызову vegetables.push('сельдерей', 'свёкла');</span>
+<span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>vegetables<span class="token punctuation">,</span> moreVegs<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>vegetables<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ['пастернак', 'картошка', 'сельдерей', 'свёкла']</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td>ECMAScript 3-е издание</td>
+   <td>Стандарт</td>
+   <td>Изначальное определение. Реализована в JavaScript 1.2.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-15.4.4.7" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 5.1 (ECMA-262)<br><small lang="ru">Определение 'Array.prototype.push' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-array.prototype.push" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Array.prototype.push' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><div>
+<div>
+
+
+<p></p><p></p>
+</div>
+</div></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/Array/pop/"><code>Array.prototype.pop()</code></a></li>
+ <li><a href="/js/Array/shift/"><code>Array.prototype.shift()</code></a></li>
+ <li><a href="/js/Array/unshift/"><code>Array.prototype.unshift()</code></a></li>
+ <li><a href="/js/Array/concat/"><code>Array.prototype.concat()</code></a></li>
+</ul></div>

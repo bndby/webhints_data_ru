@@ -1,0 +1,110 @@
+<h1>rotate()</h1><div><div></div>
+
+<p>Функция CSS rotate () определяет преобразование, которое перемещает элемент вокруг неподвижной точки (как определено свойством <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin"><code>transform-origin</code> <span>(en-US)</span></a>, не деформируя его. Количество движения определяется заданным углом; если положительно, движение будет по часовой стрелке, если оно отрицательное, оно будет против часовой стрелки. Вращение на 180 ° называется <em>точечным отражением</em>.</p>
+
+<p><img src="https://mdn.mozillademos.org/files/12113/rotate.png" loading="lazy"></p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate">rotate(<em>a</em>)
+</pre></div><h2 id="значения"><a href="#значения" title="Permalink to Значения">Значения</a></h2><div><dl>
+ <dt><em>a</em></dt>
+ <dd>Является <a href="/css/angle/"><code>&lt;angle&gt;</code></a>, представляющим угол поворота. Положительный угол обозначает вращение по часовой стрелке, а отрицательный - против часовой стрелки.</dd>
+</dl>
+
+<table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Декартовы координаты на ℝ<sup>2</sup></th>
+   <th scope="col">Однородные координаты на ℝℙ<sup>2</sup></th>
+   <th scope="col">Декартовы координаты на ℝ<sup>3</sup></th>
+   <th scope="col">Однородные координаты на ℝℙ<sup>3</sup></th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td colspan="1" rowspan="2"><math> <mfenced> <mtable> <mtr><mtd>cos(a)</mtd><mtd>-sin(a)</mtd></mtr> <mtr><mtd>sin(a)</mtd><mtd>cos(a)</mtd></mtr></mtable></mfenced></math></td>
+   <td><math> <mfenced><mtable><mtr><mtd>cos(a)</mtd><mtd>-sin(a)</mtd><mtd>0</mtd></mtr><mtr><mtd>sin(a)</mtd><mtd>cos(a)</mtd><mtd>0</mtd></mtr><mtr><mtd>0</mtd><mtd>0</mtd><mtd>1</mtd></mtr></mtable> </mfenced> </math></td>
+   <td colspan="1" rowspan="2"><math> <mfenced><mtable><mtr><mtd>cos(a)</mtd><mtd>-sin(a)</mtd><mtd>0</mtd></mtr><mtr><mtd>sin(a)</mtd><mtd>cos(a)</mtd><mtd>0</mtd></mtr><mtr><mtd>0</mtd><mtd>0</mtd><mtd>1</mtd></mtr></mtable> </mfenced> </math></td>
+   <td colspan="1" rowspan="2"><math> <mfenced><mtable><mtr><mtd>cos(a)</mtd><mtd>-sin(a)</mtd><mtd>0</mtd><mtd>0</mtd></mtr><mtr><mtd>sin(a)</mtd><mtd>cos(a)</mtd><mtd>0</mtd><mtd>0</mtd></mtr><mtr><mtd>0</mtd><mtd>0</mtd><mtd>1</mtd><mtd>0</mtd></mtr><mtr><mtd>0</mtd><mtd>0</mtd><mtd>0</mtd><mtd>1</mtd></mtr></mtable> </mfenced> </math></td>
+  </tr>
+  <tr>
+   <td><code>[cos(a) sin(a) -sin(a) cos(a) 0 0]</code></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="базовый_пример"><a href="#базовый_пример" title="Permalink to Базовый пример">Базовый пример</a></h3><div><h4 id="html">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>Normal<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>rotated<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Rotated<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<h4 id="css">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token selector">div</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 80px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 80px<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> skyblue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.rotated</span> <span class="token punctuation">{</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotate</span><span class="token punctuation">(</span>45deg<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">/* Equal to rotateZ(45deg) */</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> pink<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<h4 id="result">Result</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Базовый_пример" width="auto" height="180" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/transform-function/rotate()/_sample_.%D0%91%D0%B0%D0%B7%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80.html" loading="lazy"></iframe></p></div><h3 id="объединение_вращения_с_другим_преобразованием"><a href="#объединение_вращения_с_другим_преобразованием" title="Permalink to Объединение вращения с другим преобразованием">Объединение вращения с другим преобразованием</a></h3><div><p>Если вы хотите применить к элементу несколько преобразований, будьте осторожны с порядком, в котором вы указываете свои преобразования. Например, если вы вращаете перед сдвигом, сдвиг произойдёт относительно новой оси вращения!</p>
+
+<h4 id="html_2">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>Normal<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>rotate<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Rotated<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>rotate-translate<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Rotated + Translated<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>translate-rotate<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Translated + Rotated<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<h4 id="css_2">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token selector">div</span> <span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> 40px<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> 40px<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> lightgray<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.rotate</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> transparent<span class="token punctuation">;</span>
+  <span class="token property">outline</span><span class="token punctuation">:</span> 2px dashed<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotate</span><span class="token punctuation">(</span>45deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.rotate-translate</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> pink<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotate</span><span class="token punctuation">(</span>45deg<span class="token punctuation">)</span> <span class="token function">translateX</span><span class="token punctuation">(</span>180px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.translate-rotate</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> gold<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateX</span><span class="token punctuation">(</span>180px<span class="token punctuation">)</span> <span class="token function">rotate</span><span class="token punctuation">(</span>45deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<h4 id="result_2">Result</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Объединение_вращения_с_другим_преобразованием" width="auto" height="320" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/transform-function/rotate()/_sample_.%D0%9E%D0%B1%D1%8A%D0%B5%D0%B4%D0%B8%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D0%B2%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D1%8F_%D1%81_%D0%B4%D1%80%D1%83%D0%B3%D0%B8%D0%BC_%D0%BF%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%D0%BC.html" loading="lazy"></iframe></p></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table>
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-transforms/#funcdef-transform-rotate" hreflang="en" lang="en" class="external" rel=" noopener">CSS Transforms Level&nbsp;1<br><small lang="ru">Определение 'rotate()' в этой спецификации.</small></a></td>
+   <td><span class="spec-wd">Рабочий черновик</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="поддержка_браузерами"><a href="#поддержка_браузерами" title="Permalink to Поддержка браузерами">Поддержка браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/css/transform/"><code>transform</code></a></li>
+ <li><a href="/css/transform-function/"><code>&lt;transform-function&gt;</code></a></li>
+ <li><a href="/css/transform-function/rotate3d()/"><code>rotate3d()</code></a></li>
+</ul></div>

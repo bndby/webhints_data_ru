@@ -1,0 +1,80 @@
+<h1>:scope</h1><div><div></div>
+
+<p>The <strong><code>:scope</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes">pseudo-class</a> represents elements that are a reference point for selectors to match against.</p>
+
+<pre class="brush: css notranslate"><code><span class="token comment">/* Selects a scoped element */</span>
+<span class="token selector">:scope</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> lime<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<p>Currently, when used in a stylesheet, <code>:scope</code> is the same as <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:root"><code>:root</code></a>, since there is not at this time a way to explicitly establish a scoped element. When used from a DOM API such as <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelector" title="querySelector()"><code>querySelector()</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelectorAll" title="querySelectorAll()"><code>querySelectorAll()</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/matches" title="matches()"><code>matches()</code></a>, or <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/closest"><code>Element.closest()</code></a>, <code>:scope</code> matches the element on which the method was called.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="notranslate">:scope</pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="identity_match"><a href="#identity_match" title="Permalink to Identity match">Identity match</a></h3><div><p>In this simple example, we demonstrate that using the <code>:scope</code> pseudo-class from the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/matches"><code>Element.matches()</code></a> method matches the element on which it's called.</p>
+
+<h4 id="javascript">JavaScript</h4>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">let</span> paragraph <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"para"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> output <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"output"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span>paragraph<span class="token punctuation">.</span><span class="token function">matches</span><span class="token punctuation">(</span><span class="token string">":scope"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  output<span class="token punctuation">.</span>innerText <span class="token operator">=</span> <span class="token string">"Yep, the element is its own scope as expected!"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<h4 id="html">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>para<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  This is a paragraph. It is not an interesting paragraph. Sorry about that.
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>output<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<h4 id="result">Result</h4>
+
+<div><iframe class="sample-code-frame" id="frame_Identity_match" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/:scope/_sample_.Identity_match.html" loading="lazy"></iframe></div></div><h3 id="direct_children"><a href="#direct_children" title="Permalink to Direct children">Direct children</a></h3><div><p>A situation where the <code>:scope</code> pseudo-class prove to be useful is when you need to get direct descendant of an already retrieved <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element"><code>Element</code></a>.</p>
+
+<h4 id="javascript_2">JavaScript</h4>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> context <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'context'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> selected <span class="token operator">=</span> context<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">':scope &gt; div'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'results'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>selected<span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">element</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token string">'#'</span> <span class="token operator">+</span> element<span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span><span class="token string">'id'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">', '</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+<h4 id="html_2">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>context<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>element-1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>element-1.1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>element-1.2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>element-2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>element-2.1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>
+    Selected elements ids :
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>results<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<h4 id="result_2">Result</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Direct_children" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/:scope/_sample_.Direct_children.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/selectors-4/#the-scope-pseudo" hreflang="en" lang="en" class="external" rel=" noopener">Selectors Level&nbsp;4<br><small lang="en-US">The definition of ':scope' in that specification.</small></a></td>
+   <td><span class="spec-wd">Working Draft</span></td>
+   <td>Initial definition.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li>The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:root"><code>:root</code></a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes">pseudo-class</a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors">Locating DOM elements using selectors</a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelector"><code>Element.querySelector()</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelectorAll"><code>Element.querySelectorAll()</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector"><code>Document.querySelector()</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll"><code>Document.querySelectorAll()</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment/querySelector"><code>DocumentFragment.querySelector()</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment/querySelectorAll"><code>DocumentFragment.querySelectorAll()</code></a></li>
+</ul></div>

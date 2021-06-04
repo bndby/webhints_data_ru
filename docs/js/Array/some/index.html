@@ -1,0 +1,145 @@
+<h1>Array.prototype.some()</h1><div><div></div>
+
+<p>Метод <code><strong>some()</strong></code> проверяет, удовлетворяет ли&nbsp;какой-либо&nbsp;элемент массива условию, заданному в передаваемой функции.</p>
+
+<div class="note notecard">
+<p><strong>Обратите внимание</strong>: метод возвращает <code>false</code> при любом условии для пустого массива.</p>
+</div>
+
+<p><iframe class="interactive" width="100%" height="490" src="https://interactive-examples.mdn.mozilla.net/pages/js/array-some.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><var>arr</var>.some(<var>callback(element[, index[, array]])</var>[, <var>thisArg</var>])</pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>callback</code></dt>
+ <dd>Функция проверки каждого элемента, принимает три аргумента:
+ <dl>
+  <dt><code>element</code></dt>
+  <dd>Текущий обрабатываемый элемент массива.</dd>
+  <dt><code>index</code><span class="badge inline optional">Необязательный</span></dt>
+  <dd>Индекс текущего обрабатываемого элемента массива.</dd>
+  <dt><code>array</code><span class="badge inline optional">Необязательный</span></dt>
+  <dd>Массив, по которому осуществляется проход.</dd>
+ </dl>
+ </dd>
+ <dt><code>thisArg</code><span class="badge inline optional">Необязательный</span></dt>
+ <dd>Значение, используемое в качестве <code>this</code> при выполнении функции <code>callback</code>.</dd>
+</dl></div><h3 id="возвращаемое_значение"><a href="#возвращаемое_значение" title="Permalink to Возвращаемое значение">Возвращаемое значение</a></h3><div><p><code><strong>true</strong></code>,&nbsp;если функция проверки возвращает <a href="https://developer.mozilla.org/ru/docs/Glossary/Truthy">truthy</a> значение хотя бы для одного элемента массива.&nbsp;Иначе, <code><strong>false</strong></code>.</p></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Метод <code>some()</code> вызывает переданную функцию <code>callback</code> один раз для каждого элемента, присутствующего в массиве до тех пор, пока не найдёт такой, для которого <code>callback</code> вернёт <em>истинное</em> значение (значение, становящееся равным <code>true</code> при приведении его к типу <a href="/js/Boolean/"><code>Boolean</code></a>). Если такой элемент найден, метод <code>some()</code> немедленно вернёт <code>true</code>. В противном случае, если <code>callback</code> вернёт <code>false</code> для всех элементов массива, метод <code>some()</code> вернёт <code>false</code>. Функция <code>callback</code> вызывается только для индексов массива, имеющих присвоенные значения; она не вызывается для индексов, которые были удалены или которым значения никогда не присваивались.</p>
+
+<p>Функция <code>callback</code> вызывается с тремя аргументами: значением элемента, индексом элемента и массивом, по которому осуществляется проход.</p>
+
+<p>Если в метод <code>some()</code> был передан параметр <code>thisArg</code>, при вызове <code>callback</code> он будет использоваться в качестве значения <code>this</code>. В противном случае в качестве значения <code>this</code> будет использоваться значение <a href="/js/undefined/"><code>undefined</code></a>. В конечном итоге, значение <code>this</code>, наблюдаемое из функции <code>callback</code>, определяется согласно <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/this">обычным правилам определения <code>this</code>, видимого из функции</a>.</p>
+
+<p>Метод <code>some()</code> не изменяет массив, для которого он был вызван.</p>
+
+<p>Диапазон элементов, обрабатываемых методом <code>some()</code>, устанавливается до первого вызова функции <code>callback</code>. Элементы, добавленные в массив после начала выполнения метода <code>some()</code>, не будут посещены функцией <code>callback</code>. Если существующие элементы массива изменятся, значения, переданные в функцию <code>callback</code>, будут значениями на тот момент времени, когда метод <code>some()</code> посетит их; удалённые элементы посещены не будут.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_testing_size_of_all_array_elements"><a href="#example_testing_size_of_all_array_elements" title="Permalink to Проверка значений элементов массива">Проверка значений элементов массива</a></h3><div><p>Следующий пример проверяет наличие&nbsp;в массиве элемента, который больше&nbsp;10.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">function</span> <span class="token function">isBiggerThan10</span><span class="token punctuation">(</span><span class="token parameter">element<span class="token punctuation">,</span> index<span class="token punctuation">,</span> array</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> element <span class="token operator">&gt;</span> <span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">some</span><span class="token punctuation">(</span>isBiggerThan10<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// false</span>
+<span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">some</span><span class="token punctuation">(</span>isBiggerThan10<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
+</code></pre>
+
+<p><iframe class="sample-code-frame" id="frame_Проверка_значений_элементов_массива" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/some/_sample_.%D0%9F%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0_%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D0%B9_%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2_%D0%BC%D0%B0%D1%81%D1%81%D0%B8%D0%B2%D0%B0.html" loading="lazy"></iframe></p></div><h3 id="example_testing_array_elements_using_arrow_functions"><a href="#example_testing_array_elements_using_arrow_functions" title="Permalink to Проверка элементов массива с использованием стрелочных функций">Проверка элементов массива с использованием стрелочных функций</a></h3><div><p><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Functions/Arrow_functions">Стрелочные функции</a> предоставляют более краткий синтаксис для подобных проверок.</p>
+
+<pre class="brush: js notranslate"><code><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">some</span><span class="token punctuation">(</span><span class="token parameter">elem</span> <span class="token operator">=&gt;</span> elem <span class="token operator">&gt;</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// false</span>
+<span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">some</span><span class="token punctuation">(</span><span class="token parameter">elem</span> <span class="token operator">=&gt;</span> elem <span class="token operator">&gt;</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
+</code></pre>
+
+<p><iframe class="sample-code-frame" id="frame_Проверка_элементов_массива_с_использованием_стрелочных_функций" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/some/_sample_.%D0%9F%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0_%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2_%D0%BC%D0%B0%D1%81%D1%81%D0%B8%D0%B2%D0%B0_%D1%81_%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%D0%BC_%D1%81%D1%82%D1%80%D0%B5%D0%BB%D0%BE%D1%87%D0%BD%D1%8B%D1%85_%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B9.html" loading="lazy"></iframe></p></div><h3 id="проверка_наличия_элемента_в_массиве"><a href="#проверка_наличия_элемента_в_массиве" title="Permalink to Проверка наличия элемента в массиве">Проверка наличия элемента в массиве</a></h3><div><p>Чтобы имитировать функцию метода <code>includes()</code>, эта пользовательская функция возвращает true, если элемент существует в массиве:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">const</span> fruits <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'apple'</span><span class="token punctuation">,</span> <span class="token string">'banana'</span><span class="token punctuation">,</span> <span class="token string">'mango'</span><span class="token punctuation">,</span> <span class="token string">'guava'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">checkAvailability</span><span class="token punctuation">(</span><span class="token parameter">arr<span class="token punctuation">,</span> val</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> arr<span class="token punctuation">.</span><span class="token function">some</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">arrVal</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> val <span class="token operator">===</span> arrVal<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">checkAvailability</span><span class="token punctuation">(</span>fruits<span class="token punctuation">,</span> <span class="token string">'kela'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// false</span>
+<span class="token function">checkAvailability</span><span class="token punctuation">(</span>fruits<span class="token punctuation">,</span> <span class="token string">'banana'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span></code></pre>
+
+<p><iframe class="sample-code-frame" id="frame_Проверка_наличия_элемента_в_массиве" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/some/_sample_.%D0%9F%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0_%D0%BD%D0%B0%D0%BB%D0%B8%D1%87%D0%B8%D1%8F_%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%B0_%D0%B2_%D0%BC%D0%B0%D1%81%D1%81%D0%B8%D0%B2%D0%B5.html" loading="lazy"></iframe></p></div><h3 id="проверка_наличия_элемента_в_массиве_с_использованием_стрелочной_функции"><a href="#проверка_наличия_элемента_в_массиве_с_использованием_стрелочной_функции" title="Permalink to Проверка наличия элемента в массиве с использованием стрелочной функции">Проверка наличия элемента в массиве с использованием стрелочной функции</a></h3><div><pre class="notranslate"><code>const fruits = ['apple', 'banana', 'mango', 'guava'];
+
+function checkAvailability(arr, val) {
+  return arr.some(arrVal =&gt; val === arrVal);
+}
+
+checkAvailability(fruits, 'kela');   // false
+checkAvailability(fruits, 'banana'); // true</code></pre>
+
+<p>{{ EmbedLiveSample('Проверка_наличия_элемента_в_массиве_с_использованием_стрелочной_функции', '', '', '', 'Experiment:StaticExamplesOnTop/JavaScript/Array/some') }}</p></div><h3 id="приведение_значения_к_логическому_типу"><a href="#приведение_значения_к_логическому_типу" title="Permalink to Приведение значения к логическому типу">Приведение значения к логическому типу</a></h3><div><pre class="notranslate"><code>const TRUTHY_VALUES = [true, 'true', 1];
+
+function getBoolean(value) {
+  'use strict';
+
+  if (typeof value === 'string') {
+    value = value.toLowerCase().trim();
+  }
+
+  return TRUTHY_VALUES.some(function(t) {
+    return t === value;
+  });
+}
+
+getBoolean(false);   // false
+getBoolean('false'); // false
+getBoolean(1);       // true
+getBoolean('true');  // true</code></pre>
+
+<p><iframe class="sample-code-frame" id="frame_Приведение_значения_к_логическому_типу" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/some/_sample_.%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BA_%D0%BB%D0%BE%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%BC%D1%83_%D1%82%D0%B8%D0%BF%D1%83.html" loading="lazy"></iframe></p></div><h2 id="polyfill"><a href="#polyfill" title="Permalink to Полифил">Полифил</a></h2><div><p>Метод <code>some()</code> был добавлен к стандарту ECMA-262 в 5-м издании; поэтому он может не присутствовать в других реализациях стандарта. Вы можете работать с ним, добавив следующий код в начало ваших скриптов, он позволяет использовать <code>some()</code> в реализациях, которые не поддерживают этот метод. Этот алгоритм является точно тем, что описан в ECMA-262 5-го издания; и предполагает, что <a href="/js/Object/"><code>Object</code></a> и <a href="/js/TypeError/"><code>TypeError</code></a> имеют свои первоначальные значения и что <code>callback.call</code> вычисляется в оригинальное значение <a href="/js/Function/call/"><code>Function.prototype.call()</code></a>.</p>
+
+<pre class="brush: js notranslate"><code><span class="token comment">// Шаги алгоритма ECMA-262, 5-е издание, 15.4.4.17</span>
+<span class="token comment">// Ссылка (en): http://es5.github.io/#x15.4.4.17</span>
+<span class="token comment">// Ссылка (ru): http://es5.javascript.ru/x15.4.html#x15.4.4.17</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>some<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">some</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>fun<span class="token comment">/*, thisArg*/</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token string">'use strict'</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">TypeError</span><span class="token punctuation">(</span><span class="token string">'Array.prototype.some called on null or undefined'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> fun <span class="token operator">!==</span> <span class="token string">'function'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">TypeError</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">var</span> t <span class="token operator">=</span> <span class="token function">Object</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> len <span class="token operator">=</span> t<span class="token punctuation">.</span>length <span class="token operator">&gt;&gt;&gt;</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">var</span> thisArg <span class="token operator">=</span> arguments<span class="token punctuation">.</span>length <span class="token operator">&gt;=</span> <span class="token number">2</span> <span class="token operator">?</span> arguments<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">:</span> <span class="token keyword">void</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> len<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token keyword">in</span> t <span class="token operator">&amp;&amp;</span> <span class="token function">fun</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>thisArg<span class="token punctuation">,</span> t<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> i<span class="token punctuation">,</span> t<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-15.4.4.17" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 5.1 (ECMA-262)<br><small lang="ru">Определение 'Array.prototype.some' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Изначальное определение. Реализована в JavaScript 1.6.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-array.prototype.some" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Array.prototype.some' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td><a href="https://tc39.es/ecma262/#sec-array.prototype.some" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript (ECMA-262)<br><small lang="ru">Определение 'Array.prototype.some' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><div></div></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/Array/forEach/"><code>Array.prototype.forEach()</code></a></li>
+ <li><a href="/js/Array/every/"><code>Array.prototype.every()</code></a></li>
+ <li><a href="/js/Array/find/"><code>Array.prototype.find()</code></a></li>
+ <li><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/some"><code>TypedArray.prototype.some()</code> <span>(en-US)</span></a></li>
+</ul></div>

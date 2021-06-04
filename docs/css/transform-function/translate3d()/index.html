@@ -1,0 +1,166 @@
+<h1>translate3d()</h1><div><div></div>
+
+<p>The <strong><code>translate3d()</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Functions">function</a> repositions an element in 3D space. Its result is a
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function"><code>&lt;transform-function&gt;</code></a> data type.</p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/function-translate3d.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+<p>This transformation is characterized by a three-dimensional vector. Its coordinates define how much the element moves
+  in each direction.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: css notranslate"><code><span class="token function">translate3d</span><span class="token punctuation">(</span>tx<span class="token punctuation">,</span> ty<span class="token punctuation">,</span> tz<span class="token punctuation">)</span>
+</code></pre></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+  <dt><code><var>tx</var></code></dt>
+  <dd>Is a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length"><code>&lt;length&gt;</code></a> or <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/percentage"><code>&lt;percentage&gt;</code></a> representing the abscissa of the
+    translating vector.</dd>
+  <dt><code><var>ty</var></code></dt>
+  <dd>Is a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length"><code>&lt;length&gt;</code></a> or <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/percentage"><code>&lt;percentage&gt;</code></a> representing the ordinate of the
+    translating vector.</dd>
+  <dt><code><var>tz</var></code></dt>
+  <dd>Is a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length"><code>&lt;length&gt;</code></a> representing the z component of the translating vector. It can't be a
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/percentage"><code>&lt;percentage&gt;</code></a> value; in that case the property containing the transform is considered invalid.
+  </dd>
+</dl>
+
+<table class="standard-table">
+  <thead>
+    <tr>
+      <th scope="col">Cartesian coordinates on ℝ<sup>2</sup></th>
+      <th scope="col">Homogeneous coordinates on ℝℙ<sup>2</sup></th>
+      <th scope="col">Cartesian coordinates on ℝ<sup>3</sup></th>
+      <th scope="col">Homogeneous coordinates on ℝℙ<sup>3</sup></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="2">
+        <p>This transformation applies to the 3D space and can't be represented on the plane.</p>
+      </td>
+      <td>A translation is not a linear transformation in ℝ<sup>3</sup> and can't be represented using a
+        Cartesian-coordinate matrix.</td>
+      <td><math>
+          <mfenced>
+            <mtable>
+              <mtr>
+                <mtd>
+                  <mn>1</mn>
+                </mtd>
+                <mtd>
+                  <mn>0</mn>
+                </mtd>
+                <mtd>
+                  <mn>0</mn>
+                </mtd>
+                <mtd>
+                  <mi>tx</mi>
+                </mtd>
+              </mtr>
+              <mtr>
+                <mtd>
+                  <mn>0</mn>
+                </mtd>
+                <mtd>
+                  <mn>1</mn>
+                </mtd>
+                <mtd>
+                  <mn>0</mn>
+                </mtd>
+                <mtd>
+                  <mi>ty</mi>
+                </mtd>
+              </mtr>
+              <mtr>
+                <mtd>
+                  <mn>0</mn>
+                </mtd>
+                <mtd>
+                  <mn>0</mn>
+                </mtd>
+                <mtd>
+                  <mn>1</mn>
+                </mtd>
+                <mtd>
+                  <mi>tz</mi>
+                </mtd>
+              </mtr>
+              <mtr>
+                <mtd>
+                  <mn>0</mn>
+                </mtd>
+                <mtd>
+                  <mn>0</mn>
+                </mtd>
+                <mtd>
+                  <mn>0</mn>
+                </mtd>
+                <mtd>
+                  <mn>1</mn>
+                </mtd>
+              </mtr>
+            </mtable>
+          </mfenced>
+        </math></td>
+    </tr>
+  </tbody>
+</table></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="using_a_single_axis_translation"><a href="#using_a_single_axis_translation" title="Permalink to Using a single axis translation">Using a single axis translation</a></h3><div><h4 id="html">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>Static<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>moved<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Moved<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>Static<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<h4 id="css">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token selector">div</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 60px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 60px<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> skyblue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.moved</span> <span class="token punctuation">{</span>
+  <span class="token comment">/* Equivalent to perspective(500px) translateX(10px) */</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">perspective</span><span class="token punctuation">(</span>500px<span class="token punctuation">)</span> <span class="token function">translate3d</span><span class="token punctuation">(</span>10px<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 0px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> pink<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<h4 id="result">Result</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Using_a_single_axis_translation" width="250" height="250" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/transform-function/translate3d()/_sample_.Using_a_single_axis_translation.html" loading="lazy"></iframe></p></div><h3 id="combining_z-axis_and_x-axis_translation"><a href="#combining_z-axis_and_x-axis_translation" title="Permalink to Combining z-axis and x-axis translation">Combining z-axis and x-axis translation</a></h3><div><h4 id="html_2">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>Static<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>moved<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Moved<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>Static<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<h4 id="css_2">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token selector">div</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 60px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 60px<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> skyblue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.moved</span> <span class="token punctuation">{</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">perspective</span><span class="token punctuation">(</span>500px<span class="token punctuation">)</span> <span class="token function">translate3d</span><span class="token punctuation">(</span>10px<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 100px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> pink<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<h4 id="result_2">Result</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Combining_z-axis_and_x-axis_translation" width="250" height="250" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/transform-function/translate3d()/_sample_.Combining_z-axis_and_x-axis_translation.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+  <thead>
+    <tr>
+      <th scope="col">Specification</th>
+      <th scope="col">Status</th>
+      <th scope="col">Comment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://drafts.csswg.org/css-transforms-2/#funcdef-translate3d" hreflang="en" lang="en" class="external" rel=" noopener">CSS Transforms Level&nbsp;2<br><small lang="en-US">The definition of 'translate3d()' in that specification.</small></a></td>
+      <td><span class="spec-ed">Editor's Draft</span></td>
+      <td>Initial definition</td>
+    </tr>
+  </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform"><code>transform</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function"><code>&lt;transform-function&gt;</code></a></li>
+</ul></div>

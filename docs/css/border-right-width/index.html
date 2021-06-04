@@ -1,0 +1,81 @@
+<h1>border-right-width</h1><div><div></div>
+
+<p>The <strong><code>border-right-width</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> property sets the width of the right border of an element.</p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/border-right-width.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* Keyword values */</span>
+<span class="token property">border-right-width</span><span class="token punctuation">:</span> thin<span class="token punctuation">;</span>
+<span class="token property">border-right-width</span><span class="token punctuation">:</span> medium<span class="token punctuation">;</span>
+<span class="token property">border-right-width</span><span class="token punctuation">:</span> thick<span class="token punctuation">;</span>
+
+<span class="token comment">/* &lt;length&gt; values */</span>
+<span class="token property">border-right-width</span><span class="token punctuation">:</span> 10em<span class="token punctuation">;</span>
+<span class="token property">border-right-width</span><span class="token punctuation">:</span> 3vmax<span class="token punctuation">;</span>
+<span class="token property">border-right-width</span><span class="token punctuation">:</span> 6px<span class="token punctuation">;</span>
+
+<span class="token comment">/* Global keywords */</span>
+<span class="token property">border-right-width</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">border-right-width</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">border-right-width</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+ <dt><code>&lt;line-width&gt;</code></dt>
+ <dd>Defines the width of the border, either as an explicit nonnegative <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length"><code>&lt;length&gt;</code></a> or a keyword. If it's a keyword, it must be one of the following values:
+   <ul>
+     <li><code>thin</code></li>
+     <li><code>medium</code></li>
+     <li><code>thick</code></li>
+  </ul>
+ </dd>
+</dl>
+
+<div class="note notecard">
+ <p><strong>Note:</strong> Because the specification doesn't define the exact thickness denoted by each keyword, the precise result when using one of them is implementation-specific. Nevertheless, they always follow the pattern <code>thin ≤ medium ≤ thick</code>, and the values are constant within a single document.</p>
+</div></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td><code>medium</code></td></tr><tr><th scope="row">Applies to</th><td>all elements. It also applies to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::first-letter"><code>::first-letter</code></a>.</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance">Inherited</a></th><td>no</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>the absolute length or <code>0</code> if <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-right-style"><code>border-right-style</code></a> is <code>none</code> or <code>hidden</code></td></tr><tr><th scope="row">Animation type</th><td>a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length#interpolation" title="Values of the <length> CSS data type are interpolated as real, floating-point numbers.">length</a></td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate"><a href="#line-width">&lt;line-width&gt;</a><p style="font-family:Open Sans,Arial,sans-serif; margin: 10px 0 0 0;">where <br><code style="font-family:Consolas,Monaco,&quot;Andale Mono&quot;,monospace;"><span id="line-width">&lt;line-width&gt;</span> = <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length" title="Possible values: a number followed by'em', 'ex', 'ch', 'rem', 'px', 'cm', 'mm', 'in', 'vh', 'vw', 'vmin', 'vmax', 'pt', 'pc' or 'px', like 3px, 1.5cm, -0.5em or 0">&lt;length&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> thin <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> medium <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> thick</code></p></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="comparing_border_widths"><a href="#comparing_border_widths" title="Permalink to Comparing border widths">Comparing border widths</a></h3><div><h4 id="html">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>Element 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>Element 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<h4 id="css">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token selector">div</span> <span class="token punctuation">{</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 1px solid red<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 1em 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">div:nth-child(1)</span> <span class="token punctuation">{</span>
+  <span class="token property">border-right-width</span><span class="token punctuation">:</span> thick<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">div:nth-child(2)</span> <span class="token punctuation">{</span>
+  <span class="token property">border-right-width</span><span class="token punctuation">:</span> 2em<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<h4 id="result">Result</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Comparing_border_widths" width="100%" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/border-right-width/_sample_.Comparing_border_widths.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-backgrounds-3/#the-border-width" hreflang="en" lang="en" class="external" rel=" noopener">CSS Backgrounds and Borders Module Level&nbsp;3<br><small lang="en-US">The definition of 'border-right-width' in that specification.</small></a></td>
+   <td><span class="spec-cr">Candidate Recommendation</span></td>
+   <td>No significant change.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/CSS2/box.html#border-width-properties" hreflang="en" lang="en" class="external" rel=" noopener">CSS Level&nbsp;2 (Revision&nbsp;1)<br><small lang="en-US">The definition of 'border-right-width' in that specification.</small></a></td>
+   <td><span class="spec-rec">Recommendation</span></td>
+   <td>No significant change.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/CSS1/#border-left-width" hreflang="en" lang="en" class="external" rel=" noopener">CSS Level&nbsp;1<br><small lang="en-US">The definition of 'border-right-width' in that specification.</small></a></td>
+   <td><span class="spec-rec">Recommendation</span></td>
+   <td>Initial definition.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li>The other border-width-related CSS properties: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom-width"><code>border-bottom-width</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-left-width"><code>border-left-width</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-top-width"><code>border-top-width</code></a>, and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-width"><code>border-width</code></a>.</li>
+ <li>The other border-right-related CSS properties: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border"><code>border</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-right"><code>border-right</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-right-style"><code>border-right-style</code></a>, and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-right-color"><code>border-right-color</code></a>.</li>
+</ul></div>

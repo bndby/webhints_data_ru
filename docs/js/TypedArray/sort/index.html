@@ -1,0 +1,41 @@
+<h1>TypedArray.prototype.sort()</h1><div><div></div>
+
+<p>The <code><strong>sort()</strong></code> method sorts the elements of a typed array
+  numerically <em>in place</em> and returns the typed array. This method has the same
+  algorithm as <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort"><code>Array.prototype.sort()</code></a>, except that sorts the values
+  numerically instead of as strings. <em>TypedArray</em> is one of the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray#typedarray_objects">typed
+    array types</a> here.</p>
+
+<div><iframe class="interactive" width="100%" height="410" src="https://interactive-examples.mdn.mozilla.net/pages/js/typedarray-sort.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: js notranslate"><code><span class="token comment">// Functionless</span>
+<span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">// Arrow function</span>
+<span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">firstEl<span class="token punctuation">,</span> secondEl</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span> <span class="token punctuation">)</span>
+
+<span class="token comment">// Compare function</span>
+<span class="token function">sort</span><span class="token punctuation">(</span>compareFn<span class="token punctuation">)</span>
+
+<span class="token comment">// Inline compare function</span>
+<span class="token function">sort</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token function">compareFn</span><span class="token punctuation">(</span><span class="token parameter">firstEl<span class="token punctuation">,</span> secondEl</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Parameters">Parameters</a></h3><div><dl>
+  <dt><code><var>compareFunction</var></code> <span class="badge inline optional">Optional</span></dt>
+  <dd>Specifies a function that defines the sort order.</dd>
+</dl></div><h3 id="return_value"><a href="#return_value" title="Permalink to Return value">Return value</a></h3><div><p>The sorted typed array.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="using_sort"><a href="#using_sort" title="Permalink to Using sort">Using sort</a></h3><div><p>For more examples, see also the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort"><code>Array.prototype.sort()</code></a> method.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">let</span> numbers <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Uint8Array</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">40</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+numbers<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Uint8Array [ 1, 5, 40, 200 ]</span>
+<span class="token comment">// Unlike plain Arrays, a compare function is not required</span>
+<span class="token comment">// to sort the numbers numerically.</span>
+
+<span class="token comment">// Regular Arrays require a compare function to sort numerically:</span>
+numbers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">40</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+numbers<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// [1, 200, 40, 5]</span>
+
+numbers<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> a <span class="token operator">-</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// compare numbers</span>
+<span class="token comment">// [ 1, 5, 40, 200 ]</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://tc39.es/ecma262/#sec-%typedarray%.prototype.sort">Unknown specification<!-- --> <br><small># <!-- -->sec-%typedarray%.prototype.sort</small></a></td></tr></tbody></table><div></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+  <li>A polyfill of <code>TypedArray.prototype.sort</code> is available in <a href="https://github.com/zloirock/core-js#ecmascript-typed-arrays" class="external" rel=" noopener"><code>core-js</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort"><code>Array.prototype.sort()</code></a></li>
+</ul></div>

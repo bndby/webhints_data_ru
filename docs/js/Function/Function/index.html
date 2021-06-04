@@ -1,0 +1,57 @@
+<h1>Function() constructor</h1><div><div></div>
+
+<p><span class="seoSummary">The <strong><code>Function</code> constructor</strong> creates
+    a new <code>Function</code> <strong>object</strong>. Calling the constructor directly
+    can create functions dynamically, but suffers from security and similar (but far less
+    significant) performance issues to <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval"><code>Global_Objects/eval</code></a>. However, unlike eval, the
+    <code>Function</code> constructor creates functions which execute in the global scope
+    only.</span></p>
+
+<div><iframe class="interactive" width="100%" height="410" src="https://interactive-examples.mdn.mozilla.net/pages/js/function-constructor.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: js notranslate"><code><span class="token keyword">new</span> <span class="token class-name">Function</span><span class="token punctuation">(</span>arg1<span class="token punctuation">,</span> functionBody<span class="token punctuation">)</span>
+<span class="token keyword">new</span> <span class="token class-name">Function</span><span class="token punctuation">(</span>arg1<span class="token punctuation">,</span> arg2<span class="token punctuation">,</span> functionBody<span class="token punctuation">)</span>
+<span class="token keyword">new</span> <span class="token class-name">Function</span><span class="token punctuation">(</span>arg1<span class="token punctuation">,</span> <span class="token operator">...</span> <span class="token punctuation">,</span> argN<span class="token punctuation">,</span> functionBody<span class="token punctuation">)</span>
+</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Parameters">Parameters</a></h3><div><dl>
+  <dt><code><var>arg1</var>, <var>arg2</var>, ... <var>argN</var></code></dt>
+  <dd>Names to be used by the function as formal argument names. Each must be a string
+    that corresponds to a valid JavaScript identifier, or a list of such strings separated
+    with a comma. For example: "<code>x</code>", "<code>theValue</code>"—or
+    "<code>x,theValue</code>".</dd>
+  <dt><code><var>functionBody</var></code></dt>
+  <dd>A string containing the JavaScript statements comprising the function definition.
+  </dd>
+</dl></div><h2 id="description"><a href="#description" title="Permalink to Description">Description</a></h2><div><p><code>Function</code> objects created with the <code>Function</code> constructor are
+  parsed when the function is created. This is less efficient than declaring a function
+  with a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/function">function expression</a> or
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">function statement</a> and calling it within
+  your code because such functions are parsed with the rest of the code.</p>
+
+<p>All arguments passed to the function are treated as the names of the identifiers of the
+  parameters in the function to be created, in the order in which they are passed.
+  Omitting an argument will result in the value of that parameter being
+  <code>undefined</code>.</p>
+
+<p>Invoking the <code>Function</code> constructor as a function (without using the
+  <code>new</code> operator) has the same effect as invoking it as a constructor.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="specifying_arguments_with_the_function_constructor"><a href="#specifying_arguments_with_the_function_constructor" title="Permalink to Specifying arguments with the
+  Function constructor">Specifying arguments with the
+  Function constructor</a></h3><div><p>The following code creates a <code>Function</code> object that takes two arguments.</p>
+
+<pre class="brush: js notranslate"><code><span class="token comment">// Example can be run directly in your JavaScript console</span>
+
+<span class="token comment">// Create a function that takes two arguments, and returns the sum of those arguments</span>
+<span class="token keyword">const</span> adder <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Function</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'return a + b'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Call the function</span>
+<span class="token function">adder</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 8</span>
+</code></pre>
+
+<p>The arguments "<code>a</code>" and "<code>b</code>" are formal argument names that are
+  used in the function body, "<code>return a + b</code>".</p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://tc39.es/ecma262/#sec-function-constructor">Unknown specification<!-- --> <br><small># <!-- -->sec-function-constructor</small></a></td></tr></tbody></table><div></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions">Functions and function scope</a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function"><code>function</code></a> statement</li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/function"><code>function</code></a> expression</li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*"><code>function*</code></a> statement</li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/function*"><code>function*</code></a> expression</li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/AsyncFunction"><code>AsyncFunction</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction"><code>GeneratorFunction</code></a></li>
+</ul></div>

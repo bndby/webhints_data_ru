@@ -1,0 +1,239 @@
+<h1>scaleY()</h1><div><div></div>
+
+<p>The <strong><code>scaleY()</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Functions">function</a> defines a transformation that resizes an element along the
+  y-axis (vertically). Its result is a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function"><code>&lt;transform-function&gt;</code></a> data type.</p>
+
+<p><img src="/en-US/docs/Web/CSS/transform-function/scaleY()/scaley.png" width="365" height="381" loading="lazy"></p>
+
+<p>It modifies the ordinate of each element point by a constant factor, except when the scale factor is 1, in which case
+  the function is the identity transform. The scaling is not isotropic, and the angles of the element are not conserved.
+  <code>scaleY(-1)</code> defines an <a href="https://en.wikipedia.org/wiki/Axial_symmetry" class="external" rel=" noopener">axial
+    symmetry</a>, with a horizontal axis passing through the origin (as specified by the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin"><code>transform-origin</code></a>
+  property).
+</p>
+
+<div class="note notecard">
+  <p><strong>Note:</strong> <code>scaleY(sy)</code> is equivalent to
+    <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scale()">scale</a>(1, sy)</code> or
+    <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scale3d()">scale3d</a>(1, sy, 1)</code>.
+  </p>
+
+  <p><code>transform: rotateX(180deg);</code>&nbsp; === <code>transform: scaleY(-1);</code></p>
+</div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: css notranslate"><code><span class="token function">scaleY</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span>
+</code></pre></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+  <dt><code>s</code></dt>
+  <dd>Is a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/number"><code>&lt;number&gt;</code></a>&nbsp;representing the scaling factor to apply on the ordinate of each point of the
+    element.</dd>
+</dl>
+
+<table class="standard-table">
+  <thead>
+    <tr>
+      <th scope="col">Cartesian coordinates on ℝ<sup>2</sup></th>
+      <th scope="col">Homogeneous coordinates on ℝℙ<sup>2</sup></th>
+      <th scope="col">Cartesian coordinates on ℝ<sup>3</sup></th>
+      <th scope="col">Homogeneous coordinates on ℝℙ<sup>3</sup></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="2"><math>
+          <mfenced>
+            <mtable>
+              <mtr>
+                <mtd>
+                  <mn>1</mn>
+                </mtd>
+                <mtd>
+                  <mn>0</mn>
+                </mtd>
+              </mtr>
+              <mtr>
+                <mtd>
+                  <mn>0</mn>
+                </mtd>
+                <mtd>
+                  <mi>s</mi>
+                </mtd>
+              </mtr>
+            </mtable>
+          </mfenced>
+        </math></td>
+      <td><math>
+          <mfenced>
+            <mtable>
+              <mtr>
+                <mtd>
+                  <mn>1</mn>
+                </mtd>
+                <mtd>
+                  <mn>0</mn>
+                </mtd>
+                <mtd>
+                  <mn>0</mn>
+                </mtd>
+              </mtr>
+              <mtr>
+                <mtd>
+                  <mn>0</mn>
+                </mtd>
+                <mtd>
+                  <mi>s</mi>
+                </mtd>
+                <mtd>
+                  <mn>0</mn>
+                </mtd>
+              </mtr>
+              <mtr>
+                <mtd>
+                  <mn>0</mn>
+                </mtd>
+                <mtd>
+                  <mn>0</mn>
+                </mtd>
+                <mtd>
+                  <mn>1</mn>
+                </mtd>
+              </mtr>
+            </mtable>
+          </mfenced>
+        </math></td>
+      <td rowspan="2"><math>
+          <mfenced>
+            <mtable>
+              <mtr>
+                <mtd>
+                  <mn>1</mn>
+                </mtd>
+                <mtd>
+                  <mn>0</mn>
+                </mtd>
+                <mtd>
+                  <mn>0</mn>
+                </mtd>
+              </mtr>
+              <mtr>
+                <mtd>
+                  <mn>0</mn>
+                </mtd>
+                <mtd>
+                  <mi>s</mi>
+                </mtd>
+                <mtd>
+                  <mn>0</mn>
+                </mtd>
+              </mtr>
+              <mtr>
+                <mtd>
+                  <mn>0</mn>
+                </mtd>
+                <mtd>
+                  <mn>0</mn>
+                </mtd>
+                <mtd>
+                  <mn>1</mn>
+                </mtd>
+              </mtr>
+            </mtable>
+          </mfenced>
+        </math></td>
+      <td rowspan="2"><math>
+          <mfenced>
+            <mtable>
+              <mtr>
+                <mtd>
+                  <mn>1</mn>
+                </mtd>
+                <mtd>
+                  <mn>0</mn>
+                </mtd>
+                <mtd>
+                  <mn>0</mn>
+                </mtd>
+                <mtd>
+                  <mn>0</mn>
+                </mtd>
+              </mtr>
+              <mtr>
+                <mtd>
+                  <mn>0</mn>
+                </mtd>
+                <mtd>
+                  <mi>s</mi>
+                </mtd>
+                <mtd>
+                  <mn>0</mn>
+                </mtd>
+                <mtd>
+                  <mn>0</mn>
+                </mtd>
+              </mtr>
+              <mtr>
+                <mtd>
+                  <mn>0</mn>
+                </mtd>
+                <mtd>
+                  <mn>0</mn>
+                </mtd>
+                <mtd>
+                  <mn>1</mn>
+                </mtd>
+                <mtd>
+                  <mn>0</mn>
+                </mtd>
+              </mtr>
+              <mtr>
+                <mtd>
+                  <mn>0</mn>
+                </mtd>
+                <mtd>
+                  <mn>0</mn>
+                </mtd>
+                <mtd>
+                  <mn>0</mn>
+                </mtd>
+                <mtd>
+                  <mn>1</mn>
+                </mtd>
+              </mtr>
+            </mtable>
+          </mfenced>
+        </math></td>
+    </tr>
+    <tr>
+      <td><code>[1 0 0 s 0 0]</code></td>
+    </tr>
+  </tbody>
+</table></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="html"><a href="#html" title="Permalink to HTML">HTML</a></h3><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>Normal<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>scaled<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Scaled<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre></div><h3 id="css"><a href="#css" title="Permalink to CSS">CSS</a></h3><div><pre class="brush: css notranslate"><code><span class="token selector">div</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 80px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 80px<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> skyblue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.scaled</span> <span class="token punctuation">{</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">scaleY</span><span class="token punctuation">(</span>0.6<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> pink<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="result"><a href="#result" title="Permalink to Result">Result</a></h3><div><p><iframe class="sample-code-frame" id="frame_Examples" width="200" height="200" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/transform-function/scaleY()/_sample_.Examples.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+  <thead>
+    <tr>
+      <th scope="col">Specification</th>
+      <th scope="col">Status</th>
+      <th scope="col">Comment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://drafts.csswg.org/css-transforms/#funcdef-transform-scaley" hreflang="en" lang="en" class="external" rel=" noopener">CSS Transforms Level&nbsp;1<br><small lang="en-US">The definition of 'scaleY()' in that specification.</small></a></td>
+      <td><span class="spec-wd">Working Draft</span></td>
+      <td>Initial definition</td>
+    </tr>
+  </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+  <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scaleX()">scaleX()</a></code></li>
+  <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scaleZ()">scaleZ()</a></code></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform"><code>transform</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function"><code>&lt;transform-function&gt;</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin"><code>transform-origin</code></a></li>
+</ul></div>

@@ -1,0 +1,26 @@
+<h1>Date.prototype.getTimezoneOffset()</h1><div><div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Метод <strong><code>getTimezoneOffset()</code></strong> возвращает смещение часового пояса относительно часового пояса UTC в минутах для текущей локали.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code><var>dateObj</var>.getTimezoneOffset()</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><p>Нет.</p></div><h3 id="returns"><a href="#returns" title="Permalink to Возвращаемое значение">Возвращаемое значение</a></h3><div><p>Возвращает смещение часового пояса, являющееся разностью в минутах между временем UTC и местным временем. Обратите внимание, что это значит, что смещение будет положительным для местного часового пояса, находящегося западнее часового пояса UTC и отрицательным&nbsp;— восточнее. Например, если ваш часовой пояс равен UTC+10 (австралийское восточное поясное время), будет возвращено значение -600. Наличие летнего и зимнего времени не даёт этому смещению быть постоянным, даже в пределах одного часового пояса.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_using_gettimezoneoffset"><a href="#example_using_gettimezoneoffset" title="Permalink to Пример: использование метода getTimezoneOffset()">Пример: использование метода <code>getTimezoneOffset()</code></a></h3><div><pre class="brush: js notranslate"><code><span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> currentTimeZoneOffsetInHours <span class="token operator">=</span> x<span class="token punctuation">.</span><span class="token function">getTimezoneOffset</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">60</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td>ECMAScript 1-е издание.</td>
+   <td>Стандарт</td>
+   <td>Изначальное определение. Реализована в JavaScript 1.0.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-15.9.5.26" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 5.1 (ECMA-262)<br><small lang="ru">Определение 'Date.prototype.getTimezoneOffset' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-date.prototype.gettimezoneoffset" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Date.prototype.getTimezoneOffset' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div>

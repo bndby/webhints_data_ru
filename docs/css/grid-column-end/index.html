@@ -1,0 +1,103 @@
+<h1>grid-column-end</h1><div><div></div>
+
+<p>The <strong><code>grid-column-end</code></strong> CSS property specifies a grid item’s end position within the grid column by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the block-end edge of its <a href="https://developer.mozilla.org/en-US/docs/Glossary/Grid_Areas">grid area</a>.</p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/grid-column-end.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: css no-line-numbers notranslate"><code><span class="token comment">/* Keyword value */</span>
+<span class="token property">grid-column-end</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+
+<span class="token comment">/* &lt;custom-ident&gt; values */</span>
+<span class="token property">grid-column-end</span><span class="token punctuation">:</span> somegridarea<span class="token punctuation">;</span>
+
+<span class="token comment">/* &lt;integer&gt; + &lt;custom-ident&gt; values */</span>
+<span class="token property">grid-column-end</span><span class="token punctuation">:</span> 2<span class="token punctuation">;</span>
+<span class="token property">grid-column-end</span><span class="token punctuation">:</span> somegridarea 4<span class="token punctuation">;</span>
+
+<span class="token comment">/* span + &lt;integer&gt; + &lt;custom-ident&gt; values */</span>
+<span class="token property">grid-column-end</span><span class="token punctuation">:</span> span 3<span class="token punctuation">;</span>
+<span class="token property">grid-column-end</span><span class="token punctuation">:</span> span somegridarea<span class="token punctuation">;</span>
+<span class="token property">grid-column-end</span><span class="token punctuation">:</span> 5 somegridarea span<span class="token punctuation">;</span>
+
+<span class="token comment">/* Global values */</span>
+<span class="token property">grid-column-end</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">grid-column-end</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">grid-column-end</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+ <dt><code>auto</code></dt>
+ <dd>Is a keyword indicating that the property contributes nothing to the grid item’s placement, indicating auto-placement, an automatic span, or a default span of <code>1</code>.</dd>
+ <dt><code>&lt;custom-ident&gt;</code></dt>
+ <dd>If there is a named line with the name '&lt;custom-ident&gt;-end', it contributes the first such line to the grid item’s placement.
+ <p class="note"><strong>Note:</strong> Named grid areas automatically generate implicit named lines of this form, so specifying <code>grid-column-end: foo;</code> will choose the end edge of that named grid area (unless another line named <code>foo-end</code> was explicitly specified before it).</p>
+
+ <p>Otherwise, this is treated as if the integer <code>1</code> had been specified along with the <code>&lt;custom-ident&gt;</code>.</p>
+ </dd>
+ <dt><code>&lt;integer&gt; &amp;&amp; &lt;custom-ident&gt;?</code></dt>
+ <dd>Contributes the nth grid line to the grid item’s placement. If a negative integer is given, it instead counts in reverse, starting from the end edge of the explicit grid.
+ <p>If a name is given as a &lt;custom-ident&gt;, only lines with that name are counted. If not enough lines with that name exist, all implicit grid lines are assumed to have that name for the purpose of finding this position.</p>
+
+ <p>An <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/integer"><code>&lt;integer&gt;</code></a> value of <code>0</code> is invalid.</p>
+ </dd>
+ <dt><code>span &amp;&amp; [ &lt;integer&gt; || &lt;custom-ident&gt; ]</code></dt>
+ <dd>Contributes a grid span to the grid item’s placement such that the column end edge of the grid item’s grid area is n lines from the start edge.
+ <p>If a name is given as a &lt;custom-ident&gt;, only lines with that name are counted. If not enough lines with that name exist, all implicit grid lines on the side of the explicit grid corresponding to the search direction are assumed to have that name for the purpose of counting this span.</p>
+
+ <p>If the &lt;integer&gt; is omitted, it defaults to <code>1</code>. Negative integers or 0 are invalid.</p>
+
+ <p>The <code>&lt;custom-ident&gt;</code> cannot take the <code>span</code> value.</p>
+ </dd>
+</dl></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td><code>auto</code></td></tr><tr><th scope="row">Applies to</th><td>grid items and absolutely-positioned boxes whose containing block is a grid container</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance">Inherited</a></th><td>no</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>as specified</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate"><a href="#grid-line">&lt;grid-line&gt;</a><p style="font-family:Open Sans,Arial,sans-serif; margin: 10px 0 0 0;">where <br><code style="font-family:Consolas,Monaco,&quot;Andale Mono&quot;,monospace;"><span id="grid-line">&lt;grid-line&gt;</span> = auto <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/custom-ident" title>&lt;custom-ident&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">[</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/integer" title>&lt;integer&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_ampersand" title="Double ampersand: all of the entities must be present, in any order">&amp;&amp;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/custom-ident" title>&lt;custom-ident&gt;</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#question_mark_()" title="Question mark: the entity is optional">?</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">]</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">[</a> span <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_ampersand" title="Double ampersand: all of the entities must be present, in any order">&amp;&amp;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">[</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/integer" title>&lt;integer&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_bar" title="Double bar: one or several of the entities must be present, in any order">||</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/custom-ident" title>&lt;custom-ident&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">]</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">]</a></code></p></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="setting_column_end_for_a_grid_item"><a href="#setting_column_end_for_a_grid_item" title="Permalink to Setting column end for a grid item">Setting column end for a grid item</a></h3><div><h4 id="html">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>wrapper<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>box1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>One<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>box2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Two<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>box3<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Three<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>box4<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Four<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>box5<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Five<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<h4 id="css">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token selector">.wrapper</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> grid<span class="token punctuation">;</span>
+  <span class="token property">grid-template-columns</span><span class="token punctuation">:</span> <span class="token function">repeat</span><span class="token punctuation">(</span>3<span class="token punctuation">,</span> 1fr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">grid-auto-rows</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.box1</span> <span class="token punctuation">{</span>
+  <span class="token property">grid-column-start</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+  <span class="token property">grid-column-end</span><span class="token punctuation">:</span> 4<span class="token punctuation">;</span>
+  <span class="token property">grid-row-start</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+  <span class="token property">grid-row-end</span><span class="token punctuation">:</span> 3<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.box2</span> <span class="token punctuation">{</span>
+  <span class="token property">grid-column-start</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+  <span class="token property">grid-row-start</span><span class="token punctuation">:</span> 3<span class="token punctuation">;</span>
+  <span class="token property">grid-row-end</span><span class="token punctuation">:</span> 5<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+
+
+<h4 id="result">Result</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Setting_column_end_for_a_grid_item" width="230" height="420" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/grid-column-end/_sample_.Setting_column_end_for_a_grid_item.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-grid/#propdef-grid-column-end" hreflang="en" lang="en" class="external" rel=" noopener">CSS Grid Layout<br><small lang="en-US">The definition of 'grid-column-end' in that specification.</small></a></td>
+   <td><span class="spec-cr">Candidate Recommendation</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li>Related CSS properties: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-start"><code>grid-column-start</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column"><code>grid-column</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row-start"><code>grid-row-start</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row-end"><code>grid-row-end</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row"><code>grid-row</code></a></li>
+ <li>Grid Layout Guide: <em><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Line-based_Placement_with_CSS_Grid">Line-based placement with CSS Grid</a></em></li>
+ <li>Video tutorial: <em><a href="https://gridbyexample.com/video/series-line-based-placement/" class="external" rel=" noopener">Line-based placement</a></em></li>
+</ul></div>

@@ -1,0 +1,55 @@
+<h1>Generator.prototype.throw()</h1><div><div></div>
+
+<p>Метод <code><strong>throw()</strong></code> возобновляет выполнение тела генератора кидая внутри исключение&nbsp; <code>и возвращает объект со свойствами done и value</code>.</p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code><var>gen</var>.throw(exception)</code></pre></div><h3 id="параметры"><a href="#параметры" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>exception</code></dt>
+ <dd>Исключение, которое будет брошено. Во время отладки бывает полезно сделать его <code>instanceof</code> <a href="/js/Error/"><code>Error</code></a>.</dd>
+</dl></div><h3 id="возвращаемое_значение"><a href="#возвращаемое_значение" title="Permalink to Возвращаемое значение">Возвращаемое значение</a></h3><div><p>Объект с двумя свойствами:</p>
+
+<ul>
+ <li><code>done</code> (boolean)
+
+  <ul>
+   <li>Имеет значение <code>true</code> если iterator прошёл конец итерируемой последовательности. В этом случае <code>value</code> опционально определяется выражением <em>return value</em> внутри итератора .</li>
+   <li>Имеет значение <code>false</code> если iterator имеет возможность вернуть следующее значение последовательности. Это равносильно когда свойство done не указано.</li>
+  </ul>
+ </li>
+ <li><code>value</code> - любое JavaScript значение,&nbsp; возвращённое итератором. Может быть проигнорировано, когда <em><code>done</code> === <code>true</code></em>.</li>
+</ul></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="использование_throw()"><a href="#использование_throw()" title="Permalink to Использование throw()">Использование <code>throw()</code></a></h3><div><p>В этом примере показан простой генератор и исключение,&nbsp; которое выбрасывается используя метод <code>throw</code>. Исключение может быть поймано, используя, как обычно, блок <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch">try...catch</a></code>.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">function</span><span class="token operator">*</span> <span class="token function">gen</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+       <span class="token keyword">yield</span> <span class="token number">42</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Error caught!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> g <span class="token operator">=</span> <span class="token function">gen</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+g<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// { value: 42, done: false }</span>
+g<span class="token punctuation">.</span><span class="token function">throw</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'Something went wrong'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// "Error caught!"</span>
+<span class="token comment">// { value: 42, done: false }</span>
+</code></pre></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-generator.prototype.throw" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Generator.prototype.throw' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Initial definition.</td>
+  </tr>
+  <tr>
+   <td><a href="https://tc39.es/ecma262/#sec-generator.prototype.throw" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript (ECMA-262)<br><small lang="ru">Определение 'Generator.prototype.throw' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="совместимость_браузеров"><a href="#совместимость_браузеров" title="Permalink to Совместимость браузеров">Совместимость браузеров</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*">function*</a></code></li>
+</ul></div>

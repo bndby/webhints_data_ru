@@ -1,0 +1,59 @@
+<h1>tab-size</h1><div><div><div class="notecard experimental">
+    <h4 id="experimental">Experimental</h4>
+    <p><strong>Это экспериментальная технология</strong><br>Так как спецификация этой технологии ещё не стабилизировалась, смотрите <a href="#browser_compatibility">таблицу совместимости</a> по поводу использования в различных браузерах. Также заметьте, что синтаксис и поведение экспериментальной технологии может измениться в будущих версиях браузеров, вслед за изменениями спецификации.</p>
+</div></div>
+
+<p class="seoSummary">CSS-свойство <strong><code>tab-size</code></strong> используется для настройки ширины символа табуляции (<code>U+0009</code>).</p>
+
+<pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* &lt;integer&gt; значения */</span>
+<span class="token property">tab-size</span><span class="token punctuation">:</span> 4<span class="token punctuation">;</span>
+<span class="token property">tab-size</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+
+<span class="token comment">/* &lt;length&gt; значения */</span>
+<span class="token property">tab-size</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+<span class="token property">tab-size</span><span class="token punctuation">:</span> 2em<span class="token punctuation">;</span>
+
+<span class="token comment">/* Глобальные значения */</span>
+<span class="token property">tab-size</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">tab-size</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">tab-size</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre>
+
+<p></p><table class="properties"><tbody><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td><code>8</code></td></tr><tr><th scope="row">Применяется к</th><td>блочные контейнеры</td></tr><tr><th scope="row"><a href="/css/inheritance/">Наследуется</a></th><td>да</td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>указанное целое число или абсолютная длина</td></tr><tr><th scope="row">Animation type</th><td><a href="/css/length#interpolation/" title="Значения типа данных CSS <длина> интерполируются как вещественные числа с плавающей запятой.">длина</a></td></tr></tbody></table><p></p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div></div><h3 id="значения"><a href="#значения" title="Permalink to Значения">Значения</a></h3><div><dl>
+ <dt><a href="/css/integer/"><code>&lt;integer&gt;</code></a></dt>
+ <dd>Количество пробелов в табе. Должно быть неотрицательным.</dd>
+ <dt><a href="/css/length/"><code>&lt;length&gt;</code></a></dt>
+ <dd>Ширина таба. Должно быть неотрицательным.</dd>
+</dl></div><h3 id="формальный_синтаксис"><a href="#формальный_синтаксис" title="Permalink to Формальный синтаксис">Формальный синтаксис</a></h3><div><pre class="notranslate"><a href="/css/integer/" title>&lt;integer&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <a href="/css/length/" title="Возможные значения: a number followed by'em', 'ex', 'ch', 'rem', 'px', 'cm', 'mm', 'in', 'vh', 'vw', 'vmin', 'vmax', 'pt', 'pc' или 'px', как 3px, 1.5cm, -0.5em или 0">&lt;length&gt;</a></pre></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div><pre class="brush: css notranslate"><code><span class="token selector">pre</span> <span class="token punctuation">{</span>
+  <span class="token property">tab-size</span><span class="token punctuation">:</span> 4<span class="token punctuation">;</span> <span class="token comment">/* Установит размер таба в 4 пробела */</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<pre class="brush: css notranslate"><code><span class="token selector">pre</span> <span class="token punctuation">{</span>
+  <span class="token property">tab-size</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span> <span class="token comment">/* Удалит отступ */</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<pre class="brush: css notranslate"><code><span class="token selector">pre</span> <span class="token punctuation">{</span>
+  <span class="token property">tab-size</span><span class="token punctuation">:</span> 2<span class="token punctuation">;</span> <span class="token comment">/* Установит размер таба в 2 пробела */</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-text-3/#tab-size-property" hreflang="en" lang="en" class="external" rel=" noopener">CSS Text Module Level&nbsp;3<br><small lang="ru">Определение 'tab-size' в этой спецификации.</small></a></td>
+   <td><span class="spec-cr">Кандидат в рекомендации</span></td>
+   <td>Первое определение</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="поддержка_браузерами"><a href="#поддержка_браузерами" title="Permalink to Поддержка браузерами">Поддержка браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p>
+
+<p>&nbsp;</p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a class="external" href="https://lists.w3.org/Archives/Public/www-style/2008Dec/0009.html" rel=" noopener"><cite>Управление размером символа табуляции (U+0009)</cite></a>, электронное письмо Anne van Kesteren в CSSWG.</li>
+</ul></div>

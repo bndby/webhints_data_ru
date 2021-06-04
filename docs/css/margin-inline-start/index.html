@@ -1,0 +1,56 @@
+<h1>margin-inline-start</h1><div><p></p><div class="notecard experimental">
+    <h4 id="experimental">Experimental</h4>
+    <p><strong>Это экспериментальная технология</strong><br>Так как спецификация этой технологии ещё не стабилизировалась, смотрите <a href="#browser_compatibility">таблицу совместимости</a> по поводу использования в различных браузерах. Также заметьте, что синтаксис и поведение экспериментальной технологии может измениться в будущих версиях браузеров, вслед за изменениями спецификации.</p>
+</div><p></p>
+
+<p>Свойство <strong><code>margin-inline-start</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" title="CSS">CSS</a> задаёт логическое строковое (inline)&nbsp; значение start margin элемента, которое сопоставляется с физическим значением margin в зависимости от режима записи (writing_mode) элемента, направленности и ориентации текста. Это логическое свойство соответствует одному из свойств <a href="/css/margin-top/"><code>margin-top</code></a>,&nbsp; <a href="/css/margin-right/"><code>margin-right</code></a>,&nbsp;<a href="/css/margin-bottom/"><code>margin-bottom</code></a>, or <a href="/css/margin-left/"><code>margin-left</code></a> в зависимости от значений <a href="/css/writing-mode/"><code>writing-mode</code></a>, <a href="/css/direction/"><code>direction</code></a>, and <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-orientation"><code>text-orientation</code> <span>(en-US)</span></a>.</p>
+
+<pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* &lt;length&gt; values */</span>
+<span class="token property">margin-inline-start</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>  <span class="token comment">/* абсолютная величина */</span>
+<span class="token property">margin-inline-start</span><span class="token punctuation">:</span> 1em<span class="token punctuation">;</span>   <span class="token comment">/* относительно размера текста */</span>
+<span class="token property">margin-inline-start</span><span class="token punctuation">:</span> 5%<span class="token punctuation">;</span>    <span class="token comment">/* относительно ширины ближайшего контейнера */</span>
+
+<span class="token comment">/* Keyword values */</span>
+<span class="token property">margin-inline-start</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+
+<span class="token comment">/* Global values */</span>
+<span class="token property">margin-inline-start</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+</code></pre>
+
+<p>Это свойство связано со свойствами <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/margin-block-start"><code>margin-block-start</code> <span>(en-US)</span></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/margin-block-end"><code>margin-block-end</code> <span>(en-US)</span></a> и <a href="/css/margin-inline-end/"><code>margin-inline-end</code></a>, которые определяют другие компоненты margins элемента.</p>
+
+<p></p><table class="properties"><tbody><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td><code>0</code></td></tr><tr><th scope="row">Применяется к</th><td>с таким же <a href="/css/margin/"><code>margin</code></a></td></tr><tr><th scope="row"><a href="/css/inheritance/">Наследуется</a></th><td>нет</td></tr><tr><th scope="row">Проценты</th><td>зависит от модели макета</td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>если указано как длина - абсолютная длина; если указано как проценты - заданное значение; в противном случае <code>auto</code></td></tr><tr><th scope="row">Animation type</th><td><a href="/css/length#interpolation/" title="Значения типа данных CSS <длина> интерполируются как вещественные числа с плавающей запятой.">длина</a></td></tr></tbody></table><p></p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div></div><h3 id="значения"><a href="#значения" title="Permalink to Значения">Значения</a></h3><div><p>Свойство <code>margin-inline-start</code> принимает такие же значения как и свойство <a href="/css/margin-left/"><code>margin-left</code></a>.</p></div><h3 id="формальный_синтаксис"><a href="#формальный_синтаксис" title="Permalink to Формальный синтаксис">Формальный синтаксис</a></h3><div><pre class="notranslate"><a href="/css/margin-left/" title="<length> | <percentage> | auto">&lt;'margin-left'&gt;</a></pre></div><h2 id="пример"><a href="#пример" title="Permalink to Пример">Пример</a></h2><div></div><h3 id="html"><a href="#html" title="Permalink to HTML">HTML</a></h3><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>exampleText<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Example text<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h3 id="css"><a href="#css" title="Permalink to CSS">CSS</a></h3><div><pre class="brush: css notranslate"><code><span class="token selector">div</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 120px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 120px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.exampleText</span> <span class="token punctuation">{</span>
+  <span class="token property">writing-mode</span><span class="token punctuation">:</span> vertical-lr<span class="token punctuation">;</span>
+  <span class="token property">margin-inline-start</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #c8c800<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<p><iframe class="sample-code-frame" id="frame_Example" width="140" height="140" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/margin-inline-start/_sample_.Example.html" loading="lazy"></iframe></p></div><h2 id="спецификация"><a href="#спецификация" title="Permalink to Спецификация">Спецификация</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-logical/#propdef-margin-inline-start" hreflang="en" lang="en" class="external" rel=" noopener">CSS Logical Properties and Values Level&nbsp;1<br><small lang="ru">Определение 'margin-inline-start' в этой спецификации.</small></a></td>
+   <td><span class="spec-ed">Редакторский черновик</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="совместимость_с_браузерами"><a href="#совместимость_с_браузерами" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/css/margin-inline-end/"><code>margin-inline-end</code></a></li>
+ <li><span class="short_text" id="result_box" lang="ru"><span>Отображаемые физические свойства</span></span>: <a href="/css/margin-top/"><code>margin-top</code></a>,&nbsp;<a href="/css/margin-right/"><code>margin-right</code></a>,&nbsp;<a href="/css/margin-bottom/"><code>margin-bottom</code></a> и <a href="/css/margin-left/"><code>margin-left</code></a></li>
+ <li><a href="/css/writing-mode/"><code>writing-mode</code></a>, <a href="/css/direction/"><code>direction</code></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-orientation"><code>text-orientation</code> <span>(en-US)</span></a></li>
+</ul></div>

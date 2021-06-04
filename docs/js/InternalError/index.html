@@ -1,0 +1,39 @@
+<h1>InternalError</h1><div><div> <div class="notecard warning">
+        <h4 id="не_стандартно">Не стандартно</h4>
+        <p>Эта возможность не является стандартной и стандартизировать её пока никто не собирается. Не используйте её на сайтах, смотрящих во внешний мир: она будет работать не у всех пользователей. Также могут присутствовать большие несовместимости между реализациями и её поведение может в будущем измениться.</p>
+      </div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Объект <code><strong>InternalError</strong></code> представляет ошибку, возникающую внутри движка JavaScript. Например: "InternalError: too much recursion".</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code>new InternalError([<var>message</var>[, <var>fileName</var>[, <var>lineNumber</var>]]])</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>message</code></dt>
+ <dd>Необязательный параметр. Человеко-читаемое описание ошибки.</dd>
+ <dt><code>fileName</code> </dt>
+ <dd>Необязательный параметр. Имя файла, содержащего код, вызвавший исключение.</dd>
+ <dt><code>lineNumber</code> </dt>
+ <dd>Необязательный параметр. Номер строки кода, вызвавшей исключение.</dd>
+</dl></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Исключение <code>InternalError</code> выбрасывается при возникновении внутренней ошибки в движке JavaScript.</p>
+<p>Как правило, эти ошибки связаны с тем, что что-то стало слишком большим, либо чего-то стало слишком много, например:</p>
+<ul>
+ <li>"too many switch cases"&nbsp;— слишком много веток <code>case</code> в операторе <code>switch</code>;</li>
+ <li>"too many parentheses in regular expression"&nbsp;— слишком много круглых скобок в регулярном выражении;</li>
+ <li>"array initializer too large"&nbsp;— инициализатор массива слишком большой;</li>
+ <li>"too much recursion"&nbsp;— слишком глубокая рекурсия.</li>
+</ul></div><h2 id="properties"><a href="#properties" title="Permalink to Свойства">Свойства</a></h2><div><dl>
+ <dt><a href="https://developer.mozilla.org/ru/docs/conflicting/Web/JavaScript/Reference/Global_Objects/InternalError"><code>InternalError.prototype</code></a></dt>
+ <dd>Позволяет добавлять свойства в объект <code>InternalError</code>.</dd>
+</dl></div><h2 id="methods"><a href="#methods" title="Permalink to Методы">Методы</a></h2><div><p>Глобальный объект <code>InternalError</code> не содержит собственных методов, однако, он наследует некоторые методы из цепочки прототипов.</p></div><h2 id="internalerror_instances"><a href="#internalerror_instances" title="Permalink to Экземпляры объекта InternalError">Экземпляры объекта <code>InternalError</code></a></h2><div></div><h3 id="properties_of_internalerror_instances"><a href="#properties_of_internalerror_instances" title="Permalink to Свойства">Свойства</a></h3><div><div><dl>
+ <dt><code>InternalError.prototype.constructor</code></dt>
+ <dd>Определяет функцию, создающую прототип экземпляра.</dd>
+ <dt><a href="/js/Error/message/"><code>InternalError.prototype.message</code></a></dt>
+ <dd>Сообщение ошибки. Унаследовано от <a href="/js/Error/"><code>Error</code></a>.</dd>
+ <dt><a href="/js/Error/name/"><code>InternalError.prototype.name</code></a></dt>
+ <dd>Название ошибки. Унаследовано от <a href="/js/Error/"><code>Error</code></a>.</dd>
+ <dt><a href="/js/Error/fileName/"><code>InternalError.prototype.fileName</code></a></dt>
+ <dd>Путь к файлу, в котором возникла эта ошибка. Унаследовано от <a href="/js/Error/"><code>Error</code></a>.</dd>
+ <dt><a href="/js/Error/lineNumber/"><code>InternalError.prototype.lineNumber</code></a></dt>
+ <dd>Номер строки в файле, в котором возникла эта ошибка. Унаследовано от <a href="/js/Error/"><code>Error</code></a>.</dd>
+ <dt><a href="/js/Error/columnNumber/"><code>InternalError.prototype.columnNumber</code></a></dt>
+ <dd>Номер колонки в строке, на которой возникла эта ошибка. Унаследовано от <a href="/js/Error/"><code>Error</code></a>.</dd>
+ <dt><a href="/js/Error/Stack/"><code>InternalError.prototype.stack</code></a></dt>
+ <dd>Стек вызовов. Унаследовано от <a href="/js/Error/"><code>Error</code></a>.</dd>
+</dl></div></div><h3 id="methods_of_internalerror_instances"><a href="#methods_of_internalerror_instances" title="Permalink to Методы">Методы</a></h3><div><div><p>Хотя объект прототипа <a href="/js/InternalError/" aria-current="page"><code>InternalError</code></a> не содержит собственных методов, экземпляры <a href="/js/InternalError/" aria-current="page"><code>InternalError</code></a> наследуют некоторые методы из цепочки прототипов.</p></div></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><p>Не является частью какой-либо спецификации.</p></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/Error/"><code>Error</code></a></li>
+ <li><a href="https://developer.mozilla.org/ru/docs/conflicting/Web/JavaScript/Reference/Global_Objects/InternalError"><code>InternalError.prototype</code></a></li>
+</ul></div>

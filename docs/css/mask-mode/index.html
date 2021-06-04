@@ -1,0 +1,45 @@
+<h1>mask-mode</h1><div><div></div>
+
+<p>The <strong><code>mask-mode</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> property sets whether the mask reference defined by <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/mask-image"><code>mask-image</code></a> is treated as a luminance or alpha mask.</p>
+
+<pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* Keyword values */</span>
+<span class="token property">mask-mode</span><span class="token punctuation">:</span> alpha<span class="token punctuation">;</span>
+<span class="token property">mask-mode</span><span class="token punctuation">:</span> luminance<span class="token punctuation">;</span>
+<span class="token property">mask-mode</span><span class="token punctuation">:</span> match-source<span class="token punctuation">;</span>
+
+<span class="token comment">/* Multiple values */</span>
+<span class="token property">mask-mode</span><span class="token punctuation">:</span> alpha<span class="token punctuation">,</span> match-source<span class="token punctuation">;</span>
+
+<span class="token comment">/* Global values */</span>
+<span class="token property">mask-mode</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">mask-mode</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">mask-mode</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><p>The <code>mask-mode</code> property is specified as one or more of the keyword values listed below, separated by commas.</p></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+	<dt><code>alpha</code></dt>
+	<dd>This keyword indicates that the transparency (alpha channel) values of the mask layer image should be used as the mask values.</dd>
+	<dt><code>luminance</code></dt>
+	<dd>This keyword indicates that the luminance values of the mask layer image should be used as the mask values.</dd>
+	<dt><code>match-source</code></dt>
+	<dd>
+	<p>If the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/mask-image"><code>mask-image</code></a> property is of type <code>&lt;mask-source&gt;</code>, the luminance values of the mask layer image should be used as the mask values.</p>
+
+	<p>If it is of type <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/image"><code>&lt;image&gt;</code></a>, the alpha values of the mask layer image should be used as the mask values.</p>
+	</dd>
+</dl></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td><code>match-source</code></td></tr><tr><th scope="row">Applies to</th><td>all elements; In SVG, it applies to container elements excluding the <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/defs"><code>defs</code></a> element and all graphics elements</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance">Inherited</a></th><td>no</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>as specified</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate"><a href="#masking-mode">&lt;masking-mode&gt;</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#hash_mark_()" title="Hash mark: the entity is repeated one or several times, each occurence separated by a comma">#</a><p style="font-family:Open Sans,Arial,sans-serif; margin: 10px 0 0 0;">where <br><code style="font-family:Consolas,Monaco,&quot;Andale Mono&quot;,monospace;"><span id="masking-mode">&lt;masking-mode&gt;</span> = alpha <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> luminance <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> match-source</code></p></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="using_alpha_mask_mode"><a href="#using_alpha_mask_mode" title="Permalink to Using alpha mask mode">Using alpha mask mode</a></h3><div><p><iframe width="100%" height="760" src="https://mdn.github.io/css-examples/masking/mask-mode.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+	<thead>
+		<tr>
+			<th scope="col">Specification</th>
+			<th scope="col">Status</th>
+			<th scope="col">Comment</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><a href="https://drafts.fxtf.org/css-masking-1/#the-mask-mode" hreflang="en" lang="en" class="external" rel=" noopener">CSS Masking Module Level&nbsp;1<br><small lang="en-US">The definition of 'mask-mode' in that specification.</small></a></td>
+			<td><span class="spec-cr">Candidate Recommendation</span></td>
+			<td>Initial definition</td>
+		</tr>
+	</tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+  <li><a href="https://css-tricks.com/clipping-masking-css/" class="external" rel=" noopener">Clipping and Masking in CSS</a></li>
+</ul></div>

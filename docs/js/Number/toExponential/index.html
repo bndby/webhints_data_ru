@@ -1,0 +1,48 @@
+<h1>Number.prototype.toExponential()</h1><div><div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Метод <strong><code>toExponential()</code></strong> возвращает строку, представляющую объект <a href="/js/Number/"><code>Number</code></a> в экспоненциальной записи.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code><var>numObj</var>.toExponential([<var>fractionDigits</var>])</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>fractionDigits</code></dt>
+ <dd>Необязательный параметр. Целое число, определяющее количество цифр после десятичной запятой. По умолчанию используется столько цифр, сколько необходимо для указания числа.</dd>
+</dl></div><h3 id="returns"><a href="#returns" title="Permalink to Возвращаемое значение">Возвращаемое значение</a></h3><div><p>Строка, представляющая объект <a href="/js/Number/"><code>Number</code></a> в экспоненциальной записи с одной цифрой перед десятичной запятой, округлённое до <code>fractionDigits</code> цифр после десятичной запятой. Если аргумент <code>fractionDigits</code> опущен, количество цифр после десятичной запятой по умолчанию устанавливается в количество цифр, необходимых для однозначного представления значения.</p>
+
+<p>Если вы используете метод <code>toExponential()</code> с числовыми литералами и числовой литерал не имеет экспоненты и десятичной запятой, оставьте пробел перед точкой, предшествующей вызову метода для предотвращения интерпретации этой точки как десятичной запятой.</p>
+
+<p>Если число имеет больше цифр, чем запрошено параметром <code>fractionDigits</code>, оно будет округлено к ближайшему числу, представляемому <code>fractionDigits</code> цифрами. Смотрите обсуждение округления в описании метода <a href="/js/Number/toFixed/"><code>toFixed()</code></a>, которое так же применяется и к методу <code>toExponential()</code>.</p></div><h3 id="throws"><a href="#throws" title="Permalink to Выбрасываемые исключения">Выбрасываемые исключения</a></h3><div><dl>
+ <dt><a href="/js/RangeError/"><code>RangeError</code></a></dt>
+ <dd>Если параметр <code>fractionDigits</code> слишком маленький или слишком большой. Значения между 0 и 20 включительно не будут порождать исключение <a href="/js/RangeError/"><code>RangeError</code></a>. Также реализации могут поддерживать большие и меньшие значения.</dd>
+ <dt><a href="/js/TypeError/"><code>TypeError</code></a></dt>
+ <dd>Если этот метод вызывается на объекте, не являющимся объектом <a href="/js/Number/"><code>Number</code></a>.</dd>
+</dl></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_using_toexponential"><a href="#example_using_toexponential" title="Permalink to Пример: использование toExponential">Пример: использование <code>toExponential</code></a></h3><div><pre class="brush: js notranslate"><code><span class="token keyword">var</span> numObj <span class="token operator">=</span> <span class="token number">77.1234</span><span class="token punctuation">;</span>
+
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>numObj<span class="token punctuation">.</span><span class="token function">toExponential</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// выведет 7.71234e+1</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>numObj<span class="token punctuation">.</span><span class="token function">toExponential</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// выведет 7.7123e+1</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>numObj<span class="token punctuation">.</span><span class="token function">toExponential</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// выведет 7.71e+1</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">77.1234</span><span class="token punctuation">.</span><span class="token function">toExponential</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// выведет 7.71234e+1</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">77</span> <span class="token punctuation">.</span><span class="token function">toExponential</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">// выведет 7.7e+1</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td>ECMAScript 3-е издание.</td>
+   <td>Стандарт</td>
+   <td>Изначальное определение. Реализована в JavaScript 1.5.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-15.7.4.6" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 5.1 (ECMA-262)<br><small lang="ru">Определение 'Number.prototype.toExponential' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-number.prototype.toexponential" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Number.prototype.toExponential' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><div></div></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/Number/toFixed/"><code>Number.prototype.toFixed()</code></a></li>
+ <li><a href="/js/Number/toPrecision/"><code>Number.prototype.toPrecision()</code></a></li>
+ <li><a href="/js/Number/toString/"><code>Number.prototype.toString()</code></a></li>
+</ul></div>

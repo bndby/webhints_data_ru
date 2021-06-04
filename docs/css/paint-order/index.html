@@ -1,0 +1,62 @@
+<h1>paint-order</h1><div><div><div class="notecard experimental">
+    <h4 id="experimental">Experimental</h4>
+    <p><strong>Это экспериментальная технология</strong><br>Так как спецификация этой технологии ещё не стабилизировалась, смотрите <a href="#browser_compatibility">таблицу совместимости</a> по поводу использования в различных браузерах. Также заметьте, что синтаксис и поведение экспериментальной технологии может измениться в будущих версиях браузеров, вслед за изменениями спецификации.</p>
+</div></div>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a>-свойство&nbsp;<strong><code>paint-order</code></strong> позволяет вам контролировать порядок, в котором отрисовываются заливка и обводка (и нарисованные маркеры) текстового содержимого и фигур.</p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="brush: css no-line-numbers notranslate"><code><span class="token comment">/* Нормальный */</span>
+<span class="token property">paint-order</span><span class="token punctuation">:</span> normal<span class="token punctuation">;</span>
+
+<span class="token comment">/* Единичное значение */</span>
+<span class="token property">paint-order</span><span class="token punctuation">:</span> stroke<span class="token punctuation">;</span> <span class="token comment">/* отрисовывает сначала обводку, затем заливку и маркеры */</span>
+<span class="token property">paint-order</span><span class="token punctuation">:</span> markers<span class="token punctuation">;</span> <span class="token comment">/* отрисовывает сначала маркеры, затем заливку и обводку */</span>
+
+<span class="token comment">/* Множественные значения */</span>
+<span class="token property">paint-order</span><span class="token punctuation">:</span> stroke fill<span class="token punctuation">;</span> <span class="token comment">/* отрисовывает сначала обводку, затем заливку, затем маркеры */</span>
+<span class="token property">paint-order</span><span class="token punctuation">:</span> markers stroke fill<span class="token punctuation">;</span> <span class="token comment">/* отрисовывает маркеры, затем обводку, затем заливку */</span>
+</code></pre>
+
+<p>Если значение не указано, значением по умолчанию является следующий порядок&nbsp; <code>fill</code>, <code>stroke</code>, <code>markers</code>.</p>
+
+<p>Когда указано одно значение, то сначала отрисовывается оно, затем два других в дефолтном порядке друг относительно друга. Когда указано два значения, они будут отрисованы в указанном порядке, а затем будет отрисовано неопределённое значение.</p>
+
+<div class="note notecard">
+<p><strong>Примечание</strong>: В этом случае, маркеры отрисовываются только при рисовании форм SVG. включающих использование свойств <code>marker-*</code>&nbsp; (например <code><a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/marker-start">marker-start</a></code>) и элемента <code><a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/marker">&lt;marker&gt;</a></code>. Они не применяются к тексту HTML, в этом случае, вы можете определить только порядок <code>stroke</code> и <code>fill</code>.</p>
+</div></div><h3 id="значения"><a href="#значения" title="Permalink to Значения">Значения</a></h3><div><dl>
+ <dt><code>normal</code></dt>
+ <dd>Окрасит различные части в обычном порядке.</dd>
+ <dt><code>stroke</code>,<br>
+ <code>fill</code>,<br>
+ <code>markers</code></dt>
+ <dd>Указываются некоторые или все эти значения в том порядке, в котором вы хотите увидеть отрисовку.</dd>
+</dl></div><h3 id="формальный_синтаксис"><a href="#формальный_синтаксис" title="Permalink to Формальный синтаксис">Формальный синтаксис</a></h3><div><pre class="notranslate">normal <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> fill <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_bar" title="Currently only available in English (US)" class="only-in-en-us">|| (en-US)</a> stroke <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_bar" title="Currently only available in English (US)" class="only-in-en-us">|| (en-US)</a> markers <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a></pre></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="svg"><a href="#svg" title="Permalink to SVG">SVG</a></h3><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>svg</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.w3.org/2000/svg<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>400<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>200<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>text</span> <span class="token attr-name">x</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>10<span class="token punctuation">"</span></span> <span class="token attr-name">y</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>75<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>stroke in front<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>text</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>text</span> <span class="token attr-name">x</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>10<span class="token punctuation">"</span></span> <span class="token attr-name">y</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>150<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stroke-behind<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>stroke behind<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>text</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>svg</span><span class="token punctuation">&gt;</span></span></code></pre></div><h3 id="css"><a href="#css" title="Permalink to CSS">CSS</a></h3><div><pre class="brush: css notranslate"><code><span class="token selector">text</span> <span class="token punctuation">{</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> sans-serif<span class="token punctuation">;</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
+  <span class="token property">font-weight</span><span class="token punctuation">:</span> bold<span class="token punctuation">;</span>
+  <span class="token property">fill</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+  <span class="token property">stroke</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token property">stroke-width</span><span class="token punctuation">:</span> 4px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.stroke-behind</span> <span class="token punctuation">{</span>
+  <span class="token property">paint-order</span><span class="token punctuation">:</span> stroke fill<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div><h3 id="результат"><a href="#результат" title="Permalink to Результат">Результат</a></h3><div><p><iframe class="sample-code-frame" id="frame_Examples" width="100%" height="165" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/paint-order/_sample_.Examples.html" loading="lazy"></iframe></p></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://svgwg.org/svg2-draft/painting.html#PaintOrder" hreflang="en" lang="en" class="external" rel=" noopener">Scalable Vector Graphics (SVG) 2<br><small lang="ru">Определение 'paint-order' в этой спецификации.</small></a></td>
+   <td><span class="spec-cr">Кандидат в рекомендации</span></td>
+   <td>Первое определение.</td>
+  </tr>
+ </tbody>
+</table>
+
+<p></p><table class="properties"><tbody><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td><code>normal</code></td></tr><tr><th scope="row">Применяется к</th><td>текстовые элементы</td></tr><tr><th scope="row"><a href="/css/inheritance/">Наследуется</a></th><td>да</td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>как указано</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="поддержка_браузерами"><a href="#поддержка_браузерами" title="Permalink to Поддержка браузерами">Поддержка браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div>

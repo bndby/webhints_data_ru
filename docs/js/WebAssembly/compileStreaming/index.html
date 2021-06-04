@@ -1,0 +1,38 @@
+<h1>WebAssembly.compileStreaming()</h1><div><div></div>
+
+<p>The <strong><code>WebAssembly.compileStreaming()</code></strong> function compiles a
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Module"><code>WebAssembly.Module</code></a> directly from a streamed underlying source.&nbsp; This
+  function is useful if it is necessary to a compile a module before it can be
+  instantiated (otherwise, the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/instantiateStreaming"><code>WebAssembly.instantiateStreaming()</code></a> function
+  should be used).</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: js notranslate"><code>WebAssembly<span class="token punctuation">.</span><span class="token function">compileStreaming</span><span class="token punctuation">(</span>source<span class="token punctuation">)</span></code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Parameters">Parameters</a></h3><div><dl>
+  <dt><em>source</em></dt>
+  <dd>A <a href="https://developer.mozilla.org/en-US/docs/Web/API/Response" title="The Response interface of the Fetch API represents the response to a request."><code>Response</code></a>
+    object or a promise that will fulfill with one, representing the underlying source of
+    a .wasm module you want to stream and compile.</dd>
+</dl></div><h3 id="return_value"><a href="#return_value" title="Permalink to Return value">Return value</a></h3><div><p>A <code>Promise</code> that resolves to a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Module"><code>WebAssembly.Module</code></a> object
+  representing the compiled module.</p></div><h3 id="exceptions"><a href="#exceptions" title="Permalink to Exceptions">Exceptions</a></h3><div><ul>
+  <li>If <code>bufferSource</code> is not a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays">typed array</a>, a
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError"><code>TypeError</code></a> is thrown.</li>
+  <li>If compilation fails, the promise rejects with a
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/CompileError"><code>WebAssembly.CompileError</code></a>.</li>
+</ul></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="compile_streaming"><a href="#compile_streaming" title="Permalink to Compile streaming">Compile streaming</a></h3><div><p>The following example (see our <a href="https://github.com/mdn/webassembly-examples/blob/master/js-api-examples/compile-streaming.html" class="external" rel=" noopener">compile-streaming.html</a>
+  demo on GitHub, and <a href="https://mdn.github.io/webassembly-examples/js-api-examples/compile-streaming.html" class="external" rel=" noopener">view
+    it live</a> also) directly streams a .wasm module from an underlying source then
+  compiles it to a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Module"><code>WebAssembly.Module</code></a> object. Because the
+  <code>compileStreaming()</code>&nbsp; function accepts a promise for a <a href="https://developer.mozilla.org/en-US/docs/Web/API/Response" title="The Response interface of the Fetch API represents the response to a request."><code>Response</code></a>
+  object, you can directly pass it a <a href="https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch" title="The fetch() method of the WindowOrWorkerGlobalScope mixin starts the process of fetching a resource from the network, returning a promise which is fulfilled once the response is available."><code>WindowOrWorkerGlobalScope.fetch()</code></a>
+  call, and it will pass the response into the function when it fulfills.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> importObject <span class="token operator">=</span> <span class="token punctuation">{</span> imports<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token function-variable function">imported_func</span><span class="token operator">:</span> <span class="token parameter">arg</span> <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arg<span class="token punctuation">)</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+WebAssembly<span class="token punctuation">.</span><span class="token function">compileStreaming</span><span class="token punctuation">(</span><span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">'simple.wasm'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">module</span> <span class="token operator">=&gt;</span> WebAssembly<span class="token punctuation">.</span><span class="token function">instantiate</span><span class="token punctuation">(</span>module<span class="token punctuation">,</span> importObject<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">instance</span> <span class="token operator">=&gt;</span> instance<span class="token punctuation">.</span>exports<span class="token punctuation">.</span><span class="token function">exported_func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+<p>The resulting module instance is then instantiated using
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/instantiate"><code>WebAssembly.instantiate()</code></a>, and the exported function invoked.</p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://webassembly.github.io/spec/web-api/#dom-webassembly-compilestreaming">WebAssembly Web API<!-- --> <br><small># <!-- -->dom-webassembly-compilestreaming</small></a></td></tr></tbody></table><div></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+  <li><a href="https://developer.mozilla.org/en-US/docs/WebAssembly">WebAssembly</a> overview page</li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/WebAssembly/Concepts">WebAssembly concepts</a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/WebAssembly/Using_the_JavaScript_API">Using the WebAssembly
+      JavaScript API</a></li>
+</ul></div>

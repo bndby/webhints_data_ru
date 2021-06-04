@@ -1,0 +1,55 @@
+<h1>Date.prototype.getTime()</h1><div><div></div>
+
+<div></div>
+
+<p>Метод <strong><code>getTime()</code></strong> возвращает числовое значение, соответствующее указанной дате по всемирному координированному времени.</p>
+
+<p>Вы можете использовать этот метод для того, чтобы присвоить дату и время другому объекту <a href="/js/Date/"><code>Date</code></a>. Этот метод функционально эквивалентен методу <a href="/js/Date/valueOf/"><code>valueOf()</code></a>.</p>
+
+<p><iframe class="interactive" width="100%" height="490" src="https://interactive-examples.mdn.mozilla.net/pages/js/date-gettime.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></p>
+
+</div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code><var>dateObj</var>.getTime()</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><p>Нет.</p></div><h3 id="returns"><a href="#returns" title="Permalink to Возвращаемое значение">Возвращаемое значение</a></h3><div><p>Значение, возвращённое методом <code>getTime()</code>, является количеством миллисекунд, прошедших с 1 января 1970 года 00:00:00 по UTC.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_using_gettime_for_copying_dates"><a href="#example_using_gettime_for_copying_dates" title="Permalink to Пример: использование метода getTime() для копирования дат">Пример: использование метода <code>getTime()</code> для копирования дат</a></h3><div><p>Конструирует новый объект даты с идентичным значением времени.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">let</span> birthday <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token number">2020</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> copy <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+copy<span class="token punctuation">.</span><span class="token function">setTime</span><span class="token punctuation">(</span>birthday<span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>copy<span class="token punctuation">.</span><span class="token function">setTime</span><span class="token punctuation">(</span>birthday<span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 1611090000000</span>
+</code></pre></div><h3 id="example_measuring_execution_time"><a href="#example_measuring_execution_time" title="Permalink to Пример: замер времени выполнения">Пример: замер времени выполнения</a></h3><div><p>Вычитанием двух последовательных вызовов метода <code>getTime()</code> на заново сконструированных объектах <a href="/js/Date/"><code>Date</code></a> можно замерить промежуток времени, произошедший между двумя этими вызовами. Это можно использовать для вычисления времени выполнения неких операций.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">let</span> end<span class="token punctuation">,</span> start<span class="token punctuation">;</span>
+
+start <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">1000</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  Math<span class="token punctuation">.</span><span class="token function">sqrt</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+end <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Операция заняла '</span> <span class="token operator">+</span> <span class="token punctuation">(</span>end<span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> start<span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">' мсек'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td>ECMAScript 1-е издание.</td>
+   <td>Стандарт</td>
+   <td>Изначальное определение. Реализована в JavaScript 1.0.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-15.9.5.9" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 5.1 (ECMA-262)<br><small lang="ru">Определение 'Date.prototype.getTime' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-date.prototype.gettime" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Date.prototype.getTime' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><div></div></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/Date/setTime/"><code>Date.prototype.setTime()</code></a></li>
+ <li><a href="/js/Date/valueOf/"><code>Date.prototype.valueOf()</code></a></li>
+</ul></div>

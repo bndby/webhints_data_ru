@@ -1,0 +1,123 @@
+<h1>Array.length</h1><div><div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Свойство&nbsp;<strong><code>length</code></strong> объекта, который является экземпляром типа&nbsp;<code>Array</code>&nbsp;, устанавливает или возвращает число элементов этого&nbsp;массива. Значение данного свойства 32-битное безнаковое целое число, которое всегда численно больше чем самый наибольший индекс в массиве.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'shoes'</span><span class="token punctuation">,</span> <span class="token string">'shirts'</span><span class="token punctuation">,</span> <span class="token string">'socks'</span><span class="token punctuation">,</span> <span class="token string">'sweaters'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+items<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+
+<span class="token comment">// возвращает 4</span></code></pre></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code><var>arr</var>.length</code></pre></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Свойство <code>length</code> является целым числом с положительным знаком и значением, меньшим чем 2 в степени 32 (2<sup>32</sup>).</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> namelistA <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span><span class="token number">4294967296</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//2 в 32 степени = 4294967296</span>
+<span class="token keyword">var</span> namelistC <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">100</span><span class="token punctuation">)</span> <span class="token comment">//отрицательная величина</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>namelistA<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//RangeError: Invalid array length</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>namelistC<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//RangeError: Invalid array length</span>
+
+
+
+<span class="token keyword">var</span> namelistB <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+namelistB<span class="token punctuation">.</span>length <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">32</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">//устанавливает длину массива меньше 2 в 32 степени</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>namelistB<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//4294967295</span>
+</code></pre>
+
+<p>В любой момент вы можете установить свойство <code>length</code> для обрезки массива. Когда вы расширяете массив, изменяя его свойство <code>length</code>, реальное количество элементов в массиве&nbsp;увеличивается; например, если вы установите свойство <code>length</code> в 3, когда оно равно 2, массив будет из 3 элементов, где значение третьего&nbsp;элемента будет равно <code>undefined</code>&nbsp;.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token function">printEntries</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+arr<span class="token punctuation">.</span>length <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span> <span class="token comment">// устанавливает длину массива 5.</span>
+<span class="token function">printEntries</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">printEntries</span><span class="token punctuation">(</span><span class="token parameter">arr</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> goNext <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+  <span class="token keyword">var</span> entries <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">entries</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span>goNext<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> result <span class="token operator">=</span> entries<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>result<span class="token punctuation">.</span>done <span class="token operator">!==</span> <span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>result<span class="token punctuation">.</span>value<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      goNext <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span>
+      goNext <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'=== printed ==='</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 1</span>
+<span class="token comment">// 2</span>
+<span class="token comment">// 3</span>
+<span class="token comment">// === printed ===</span>
+<span class="token comment">// 1</span>
+<span class="token comment">// 2</span>
+<span class="token comment">// 3</span>
+<span class="token comment">// undefined</span>
+<span class="token comment">// undefined</span>
+<span class="token comment">// === printed ===</span></code></pre>
+
+<p>Таким образом, свойство <code>length</code> ничего не говорит о количестве определённых значений в массиве. Также смотрите раздел <a href="/js/Array#relationship_between_length_and_numerical_properties/">Взаимосвязь свойства <code>length</code> с числовыми свойствами</a>.</p>
+
+<p></p><table class="standard-table">
+  <thead>
+    <tr>
+      <th class="header" colspan="2">Атрибуты свойства<code>Array.length</code></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Записываемое</td>
+      <td>да</td>
+    </tr>
+    <tr>
+      <td>Перечисляемое</td>
+      <td>нет</td>
+    </tr>
+    <tr>
+      <td>Настраиваемое</td>
+      <td>нет</td>
+    </tr>
+  </tbody>
+</table><p></p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_iterating_over_an_array"><a href="#example_iterating_over_an_array" title="Permalink to Пример: итерирование по массиву">Пример: итерирование по массиву</a></h3><div><p>В следующем примере массив <code>numbers</code> итерируется до значения свойства <code>length</code>, показывающего, сколько элементов содержит массив. Значение каждого элемента удваивается.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> numbers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> numbers<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  numbers<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">*=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// Массив numbers теперь равен [2, 4, 6, 8, 10];</span>
+</code></pre></div><h3 id="example_shortening_an_array"><a href="#example_shortening_an_array" title="Permalink to Пример: сокращение массива">Пример: сокращение массива</a></h3><div><p>Следующий пример сокращает массив <code>statesUS</code> до длины в 50 элементов, если текущая длина массива больше 50.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">if</span> <span class="token punctuation">(</span>statesUS<span class="token punctuation">.</span>length <span class="token operator">&gt;</span> <span class="token number">50</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  statesUS<span class="token punctuation">.</span>length <span class="token operator">=</span> <span class="token number">50</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+  <tr>
+   <td>ECMAScript 1-е издание.</td>
+   <td>Стандарт</td>
+   <td>Изначальное определение.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-15.4.5.2" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 5.1 (ECMA-262)<br><small lang="ru">Определение 'Array.length' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-properties-of-array-instances-length" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Array.length' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td><a href="https://tc39.es/ecma262/#sec-properties-of-array-instances-length" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript (ECMA-262)<br><small lang="ru">Определение 'Array.length' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span>&nbsp;&nbsp; &nbsp;</td>
+   <td></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><div>
+<p></p><p></p>
+</div></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/Array/"><code>Array</code></a></li>
+</ul></div>

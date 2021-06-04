@@ -1,0 +1,78 @@
+<h1>::first-line (:first-line)</h1><div><div></div>
+
+<p><span class="seoSummary"><a href="/css/">CSS</a>&nbsp;<a href="/css/Pseudo-elements/">псевдоэлемент</a>&nbsp;<strong><code>::first-line</code></strong>&nbsp;применяет&nbsp;стили к первой строке <a href="/css/Visual_formatting_model#block-level_elements_and_block_boxes/">блочного элемента</a>.</span>&nbsp;Обратите внимание, что длина первой строки зависит от многих факторов, включая ширину элемента, ширину документа и размер шрифта текста.</p>
+
+<pre class="brush: css no-line-numbers notranslate"><code><span class="token comment">/* Стили для первой строки элемента &lt;p&gt; */</span>
+<span class="token selector">p::first-line</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<div class="note notecard">
+<p>В CSS3 появилась запись&nbsp;<code>::first-line</code>&nbsp;(с двумя двоеточиями) для различения&nbsp;<a href="/css/Pseudo-classes/">псевдоклассов</a>&nbsp;и <a href="/css/Pseudo-elements/">псевдоэлементов</a>. Браузеры также поддерживают запись&nbsp;<code>:first-line</code>, введённую в&nbsp;CSS2.</p>
+</div></div><h2 id="разрешённые_свойства"><a href="#разрешённые_свойства" title="Permalink to Разрешённые свойства">Разрешённые свойства</a></h2><div><p>Только небольшое подмножество CSS-свойств может быть использовано с псевдоэлементом&nbsp;<code>::first-line</code>:</p>
+
+<ul>
+ <li>Все свойства, связанные с шрифтами: <a href="/css/font/"><code>font</code></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-kerning"><code>font-kerning</code> <span>(en-US)</span></a>, <a href="/css/font-style/"><code>font-style</code></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant"><code>font-variant</code> <span>(en-US)</span></a>, <a href="/css/font-variant-numeric/"><code>font-variant-numeric</code></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-position"><code>font-variant-position</code> <span>(en-US)</span></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-east-asian"><code>font-variant-east-asian</code> <span>(en-US)</span></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-caps"><code>font-variant-caps</code> <span>(en-US)</span></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-alternates"><code>font-variant-alternates</code> <span>(en-US)</span></a>, <a href="/css/font-variant-ligatures/"><code>font-variant-ligatures</code></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-synthesis"><code>font-synthesis</code> <span>(en-US)</span></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-feature-settings"><code>font-feature-settings</code> <span>(en-US)</span></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-language-override"><code>font-language-override</code> <span>(en-US)</span></a>, <a href="/css/font-weight/"><code>font-weight</code></a>, <a href="/css/font-size/"><code>font-size</code></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-size-adjust"><code>font-size-adjust</code> <span>(en-US)</span></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-stretch"><code>font-stretch</code> <span>(en-US)</span></a>&nbsp;и <a href="/css/font-family/"><code>font-family</code></a></li>
+ <li>Все свойства, связанные с фоном: <a href="/css/background-color/"><code>background-color</code></a>, <a href="/css/background-clip/"><code>background-clip</code></a>, <a href="/css/background-image/"><code>background-image</code></a>, <a href="/css/background-origin/"><code>background-origin</code></a>, <a href="/css/background-position/"><code>background-position</code></a>, <a href="/css/background-repeat/"><code>background-repeat</code></a>, <a href="/css/background-size/"><code>background-size</code></a>,&nbsp; <a href="/css/background-attachment/"><code>background-attachment</code></a>&nbsp;и <a href="/css/background-blend-mode/"><code>background-blend-mode</code></a></li>
+ <li>Свойство <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/color"><code>color</code> <span>(en-US)</span></a></li>
+ <li><a href="/css/word-spacing/"><code>word-spacing</code></a>, <a href="/css/letter-spacing/"><code>letter-spacing</code></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration"><code>text-decoration</code> <span>(en-US)</span></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform"><code>text-transform</code> <span>(en-US)</span></a>&nbsp;и <a href="/css/line-height/"><code>line-height</code></a></li>
+ <li><a href="/css/text-shadow/"><code>text-shadow</code></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration"><code>text-decoration</code> <span>(en-US)</span></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-color"><code>text-decoration-color</code> <span>(en-US)</span></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-line"><code>text-decoration-line</code> <span>(en-US)</span></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-style"><code>text-decoration-style</code> <span>(en-US)</span></a>&nbsp;и <a href="/css/vertical-align/"><code>vertical-align</code></a>.</li>
+</ul></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="notranslate">/* CSS3 syntax */
+::first-line
+
+/* CSS2 syntax */
+:first-line</pre></div><h2 id="пример"><a href="#пример" title="Permalink to Пример">Пример</a></h2><div></div><h3 id="html"><a href="#html" title="Permalink to HTML">HTML</a></h3><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Стили будут применены только к первой строке этого параграфа.
+После этого, весь текст будет отображаться как обычно. Увидели, что я имею в виду?<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span>Первая строка этого элемента не будет стилизована специальным образом
+потому что это не блочный элемент.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span></code></pre></div><h3 id="css"><a href="#css" title="Permalink to CSS">CSS</a></h3><div><pre class="brush: css notranslate"><code><span class="token selector">::first-line</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+  <span class="token property">text-transform</span><span class="token punctuation">:</span> uppercase<span class="token punctuation">;</span>
+
+
+  <span class="token comment">/* ПРЕДУПРЕЖДЕНИЕ: НЕ ИСПОЛЬЗУЙТЕ ЭТО */</span>
+  <span class="token comment">/* Многие свойства запрещены в псевдоэлементах ::first-line */</span>
+  <span class="token property">margin-left</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+  <span class="token property">text-indent</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div><h3 id="результат"><a href="#результат" title="Permalink to Результат">Результат</a></h3><div><p><iframe class="sample-code-frame" id="frame_Пример" width="350" height="160" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/::first-line/_sample_.%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80.html" loading="lazy"></iframe></p></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-pseudo-4/#first-line-pseudo" hreflang="en" lang="en" class="external" rel=" noopener">CSS Pseudo-Elements Level&nbsp;4<br><small lang="ru">Определение '::first-line' в этой спецификации.</small></a></td>
+   <td><span class="spec-wd">Рабочий черновик</span></td>
+   <td>Более точно определяет, где&nbsp;<code>::first-letter</code> может использоваться.<br>
+    Обобщает разрешённые свойства до типографических, оформления текста, инлайн свойств разметки и <a href="/css/opacity/"><code>opacity</code></a>.<br>
+    Определяет наследование&nbsp;<code>::first-letter</code>.</td>
+  </tr>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-text-decor-3/#text-shadow" hreflang="en" lang="en" class="external" rel=" noopener">CSS Text Decoration Module Level&nbsp;3<br><small lang="ru">Определение 'text-shadow with ::first-line' в этой спецификации.</small></a></td>
+   <td><span class="spec-cr">Кандидат в рекомендации</span></td>
+   <td>Разрешает использовать <a href="/css/text-shadow/"><code>text-shadow</code></a> с <code>::first-letter</code>.</td>
+  </tr>
+  <tr>
+   <td><a href="https://drafts.csswg.org/selectors-3/#first-line" hreflang="en" lang="en" class="external" rel=" noopener">Selectors Level&nbsp;3<br><small lang="ru">Определение '::first-line' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Введение синтаксиса с двумя двоеточиями.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/CSS2/selector.html#first-line-pseudo" hreflang="en" lang="en" class="external" rel=" noopener">CSS Level&nbsp;2 (Revision&nbsp;1)<br><small lang="ru">Определение '::first-line' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Нет изменений.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/CSS1/#the-first-line-pseudo-element" hreflang="en" lang="en" class="external" rel=" noopener">CSS Level&nbsp;1<br><small lang="ru">Определение '::first-line' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Изначальное определение, используя синтаксис с одним двоеточием.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="поддержка_браузерами"><a href="#поддержка_браузерами" title="Permalink to Поддержка браузерами">Поддержка браузерами</a></h2><p>BCD tables only load in the browser</p><div><div>
+<p></p><p></p>
+</div></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/css/::first-letter/"><code>::first-letter</code></a></li>
+</ul></div>

@@ -1,0 +1,50 @@
+<h1>size-adjust</h1><div><p></p><div class="notecard experimental">
+    <h4 id="experimental">Experimental</h4>
+    <p><strong>This is an <a href="https://developer.mozilla.org/en-US/docs/MDN/Guidelines/Conventions_definitions#experimental">experimental technology</a></strong><br>Check the <a href="#browser_compatibility">Browser compatibility table</a> carefully before using this in production.</p>
+</div><p></p>
+
+<p>The <strong><code>size-adjust</code></strong> CSS descriptor defines a multiplier for glyph outlines and metrics associated with this font. This makes it easier to harmonize the designs of various fonts when rendered at the same font size.</p>
+
+<p>The <code>size-adjust</code> descriptor behaves in a similar fashion to the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-size-adjust"><code>font-size-adjust</code></a> property. It calculates an adjustment per font by matching ex heights.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: css notranslate"><code><span class="token property">size-adjust</span><span class="token punctuation">:</span> 90%<span class="token punctuation">;</span></code></pre></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+ <dt><code>&lt;percentage&gt;</code></dt>
+ <dd>A <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/percentage"><code>&lt;percentage&gt;</code></a> value with an initial value of 100%.</dd>
+</dl>
+
+<p>All metrics associated with this font are scaled by the given percentage. This includes glyph advances, baseline tables, and overrides provided by <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face"><code>@font-face</code></a> descriptors.</p></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row">Related <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule">at-rule</a></th><td><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face"><code>@font-face</code></a></td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td><code>100%</code></td></tr><tr><th scope="row">Percentages</th><td>as specified</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>as specified</td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/percentage" title>&lt;percentage&gt;</a></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="overriding_metrics_of_a_fallback_font"><a href="#overriding_metrics_of_a_fallback_font" title="Permalink to Overriding metrics of a fallback font">Overriding metrics of a fallback font</a></h3><div><p>The <code>size-adjust</code> property can help when overriding the metrics of a fallback font to better match those of a primary web font.</p>
+
+<pre class="brush: css notranslate"><code><span class="token atrule"><span class="token rule">@font-face</span></span> <span class="token punctuation">{</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> web-font<span class="token punctuation">;</span>
+  <span class="token property">src</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string url">"https://example.com/font.woff"</span><span class="token punctuation">)</span></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token atrule"><span class="token rule">@font-face</span></span> <span class="token punctuation">{</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> local-font<span class="token punctuation">;</span>
+  <span class="token property">src</span><span class="token punctuation">:</span> <span class="token function">local</span><span class="token punctuation">(</span>Local Font<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">size-adjust</span><span class="token punctuation">:</span> 90%<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-fonts-5/#size-adjust-desc" hreflang="en" lang="en" class="external" rel=" noopener">CSS Fonts Module Level&nbsp;5<br><small lang="en-US">The definition of 'size-adjust' in that specification.</small></a></td>
+   <td><span class="spec-wd">Working Draft</span></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display"><code>font-display</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-family"><code>font-family</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-weight"><code>font-weight</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-style"><code>font-style</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-stretch"><code>font-stretch</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-variant"><code>font-variant</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-feature-settings"><code>font-feature-settings</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-variation-settings"><code>font-variation-settings</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/src"><code>src</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/unicode-range"><code>unicode-range descriptor</code></a></li>
+</ul></div>

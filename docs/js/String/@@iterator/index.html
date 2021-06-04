@@ -1,0 +1,31 @@
+<h1>String.prototype[@@iterator]()</h1><div><div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Метод <strong><code>[@@iterator]()</code></strong> возвращает новый объект итератора <code>Iterator</code>, который проходит по кодовым точкам строкового значения, возвращая каждую кодовую точку в виде строкового значения.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code><var>string</var>[Symbol.iterator]</code></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_using_.5b.40.40iterator.5d"><a href="#example_using_.5b.40.40iterator.5d" title="Permalink to Пример: использование метода [@@iterator]()">Пример: использование метода <code>[@@iterator]()</code></a></h3><div><pre class="brush:js notranslate"><code><span class="token keyword">var</span> string <span class="token operator">=</span> <span class="token string">'A\uD835\uDC68'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> strIter <span class="token operator">=</span> string<span class="token punctuation">[</span>Symbol<span class="token punctuation">.</span>iterator<span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>strIter<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "A"</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>strIter<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "\uD835\uDC68"</span>
+</code></pre></div><h3 id="example_using_.5b.40.40iterator.5d_with_for..of"><a href="#example_using_.5b.40.40iterator.5d_with_for..of" title="Permalink to Пример: использование метода [@@iterator]() вместе с циклом for..of">Пример: использование метода <code>[@@iterator]()</code> вместе с циклом <code>for..of</code></a></h3><div><pre class="brush:js notranslate"><code><span class="token keyword">var</span> string <span class="token operator">=</span> <span class="token string">'A\uD835\uDC68B\uD835\uDC69C\uD835\uDC6A'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> v <span class="token keyword">of</span> string<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// "A"</span>
+<span class="token comment">// "\uD835\uDC68"</span>
+<span class="token comment">// "B"</span>
+<span class="token comment">// "\uD835\uDC69"</span>
+<span class="token comment">// "C"</span>
+<span class="token comment">// "\uD835\uDC6A"</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-string.prototype-@@iterator" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'String.prototype[@@iterator]()' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Изначальное определение.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div>

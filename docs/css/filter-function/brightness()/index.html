@@ -1,0 +1,35 @@
+<h1>brightness()</h1><div><div></div>
+
+<p>The <strong><code>brightness()</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Functions">function</a> applies a linear multiplier to the input image, making it appear brighter or darker. Its result is a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function"><code>&lt;filter-function&gt;</code></a>.</p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/function-brightness.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: css notranslate"><code><span class="token function">brightness</span><span class="token punctuation">(</span>amount<span class="token punctuation">)</span></code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Parameters">Parameters</a></h3><div><dl>
+ <dt><code><var>amount</var></code></dt>
+ <dd>The brightness of the result, specified as a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/number"><code>&lt;number&gt;</code></a> or a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/percentage"><code>&lt;percentage&gt;</code></a>. A value under <code>100%</code> darkens the image, while a value over <code>100%</code> brightens it. A value of <code>0%</code> will create an image that is completely black, while a value of <code>100%</code> leaves the input unchanged. The lacuna value for interpolation is <code>1</code>.</dd>
+</dl></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="setting_brightness_using_numbers_and_percentages"><a href="#setting_brightness_using_numbers_and_percentages" title="Permalink to Setting brightness using numbers and percentages">Setting brightness using numbers and percentages</a></h3><div><pre class="brush: css notranslate"><code><span class="token function">brightness</span><span class="token punctuation">(</span>0%<span class="token punctuation">)</span>   <span class="token comment">/* Completely black */</span>
+<span class="token function">brightness</span><span class="token punctuation">(</span>0.4<span class="token punctuation">)</span>  <span class="token comment">/* 40% brightness */</span>
+<span class="token function">brightness</span><span class="token punctuation">(</span>1<span class="token punctuation">)</span>    <span class="token comment">/* No effect */</span>
+<span class="token function">brightness</span><span class="token punctuation">(</span>200%<span class="token punctuation">)</span> <span class="token comment">/* Double brightness */</span></code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.fxtf.org/filter-effects/#funcdef-filter-brightness" hreflang="en" lang="en" class="external" rel=" noopener">Filter Effects Module Level 1<br><small lang="en-US">The definition of 'brightness()' in that specification.</small></a></td>
+   <td><span class="spec-wd">Working Draft</span></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function"><code>&lt;filter-function&gt;</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/blur()"><code>blur()</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/contrast()"><code>contrast()</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/drop-shadow()"><code>drop-shadow()</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/grayscale()"><code>grayscale()</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/hue-rotate()"><code>hue-rotate()</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/invert()"><code>invert()</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/opacity()"><code>opacity()</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/saturate()"><code>saturate()</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/sepia()"><code>sepia()</code></a></li>
+</ul></div>

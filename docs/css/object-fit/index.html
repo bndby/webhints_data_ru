@@ -1,0 +1,115 @@
+<h1>object-fit</h1><div><div></div>
+
+<p>Свойство<strong> <code>object-fit</code></strong> определяет, как содержимое заменяемого элемента, такого как&nbsp;<a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/img" title="The HTML <img> element embeds an image into the document. It is a replaced element."><code>&lt;img&gt;</code></a>&nbsp;или&nbsp;<code><a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/video" title="The HTML Video element (<video>) embeds a media player which supports video playback into the document.">&lt;video&gt;</a></code>, должно заполнять контейнер относительно его высоты и ширины.</p>
+
+<p><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/object-fit.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><p class="brush:css">Для&nbsp;<code>object-fit</code>&nbsp;можно указать одно из нижеперечисленных свойств.</p></div><h3 id="values"><a href="#values" title="Permalink to Значения">Значения</a></h3><div><dl>
+ <dt><code>fill</code></dt>
+ <dd>Смещаемый контент меняет свой размер таким образом, чтобы заполнить всю область внутри блока: используется вся ширина и высота блока.</dd>
+ <dt><code>contain</code></dt>
+ <dd>Смещаемый контент меняет свой размер таким образом, чтобы подстроится под область внутри блока пропорционально собственным параметрам:&nbsp;окончательный размер контента будет определён как "помещённый внутрь" блока, ограничиваясь его шириной и высотой.</dd>
+ <dt><code>cover</code></dt>
+ <dd>Смещаемый контент меняет свой размер таким образом, чтобы сохранять свои пропорции при заполнении блока: окончательный размер контента будет определён как "покрытие" блока, ограничиваясь его шириной и высотой.</dd>
+ <dt><code>none</code></dt>
+ <dd>Смещаемый контент не изменяет свой размер с целью заполнить пространство блока: конечный размер контента будет определён с использованием алгоритма изменения размера по умолчанию, а также размер объекта по умолчанию равен ширине и высоте смещаемого контента.</dd>
+</dl>
+
+<dl>
+ <dt><code>scale-down</code></dt>
+ <dd>Контент изменяет размер, сравнивая разницу между <code>none</code> и <code>contain, </code>для того, чтобы найти наименьший конкретный размер объекта.</dd>
+</dl></div><h3 id="правильный_синтаксис"><a href="#правильный_синтаксис" title="Permalink to Правильный синтаксис">Правильный синтаксис</a></h3><div><pre class="notranslate">fill <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> contain <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> cover <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> none <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> scale-down</pre></div><h2 id="example"><a href="#example" title="Permalink to Пример">Пример</a></h2><div></div><h3 id="html_контент"><a href="#html_контент" title="Permalink to HTML Контент">HTML Контент</a></h3><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>object-fit: fill<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://mdn.mozillademos.org/files/6457/mdn_logo_only_color.png<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>MDN Logo<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>fill<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://mdn.mozillademos.org/files/6457/mdn_logo_only_color.png<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>MDN Logo<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>fill narrow<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>object-fit: contain<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://mdn.mozillademos.org/files/6457/mdn_logo_only_color.png<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>MDN Logo<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>contain<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://mdn.mozillademos.org/files/6457/mdn_logo_only_color.png<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>MDN Logo<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>contain narrow<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>object-fit: cover<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://mdn.mozillademos.org/files/6457/mdn_logo_only_color.png<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>MDN Logo<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>cover<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://mdn.mozillademos.org/files/6457/mdn_logo_only_color.png<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>MDN Logo<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>cover narrow<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>object-fit: none<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://mdn.mozillademos.org/files/6457/mdn_logo_only_color.png<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>MDN Logo<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>none<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://mdn.mozillademos.org/files/6457/mdn_logo_only_color.png<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>MDN Logo<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>none narrow<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>object-fit: scale-down<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://mdn.mozillademos.org/files/6457/mdn_logo_only_color.png<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>MDN Logo<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>scale-down<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://mdn.mozillademos.org/files/6457/mdn_logo_only_color.png<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>MDN Logo<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>scale-down narrow<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre></div><h3 id="css_контент"><a href="#css_контент" title="Permalink to CSS Контент">CSS Контент</a></h3><div><pre class="brush: css notranslate"><code><span class="token selector">h2</span> <span class="token punctuation">{</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> Courier New<span class="token punctuation">,</span> monospace<span class="token punctuation">;</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 1em<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 1em 0 0.3em<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">div</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+  <span class="token property">flex-direction</span><span class="token punctuation">:</span> column<span class="token punctuation">;</span>
+  <span class="token property">flex-wrap</span><span class="token punctuation">:</span> wrap<span class="token punctuation">;</span>
+  <span class="token property">align-items</span><span class="token punctuation">:</span> flex-start<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 940px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">img</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 150px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 1px solid #000<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.narrow</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 150px<span class="token punctuation">;</span>
+  <span class="token property">margin-top</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.fill</span> <span class="token punctuation">{</span>
+  <span class="token property">object-fit</span><span class="token punctuation">:</span> fill<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.contain</span> <span class="token punctuation">{</span>
+  <span class="token property">object-fit</span><span class="token punctuation">:</span> contain<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.cover</span> <span class="token punctuation">{</span>
+  <span class="token property">object-fit</span><span class="token punctuation">:</span> cover<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.none</span> <span class="token punctuation">{</span>
+  <span class="token property">object-fit</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.scale-down</span> <span class="token punctuation">{</span>
+  <span class="token property">object-fit</span><span class="token punctuation">:</span> scale-down<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="результат"><a href="#результат" title="Permalink to Результат">Результат</a></h3><div><p><iframe class="sample-code-frame" id="frame_Example" width="500" height="450" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/object-fit/_sample_.Example.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Технические параметры">Технические параметры</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-images-4/#the-object-fit" hreflang="en" lang="en" class="external" rel=" noopener">CSS Images Module Level&nbsp;4<br><small lang="ru">Определение 'object-fit' в этой спецификации.</small></a></td>
+   <td><span class="spec-wd">Рабочий черновик</span></td>
+   <td><code>Добавлены ключевые слова from-image</code> <code>и flip</code></td>
+  </tr>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-images-3/#the-object-fit" hreflang="en" lang="en" class="external" rel=" noopener">CSS Images Module Level&nbsp;3<br><small lang="ru">Определение 'object-fit' в этой спецификации.</small></a></td>
+   <td><span class="spec-cr">Кандидат в рекомендации</span></td>
+   <td>Первоначальное определение</td>
+  </tr>
+ </tbody>
+</table>
+
+<p></p><table class="properties"><tbody><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td><code>fill</code></td></tr><tr><th scope="row">Применяется к</th><td>заменяемые элементы</td></tr><tr><th scope="row"><a href="/css/inheritance/">Наследуется</a></th><td>нет</td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>как указано</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Браузерная совместимость">Браузерная совместимость</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li>Другие свойства CSS, связанные с изображениями (картинками): <a href="/css/object-position/"><code>object-position</code></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/image-orientation"><code>image-orientation</code> <span>(en-US)</span></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/image-rendering"><code>image-rendering</code> <span>(en-US)</span></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/image-resolution"><code>image-resolution</code> <span>(en-US)</span></a>.</li>
+ <li><a href="/css/background-size/"><code>background-size</code></a></li>
+</ul></div>

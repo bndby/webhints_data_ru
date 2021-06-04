@@ -1,0 +1,118 @@
+<h1>String.prototype.split()</h1><div><div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Метод <strong><code>split()</code></strong> разбивает объект <a href="/js/String/"><code>String</code></a> на массив строк путём разделения строки указанной подстрокой.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code><var>str</var>.split([<var>separator</var>[, <var>limit</var>]])</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>separator</code></dt>
+ <dd>Необязательный параметр. Указывает символы, используемые в качестве разделителя внутри строки. Параметр <code>separator</code> может быть как строкой, так и <a href="/js/RegExp/">регулярным выражением</a>. Если параметр опущен, возвращённый массив будет содержать один элемент со всей строкой. Если параметр равен пустой строке, строка <code>str</code> будет преобразована в массив символов.</dd>
+ <dt><code>limit</code></dt>
+ <dd>Необязательный параметр. Целое число, определяющее ограничение на количество найденных подстрок. Метод <code>split()</code> всё равно разделяет строку на каждом сопоставлении с разделителем <code>separator</code>, но обрезает возвращаемый массив так, чтобы он содержал не более <code>limit</code> элементов.</dd>
+</dl></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Метод <code>split()</code> возвращает новый массив.</p>
+
+<p>Если разделитель <code>separator</code> найден, он удаляется из строки, а подстроки возвращаются в массиве. Если разделитель опущен, массив будет содержать только один элемент, состоящий из всей строки. Если разделитель является пустой строкой, строка <code>str</code> будет преобразована в массив символов.</p>
+
+<p>Если разделитель является регулярным выражением, содержащим подгруппы, то каждый раз при сопоставлении с разделителем, результаты (включая те, что не определены) захвата подгруппы будут помещаться внутрь выходного массива. Однако, не все браузеры поддерживают эту возможность.</p>
+
+<p></p><div class="notecard note"><h4 id="примечание">Примечание:</h4>Если строка является пустой строкой, метод <code>split()</code> вернёт массив, состоящий из одной пустой строки, а не пустой массив.</div><p></p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_using_split"><a href="#example_using_split" title="Permalink to Пример: использование метода split()">Пример: использование метода <code>split()</code></a></h3><div><p>В следующем примере определяется функция, которая разбивает строку на массив строк, используя указанный разделитель. После разбиения строки, функция отображает сообщения, показывающие оригинальную строку (до разбиения), используемый разделитель, количество элементов в массиве и сами эти элементы.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">function</span> <span class="token function">splitString</span><span class="token punctuation">(</span><span class="token parameter">stringToSplit<span class="token punctuation">,</span> separator</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> arrayOfStrings <span class="token operator">=</span> stringToSplit<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span>separator<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Оригинальная строка: "'</span> <span class="token operator">+</span> stringToSplit <span class="token operator">+</span> <span class="token string">'"'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Разделитель: "'</span> <span class="token operator">+</span> separator <span class="token operator">+</span> <span class="token string">'"'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Массив содержит '</span> <span class="token operator">+</span> arrayOfStrings<span class="token punctuation">.</span>length <span class="token operator">+</span> <span class="token string">' элементов: '</span> <span class="token operator">+</span> arrayOfStrings<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">' / '</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Строчка из «Бури» Шекспира. Перевод Михаила Донского.</span>
+<span class="token keyword">var</span> tempestString <span class="token operator">=</span> <span class="token string">'И как хорош тот новый мир, где есть такие люди!'</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> monthString <span class="token operator">=</span> <span class="token string">'Янв,Фев,Мар,Апр,Май,Июн,Июл,Авг,Сен,Окт,Ноя,Дек'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> space <span class="token operator">=</span> <span class="token string">' '</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> comma <span class="token operator">=</span> <span class="token string">','</span><span class="token punctuation">;</span>
+
+<span class="token function">splitString</span><span class="token punctuation">(</span>tempestString<span class="token punctuation">,</span> space<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">splitString</span><span class="token punctuation">(</span>tempestString<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">splitString</span><span class="token punctuation">(</span>monthString<span class="token punctuation">,</span> comma<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+<p>Пример сгенерирует следующий вывод:</p>
+
+<pre class="notranslate">Оригинальная строка: "И как хорош тот новый мир, где есть такие люди!"
+Разделитель: " "
+Массив содержит 10 элементов: И / как / хорош / тот / новый / мир, / где / есть / такие / люди!
+
+Оригинальная строка: "И как хорош тот новый мир, где есть такие люди!"
+Разделитель: "undefined"
+Массив содержит 1 элементов: И как хорош тот новый мир, где есть такие люди!
+
+Оригинальная строка: "Янв,Фев,Мар,Апр,Май,Июн,Июл,Авг,Сен,Окт,Ноя,Дек"
+Разделитель: ","
+Массив содержит 12 элементов: Янв / Фев / Мар / Апр / Май / Июн / Июл / Авг / Сен / Окт / Ноя / Дек
+</pre></div><h3 id="example_removing_spaces_from_a_string"><a href="#example_removing_spaces_from_a_string" title="Permalink to Пример: удаление пробелов из строки">Пример: удаление пробелов из строки</a></h3><div><p>В следующем примере метод <code>split()</code> ищет 0 или более пробелов, за которыми следует точка с запятой, за которой снова следуют 0 или более пробелов, и, если этот шаблон найден, удаляет пробелы из строки. Переменная <code>nameList</code> является массивом, возвращённым в результате работы метода <code>split()</code>.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> names <span class="token operator">=</span> <span class="token string">'Гарри Трамп ;Фрэд Барни; Хелен Ригби ; Билл Абель ;Крис Ханд '</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>names<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> re <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\s*;\s*</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> nameList <span class="token operator">=</span> names<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span>re<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>nameList<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+<p>Пример напечатает две строки; на первой строке напечатана оригинальная строчка, а на второй&nbsp;— получившийся массив.</p>
+
+<pre class="notranslate">Гарри Трамп ;Фред Барни; Хелен Ригби ; Билл Абель ;Крис Ханд
+Гарри Трамп,Фред Барни,Хелен Ригби,Билл Абель,Крис Ханд
+</pre></div><h3 id="example_returning_a_limited_number_of_splits"><a href="#example_returning_a_limited_number_of_splits" title="Permalink to Пример: возврат ограниченного числа подстрок">Пример: возврат ограниченного числа подстрок</a></h3><div><p>В следующем примере метод <code>split()</code> ищет 0 или более пробелов в строке и возвращает первые три найденных подстроки.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> myString <span class="token operator">=</span> <span class="token string">'Привет, мир. Как дела?'</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> splits <span class="token operator">=</span> myString<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">' '</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>splits<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+<p>Вывод скрипта будет следующим:</p>
+
+<pre class="brush: js notranslate"><code>Привет<span class="token punctuation">,</span><span class="token punctuation">,</span>мир<span class="token punctuation">.</span><span class="token punctuation">,</span>Как
+</code></pre></div><h3 id="example_capturing_parentheses"><a href="#example_capturing_parentheses" title="Permalink to Пример: захват подгрупп">Пример: захват подгрупп</a></h3><div><p>Если параметр <code>separator</code> содержит подгруппы, сопоставившиеся результаты также будут присутствовать в возвращённом массиве.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> myString <span class="token operator">=</span> <span class="token string">'Привет 1 мир. Предложение номер 2.'</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> splits <span class="token operator">=</span> myString<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">(\d)</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>splits<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+<p>Вывод скрипта будет следующим:</p>
+
+<pre class="brush: js notranslate"><code>Привет <span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span> мир<span class="token punctuation">.</span> Предложение номер <span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token punctuation">.</span>
+</code></pre></div><h3 id="example_reversing_a_string_using_split"><a href="#example_reversing_a_string_using_split" title="Permalink to Пример: обращение строки при помощи метода split()">Пример: обращение строки при помощи метода <code>split()</code></a></h3><div><pre class="brush: js notranslate"><code><span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">'фывапролд'</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> strReverse <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">reverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 'длорпавыф'</span>
+<span class="token comment">// split() возвращает массив, к которому применяются методы reverse() и join()</span>
+</code></pre>
+
+<p><strong>Бонус:</strong> используя оператор <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators"><code>===</code> <span>(en-US)</span></a>, можно проверить, являлась ли строка палиндромом.</p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td>ECMAScript 3-е издание.</td>
+   <td>Стандарт</td>
+   <td>Изначальное определение. Реализована в JavaScript 1.1.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-15.5.4.14" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 5.1 (ECMA-262)<br><small lang="ru">Определение 'String.prototype.split' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-string.prototype.split" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'String.prototype.split' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/String/charAt/"><code>String.prototype.charAt()</code></a></li>
+ <li><a href="/js/String/indexOf/"><code>String.prototype.indexOf()</code></a></li>
+ <li><a href="/js/String/lastIndexOf/"><code>String.prototype.lastIndexOf()</code></a></li>
+ <li><a href="/js/Array/join/"><code>Array.prototype.join()</code></a></li>
+</ul></div>

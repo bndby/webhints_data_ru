@@ -1,0 +1,31 @@
+<h1>:local-link</h1><div><p></p><p></p>
+
+<p>The <strong><code>:local-link</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes">pseudo-class</a> represents an link to the same document. Therefore an element that is the source anchor of a hyperlink whose target’s absolute URL matches the element’s own document URL.</p>
+
+<pre class="notranslate">/* Selects any &lt;a&gt; that links to the current document */
+a:local-link {
+  color: green;
+}
+</pre></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="notranslate">:local-link</pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="html"><a href="#html" title="Permalink to HTML">HTML</a></h3><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#target<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is a link on the current page.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://example.com<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is an external link<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h3 id="css"><a href="#css" title="Permalink to CSS">CSS</a></h3><div><pre class="brush: css notranslate"><code><span class="token selector">a:local-link</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="result"><a href="#result" title="Permalink to Result">Result</a></h3><div><p><iframe class="sample-code-frame" id="frame_Examples" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/:local-link/_sample_.Examples.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table>
+	<thead>
+		<tr>
+			<th scope="col">Specification</th>
+			<th scope="col">Status</th>
+			<th scope="col">Comment</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><a href="https://drafts.csswg.org/selectors-4/#the-local-link-pseudo" hreflang="en" lang="en" class="external" rel=" noopener">Selectors Level&nbsp;4<br><small lang="en-US">The definition of ':local-link' in that specification.</small></a></td>
+			<td><span class="spec-wd">Working Draft</span></td>
+			<td>Initial definition</td>
+		</tr>
+	</tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><div class="notecard warning"><p>No compatibility data found for <code>css.selectors.local-link</code>.<br><a href="#on-github">Check for problems with this page</a> or contribute missing data to<!-- --> <a href="https://github.com/mdn/browser-compat-data">mdn/browser-compat-data</a>.</p></div><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+	<li>Link-related pseudo-classes: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:link"><code>:link</code></a>,<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:visited"><code>:visited</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:hover"><code>:hover</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:active"><code>:active</code></a></li>
+</ul></div>

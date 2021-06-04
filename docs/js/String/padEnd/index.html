@@ -1,0 +1,31 @@
+<h1>String.prototype.padEnd()</h1><div><div></div>
+
+<p>The <strong><code>padEnd()</code></strong> method pads the current string with a given
+  string (repeated, if needed) so that the resulting string reaches a given length. The
+  padding is applied from the end of the current string.</p>
+
+<div><iframe class="interactive" width="100%" height="490" src="https://interactive-examples.mdn.mozilla.net/pages/js/string-padend.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: js notranslate"><code><span class="token function">padEnd</span><span class="token punctuation">(</span>targetLength<span class="token punctuation">)</span>
+<span class="token function">padEnd</span><span class="token punctuation">(</span>targetLength<span class="token punctuation">,</span> padString<span class="token punctuation">)</span>
+</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Parameters">Parameters</a></h3><div><dl>
+  <dt><code><var>targetLength</var></code></dt>
+  <dd>The length of the resulting string once the current <code><var>str</var></code> has
+    been padded. If the value is lower than <code><var>str.</var>length</code>, the
+    current string will be returned as-is.</dd>
+  <dt><code><var>padString</var></code> <span class="badge inline optional">Optional</span></dt>
+  <dd>The string to pad the current <code><var>str</var></code> with. If
+    <code><var>padString</var></code> is too long to stay within
+    <code><var>targetLength</var></code>, it will be truncated: for left-to-right
+    languages the left-most part and for right-to-left languages the right-most will be
+    applied. The default value for this parameter is "<code> </code>"
+    (<code>U+0020</code>).</dd>
+</dl></div><h3 id="return_value"><a href="#return_value" title="Permalink to Return value">Return value</a></h3><div><p>A <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String"><code>String</code></a> of the specified <code><var>targetLength</var></code> with the
+  <code><var>padString</var></code> applied at the end of the current
+  <code><var>str</var></code>.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="using_padend"><a href="#using_padend" title="Permalink to Using padEnd">Using padEnd</a></h3><div><pre class="brush: js notranslate"><code><span class="token string">'abc'</span><span class="token punctuation">.</span><span class="token function">padEnd</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>          <span class="token comment">// "abc       "</span>
+<span class="token string">'abc'</span><span class="token punctuation">.</span><span class="token function">padEnd</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token string">"foo"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// "abcfoofoof"</span>
+<span class="token string">'abc'</span><span class="token punctuation">.</span><span class="token function">padEnd</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">,</span> <span class="token string">"123456"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "abc123"</span>
+<span class="token string">'abc'</span><span class="token punctuation">.</span><span class="token function">padEnd</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>           <span class="token comment">// "abc"</span></code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://tc39.es/ecma262/#sec-string.prototype.padend">Unknown specification<!-- --> <br><small># <!-- -->sec-string.prototype.padend</small></a></td></tr></tbody></table><div></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+  <li>A polyfill of <code>String.prototype.padEnd</code> is available in <a href="https://github.com/zloirock/core-js#ecmascript-string-and-regexp" class="external" rel=" noopener"><code>core-js</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padStart"><code>String.prototype.padStart()</code></a></li>
+  <li><a href="https://github.com/behnammodi/polyfill/blob/master/string.polyfill.js" class="external" rel=" noopener">A
+    polyfill</a></li>
+</ul></div>

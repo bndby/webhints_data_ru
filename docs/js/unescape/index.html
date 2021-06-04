@@ -1,0 +1,44 @@
+<h1>unescape()</h1><div><div>
+<div>
+<div> <div class="notecard deprecated">
+            <h4 id="устарело">Устарело</h4>
+            <p>Эта возможность была удалена из веб-стандартов. Хотя некоторые браузеры по-прежнему могут поддерживать её, она находится в процессе удаления. Не используйте её ни в старых, ни в новых проектах. Страницы или веб-приложения, использующие её, могут в любой момент сломаться.</p>
+        </div></div>
+</div>
+</div></div><h2 id="summary"><a href="#summary" title="Permalink to Описание">Описание</a></h2><div><p>Устаревший метод&nbsp;<code><strong>unescape(str)</strong></code>&nbsp;создаёт новую строку в которой шестнадцатеричная последовательность символов вида&nbsp;%xx&nbsp;заменяется эквивалентами из кодировки ASCII.&nbsp;Знаки, закодированные в формате&nbsp;%uxxxx&nbsp;(знаки Юникода), заменяются знаками Юникода в шестнадцатеричной кодировке&nbsp;xxxx.</p>
+
+<p>Последовательность может быть результатом работы функции&nbsp;вроде&nbsp;<a href="/js/escape/"><code>escape</code></a>. Т.к.&nbsp;<a href="/js/decodeURIComponent/"><code>unescape</code></a> является устаревшей, используйте <a href="/js/decodeURI/"><code>decodeURI</code></a> или&nbsp;<a href="/js/decodeURIComponent/"><code>decodeURIComponent</code></a> вместо неё.</p>
+
+<div class="note notecard"><strong>Обратите внимание:</strong>&nbsp;Не рекомендуется&nbsp;использовать&nbsp;<code>unescape</code> чтобы декодировать URI, используйте&nbsp;<code>decodeURI</code> вместо него.</div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code>unescape(str)</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Parameters">Parameters</a></h3><div><dl>
+ <dt><code>str</code></dt>
+ <dd>Строка которую необходимо преобразовать</dd>
+</dl></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p><code>Функция unescape</code>&nbsp;это свойство <em>глобального объекта</em>.</p></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div><pre class="brush: js notranslate"><code><span class="token function">unescape</span><span class="token punctuation">(</span><span class="token string">"abc123"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">// "abc123"</span>
+<span class="token function">unescape</span><span class="token punctuation">(</span><span class="token string">"%E4%F6%FC"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// "äöü"</span>
+<span class="token function">unescape</span><span class="token punctuation">(</span><span class="token string">"%u0107"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">// "ć"</span>
+</code></pre></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+  <tr>
+   <td>ECMAScript 1st Edition.</td>
+   <td>Standard</td>
+   <td>Начальное определение.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-B.2.2" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 5.1 (ECMA-262)<br><small lang="ru">Определение 'unescape' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Определено в (информативно) Compatibility Annex B</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-unescape-string" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'unescape' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Определено в (нормативно) Annex B for Additional ECMAScript Features for Web Browsers</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="совместимость_браузеров"><a href="#совместимость_браузеров" title="Permalink to Совместимость браузеров">Совместимость браузеров</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/decodeURI/"><code>decodeURI</code></a></li>
+ <li><a href="/js/decodeURIComponent/"><code>decodeURIComponent</code></a></li>
+</ul></div>

@@ -1,0 +1,81 @@
+<h1>z-index</h1><div><div></div></div><h2 id="введение"><a href="#введение" title="Permalink to Введение">Введение</a></h2><div><p>Свойство&nbsp;<strong>z-index</strong>&nbsp;определяет положение элемента и нижестоящих элементов по оси z. В случае перекрытия элементов, это значение определяет порядок наложения. В общем случае, элементы с большим z-index перекрывают&nbsp;элементы с меньшим.</p>
+
+<p>Для позиционируемого контейнера свойство <code>z-index</code> определяет:</p>
+
+<ol>
+ <li>порядок наложения в текущем <a href="/css/CSS_Positioning/Understanding_z_index/The_stacking_context/">контексте наложения</a>;</li>
+ <li>создаёт ли контейнер локальный контекст наложения.</li>
+</ol>
+
+<p></p><table class="properties"><tbody><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td><code>auto</code></td></tr><tr><th scope="row">Применяется к</th><td>позиционированные элементы</td></tr><tr><th scope="row"><a href="/css/inheritance/">Наследуется</a></th><td>нет</td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>как указано</td></tr><tr><th scope="row">Animation type</th><td><a href="/css/integer#interpolation/" title="Значения типа данных CSS <целое число> интерполируются через целое число дискретных шагов. Вычисления производятся словно над вещественными числами с плавающей запятой, а дискретные значения получаются с использованием функции floor.">целое число</a></td></tr><tr><th scope="row">Создаёт <a href="/css/CSS_Positioning/Understanding_z_index/The_stacking_context/">контекст наложения</a></th><td>да</td></tr></tbody></table><p></p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="brush:css notranslate"><code><span class="token comment">/* Значение - ключевое слово */</span>
+<span class="token property">z-index</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+
+<span class="token comment">/* &lt;целочисленные&gt; значения */</span>
+<span class="token property">z-index</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+<span class="token property">z-index</span><span class="token punctuation">:</span> 3<span class="token punctuation">;</span>
+<span class="token property">z-index</span><span class="token punctuation">:</span> 289<span class="token punctuation">;</span>
+<span class="token property">z-index</span><span class="token punctuation">:</span> -1<span class="token punctuation">;</span> <span class="token comment">/* Отрицательные значения понижают приоритет */</span>
+
+<span class="token comment">/* Глобальные значения */</span>
+<span class="token property">z-index</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">z-index</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">z-index</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre></div><h3 id="значения"><a href="#значения" title="Permalink to Значения">Значения</a></h3><div><dl>
+ <dt><code>auto</code></dt>
+ <dd>Контейнер не будет создавать локального контекста наложения. Уровень контейнера в текущем контексте наложения такой же, как и у родительского.</dd>
+ <dt><code>&lt;integer&gt;</code></dt>
+ <dd>Целое число определяет уровень контейнера в текущем контексте наложения. Контейнер также будет создавать локальный контекст наложения, в котором его собственный уровень будет равен <code>0</code>. Это значит, что значения z-index нижестоящих элементов не будут сравниваться с z-индексами элементов вне этого контейнера.</dd>
+</dl></div><h3 id="формальный_синтаксис"><a href="#формальный_синтаксис" title="Permalink to Формальный синтаксис">Формальный синтаксис</a></h3><div><pre class="notranslate">auto <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <a href="/css/integer/" title>&lt;integer&gt;</a></pre></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="html"><a href="#html" title="Permalink to HTML">HTML</a></h3><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dashed-box<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Dashed box
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>gold-box<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Gold box<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>green-box<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Green box<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h3 id="css"><a href="#css" title="Permalink to CSS">CSS</a></h3><div><pre class="brush: css; highlight:[3,11,19] notranslate"><code><span class="token selector">.dashed-box</span> <span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+  <span class="token property">z-index</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> dashed<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 8em<span class="token punctuation">;</span>
+  <span class="token property">margin-bottom</span><span class="token punctuation">:</span> 1em<span class="token punctuation">;</span>
+  <span class="token property">margin-top</span><span class="token punctuation">:</span> 2em<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.gold-box</span> <span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">z-index</span><span class="token punctuation">:</span> 3<span class="token punctuation">;</span> <span class="token comment">/* put .gold-box above .green-box and .dashed-box */</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> gold<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 80%<span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> 60px<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> 3em<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.green-box</span> <span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">z-index</span><span class="token punctuation">:</span> 2<span class="token punctuation">;</span> <span class="token comment">/* put .green-box above .dashed-box */</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> lightgreen<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 20%<span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> 65%<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> -25px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 7em<span class="token punctuation">;</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 0.9<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="результат"><a href="#результат" title="Permalink to Результат"><strong>Результат</strong></a></h3><div><p><iframe class="sample-code-frame" id="frame_Examples" width="550" height="200" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/z-index/_sample_.Examples.html" loading="lazy"></iframe></p></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-transitions/#animatable-css" hreflang="en" lang="en" class="external" rel=" noopener">CSS Transitions<br><small lang="ru">Определение 'animation behavior for z-index' в этой спецификации.</small></a></td>
+   <td><span class="spec-wd">Рабочий черновик</span></td>
+   <td>Определяет свойство <code>z-index</code>&nbsp;как анимируемое.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/CSS2/visuren.html#z-index" hreflang="en" lang="en" class="external" rel=" noopener">CSS Level&nbsp;2 (Revision&nbsp;1)<br><small lang="ru">Определение 'z-index' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Первоначальное определение</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="совместимость_с_браузерами"><a href="#совместимость_с_браузерами" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li>Свойство CSS <a href="/css/position/"><code>position</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index" title="CSS/Understanding_z-index">Понимание z-индексов&nbsp;CSS</a></li>
+</ul></div>

@@ -1,0 +1,59 @@
+<h1>margin-trim</h1><div><p></p><p></p>
+
+<p>The <code>margin-trim</code> property allows the container to trim the margins of its children where they adjoin the container’s edges.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><dl>
+ <dt><code>none</code></dt>
+ <dd>Margins are not trimmed by the container.</dd>
+ <dt><code>in-flow</code></dt>
+ <dd>
+ <p>For in-flow boxes contained by this box, block-axis margins adjacent to the box's edges are truncated to zero.</p>
+
+ <p>It also truncates any margins collapsed with such a margin.</p>
+ </dd>
+ <dt><code>all</code></dt>
+ <dd>Trims the margins of in-flow boxes and floats whose margins coincide with the container's content edge.</dd>
+</dl></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td><code>none</code></td></tr><tr><th scope="row">Applies to</th><td>Block containers and multi-column containers. It also applies to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::first-letter"><code>::first-letter</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::first-line"><code>::first-line</code></a>.</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance">Inherited</a></th><td>no</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>as specified</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate">none <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> in-flow <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> all</pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="basic_usage"><a href="#basic_usage" title="Permalink to Basic usage">Basic usage</a></h3><div><p>Once support is implemented for this property, it will probably work like so:</p>
+
+<p>When you've got a container with some inline children and you want to put a margin between each child but not have it interfere with the spacing at the end of the row, you might do something like this:</p>
+
+<pre class="brush: css notranslate"><code><span class="token selector">article</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">article &gt; span</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+  <span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+  <span class="token property">margin-right</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<p>The problem here is that you'd end up with 20px too much spacing at the right of the row, so you'd maybe do this to fix it:</p>
+
+<pre class="brush: css notranslate"><code><span class="token selector">span:last-child</span> <span class="token punctuation">{</span>
+  <span class="token property">margin-right</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<p>It is a pain having to write another rule to achieve this, and it is also not very flexible. Instead, <code>margin-trim</code> could fix it:</p>
+
+<pre class="brush: css notranslate"><code> <span class="token selector">article</span> <span class="token punctuation">{</span>
+  <span class="token property">margin-trim</span><span class="token punctuation">:</span> in-flow<span class="token punctuation">;</span>
+  ...
+<span class="token punctuation">}</span></code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th>Specification</th>
+   <th>Status</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-box-4/#margin-trim" hreflang="en" lang="en" class="external" rel=" noopener">CSS Box Model Module Level 4<br><small lang="en-US">The definition of 'margin-trim' in that specification.</small></a></td>
+   <td><span class="spec-ed">Editor's Draft</span></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/margin"><code>margin</code></a></li>
+</ul></div>

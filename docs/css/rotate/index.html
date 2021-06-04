@@ -1,0 +1,67 @@
+<h1>rotate</h1><div><div></div>
+
+<p>The <strong><code>rotate</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> property allows you to specify rotation transforms individually and independently of the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform"><code>transform</code></a> property. This maps better to typical user interface usage, and saves having to remember the exact order of transform functions to specify in the <code>transform</code> property.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: css notranslate"><code><span class="token comment">/* Keyword values */</span>
+<span class="token property">rotate</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+
+<span class="token comment">/* Angle value */</span>
+<span class="token property">rotate</span><span class="token punctuation">:</span> 90deg<span class="token punctuation">;</span>
+<span class="token property">rotate</span><span class="token punctuation">:</span> 0.25turn<span class="token punctuation">;</span>
+<span class="token property">rotate</span><span class="token punctuation">:</span> 1.57rad<span class="token punctuation">;</span>
+
+<span class="token comment">/* x, y, or z axis name plus angle */</span>
+<span class="token property">rotate</span><span class="token punctuation">:</span> x 90deg<span class="token punctuation">;</span>
+<span class="token property">rotate</span><span class="token punctuation">:</span> y 0.25turn<span class="token punctuation">;</span>
+<span class="token property">rotate</span><span class="token punctuation">:</span> z 1.57rad<span class="token punctuation">;</span>
+
+<span class="token comment">/* Vector plus angle value */</span>
+<span class="token property">rotate</span><span class="token punctuation">:</span> 1 1 1 90deg<span class="token punctuation">;</span></code></pre></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+ <dt>angle value</dt>
+ <dd>An <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/angle"><code>&lt;angle&gt;</code></a> specifying the angle to rotate the affected element through, around the Z axis. Equivalent to a <code>rotate()</code> (2D rotation) function.</dd>
+ <dt>x, y, or z axis name plus angle value</dt>
+ <dd>The name of the axis you want to rotate the affected element around (<code>"x"</code>, "<code>y</code>", or "<code>z"</code>), plus an <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/angle"><code>&lt;angle&gt;</code></a> specifying the angle to rotate the element through. Equivalent to a <code>rotateX()</code>/<code>rotateY()</code>/<code>rotateZ()</code> (3D rotation) function.</dd>
+ <dt>vector plus angle value</dt>
+ <dd>Three <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/number"><code>&lt;number&gt;</code></a>s representing an origin-centered vector that defines a line around which you want to rotate the element, plus an <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/angle"><code>&lt;angle&gt;</code></a> specifying the angle to rotate the element through. Equivalent to a <code>rotate3d()</code> (3D rotation) function.</dd>
+ <dt id="none"><code>none</code></dt>
+ <dd>Specifies that no rotation should be applied.</dd>
+</dl></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td><code>none</code></td></tr><tr><th scope="row">Applies to</th><td>transformable elements</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance">Inherited</a></th><td>no</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>as specified</td></tr><tr><th scope="row">Animation type</th><td>a transform</td></tr><tr><th scope="row">Creates <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context">stacking context</a></th><td>yes</td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate">none <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/angle" title="Possible values: a number followed by'deg', 'grad', 'rad' or 'turn', like 2turn, 1.3rad, -60deg or 0grad.">&lt;angle&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">[</a> x <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> y <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> z <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/number" title>&lt;number&gt;</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#curly_braces_(_)" title="Curly braces: encloses two integers defining the minimal and maximal numbers of occurrences of the entity">{</a>3<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#curly_braces_(_)" title="Curly braces: encloses two integers defining the minimal and maximal numbers of occurrences of the entity">}</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">]</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_ampersand" title="Double ampersand: all of the entities must be present, in any order">&amp;&amp;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/angle" title="Possible values: a number followed by'deg', 'grad', 'rad' or 'turn', like 2turn, 1.3rad, -60deg or 0grad.">&lt;angle&gt;</a></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="rotate_an_element_on_hover"><a href="#rotate_an_element_on_hover" title="Permalink to Rotate an element on hover">Rotate an element on hover</a></h3><div><h4 id="html">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>rotate<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Rotation<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<h4 id="css">CSS</h4>
+
+
+
+<pre class="brush: css notranslate"><code><span class="token selector">.rotate</span> <span class="token punctuation">{</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span> rotate 1s<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">div:hover .rotate</span> <span class="token punctuation">{</span>
+  <span class="token property">rotate</span><span class="token punctuation">:</span> 1 -0.5 1 180deg<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<h4 id="result">Result</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Rotate_an_element_on_hover" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/rotate/_sample_.Rotate_an_element_on_hover.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-transforms-2/#individual-transforms" hreflang="en" lang="en" class="external" rel=" noopener">CSS Transforms Level&nbsp;2<br><small lang="en-US">The definition of 'individual transforms' in that specification.</small></a></td>
+   <td><span class="spec-ed">Editor's Draft</span></td>
+   <td>Initial definition.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/translate"><code>translate</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/scale"><code>scale</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform"><code>transform</code></a></li>
+</ul>
+
+<p>Note: <code>skew</code> is not an independent <code>transform</code> value</p></div>

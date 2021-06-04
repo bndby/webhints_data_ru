@@ -1,0 +1,173 @@
+<h1>@font-face</h1><div><div><strong><code>@font-face</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a>&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule">@-правило</a> <font>позволяет&nbsp;указать </font><font>шрифты для отображения текста на&nbsp;веб-страницах, которые могут быть загружены либо&nbsp;с удалённого сервера, либо с компьютера пользователя. Если в правиле была объявлена функция&nbsp;</font><code>local()</code>, с названием шрифта, то будет&nbsp;производиться поиск на компьютере пользователя,&nbsp;и&nbsp;в случае обнаружения будет использован этот шрифт. Иначе будет скачан и использован шрифт, указанный в функции <code>url()</code>.</div>
+
+<div>&nbsp;</div>
+
+<div><code>@font-face</code>&nbsp;позволяет разрабатывать контент не ограничиваясь набором "безопасных" шрифтов (шрифтов, которые настолько распространены, что считаются доступными по умолчанию). Возможность определить локально установленный шрифт позволяет более гибко настраивать шрифты не полагаясь на соединение с интернетом.&nbsp;</div>
+
+<div>&nbsp;</div>
+
+<div>Распространённым случаем является одновременное использование <code>url()</code> и <code>local()</code>, чтобы использовать локальный шрифт, если он доступен, или иначе скачать копию шрифта.</div>
+
+<div>&nbsp;</div>
+
+<div><font>Это&nbsp;правило может использоваться не только на верхнем уровне CSS, но и внутри любого&nbsp;</font>&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule">@-правила</a>.</div>
+
+<pre class="brush: css no-line-numbers notranslate"><code><span class="token atrule"><span class="token rule">@font-face</span></span> <span class="token punctuation">{</span>
+ <span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">"Open Sans"</span><span class="token punctuation">;</span>
+ <span class="token property">src</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string url">"/fonts/OpenSans-Regular-webfont.woff2"</span><span class="token punctuation">)</span></span> <span class="token function">format</span><span class="token punctuation">(</span><span class="token string">"woff2"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string url">"/fonts/OpenSans-Regular-webfont.woff"</span><span class="token punctuation">)</span></span> <span class="token function">format</span><span class="token punctuation">(</span><span class="token string">"woff"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div></div><h3 id="descriptors"><a href="#descriptors" title="Permalink to Descriptors">Descriptors</a></h3><div><dl>
+ <dt><a href="/css/@font-face/font-display/"><code>font-display</code></a></dt>
+ <dd>Определяет как отображается шрифт, основываясь на том, был ли он загружен и готов ли к использованию.</dd>
+</dl>
+
+<dl>
+ <dt><a href="/css/@font-face/font-family/"><code>font-family</code></a></dt>
+ <dd>Указывает имя шрифта, которое будет использоваться для задания свойств шрифта.</dd>
+ <dt><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-stretch"><code>font-stretch</code> <span>(en-US)</span></a></dt>
+ <dd>Значение <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-stretch"><code>font-stretch</code> <span>(en-US)</span></a>.</dd>
+ <dt><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-style"><code>font-style</code> <span>(en-US)</span></a></dt>
+ <dd>Значение <a href="/css/font-style/"><code>font-style</code></a>.</dd>
+ <dt><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-weight"><code>font-weight</code> <span>(en-US)</span></a></dt>
+ <dd>Значение <a href="/css/font-weight/"><code>font-weight</code></a>.</dd>
+ <dt><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-variant"><code>font-variant</code> <span>(en-US)</span></a></dt>
+ <dd>Значение <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant"><code>font-variant</code> <span>(en-US)</span></a>.</dd>
+ <dt><a class="page-not-created" title="Документация об этом ещё не написана; пожалуйста, поспособствуйте её написанию!"><code>font-feature-settings</code></a></dt>
+ <dd>Позволяет контролировать другие расширенные особенности OpenType-шрифтов.</dd>
+ <dt><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-variation-settings"><code>font-variation-settings</code> <span>(en-US)</span></a></dt>
+ <dd>Позволяет осуществлять низкоуровневый контроль над вариациями OpenType и TrueType шрифтов, указывая четырёхбуквенные названия осей для изменения вместе с их значениями.</dd>
+ <dt><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/src"><code>src</code> <span>(en-US)</span></a></dt>
+ <dd><font>Задаёт ресурс, содержащий данные шрифта.&nbsp;Это может быть URL-адрес расположения удалённого файла шрифта или имя шрифта на компьютере пользователя.<br>
+ <br>
+ Чтобы дать браузеру возможность выбрать наиболее подходящий формат шрифта, его можно указать при объявлении внутри функции&nbsp;<code>format()</code>:</font><br>
+
+ <pre class="notranslate"><code>src: url(ideal-sans-serif.woff) format("woff"),
+     url(basic-sans-serif.ttf) format("opentype");</code>
+</pre>
+
+ <p>Список доступных форматов:&nbsp;<code>"woff"</code>,&nbsp;<code>"woff2"</code>,&nbsp;<code>"truetype"</code>,&nbsp;<code>"opentype"</code>,&nbsp;<code>"embedded-opentype"</code>, и&nbsp;<code>"svg"</code>.</p>
+ </dd>
+</dl>
+
+<dl>
+ <dt><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/unicode-range"><code>unicode-range</code> <span>(en-US)</span></a></dt>
+ <dd>Диапазон&nbsp;Unicode кодов, который будет использоваться в шрифте.</dd>
+</dl></div><h3 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h3><div><pre class="notranslate">@font-face {
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> font-family: <a href="#family-name">&lt;family-name&gt;</a>; <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_bar" title="Currently only available in English (US)" class="only-in-en-us">|| (en-US)</a>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> src: &lt;src&gt;; <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_bar" title="Currently only available in English (US)" class="only-in-en-us">|| (en-US)</a>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> unicode-range: &lt;unicode-range&gt;; <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_bar" title="Currently only available in English (US)" class="only-in-en-us">|| (en-US)</a>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> font-variant: &lt;font-variant&gt;; <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_bar" title="Currently only available in English (US)" class="only-in-en-us">|| (en-US)</a>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> font-feature-settings: &lt;font-feature-settings&gt;; <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_bar" title="Currently only available in English (US)" class="only-in-en-us">|| (en-US)</a>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> font-variation-settings: &lt;font-variation-settings&gt;; <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_bar" title="Currently only available in English (US)" class="only-in-en-us">|| (en-US)</a>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> font-stretch: &lt;font-stretch&gt;; <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_bar" title="Currently only available in English (US)" class="only-in-en-us">|| (en-US)</a>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> font-weight: &lt;font-weight&gt;; <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_bar" title="Currently only available in English (US)" class="only-in-en-us">|| (en-US)</a>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> font-style: &lt;font-style&gt;; <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_bar" title="Currently only available in English (US)" class="only-in-en-us">|| (en-US)</a>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> size-adjust: &lt;size-adjust&gt;; <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_bar" title="Currently only available in English (US)" class="only-in-en-us">|| (en-US)</a>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> ascent-override: &lt;ascent-override&gt;; <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_bar" title="Currently only available in English (US)" class="only-in-en-us">|| (en-US)</a>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> descent-override: &lt;descent-override&gt;; <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_bar" title="Currently only available in English (US)" class="only-in-en-us">|| (en-US)</a>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> line-gap-override: &lt;line-gap-override&gt;; <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a>
+}<p style="font-family:Open Sans,Arial,sans-serif; margin: 10px 0 0 0;">где <br><code style="font-family:Consolas,Monaco,&quot;Andale Mono&quot;,monospace;"><span id="family-name">&lt;family-name&gt;</span> = <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/string" title="Currently only available in English (US)" class="only-in-en-us">&lt;string&gt; (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <a href="/css/custom-ident/" title>&lt;custom-ident&gt;</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#plus_()" title="Currently only available in English (US)" class="only-in-en-us">+ (en-US)</a></code></p></pre></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div><p>Этот пример просто указывает загружаемый шрифт для использования и применяет его ко всему телу документа:</p>
+
+<p><a href="https://mdn.mozillademos.org/files/7775/webfont-sample.html" class="external" rel=" noopener">Смотреть живой пример</a></p>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>Web Font Sample<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/css<span class="token punctuation">"</span></span> <span class="token attr-name">media</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>screen, print<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+    <span class="token atrule"><span class="token rule">@font-face</span></span> <span class="token punctuation">{</span>
+      <span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">"Bitstream Vera Serif Bold"</span><span class="token punctuation">;</span>
+      <span class="token property">src</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string url">"https://mdn.mozillademos.org/files/2468/VeraSeBd.ttf"</span><span class="token punctuation">)</span></span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token selector">body</span> <span class="token punctuation">{</span> <span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">"Bitstream Vera Serif Bold"</span><span class="token punctuation">,</span> serif <span class="token punctuation">}</span>
+  </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+  This is Bitstream Vera Serif Bold.
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<p>В этом примере используется локальный пользовательский шрифт "Helvetica Neue Bold"; если у пользователя этот шрифт не установлен (используются два различных имени), тогда вместо него используется загружаемый шрифт с названием "MgOpenModernaBold.ttf":</p>
+
+<pre class="brush: css notranslate"><code><span class="token atrule"><span class="token rule">@font-face</span></span> <span class="token punctuation">{</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> MyHelvetica<span class="token punctuation">;</span>
+  <span class="token property">src</span><span class="token punctuation">:</span> <span class="token function">local</span><span class="token punctuation">(</span><span class="token string">"Helvetica Neue Bold"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+       <span class="token function">local</span><span class="token punctuation">(</span><span class="token string">"HelveticaNeue-Bold"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+       <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>MgOpenModernaBold.ttf<span class="token punctuation">)</span></span><span class="token punctuation">;</span>
+  <span class="token property">font-weight</span><span class="token punctuation">:</span> bold<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="mime-типы_шрифтов"><a href="#mime-типы_шрифтов" title="Permalink to MIME-типы шрифтов">MIME-типы шрифтов</a></h2><div><table>
+ <thead>
+  <tr>
+   <th>Формат</th>
+   <th>MIME-тип</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>TrueType</td>
+   <td><code>font/ttf</code></td>
+  </tr>
+  <tr>
+   <td>OpenType</td>
+   <td><code>font/otf</code></td>
+  </tr>
+  <tr>
+   <td>Web Open File Format</td>
+   <td><code>font/woff</code></td>
+  </tr>
+  <tr>
+   <td>Web Open File Format 2</td>
+   <td><code>font/woff2</code></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="примечания"><a href="#примечания" title="Permalink to Примечания">Примечания</a></h2><div><ul>
+ <li>Веб шрифты попадают под правило ограничения домена&nbsp;(файлы шрифтов должны находиться на том же самом домене, что и использующая их страница), если это ограничение не снимается с помощью <a href="https://developer.mozilla.org/ru/docs/Glossary/CORS">CORS</a>.</li>
+ <li>@font-face не может быть объявлен внутри CSS-селектора. Следующий пример не будет работать:
+  <pre class="brush: css; example-bad notranslate"><code><span class="token selector">.className</span> <span class="token punctuation">{</span>
+  <span class="token atrule"><span class="token rule">@font-face</span></span> <span class="token punctuation">{</span>
+    <span class="token property">font-family</span><span class="token punctuation">:</span> MyHelvetica<span class="token punctuation">;</span>
+    <span class="token property">src</span><span class="token punctuation">:</span> <span class="token function">local</span><span class="token punctuation">(</span><span class="token string">"Helvetica Neue Bold"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">local</span><span class="token punctuation">(</span><span class="token string">"HelveticaNeue-Bold"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>MgOpenModernaBold.ttf<span class="token punctuation">)</span></span><span class="token punctuation">;</span>
+    <span class="token property">font-weight</span><span class="token punctuation">:</span> bold<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+ </li>
+</ul></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://www.w3.org/TR/WOFF2/" hreflang="en" lang="en" class="external" rel=" noopener">WOFF File Format 2.0<br><small lang="ru">Определение 'WOFF2 font format' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Спецификация нового формата шрифта с новым алгоритмом сжатия</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/WOFF/" hreflang="en" lang="en" class="external" rel=" noopener">WOFF File Format 1.0<br><small lang="ru">Определение 'WOFF font format' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Спецификация формата шрифта</td>
+  </tr>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-fonts-3/#font-face-rule" hreflang="en" lang="en" class="external" rel=" noopener">CSS Fonts Module Level&nbsp;3<br><small lang="ru">Определение '@font-face' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Первоначальное определение</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/WOFF">About WOFF</a></li>
+ <li><a href="https://everythingfonts.com/font-face" class="external" rel=" noopener">Everythingfonts font-face generator</a></li>
+ <li><a class="external" href="https://www.fontsquirrel.com/fontface/generator" rel=" noopener">FontSquirrel @font-face generator</a></li>
+ <li><a class="external" href="https://hacks.mozilla.org/2009/06/beautiful-fonts-with-font-face/" rel=" noopener">Beautiful fonts with @font-face</a></li>
+ <li><a class="external" href="https://openfontlibrary.org/" rel=" noopener">Open&nbsp;Font Library</a></li>
+ <li><a class="external" href="http://msdn.microsoft.com/en-us/library/ms530757(VS.85).aspx" rel=" noopener">Microsoft Developer Network (MSDN) @font-face reference</a></li>
+ <li><a class="external" href="http://caniuse.com/woff" rel=" noopener">When can I use WOFF?</a></li>
+ <li><a class="external" href="http://caniuse.com/svg-fonts" rel=" noopener">When can I use SVG Fonts?</a></li>
+</ul>
+
+<p></p><p></p></div>

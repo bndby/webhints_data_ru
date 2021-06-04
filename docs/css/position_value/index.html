@@ -1,0 +1,88 @@
+<h1>&lt;position&gt;</h1><div><div></div>
+
+<p>The <strong><code>&lt;position&gt;</code></strong> (or <strong><code>&lt;bg-position&gt;</code></strong>) <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Types">data type</a> denotes a two-dimensional coordinate used to set a location relative to an element box. It is used in the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-position"><code>background-position</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/offset-anchor"><code>offset-anchor</code></a> properties.</p>
+
+<div class="note notecard">
+<p><strong>Note:</strong> The final position described by the <code>&lt;position&gt;</code> value does not need to be inside the element's box.</p>
+</div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><p><img alt src="/en-US/docs/Web/CSS/position_value/position_type.png" width="815" height="519" loading="lazy">The <code>&lt;position&gt;</code> data type is specified with one or two keywords, with optional offsets.</p>
+
+<p>The keyword values are <code>center</code>, <code>top</code>, <code>right</code>, <code>bottom</code>, and <code>left</code>. Each keyword represents either an edge of the element's box or the center line between two edges. Depending on the context, <code>center</code> represents either the center between the left and right edges, or the center between the top and bottom edges.</p>
+
+<p>If specified, an offset can be either a relative <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/percentage"><code>&lt;percentage&gt;</code></a> value or an absolute <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length"><code>&lt;length&gt;</code></a> value. Positive values are offset towards the right or the bottom, whichever is appropriate. Negative values are offset in the opposite directions.</p>
+
+<p>If only a single offset value is specified, it defines the x-coordinate, with the value for the other axis defaulting to <code>center</code>.</p>
+
+<pre class="brush:css notranslate"><code><span class="token comment">/* 1-value syntax */</span>
+keyword                  <span class="token comment">/* Either the horizontal or vertical position; the other axis defaults to center */</span>
+value                    <span class="token comment">/* The position on the x-axis; the y-axis defaults to 50% */</span>
+
+<span class="token comment">/* 2-value syntax */</span>
+keyword keyword          <span class="token comment">/* A keyword for each direction (the order is irrelevant) */</span>
+keyword value            <span class="token comment">/* A keyword for horizontal position, value for vertical position */</span>
+value keyword            <span class="token comment">/* A value for horizontal position, keyword for vertical position */</span>
+value value              <span class="token comment">/* A value for each direction (horizontal then vertical) */</span>
+
+<span class="token comment">/* 4-value syntax */</span>
+keyword value keyword value <span class="token comment">/* Each value is an offset from the keyword that precedes it */</span>
+</code></pre></div><h3 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h3><div><pre class="brush: css notranslate"><code>[
+ [ left | center | right ] || [ top | center | bottom ]
+|
+ [ left | center | right | &lt;length&gt; | &lt;percentage&gt; ]
+ [ top | center | bottom | &lt;length&gt; | &lt;percentage&gt; ]?
+|
+ [ [ left | right ] [ &lt;length&gt; | &lt;percentage&gt; ] ] &amp;&amp;
+ [ [ top | bottom ] [ &lt;length&gt; | &lt;percentage&gt; ] ]
+]
+</code></pre>
+
+<div class="notecard note">
+<p><strong>Note</strong>:&nbsp;The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-position"><code>background-position</code></a> property also accepts a three-value syntax. This is not allowed in other properties that use <code>&lt;position&gt;</code>.</p>
+</div></div><h2 id="interpolation"><a href="#interpolation" title="Permalink to Interpolation">Interpolation</a></h2><div><p>When animated, a point's abscissa and ordinate values are interpolated independently. However, because the speed of the interpolation is determined by a single <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/easing-function">timing function</a> for both coordinates, the point will move in a straight line.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="valid_positions"><a href="#valid_positions" title="Permalink to Valid positions">Valid positions</a></h3><div><pre class="notranslate">center
+left
+center top
+
+right 8.5%
+bottom 12vmin right -6px
+
+10% 20%
+8rem 14px
+</pre></div><h3 id="invalid_positions"><a href="#invalid_positions" title="Permalink to Invalid positions">Invalid positions</a></h3><div><pre class="example-bad notranslate">left right
+bottom top
+10px 15px 20px 15px
+</pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-values-3/#position" hreflang="en" lang="en" class="external" rel=" noopener">CSS Values and Units Module Level&nbsp;3<br><small lang="en-US">The definition of '&lt;position&gt;' in that specification.</small></a></td>
+   <td><span class="spec-cr">Candidate Recommendation</span></td>
+   <td>Relists links to both definitions: if <a href="https://drafts.csswg.org/css-backgrounds-3/" hreflang="en" lang="en" class="external" title="The 'CSS Backgrounds and Borders Module Level&nbsp;3' specification" rel=" noopener">CSS Backgrounds and Borders Module Level&nbsp;3</a> is supported, its definition of <code>&lt;position&gt;</code> must also be used.</td>
+  </tr>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-backgrounds-3/#typedef-bg-position" hreflang="en" lang="en" class="external" rel=" noopener">CSS Backgrounds and Borders Module Level&nbsp;3<br><small lang="en-US">The definition of '&lt;bg-position&gt;' in that specification.</small></a></td>
+   <td><span class="spec-cr">Candidate Recommendation</span></td>
+   <td>Defines <code>&lt;position&gt;</code> explicitly and extends it to support offsets from any edge.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/CSS2/colors.html#propdef-background-position" hreflang="en" lang="en" class="external" rel=" noopener">CSS Level&nbsp;2 (Revision&nbsp;1)<br><small lang="en-US">The definition of '&lt;position&gt;' in that specification.</small></a></td>
+   <td><span class="spec-rec">Recommendation</span></td>
+   <td>Allows combination of a keyword with a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length"><code>&lt;length&gt;</code></a> or <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/percentage"><code>&lt;percentage&gt;</code></a> value.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/CSS1/#background-position" hreflang="en" lang="en" class="external" rel=" noopener">CSS Level&nbsp;1<br><small lang="en-US">The definition of '&lt;position&gt;' in that specification.</small></a></td>
+   <td><span class="spec-rec">Recommendation</span></td>
+   <td>Defines <code>&lt;position&gt;</code> anonymously as the value of <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-position"><code>background-position</code></a>.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Values_and_Units">CSS Values and Units</a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units">CSS Values and Units introduction</a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-position"><code>background-position</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/radial-gradient()"><code>radial-gradient()</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/conic-gradient()"><code>conic-gradient()</code></a></li>
+</ul></div>

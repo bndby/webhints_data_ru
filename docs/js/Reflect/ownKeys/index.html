@@ -1,0 +1,44 @@
+<h1>Reflect.ownKeys()</h1><div><div></div>
+
+<p>Статический метод&nbsp;<code><strong>Reflect</strong></code><strong><code>.ownKeys()</code></strong> возвращает массив имён, а также <code>Symbols</code>&nbsp;собственных полей объекта&nbsp;<code>target</code>&nbsp;.</p>
+
+<div><iframe class="interactive" width="100%" height="490" src="https://interactive-examples.mdn.mozilla.net/pages/js/reflect-ownkeys.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+</div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate">Reflect.ownKeys(target)
+</pre></div><h3 id="параметры"><a href="#параметры" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>target</code></dt>
+ <dd>Объект&nbsp;<code>target</code>, из которого получаем собственные ключи.</dd>
+</dl></div><h3 id="возвращаемое_значение"><a href="#возвращаемое_значение" title="Permalink to Возвращаемое значение">Возвращаемое значение</a></h3><div><p>Массив <a href="/js/Array/"><code>Array</code></a> собственных полей объекта <code>target</code>.</p></div><h3 id="исключения"><a href="#исключения" title="Permalink to Исключения">Исключения</a></h3><div><p>Выбрасывает исключение <a href="/js/TypeError/"><code>TypeError</code></a>, если&nbsp;<code>target</code> не является&nbsp;<a href="/js/Object/"><code>Object</code></a>.</p></div><h2 id="описание"><a href="#описание" title="Permalink to Описание">Описание</a></h2><div><p>Метод&nbsp;<code>Reflect.ownKeys</code> возвращает массив&nbsp;собственных ключей&nbsp;объекта&nbsp;<code>target</code>. Эквивалентом этого метода является&nbsp;<code><a href="/js/Object/getOwnPropertyNames/"><code>Object.getOwnPropertyNames</code></a>(target).concat(<a href="/js/Object/getOwnPropertySymbols/"><code>Object.getOwnPropertySymbols</code></a>(target))</code>.</p></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="использование_reflect.ownkeys()"><a href="#использование_reflect.ownkeys()" title="Permalink to Использование&nbsp;Reflect.ownKeys()">Использование&nbsp;<code>Reflect.ownKeys()</code></a></h3><div><pre class="brush: js notranslate"><code>Reflect<span class="token punctuation">.</span><span class="token function">ownKeys</span><span class="token punctuation">(</span><span class="token punctuation">{</span>z<span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span> y<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span> x<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [ "z", "y", "x" ]</span>
+Reflect<span class="token punctuation">.</span><span class="token function">ownKeys</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ["length"]</span>
+
+<span class="token keyword">var</span> sym <span class="token operator">=</span> Symbol<span class="token punctuation">.</span><span class="token function">for</span><span class="token punctuation">(</span><span class="token string">'comet'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> sym2 <span class="token operator">=</span> Symbol<span class="token punctuation">.</span><span class="token function">for</span><span class="token punctuation">(</span><span class="token string">'meteor'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">[</span>sym<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">'str'</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">'773'</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">'0'</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+           <span class="token punctuation">[</span>sym2<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">'-1'</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">'8'</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">'second str'</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+Reflect<span class="token punctuation">.</span><span class="token function">ownKeys</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// [ "0", "8", "773", "str", "-1", "second str", Symbol(comet), Symbol(meteor) ]</span>
+<span class="token comment">// Индексы в порядке их перечисления,</span>
+<span class="token comment">// Строки в порядке их ввода,</span>
+<span class="token comment">// Symbols в порядке их ввода</span>
+</code></pre></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-reflect.ownkeys" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Reflect.ownKeys' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Начальное определение.</td>
+  </tr>
+  <tr>
+   <td><a href="https://tc39.es/ecma262/#sec-reflect.ownkeys" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript (ECMA-262)<br><small lang="ru">Определение 'Reflect.ownKeys' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/Reflect/"><code>Reflect</code></a></li>
+ <li><a href="/js/Object/getOwnPropertyNames/"><code>Object.getOwnPropertyNames()</code></a></li>
+</ul></div>

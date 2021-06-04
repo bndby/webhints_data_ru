@@ -1,0 +1,62 @@
+<h1>Generator</h1><div><div></div>
+
+<p><code><strong>Генератор</strong></code>&nbsp;- это объект, возвращаемый <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/function*">функцией-генератором</a> и соответствующий как <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Iteration_protocols#iterable">"Итерируемому" протоколу</a>, так и <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Iteration_protocols#iterator">протоколу "Итератор"</a>.</p></div><h2 id="конструктор"><a href="#конструктор" title="Permalink to Конструктор">Конструктор</a></h2><div><p>Этот объект не может быть инстанциирован напрямую. Вместо этого, экземпляр <code>Generator</code> может быть возвращён из <a href="/js/GeneratorFunction/">функции-генератора</a>:</p>
+
+<pre class="notranslate line-numbers language-html">function* generator() {
+  yield 1;
+  yield 2;
+  yield 3;
+}
+
+const gen = generator(); // "Generator { }"
+
+console.log(gen.next().value); // 1
+console.log(generator().next().value); // 1
+console.log(generator().next().value); // 1</pre></div><h2 id="методы_экземпляра"><a href="#методы_экземпляра" title="Permalink to Методы экземпляра">Методы экземпляра</a></h2><div><dl>
+ <dt><a href="/js/Generator/next/"><code>Generator.prototype.next()</code></a></dt>
+ <dd>Возвращает значение, полученное выражением <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/yield"><code>yield</code></a>.</dd>
+ <dt><a href="/js/Generator/return/"><code>Generator.prototype.return()</code></a></dt>
+ <dd>Возвращает заданное значение и заканчивает генератор.</dd>
+ <dt><a href="/js/Generator/throw/"><code>Generator.prototype.throw()</code></a></dt>
+ <dd>Выдаёт ошибку генератора.</dd>
+</dl></div><h2 id="пример"><a href="#пример" title="Permalink to Пример">Пример</a></h2><div></div><h3 id="бесконечный_итератор"><a href="#бесконечный_итератор" title="Permalink to Бесконечный Итератор">Бесконечный Итератор</a></h3><div><pre class="brush: js notranslate"><code><span class="token keyword">function</span><span class="token operator">*</span> <span class="token function">idMaker</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> index <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span>
+        <span class="token keyword">yield</span> index<span class="token operator">++</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> gen <span class="token operator">=</span> <span class="token function">idMaker</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "Generator { }"</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>gen<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 0</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>gen<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 1</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>gen<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 2</span>
+<span class="token comment">// ...</span></code></pre></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-generator-objects" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Generator objects' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Initial definition.</td>
+  </tr>
+  <tr>
+   <td><a href="https://tc39.es/ecma262/#sec-generator-objects" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript (ECMA-262)<br><small lang="ru">Определение 'Generator objects' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="совместимость"><a href="#совместимость" title="Permalink to Совместимость">Совместимость</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div></div><h3 id="legacy_generators"><a href="#legacy_generators" title="Permalink to Legacy generators">Legacy generators</a></h3><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Deprecated_and_obsolete_features/The_legacy_Iterator_protocol">The legacy Iterator protocol</a></li>
+</ul></div><h3 id="es2015_generators"><a href="#es2015_generators" title="Permalink to ES2015 generators">ES2015 generators</a></h3><div><ul>
+ <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Functions">Functions</a></li>
+ <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/function"><code>function</code></a></li>
+ <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/function"><code>function expression</code></a></li>
+ <li><a href="/js/Function/"><code>Function</code></a></li>
+ <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/function*"><code>function*</code></a></li>
+ <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/function*"><code>function* expression</code></a></li>
+ <li><a href="/js/GeneratorFunction/"><code>GeneratorFunction</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols">The Iterator protocol</a></li>
+</ul></div>

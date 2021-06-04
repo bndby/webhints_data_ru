@@ -1,0 +1,70 @@
+<h1>Number.NEGATIVE_INFINITY</h1><div><div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Свойство <strong><code>Number.NEGATIVE_INFINITY</code></strong> представляет значение отрицательной бесконечности.</p>
+<p>Вам не нужно создавать объект <a href="/js/Number/"><code>Number</code></a> для доступа к этому статическому свойству (используйте <code>Number.NEGATIVE_INFINITY</code>).</p>
+
+<div><table class="standard-table">
+  <thead>
+    <tr>
+      <th class="header" colspan="2">Атрибуты свойства<code>Number.NEGATIVE_INFINITY</code></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Записываемое</td>
+      <td>нет</td>
+    </tr>
+    <tr>
+      <td>Перечисляемое</td>
+      <td>нет</td>
+    </tr>
+    <tr>
+      <td>Настраиваемое</td>
+      <td>нет</td>
+    </tr>
+  </tbody>
+</table></div></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Значение <code>Number.NEGATIVE_INFINITY</code> является тем же самым по модулю, только отрицательным значением, что содержит свойство <a href="/js/Infinity/"><code>Infinity</code></a> глобального объекта.</p>
+<p>Это значение ведёт себя несколько иначе, нежели математическая бесконечность:</p>
+<ul>
+ <li>Любое положительное значение, включая <a href="/js/Number/POSITIVE_INFINITY/"><code>POSITIVE_INFINITY</code></a>, умноженное на <code>NEGATIVE_INFINITY</code> даёт <code>NEGATIVE_INFINITY</code>.</li>
+ <li>Любое отрицательное значение, включая <code>NEGATIVE_INFINITY</code>, умноженное на <code>NEGATIVE_INFINITY</code> даёт <a href="/js/Number/POSITIVE_INFINITY/"><code>POSITIVE_INFINITY</code></a>.</li>
+ <li>Ноль, умноженный на <code>NEGATIVE_INFINITY</code>, даёт <a href="/js/NaN/"><code>NaN</code></a>.</li>
+ <li><a href="/js/NaN/"><code>NaN</code></a>, умноженный на <code>NEGATIVE_INFINITY</code>, даёт <a href="/js/NaN/"><code>NaN</code></a>.</li>
+ <li><code>NEGATIVE_INFINITY</code>, делённое на любое отрицательное значение, исключая <code>NEGATIVE_INFINITY</code>, даёт <a href="/js/Number/POSITIVE_INFINITY/"><code>POSITIVE_INFINITY</code></a>.</li>
+ <li><code>NEGATIVE_INFINITY</code>, делённое на любое положительное значение, исключая <a href="/js/Number/POSITIVE_INFINITY/"><code>POSITIVE_INFINITY</code></a>, даёт <code>NEGATIVE_INFINITY</code>.</li>
+ <li><code>NEGATIVE_INFINITY</code>, делённое на <code>NEGATIVE_INFINITY</code> или <a href="/js/Number/POSITIVE_INFINITY/"><code>POSITIVE_INFINITY</code></a>, даёт <a href="/js/NaN/"><code>NaN</code></a>.</li>
+ <li>Любое число, делённое на <code>NEGATIVE_INFINITY</code>, даёт ноль.</li>
+</ul>
+<p>Вы можете использовать свойство <code>Number.NEGATIVE_INFINITY</code> для проверки на ошибки и возвращать конечное число в случае успеха. Однако, обратите внимание, что в этом случае более уместным было бы использование функции <a href="/js/isFinite/"><code>isFinite</code></a>.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_using_negative_infinity"><a href="#example_using_negative_infinity" title="Permalink to Пример: использование NEGATIVE_INFINITY">Пример: использование <code>NEGATIVE_INFINITY</code></a></h3><div><p>В следующем примере переменной <code>smallNumber</code> присваивается значение, меньшее минимального. Когда выполняется инструкция <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/if...else"><code>if</code></a>, переменная <code>smallNumber</code> имеет значение <code>-Infinity</code>, так что перед продолжением вычислений она устанавливается в более приемлемое значение.</p>
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> smallNumber <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token operator">-</span>Number<span class="token punctuation">.</span><span class="token constant">MAX_VALUE</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">;</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span>smallNumber <span class="token operator">==</span> Number<span class="token punctuation">.</span><span class="token constant">NEGATIVE_INFINITY</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  smallNumber <span class="token operator">=</span> <span class="token function">returnFinite</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td>ECMAScript 1-е издание.</td>
+   <td>Стандарт</td>
+   <td>Изначальное определение. Реализована в JavaScript 1.1.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-15.7.3.5" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 5.1 (ECMA-262)<br><small lang="ru">Определение 'Number.NEGATIVE_INFINITY' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-number.negative_infinity" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Number.NEGATIVE_INFINITY' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/Number/POSITIVE_INFINITY/"><code>Number.POSITIVE_INFINITY</code></a></li>
+ <li><a href="/js/Number/isFinite/"><code>Number.isFinite()</code></a></li>
+ <li><a href="/js/Infinity/"><code>Infinity</code></a></li>
+ <li><a href="/js/isFinite/"><code>isFinite()</code></a></li>
+</ul></div>

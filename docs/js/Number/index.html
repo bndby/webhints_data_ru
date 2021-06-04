@@ -1,0 +1,137 @@
+<h1>Number</h1><div><div></div>
+
+<p>Объект <strong><code>Number</code></strong> является объектом-обёрткой, позволяющей вам работать с числовыми значениями. Объект <code>Number</code> создаётся через конструктор <code>Number()</code>.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="notranslate">new Number(<em>value</em>);
+var <em>a</em> = new Number('123'); // a === 123 is false
+var <em>b</em> = Number('123'); // b === 123 is true
+<em>a</em> instanceof Number; // is true
+<em>b</em> instanceof Number; // is false</pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>value</code></dt>
+ <dd>Числовое значение, которое примет объект после создания.</dd>
+</dl></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Несколько замечаний относительно использования объекта <code>Number</code>:</p>
+
+<ul>
+ <li>Если аргумент не может быть преобразован в число, возвращается <a href="/js/NaN/"><code>NaN</code></a>.</li>
+ <li>В неконструкторном контексте (то есть, без оператора <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/new"><code>new</code></a>), объект <code>Number</code> может использоваться для проведения преобразования типов.</li>
+</ul></div><h2 id="properties"><a href="#properties" title="Permalink to Свойства">Свойства</a></h2><div><dl>
+ <dt><a href="/js/Number/EPSILON/"><code>Number.EPSILON</code></a> </dt>
+ <dd>Наименьший интервал между двумя представимыми числами.</dd>
+ <dt><a href="/js/Number/MAX_SAFE_INTEGER/"><code>Number.MAX_SAFE_INTEGER</code></a> </dt>
+ <dd>Максимальное целое число, которое можно безопасно использовать в JavaScript (<code>2<sup>53</sup> - 1</code>).</dd>
+ <dt><a href="/js/Number/MAX_VALUE/"><code>Number.MAX_VALUE</code></a></dt>
+ <dd>Наибольшее представимое положительное число.</dd>
+ <dt><a href="/js/Number/MIN_SAFE_INTEGER/"><code>Number.MIN_SAFE_INTEGER</code></a> </dt>
+ <dd>Минимальное целое число, которое можно безопасно использовать в (<code>-(2<sup>53</sup> - 1)</code>).</dd>
+ <dt><a href="/js/Number/MIN_VALUE/"><code>Number.MIN_VALUE</code></a></dt>
+ <dd>Наименьшее представимое положительное число&nbsp;— то есть, самое близкое к нулю положительное число (которое ещё не является нулём).</dd>
+ <dt><a href="/js/Number/NaN/"><code>Number.NaN</code></a></dt>
+ <dd>Специальное значение для представления «не числа».</dd>
+ <dt><a href="/js/Number/NEGATIVE_INFINITY/"><code>Number.NEGATIVE_INFINITY</code></a></dt>
+ <dd>Специальное значение для представления отрицательной бесконечности; возвращается при переполнении.</dd>
+ <dt><a href="/js/Number/POSITIVE_INFINITY/"><code>Number.POSITIVE_INFINITY</code></a></dt>
+ <dd>Специальное значение для представления положительной бесконечности; возвращается при переполнении.</dd>
+ <dt><a href="https://developer.mozilla.org/ru/docs/conflicting/Web/JavaScript/Reference/Global_Objects/Number"><code>Number.prototype</code></a></dt>
+ <dd>Позволяет добавлять свойства к объекту <code>Number</code>.</dd>
+</dl>
+
+<div><div class="notecard note">
+
+<div><span>Свойства, унаследованные из <a href="/js/Function/"><code>Function</code></a>:</span></div>
+<div><a class="internal" href="/js/Function/Arity/"><code>arity</code></a>, <a class="internal" href="/js/Function/caller/"><code>caller</code></a>, <a class="internal only-in-en-us" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" title="Currently only available in English (US)">constructor (en-US)</a>, <a class="internal" href="/js/Function/length/"><code>length</code></a>, <a class="internal" href="/js/Function/name/"><code>name</code></a></div>
+</div></div></div><h2 id="methods"><a href="#methods" title="Permalink to Методы">Методы</a></h2><div><dl>
+ <dt><a href="/js/Number/isNaN/"><code>Number.isNaN()</code></a> </dt>
+ <dd>Определяет, является ли переданное значение значением <a href="/js/NaN/"><code>NaN</code></a>.</dd>
+ <dt><a href="/js/Number/isFinite/"><code>Number.isFinite()</code></a> </dt>
+ <dd>Определяет, является ли переданное значение конечным числом.</dd>
+ <dt><a href="/js/Number/isInteger/"><code>Number.isInteger()</code></a> </dt>
+ <dd>Определяет, является ли тип переданного значения «числом», а само число&nbsp;— целым значением.</dd>
+ <dt><a href="/js/Number/isSafeInteger/"><code>Number.isSafeInteger()</code></a> </dt>
+ <dd>Определяет, является ли переданное значение безопасным целым числом (числом в диапазоне от <code>-(2<sup>53</sup> - 1)</code> до <code>2<sup>53</sup> - 1</code>).</dd>
+ <dt><s class="obsoleteElement"><a class="page-not-created" title="Документация об этом ещё не написана; пожалуйста, поспособствуйте её написанию!"><code>Number.toInteger()</code></a> </s></dt>
+ <dd><s class="obsoleteElement">Использовался для вычисления переданного значения и преобразования его в целое число (или бесконечность <a href="/js/Infinity/"><code>Infinity</code></a>), но был удалён.</s></dd>
+ <dt><a href="/js/Number/parseFloat/"><code>Number.parseFloat()</code></a> </dt>
+ <dd>Представляет собой тот же самый метод, что и метод <a href="/js/parseFloat/"><code>parseFloat</code></a> глобального объекта.</dd>
+ <dt><a href="/js/Number/parseInt/"><code>Number.parseInt()</code></a> </dt>
+ <dd>Представляет собой тот же самый метод, что и метод <a href="/js/parseInt/"><code>parseInt</code></a> глобального объекта.</dd>
+</dl>
+
+<div><div class="notecard note">
+
+<div><span>Методы, унаследованные из <a href="/js/Function/"><code>Function</code></a>:</span></div>
+<div><a class="internal" href="/js/Function/apply/"><code>apply</code></a>, <a class="internal" href="/js/Function/call/"><code>call</code></a>, <a class="internal" href="/js/Function/toSource/"><code>toSource</code></a>, <a class="internal" href="/js/Function/toString/"><code>toString</code></a></div>
+</div></div></div><h2 id="number_instances"><a href="#number_instances" title="Permalink to Экземпляры объекта Number">Экземпляры объекта <code>Number</code></a></h2><div><p>Все экземпляры объекта <code>Number</code> наследуются от <a href="https://developer.mozilla.org/ru/docs/conflicting/Web/JavaScript/Reference/Global_Objects/Number"><code>Number.prototype</code></a>. Объект прототипа конструктора <code>Number</code> может быть изменён, чтобы затронуть все экземпляры объекта <code>Number</code>.</p></div><h3 id="methods_of_number_instance"><a href="#methods_of_number_instance" title="Permalink to Методы">Методы</a></h3><div><div><dl>
+ <dt><a href="/js/Number/toExponential/"><code>Number.prototype.toExponential()</code></a></dt>
+ <dd>Возвращает строку, представляющую число в экспоненциальной записи.</dd>
+ <dt><a href="/js/Number/toFixed/"><code>Number.prototype.toFixed()</code></a></dt>
+ <dd>Возвращает строку, представляющую число в записи с фиксированной запятой.</dd>
+ <dt><a href="/js/Number/toLocaleString/"><code>Number.prototype.toLocaleString()</code></a></dt>
+ <dd>Возвращает строку с языкозависимым представлением числа. Переопределяет метод <a href="/js/Object/toLocaleString/"><code>Object.prototype.toLocaleString()</code></a>.</dd>
+ <dt><a href="/js/Number/toPrecision/"><code>Number.prototype.toPrecision()</code></a></dt>
+ <dd>Возвращает строку, представляющую число с указанной точностью в экспоненциальной записи, либо записи с фиксированной запятой.</dd>
+ <dt><a href="/js/Number/toSource/"><code>Number.prototype.toSource()</code></a> </dt>
+ <dd>Возвращает объектный литерал, представляющий объект <a href="/js/Number/" aria-current="page"><code>Number</code></a>; вы можете использовать это значение для создания нового объекта. Переопределяет метод <a href="/js/Object/toSource/"><code>Object.prototype.toSource()</code></a>.</dd>
+ <dt><a href="/js/Number/toString/"><code>Number.prototype.toString()</code></a></dt>
+ <dd>Возвращает строку, представляющую указанный объект по указанному основанию системы счисления. Переопределяет метод <a href="/js/Object/toString/"><code>Object.prototype.toString()</code></a>.</dd>
+ <dt><a href="/js/Number/valueOf/"><code>Number.prototype.valueOf()</code></a></dt>
+ <dd>Возвращает примитивное значение указанного объекта. Переопределяет метод <a href="/js/Object/valueOf/"><code>Object.prototype.valueOf()</code></a>.</dd>
+</dl><div><div class="notecard note">
+
+<div><span>Методы, унаследованные из <a href="/js/Object/"><code>Object</code></a>:</span></div>
+<div><a class="internal only-in-en-us" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineGetter__" title="Currently only available in English (US)">defineGetter (en-US)</a>, <a class="internal only-in-en-us" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineSetter__" title="Currently only available in English (US)">defineSetter (en-US)</a>, <a class="internal" href="/js/Object/hasOwnProperty/"><code>hasOwnProperty</code></a>, <a class="internal" href="/js/Object/isPrototypeOf/"><code>isPrototypeOf</code></a>, <a class="internal only-in-en-us" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupGetter__" title="Currently only available in English (US)">lookupGetter (en-US)</a>, <a class="internal only-in-en-us" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupSetter__" title="Currently only available in English (US)">lookupSetter (en-US)</a>, <a class="internal" href="/js/Object/Nosuchmethod/"><code>noSuchMethod</code></a>, <a class="internal" href="/js/Object/propertyIsEnumerable/"><code>propertyIsEnumerable</code></a>, <a class="internal" href="/js/Object/Unwatch/"><code>unwatch</code></a>, <a class="internal" href="/js/Object/Watch/"><code>watch</code></a></div>
+</div></div></div></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_using_the_number_object_to_assign_values_to_numeric_variables"><a href="#example_using_the_number_object_to_assign_values_to_numeric_variables" title="Permalink to Пример: использование объекта Number для присваивания значений числовым переменным">Пример: использование объекта <code>Number</code> для присваивания значений числовым переменным</a></h3><div><p>В следующем примере для присваивания значений числовым переменным используются свойства объекта <code>Number</code>:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> biggestNum <span class="token operator">=</span> Number<span class="token punctuation">.</span><span class="token constant">MAX_VALUE</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> smallestNum <span class="token operator">=</span> Number<span class="token punctuation">.</span><span class="token constant">MIN_VALUE</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> infiniteNum <span class="token operator">=</span> Number<span class="token punctuation">.</span><span class="token constant">POSITIVE_INFINITY</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> negInfiniteNum <span class="token operator">=</span> Number<span class="token punctuation">.</span><span class="token constant">NEGATIVE_INFINITY</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> notANum <span class="token operator">=</span> Number<span class="token punctuation">.</span><span class="token number">NaN</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="example_using_number_to_convert_a_date_object"><a href="#example_using_number_to_convert_a_date_object" title="Permalink to Пример: целочисленный диапазон для объекта Number">Пример: целочисленный диапазон для объекта <code>Number</code></a></h3><div><p>Следующий пример показывает, какие минимальное и максимальное целочисленные значения может представить объект <code>Number</code> (за подробностями обращайтесь к стандарту EcmaScript, главе <em>8.5 Тип Number</em>):</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> biggestInt <span class="token operator">=</span> <span class="token number">9007199254740992</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> smallestInt <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">9007199254740992</span><span class="token punctuation">;</span>
+</code></pre>
+
+<p>При разборе данных, сериализованных в JSON, можно ожидать, что целые значения, выпадающие из этого диапазона будут повреждены, когда парсер JSON приведёт их к типу <code>Number</code>. Возможным обходным путём может быть использование объекта <a href="/js/String/"><code>String</code></a>.</p></div><h3 id="example_using_number_to_convert_a_date_object"><a href="#example_using_number_to_convert_a_date_object" title="Permalink to Пример: использование Number для преобразования объекта Date">Пример: использование <code>Number</code> для преобразования объекта <code>Date</code></a></h3><div><p>В следующем примере объект <a href="/js/Date/"><code>Date</code></a> преобразуется в числовое значение с использование объекта <code>Number</code> в качестве функции:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> d <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">'December 17, 1995 03:24:00'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">Number</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+<p>Пример выведет "819199440000".</p></div><h3 id="example_convert_numeric_strings_to_numbers"><a href="#example_convert_numeric_strings_to_numbers" title="Permalink to Пример: преобразование строк с числами в числа">Пример: преобразование строк с числами в числа</a></h3><div><pre class="brush: js notranslate"><code><span class="token function">Number</span><span class="token punctuation">(</span><span class="token string">'123'</span><span class="token punctuation">)</span>     <span class="token comment">// 123</span>
+<span class="token function">Number</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>        <span class="token comment">// 0</span>
+<span class="token function">Number</span><span class="token punctuation">(</span><span class="token string">'0x11'</span><span class="token punctuation">)</span>    <span class="token comment">// 17</span>
+<span class="token function">Number</span><span class="token punctuation">(</span><span class="token string">'0b11'</span><span class="token punctuation">)</span>    <span class="token comment">// 3</span>
+<span class="token function">Number</span><span class="token punctuation">(</span><span class="token string">'0o11'</span><span class="token punctuation">)</span>    <span class="token comment">// 9</span>
+<span class="token function">Number</span><span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">)</span>     <span class="token comment">// NaN</span>
+<span class="token function">Number</span><span class="token punctuation">(</span><span class="token string">'100a'</span><span class="token punctuation">)</span>    <span class="token comment">// NaN</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-262,%201st%20edition,%20June%201997.pdf" hreflang="en" lang="en" class="external" title="Спецификация 'ECMAScript 1st Edition (ECMA-262)'" rel=" noopener">ECMAScript 1st Edition (ECMA-262)</a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Изначальное определение. Реализована в JavaScript 1.1.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-15.7" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 5.1 (ECMA-262)<br><small lang="ru">Определение 'Number' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-number-objects" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Number' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Добавлены новые методы и свойства: (<a href="/js/Number/EPSILON/"><code>EPSILON</code></a>, <a href="/js/Number/isFinite/"><code>isFinite</code></a>, <a href="/js/Number/isInteger/"><code>isInteger</code></a>, <a href="/js/Number/isNaN/"><code>isNaN</code></a>, <a href="/js/Number/parseFloat/"><code>parseFloat</code></a> и <a href="/js/Number/parseInt/"><code>parseInt</code></a>)</td>
+  </tr>
+  <tr>
+   <td><a href="https://tc39.es/ecma262/#sec-number-objects" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript (ECMA-262)<br><small lang="ru">Определение 'Number' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/NaN/"><code>NaN</code></a></li>
+ <li>Глобальный объект <a href="/js/Math/"><code>Math</code></a></li>
+</ul></div>

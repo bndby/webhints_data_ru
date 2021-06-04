@@ -1,0 +1,95 @@
+<h1>quotes</h1><div><div></div>
+
+<p>The <strong><code>quotes</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> property sets how the browser should render quotation marks that are added using the <code>open-quotes</code> or <code>close-quotes</code> values of the CSS <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/content">content</a></code> property.</p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/quotes.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* Keyword value */</span>
+<span class="token property">quotes</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token property">quotes</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+
+<span class="token comment">/* &lt;string&gt; values */</span>
+<span class="token property">quotes</span><span class="token punctuation">:</span> <span class="token string">"«"</span> <span class="token string">"»"</span><span class="token punctuation">;</span>           <span class="token comment">/* Set open-quote and close-quote to the French quotation marks */</span>
+<span class="token property">quotes</span><span class="token punctuation">:</span> <span class="token string">"«"</span> <span class="token string">"»"</span> <span class="token string">"‹"</span> <span class="token string">"›"</span><span class="token punctuation">;</span>   <span class="token comment">/* Set two levels of quotation marks */</span>
+
+<span class="token comment">/* Global values */</span>
+<span class="token property">quotes</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">quotes</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">quotes</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+ <dt><code>none</code></dt>
+ <dd>The <code>open-quote</code> and <code>close-quote</code> values of the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/content"><code>content</code></a> property produce no quotation marks.</dd>
+ <dt><code>auto</code></dt>
+ <dd>Appropriate quote marks will be used for whatever language value is set on the selected elements (i.e. via the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes#attr-lang"><code>lang</code></a> attribute).</dd>
+ <dt><code>[&lt;string&gt; &lt;string&gt;]+</code></dt>
+ <dd>One or more pairs of <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/string"><code>&lt;string&gt;</code></a> values for <code>open-quote</code> and <code>close-quote</code>. The first pair represents the outer level of quotation, the second pair is for the first nested level, next pair for third level and so on.</dd>
+</dl></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td>depends on user agent</td></tr><tr><th scope="row">Applies to</th><td>all elements</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance">Inherited</a></th><td>yes</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>as specified</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate">none <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> auto <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">[</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/string" title>&lt;string&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/string" title>&lt;string&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">]</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#plus_()" title="Plus: the entity may occur one or several times">+</a></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="basic_quote_marks"><a href="#basic_quote_marks" title="Permalink to Basic quote marks">Basic quote marks</a></h3><div><h4 id="html">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>q</span><span class="token punctuation">&gt;</span></span>To be or not to be. That's the question!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>q</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<h4 id="css">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token selector">q</span> <span class="token punctuation">{</span>
+  <span class="token property">quotes</span><span class="token punctuation">:</span> <span class="token string">'"'</span> <span class="token string">'"'</span> <span class="token string">"'"</span> <span class="token string">"'"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">q::before</span> <span class="token punctuation">{</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> open-quote<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">q::after</span> <span class="token punctuation">{</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> close-quote<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<h4 id="result">Result</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Basic_quote_marks" width="100%" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/quotes/_sample_.Basic_quote_marks.html" loading="lazy"></iframe></p></div><h3 id="auto_quotes"><a href="#auto_quotes" title="Permalink to Auto quotes">Auto quotes</a></h3><div><p>For most browsers, the default value of <code>quotes</code> is <code>auto</code> (Firefox 70+), or the browser otherwise had this default behavior (Chromiums, Safari, Edge), so this example works without it being explicitly being set.</p>
+
+<h4 id="html_2">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>fr<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>q</span><span class="token punctuation">&gt;</span></span>Ceci est une citation française.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>q</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>hr</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ru<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>q</span><span class="token punctuation">&gt;</span></span>Это русская цитата<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>q</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>hr</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>de<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>q</span><span class="token punctuation">&gt;</span></span>Dies ist ein deutsches Zitat<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>q</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>hr</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>q</span><span class="token punctuation">&gt;</span></span>This is an English quote.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>q</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<h4 id="css_2">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token comment">/*q {
+  quotes: auto;
+}*/</span>
+</code></pre>
+
+<h4 id="result_2">Result</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Auto_quotes" width="100%" height="200" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/quotes/_sample_.Auto_quotes.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-content-3/#quotes" hreflang="en" lang="en" class="external" rel=" noopener">CSS Generated Content Module Level&nbsp;3<br><small lang="en-US">The definition of 'quotes' in that specification.</small></a></td>
+   <td><span class="spec-wd">Working Draft</span></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/CSS2/generate.html#quotes" hreflang="en" lang="en" class="external" rel=" noopener">CSS Level&nbsp;2 (Revision&nbsp;1)<br><small lang="en-US">The definition of 'quotes' in that specification.</small></a></td>
+   <td><span class="spec-rec">Recommendation</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/content"><code>content</code></a></li>
+</ul></div>

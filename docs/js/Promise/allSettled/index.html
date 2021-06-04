@@ -1,0 +1,29 @@
+<h1>Promise.allSettled()</h1><div><p></p><p></p>
+
+<p>Метод&nbsp;<code><strong>Promise.allSettled()</strong></code>&nbsp;возвращает промис, который исполняется когда все полученные промисы завершены (исполнены или отклонены), содержащий массив результатов исполнения полученных промисов.</p>
+
+<div><iframe class="interactive" width="100%" height="490" src="https://interactive-examples.mdn.mozilla.net/pages/js/promise-allsettled.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><em>promise</em>.allSettled(<em>iterable</em>);</pre></div><h3 id="параметры"><a href="#параметры" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>iterable</code></dt>
+ <dd>Любой <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Iteration_protocols">итерируемый</a> объект, такой как&nbsp;<a href="/js/Array/"><code>Array</code></a>, в котором каждый элемент является <code>Promise</code>.</dd>
+</dl></div><h3 id="возвращаемое_значение"><a href="#возвращаемое_значение" title="Permalink to Возвращаемое значение">Возвращаемое значение</a></h3><div><p><a href="/js/Promise/"><code>Promise</code></a>, который будет выполнен после завершения каждого промиса, вне зависимости от того выполнился&nbsp;он&nbsp;успешно или был&nbsp;отклонён. В то же время, в возвращаемый обработчик промиса передаётся&nbsp;массив, который содержит результат каждого промиса&nbsp;в исходном наборе промисов.</p>
+
+<p>Объект каждого результата содержит свойство&nbsp;<code>status</code>. Если <code>status</code>&nbsp;имеет значение&nbsp;<code>fulfilled</code>&nbsp;(выполнено),&nbsp;то объект будет содержать свойство&nbsp;<code>value</code>. Если <code>status</code> имеет значение <code>rejected</code> (отклонено), то объект будет содержать свойство&nbsp;<code>reason</code>. Свойство&nbsp;<code>value</code> (или <code>reason</code>) будет содержать значение с которым был&nbsp;выполнен&nbsp;(или отклонён) промис.</p></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+  <tr>
+   <td><a href="https://tc39.es/proposal-promise-allSettled/" class="external" rel=" noopener"><code>Promise.allSettled()</code> (TC39 Stage 4 Draft)</a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="совместимость_с_браузерами"><a href="#совместимость_с_браузерами" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Archive/Add-ons/Techniques/Promises">Promises</a></li>
+ <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Using_promises">Использование промисов</a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Promises">Graceful asynchronous programming with promises</a></li>
+ <li><a href="/js/Promise/"><code>Promise</code></a></li>
+ <li><a href="/js/Promise/all/"><code>Promise.all()</code></a></li>
+</ul></div>

@@ -1,0 +1,68 @@
+<h1>:nth-last-child</h1><div><div></div></div><h2 id="описание"><a href="#описание" title="Permalink to Описание">Описание</a></h2><div><p><a href="/css/" title="CSS">CSS</a> <a href="/css/Pseudo-classes/" title="Pseudo-classes">псевдокласс</a> <code>:nth-last-child(an+b)</code>&nbsp;находит элемент,&nbsp;имеющий&nbsp;<code><em>a</em>n+<em>b</em>-1</code>&nbsp;потомков после&nbsp;данной позиции&nbsp;в дереве документа, значение для&nbsp;<code>n&nbsp;</code>может быть положительным&nbsp;или нулевым, а также имеющий родительский элемент.</p>
+
+<p>В результате, он функционирует так же, как и&nbsp;<a href="/css/:nth-child/"><code>:nth-child</code></a>, кроме того, что выбирает элементы, считая в обратном порядке, с&nbsp;<strong>конца</strong>&nbsp;списка потомков, не с начала.</p>
+
+<p>Смотрите <a href="/css/:nth-child/"><code>:nth-child</code></a> для более тщательного описания синтаксиса его аргументов.</p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate">element:nth-last-child(<em>a</em>n + <em>b</em>) {<em>стили</em> }
+</pre></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="пример_селекторов"><a href="#пример_селекторов" title="Permalink to Пример селекторов">Пример селекторов</a></h3><div><dl>
+ <dt><code>tr:nth-last-child(-n+4)</code></dt>
+ <dd>Находит последние 4 строки&nbsp;HTML таблицы.</dd>
+ <dt><code>span:nth-last-child(even)</code></dt>
+ <dd>Ищет чётные элементы в родительском элементе, начиная с последнего элемента и работая задом наперёд.</dd>
+</dl></div><h3 id="использование"><a href="#использование" title="Permalink to Использование">Использование</a></h3><div><p>Этот CSS ...</p>
+
+<pre class="brush: css notranslate"><code><span class="token selector">table</span> <span class="token punctuation">{</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 1px solid blue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">tr:nth-last-child(-n+3)</span> <span class="token punctuation">{</span> <span class="token comment">/* последние 3 потомка */</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> lime<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p>... с этим&nbsp;HTML ...</p>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tbody</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>Первая<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">&gt;</span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>Вторая строка<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">&gt;</span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>Третья<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">&gt;</span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>Четвёртая<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">&gt;</span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>Пятая строчка<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tbody</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<p>... будет выглядеть, как&nbsp;:</p>
+
+<p><iframe class="sample-code-frame" id="frame_Примеры" width="100%" height="150" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/:nth-last-child/_sample_.%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D1%8B.html" loading="lazy"></iframe></p></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/selectors-4/#nth-last-child-pseudo" hreflang="en" lang="en" class="external" rel=" noopener">Selectors Level&nbsp;4<br><small lang="ru">Определение ':nth-last-child' в этой спецификации.</small></a></td>
+   <td><span class="spec-wd">Рабочий черновик</span></td>
+   <td>Без изменений</td>
+  </tr>
+  <tr>
+   <td><a href="https://drafts.csswg.org/selectors-3/#nth-last-child-pseudo" hreflang="en" lang="en" class="external" rel=" noopener">Selectors Level&nbsp;3<br><small lang="ru">Определение ':nth-last-child' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Изначальное определение</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="поддержка_браузерами"><a href="#поддержка_браузерами" title="Permalink to Поддержка браузерами">Поддержка браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/css/:nth-child/"><code>:nth-child</code></a></li>
+</ul></div>

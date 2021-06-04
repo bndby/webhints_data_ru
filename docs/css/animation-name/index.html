@@ -1,0 +1,48 @@
+<h1>animation-name</h1><div><div> <div class="notecard experimental">
+    <h4 id="experimental">Experimental</h4>
+    <p><strong>Это экспериментальная технология</strong><br>Так как спецификация этой технологии ещё не стабилизировалась, смотрите <a href="#browser_compatibility">таблицу совместимости</a> по поводу использования в различных браузерах. Также заметьте, что синтаксис и поведение экспериментальной технологии может измениться в будущих версиях браузеров, вслед за изменениями спецификации.</p>
+</div></div></div><h2 id="описание"><a href="#описание" title="Permalink to Описание">Описание</a></h2><div><p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS" title="CSS">CSS</a> свойство <strong><code>animation-name</code></strong> задаёт список анимаций, чтобы применить к элементу. Каждое имя является правилом <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes"><code>@keyframes</code> <span>(en-US)</span></a>, которое задаёт значения свойств для последовательности анимации.</p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/animation-name.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+
+
+<p>Часто удобно использовать сокращённое свойство <a href="/css/animation/"><code>animation</code></a> для одновременной установки всех свойств анимации.</p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="brush:css notranslate"><code><span class="token comment">/* Single animation */</span>
+<span class="token property">animation-name</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token property">animation-name</span><span class="token punctuation">:</span> test_05<span class="token punctuation">;</span>
+<span class="token property">animation-name</span><span class="token punctuation">:</span> -specific<span class="token punctuation">;</span>
+<span class="token property">animation-name</span><span class="token punctuation">:</span> sliding-vertically<span class="token punctuation">;</span>
+
+<span class="token comment">/* Multiple animations */</span>
+<span class="token property">animation-name</span><span class="token punctuation">:</span> test1<span class="token punctuation">;</span>
+<span class="token property">animation-name</span><span class="token punctuation">:</span> test1<span class="token punctuation">,</span> animation4<span class="token punctuation">;</span>
+<span class="token property">animation-name</span><span class="token punctuation">:</span> none<span class="token punctuation">,</span> -moz-specific<span class="token punctuation">,</span> sliding<span class="token punctuation">;</span>
+
+<span class="token comment">/* Global values */</span>
+<span class="token property">animation-name</span><span class="token punctuation">:</span> initial
+<span class="token property">animation-name</span><span class="token punctuation">:</span> inherit
+<span class="token property">animation-name</span><span class="token punctuation">:</span> unset
+</code></pre></div><h3 id="значения"><a href="#значения" title="Permalink to Значения">Значения</a></h3><div><dl>
+ <dt><code>none</code></dt>
+ <dd>Это специальное ключевое слово, обозначающее отсутствие ключевых кадров. Оно может быть использовано для отключения анимации без изменения порядка&nbsp;других идентификаторов, или для отключения анимации, поступающей из каскада.</dd>
+ <dt><a href="/css/custom-ident/"><code>&lt;custom-ident&gt;</code></a></dt>
+ <dd>Строка, идентифицирующая анимацию. Этот идентификатор состоит из комбинации букв без учёта регистра от <code>a</code> до <code>z</code>, цифр от <code>0</code> до <code>9</code>, подчёркивания (<code>_</code>), и/или черты (<code>-</code>). Первый символ без черты должен быть буквой (то есть, без цифры в начале, даже если перед ним стоит черта.) Кроме того, две черты запрещены в начале идентификатора. Оно не может быть <code>none</code>, <code>unset</code>, <code>initial</code>, или <code>inherit</code> в любой комбинации случаев.</dd>
+</dl></div><h3 id="формальный_синтаксис"><a href="#формальный_синтаксис" title="Permalink to Формальный синтаксис">Формальный синтаксис</a></h3><div><pre class="notranslate"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> none <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <a href="#keyframes-name">&lt;keyframes-name&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#hash_mark_()" title="Currently only available in English (US)" class="only-in-en-us"># (en-US)</a><p style="font-family:Open Sans,Arial,sans-serif; margin: 10px 0 0 0;">где <br><code style="font-family:Consolas,Monaco,&quot;Andale Mono&quot;,monospace;"><span id="keyframes-name">&lt;keyframes-name&gt;</span> = <a href="/css/custom-ident/" title>&lt;custom-ident&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/string" title="Currently only available in English (US)" class="only-in-en-us">&lt;string&gt; (en-US)</a></code></p></pre></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div><p>См. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations" title="CSS/CSS_animations">CSS animations</a>.</p></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-animations-1/#animation-name" hreflang="en" lang="en" class="external" rel=" noopener">CSS Animations Level 1<br><small lang="ru">Определение 'animation-name' в этой спецификации.</small></a></td>
+   <td><span class="spec-wd">Рабочий черновик</span></td>
+   <td>Начальное определение</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="совместимость_с_браузерами"><a href="#совместимость_с_браузерами" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations" title="Tutorial about CSS animations">Использование CSS анимации</a></li>
+ <li><a href="https://developer.mozilla.org/ru/docs/Web/API/AnimationEvent" title="AnimationEvent"><code>AnimationEvent</code></a></li>
+</ul></div>

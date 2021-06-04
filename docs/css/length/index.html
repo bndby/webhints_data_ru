@@ -1,0 +1,120 @@
+<h1>&lt;length&gt;</h1><div><div></div>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a>&nbsp;<a href="/css/CSS_Types/">тип данных</a>&nbsp;<code>&lt;length&gt;</code>&nbsp;представляет единицу длины. Длина может быть использована в таких свойствах CSS как <a href="/css/width/"><code>width</code></a>, <a href="/css/height/"><code>height</code></a>, <a href="/css/margin/"><code>margin</code></a>, <a href="/css/padding/"><code>padding</code></a>, <a href="/css/border-width/"><code>border-width</code></a>, <a href="/css/font-size/"><code>font-size</code></a>, и <a href="/css/text-shadow/"><code>text-shadow</code></a>.</p>
+
+<div class="note notecard">
+<p><strong>Обратите внимание:</strong> Хоть значения&nbsp;<a href="/css/percentage/"><code>&lt;percentage&gt;</code></a> также определяют размеры и могут использоваться в некоторых свойствах, принимающих значения типа&nbsp;<code>&lt;length&gt;</code>, они не являются <code>&lt;length&gt; </code>значениями.</p>
+</div></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><p>Тип данных&nbsp;<code>&lt;length&gt;</code>&nbsp;состоит из <a href="/css/number/"><code>&lt;number&gt;</code></a>, за которым следует одна из единиц измерения, перечисленных ниже. Как и у любых единиц измерения CSS между числом и единицей нет знака пробела. После числа <code>0</code>&nbsp;единица измерения необязательна.</p>
+
+<div class="note notecard">
+<p><strong>Обратите внимание:</strong>&nbsp;Некоторые свойства допускают использование отрицательных значений <code>&lt;length&gt;</code>, а некоторые нет.</p>
+</div></div><h3 id="единицы_измерения"><a href="#единицы_измерения" title="Permalink to Единицы измерения">Единицы измерения</a></h3><div><h4 id="относительные_единицы_измерения">Относительные единицы измерения</h4>
+
+<p>Относительные единицы измерения представляют расстояние, определённое какой-либо другой величиной. В зависимости от единицы, это может быть размер определённого символа, <a href="/css/line-height/">высота строки</a>&nbsp;или размер <a href="https://developer.mozilla.org/ru/docs/Glossary/Viewport">viewport</a>.</p>
+
+<h5 id="единицы_зависящие_от_шрифта">Единицы, зависящие от шрифта</h5>
+
+<p>Единицы, зависящие от шрифта, определяют значение&nbsp;<code>&lt;length&gt;</code>, используя размер какого-либо символа или характеристики шрифта, который применяется к элементу или его родителю.</p>
+
+<div class="note notecard">
+<p><strong>Обратите внимание:</strong>&nbsp;Эти единицы, особенно <code>em</code>&nbsp;и&nbsp;<code>rem</code>, часто используются для создания адаптивных разметок, которые сохраняют&nbsp;<a href="https://24ways.org/2006/compose-to-a-vertical-rhythm" class="external" rel=" noopener">вертикальную структуру страницы</a>&nbsp;даже если пользователь изменяет размер шрифта.</p>
+</div>
+
+<dl>
+ <dt><font face="consolas, Liberation Mono, courier, monospace"><span style="background-color: rgba(220, 220, 220, 0.5);">cap</span></font> </dt>
+ <dd>Представляет высоту заглавных букв в <a href="/css/font/">шрифте</a>, применённом к элементу.</dd>
+ <dt><font face="consolas, Liberation Mono, courier, monospace"><span style="background-color: rgba(220, 220, 220, 0.5);">ch</span></font></dt>
+ <dd>Представляет ширину&nbsp;символа "<code>0</code>"&nbsp;(ноль, символ Юникод&nbsp;U+0030) в шрифте, применённом к элементу.</dd>
+ <dt><font face="consolas, Liberation Mono, courier, monospace"><span style="background-color: rgba(220, 220, 220, 0.5);">em</span></font></dt>
+ <dd>Представляет подсчитанный размер шрифта элемента. Если используется в свойстве&nbsp;<a href="/css/font-size/"><code>font-size</code></a>, представляет <em>унаследованный</em>&nbsp;размер шрифта.</dd>
+ <dt><font face="consolas, Liberation Mono, courier, monospace"><span style="background-color: rgba(220, 220, 220, 0.5);">ex</span></font></dt>
+ <dd>Представляет&nbsp;<a href="https://en.wikipedia.org/wiki/X-height" class="external" rel=" noopener">x-height</a>&nbsp;(обычно высоту буквы x) в шрифте, применённом к элементу. В шрифтах с буквой x это обычно высота букв в нижнем регистре; во многих шрифтах <code>1ex&nbsp;≈ 0.5em</code>.</dd>
+ <dt><font face="consolas, Liberation Mono, courier, monospace"><span style="background-color: rgba(220, 220, 220, 0.5);">ic</span></font> </dt>
+ <dd>Равна&nbsp;используемой в шрифте ширине символа&nbsp;"<code>水</code>" (ККЯ, символ "вода", U+6C34).</dd>
+ <dt><font face="consolas, Liberation Mono, courier, monospace"><span style="background-color: rgba(220, 220, 220, 0.5);">lh</span></font> </dt>
+ <dd>Равна&nbsp;рассчитанному значению свойства <a href="/css/line-height/"><code>line-height</code></a>, переведённому в абсолютные единицы измерения.</dd>
+ <dt><font face="consolas, Liberation Mono, courier, monospace"><span style="background-color: rgba(220, 220, 220, 0.5);">rem</span></font></dt>
+ <dd>Представляет размер шрифта корневого элемента (обычно&nbsp;<a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/html"><code>&lt;html&gt;</code></a>). Когда используется в свойстве&nbsp;<a href="/css/font-size/"><code>font-size</code></a> корневого элемента, представляет значение по умолчанию (в большинстве браузеров <code>16px</code>, но настройки пользователя могут переопределить это значение).</dd>
+ <dt><font face="consolas, Liberation Mono, courier, monospace"><span style="background-color: rgba(220, 220, 220, 0.5);">rlh</span></font> </dt>
+ <dd>Равна рассчитанному значению свойства&nbsp;<a href="/css/line-height/"><code>line-height</code></a> корневого элемента (обычно&nbsp;<a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/html"><code>&lt;html&gt;</code></a>), переведённому в абсолютные единицы измерения. Когда используется в свойстве&nbsp;<a href="/css/font-size/"><code>font-size</code></a> корневого элемента, представляет значение по умолчанию.</dd>
+</dl>
+
+<h5 id="единицы_зависящие_от_размеров_экрана">Единицы, зависящие от размеров экрана</h5>
+
+<p>Эти единицы определяют значение&nbsp;<code>&lt;length&gt;</code>&nbsp;относительно размеров экрана, то есть видимой части документа. эти единицы недопустимы в блоках&nbsp;<a href="/css/@page/"><code>@page</code></a>.</p>
+
+<dl>
+ <dt><font face="consolas, Liberation Mono, courier, monospace"><span style="background-color: rgba(220, 220, 220, 0.5);">vh</span></font></dt>
+ <dd>Равна 1% высоты блока содержимого.</dd>
+ <dt><font face="consolas, Liberation Mono, courier, monospace"><span style="background-color: rgba(220, 220, 220, 0.5);">vw</span></font></dt>
+ <dd>Равна 1% ширины блока содержимого.</dd>
+ <dt><font face="consolas, Liberation Mono, courier, monospace"><span style="background-color: rgba(220, 220, 220, 0.5);">vi</span></font> </dt>
+ <dd>Равна 1% размера блока содержимого по направлению выстраивания строчных элементов.</dd>
+ <dt><font face="consolas, Liberation Mono, courier, monospace"><span style="background-color: rgba(220, 220, 220, 0.5);">vb</span></font> </dt>
+ <dd>Равна 1% размера блока содержимого по направлению выстраивания блочных элементов.</dd>
+ <dt><font face="consolas, Liberation Mono, courier, monospace"><span style="background-color: rgba(220, 220, 220, 0.5);">vmin</span></font></dt>
+ <dd>Равна <code>vh</code>&nbsp;или <code>vw</code>&nbsp;в зависимости от того, что из них меньше.</dd>
+ <dt><font face="consolas, Liberation Mono, courier, monospace"><span style="background-color: rgba(220, 220, 220, 0.5);">vmax</span></font></dt>
+ <dd>Равна <code>vh</code>&nbsp;или <code>vw</code>&nbsp;в зависимости от того, что из них больше.</dd>
+</dl>
+
+<h4 id="абсолютные_единицы_измерения">Абсолютные единицы измерения</h4>
+
+<p>Абсолютные единицы измерения представляют физические расстояния, когда известны физические свойства устройства вывода. Одна из единиц привязывается к физической единице, а все остальные к ней. Привязка делается по-разному для устройств с низким разрешением, таких как экраны, и высоким, таких как принтеры.</p>
+
+<p>Для устройств с маленьким dpi (dots per inch — количество точек на дюйм) единица измерения <code>px</code>&nbsp;представляет физический пиксель; остальные единицы определяются относительно него. Таким образом,&nbsp;<code>1in</code>&nbsp;определяется как&nbsp;<code>96px</code>, что равно <code>72pt</code>. Последствием такого способа определения является то, что длины, описанные в дюймах (<code>in</code>), сантиметрах (<code>cm</code>) или миллиметрах (<font face="consolas, Liberation Mono, courier, monospace"><span style="background-color: rgba(220, 220, 220, 0.5);">mm</span></font>) необязательно равны одноимённым физическим единицам.</p>
+
+<p>Для устройств с высоким dpi дюймы&nbsp;(<code>in</code>),сантиметры&nbsp;(<code>cm</code>)&nbsp;и миллиметры&nbsp;(<code>mm</code>) такие же, как и соответствующие физические единицы. Таким образов, единица&nbsp;<code>px</code>&nbsp;определяется относительно их (1/96&nbsp;одного дюйма).</p>
+
+<div class="note notecard">
+<p><strong>Обратите внимание:</strong>&nbsp;Многие пользователи увеличивают стандартный размер шрифта браузера для удобства чтения. Длины, заданные абсолютными единицами могут вызвать проблемы с доступностью, так как они привязаны к физическим величинам и не масштабируются при изменении настроек. Поэтому предпочтительнее использовать относительные единицы (такие как <code>em</code>&nbsp;или <code>rem</code>) в свойстве&nbsp;<code>font-size</code>.</p>
+</div>
+
+<dl>
+ <dt><font face="consolas, Liberation Mono, courier, monospace"><span style="background-color: rgba(220, 220, 220, 0.5);">px</span></font></dt>
+ <dd>Один пиксель. Для устройств с дисплеев традиционно представляет одну точку. Тем не менее, на&nbsp;<em>принтерах</em>&nbsp;и&nbsp;<em>экранах&nbsp;с высоким разрешением</em>&nbsp;один пиксель CSS равен нескольким пикселям дисплея. <code>1px</code> = 1/96&nbsp; от&nbsp;<code>1in</code>.</dd>
+ <dt><font face="consolas, Liberation Mono, courier, monospace"><span style="background-color: rgba(220, 220, 220, 0.5);">cm</span></font></dt>
+ <dd>Один сантиметр. <code>1cm</code> = <code>96px/2.54</code>.</dd>
+ <dt><font face="consolas, Liberation Mono, courier, monospace"><span style="background-color: rgba(220, 220, 220, 0.5);">mm</span></font></dt>
+ <dd>Один миллиметр. <code>1mm</code> = 1/10 от&nbsp;<code>1cm</code>.</dd>
+ <dt><font face="consolas, Liberation Mono, courier, monospace"><span style="background-color: rgba(220, 220, 220, 0.5);">Q</span></font> </dt>
+ <dd>Четверть миллиметра. <code>1Q</code> = 1/40&nbsp;от&nbsp;<code>1cm</code>.</dd>
+ <dt><font face="consolas, Liberation Mono, courier, monospace"><span style="background-color: rgba(220, 220, 220, 0.5);">in</span></font></dt>
+ <dd>Один дюйм. <code>1in</code> = <code>2.54cm</code> = <code>96px</code>.</dd>
+ <dt><font face="consolas, Liberation Mono, courier, monospace"><span style="background-color: rgba(220, 220, 220, 0.5);">pc</span></font></dt>
+ <dd>Одна <a href="https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D0%B9%D0%BA%D0%B0_(%D1%82%D0%B8%D0%BF%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%D0%B0)" class="external" rel=" noopener">пайка</a>. <code>1pc</code> = <code>12pt</code> = 1/6&nbsp;от&nbsp;<code>1in</code>.</dd>
+ <dt><font face="consolas, Liberation Mono, courier, monospace"><span style="background-color: rgba(220, 220, 220, 0.5);">pt</span></font></dt>
+ <dd>Одна точка. <code>1pt</code> = 1/72 от<code>1in</code>.</dd>
+ <dt><font face="consolas, Liberation Mono, courier, monospace"><span style="background-color: rgba(220, 220, 220, 0.5);">mozmm</span></font>&nbsp;, удалена в Firefox 59</dt>
+ <dd>Экспериментальная единица, которая равна одному физическому миллиметру вне зависимости от размера и разрешения экрана. Такая единица требуется очень редко, но может понадобиться, особенно на маленьких устройствах.</dd>
+</dl></div><h2 id="интерполяция"><a href="#интерполяция" title="Permalink to Интерполяция">Интерполяция</a></h2><div><p>При анимации значения <code>&lt;length&gt;</code>&nbsp;интерполируются как реальные <a href="https://ru.wikipedia.org/wiki/%D0%A7%D0%B8%D1%81%D0%BB%D0%BE_%D1%81_%D0%BF%D0%BB%D0%B0%D0%B2%D0%B0%D1%8E%D1%89%D0%B5%D0%B9_%D0%B7%D0%B0%D0%BF%D1%8F%D1%82%D0%BE%D0%B9" class="external" rel=" noopener">числа с плавающей запятой</a>. Интерполяция происходит над рассчитанным значением. Скорость интерполяции определяется <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/easing-function" class="only-in-en-us" title="Currently only available in English (US)">временной функцией (en-US)</a> анимации.</p></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-values-4/#lengths" hreflang="en" lang="en" class="external" rel=" noopener">CSS Values and Units Module Level&nbsp;4<br><small lang="ru">Определение '&lt;length&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-ed">Редакторский черновик</span></td>
+   <td>Добавлены единицы&nbsp;<code>vi</code>, <code>vb</code>, <code>ic</code>, <code>lh</code>, и&nbsp;<code>rlh</code>.</td>
+  </tr>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-values-3/#lengths" hreflang="en" lang="en" class="external" rel=" noopener">CSS Values and Units Module Level&nbsp;3<br><small lang="ru">Определение '&lt;length&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-cr">Кандидат в рекомендации</span></td>
+   <td>Добавлены единицы&nbsp;<code>ch</code>, <code>rem</code>, <code>vw</code>, <code>vh</code>, <code>vmin</code>, <code>vmax</code>, и&nbsp;<code>Q</code>.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/CSS2/syndata.html#length-units" hreflang="en" lang="en" class="external" rel=" noopener">CSS Level&nbsp;2 (Revision&nbsp;1)<br><small lang="ru">Определение '&lt;length&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Явно определены единицы&nbsp;<code>em</code>,&nbsp;<code>pt</code>, <code>pc</code>, и&nbsp;<code>px</code>.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/CSS1/#length-units" hreflang="en" lang="en" class="external" rel=" noopener">CSS Level&nbsp;1<br><small lang="ru">Определение '&lt;length&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Первое определение. Неявно определены единицы&nbsp;<code>em</code>,&nbsp;<code>pt</code>, <code>pc</code>, и&nbsp;<code>px</code>.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="поддержка_браузерами"><a href="#поддержка_браузерами" title="Permalink to Поддержка браузерами">Поддержка браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div>

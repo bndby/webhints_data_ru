@@ -1,0 +1,80 @@
+<h1>column-rule</h1><div><div></div>
+
+<p><a href="https://wiki.developer.mozilla.org/ru/docs/Web/CSS/Shorthand_properties" class="external" rel=" noopener">Краткая форма записи</a>&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> свойств <strong><code>column-rule</code></strong> устанавливает ширину, стиль и цвет линии, находящейся между колонками в мультиколоночной вёрстке.</p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/column-rule.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+
+
+<p>Эта краткая форма записи задаёт индивидуальные&nbsp; <code>column-rule-*</code> свойства, обычно задаваемые: <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/column-rule-width"><code>column-rule-width</code> <span>(en-US)</span></a>, <a href="/css/column-rule-style/"><code>column-rule-style</code></a>, и <a href="/css/column-rule-color/"><code>column-rule-color</code></a>.</p>
+
+<div class="note notecard">
+<p><strong>Примечание:</strong> Как и с другими краткими формами записи, любые индивидуальные значения, не указанные явно принимают значение по умолчанию (возможно переопределение значений, заданных ранее с помощью свойств, не являющихся краткими формами).</p>
+</div></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="brush:css no-line-numbers notranslate"><code><span class="token property">column-rule</span><span class="token punctuation">:</span> dotted<span class="token punctuation">;</span>
+<span class="token property">column-rule</span><span class="token punctuation">:</span> solid 8px<span class="token punctuation">;</span>
+<span class="token property">column-rule</span><span class="token punctuation">:</span> solid blue<span class="token punctuation">;</span>
+<span class="token property">column-rule</span><span class="token punctuation">:</span> thick inset blue<span class="token punctuation">;</span>
+
+<span class="token comment">/* глобальные значения */</span>
+<span class="token property">column-rule</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">column-rule</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">column-rule</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre>
+
+<p>Свойство <code>column-rule</code> указывается в виде одного, двух или трёх значений, перечисленных ниже, в любом порядке.</p></div><h3 id="значения"><a href="#значения" title="Permalink to Значения">Значения</a></h3><div><dl>
+ <dt><code>&lt;'column-rule-width'&gt;</code></dt>
+ <dd><a href="/css/length/"><code>&lt;length&gt;</code></a> или одно из трёх ключевых свойств, <code>thin</code>, <code>medium</code>, или <code>thick</code>. См. подробно -&nbsp; <a href="/css/border-width/"><code>border-width</code></a>.</dd>
+ <dt><code>&lt;'column-rule-style'&gt;</code></dt>
+ <dd>См.&nbsp;подробно <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-style"><code>border-style</code> <span>(en-US)</span></a> .</dd>
+ <dt><code>&lt;'column-rule-color'&gt;</code></dt>
+ <dd>Значение <a href="/css/color_value/"><code>&lt;color&gt;</code></a> .</dd>
+</dl></div><h3 id="формальный_синтаксис"><a href="#формальный_синтаксис" title="Permalink to Формальный синтаксис">Формальный синтаксис</a></h3><div><pre class="notranslate"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/column-rule-width" title="Currently only available in English (US)" class="only-in-en-us">&lt;'column-rule-width'&gt; (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_bar" title="Currently only available in English (US)" class="only-in-en-us">|| (en-US)</a> <a href="/css/column-rule-style/" title="<'border-style'>">&lt;'column-rule-style'&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_bar" title="Currently only available in English (US)" class="only-in-en-us">|| (en-US)</a> <a href="/css/column-rule-color/" title="<color>">&lt;'column-rule-color'&gt;</a></pre></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_1"><a href="#example_1" title="Permalink to Example 1">Example 1</a></h3><div><pre class="brush: css notranslate"><code><span class="token comment">/* Аналогично "medium dotted currentColor" */</span>
+<span class="token selector">p.foo</span> <span class="token punctuation">{</span> <span class="token property">column-rule</span><span class="token punctuation">:</span> dotted<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+
+<span class="token comment">/* Аналогично "medium solid blue" */</span>
+<span class="token selector">p.bar</span> <span class="token punctuation">{</span> <span class="token property">column-rule</span><span class="token punctuation">:</span> solid blue<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+
+<span class="token comment">/* Аналогично "8px solid currentColor" */</span>
+<span class="token selector">p.baz</span> <span class="token punctuation">{</span> <span class="token property">column-rule</span><span class="token punctuation">:</span> solid 8px<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+
+<span class="token selector">p.abc</span> <span class="token punctuation">{</span> <span class="token property">column-rule</span><span class="token punctuation">:</span> thick inset blue<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+</code></pre></div><h3 id="example_2"><a href="#example_2" title="Permalink to Example 2">Example 2</a></h3><div><h4 id="html">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>content-box<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  This is a bunch of text split into three columns.
+  Take note of how the `column-rule` property is used
+  to adjust the style, width, and color of the rule
+  that appears between the columns.
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<h4 id="css">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token selector">.content-box</span> <span class="token punctuation">{</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 0.3em<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> #ff7<span class="token punctuation">;</span>
+  <span class="token property">column-count</span><span class="token punctuation">:</span> 3<span class="token punctuation">;</span>
+  <span class="token property">column-rule</span><span class="token punctuation">:</span> inset 2px #33f<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<h4 id="результат">Результат</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Example_2" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/column-rule/_sample_.Example_2.html" loading="lazy"></iframe></p></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-multicol-1/#column-rule" hreflang="en" lang="en" class="external" rel=" noopener">CSS Multi-column Layout Module<br><small lang="ru">Определение 'column-rule' в этой спецификации.</small></a></td>
+   <td><span class="spec-wd">Рабочий черновик</span></td>
+   <td>Первое определение.</td>
+  </tr>
+ </tbody>
+</table>
+
+<p></p><table class="properties"><tbody><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td>как и у каждого из подсвойств этого свойства:<br><ul><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/column-rule-width" class="only-in-en-us" title="Currently only available in English (US)">column-rule-width (en-US)</a>: <code>medium</code></li><li><a href="/css/column-rule-style/"><code>column-rule-style</code></a>: <code>none</code></li><li><a href="/css/column-rule-color/"><code>column-rule-color</code></a>: <code>currentcolor</code></li></ul></td></tr><tr><th scope="row">Применяется к</th><td>мультиколоночные элементы</td></tr><tr><th scope="row"><a href="/css/inheritance/">Наследуется</a></th><td>нет</td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>как и у каждого из подсвойств этого свойства:<br><ul><li><a href="/css/column-rule-color/"><code>column-rule-color</code></a>: вычисленный цвет</li><li><a href="/css/column-rule-style/"><code>column-rule-style</code></a>: как указано</li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/column-rule-width" class="only-in-en-us" title="Currently only available in English (US)">column-rule-width (en-US)</a>: абсолютная длина; <code>0</code>, если <a href="/css/column-rule-style/"><code>column-rule-style</code></a> - <code>none</code> или <code>hidden</code></li></ul></td></tr><tr><th scope="row">Animation type</th><td>как и у каждого из подсвойств этого свойства:<br><ul><li><a href="/css/column-rule-color/"><code>column-rule-color</code></a>: <a href="/css/color_value#interpolation/" title="Значения типа данных CSS <цвет> интерполируются по каждой компоненте - красной, зелёной и голубой - как вещественные числа с плавающей запятой. Обратите внимание, что интерполяция цветов происходит в цветовом пространстве sRGBA, учитывающем прозрачность, для предотвращения появления неожиданных серых цветов.">цвет</a></li><li><a href="/css/column-rule-style/"><code>column-rule-style</code></a>: discrete</li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/column-rule-width" class="only-in-en-us" title="Currently only available in English (US)">column-rule-width (en-US)</a>: <a href="/css/length#interpolation/" title="Значения типа данных CSS <длина> интерполируются как вещественные числа с плавающей запятой.">длина</a></li></ul></td></tr></tbody></table><p></p></div><h2 id="поддержка_браузерами"><a href="#поддержка_браузерами" title="Permalink to Поддержка браузерами">Поддержка браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div>

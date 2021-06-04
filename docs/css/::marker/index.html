@@ -1,0 +1,54 @@
+<h1>::marker</h1><div><div></div>
+
+<p><span class="seoSummary">Псевдоэлемент&nbsp;<strong><code>::marker</code></strong> применяет стили к маркеру элемента списка, которые обычно содержит значок или номер.</span> Работает с любым элементом или псевдоэлементом, к которого установлен&nbsp;<code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display">display: list-item</a></code>, например, у такого как&nbsp;<a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/li"><code>&lt;li&gt;</code></a> или <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/summary"><code>&lt;summary&gt;</code></a>.</p>
+
+<pre class="brush: css no-line-numbers notranslate"><code><span class="token selector">::marker</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 1.2em<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div><h2 id="разрешённые_свойства"><a href="#разрешённые_свойства" title="Permalink to Разрешённые свойства">Разрешённые свойства</a></h2><div><p>Только некоторые CSS-свойства могут быть использованы с&nbsp;<code>::marker</code>&nbsp;в качестве селектора:</p>
+
+<ul>
+ <li>Все <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Fonts">свойства шрифтов</a></li>
+ <li><a href="/css/white-space/"><code>white-space</code></a></li>
+ <li><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/color"><code>color</code> <span>(en-US)</span></a></li>
+ <li><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-combine-upright"><code>text-combine-upright</code> <span>(en-US)</span></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/unicode-bidi"><code>unicode-bidi</code> <span>(en-US)</span></a>&nbsp;и <a href="/css/direction/"><code>direction</code></a>&nbsp;</li>
+ <li>Свойство <a href="/css/content/"><code>content</code></a></li>
+ <li>Все&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations#css_properties">animation</a> и&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions#properties">transition</a> свойства</li>
+</ul>
+
+<div class="note notecard">
+<p>The specification states that additional CSS properties may be supported in future.</p>
+</div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="notranslate">::marker</pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="html"><a href="#html" title="Permalink to HTML">HTML</a></h3><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>Peaches<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>Apples<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>Plums<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span></code></pre></div><h3 id="css"><a href="#css" title="Permalink to CSS">CSS</a></h3><div><pre class="brush: css notranslate"><code><span class="token selector">ul li::marker</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 1.5em<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div><h3 id="result"><a href="#result" title="Permalink to Result">Result</a></h3><div><p><iframe class="sample-code-frame" id="frame_Examples" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/::marker/_sample_.Examples.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-pseudo-4/#marker-pseudo" hreflang="en" lang="en" class="external" rel=" noopener">CSS Pseudo-Elements Level&nbsp;4<br><small lang="ru">Определение '::marker' в этой спецификации.</small></a></td>
+   <td><span class="spec-wd">Рабочий черновик</span></td>
+   <td>No significant change.</td>
+  </tr>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-lists-3/#marker-pseudo" hreflang="en" lang="en" class="external" rel=" noopener">CSS Lists Module Level&nbsp;3<br><small lang="ru">Определение '::marker' в этой спецификации.</small></a></td>
+   <td><span class="spec-wd">Рабочий черновик</span></td>
+   <td>Initial definition.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><div>
+
+
+<p></p><p></p>
+</div></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li>HTML элементы, у которые есть маркеры списка по умолчанию: <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/ol"><code>&lt;ol&gt;</code></a>, <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/li"><code>&lt;li&gt;</code></a>, <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/summary"><code>&lt;summary&gt;</code></a></li>
+</ul></div>

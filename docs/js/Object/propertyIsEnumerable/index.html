@@ -1,0 +1,81 @@
+<h1>Object.prototype.propertyIsEnumerable()</h1><div><div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Метод <code><strong>propertyIsEnumerable()</strong></code> возвращает логическое значение, указывающее, является ли указанное свойство перечисляемым.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code><var>obj</var>.propertyIsEnumerable(<var>prop</var>)</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>prop</code></dt>
+ <dd>Имя проверяемого свойства.</dd>
+</dl></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Каждый объект имеет метод <code>propertyIsEnumerable</code>. Этот метод может определять, является ли указанное свойство в объекте перечисляемым в цикле <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/for...in"><code>for...in</code></a>, за исключением свойств, унаследованных из цепочки прототипов. Если объект не имеет указанного свойства, метод вернёт <code>false</code>.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_a_basic_use_of_propertyisenumerable"><a href="#example_a_basic_use_of_propertyisenumerable" title="Permalink to Пример: базовое использование propertyIsEnumerable">Пример: базовое использование <code>propertyIsEnumerable</code></a></h3><div><p>Следующий пример показывает использование метода <code>propertyIsEnumerable</code> на объектах и массивах:</p>
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> o <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+o<span class="token punctuation">.</span>prop <span class="token operator">=</span> <span class="token string">'перечисляемое'</span><span class="token punctuation">;</span>
+a<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'перечисляемое'</span><span class="token punctuation">;</span>
+
+o<span class="token punctuation">.</span><span class="token function">propertyIsEnumerable</span><span class="token punctuation">(</span><span class="token string">'prop'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// вернёт true</span>
+a<span class="token punctuation">.</span><span class="token function">propertyIsEnumerable</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment">// вернёт true</span>
+</code></pre></div><h3 id="example_user-defined_versus_built-in_objects"><a href="#example_user-defined_versus_built-in_objects" title="Permalink to Пример: определённые пользователем и встроенные объекты">Пример: определённые пользователем и встроенные объекты</a></h3><div><p>Следующий пример демонстрирует перечисляемость свойств, определённых пользователем и встроенных свойств:</p>
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'перечисляемое'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+a<span class="token punctuation">.</span><span class="token function">propertyIsEnumerable</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>          <span class="token comment">// вернёт true</span>
+a<span class="token punctuation">.</span><span class="token function">propertyIsEnumerable</span><span class="token punctuation">(</span><span class="token string">'length'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// вернёт false</span>
+
+Math<span class="token punctuation">.</span><span class="token function">propertyIsEnumerable</span><span class="token punctuation">(</span><span class="token string">'random'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// вернёт false</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">propertyIsEnumerable</span><span class="token punctuation">(</span><span class="token string">'Math'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">// вернёт false</span>
+</code></pre></div><h3 id="example_direct_versus_inherited_properties"><a href="#example_direct_versus_inherited_properties" title="Permalink to Пример: собственные и унаследованные свойства">Пример: собственные и унаследованные свойства</a></h3><div><pre class="brush: js notranslate"><code><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+a<span class="token punctuation">.</span><span class="token function">propertyIsEnumerable</span><span class="token punctuation">(</span><span class="token string">'constructor'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token comment">// вернёт false</span>
+
+<span class="token keyword">function</span> <span class="token function">firstConstructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>property <span class="token operator">=</span> <span class="token string">'не перечисляемое'</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+firstConstructor<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">firstMethod</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">secondConstructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function-variable function">method</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token function">method</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token string">'перечисляемый'</span><span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+secondConstructor<span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">firstConstructor</span><span class="token punctuation">;</span>
+secondConstructor<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>constructor <span class="token operator">=</span> secondConstructor<span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> o <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">secondConstructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+o<span class="token punctuation">.</span>arbitraryProperty <span class="token operator">=</span> <span class="token string">'перечисляемое'</span><span class="token punctuation">;</span>
+
+o<span class="token punctuation">.</span><span class="token function">propertyIsEnumerable</span><span class="token punctuation">(</span><span class="token string">'arbitraryProperty'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// вернёт true</span>
+o<span class="token punctuation">.</span><span class="token function">propertyIsEnumerable</span><span class="token punctuation">(</span><span class="token string">'method'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>              <span class="token comment">// вернёт true</span>
+o<span class="token punctuation">.</span><span class="token function">propertyIsEnumerable</span><span class="token punctuation">(</span><span class="token string">'property'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>            <span class="token comment">// вернёт false</span>
+
+o<span class="token punctuation">.</span>property <span class="token operator">=</span> <span class="token string">'перечисляемое'</span><span class="token punctuation">;</span>
+
+o<span class="token punctuation">.</span><span class="token function">propertyIsEnumerable</span><span class="token punctuation">(</span><span class="token string">'property'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>            <span class="token comment">// вернёт true</span>
+
+<span class="token comment">// Эти вызовы вернут false, поскольку все свойства находятся в прототипе,</span>
+<span class="token comment">// который метод propertyIsEnumerable не просматривает (даже несмотря на то,</span>
+<span class="token comment">// что последние два свойства перечисляются через цикл for...in)</span>
+o<span class="token punctuation">.</span><span class="token function">propertyIsEnumerable</span><span class="token punctuation">(</span><span class="token string">'prototype'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// вернёт false (в JS 1.8.1/FF3.6)</span>
+o<span class="token punctuation">.</span><span class="token function">propertyIsEnumerable</span><span class="token punctuation">(</span><span class="token string">'constructor'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// вернёт false</span>
+o<span class="token punctuation">.</span><span class="token function">propertyIsEnumerable</span><span class="token punctuation">(</span><span class="token string">'firstMethod'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// вернёт false</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td>ECMAScript 3-е издание.</td>
+   <td>Стандарт</td>
+   <td>Изначальное определение.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-15.2.4.7" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 5.1 (ECMA-262)<br><small lang="ru">Определение 'Object.prototype.propertyIsEnumerable' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-object.prototype.propertyisenumerable" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Object.prototype.propertyIsEnumerable' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Enumerability_and_ownership_of_properties" class="only-in-en-us" title="Currently only available in English (US)">Перечисляемость и собственность свойств (en-US)</a></li>
+ <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/for...in"><code>for...in</code></a></li>
+ <li><a href="/js/Object/keys/"><code>Object.keys()</code></a></li>
+ <li><a href="/js/Object/defineProperty/"><code>Object.defineProperty()</code></a></li>
+</ul></div>

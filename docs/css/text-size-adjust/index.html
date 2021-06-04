@@ -1,0 +1,70 @@
+<h1>text-size-adjust</h1><div><div><div class="notecard experimental">
+    <h4 id="experimental">Experimental</h4>
+    <p><strong>Это экспериментальная технология</strong><br>Так как спецификация этой технологии ещё не стабилизировалась, смотрите <a href="#browser_compatibility">таблицу совместимости</a> по поводу использования в различных браузерах. Также заметьте, что синтаксис и поведение экспериментальной технологии может измениться в будущих версиях браузеров, вслед за изменениями спецификации.</p>
+</div></div>
+
+<p>Свойство&nbsp;<strong><code>text-size-adjust</code></strong> контролирует алгоритм увеличения текста, используемый на некоторых смартфонах и планшетах. Другие браузеры будут игнорировать это свойство.</p>
+
+<p>Так как это свойство нестандартное, нужно использовать префиксы: <code>-moz-text-size-adjust</code>, <code>-webkit-text-size-adjust</code>, и&nbsp;<code>-ms-text-size-adjust</code>.</p>
+
+<p>Поскольку при разработке многих сайтов не подразумевался их просмотр на мобильных устройствах, то мобильные браузеры отличаются от браузеров для настольных компьютеров способом вывода страницы на экран. Для размещения страниц они используют не ширину экрана устройства, а <a href="https://developer.mozilla.org/ru/docs/Glossary/Viewport">viewport</a>, который значительно шире, обычно 800 или 1000 пикселей. Чтобы вернуть соответствие слишком широкой страницы истинному размеру устройства, они или показывают лишь часть того, что на самом деле&nbsp;визуализировано, или же уменьшают размер viewport до размеров устройства.</p>
+
+<p>Так как текст, который был уменьшен для того, чтобы уместиться на мобильном экране, может стать очень маленьким, многие мобильные браузеры применяют алгоритм увеличения текста для того, чтобы масштабировать текст и сделать его более удобным для чтения. Когда элемент, содержащий текст, использует 100% ширины экрана, алгоритм увеличивает размер его текста, но без изменения макета. Свойство <code>text-size-adjust</code>&nbsp; позволяет веб-разработчикам отменить или изменить это поведение, так как веб-страницы, созданные с учётом вывода на маленькие экраны, не нуждаются в нём.</p>
+
+<p>This approach has been used as numerous web sites are not able to cope with small screens and are not usable when using the classical layout algorithm. This technique has drawbacks: the text is so tiny that it is unreadable without zooming. Even so, the user experience is better with the classical approach, which often leads to put secondary content at the top of the smartphone display, effectively pushing the main content of the page outside the viewport.</p>
+
+<p>But when the user zoomed in until the text becomes readable, an horizontal scrollbar is often needed as the line becomes larger than the width of the screen. This horizontal scrollbar has to be used to read each line of the text, which is a user experience nightmare. To prevent this, several mobile browsers implement a text <strong>inflation</strong> algorithm. When a focused element containing text use 100 % of the width of the screen, its text size is increased until it reached a readable size, without modifying the layout and removing the need of an horizontal scrollbar.</p>
+
+<p>The <code>text-size-adjust</code> property allows Web authors to opt out from this behavior, as Web pages designed to handle small screen widths do not need it.</p>
+
+<div class="note notecard"><strong>Предупреждения</strong><strong>:</strong>
+
+<ul>
+ <li>Это свойство является нестандартным. In order to use it, Web authors have to duplicate, or even triplicate it, prefixed for each engine supporting it.</li>
+ <li>Its behavior, and even the syntax, is slightly different from one browser engine to the other. Web developers should read the browser compatibility section with the required attention.</li>
+ <li><strong>Это свойство работает только на смартфонах. </strong>As there is no inflation algorithm on desktop browsers, and on some tablet browsers like the iPad, the property is not supported there (and ignored). This property is only designed to opt out, or to cancel this opt-out, of the inflating behavior, <em>not to opt in</em>.</li>
+ <li>If <code>-webkit-text-size-adjust</code> is explicitly set to <code>none</code>, old versions of Webkit-based desktop and tablet browsers, like Chrome≤26 or Safari≤5, instead of ignoring the property, will prevent the user to zoom in or out the Web page.<a href="https://bugs.webkit.org/show_bug.cgi?id=56543" class="external" rel=" noopener">#</a></li>
+ <li>Not all engines do allow to control the final size of the text using a percentage value (E.g. Webkit and Trident do allow it, Gecko doesn't). Again Web developers should read the browser compatibility section with the required attention.</li>
+</ul>
+</div>
+
+<p></p><table class="properties"><tbody><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td><code>auto</code> для браузеров в смартфонах поддерживается увеличение, <code>none</code> в других случаях (и позже не изменяется).</td></tr><tr><th scope="row">Применяется к</th><td>все элементы</td></tr><tr><th scope="row"><a href="/css/inheritance/">Наследуется</a></th><td>да</td></tr><tr><th scope="row">Проценты</th><td>да, относятся к соответствующему размеру шрифта текста</td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>как указано</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="brush: css notranslate"><code><span class="token comment">/* Text is never inflated */</span>
+<span class="token property">text-size-adjust</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+
+<span class="token comment">/* Text may be inflated */</span>
+<span class="token property">text-size-adjust</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+
+<span class="token comment">/* Text may be inflated in this exact proportion */</span>
+<span class="token property">text-size-adjust</span><span class="token punctuation">:</span> 80%<span class="token punctuation">;</span>
+
+<span class="token comment">/* Глобальные значения */</span>
+<span class="token property">text-size-adjust</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">text-size-adjust</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">text-size-adjust</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre></div><h3 id="значения"><a href="#значения" title="Permalink to Значения">Значения</a></h3><div><dl>
+ <dt><code>none</code></dt>
+ <dd>Is a keyword preventing the usage of the inflation algorithm on the element. Basically, this means that the element will be displayed without its font inflated. On old WebKit-based desktop browsers (Chrome≤26, Safari≤5), this will instead prevent the user from zooming the webpage in or out.</dd>
+ <dt><code>auto</code></dt>
+ <dd>Is a keyword allowing the usage of the inflation algorithm on the element. Browsers are not forced to use it and they won't do it on desktops and on some tablets. Its main use is to cancel a <code>none</code> value previously set.</dd>
+ <dt><code>&lt;percentage&gt;</code></dt>
+ <dd>A percentage value is a synonym of the <code>auto</code> keyword, with the additional information that the percentage value is the increase rate to be applied to the font size when the inflation algorithm is applied.</dd>
+</dl></div><h3 id="формальный_синтаксис"><a href="#формальный_синтаксис" title="Permalink to Формальный синтаксис">Формальный синтаксис</a></h3><div><pre class="notranslate">none <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> auto <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <a href="/css/percentage/" title>&lt;percentage&gt;</a></pre></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-size-adjust/#adjustment-control" hreflang="en" lang="en" class="external" rel=" noopener">CSS Mobile Text Size Adjustment Module Level&nbsp;1<br><small lang="ru">Определение 'text-size-adjust' в этой спецификации.</small></a></td>
+   <td><span class="spec-ed">Редакторский черновик</span></td>
+   <td>Первоначальное определение</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="совместимость_с_браузерами"><a href="#совместимость_с_браузерами" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a class="link-https external" href="https://developer.apple.com/library/ios/#DOCUMENTATION/AppleApplications/Reference/SafariWebContent/AdjustingtheTextSize/AdjustingtheTextSize.html" rel=" noopener">Документация</a>&nbsp;от Apple.</li>
+ <li><a class="external" href="https://dbaron.org/log/20111126-font-inflation" rel=" noopener">Описание поведения</a>&nbsp;Gecko от&nbsp;L. David Baron.</li>
+ <li><a class="external" href="http://msdn.microsoft.com/en-us/library/windowsphone/develop/ff462082(v=vs.105).aspx" rel=" noopener">Документация</a>&nbsp;от Microsoft.</li>
+</ul></div>

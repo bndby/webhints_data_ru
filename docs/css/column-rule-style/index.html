@@ -1,0 +1,49 @@
+<h1>column-rule-style</h1><div><div></div>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> свойство <strong><code>column-rule-style</code></strong> устанавливает стиль линии, расположенной между колонками при мультиколоночной вёрстке.</p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/column-rule-style.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* &lt;'border-style'&gt; значения */</span>
+<span class="token property">column-rule-style</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token property">column-rule-style</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+<span class="token property">column-rule-style</span><span class="token punctuation">:</span> dotted<span class="token punctuation">;</span>
+<span class="token property">column-rule-style</span><span class="token punctuation">:</span> dashed<span class="token punctuation">;</span>
+<span class="token property">column-rule-style</span><span class="token punctuation">:</span> solid<span class="token punctuation">;</span>
+<span class="token property">column-rule-style</span><span class="token punctuation">:</span> double<span class="token punctuation">;</span>
+<span class="token property">column-rule-style</span><span class="token punctuation">:</span> groove<span class="token punctuation">;</span>
+<span class="token property">column-rule-style</span><span class="token punctuation">:</span> ridge<span class="token punctuation">;</span>
+<span class="token property">column-rule-style</span><span class="token punctuation">:</span> inset<span class="token punctuation">;</span>
+<span class="token property">column-rule-style</span><span class="token punctuation">:</span> outset<span class="token punctuation">;</span>
+
+<span class="token comment">/* глобальные значения */</span>
+<span class="token property">column-rule-style</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">column-rule-style</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">column-rule-style</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre>
+
+<p>Свойство <code>column-rule-style</code> указывается как одиночное <code>&lt;'border-style'&gt;</code> значение.</p></div><h3 id="values"><a href="#values" title="Permalink to Значения">Значения</a></h3><div><dl>
+ <dt><code>&lt;'border-style'&gt;</code></dt>
+ <dd>Ключевое слово, определяющее&nbsp; <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-style"><code>border-style</code> <span>(en-US)</span></a>, описывающий стиль для линии, разделяющей столбцы. Стилизация должна быть интерпретирована как разрушающая границы модель.</dd>
+</dl></div><h3 id="формальный_синтаксис"><a href="#формальный_синтаксис" title="Permalink to Формальный синтаксис">Формальный синтаксис</a></h3><div><pre class="notranslate"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-style" title="Currently only available in English (US)" class="only-in-en-us">&lt;'border-style'&gt; (en-US)</a></pre></div><h2 id="пример"><a href="#пример" title="Permalink to Пример">Пример</a></h2><div></div><h3 id="html"><a href="#html" title="Permalink to HTML">HTML</a></h3><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>This is a bunch of text split into three columns.
+   The `column-rule-style` property is used to change
+   the style of the line that is drawn between columns.
+   Don't you think that's wonderful?<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span></code></pre></div><h3 id="css"><a href="#css" title="Permalink to CSS">CSS</a></h3><div><pre class="brush: css notranslate"><code><span class="token selector">p</span> <span class="token punctuation">{</span>
+  <span class="token property">column-count</span><span class="token punctuation">:</span> 3<span class="token punctuation">;</span>
+  <span class="token property">column-rule-style</span><span class="token punctuation">:</span> dashed<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div><h3 id="результат"><a href="#результат" title="Permalink to Результат">Результат</a></h3><div><p><iframe class="sample-code-frame" id="frame_Example" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/column-rule-style/_sample_.Example.html" loading="lazy"></iframe></p></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-multicol-1/#crs" hreflang="en" lang="en" class="external" rel=" noopener">CSS Multi-column Layout Module<br><small lang="ru">Определение 'column-rule-style' в этой спецификации.</small></a></td>
+   <td><span class="spec-wd">Рабочий черновик</span></td>
+   <td>Первое определение</td>
+  </tr>
+ </tbody>
+</table>
+
+<p></p><table class="properties"><tbody><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td><code>none</code></td></tr><tr><th scope="row">Применяется к</th><td>мультиколоночные элементы</td></tr><tr><th scope="row"><a href="/css/inheritance/">Наследуется</a></th><td>нет</td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>как указано</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="поддержка_браузерами"><a href="#поддержка_браузерами" title="Permalink to Поддержка браузерами">Поддержка браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div>

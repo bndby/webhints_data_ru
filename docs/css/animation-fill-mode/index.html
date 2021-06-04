@@ -1,0 +1,135 @@
+<h1>animation-fill-mode</h1><div><div><div class="notecard experimental">
+    <h4 id="experimental">Experimental</h4>
+    <p><strong>Это экспериментальная технология</strong><br>Так как спецификация этой технологии ещё не стабилизировалась, смотрите <a href="#browser_compatibility">таблицу совместимости</a> по поводу использования в различных браузерах. Также заметьте, что синтаксис и поведение экспериментальной технологии может измениться в будущих версиях браузеров, вслед за изменениями спецификации.</p>
+</div></div></div><h2 id="описание"><a href="#описание" title="Permalink to Описание">Описание</a></h2><div><p><a href="https://developer.mozilla.org/en-US/CSS" title="CSS">CSS</a>&nbsp;свойство <strong><code>animation-fill-mode</code></strong>&nbsp;определяет, как нужно применять стили к объекту анимации&nbsp;до и&nbsp;после её выполнения.</p>
+
+<p></p><table class="properties"><tbody><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td><code>none</code></td></tr><tr><th scope="row">Применяется к</th><td>все элементы, <a href="/css/::before/"><code>::before</code></a> и <a href="/css/::after/"><code>::after</code></a> <a href="/css/Pseudo-elements/">псевдоэлементы</a></td></tr><tr><th scope="row"><a href="/css/inheritance/">Наследуется</a></th><td>нет</td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>как указано</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="brush: css notranslate"><code><span class="token property">animation-fill-mode</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token property">animation-fill-mode</span><span class="token punctuation">:</span> forwards<span class="token punctuation">;</span>
+<span class="token property">animation-fill-mode</span><span class="token punctuation">:</span> backwards<span class="token punctuation">;</span>
+<span class="token property">animation-fill-mode</span><span class="token punctuation">:</span> both<span class="token punctuation">;</span>
+
+<span class="token comment">/* Несколько значений могут быть заданы через запятую. */</span>
+<span class="token comment">/* Каждое значение соответствует для анимации в animation-name. */</span>
+<span class="token property">animation-fill-mode</span><span class="token punctuation">:</span> none<span class="token punctuation">,</span> backwards<span class="token punctuation">;</span>
+<span class="token property">animation-fill-mode</span><span class="token punctuation">:</span> both<span class="token punctuation">,</span> forwards<span class="token punctuation">,</span> none<span class="token punctuation">;</span>
+</code></pre></div><h3 id="значения"><a href="#значения" title="Permalink to Значения">Значения</a></h3><div><dl>
+ <dt><code>none</code></dt>
+ <dd>Стили анимации не будут применены к элементу&nbsp;до и после её выполнения.</dd>
+ <dt><code>forwards</code></dt>
+ <dd>По окончании анимации&nbsp;элемент сохранит стили последнего ключевого кадра, который определяется значениями&nbsp;<a href="/css/animation-direction/"><code>animation-direction</code></a> и <a href="/css/animation-iteration-count/"><code>animation-iteration-count</code></a>:
+ <table class="standard-table">
+  <thead>
+   <tr>
+    <th scope="col"><code>animation-direction</code></th>
+    <th scope="col"><code>animation-iteration-count</code></th>
+    <th scope="col">последний ключевой кадр</th>
+   </tr>
+  </thead>
+  <tbody>
+   <tr>
+    <td><code>normal</code></td>
+    <td>любое</td>
+    <td><code>100%</code>&nbsp;или&nbsp;<code>to</code></td>
+   </tr>
+   <tr>
+    <td><code>reverse</code></td>
+    <td>любое</td>
+    <td><code>0%</code> или <code>from</code></td>
+   </tr>
+   <tr>
+    <td><code>alternate</code></td>
+    <td>чётное</td>
+    <td><code>0%</code> или <code>from</code></td>
+   </tr>
+   <tr>
+    <td><code>alternate</code></td>
+    <td>нечётное</td>
+    <td><code>100%</code> или <code>to</code></td>
+   </tr>
+   <tr>
+    <td><code>alternate-reverse</code></td>
+    <td>чётное</td>
+    <td><code>100%</code> или <code>to</code></td>
+   </tr>
+   <tr>
+    <td><code>alternate-reverse</code></td>
+    <td>нечётное</td>
+    <td><code>0%</code> или <code>from</code></td>
+   </tr>
+  </tbody>
+ </table>
+ </dd>
+ <dt><code>backwards</code></dt>
+ <dd>Элемент сохранит стиль первого&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes">ключевого&nbsp;кадра</a>&nbsp;на протяжении периода&nbsp;<a href="/css/animation-delay/"><code>animation-delay</code></a>. Первый ключевой кадр определяется значением <a href="/css/animation-direction/"><code>animation-direction</code></a>:
+ <table class="standard-table">
+  <thead>
+   <tr>
+    <th scope="col"><code>animation-direction</code></th>
+    <th scope="col">первый ключевой кадр</th>
+   </tr>
+  </thead>
+  <tbody>
+   <tr>
+    <td><code>normal</code> или&nbsp;<code>alternate</code></td>
+    <td><code>0%</code> или&nbsp;<code>from</code></td>
+   </tr>
+   <tr>
+    <td><code>reverse</code>&nbsp;или&nbsp;<code>alternate-reverse</code></td>
+    <td><code>100%<font face="Open Sans, Arial, sans-serif">&nbsp;или&nbsp;</font></code><code>to</code></td>
+   </tr>
+  </tbody>
+ </table>
+ </dd>
+ <dt><code>both</code></dt>
+ <dd>Анимация будет вести себя так, как будто значения&nbsp;forwards и&nbsp;backwards заданы одновременно.</dd>
+</dl></div><h3 id="формальный_синтаксис"><a href="#формальный_синтаксис" title="Permalink to Формальный синтаксис">Формальный синтаксис</a></h3><div><pre class="notranslate"><a href="#single-animation-fill-mode">&lt;single-animation-fill-mode&gt;</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#hash_mark_()" title="Currently only available in English (US)" class="only-in-en-us"># (en-US)</a><p style="font-family:Open Sans,Arial,sans-serif; margin: 10px 0 0 0;">где <br><code style="font-family:Consolas,Monaco,&quot;Andale Mono&quot;,monospace;"><span id="single-animation-fill-mode">&lt;single-animation-fill-mode&gt;</span> = none <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> forwards <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> backwards <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> both</code></p></pre></div><h2 id="example"><a href="#example" title="Permalink to Пример">Пример</a></h2><div><p>Вы можете посмотреть эффект animation-fill-mode в следующем примере. По умолчанию, по окончании анимации стиль элемента возвращается к исходному. Значение forwards сохранит для элемента&nbsp;стиль последнего ключевого кадра.</p></div><h3 id="html"><a href="#html" title="Permalink to HTML">HTML</a></h3><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Наведите курсор мыши на серый блок<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>demo<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>grows<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Этот просто растёт<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>growsandstays<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Этот растёт и остаётся большим<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre></div><h3 id="css"><a href="#css" title="Permalink to CSS">CSS</a></h3><div><pre class="brush: css notranslate"><code><span class="token selector">.demo</span> <span class="token punctuation">{</span>
+  <span class="token property">border-top</span><span class="token punctuation">:</span> 100px solid #ccc<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> sans-serif<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token atrule"><span class="token rule">@keyframes</span> grow</span> <span class="token punctuation">{</span>
+    <span class="token selector">0%</span> <span class="token punctuation">{</span> <span class="token property">font-size</span><span class="token punctuation">:</span> 0 <span class="token punctuation">}</span>
+    <span class="token selector">100%</span> <span class="token punctuation">{</span> <span class="token property">font-size</span><span class="token punctuation">:</span> 40px <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token atrule"><span class="token rule">@-webkit-keyframes</span> grow</span> <span class="token punctuation">{</span>
+    <span class="token selector">0%</span> <span class="token punctuation">{</span> <span class="token property">font-size</span><span class="token punctuation">:</span> 0 <span class="token punctuation">}</span>
+    <span class="token selector">100%</span> <span class="token punctuation">{</span> <span class="token property">font-size</span><span class="token punctuation">:</span> 40px <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.demo:hover .grows</span> <span class="token punctuation">{</span>
+    <span class="token property">animation-name</span><span class="token punctuation">:</span> grow<span class="token punctuation">;</span>
+    <span class="token property">animation-duration</span><span class="token punctuation">:</span> 3s<span class="token punctuation">;</span>
+    <span class="token property">-webkit-animation-name</span><span class="token punctuation">:</span> grow<span class="token punctuation">;</span>
+    <span class="token property">-webkit-animation-duration</span><span class="token punctuation">:</span> 3s<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.demo:hover .growsandstays</span> <span class="token punctuation">{</span>
+    <span class="token property">animation-name</span><span class="token punctuation">:</span> grow<span class="token punctuation">;</span>
+    <span class="token property">animation-duration</span><span class="token punctuation">:</span> 3s<span class="token punctuation">;</span>
+    <span class="token property">animation-fill-mode</span><span class="token punctuation">:</span> forwards<span class="token punctuation">;</span>
+    <span class="token property">-webkit-animation-name</span><span class="token punctuation">:</span> grow<span class="token punctuation">;</span>
+    <span class="token property">-webkit-animation-duration</span><span class="token punctuation">:</span> 3s<span class="token punctuation">;</span>
+    <span class="token property">-webkit-animation-fill-mode</span><span class="token punctuation">:</span> forwards<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<p><iframe class="sample-code-frame" id="frame_Example" width="700" height="300" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/animation-fill-mode/_sample_.Example.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-animations-1/#animation-fill-mode" hreflang="en" lang="en" class="external" rel=" noopener">CSS Animations Level 1<br><small lang="ru">Определение 'animation-fill-mode' в этой спецификации.</small></a></td>
+   <td><span class="spec-wd">Рабочий черновик</span></td>
+   <td>Начальное определение</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations" title="Tutorial about CSS animations">Использование&nbsp;CSS анимации</a></li>
+ <li><a href="https://developer.mozilla.org/ru/docs/Web/API/AnimationEvent" title="AnimationEvent"><code>AnimationEvent</code></a></li>
+</ul></div>

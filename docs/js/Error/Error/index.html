@@ -1,0 +1,30 @@
+<h1>Error() constructor</h1><div><div></div>
+
+<p><span class="seoSummary">The <strong><code>Error</code></strong> constructor creates an
+    error object.</span></p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: js notranslate"><code><span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span>
+<span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span>message<span class="token punctuation">,</span> fileName<span class="token punctuation">)</span>
+<span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span>message<span class="token punctuation">,</span> fileName<span class="token punctuation">,</span> lineNumber<span class="token punctuation">)</span>
+</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Parameters">Parameters</a></h3><div><dl>
+  <dt><code><var>message</var></code><span class="badge inline optional">Optional</span></dt>
+  <dd>A human-readable description of the error.</dd>
+  <dt><code><var>fileName</var></code>&nbsp;<span class="badge inline optional">Optional</span></dt>
+  <dd>The value for the <code><var>fileName</var></code> property on the created
+    <code>Error</code> object. Defaults to the name of the file containing the code that
+    called the <code>Error()</code> constructor.</dd>
+  <dt><code><var>lineNumber</var></code>&nbsp;<span class="badge inline optional">Optional</span></dt>
+  <dd>The value for the <code><var>lineNumber</var></code> property on the created
+    <code>Error</code> object. Defaults to the line number containing the
+    <code>Error()</code> constructor invocation.</dd>
+</dl></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="function_call_or_new_construction"><a href="#function_call_or_new_construction" title="Permalink to Function call or new construction">Function call or new construction</a></h3><div><p>When <code>Error</code> is used like a function -- without <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new"><code>new</code></a>, it will return an <code>Error</code> object. Therefore, a mere call to
+  <code>Error</code> will produce the same output that constructing an <code>Error</code>
+  object via the <code>new</code> keyword would.</p>
+
+<pre class="brush: js notranslate"><code><span class="token comment">// this...</span>
+<span class="token keyword">const</span> x <span class="token operator">=</span> <span class="token function">Error</span><span class="token punctuation">(</span><span class="token string">'I was created using a function call!'</span><span class="token punctuation">)</span>
+
+<span class="token comment">// ...has the same functionality as this.</span>
+<span class="token keyword">const</span> y <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'I was constructed via the "new" keyword!'</span><span class="token punctuation">)</span></code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://tc39.es/ecma262/#sec-error-constructor">Unknown specification<!-- --> <br><small># <!-- -->sec-error-constructor</small></a></td></tr></tbody></table><div></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/throw"><code>throw</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch"><code>try...catch</code></a></li>
+</ul></div>

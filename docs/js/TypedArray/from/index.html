@@ -1,0 +1,111 @@
+<h1>TypedArray.from()</h1><div><div></div>
+
+<p>The <strong><code><var>TypedArray</var>.from()</code></strong> method creates a new <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray#typedarray_objects">typed
+        array</a> from an array-like or iterable object. This method is nearly the same as
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from"><code>Array.from()</code></a>.</p>
+
+<div><iframe class="interactive" width="100%" height="410" src="https://interactive-examples.mdn.mozilla.net/pages/js/typedarray-from.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: js notranslate"><code><span class="token comment">// Arrow function</span>
+TypedArray<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>arrayLike<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">currentValue</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span> <span class="token punctuation">)</span>
+TypedArray<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>arrayLike<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">currentValue<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span> <span class="token punctuation">)</span>
+TypedArray<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>arrayLike<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">currentValue<span class="token punctuation">,</span> index<span class="token punctuation">,</span> array</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span> <span class="token punctuation">)</span>
+
+<span class="token comment">// Mapping function</span>
+TypedArray<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>arrayLike<span class="token punctuation">,</span> mapFn<span class="token punctuation">)</span>
+TypedArray<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>arrayLike<span class="token punctuation">,</span> mapFn<span class="token punctuation">,</span> thisArg<span class="token punctuation">)</span>
+
+<span class="token comment">// Inline mapping function</span>
+TypedArray<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>arrayLike<span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token function">mapFn</span><span class="token punctuation">(</span><span class="token parameter">currentValue</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+TypedArray<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>arrayLike<span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token function">mapFn</span><span class="token punctuation">(</span><span class="token parameter">currentValue<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+TypedArray<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>arrayLike<span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token function">mapFn</span><span class="token punctuation">(</span><span class="token parameter">currentValue<span class="token punctuation">,</span> index<span class="token punctuation">,</span> array</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+TypedArray<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>arrayLike<span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token function">mapFn</span><span class="token punctuation">(</span><span class="token parameter">currentValue<span class="token punctuation">,</span> index<span class="token punctuation">,</span> array</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> thisArg<span class="token punctuation">)</span>
+</code></pre>
+
+<p>Where <code><var>TypedArray</var></code> is one of:</p>
+
+<div class="threecolumns">
+    <ul>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array"><code>Int8Array</code></a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array"><code>Uint8Array</code></a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray"><code>Uint8ClampedArray</code></a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array"><code>Int16Array</code></a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array"><code>Uint16Array</code></a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array"><code>Int32Array</code></a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array"><code>Uint32Array</code></a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array"><code>Float32Array</code></a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array"><code>Float64Array</code></a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt64Array"><code>BigInt64Array</code></a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigUint64Array"><code>BigUint64Array</code></a></li>
+    </ul>
+</div></div><h3 id="parameters"><a href="#parameters" title="Permalink to Parameters">Parameters</a></h3><div><dl>
+    <dt><code><var>arrayLike</var></code></dt>
+    <dd>An array-like or iterable object to convert to a typed array.</dd>
+    <dt><code><var>mapFn</var></code> <span class="badge inline optional">Optional</span></dt>
+    <dd>Map function to call on every element of the typed array.</dd>
+    <dt><code><var>thisArg</var></code> <span class="badge inline optional">Optional</span></dt>
+    <dd>Value to use as <code>this</code> when executing <code><var>mapFn</var></code>.
+    </dd>
+</dl></div><h3 id="return_value"><a href="#return_value" title="Permalink to Return value">Return value</a></h3><div><p>A new <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray"><code>TypedArray</code></a> instance.</p></div><h2 id="description"><a href="#description" title="Permalink to Description">Description</a></h2><div><p><code><var>TypedArray</var>.from()</code> lets you create typed arrays from:</p>
+
+<ul>
+    <li>array-like objects (objects with a <code>length</code> property and indexed
+        elements); or</li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols">iterable objects</a> (objects
+        where you can get its elements, such as <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map"><code>Map</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set"><code>Set</code></a>).
+    </li>
+</ul>
+
+<p><code><var>TypedArray</var>.from()</code> has the optional parameter
+    <code><var>mapFn</var></code>, which allows you to execute a
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map"><code>map()</code></a> function on each element of the typed array
+    (or subclass object) that is being created. This means that the following are
+    equivalent:</p>
+
+<ul>
+    <li><code><var>TypedArray</var>.from(<var>obj</var>, <var>mapFn</var>, <var>thisArg</var>)</code>
+    </li>
+    <li><code><var>TypedArray</var>.from(Array.prototype.map.call(<var>obj</var>, <var>mapFn</var>, <var>thisArg</var>))</code>.
+    </li>
+</ul>
+
+<p>The <code>length</code> property of the <code>from()</code> method is <code>1</code>.
+</p></div><h3 id="differences_from_array.from"><a href="#differences_from_array.from" title="Permalink to Differences from Array.from()">Differences from Array.from()</a></h3><div><p>Some subtle distinctions between <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from"><code>Array.from()</code></a> and
+    <code><var>TypedArray</var>.from()</code>:</p>
+
+<ul>
+    <li>If the <code><var>thisArg</var></code> value passed to
+        <code><var>TypedArray</var>.from()</code> is not a constructor,
+        <code><var>TypedArray</var>.from()</code> will throw a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError"><code>TypeError</code></a>,
+        where <code>Array.from()</code> defaults to creating a new <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array"><code>Array</code></a>.
+    </li>
+    <li><code><var>TypedArray</var>.from()</code> uses <code>[[Put]]</code> where
+        <code>Array.from()</code> uses <code>[[DefineProperty]]</code>. Hence, when
+        working with <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy"><code>Proxy</code></a> objects, it calls
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/Proxy/set"><code>handler.set</code></a> to create new
+        elements rather than <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/Proxy/defineProperty"><code>handler.defineProperty()</code></a>.</li>
+    <li>When the <code><var>source</var></code> parameter is an iterator, the
+        <code><var>TypedArray</var>.from()</code> first collects all the values from the
+        iterator, then creates an instance of <code><var>thisArg</var></code> using the
+        count, then sets the values on the instance. <code>Array.from()</code> sets each
+        value as it receives them from the iterator, then sets its <code>length</code> at
+        the end.</li>
+    <li>When <code>Array.from()</code> gets an array-like which isn't an iterator, it
+        respects holes. <code><var>TypedArray</var>.from()</code> will ensure the result
+        is dense.</li>
+</ul></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="from_an_iterable_object_set"><a href="#from_an_iterable_object_set" title="Permalink to From an iterable object (Set)">From an iterable object (Set)</a></h3><div><pre class="brush: js notranslate"><code><span class="token keyword">const</span> s <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Uint8Array<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Uint8Array [ 1, 2, 3 ]</span>
+</code></pre></div><h3 id="from_a_string"><a href="#from_a_string" title="Permalink to From a string">From a string</a></h3><div><pre class="brush: js notranslate"><code>Int16Array<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span><span class="token string">'123'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Int16Array [ 1, 2, 3 ]</span>
+</code></pre></div><h3 id="use_with_arrow_function_and_map"><a href="#use_with_arrow_function_and_map" title="Permalink to Use with arrow function and map">Use with arrow function and map</a></h3><div><p>Using an arrow function as the map function to manipulate the elements</p>
+
+<pre class="brush: js notranslate"><code>Float32Array<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token parameter">x</span> <span class="token operator">=&gt;</span> x <span class="token operator">+</span> x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Float32Array [ 2, 4, 6 ]</span>
+</code></pre></div><h3 id="generate_a_sequence_of_numbers"><a href="#generate_a_sequence_of_numbers" title="Permalink to Generate a sequence of numbers">Generate a sequence of numbers</a></h3><div><pre class="brush: js notranslate"><code>Uint8Array<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span><span class="token punctuation">{</span>length<span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">v<span class="token punctuation">,</span> k</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> k<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Uint8Array [ 0, 1, 2, 3, 4 ]</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://tc39.es/ecma262/#sec-%typedarray%.from">Unknown specification<!-- --> <br><small># <!-- -->sec-%typedarray%.from</small></a></td></tr></tbody></table><div></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+    <li>A polyfill of <code>TypedArray.from</code> is available in <a href="https://github.com/zloirock/core-js#ecmascript-typed-arrays" class="external" rel=" noopener"><code>core-js</code></a></li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/of"><code>TypedArray.of()</code></a></li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from"><code>Array.from()</code></a></li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map"><code>Array.prototype.map()</code></a></li>
+    <li><a href="https://github.com/behnammodi/polyfill/blob/v0.0.1/int-8-array.polyfill.js" class="external" rel=" noopener">A polyfill</a></li>
+</ul></div>

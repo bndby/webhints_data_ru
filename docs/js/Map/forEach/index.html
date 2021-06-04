@@ -1,0 +1,78 @@
+<h1>Map.prototype.forEach()</h1><div><div></div>
+
+<p><span class="seoSummary">The <strong><code>forEach()</code></strong> method executes a
+    provided function once per each key/value pair in the <code>Map</code> object, in
+    insertion order.</span></p>
+
+<div><iframe class="interactive" width="100%" height="490" src="https://interactive-examples.mdn.mozilla.net/pages/js/map-prototype-foreach.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: js notranslate"><code><span class="token comment">// Arrow function</span>
+<span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span> <span class="token punctuation">)</span>
+<span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span> <span class="token punctuation">)</span>
+<span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">value<span class="token punctuation">,</span> key</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span> <span class="token punctuation">)</span>
+<span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">value<span class="token punctuation">,</span> key<span class="token punctuation">,</span> map</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span> <span class="token punctuation">)</span>
+
+<span class="token comment">// Callback function</span>
+<span class="token function">forEach</span><span class="token punctuation">(</span>callbackFn<span class="token punctuation">)</span>
+<span class="token function">forEach</span><span class="token punctuation">(</span>callbackFn<span class="token punctuation">,</span> thisArg<span class="token punctuation">)</span>
+
+<span class="token comment">// Inline callback function</span>
+<span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token function">callbackFn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token function">callbackFn</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token function">callbackFn</span><span class="token punctuation">(</span><span class="token parameter">value<span class="token punctuation">,</span> key</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token function">callbackFn</span><span class="token punctuation">(</span><span class="token parameter">value<span class="token punctuation">,</span> key<span class="token punctuation">,</span> map</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token function">callbackFn</span><span class="token punctuation">(</span><span class="token parameter">value<span class="token punctuation">,</span> key<span class="token punctuation">,</span> map</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> thisArg<span class="token punctuation">)</span>
+</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Parameters">Parameters</a></h3><div><dl>
+  <dt><code><var>callbackFn</var></code></dt>
+  <dd>
+    <p>Function to execute for each entry of <code><var>myMap</var></code>. It takes the
+      following arguments:</p>
+
+    <dl>
+      <dt><code><var>value</var></code> <span class="badge inline optional">Optional</span></dt>
+      <dd>Value of each iteration.</dd>
+      <dt><code><var>key</var></code> <span class="badge inline optional">Optional</span></dt>
+      <dd>Key of each iteration.</dd>
+      <dt><code><var>map</var></code> <span class="badge inline optional">Optional</span></dt>
+      <dd>The map being iterated (<code><var>myMap</var></code> in the above Syntax box).
+      </dd>
+    </dl>
+  </dd>
+  <dt><code><var>thisArg</var></code> <span class="badge inline optional">Optional</span></dt>
+  <dd>Value to use as <code>this</code> when executing <code><var>callback</var></code>.
+  </dd>
+</dl></div><h3 id="return_value"><a href="#return_value" title="Permalink to Return value">Return value</a></h3><div><p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined"><code>undefined</code></a>.</p></div><h2 id="description"><a href="#description" title="Permalink to Description">Description</a></h2><div><p>The <code>forEach</code> method executes the provided <code><var>callback</var></code>
+  once for each key of the map which actually exist. It is not invoked for keys which have
+  been deleted. However, it is executed for values which are present but have the value
+  <code>undefined</code>.</p>
+
+<p><code><var>callback</var></code> is invoked with <strong>three arguments</strong>:</p>
+
+<ul>
+  <li>the entry's <code><var>value</var></code></li>
+  <li>the entry's <code><var>key</var></code></li>
+  <li>the <strong><code>Map</code> object</strong> being traversed</li>
+</ul>
+
+<p>If a <code><var>thisArg</var></code> parameter is provided to <code>forEach</code>, it
+  will be passed to <code><var>callback</var></code> when invoked, for use as its
+  <code>this</code> value. Otherwise, the value <code>undefined</code> will be passed for
+  use as its <code>this</code> value. The <code>this</code> value ultimately observable by
+  <code><var>callback</var></code> is determined according to <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this">the usual rules for
+    determining the <code>this</code> seen by a function</a>.</p>
+
+<p>Each value is visited once, except in the case when it was deleted and re-added before
+  <code>forEach</code> has finished. <code><var>callback</var></code> is not invoked for
+  values deleted before being visited. New values added before <code>forEach</code> has
+  finished will be visited.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="printing_the_contents_of_a_map_object"><a href="#printing_the_contents_of_a_map_object" title="Permalink to Printing the contents of a Map object">Printing the contents of a Map object</a></h3><div><p>The following code logs a line for each element in an <code>Map</code> object:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">function</span> <span class="token function">logMapElements</span><span class="token punctuation">(</span><span class="token parameter">value<span class="token punctuation">,</span> key<span class="token punctuation">,</span> map</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">map.get('</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>key<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">') = </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>value<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'foo'</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'bar'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'baz'</span><span class="token punctuation">,</span> <span class="token keyword">undefined</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>logMapElements<span class="token punctuation">)</span>
+<span class="token comment">// logs:</span>
+<span class="token comment">// "map.get('foo') = 3"</span>
+<span class="token comment">// "map.get('bar') = [object Object]"</span>
+<span class="token comment">// "map.get('baz') = undefined"</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://tc39.es/ecma262/#sec-map.prototype.foreach">Unknown specification<!-- --> <br><small># <!-- -->sec-map.prototype.foreach</small></a></td></tr></tbody></table><div></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach"><code>Array.prototype.forEach()</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/forEach"><code>Set.prototype.forEach()</code></a></li>
+</ul></div>

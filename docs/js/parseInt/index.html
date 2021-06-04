@@ -1,0 +1,146 @@
+<h1>parseInt()</h1><div><div>
+<div>
+<div></div>
+</div>
+</div>
+
+<p>Функция <code><strong>parseInt()</strong></code> принимает строку в качестве аргумента и возвращает целое число в соответствии с указанным основанием системы счисления.</p>
+
+<p>&nbsp;</p>
+
+<p><iframe class="interactive" width="100%" height="490" src="https://interactive-examples.mdn.mozilla.net/pages/js/globalprops-parseint.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></p>
+
+<p>The source for this interactive example is stored in a GitHub repository. If you'd like to contribute to the interactive examples project, please clone&nbsp;<a href="https://github.com/mdn/interactive-examples" class="external" rel=" noopener">https://github.com/mdn/interactive-examples</a>&nbsp;and send us a pull request.</p>
+
+<p>&nbsp;</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate">parseInt(<em>string</em>, <em>radix</em>);</pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>string</code></dt>
+ <dd>Значение, которое необходимо проинтерпретировать. Если значение параметра <code>string</code> не принадлежит строковому типу, оно преобразуется в него (с помощью абстрактной операции <code><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-tostring" class="external" rel=" noopener">ToString</a></code>). Пробелы в начале строки не учитываются.</dd>
+</dl>
+
+<dl>
+ <dt><code>radix</code></dt>
+ <dd>Целое число в диапазоне между 2 и 36,&nbsp;представляющее собой основание системы счисления числовой строки <code>string</code>, описанной выше. В основном пользователи используют десятичную систему счисления и указывают 10. <strong>Всегда указывайте этот параметр,</strong> чтобы исключить ошибки считывания и гарантировать корректность исполнения и предсказуемость результата. Когда основание системы счисления не указано, разные реализации могут возвращать разные результаты.</dd>
+</dl></div><h3 id="description"><a href="#description" title="Permalink to Возвращаемое значение">Возвращаемое значение</a></h3><div><p>Целое число, полученное парсингом (разбором и интерпретацией) переданной строки. Если первый символ не получилось сконвертировать в число, то возвращается <a href="/js/NaN/"><code>NaN</code></a>.&nbsp;</p></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Функция <code>parseInt</code> преобразует первый переданный ей аргумент в строковый тип, интерпретирует его и возвращает целое число или значение <code>NaN</code>. Результат (если не <code>NaN</code>) является целым числом и представляет собой первый аргумент (<code>string</code>), рассматривающийся как число в указанной системе счисления (<code>radix</code>). Например, основание 10 указывает на преобразование из десятичного числа, 8 - восьмеричного, 16 - шестнадцатеричного и так далее. Если основание больше <code>10</code>, то для обозначения цифр больше <code>9</code> используются буквы. Например, для шестнадцатеричных чисел (основание 16) используются буквы от&nbsp;<code>A</code> до <code>F</code>.</p>
+
+<p>Если функция <code>parseInt</code> встречает символ, не являющийся числом в указанной системе счисления, она пропускает этот и все последующие символы (даже, если они подходящие) и возвращает целое число, преобразованное из части строки, предшествовавшей этому символу. <code>parseInt</code> отсекает дробную часть числа. Пробелы в начале и конце строки разрешены.</p>
+
+<p>Так как некоторые числа включают символ <code>e</code> в своём строковом представлении (например, <strong><code>6.022e23</code></strong>), то использование <code>parseInt</code> для усечения числовых значений может дать неожиданные результаты, когда используются очень малые или очень большие величины. <code>parseInt</code> не должна использоваться как замена для <a href="/js/Math/floor/"><code>Math.floor()</code></a>.</p>
+
+<p>Если основание системы счисления имеет значение <code>undefined</code> (не определено) или равно 0 (или не указано), то JavaScript по умолчанию предполагает следующее:</p>
+
+<ul>
+ <li>Если значение входного параметра <code>string</code> начинается с "<code>0x</code>" или "<code>0X</code>", <var>за основание системы счисления принимается 16, и интерпретации подвергается оставшаяся часть строки.</var></li>
+ <li>Если значение входного параметра <code>string</code> начинается с "0", <var>за основание системы счисления принимается либо 8, либо 10, в зависимости от конкретной реализации.</var> В спецификации ECMAScript 5 прописано использование 10 (десятичная система), но это поддерживается ещё не всеми браузерами, поэтому необходимо <strong>всегда указывать основание системы счисления при использовании функции&nbsp;</strong><strong><code>parseInt</code></strong>.</li>
+ <li>Если значение входного параметра <code>string</code> начинается с любого другого символа, система счисления считается десятичной (основание 10).</li>
+</ul>
+
+<p>Если первый символ строки не может быть преобразован в число, <code>parseInt</code> возвращает значение <code>NaN</code>.</p>
+
+<p>С точки зрения математики, значение <code>NaN</code> не является числом в какой-либо системе счисления. Чтобы определить, вернёт ли <code>parseInt </code>значение<code> </code><code>NaN </code>в качестве результата, можно вызвать функцию&nbsp;<a href="/js/isNaN/"><code>isNaN</code></a>. Если <code>NaN</code> участвует в арифметических операциях, результатом также будет <code>NaN</code>.</p>
+
+<p>Для преобразования числа в строку в указанной системе счисления, используйте <code>intValue.toString(radix)</code>.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_using_parseint"><a href="#example_using_parseint" title="Permalink to Пример: Использование parseInt">Пример: Использование <code>parseInt</code></a></h3><div><p>Все следующие примеры возвращают <strong><code>15</code></strong>:</p>
+
+<pre class="brush: js notranslate"><code><span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token string">" 0xF"</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token string">" F"</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token string">"17"</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token number">021</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token string">"015"</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//parseInt(015, 10); вернёт 15</span>
+<span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token number">15.99</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token string">"FXX123"</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token string">"1111"</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token string">"15*3"</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token string">"15e2"</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token string">"15px"</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token string">"12"</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+<p>Все следующие примеры возвращают <strong><code>NaN</code></strong>:</p>
+
+<pre class="brush: js notranslate"><code><span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token string">"Hello"</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Не является числом</span>
+<span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token string">"546"</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// Неверное число в двоичной системе счисления</span>
+</code></pre>
+
+<p>Все следующие примеры возвращают <strong><code>-15</code></strong>:</p>
+
+<pre class="brush: js notranslate"><code><span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token string">"-F"</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token string">"-0F"</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token string">"-0XF"</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">15.1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span>
+<span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token string">" -17"</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token string">" -15"</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token string">"-1111"</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token string">"-15e1"</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token string">"-12"</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+<p>Все следующие примеры возвращают <strong><code>4</code></strong>:</p>
+
+<pre class="brush: js line-numbers  language-js notranslate"><code><span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token number">4.7</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token number">4.7</span> <span class="token operator">*</span> <span class="token number">1e22</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Очень большие числа становятся 4</span>
+<span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token number">0.00000000000434</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Очень маленькие числа становятся 4</span></code></pre>
+
+<p>Следующий пример возвращает <strong><code>224</code></strong>:</p>
+
+<pre class="brush: js notranslate"><code><span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token string">"0e0"</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="восьмеричная_интерпретация_без_указания_системы_счисления"><a href="#восьмеричная_интерпретация_без_указания_системы_счисления" title="Permalink to Восьмеричная интерпретация без указания системы счисления">Восьмеричная интерпретация без указания системы счисления</a></h2><div><p>Хотя это не поощряется в спецификацией ECMAScript 3 и запрещено в ECMAScript 5, многие реализации интерпретируют числовую строку, начинающуюся с <code>0</code>, как восьмеричную. Следующий пример может иметь как восьмеричный, так и десятичный результат. <strong>Чтобы избежать непредвиденного результата, всегда указывайте основание системы счисления.</strong></p>
+
+<pre class="brush: js notranslate"><code><span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token string">"0e0"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 0</span>
+<span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token string">"08"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 0, '8' не является цифрой в восьмеричной системе.</span>
+</code></pre></div><h3 id="ecmascript_5_устраняет_восьмеричную_интерпретацию"><a href="#ecmascript_5_устраняет_восьмеричную_интерпретацию" title="Permalink to ECMAScript 5 устраняет восьмеричную интерпретацию">ECMAScript 5 устраняет восьмеричную интерпретацию</a></h3><div><p>Спецификация ECMAScript 5 функции <code>parseInt</code> больше не разрешает трактовать в восьмеричной системе счисления строки, начинающиеся с <code>0</code>. ECMAScript 5 провозглашает:</p>
+
+<p>Функция <code>parseInt</code> производит целочисленное значение в результате интерпретации содержимого строкового аргумента в соответствии с указанным основанием системы счисления. Пробел в начале строки не учитывается. Если основание системы счисления не определено или равно <code>0</code>, оно считается равным <code>10</code>,&nbsp;за исключением случаев, когда строка начинается с пар символов <code>0x</code> или <code>0X</code>: тогда за основание принимается 16. Если основанием системы счисления указано <code>16</code>, число также может начинаться с пар символов <code>0x</code> или <code>0X</code>.</p>
+
+<p>В этом ECMAScript 5 расходится со спецификацией ECMAScript 3, в которой восьмеричная интерпретация не поощрялась, но и не была запрещена.</p>
+
+<p>Поскольку на момент 2013 года описанное выше поведение было применено не во всех реализациях, а поддержка старых браузеров является необходимой, <strong>всегда указывайте основание системы счисления.</strong></p></div><h2 id="более_строгая_функция_интерпретации"><a href="#более_строгая_функция_интерпретации" title="Permalink to Более строгая функция интерпретации">Более строгая функция интерпретации</a></h2><div><p>Иногда необходим более строгий способ интерпретации целочисленных значений. В этом могут помочь регулярные выражения:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> <span class="token function-variable function">filterInt</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">^(\-|\+)?([0-9]+|Infinity)$</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token function">Number</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token number">NaN</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">filterInt</span><span class="token punctuation">(</span><span class="token string">'421'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>               <span class="token comment">// 421</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">filterInt</span><span class="token punctuation">(</span><span class="token string">'-421'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>              <span class="token comment">// -421</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">filterInt</span><span class="token punctuation">(</span><span class="token string">'+421'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>              <span class="token comment">// 421</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">filterInt</span><span class="token punctuation">(</span><span class="token string">'Infinity'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>          <span class="token comment">// Infinity</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">filterInt</span><span class="token punctuation">(</span><span class="token string">'421e+0'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>            <span class="token comment">// NaN</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">filterInt</span><span class="token punctuation">(</span><span class="token string">'421hop'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>            <span class="token comment">// NaN</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">filterInt</span><span class="token punctuation">(</span><span class="token string">'hop1.61803398875'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// NaN</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">filterInt</span><span class="token punctuation">(</span><span class="token string">'1.61803398875'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">// NaN</span>
+</code></pre></div><h2 id="спецификация"><a href="#спецификация" title="Permalink to Спецификация">Спецификация</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-262,%201st%20edition,%20June%201997.pdf" hreflang="en" lang="en" class="external" title="Спецификация 'ECMAScript 1st Edition (ECMA-262)'" rel=" noopener">ECMAScript 1st Edition (ECMA-262)</a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Изначальное определение.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-15.1.2.2" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 5.1 (ECMA-262)<br><small lang="ru">Определение 'parseInt' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-parseint-string-radix" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'parseInt' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><a href="https://tc39.es/ecma262/#sec-parseint-string-radix" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript (ECMA-262)<br><small lang="ru">Определение 'parseInt' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="поддержка_браузерами"><a href="#поддержка_браузерами" title="Permalink to Поддержка браузерами">Поддержка браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/parseFloat/"><code>parseFloat()</code></a></li>
+ <li><a href="/js/Number/parseFloat/"><code>Number.parseFloat()</code></a></li>
+ <li><a href="/js/Number/parseInt/"><code>Number.parseInt()</code></a></li>
+ <li><a href="/js/isNaN/"><code>isNaN()</code></a></li>
+ <li><a href="/js/Number/toString/"><code>Number.toString()</code></a></li>
+ <li><a href="/js/Object/valueOf/"><code>Object.valueOf</code></a></li>
+</ul></div>

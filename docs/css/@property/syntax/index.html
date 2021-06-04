@@ -1,0 +1,83 @@
+<h1>syntax</h1><div><div><div class="notecard experimental">
+    <h4 id="experimental">Experimental</h4>
+    <p><strong>This is an <a href="https://developer.mozilla.org/en-US/docs/MDN/Guidelines/Conventions_definitions#experimental">experimental technology</a></strong><br>Check the <a href="#browser_compatibility">Browser compatibility table</a> carefully before using this in production.</p>
+</div></div>
+
+<p>The <strong><code>syntax</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> descriptor is required when using the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@property"><code>@property</code></a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule"><code>at-rule</code></a> and describes the allowable syntax for the property.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><p>The following are all valid syntax strings:</p>
+
+<pre class="brush: css no-line-numbers notranslate"><code><span class="token property">syntax</span><span class="token punctuation">:</span> <span class="token string">'&lt;color&gt;'</span><span class="token punctuation">;</span> <span class="token comment">/* accepts a color */</span>
+
+<span class="token property">syntax</span><span class="token punctuation">:</span> <span class="token string">'&lt;length&gt; | &lt;percentage&gt;'</span><span class="token punctuation">;</span> <span class="token comment">/* accepts lengths or percentages but not calc expressions with a combination of the two */</span>
+
+<span class="token property">syntax</span><span class="token punctuation">:</span> <span class="token string">'small | medium | large'</span><span class="token punctuation">;</span> <span class="token comment">/* accepts one of these values set as custom idents. */</span>
+
+<span class="token property">syntax</span><span class="token punctuation">:</span> <span class="token string">'*'</span><span class="token punctuation">;</span> <span class="token comment">/* any valid token */</span>
+</code></pre></div><h2 id="values"><a href="#values" title="Permalink to Values">Values</a></h2><div><p>A string with a supported syntax as defined by the specification. Supported syntaxes are a subset of <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Types">CSS types</a>. These may be used along, or a number of types can be used in combination.</p>
+
+<dl>
+  <dt><code>"&lt;length&gt;"</code></dt>
+  <dd>Any valid <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length"><code>&lt;length&gt;</code></a> values.</dd>
+  <dt><code>"&lt;number&gt;"</code></dt>
+  <dd>Any valid <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/number"><code>&lt;number&gt;</code></a> values.</dd>
+  <dt><code>"&lt;percentage&gt;"</code></dt>
+  <dd>Any valid <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/percentage"><code>&lt;percentage&gt;</code></a> values.</dd>
+  <dt><code>"&lt;length-percentage&gt;"</code></dt>
+  <dd>Any valid <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length-percentage"><code>&lt;length-percentage&gt;</code></a> values.</dd>
+  <dt><code>"&lt;color&gt;"</code></dt>
+  <dd>Any valid <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value"><code>&lt;color&gt;</code></a> values.</dd>
+  <dt><code>"&lt;image&gt;"</code></dt>
+  <dd>Any valid <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/image"><code>&lt;image&gt;</code></a> values.</dd>
+  <dt><code>"&lt;url&gt;"</code></dt>
+  <dd>Any valid <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/url()"><code>url()</code></a> values.</dd>
+  <dt><code>"&lt;integer&gt;"</code></dt>
+  <dd>Any valid <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/integer"><code>&lt;integer&gt;</code></a> values.</dd>
+  <dt><code>"&lt;angle&gt;"</code></dt>
+  <dd>Any valid <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/angle"><code>&lt;angle&gt;</code></a> values.</dd>
+  <dt><code>"&lt;time&gt;"</code></dt>
+  <dd>Any valid <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/time"><code>&lt;time&gt;</code></a> values.</dd>
+  <dt><code>"&lt;resolution&gt;"</code></dt>
+  <dd>Any valid <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/resolution"><code>&lt;resolution&gt;</code></a> values.</dd>
+  <dt><code>"&lt;transform-function&gt;"</code></dt>
+  <dd>Any valid <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function"><code>&lt;transform-function&gt;</code></a> values.</dd>
+  <dt><code>"&lt;custom-ident&gt;"</code></dt>
+  <dd>Any valid <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/custom-ident"><code>&lt;custom-ident&gt;</code></a> values.</dd>
+  <dt><code>"&lt;transform-list&gt;"</code></dt>
+  <dd>A list of valid <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function"><code>&lt;transform-function&gt;</code></a> values.</dd>
+</dl></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row">Related <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule">at-rule</a></th><td><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@property"><code>@property</code></a></td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td><code>n/a (required)</code></td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>as specified</td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/string" title>&lt;string&gt;</a></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div><p>Add type checking to <code>--my-color</code> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/--*"><code>custom property</code></a>, using the <code>&lt;color&gt;</code> syntax:</p>
+
+<p>Using <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@property"><code>@property</code></a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule">at-rule</a>:</p>
+
+<pre class="brush: css notranslate"><code><span class="token atrule"><span class="token rule">@property</span> --my-color</span> <span class="token punctuation">{</span>
+  <span class="token property">syntax</span><span class="token punctuation">:</span> <span class="token string">'&lt;color&gt;'</span><span class="token punctuation">;</span>
+  <span class="token property">inherits</span><span class="token punctuation">:</span> false<span class="token punctuation">;</span>
+  <span class="token property">initial-value</span><span class="token punctuation">:</span> #c0ffee<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p>Using <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a> <a href="https://developer.mozilla.org/en-US/docs/Web/API/CSS/RegisterProperty"><code>CSS.registerProperty</code></a>:</p>
+
+<pre class="brush: js notranslate"><code>window<span class="token punctuation">.</span><span class="token constant">CSS</span><span class="token punctuation">.</span><span class="token function">registerProperty</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">'--my-color'</span><span class="token punctuation">,</span>
+  syntax<span class="token operator">:</span> <span class="token string">'&lt;color&gt;'</span><span class="token punctuation">,</span>
+  inherits<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  initialValue<span class="token operator">:</span> <span class="token string">'#c0ffee'</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+  <tr>
+   <td><a href="https://drafts.css-houdini.org/css-properties-values-api-1/#the-syntax-descriptor" hreflang="en" lang="en" class="external" rel=" noopener">CSS Properties and Values API Level&nbsp;1<br><small lang="en-US">The definition of 'syntax' in that specification.</small></a></td>
+   <td><span class="spec-wd">Working Draft</span></td>
+   <td>Initial definition.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/CSS_Properties_and_Values_API">CSS Properties and Values API</a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/CSS_Painting_API">CSS Painting API</a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/CSS_Typed_OM_API">CSS Typed Object Model</a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/Houdini">CSS Houdini</a></li>
+</ul></div>

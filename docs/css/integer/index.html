@@ -1,0 +1,46 @@
+<h1>&lt;integer&gt;</h1><div><div></div>
+
+<p><strong><code>&lt;integer&gt;</code></strong> -&nbsp;<a href="/css/CSS_Types/">тип хранения данных</a>&nbsp;в <a href="/css/">CSS</a>&nbsp;-&nbsp;является частным случаем типа&nbsp;<a href="/css/number/"><code>number</code></a>,&nbsp;который представляет&nbsp;целые&nbsp;числа:&nbsp;как положительное, так и отрицательное. Целые числа могу быть использованы в свойствах CSS , таких как <a href="/css/column-count/"><code>column-count</code></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/counter-increment"><code>counter-increment</code> <span>(en-US)</span></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column"><code>grid-column</code> <span>(en-US)</span></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row"><code>grid-row</code> <span>(en-US)</span></a>, и <a href="/css/z-index/"><code>z-index</code></a>.</p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><p>Тип данных&nbsp;<code>&lt;integer&gt;</code>&nbsp;состоит из одного или нескольких дробных цифр, от 0 до 9 включительно, символы&nbsp;<code>+</code> и&nbsp;<code>-</code>&nbsp;необязательны. Не существует единицы измерения, связанной с целочисленным типом данных.</p>
+
+<div class="note notecard"><strong>Запомните:</strong>&nbsp;Не существует официального диапазона значений типа&nbsp;<code>&lt;integer&gt;</code>. Opera 12.1 поддерживает значения до&nbsp;2<sup>15</sup>-1, IE - до&nbsp;2<sup>20</sup>-1, а остальные браузеры даже выше. На протяжении существования значений&nbsp;CSS3 было проведено не большое количество обсуждений об установлении минимального диапазона: последнее решение, <a href="https://lists.w3.org/Archives/Public/www-style/2012Apr/0633.html" class="external" rel=" noopener">в&nbsp;апреле 2012 на протяжении фазы&nbsp;LC</a>, было&nbsp;[-2<sup>27</sup>-1;&nbsp;2<sup>27</sup>-1], но остальные значения, такие как&nbsp;2<sup>24</sup>-1 и&nbsp;2<sup>30</sup>-1,&nbsp;<a href="https://lists.w3.org/Archives/Public/www-style/2012Apr/0530.html" class="external" rel=" noopener">также были предложены</a>. Однако, самая свежая на данный момент спецификация более не указывает на область определения этого&nbsp;типа данных.</div></div><h2 id="интерполяция"><a href="#интерполяция" title="Permalink to Интерполяция">Интерполяция</a></h2><div><p>Во время анимации значения типа&nbsp;<code>&lt;integer&gt;</code>&nbsp;интерполированы используя&nbsp;особые&nbsp;меры. Вычисление будет&nbsp;завершено, если они были целочисленными или с плавающей точкой; отдельное значение получается, используя&nbsp;<a href="https://ru.wikipedia.org/wiki/%D0%A6%D0%B5%D0%BB%D0%B0%D1%8F_%D1%87%D0%B0%D1%81%D1%82%D1%8C" class="external" rel=" noopener">Целую часть</a>. Скорость интерполяции определена&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/easing-function" title="timing-function">timing function</a>, связанной с анимацией.</p></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="корректные_значения_целочисленного_типа_данных"><a href="#корректные_значения_целочисленного_типа_данных" title="Permalink to Корректные значения&nbsp;целочисленного типа данных">Корректные значения&nbsp;целочисленного типа данных</a></h3><div><pre class="notranslate">12          Положительное целое число (без предшествующего знака +)
++123        Положительное целое число (С предшествующим знаком +)
+-456        Отрицательное целое число
+0           Нуль
++0          Нуль, с предшествующим +
+-0          Нуль, с предшествующим -
+</pre></div><h3 id="некорректные_значения_целочисленного_типа_данных"><a href="#некорректные_значения_целочисленного_типа_данных" title="Permalink to Некорректные значения&nbsp;целочисленного типа данных">Некорректные значения&nbsp;целочисленного типа данных</a></h3><div><pre class="example-bad notranslate">12.0        Это &lt;number&gt;, а не &lt;integer&gt;, хоть и представляется как целое число.
+12.         "Дробные" точки запрещены.
++---12      Разрешён только один предшествующий символ +/-.
+десять      Буквы запрещены.
+_5          Специальные знаки запрещены.
+\35         Экранированные символы Юникода запрещены, даже если они являются целым числом (здесь: 5).
+\4E94       Разрешены только арабские цифры, даже в случае, если они экранированны (здесь: японское число 5, 五).
+3e4         Научные обозначения запрещены.
+</pre></div><h2 id="спецификация"><a href="#спецификация" title="Permalink to Спецификация">Спецификация</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th>Спецификация</th>
+   <th>Статус</th>
+   <th>Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-values-3/#integers" hreflang="en" lang="en" class="external" rel=" noopener">CSS Values and Units Module Level&nbsp;3<br><small lang="ru">Определение '&lt;integer&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-cr">Кандидат в рекомендации</span></td>
+   <td>Нет значительных изменений.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/CSS2/syndata.html#numbers" hreflang="en" lang="en" class="external" rel=" noopener">CSS Level&nbsp;2 (Revision&nbsp;1)<br><small lang="ru">Определение '&lt;integer&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Явное определение.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/CSS1/" hreflang="en" lang="en" class="external" rel=" noopener">CSS Level&nbsp;1<br><small lang="ru">Определение '&lt;integer&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Неявное определение.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/css/number/"><code>&lt;number&gt;</code></a></li>
+</ul></div>

@@ -1,0 +1,35 @@
+<h1>Date.prototype.setDate()</h1><div><div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Метод <strong><code>setDate()</code></strong> устанавливает день месяца указанной даты по местному времени.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code><var>dateObj</var>.setDate(<var>dayValue</var>)</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>dayValue</code></dt>
+ <dd>Целое число, представляющее номер дня в месяце.</dd>
+</dl></div><h3 id="возвращаемое_значение"><a href="#возвращаемое_значение" title="Permalink to Возвращаемое значение">Возвращаемое значение</a></h3><div><p>В результате выполнения функция setDate() изменяет текущий объект (<a href="/js/Date/"><code>Date</code></a>)&nbsp;и возвращает количество миллисекунд от начала эпохи (1 января 1970 00:00:00 UTC) для полученного&nbsp;значения объекта.</p></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Если значение параметра <code>dayValue</code> будет выходить за пределы количества дней для месяца, метод <code>setDate()</code> соответственно обновит объект <a href="/js/Date/"><code>Date</code></a>. Например, если в качестве <code>dayValue</code> передать значение 0, дата будет установлена в последний день предыдущего месяца.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_using_setdate"><a href="#example_using_setdate" title="Permalink to Пример: использование метода setDate()">Пример: использование метода <code>setDate()</code></a></h3><div><pre class="brush: js notranslate"><code><span class="token keyword">var</span> theBigDay <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token number">1962</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 1962-07-07</span>
+theBigDay<span class="token punctuation">.</span><span class="token function">setDate</span><span class="token punctuation">(</span><span class="token number">24</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 1962-07-24</span>
+theBigDay<span class="token punctuation">.</span><span class="token function">setDate</span><span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 1962-08-01</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td>ECMAScript 1-е издание.</td>
+   <td>Стандарт</td>
+   <td>Изначальное определение. Реализована в JavaScript 1.0.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-15.9.5.36" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 5.1 (ECMA-262)<br><small lang="ru">Определение 'Date.prototype.setDate' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-date.prototype.setdate" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Date.prototype.setDate' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><div>&nbsp;</div>
+
+<div id="compat-mobile"></div></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/Date/getDate/"><code>Date.prototype.getDate()</code></a></li>
+ <li><a href="/js/Date/setUTCDate/"><code>Date.prototype.setUTCDate()</code></a></li>
+</ul></div>

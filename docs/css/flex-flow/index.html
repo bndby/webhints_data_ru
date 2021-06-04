@@ -1,0 +1,50 @@
+<h1>flex-flow</h1><div><div></div>
+
+<p><strong><code>flex-flow</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" title="CSS">CSS</a>&nbsp;свойство, которое является сокращением&nbsp;для&nbsp;отдельных свойств&nbsp;<code>flex-direction</code> и <code>flex-wrap</code>.</p>
+
+<pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* flex-flow: &lt;'flex-direction'&gt; */</span>
+<span class="token property">flex-flow</span><span class="token punctuation">:</span> row<span class="token punctuation">;</span>
+<span class="token property">flex-flow</span><span class="token punctuation">:</span> row-reverse<span class="token punctuation">;</span>
+<span class="token property">flex-flow</span><span class="token punctuation">:</span> column<span class="token punctuation">;</span>
+<span class="token property">flex-flow</span><span class="token punctuation">:</span> column-reverse<span class="token punctuation">;</span>
+
+<span class="token comment">/* flex-flow: &lt;'flex-wrap'&gt; */</span>
+<span class="token property">flex-flow</span><span class="token punctuation">:</span> nowrap<span class="token punctuation">;</span>
+<span class="token property">flex-flow</span><span class="token punctuation">:</span> wrap<span class="token punctuation">;</span>
+<span class="token property">flex-flow</span><span class="token punctuation">:</span> wrap-reverse<span class="token punctuation">;</span>
+
+<span class="token comment">/* flex-flow: &lt;'flex-direction'&gt; and &lt;'flex-wrap'&gt; */</span>
+<span class="token property">flex-flow</span><span class="token punctuation">:</span> row nowrap<span class="token punctuation">;</span>
+<span class="token property">flex-flow</span><span class="token punctuation">:</span> column wrap<span class="token punctuation">;</span>
+<span class="token property">flex-flow</span><span class="token punctuation">:</span> column-reverse wrap-reverse<span class="token punctuation">;</span>
+
+<span class="token comment">/* Global values */</span>
+<span class="token property">flex-flow</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">flex-flow</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">flex-flow</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre>
+
+<p></p><table class="properties"><tbody><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td>как и у каждого из подсвойств этого свойства:<br><ul><li><a href="/css/flex-direction/"><code>flex-direction</code></a>: <code>row</code></li><li><a href="/css/flex-wrap/"><code>flex-wrap</code></a>: <code>nowrap</code></li></ul></td></tr><tr><th scope="row">Применяется к</th><td>flex-контейнеры</td></tr><tr><th scope="row"><a href="/css/inheritance/">Наследуется</a></th><td>нет</td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>как и у каждого из подсвойств этого свойства:<br><ul><li><a href="/css/flex-direction/"><code>flex-direction</code></a>: как указано</li><li><a href="/css/flex-wrap/"><code>flex-wrap</code></a>: как указано</li></ul></td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p>
+
+<p>Больше информации и свойств описано в&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox" title="/en-US/docs/CSS/Using_CSS_flexible_boxes">Using CSS flexible boxes</a>.</p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div></div><h3 id="значения"><a href="#значения" title="Permalink to Значения">Значения</a></h3><div><p>Смотрите&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction" title="en-US/docs/CSS/flex-direction"><code>flex-direction</code></a> и <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-wrap" title="flex-wrap"><code>flex-wrap</code></a>.</p></div><h3 id="формальный_синтаксис"><a href="#формальный_синтаксис" title="Permalink to Формальный синтаксис">Формальный синтаксис</a></h3><div><pre class="notranslate"><a href="/css/flex-direction/" title="row | row-reverse | column | column-reverse">&lt;'flex-direction'&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_bar" title="Currently only available in English (US)" class="only-in-en-us">|| (en-US)</a> <a href="/css/flex-wrap/" title="nowrap | wrap | wrap-reverse">&lt;'flex-wrap'&gt;</a></pre></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div><pre class="brush:css;highlight:3 notranslate"><code><span class="token selector">element</span> <span class="token punctuation">{</span>
+  <span class="token comment">/* Main-axis is the block direction with reversed main-start and main-end. Flex items are laid out in multiple lines */</span>
+  <span class="token property">flex-flow</span><span class="token punctuation">:</span> column-reverse wrap<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-flexbox-1/#flex-flow" hreflang="en" lang="en" class="external" rel=" noopener">CSS Flexible Box Layout Module<br><small lang="ru">Определение 'flex-flow' в этой спецификации.</small></a></td>
+   <td><span class="spec-cr">Кандидат в рекомендации</span></td>
+   <td>Начальное значение</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="совместимость_с_браузерами"><a href="#совместимость_с_браузерами" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox" title="/en-US/docs/CSS/Using_CSS_flexible_boxes">Using CSS flexible boxes</a></li>
+</ul></div>

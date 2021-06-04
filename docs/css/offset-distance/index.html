@@ -1,0 +1,67 @@
+<h1>offset-distance</h1><div><div></div>
+
+<p>The <strong><code>offset-distance</code></strong> CSS property specifies a position along an <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/offset-path"><code>offset-path</code></a> for an element to be placed.</p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/offset-distance.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: css notranslate"><code><span class="token comment">/* Default value */</span>
+<span class="token property">offset-distance</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+
+<span class="token comment">/* the middle of the offset-path */</span>
+<span class="token property">offset-distance</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+
+<span class="token comment">/* a fixed length positioned along the path */</span>
+<span class="token property">offset-distance</span><span class="token punctuation">:</span> 40px<span class="token punctuation">;</span></code></pre>
+
+<dl>
+ <dt><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length-percentage"><code>&lt;length-percentage&gt;</code></a></code></dt>
+ <dd>A length that specifies how far the element is along the path (defined with <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/offset-path"><code>offset-path</code></a>).</dd>
+ <dd>100% represents the total length of the path (when the <code>offset-path</code> is defined as a basic shape or <code>path()</code>).</dd>
+</dl></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td><code>0</code></td></tr><tr><th scope="row">Applies to</th><td>transformable elements</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance">Inherited</a></th><td>no</td></tr><tr><th scope="row">Percentages</th><td>refer to the total path length</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>for <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length"><code>&lt;length&gt;</code></a> the absolute value, otherwise a percentage</td></tr><tr><th scope="row">Animation type</th><td>a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length#interpolation" title="Values of the <length> CSS data type are interpolated as real, floating-point numbers.">length</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/percentage#interpolation" title="Values of the <percentage> CSS data type are interpolated as real, floating-point numbers.">percentage</a> or calc();</td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate"><a href="#length-percentage">&lt;length-percentage&gt;</a><p style="font-family:Open Sans,Arial,sans-serif; margin: 10px 0 0 0;">where <br><code style="font-family:Consolas,Monaco,&quot;Andale Mono&quot;,monospace;"><span id="length-percentage">&lt;length-percentage&gt;</span> = <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length" title="Possible values: a number followed by'em', 'ex', 'ch', 'rem', 'px', 'cm', 'mm', 'in', 'vh', 'vw', 'vmin', 'vmax', 'pt', 'pc' or 'px', like 3px, 1.5cm, -0.5em or 0">&lt;length&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/percentage" title>&lt;percentage&gt;</a></code></p></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="using_offset-distance_in_an_animation"><a href="#using_offset-distance_in_an_animation" title="Permalink to Using offset-distance in an animation">Using offset-distance in an animation</a></h3><div><p>The motion aspect in CSS Motion Path typically comes from animating the <code>offset-distance</code> property. If you want to animate an element along its full path, you would define its <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/offset-path"><code>offset-path</code></a> and then set up an animation that takes the <code>offset-distance</code> from <code>0%</code> to <code>100%</code>.</p>
+
+<h4 id="html">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>motion-demo<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<h4 id="css">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token selector">#motion-demo</span> <span class="token punctuation">{</span>
+  <span class="token property">offset-path</span><span class="token punctuation">:</span> <span class="token function">path</span><span class="token punctuation">(</span><span class="token string">'M20,20 C20,100 200,0 200,100'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">animation</span><span class="token punctuation">:</span> move 3000ms infinite alternate ease-in-out<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 40px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 40px<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> cyan<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token atrule"><span class="token rule">@keyframes</span> move</span> <span class="token punctuation">{</span>
+  <span class="token selector">0%</span> <span class="token punctuation">{</span>
+    <span class="token property">offset-distance</span><span class="token punctuation">:</span> 0%<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">100%</span> <span class="token punctuation">{</span>
+    <span class="token property">offset-distance</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+
+<h4 id="result">Result</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Using_offset-distance_in_an_animation" width="100%" height="150" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/offset-distance/_sample_.Using_offset-distance_in_an_animation.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th>Specification</th>
+   <th>Status</th>
+   <th>Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.fxtf.org/motion-1/#offset-distance-property" hreflang="en" lang="en" class="external" rel=" noopener">Motion Path Module Level 1<br><small lang="en-US">The definition of 'offset-distance' in that specification.</small></a></td>
+   <td><span class="spec-wd">Working Draft</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/offset"><code>offset</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/offset-anchor"><code>offset-anchor</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/offset-path"><code>offset-path</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/offset-position"><code>offset-position</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/offset-rotate"><code>offset-rotate</code></a></li>
+</ul></div>

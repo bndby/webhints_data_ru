@@ -1,0 +1,64 @@
+<h1>counter-set</h1><div><div></div>
+
+<p>The <strong><code>counter-set</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> property sets a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Lists_and_Counters/Using_CSS_counters">CSS counter</a> to a given value. It manipulates the value of existing counters, and will&nbsp;only create new counters if there isn't already a counter of the given name on the element.</p>
+
+<div class="note notecard">
+<p><strong>Note:</strong> The counter's value can be incremented or decremented using the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/counter-increment"><code>counter-increment</code></a> CSS property.</p>
+</div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* Set "my-counter" to 0 */</span>
+<span class="token property">counter-set</span><span class="token punctuation">:</span> my-counter<span class="token punctuation">;</span>
+
+<span class="token comment">/* Set "my-counter" to -1 */</span>
+<span class="token property">counter-set</span><span class="token punctuation">:</span> my-counter -1<span class="token punctuation">;</span>
+
+<span class="token comment">/* Set "counter1" to 1, and "counter2" to 4 */</span>
+<span class="token property">counter-set</span><span class="token punctuation">:</span> counter1 1 counter2 4<span class="token punctuation">;</span>
+
+<span class="token comment">/* Cancel any counter that could have been set in less specific rules */</span>
+<span class="token property">counter-set</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+
+<span class="token comment">/* Global values */</span>
+<span class="token property">counter-set</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">counter-set</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">counter-set</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre>
+
+<p>The <code>counter-set</code> property is specified as either one of the following:</p>
+
+<ul>
+ <li>A <code>&lt;custom-ident&gt;</code> naming the counter, followed optionally by an <code>&lt;integer&gt;</code>. You may specify as many counters to reset as you want, with each name or name-number pair separated by a space.</li>
+ <li>The keyword value <code>none</code>.</li>
+</ul></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+ <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/custom-ident"><code>&lt;custom-ident&gt;</code></a></dt>
+ <dd>The name of the counter to set.</dd>
+ <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/integer"><code>&lt;integer&gt;</code></a></dt>
+ <dd>The value to set the counter to on each occurrence of the element. Defaults to <code>0</code> if not specified. If there isn't currently a counter of the given name on the element, the element will create a new counter of the given name with a starting value of&nbsp;0 (though it may then immediately set or increment that value to something different).</dd>
+ <dt><code>none</code></dt>
+ <dd>No counter set is to be performed. This can be used to override a <code>counter-set</code> defined in a less specific rule.</dd>
+</dl></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td><code>none</code></td></tr><tr><th scope="row">Applies to</th><td>all elements</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance">Inherited</a></th><td>no</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>as specified</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">[</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/custom-ident" title>&lt;custom-ident&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/integer" title>&lt;integer&gt;</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#question_mark_()" title="Question mark: the entity is optional">?</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component">]</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#plus_()" title="Plus: the entity may occur one or several times">+</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> none</pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="setting_named_counters"><a href="#setting_named_counters" title="Permalink to Setting named counters">Setting named counters</a></h3><div><pre class="brush:css notranslate"><code><span class="token selector">h1</span> <span class="token punctuation">{</span>
+  <span class="token property">counter-set</span><span class="token punctuation">:</span> chapter section 1 page<span class="token punctuation">;</span>
+  <span class="token comment">/* Sets the chapter and page counters to 0,
+     and the section counter to 1 */</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-lists-3/#propdef-counter-set" hreflang="en" lang="en" class="external" rel=" noopener">CSS Lists Module Level&nbsp;3<br><small lang="en-US">The definition of 'counter-set' in that specification.</small></a></td>
+   <td><span class="spec-wd">Working Draft</span></td>
+   <td>Initial definition.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Lists_and_Counters/Using_CSS_counters">Using CSS Counters</a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/counter-increment"><code>counter-increment</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/counter-reset"><code>counter-reset</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@counter-style"><code>@counter-style</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/counter()"><code>counter()</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/counters()"><code>counters()</code></a> functions</li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/content"><code>content</code></a> property</li>
+</ul></div>

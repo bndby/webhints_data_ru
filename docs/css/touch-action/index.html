@@ -1,0 +1,97 @@
+<h1>touch-action</h1><div><div></div>
+
+<p>Css-свойство touch-action указывает как элемент будет управляться через тачскрин (например, при помощи возможности приближения (zooming), встроенной в браузер).</p>
+
+<pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* Keyword values */</span>
+<span class="token property">touch-action</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+<span class="token property">touch-action</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token property">touch-action</span><span class="token punctuation">:</span> pan-x<span class="token punctuation">;</span>
+<span class="token property">touch-action</span><span class="token punctuation">:</span> pan-left<span class="token punctuation">;</span>
+<span class="token property">touch-action</span><span class="token punctuation">:</span> pan-right<span class="token punctuation">;</span>
+<span class="token property">touch-action</span><span class="token punctuation">:</span> pan-y<span class="token punctuation">;</span>
+<span class="token property">touch-action</span><span class="token punctuation">:</span> pan-up<span class="token punctuation">;</span>
+<span class="token property">touch-action</span><span class="token punctuation">:</span> pan-down<span class="token punctuation">;</span>
+<span class="token property">touch-action</span><span class="token punctuation">:</span> pinch-zoom<span class="token punctuation">;</span>
+<span class="token property">touch-action</span><span class="token punctuation">:</span> manipulation<span class="token punctuation">;</span>
+
+<span class="token comment">/* Global values */</span>
+<span class="token property">touch-action</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">touch-action</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">touch-action</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre>
+
+<p>По умолчанию, жесты панорамирование, прокрутка и сужающий обрабатываются исключительно браузером. Приложение, использующие&nbsp; <a href="https://developer.mozilla.org/ru/docs/Web/API/Pointer_events" title="Pointer events">Pointer events</a> получит событие <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/pointercancel_event"><code>pointercancel</code> <span>(en-US)</span></a>, когда браузер начнёт обрабатывать тач жест.&nbsp;Явно указывая жесты обрабатываемые браузером, приложение может иметь своё поведение для оставшихся жестов благодаря прослушиванию событий&nbsp; <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/pointermove_event"><code>pointermove</code> <span>(en-US)</span></a> и <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/pointerup_event"><code>pointerup</code> <span>(en-US)</span></a>. Applications using <a href="https://developer.mozilla.org/ru/docs/Web/API/Touch_events" title="Touch events">Touch events</a> disable the browser handling of gestures by calling <a href="https://developer.mozilla.org/ru/docs/Web/API/Event/preventDefault" title="preventDefault()"><code>preventDefault()</code></a>, but should also use <code>touch-action</code> to ensure the browser knows the intent of the application before any event listeners have been invoked.</p>
+
+<p>When a gesture is started, the browser intersects the <strong>touch-action</strong>&nbsp;values of the touched element and all its ancestors up to the one that implements the gesture (in other words, the first containing scrolling element). This means that in practice, <strong>touch-action</strong>&nbsp;is typically applied only to individual elements which have some custom behavior, without needing to specify <strong>touch-action</strong> explicitly on any of that element's descendants. After a gesture has started, changes to&nbsp;<strong>touch-action</strong>&nbsp;values will not have any impact on the behavior of the current gesture.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><p>The <code>touch-action</code> property may be specified as either:</p>
+
+<ul>
+ <li>any one of the keywords <code><a href="#auto">auto</a></code>, <code><a href="#none">none</a></code>, <code><a href="#manipulation">manipulation</a></code>, <em>or</em></li>
+ <li>one of the keywords <code><a href="#pan-x">pan-x</a></code>, <code><a href="#pan-keywords">pan-left</a></code>, <code><a href="#pan-keywords">pan-right</a></code>, and/or one of the keywords <code><a href="#pan-y">pan-y</a></code>, <code><a href="#pan-keywords">pan-up</a></code>, <code><a href="#pan-keywords">pan-down</a></code>, plus optionally the keyword <code><a href="#">pinch-zoom</a></code>.</li>
+</ul></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+ <dt><a id="auto" name="auto"><code>auto</code></a></dt>
+ <dd>Enable browser handling of all panning and zooming gestures.</dd>
+ <dt><a id="none" name="none"><code>none</code></a></dt>
+ <dd>Disable browser handling of all panning and zooming gestures.</dd>
+ <dt><a id="pan-x" name="pan-x"><code>pan-x</code></a></dt>
+ <dd>Enable single-finger horizontal panning gestures. May be combined with&nbsp;<strong>pan-y, pan-up,</strong>&nbsp;<strong>pan-down&nbsp;</strong>and/or&nbsp;<strong>pinch-zoom</strong>.</dd>
+ <dt><a id="pan-y" name="pan-y"><code>pan-y</code></a></dt>
+ <dd>Enable single-finger vertical panning gestures. May be combined with&nbsp;<strong>pan-x, pan-left, </strong><strong>pan-right</strong>&nbsp;and/or&nbsp;<strong>pinch-zoom</strong>.</dd>
+ <dt><a id="manipulation" name="manipulation"><code>manipulation</code></a></dt>
+ <dd>Enable panning and pinch zoom gestures, but disable additional non-standard gestures such as double-tap to zoom.&nbsp;Disabling double-tap to zoom removes the need for browsers to delay&nbsp;the generation of <strong>click</strong>&nbsp;events when the user taps the screen. This is an alias for "<strong>pan-x pan-y pinch-zoom</strong>" (which, for compatibility, is itself still valid).</dd>
+</dl>
+
+<dl>
+ <dt><a id="pan-keywords" name="pan-keywords"><code>pan-left</code>, <code>pan-right,pan-up,pan-down</code> </a></dt>
+ <dd>Enable single-finger gestures that begin by scrolling in the given direction(s). Once scrolling has started, the direction may still be reversed. Note that scrolling "up" (<strong>pan-up</strong>)&nbsp;means that the user is dragging their finger downward on the screen surface, and likewise&nbsp;<strong>pan-left</strong>&nbsp;means the user is dragging their finger to the right. Multiple directions may be combined except when there is a simpler representation (for example,&nbsp;<strong>"</strong><strong>pan-left pan-right</strong>" is invalid since&nbsp;"<strong>pan-x</strong>" is simpler, but&nbsp;"<strong>pan-left pan-down</strong>" is valid).</dd>
+ <dt><a id="pinch-zoom" name="pinch-zoom"><code>pinch-zoom</code></a></dt>
+ <dd>Enable multi-finger panning and zooming of the page. This may be combined with any of the&nbsp;<strong>pan-</strong>&nbsp;values.</dd>
+</dl></div><h3 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h3><div><pre class="notranslate">auto <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> none <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> pan-x <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> pan-left <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> pan-right <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_bar" title="Currently only available in English (US)" class="only-in-en-us">|| (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> pan-y <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> pan-up <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> pan-down <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_bar" title="Currently only available in English (US)" class="only-in-en-us">|| (en-US)</a> pinch-zoom <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> manipulation</pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div><p>The most common usage is to disable all gestures on an element (and its non-scrollable descendants) that provides its own dragging and zooming behavior – such as a map or game surface.&nbsp;</p>
+
+<pre class="brush: css notranslate"><code><span class="token selector">#map</span> <span class="token punctuation">{</span>
+  <span class="token property">touch-action</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p>Another common pattern is that of an image carousel which uses pointer events to handle horizontal panning, but doesn't want to interfere with vertical scrolling or zooming of the document.</p>
+
+<pre class="brush: css notranslate"><code><span class="token selector">.image-carousel</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 150px<span class="token punctuation">;</span>
+  <span class="token property">touch-action</span><span class="token punctuation">:</span> pan-y pinch-zoom<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p><strong>touch-action </strong>is also often used to completely disable the delay of <strong>click </strong>events caused by support for the<strong>&nbsp;</strong>double-tap to zoom gesture.</p>
+
+<pre class="brush: css notranslate"><code><span class="token selector">html</span> <span class="token punctuation">{</span>
+  <span class="token property">touch-action</span><span class="token punctuation">:</span> manipulation<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://compat.spec.whatwg.org/#touch-action" hreflang="en" lang="en" class="external" rel=" noopener">Compatibility Standard<br><small lang="ru">Определение 'touch-action' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td>Added <code>pinch-zoom</code> property value.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/pointerevents2/#the-touch-action-css-property" hreflang="en" lang="en" class="external" rel=" noopener">Pointer Events – Level 2<br><small lang="ru">Определение 'touch-action' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Added <code>pan-left</code>, <code>pan-right</code>, <code>pan-up</code>, <code>pan-down</code> property values.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/pointerevents1/#the-touch-action-css-property" hreflang="en" lang="en" class="external" rel=" noopener">Pointer Events<br><small lang="ru">Определение 'touch-action' в этой спецификации.</small></a></td>
+   <td><span class="spec-obsolete">Устаревшая</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/ru/docs/Web/API/Pointer_events" title="Pointer Events"><code>Pointer Events</code></a></li>
+ <li>WebKit Blog&nbsp;<a href="https://webkit.org/blog/5610/more-responsive-tapping-on-ios/" rel="bookmark noopener" title="Permanent Link: More Responsive Tapping on iOS" class="external">More Responsive Tapping on iOS</a></li>
+</ul></div>

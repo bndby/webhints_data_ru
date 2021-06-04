@@ -1,0 +1,56 @@
+<h1>&lt;percentage&gt;</h1><div><div></div>
+
+<p><a href="/css/">CSS</a> <a href="/css/CSS_Types/">тип данных</a>&nbsp;<strong><code>&lt;percentage&gt;</code></strong>&nbsp;представляет значение в процентах. Оно часто используется, чтобы определить размер относительно родительского элемента. Проценты используются в различных свойствах, таких как&nbsp;<a href="/css/width/"><code>width</code></a>, <a href="/css/height/"><code>height</code></a>, <a href="/css/margin/"><code>margin</code></a>, <a href="/css/padding/"><code>padding</code></a>, и&nbsp;<a href="/css/font-size/"><code>font-size</code></a>.</p>
+
+<div class="note notecard"><strong>Обратите внимание:</strong>&nbsp;Наследуются рассчитанные значения. Таким&nbsp;образом, даже если процентное значение используется на родительском элементе, настоящее значение (такое, как пиксели для типа данных&nbsp;<a href="/css/length/"><code>&lt;length&gt;</code></a>) будет доступно в унаследованном свойстве, а не значение в процентах.</div></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><p>Тип данных&nbsp;<code>&lt;percentage&gt;</code>&nbsp;состоит из <a href="/css/number/"><code>&lt;number&gt;</code></a>, за которым следует знак процента&nbsp;(<code>%</code>). Так же впереди может стоять знак&nbsp;<code>+</code>&nbsp;или&nbsp;<code>-</code>, хотя отрицательные значения допустимы не во всех свойствах. Как и у всех единиц измерения CSS между символом процента и числом нет пробельного символа.</p></div><h2 id="интерполяция"><a href="#интерполяция" title="Permalink to Интерполяция">Интерполяция</a></h2><div><p>При анимировании значения типа данных <code>&lt;percentage&gt;</code>&nbsp;интерполируются как настоящие числа с плавающей запятой. Скорость интерполяции зависит от функции времени, с которой используется анимация.</p></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="ширина_и_левый_отступ"><a href="#ширина_и_левый_отступ" title="Permalink to Ширина и левый отступ">Ширина и левый отступ</a></h3><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token style-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token style language-css"><span class="token property">background-color</span><span class="token punctuation">:</span>blue<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token style-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token style language-css"><span class="token property">width</span><span class="token punctuation">:</span>50%<span class="token punctuation">;</span> <span class="token property">margin-left</span><span class="token punctuation">:</span>20%<span class="token punctuation">;</span> <span class="token property">background-color</span><span class="token punctuation">:</span>lime<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">&gt;</span></span>
+    Width: 50%, Left margin: 20%
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token style-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token style language-css"><span class="token property">width</span><span class="token punctuation">:</span>30%<span class="token punctuation">;</span> <span class="token property">margin-left</span><span class="token punctuation">:</span>60%<span class="token punctuation">;</span> <span class="token property">background-color</span><span class="token punctuation">:</span>pink<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">&gt;</span></span>
+    Width: 30%, Left margin: 60%
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<p>HTML код выше будет выглядеть так:</p>
+
+<p><iframe class="sample-code-frame" id="frame_Ширина_и_левый_отступ" width="600" height="140" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/percentage/_sample_.%D0%A8%D0%B8%D1%80%D0%B8%D0%BD%D0%B0_%D0%B8_%D0%BB%D0%B5%D0%B2%D1%8B%D0%B9_%D0%BE%D1%82%D1%81%D1%82%D1%83%D0%BF.html" loading="lazy"></iframe></p></div><h3 id="размер_шрифта"><a href="#размер_шрифта" title="Permalink to Размер шрифта">Размер шрифта</a></h3><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token style-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token style language-css"><span class="token property">font-size</span><span class="token punctuation">:</span>18px<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Full-size text (18px)<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token style-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token style language-css"><span class="token property">font-size</span><span class="token punctuation">:</span>50%<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">&gt;</span></span>50%<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token style-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token style language-css"><span class="token property">font-size</span><span class="token punctuation">:</span>200%<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">&gt;</span></span>200%<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<p>HTML код выше будет выглядеть так:</p>
+
+<p><iframe class="sample-code-frame" id="frame_Размер_шрифта" width="auto" height="160" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/percentage/_sample_.%D0%A0%D0%B0%D0%B7%D0%BC%D0%B5%D1%80_%D1%88%D1%80%D0%B8%D1%84%D1%82%D0%B0.html" loading="lazy"></iframe></p></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-values-4/#percentages" hreflang="en" lang="en" class="external" rel=" noopener">CSS Values and Units Module Level&nbsp;4<br><small lang="ru">Определение '&lt;percentage&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-ed">Редакторский черновик</span></td>
+   <td>Нет значительных изменений.</td>
+  </tr>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-values-3/#percentages" hreflang="en" lang="en" class="external" rel=" noopener">CSS Values and Units Module Level&nbsp;3<br><small lang="ru">Определение '&lt;percentage&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-cr">Кандидат в рекомендации</span></td>
+   <td>Нет значительных изменений после CSS Уровня 2 (ревизия 1).</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/CSS2/syndata.html#percentage-units" hreflang="en" lang="en" class="external" rel=" noopener">CSS Level&nbsp;2 (Revision&nbsp;1)<br><small lang="ru">Определение '&lt;percentage&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Не изменено с CSS Уровень 1.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/CSS1/#percentage-units" hreflang="en" lang="en" class="external" rel=" noopener">CSS Level&nbsp;1<br><small lang="ru">Определение '&lt;percentage&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Первое определение.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="поддержка_браузерами"><a href="#поддержка_браузерами" title="Permalink to Поддержка браузерами">Поддержка браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div>

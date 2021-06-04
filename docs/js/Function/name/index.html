@@ -1,0 +1,182 @@
+<h1>Function.name</h1><div><p></p><p></p>
+
+<p>Read-only свойство&nbsp;<code><strong>name</strong></code>&nbsp;глобального объекта&nbsp;<a href="/js/Function/"><code>Function</code></a> и его <a href="/js/Function#function_instances/">экземпляров</a> содержит название функции созданное во время определения функции&nbsp;или присваивания ссылки на функцию переменной, свойству, аргументу и т. п.&nbsp;Для анонимных функций это свойство может иметь значение&nbsp;<code>"anonymous"</code>&nbsp;или пустую строку&nbsp;&nbsp;<code>""</code>.</p>
+
+<p><iframe class="interactive" width="100%" height="490" src="https://interactive-examples.mdn.mozilla.net/pages/js/function-name.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></p>
+
+<p>Интерактивные&nbsp;примеры размещены в&nbsp;GitHub репозитории. Если вы хотите добавить свои примеры, то клонируйте&nbsp;<a href="https://github.com/mdn/interactive-examples" class="external" rel=" noopener">https://github.com/mdn/interactive-examples</a>&nbsp;и пришлите пул реквест.</p>
+
+<p></p><table class="standard-table">
+  <thead>
+    <tr>
+      <th class="header" colspan="2">Атрибуты свойства<code>Function.name</code></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Записываемое</td>
+      <td>нет</td>
+    </tr>
+    <tr>
+      <td>Перечисляемое</td>
+      <td>нет</td>
+    </tr>
+    <tr>
+      <td>Настраиваемое</td>
+      <td>да</td>
+    </tr>
+  </tbody>
+</table><br>
+ &nbsp;<p></p>
+
+<div class="note notecard">
+<p>Заметьте, что в нестандартном, pre-ES2015 релизе&nbsp;<code>configurable</code>&nbsp;свойство было&nbsp;<code>false</code></p>
+</div></div><h2 id="summary"><a href="#summary" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="имя_объявленной_функции"><a href="#имя_объявленной_функции" title="Permalink to Имя объявленной функции">Имя объявленной функции</a></h3><div><p>Свойство <code>name</code> возвращает имя функции, либо пустую строку для анонимных функций:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">function</span> <span class="token function">doSomething</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token function">alert</span><span class="token punctuation">(</span>doSomething<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// выведет "doSomething"</span>
+</code></pre></div><h3 id="имя_функции-конструктора"><a href="#имя_функции-конструктора" title="Permalink to Имя функции-конструктора">Имя функции-конструктора</a></h3><div><p>Функции, созданные синтаксисом <code>new Function(...)</code> или просто <code>Function(...)</code> создают&nbsp; <a href="/js/Function/"><code>Function</code></a>&nbsp;и имеют name "anonymous":​​​</p>
+
+<pre class="brush: js notranslate"><code><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Function</span><span class="token punctuation">)</span><span class="token punctuation">.</span>name<span class="token punctuation">;</span> <span class="token comment">// "anonymous"</span>
+</code></pre></div><h3 id="предполагаемые_имена_функций"><a href="#предполагаемые_имена_функций" title="Permalink to Предполагаемые имена функций">Предполагаемые имена функций</a></h3><div><p>Переменные и методы могут предположить название анонимной функции из её синтаксической позиции&nbsp;&nbsp;(new in ECMAScript 2015).</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> <span class="token function-variable function">f</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> object <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">someMethod</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>f<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "f"</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>object<span class="token punctuation">.</span>someMethod<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "someMethod"</span></code></pre>
+
+<p>Вы можете определить функцию с именем в&nbsp;<a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/function">function expression</a>:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> object <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">someMethod</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token function">object_someMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>object<span class="token punctuation">.</span>someMethod<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// выведет "object_someMethod"</span>
+
+<span class="token keyword">try</span> <span class="token punctuation">{</span> object_someMethod <span class="token punctuation">}</span> <span class="token keyword">catch</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token comment">// ReferenceError: object_someMethod is not defined</span>
+</code></pre>
+
+<p>Вы не можете изменить имя функции, это свойство только для чтения:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> object <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">// анонимная функция</span>
+  <span class="token function-variable function">someMethod</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+object<span class="token punctuation">.</span>someMethod<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'otherMethod'</span><span class="token punctuation">;</span>
+<span class="token function">alert</span><span class="token punctuation">(</span>object<span class="token punctuation">.</span>someMethod<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//someMethod</span>
+
+</code></pre>
+
+<p>Для изменения name можно использовать&nbsp;<a href="/js/Object/defineProperty/"><code>Object.defineProperty()</code></a>.</p></div><h3 id="сокращённые_имена_методов"><a href="#сокращённые_имена_методов" title="Permalink to Сокращённые имена методов">Сокращённые имена методов</a></h3><div><pre class="brush: js notranslate"><code><span class="token keyword">var</span> o <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+o<span class="token punctuation">.</span>foo<span class="token punctuation">.</span>name<span class="token punctuation">;</span> <span class="token comment">// "foo";</span></code></pre></div><h3 id="имена_функций_после_привязки"><a href="#имена_функций_после_привязки" title="Permalink to Имена&nbsp;функций после привязки">Имена&nbsp;функций после привязки</a></h3><div><p><a href="/js/Function/bind/"><code>Function.bind()</code></a> производит функцию, получающую имя&nbsp;"bound&nbsp; и название самой функции.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token function">foo</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span>name<span class="token punctuation">;</span> <span class="token comment">// "bound foo"</span>
+</code></pre></div><h3 id="имена_функций_для_getters_и_setters"><a href="#имена_функций_для_getters_и_setters" title="Permalink to Имена функций&nbsp;для&nbsp;getters и setters">Имена функций&nbsp;для&nbsp;getters и setters</a></h3><div><p>Когда используются&nbsp;<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get">get</a></code>&nbsp;и&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/set">set</a>, "get" и&nbsp;"set"&nbsp;появятся в имени функции.</p>
+
+<pre class="notranslate"><code>let o = {
+  get foo(){},
+  set foo(x){}
+};
+
+var descriptor = Object.getOwnPropertyDescriptor(o, "foo");
+descriptor.get.name; // "get foo"
+descriptor.set.name; // "set foo";</code></pre></div><h3 id="имена_функций-классов"><a href="#имена_функций-классов" title="Permalink to Имена функций-классов">Имена функций-классов</a></h3><div><p>Можно использовать&nbsp;<code>obj.constructor.name</code>&nbsp;чтобы проверить "class" объекта (читайте предупреждение ниже):</p>
+
+<pre class="notranslate"><code>function Foo() {}  // ES2015 Syntax: class Foo {}
+
+var fooInstance = new Foo();
+console.log(fooInstance.constructor.name); // logs "Foo"</code>
+</pre>
+
+<div class="warning notecard">
+<p><strong>Warning:</strong>&nbsp;Интерпретатор объявит встроенное&nbsp;<code>Function.name</code>&nbsp;свойство только если функция не имеет своего собственного свойства&nbsp;<em>name</em>&nbsp;(см.&nbsp;&nbsp;<a href="https://www.ecma-international.org/ecma-262/6.0/#sec-setfunctionname" class="external" rel=" noopener">9.2.11 of the ECMAScript2015 Language Specification</a>). Однако, в ES2015 статичные методы перезаписывают&nbsp;OwnProperty конструкторов класса-функции&nbsp;(ECMAScript2015,&nbsp;<a href="https://www.ecma-international.org/ecma-262/6.0/#sec-runtime-semantics-classdefinitionevaluation" class="external" rel=" noopener">14.5.14.21.b</a>&nbsp;+&nbsp;<a href="https://www.ecma-international.org/ecma-262/6.0/#sec-object-initializer-runtime-semantics-propertydefinitionevaluation" class="external" rel=" noopener">12.2.6.9</a>).</p>
+</div>
+
+<p>Таким образом, нельзя получить доступ к&nbsp;<code>name</code>&nbsp;любого класса со статичным свойством&nbsp;<code>name()​​​​​​:</code></p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">class</span> <span class="token class-name">Foo</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token keyword">static</span> <span class="token function">name</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p>Со&nbsp;<code>static name()</code>&nbsp;методом&nbsp;<code>Foo.name</code>&nbsp;больше не содержит название класса, но отсылает к функции&nbsp;<code>name()</code>. Приведённое выше определение класса в&nbsp;ES2015 будет вести себя&nbsp;в Chrome и Firefx как в&nbsp; ES5:</p>
+
+<pre class="notranslate"><code>function Foo() {}
+Object.defineProperty(Foo, 'name', { writable: true });
+Foo.name = function() {};</code></pre>
+
+<p>Пытаясь получить доступ к&nbsp;<code>fooInstance</code>&nbsp;с помощью&nbsp;<code>fooInstance.constructor.name</code>&nbsp;не даст название класса, но выведет метод <code>name()</code>. Пример:</p>
+
+<pre class="notranslate"><code>let fooInstance = new Foo();
+console.log(fooInstance.constructor.name); // logs function name()</code></pre>
+
+<p>Из ES5 syntax примера также видно, что в Chrome или Firefox статичное определение&nbsp;<code>Foo.name</code>&nbsp;становится&nbsp;<em>записываемым (writable)</em>. Встроенное определение в отсутствии кастомного статичного метода<em>доступно только для чтения</em>:</p>
+
+<pre class="notranslate"><code>Foo.name = 'Hello';
+console.log(Foo.name); // logs "Hello" if class Foo has a static name() property but "Foo" if not.</code></pre>
+
+<p>Следовательно не ожидайте, что&nbsp;<code>Function.name</code>&nbsp;свойство будет всегда содержать имя класса.</p></div><h3 id="имена_функций-символов"><a href="#имена_функций-символов" title="Permalink to Имена функций-символов">Имена функций-символов</a></h3><div><p>Если у <a href="/js/Symbol/"><code>Symbol</code></a> объявляется имя, то название метода - это имя&nbsp;квадратных скобках.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">let</span> sym1 <span class="token operator">=</span> <span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token string">"foo"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> sym2 <span class="token operator">=</span> <span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> o <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">[</span>sym1<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">[</span>sym2<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+o<span class="token punctuation">[</span>sym1<span class="token punctuation">]</span><span class="token punctuation">.</span>name<span class="token punctuation">;</span> <span class="token comment">// "[foo]"</span>
+o<span class="token punctuation">[</span>sym2<span class="token punctuation">]</span><span class="token punctuation">.</span>name<span class="token punctuation">;</span> <span class="token comment">// ""</span>
+</code></pre></div><h2 id="javascript_минифицированный"><a href="#javascript_минифицированный" title="Permalink to JavaScript минифицированный">JavaScript минифицированный</a></h2><div><div class="warning notecard">
+<p><strong>Warning:</strong>&nbsp;Будьте осторожны, используя&nbsp;<code>Function.name</code>&nbsp;и изменения source кода с помощью JavaScript compressors (minifiers) или обфускаторов. Эти инструменты часто используются, как встроенные в&nbsp;&nbsp;JavaScript build pipeline, чтобы сократить размер билда перед деплоем в production. Такие трансформации часто изменяют имена функций.</p>
+</div>
+
+<p>Такой source code:</p>
+
+<pre class="notranslate"><code>function Foo() {};
+let foo = new Foo();
+
+if (foo.constructor.name === 'Foo') {
+  console.log("'foo' is an instance of 'Foo'");
+} else {
+  console.log('Oops!');
+}</code></pre>
+
+<p>может быть сжат в:</p>
+
+<pre class="notranslate"><code>function a() {};
+let b = new a();
+if (b.constructor.name === 'Foo') {
+  console.log("'foo' is an instance of 'Foo'");
+} else {
+  console.log('Oops!');
+}</code></pre>
+
+<p>В несжатой версии код выполняется ожидаемо&nbsp;<code>"'foo' is an instance of 'Foo'"</code>. В то время, как в сжатой версии он ведёт себя&nbsp;иначе. Если вы полагаетесь на&nbsp;<code>Function.name</code>, как в примере, то убедитесь, что pipeline не меняет код или не ожидайте от функции определённого имени.</p>
+
+<table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">
+    <p>Спецификация</p>
+   </th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-name" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'name' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Изначальное определение.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p>
+
+<div id="compat-mobile"></div></div>

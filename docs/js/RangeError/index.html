@@ -1,0 +1,70 @@
+<h1>RangeError</h1><div><div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Объект <code><strong>RangeError</strong></code> представляет ошибку, возникающую, когда значение не входит в множество или выходит за диапазон допустимых значений.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code>new RangeError([<var>message</var>[, <var>fileName</var>[, <var>lineNumber</var>]]])</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>message</code></dt>
+ <dd>Необязательный параметр. Человеко-читаемое описание ошибки.</dd>
+ <dt><code>fileName</code> </dt>
+ <dd>Необязательный параметр. Имя файла, содержащего код, вызвавший исключение.</dd>
+ <dt><code>lineNumber</code> </dt>
+ <dd>Необязательный параметр. Номер строки кода, вызвавшей исключение.</dd>
+</dl></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Исключение <code>RangeError</code> выбрасывается при попытке передать аргументом в функцию число, которое не входит в допустимый диапазон значений аргумента этой функции. Оно может возникать при создании массива с неправильной длиной через конструктор <a href="/js/Array/"><code>Array</code></a>, или при передаче плохих значений в методы числа <a href="/js/Number/toExponential/"><code>Number.toExponential()</code></a>, <a href="/js/Number/toFixed/"><code>Number.toFixed()</code></a> или <a href="/js/Number/toPrecision/"><code>Number.toPrecision()</code></a>.</p></div><h2 id="properties"><a href="#properties" title="Permalink to Свойства">Свойства</a></h2><div><dl>
+ <dt><a href="https://developer.mozilla.org/ru/docs/conflicting/Web/JavaScript/Reference/Global_Objects/RangeError"><code>RangeError.prototype</code></a></dt>
+ <dd>Позволяет добавлять свойства в объект <code>RangeError</code>.</dd>
+</dl></div><h2 id="methods"><a href="#methods" title="Permalink to Методы">Методы</a></h2><div><p>Глобальный объект <code>RangeError</code> не содержит собственных методов, однако, он наследует некоторые методы из цепочки прототипов.</p></div><h2 id="rangeerror_instances"><a href="#rangeerror_instances" title="Permalink to Экземпляры объекта RangeError">Экземпляры объекта <code>RangeError</code></a></h2><div></div><h3 id="properties_of_rangeerror_instances"><a href="#properties_of_rangeerror_instances" title="Permalink to Свойства">Свойства</a></h3><div><div><dl>
+ <dt><code>RangeError.prototype.constructor</code></dt>
+ <dd>Определяет функцию, создающую прототип экземпляра.</dd>
+ <dt><a href="/js/Error/message/"><code>RangeError.prototype.message</code></a></dt>
+ <dd>Сообщение ошибки. Хотя стандарт ECMA-262 определяет, что <a href="/js/RangeError/" aria-current="page"><code>RangeError</code></a> должен предоставлять своё собственное свойство <code>message</code>, в <a href="https://developer.mozilla.org/ru/docs/Mozilla/Projects/SpiderMonkey" class="page-not-created" title="This is a link to an unwritten page">SpiderMonkey</a> он наследует свойство <a href="/js/Error/message/"><code>Error.prototype.message</code></a>.</dd>
+ <dt><a href="/js/Error/name/"><code>RangeError.prototype.name</code></a></dt>
+ <dd>Название ошибки. Унаследовано от <a href="/js/Error/"><code>Error</code></a>.</dd>
+ <dt><a href="/js/Error/fileName/"><code>RangeError.prototype.fileName</code></a></dt>
+ <dd>Путь к файлу, в котором возникла эта ошибка. Унаследовано от <a href="/js/Error/"><code>Error</code></a>.</dd>
+ <dt><a href="/js/Error/lineNumber/"><code>RangeError.prototype.lineNumber</code></a></dt>
+ <dd>Номер строки в файле, в котором возникла эта ошибка. Унаследовано от <a href="/js/Error/"><code>Error</code></a>.</dd>
+ <dt><a href="/js/Error/columnNumber/"><code>RangeError.prototype.columnNumber</code></a></dt>
+ <dd>Номер колонки в строке, на которой возникла эта ошибка. Унаследовано от <a href="/js/Error/"><code>Error</code></a>.</dd>
+ <dt><a href="/js/Error/Stack/"><code>RangeError.prototype.stack</code></a></dt>
+ <dd>Стек вызовов. Унаследовано от <a href="/js/Error/"><code>Error</code></a>.</dd>
+</dl></div></div><h3 id="methods_of_rangeerror_instances"><a href="#methods_of_rangeerror_instances" title="Permalink to Методы">Методы</a></h3><div><div><p>Хотя объект прототипа <a href="/js/RangeError/" aria-current="page"><code>RangeError</code></a> не содержит собственных методов, экземпляры <a href="/js/RangeError/" aria-current="page"><code>RangeError</code></a> наследуют некоторые методы из цепочки прототипов.</p></div></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_using_rangeerror"><a href="#example_using_rangeerror" title="Permalink to Пример: использование RangeError">Пример: использование <code>RangeError</code></a></h3><div><pre class="brush: js notranslate"><code><span class="token keyword">var</span> <span class="token function-variable function">check</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">num</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>num <span class="token operator">&lt;</span> <span class="token constant">MIN</span> <span class="token operator">||</span> num <span class="token operator">&gt;</span> <span class="token constant">MAX</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">RangeError</span><span class="token punctuation">(</span><span class="token string">'Параметр должен быть между '</span> <span class="token operator">+</span> <span class="token constant">MIN</span> <span class="token operator">+</span> <span class="token string">' и '</span> <span class="token operator">+</span> <span class="token constant">MAX</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">try</span> <span class="token punctuation">{</span>
+  <span class="token function">check</span><span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>e <span class="token keyword">instanceof</span> <span class="token class-name">RangeError</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Обработка ошибки диапазона</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td>ECMAScript 3-е издание.</td>
+   <td>Стандарт</td>
+   <td>Изначальное определение.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-15.11.6.2" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 5.1 (ECMA-262)<br><small lang="ru">Определение 'RangeError' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-native-error-types-used-in-this-standard-rangeerror" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'RangeError' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/Error/"><code>Error</code></a></li>
+ <li><a href="https://developer.mozilla.org/ru/docs/conflicting/Web/JavaScript/Reference/Global_Objects/RangeError"><code>RangeError.prototype</code></a></li>
+ <li><a href="/js/Array/"><code>Array</code></a></li>
+ <li><a href="/js/Number/toExponential/"><code>Number.toExponential()</code></a></li>
+ <li><a href="/js/Number/toFixed/"><code>Number.toFixed()</code></a></li>
+ <li><a href="/js/Number/toPrecision/"><code>Number.toPrecision()</code></a></li>
+</ul></div>

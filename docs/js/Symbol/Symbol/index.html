@@ -1,0 +1,52 @@
+<h1>Symbol() constructor</h1><div><div></div>
+
+<p>The <code>Symbol()</code> constructor returns a value of type <strong>symbol</strong>,
+  but is incomplete as a constructor because it does not support the syntax
+  "<code>new Symbol()</code>" and it is not intended to be subclassed. It may be used as
+  the value of an
+  <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/extends">extends</a></code>
+  clause of a <code>class</code> definition but a
+  <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/super">super</a></code>
+  call to it will cause an exception.</p>
+
+<div><iframe class="interactive" width="100%" height="692" src="https://interactive-examples.mdn.mozilla.net/pages/js/symbol-constructor.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: js notranslate"><code><span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token function">Symbol</span><span class="token punctuation">(</span>description<span class="token punctuation">)</span>
+</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Parameters">Parameters</a></h3><div><dl>
+  <dt><code><var>description</var></code> <span class="badge inline optional">Optional</span></dt>
+  <dd>A string. A description of the symbol which can be used for debugging but not to
+    access the symbol itself.</dd>
+</dl></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="creating_symbols"><a href="#creating_symbols" title="Permalink to Creating symbols">Creating symbols</a></h3><div><p>To create a new primitive symbol, you write <code>Symbol()</code> with an optional
+  string as its description:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">let</span> sym1 <span class="token operator">=</span> <span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">let</span> sym2 <span class="token operator">=</span> <span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">)</span>
+<span class="token keyword">let</span> sym3 <span class="token operator">=</span> <span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">)</span>
+</code></pre>
+
+<p>The above code creates three new symbols. Note that <code>Symbol("foo")</code> does not
+  coerce the string <code>"foo"</code> into a symbol. It creates a new symbol each time:
+</p>
+
+<pre class="brush: js notranslate"><code><span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">)</span>  <span class="token comment">// false</span>
+</code></pre></div><h3 id="new_symbol..."><a href="#new_symbol..." title="Permalink to new Symbol(...)">new Symbol(...)</a></h3><div><p>The following syntax with the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new"><code>new</code></a> operator will throw a
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError"><code>TypeError</code></a>:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">let</span> sym <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Symbol</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment">// TypeError</span>
+</code></pre>
+
+<p>This prevents authors from creating an explicit <code>Symbol</code> wrapper object
+  instead of a new symbol value and might be surprising as creating explicit wrapper
+  objects around primitive data types is generally possible (for example,
+  <code>new Boolean</code>, <code>new String</code> and <code>new Number</code>).</p>
+
+<p>If you really want to create a <code>Symbol</code> wrapper object, you can use the
+  <code>Object()</code> function:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">let</span> sym    <span class="token operator">=</span> <span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> symObj <span class="token operator">=</span> <span class="token function">Object</span><span class="token punctuation">(</span>sym<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">typeof</span> sym    <span class="token comment">// =&gt; "symbol"</span>
+<span class="token keyword">typeof</span> symObj <span class="token comment">// =&gt; "object"</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://tc39.es/ecma262/#sec-symbol-constructor">Unknown specification<!-- --> <br><small># <!-- -->sec-symbol-constructor</small></a></td></tr></tbody></table><div></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+  <li>A polyfill of <code>Symbol</code> is available in <a href="https://github.com/zloirock/core-js#ecmascript-symbol" class="external" rel=" noopener"><code>core-js</code></a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Glossary/Symbol">Glossary: Symbol data type</a></li>
+</ul></div>

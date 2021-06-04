@@ -1,0 +1,83 @@
+<h1>repeating-linear-gradient()</h1><div><div></div>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> функция <strong><code>repeating-linear-gradient()</code></strong> создаёт изображение состоящее из повторяющихся линейных градиентов. Она схожа с <a href="/css/linear-gradient()/"><code>linear-gradient</code></a> и принимает те же аргументы, но повторяет переходы цветов бесконечно во всех направлениях покрывая весь контейнер. Функция возвращает объект типа <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/gradient"><code>&lt;gradient&gt;</code> <span>(en-US)</span></a>, являющегося разновидностью типа данных <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/image"><code>&lt;image&gt;</code> <span>(en-US)</span></a>.</p>
+
+<pre class="brush: css no-line-numbers notranslate"><code><span class="token comment">/* Повторяющийся градиент с углом наклона 45 градусов,
+   начинающийся с синего и заканчивающийся красным цветом */</span>
+<span class="token function">repeating-linear-gradient</span><span class="token punctuation">(</span>45deg<span class="token punctuation">,</span> blue<span class="token punctuation">,</span> red<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">/* Повторяющийся градиент идущий от нижнего правого угла к верхнему левому,
+   начинающийся с синего и заканчивающийся красным цветом */</span>
+<span class="token function">repeating-linear-gradient</span><span class="token punctuation">(</span>to left top<span class="token punctuation">,</span> blue<span class="token punctuation">,</span> red<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">/* Повторяющийся градиент идущий от низа к верху,
+   начинающийся с синего, переходящего в зелёный на 40%,
+   и заканчивающийся красным цветом */</span>
+<span class="token function">repeating-linear-gradient</span><span class="token punctuation">(</span>0deg<span class="token punctuation">,</span> blue<span class="token punctuation">,</span> green 40%<span class="token punctuation">,</span> red<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+<p>С каждым повтором позиции цветов сдвигаются на величину кратную длине базового градиента (расстояние от позиции последнего цвета до позиции первого). Таким образом что позиция каждого последнего цвета совпадает с позицией стартового цвета. И если цвета отличаются это приведёт к резкому визуальному переходу.</p>
+
+<p>Повторяющийся линейный&nbsp;градиент (как и любой прочий градиент) <a href="https://developer.mozilla.org/en-US/docs/CSS/image#no_intrinsic">не имеет размерностей по умолчанию</a>; т.е. у него нет предопределённого размера либо пропорции. Его размер будет совпадать с размерами элемента к которому он применён.</p>
+
+<div class="note notecard">
+<p><strong>Примечание:</strong> Поскольку <code>&lt;gradient&gt;</code> относится к типу данных <code>&lt;image&gt;</code> , он может быть использован только там где применим тип <code>&lt;image&gt;</code>. По этой причине <code>repeating-linear-gradient()</code> не будет работать с <a href="/css/background-color/"><code>background-color</code></a> и прочими свойствами использующими тип данных <a href="/css/color_value/"><code>&lt;color&gt;</code></a>.</p>
+</div></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div></div><h3 id="значения"><a href="#значения" title="Permalink to Значения">Значения</a></h3><div><dl>
+ <dt><code>&lt;сторона-или-угол&gt;</code></dt>
+ <dd>Положение точки начала линии градиента. Начинается со слова <code>to</code> и максимум двух ключевых слов: одно определяет сторону по горизонтали (<code>left</code> или <code>right</code>), и другое сторону по вертикали (<code>top</code> или <code>bottom</code>). Порядок ключевых слов определяющих сторону не важен. Если они не определены, по умолчанию используется <code><span class="css">to</span></code><span class="css"> </span><code><span class="css">bottom</span></code>.</dd>
+ <dd>Значения <code>to top</code>, <code>to bottom</code>, <code>to left</code>, и <code>to right</code> эквивалентны углам <code>0deg</code>, <code>180deg</code>, <code>270deg</code>, и <code>90deg</code> соответственно. Прочие значения транслируются в угол.</dd>
+ <dt><a href="/css/angle/"><code>&lt;угол&gt;</code></a></dt>
+ <dd>Угол наклона линии направления градиента. Значение <code>0deg</code> эквивалентно <code>to top</code>; увеличение значения приводит к повороту линии против часовой стрелки начиная от этой величины (<code>0deg</code>).</dd>
+ <dt><code>&lt;цвет-позиция&gt;</code></dt>
+ <dd>Значение <a href="/css/color_value/"><code>&lt;цвета&gt;</code></a> с последующей (необязательной) его позицией (либо в <a href="/css/percentage/"><code>&lt;процентах&gt;</code></a>, либо в единицах <a href="/css/length/"><code>&lt;длины&gt;</code></a> вдоль оси градиента).</dd>
+ <dd>
+ <div class="note notecard">
+ <p><strong>Примечание:</strong> Рендер <a href="#gradient_with_multiple_color_stops">перехода цветов в CSS градиентах</a> следует тем же правилам что и в <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Gradients">SVG градиентах</a>.</p>
+ </div>
+ </dd>
+</dl></div><h3 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h3><div><pre class="syntaxbox notranslate">repeating-linear-gradient(  [ <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/angle">&lt;угол&gt;</a> | to &lt;сторона-или-угол&gt; ,]? &lt;цвет-позиция&gt; [, &lt;цвет-позиция&gt;]+ )
+                            \---------------------------------/ \----------------------------/
+                              Определение линии градиента         Список цветов и их позиций
+
+где <code>&lt;</code>сторона-или-угол<code>&gt; = [left | right] || [top | bottom]</code>
+   и <code>&lt;</code>цвет-позиция<code>&gt;    = &lt;цвет&gt; [ &lt;процент&gt; | &lt;длина&gt; ]?</code>
+</pre></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="полоски_зебры"><a href="#полоски_зебры" title="Permalink to Полоски зебры">Полоски зебры</a></h3><div><pre class="brush: css notranslate"><code><span class="token selector">body</span> <span class="token punctuation">{</span>
+  <span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token function">repeating-linear-gradient</span><span class="token punctuation">(</span>-45deg<span class="token punctuation">,</span>
+      transparent<span class="token punctuation">,</span>
+      transparent 20px<span class="token punctuation">,</span>
+      black 20px<span class="token punctuation">,</span>
+      black 40px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p><iframe class="sample-code-frame" id="frame_Полоски_зебры" width="120" height="120" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/repeating-linear-gradient()/_sample_.%D0%9F%D0%BE%D0%BB%D0%BE%D1%81%D0%BA%D0%B8_%D0%B7%D0%B5%D0%B1%D1%80%D1%8B.html" loading="lazy"></iframe></p></div><h3 id="повторяющиеся_горизонтальные_полосы"><a href="#повторяющиеся_горизонтальные_полосы" title="Permalink to Повторяющиеся горизонтальные полосы">Повторяющиеся горизонтальные полосы</a></h3><div><pre class="brush: css notranslate"><code><span class="token selector">body</span> <span class="token punctuation">{</span>
+  <span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token function">repeating-linear-gradient</span><span class="token punctuation">(</span>to bottom<span class="token punctuation">,</span>
+      <span class="token function">rgb</span><span class="token punctuation">(</span>26<span class="token punctuation">,</span>198<span class="token punctuation">,</span>204<span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token function">rgb</span><span class="token punctuation">(</span>26<span class="token punctuation">,</span>198<span class="token punctuation">,</span>204<span class="token punctuation">)</span> 7%<span class="token punctuation">,</span>
+      <span class="token function">rgb</span><span class="token punctuation">(</span>100<span class="token punctuation">,</span>100<span class="token punctuation">,</span>100<span class="token punctuation">)</span> 10%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p><iframe class="sample-code-frame" id="frame_Повторяющиеся_горизонтальные_полосы" width="120" height="120" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/repeating-linear-gradient()/_sample_.%D0%9F%D0%BE%D0%B2%D1%82%D0%BE%D1%80%D1%8F%D1%8E%D1%89%D0%B8%D0%B5%D1%81%D1%8F_%D0%B3%D0%BE%D1%80%D0%B8%D0%B7%D0%BE%D0%BD%D1%82%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5_%D0%BF%D0%BE%D0%BB%D0%BE%D1%81%D1%8B.html" loading="lazy"></iframe></p>
+
+<div class="note notecard">
+<p><strong>Примечание:</strong> Для дополнительных примеров пожалуйста обратитесь к статье <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Using_CSS_gradients">Using CSS gradients</a>.</p>
+</div></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Примечание</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-images-3/#repeating-gradients" hreflang="en" lang="en" class="external" rel=" noopener">CSS Images Module Level&nbsp;3<br><small lang="ru">Определение 'repeating-linear-gradient()' в этой спецификации.</small></a></td>
+   <td><span class="spec-cr">Кандидат в рекомендации</span></td>
+   <td>Initial definition.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="совместимость_с_браузерами"><a href="#совместимость_с_браузерами" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><div></div></div><h2 id="дополнительно"><a href="#дополнительно" title="Permalink to Дополнительно">Дополнительно</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/CSS/Using_CSS_gradients">Using CSS gradients</a></li>
+ <li>Другие функции градиентов: <a href="/css/linear-gradient()/"><code>linear-gradient</code></a>, <a href="/css/radial-gradient()/"><code>radial-gradient</code></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/repeating-radial-gradient()"><code>repeating-radial-gradient</code> <span>(en-US)</span></a></li>
+</ul></div>

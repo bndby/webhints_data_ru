@@ -1,0 +1,83 @@
+<h1>border-image-width</h1><div><div style></div></div><h2 id="описание"><a href="#описание" title="Permalink to Описание">Описание</a></h2><div><p>he <strong><code>border-image-width</code></strong> CSS property defines the width of the border image by defining inward offsets from the border edges. If the <code>border-image-width</code> is greater than the <a href="/css/border-width/"><code>border-width</code></a>, then the border image extends beyond&nbsp;the padding (and/or content) edge.</p>
+
+<p></p><table class="properties"><tbody><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td><code>1</code></td></tr><tr><th scope="row">Применяется к</th><td>все элементы, кроме внутренних табличных элементов, когда <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-collapse" class="only-in-en-us" title="Currently only available in English (US)">border-collapse (en-US)</a>:<code>collapse</code>. Это также применяется к <a href="/css/::first-letter/"><code>::first-letter</code></a>.</td></tr><tr><th scope="row"><a href="/css/inheritance/">Наследуется</a></th><td>нет</td></tr><tr><th scope="row">Проценты</th><td>относятся к высоте или ширине области рамки картинки</td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>как указано, но с относительной длиной, конвертируемой в абсолютные длины</td></tr><tr><th scope="row">Animation type</th><td>by computed value type</td></tr></tbody></table><p></p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="brush:css notranslate"><code><span class="token comment">/* border-image-width: all */</span>
+<span class="token property">border-image-width</span><span class="token punctuation">:</span> 3<span class="token punctuation">;</span>
+
+<span class="token comment">/* border-image-width: vertical horizontal */</span>
+<span class="token property">border-image-width</span><span class="token punctuation">:</span> 2em 3em<span class="token punctuation">;</span>
+
+<span class="token comment">/* border-image-width: top horizontal bottom */</span>
+<span class="token property">border-image-width</span><span class="token punctuation">:</span> 5% 15% 10%<span class="token punctuation">;</span>
+
+<span class="token comment">/* border-image-width: top right bottom left */</span>
+<span class="token property">border-image-width</span><span class="token punctuation">:</span> 5% 2em 10% auto<span class="token punctuation">;</span>
+
+<span class="token comment">/* Global values */</span>
+<span class="token property">border-image-width</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">border-image-width</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">border-image-width</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre>
+
+<p style>где:</p>
+
+<dl style>
+ <dt style><em>width</em></dt>
+ <dd style>Is a value denoting the width of the image used as a border to apply to all four edges. It is used only in the one-value syntax.</dd>
+ <dt style><em>vertical</em></dt>
+ <dd>Is a value denoting the width of the image used as a border to apply to all vertical edges, that is the top and bottom edges. It is used only in the two-value syntax.</dd>
+ <dt><em>horizontal</em></dt>
+ <dd>Is a value denoting the width of the image used as a border to apply to all horizontal edges, that is the right and left edges. It is used only in the two- and three-value syntaxes.</dd>
+ <dt><em>top</em></dt>
+ <dd>Is a value denoting the width of the image used as a border to apply to the top edge. It is used only in the three- and four-value syntaxes.</dd>
+ <dt><em>bottom</em></dt>
+ <dd>Is a value denoting the width of the image used as a border to apply to the bottom edge. It is used only in the three- and four-value syntaxes.</dd>
+ <dt><em>right</em></dt>
+ <dd>Is a value denoting the width of the image used as a border to apply to the right edge. It is used only in the four-value syntax.</dd>
+ <dt><em>left</em></dt>
+ <dd>Is a value denoting the width of the image used as a border to apply to the left edge. It is used only in the four-value syntax.</dd>
+ <dt><code>inherit</code></dt>
+ <dd>Is a keyword indicating that all four values are inherited from their parent's element calculated value.</dd>
+</dl></div><h3 id="значения"><a href="#значения" title="Permalink to Значения">Значения</a></h3><div><dl style>
+ <dt><code>&lt;length&gt;</code></dt>
+ <dd>Represents the width of the border. It can be an absolute or relative length. This length must not be negative.</dd>
+ <dt><code>&lt;percentage&gt;</code></dt>
+ <dd style>Represents the width of the border as a percentage of the element. The percentage must not be negative.</dd>
+ <dt><code>&lt;number&gt;</code></dt>
+ <dd>Represents a multiple of the computed value of the element's <a href="/css/border-width/"><code>border-width</code></a> property to be used as the border width. The number must not be negative.</dd>
+ <dt><code>auto</code></dt>
+ <dd>Causes the border image width to equal the intrinsic width or height (whichever is applicable) of the corresponding <a href="/css/border-image-slice/"><code>border-image-slice</code></a>. If the image does not have the required intrinsic dimension then the corresponding computed border-width is used instead.</dd>
+</dl></div><h3 id="формальный_синтаксис"><a href="#формальный_синтаксис" title="Permalink to Формальный синтаксис">Формальный синтаксис</a></h3><div><pre class="notranslate"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> <a href="#length-percentage">&lt;length-percentage&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <a href="/css/number/" title>&lt;number&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> auto <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#curly_braces_(_)" title="Currently only available in English (US)" class="only-in-en-us">{ (en-US)</a>1,4<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#curly_braces_(_)" title="Currently only available in English (US)" class="only-in-en-us">} (en-US)</a><p style="font-family:Open Sans,Arial,sans-serif; margin: 10px 0 0 0;">где <br><code style="font-family:Consolas,Monaco,&quot;Andale Mono&quot;,monospace;"><span id="length-percentage">&lt;length-percentage&gt;</span> = <a href="/css/length/" title="Возможные значения: a number followed by'em', 'ex', 'ch', 'rem', 'px', 'cm', 'mm', 'in', 'vh', 'vw', 'vmin', 'vmax', 'pt', 'pc' или 'px', как 3px, 1.5cm, -0.5em или 0">&lt;length&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <a href="/css/percentage/" title>&lt;percentage&gt;</a></code></p></pre></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="html_content"><a href="#html_content" title="Permalink to HTML Content">HTML Content</a></h3><div><pre class="brush: html notranslate"><code><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+      eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+      At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+      no sea takimata sanctus est Lorem ipsum dolor sit amet.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h3 id="css_content"><a href="#css_content" title="Permalink to CSS Content">CSS Content</a></h3><div><pre class="brush: css notranslate"><code><span class="token selector">p</span> <span class="token punctuation">{</span>
+   <span class="token property">border-image-source</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string url">"https://mdn.mozillademos.org/files/10470/border.png"</span><span class="token punctuation">)</span></span><span class="token punctuation">;</span>
+   <span class="token property">border-image-slice</span><span class="token punctuation">:</span> 30<span class="token punctuation">;</span>
+   <span class="token property">border-image-width</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+   <span class="token property">border-image-repeat</span><span class="token punctuation">:</span> round<span class="token punctuation">;</span>
+   <span class="token property">padding</span><span class="token punctuation">:</span> 40px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<p style><iframe class="sample-code-frame" id="frame_Examples" width="480" height="320" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/border-image-width/_sample_.Examples.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-backgrounds-3/#border-image-width" hreflang="en" lang="en" class="external" rel=" noopener">CSS Backgrounds and Borders Module Level&nbsp;3<br><small lang="ru">Определение 'border-image-width' в этой спецификации.</small></a></td>
+   <td><span class="spec-cr">Кандидат в рекомендации</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div>

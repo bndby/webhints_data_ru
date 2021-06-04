@@ -1,0 +1,87 @@
+<h1>:active</h1><div><div></div>
+
+<p><a href="/css/Pseudo-classes/" title="Pseudo-classes">Псевдокласс</a>&nbsp;<strong><code>:active</code></strong>&nbsp;соответствует элементу в момент, когда он активируется пользователем. Он позволяет странице среагировать, когда&nbsp;элемент активируется. Взаимодействие элемента с мышью - это, как правило, время между нажатием&nbsp;и отпусканием пользователем кнопки&nbsp;мыши.</p>
+
+<pre class="brush: css notranslate"><code><span class="token comment">/*  Любой элемент &lt;a&gt;, который будет активирован */</span>
+<span class="token selector">a:active</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<p>Также псевдокласс <code>:active</code> срабатывает при использовании клавиши TAB на клавиатуре. Обычно это используется для HTML-элементов <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/A"><code>&lt;a&gt;</code></a> и <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/button"><code>&lt;button&gt;</code></a>, но может применяться и к другим элементам.</p>
+
+<p>Это свойство может быть переопределено любыми другими псевдоклассами, относящимся к ссылке, такими как&nbsp;<span style="line-height: 1.5;"><a href="/css/:link/"><code>:link</code></a>, <a href="/css/:hover/"><code>:hover</code></a> и&nbsp;<a href="/css/:visited/"><code>:visited</code></a>, описанными в последующих правилах. Чтобы стилизировать нужные ссылки, вам нужно ставить&nbsp;правило&nbsp;</span><code style="font-style: normal; line-height: 1.5;">:active</code><span style="line-height: 1.5;"> после всех других правил, относящихся к ссылке, как определено правилом&nbsp;</span><em>LVHA-порядком</em><span style="line-height: 1.5;">: </span><code style="font-style: normal; line-height: 1.5;">:link</code><span style="line-height: 1.5;"> — </span><code style="font-style: normal; line-height: 1.5;">:visited</code><span style="line-height: 1.5;"> — </span><code style="font-style: normal; line-height: 1.5;">:hover</code><span style="line-height: 1.5;"> — </span><code style="font-style: normal; line-height: 1.5;">:active</code><span style="line-height: 1.5;">.</span></p>
+
+<div class="note notecard"><strong>Примечание:</strong>&nbsp;В системах с много-кнопочными мышами, CSS 3 указывает, что псевдокласс&nbsp;<code>:active</code>&nbsp;должен применяться только к первой кнопке; для праворуких&nbsp;мышей - это обычно самая левая кнопка.</div></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="notranslate">:active</pre></div><h2 id="example"><a href="#example" title="Permalink to Пример">Пример</a></h2><div></div><h3 id="активные_ссылки"><a href="#активные_ссылки" title="Permalink to Активные ссылки">Активные ссылки</a></h3><div><h4 id="html">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Этот абзац содержит ссылку:
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Эта ссылка будет окрашена в красный, когда вы нажмёте на неё.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+У абзаца фон станет серым при нажатии на него или на ссылку. <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<h4 id="css">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token selector">a:link</span> <span class="token punctuation">{</span> <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span> <span class="token punctuation">}</span>          <span class="token comment">/* Непосещённые ссылки */</span>
+<span class="token selector">a:visited</span> <span class="token punctuation">{</span> <span class="token property">color</span><span class="token punctuation">:</span> purple<span class="token punctuation">;</span> <span class="token punctuation">}</span>     <span class="token comment">/* Посещённые ссылки */</span>
+<span class="token selector">a:hover</span> <span class="token punctuation">{</span> <span class="token property">background</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span> <span class="token punctuation">}</span>  <span class="token comment">/* Ссылки при наведении */</span>
+<span class="token selector">a:active</span> <span class="token punctuation">{</span> <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span> <span class="token punctuation">}</span>         <span class="token comment">/* Активные ссылки */</span>
+
+<span class="token selector">p:active</span> <span class="token punctuation">{</span> <span class="token property">background</span><span class="token punctuation">:</span> #eee<span class="token punctuation">;</span> <span class="token punctuation">}</span>   <span class="token comment">/* Активные абзацы */</span></code></pre>
+
+<h4 id="результат">Результат</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Активные_ссылки" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/:active/_sample_.%D0%90%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D1%8B%D0%B5_%D1%81%D1%81%D1%8B%D0%BB%D0%BA%D0%B8.html" loading="lazy"></iframe></p></div><h3 id="активные_элементы_формы"><a href="#активные_элементы_формы" title="Permalink to Активные элементы формы">Активные элементы формы</a></h3><div><h4 id="html_2">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>my-button<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Моя кнопка: <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>my-button<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Попробуй Нажать Меня или Мою подсказку!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<h4 id="css_2">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token selector">form :active</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">form button</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<h4 id="result">Result</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Активные_элементы_формы" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/:active/_sample_.%D0%90%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D1%8B%D0%B5_%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D1%8B_%D1%84%D0%BE%D1%80%D0%BC%D1%8B.html" loading="lazy"></iframe></p></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации"><span>Спецификации</span></a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://html.spec.whatwg.org/multipage/scripting.html#selector-active" hreflang="en" lang="en" class="external" rel=" noopener">HTML Living Standard<br><small lang="ru">Определение ':active' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td><a href="https://drafts.csswg.org/selectors-4/#active-pseudo" hreflang="en" lang="en" class="external" rel=" noopener">Selectors Level&nbsp;4<br><small lang="ru">Определение ':active' в этой спецификации.</small></a></td>
+   <td><span class="spec-wd">Рабочий черновик</span></td>
+   <td>Без изменений</td>
+  </tr>
+  <tr>
+   <td><a href="https://drafts.csswg.org/selectors-3/#useraction-pseudos" hreflang="en" lang="en" class="external" rel=" noopener">Selectors Level&nbsp;3<br><small lang="ru">Определение ':active' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Без изменений</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/CSS2/selector.html#dynamic-pseudo-classes" hreflang="en" lang="en" class="external" rel=" noopener">CSS Level&nbsp;2 (Revision&nbsp;1)<br><small lang="ru">Определение ':active' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Без изменений</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/CSS1/#anchor-pseudo-classes" hreflang="en" lang="en" class="external" rel=" noopener">CSS Level&nbsp;1<br><small lang="ru">Определение ':active' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Первоначальное определение</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="совместимость_с_браузерами"><a href="#совместимость_с_браузерами" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><div></div></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li>Псевдоклассы, связанные с ссылками: <a href="/css/:link/"><code>:link</code></a>, <a href="/css/:visited/"><code>:visited</code></a> и <a href="/css/:hover/"><code>:hover</code></a>.</li>
+</ul></div>

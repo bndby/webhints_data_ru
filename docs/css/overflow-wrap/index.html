@@ -1,0 +1,106 @@
+<h1>overflow-wrap</h1><div><div></div>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a>&nbsp;свойство&nbsp;<code><strong>overflow-wrap</strong></code> применяется к строковым&nbsp;элементам, устанавливая должен ли браузер расставлять переносы строк&nbsp;внутри неразрывной строки, чтобы&nbsp;избежать&nbsp;выхода текста&nbsp;за границы элемента.</p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/overflow-wrap.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+
+
+<div class="note notecard">
+<p><strong>Note:</strong> В отличие от <a href="/css/word-break/"><code>word-break</code></a>, <code>overflow-wrap</code>&nbsp;создаёт перенос только, если целое слово не может быть размещено на своей линии без переполнения</p>
+</div>
+
+<p>Изначально свойство&nbsp;<code>word-wrap</code>&nbsp;не было стандартом, хотя и&nbsp;было реализовано большинством браузеров. Впоследствии&nbsp;оно&nbsp;было переименовано в&nbsp;<code>overflow-wrap</code>&nbsp;c алиасом&nbsp;<code>word-wrap</code>.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush:css notranslate"><code><span class="token comment">/* Keyword values */</span>
+<span class="token property">overflow-wrap</span><span class="token punctuation">:</span> normal<span class="token punctuation">;</span>
+<span class="token property">overflow-wrap</span><span class="token punctuation">:</span> break-word<span class="token punctuation">;</span>
+<span class="token property">overflow-wrap</span><span class="token punctuation">:</span> anywhere<span class="token punctuation">;</span>
+
+<span class="token comment">/* Global values */</span>
+<span class="token property">overflow-wrap</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">overflow-wrap</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">overflow-wrap</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre>
+
+<p>Свойство&nbsp;<code>overflow-wrap</code>&nbsp;задаётся с помощью ключевого&nbsp;слова и выбирается из списка значений приведённых ниже:</p></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+ <dt><code>normal</code></dt>
+ <dd>Разрыв строк происходит согласно обычным правилам разрыва (такими&nbsp;как&nbsp;пробел между двумя словами).</dd>
+ <dt><code>anywhere</code></dt>
+ <dd>Чтобы избежать&nbsp;<span style>выхода текста&nbsp;за границы элемента, таких как длинных слов или URL,&nbsp;неразрывная&nbsp;строка&nbsp;символов может быть разбита&nbsp;</span>в любой точке, если в строке нет других допустимых точек разрыва. Тире не вставляется. Возможность&nbsp;мягкого&nbsp;переноса, представленная разрывом слов, рассматривается, когда вычисляется минимальный контент внутренних размеров.</dd>
+ <dt><code>break-word</code></dt>
+ <dd>Так же как и со значением&nbsp;<code>anywhere</code>, слова, которые обычно&nbsp;нельзя перенести по слогам, могут быть разбиты&nbsp;в произвольных точках, если нет других допустимых разрывов в строке, но возможность&nbsp;мягкого&nbsp;переноса, представленная разрывом слов не рассматривается, когда вычисляется минимальный контент внутренних размеров.</dd>
+</dl></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td><code>normal</code></td></tr><tr><th scope="row">Применяется к</th><td>не заменяемые строчные элементы</td></tr><tr><th scope="row"><a href="/css/inheritance/">Наследуется</a></th><td>да</td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>как указано</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate">normal <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> break-word <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> anywhere</pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="сравнение_overflow-wrap_word-break_и_hyphens"><a href="#сравнение_overflow-wrap_word-break_и_hyphens" title="Permalink to Сравнение overflow-wrap, word-break, и&nbsp;hyphens">Сравнение overflow-wrap, word-break, и&nbsp;hyphens</a></h3><div><p>Этот пример сравнивает результаты применения&nbsp;<code>overflow-wrap</code>, <code>word-break</code>, и&nbsp;<code>hyphens</code>, когда разбивается длинное слово.</p>
+
+<h4 id="html">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>They say the fishing is excellent at
+  Lake <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>em</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>normal<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Chargoggagoggmanchauggagoggchaubunagungamaugg<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>em</span><span class="token punctuation">&gt;</span></span>,
+  though I've never been there myself. (<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>code</span><span class="token punctuation">&gt;</span></span>normal<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>code</span><span class="token punctuation">&gt;</span></span>)<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>They say the fishing is excellent at
+  Lake <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>em</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ow-anywhere<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Chargoggagoggmanchauggagoggchaubunagungamaugg<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>em</span><span class="token punctuation">&gt;</span></span>,
+  though I've never been there myself. (<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>code</span><span class="token punctuation">&gt;</span></span>overflow-wrap: anywhere<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>code</span><span class="token punctuation">&gt;</span></span>)<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>They say the fishing is excellent at
+  Lake <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>em</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ow-break-word<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Chargoggagoggmanchauggagoggchaubunagungamaugg<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>em</span><span class="token punctuation">&gt;</span></span>,
+  though I've never been there myself. (<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>code</span><span class="token punctuation">&gt;</span></span>overflow-wrap: break-word<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>code</span><span class="token punctuation">&gt;</span></span>)<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>They say the fishing is excellent at
+  Lake <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>em</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>word-break<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Chargoggagoggmanchauggagoggchaubunagungamaugg<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>em</span><span class="token punctuation">&gt;</span></span>,
+  though I've never been there myself. (<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>code</span><span class="token punctuation">&gt;</span></span>word-break<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>code</span><span class="token punctuation">&gt;</span></span>)<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>They say the fishing is excellent at
+  Lake <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>em</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>hyphens<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Chargoggagoggmanchauggagoggchaubunagungamaugg<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>em</span><span class="token punctuation">&gt;</span></span>,
+  though I've never been there myself. (<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>code</span><span class="token punctuation">&gt;</span></span>hyphens<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>code</span><span class="token punctuation">&gt;</span></span>, without <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>code</span><span class="token punctuation">&gt;</span></span>lang<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>code</span><span class="token punctuation">&gt;</span></span> attribute)<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>They say the fishing is excellent at
+  Lake <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>em</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>hyphens<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Chargoggagoggmanchauggagoggchaubunagungamaugg<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>em</span><span class="token punctuation">&gt;</span></span>,
+  though I've never been there myself. (<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>code</span><span class="token punctuation">&gt;</span></span>hyphens<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>code</span><span class="token punctuation">&gt;</span></span>, English rules)<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>hyphens<span class="token punctuation">"</span></span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>de<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>They say the fishing is excellent at
+  Lake <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>em</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>hyphens<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Chargoggagoggmanchauggagoggchaubunagungamaugg<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>em</span><span class="token punctuation">&gt;</span></span>,
+  though I've never been there myself. (<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>code</span><span class="token punctuation">&gt;</span></span>hyphens<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>code</span><span class="token punctuation">&gt;</span></span>, German rules)<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<h4 id="css">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token selector">p</span> <span class="token punctuation">{</span>
+   <span class="token property">width</span><span class="token punctuation">:</span> 13em<span class="token punctuation">;</span>
+   <span class="token property">margin</span><span class="token punctuation">:</span> 2px<span class="token punctuation">;</span>
+   <span class="token property">background</span><span class="token punctuation">:</span> gold<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.ow-anywhere</span> <span class="token punctuation">{</span>
+   <span class="token property">overflow-wrap</span><span class="token punctuation">:</span> anywhere<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.ow-break-word</span> <span class="token punctuation">{</span>
+   <span class="token property">overflow-wrap</span><span class="token punctuation">:</span> break-word<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.word-break</span> <span class="token punctuation">{</span>
+   <span class="token property">word-break</span><span class="token punctuation">:</span> break-all<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.hyphens</span> <span class="token punctuation">{</span>
+   <span class="token property">hyphens</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<h4 id="result">Result</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Comparing_overflow-wrap_word-break_and_hyphens" width="100%" height="260" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/overflow-wrap/_sample_.Comparing_overflow-wrap_word-break_and_hyphens.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-text-3/#propdef-overflow-wrap" hreflang="en" lang="en" class="external" rel=" noopener">CSS Text Module Level&nbsp;3<br><small lang="ru">Определение 'overflow-wrap' в этой спецификации.</small></a></td>
+   <td><span class="spec-cr">Кандидат в рекомендации</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table>
+
+<p></p><table class="properties"><tbody><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td><code>normal</code></td></tr><tr><th scope="row">Применяется к</th><td>не заменяемые строчные элементы</td></tr><tr><th scope="row"><a href="/css/inheritance/">Наследуется</a></th><td>да</td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>как указано</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="/css/word-break/"><code>word-break</code></a></li>
+ <li><a href="/css/hyphens/"><code>hyphens</code></a></li>
+ <li><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-overflow"><code>text-overflow</code> <span>(en-US)</span></a></li>
+</ul></div>

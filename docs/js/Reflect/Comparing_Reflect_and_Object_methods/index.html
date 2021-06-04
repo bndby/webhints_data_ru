@@ -1,0 +1,86 @@
+<h1>Comparing Reflect and Object methods</h1><div><div></div>
+
+<p>The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect"><code>Reflect</code></a> object, introduced in ES2015, is a&nbsp;built-in object that provides methods to interface with JavaScript objects. Some of the static functions that exist on <code>Reflect</code>&nbsp;also correspond to methods available on <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object"><code>Object</code></a>, which predates ES2015. Although some of the methods appear to be similar in their behavior, there are often subtle differences between them.</p>
+
+<p>The table below details&nbsp;the&nbsp;differences between the methods available on the <code>Object</code> and <code>Reflect</code> APIs. Please note that if a&nbsp;method&nbsp;does not exist in an API, it is marked as N/A.</p>
+
+<table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Method Name</th>
+   <th scope="col"><code>Object</code></th>
+   <th scope="col"><code>Reflect</code></th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><code>defineProperty()</code></td>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty"><code>Object.defineProperty()</code></a> returns the object that was passed to the function. Returns a&nbsp;<code>TypeError</code>&nbsp;if the property was not successfully defined on the object.</td>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/defineProperty"><code>Reflect.defineProperty()</code></a> returns&nbsp;<code>true</code>&nbsp;if the property was defined on the object and&nbsp;<code>false</code>&nbsp;if it was not.</td>
+  </tr>
+  <tr>
+   <td><code>defineProperties()</code></td>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperties"><code>Object.defineProperties()</code></a> returns the objects that were passed to the function. Returns a&nbsp;<code>TypeError</code>&nbsp;if any properties were not successfully defined on the object.</td>
+   <td>N/A</td>
+  </tr>
+  <tr>
+   <td><code>set()</code></td>
+   <td>N/A</td>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/set"><code>Reflect.set()</code></a> returns&nbsp;<code>true</code>&nbsp;if the property was set successfully on the object and&nbsp;<code>false</code>&nbsp;if it was not. Throws a&nbsp;<code>TypeError</code>&nbsp;if the target was not an&nbsp;<code>Object</code>.</td>
+  </tr>
+  <tr>
+   <td><code>get()</code></td>
+   <td>N/A</td>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/get"><code>Reflect.get()</code></a> returns the value of the property. Throws a&nbsp;<code>TypeError</code>&nbsp;if the target was not an&nbsp;<code>Object</code>.</td>
+  </tr>
+  <tr>
+   <td><code>deleteProperty()</code></td>
+   <td>N/A</td>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/deleteProperty"><code>Reflect.deleteProperty()</code></a> returns&nbsp;<code>true</code>&nbsp;if the property was deleted from the object and&nbsp;<code>false</code>&nbsp;if it was not.</td>
+  </tr>
+  <tr>
+   <td><code>getOwnPropertyDescriptor()</code></td>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptor"><code>Object.getOwnPropertyDescriptor()</code></a> returns a property descriptor of the given property if it exists on the object argument passed in, and returns&nbsp;<code>undefined</code>&nbsp;if it does not exist.&nbsp;However, if an object is not passed in as the first argument, it will be coerced into an object.</td>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/getOwnPropertyDescriptor"><code>Reflect.getOwnPropertyDescriptor()</code></a> returns a property descriptor of the given property if it exists on the object. Returns&nbsp;<code>undefined</code>&nbsp;if it does not exist, and a&nbsp;<code>TypeError</code>&nbsp;if anything other than an object (a primitive) is passed in as the first argument.</td>
+  </tr>
+  <tr>
+   <td><code>getOwnPropertyDescriptors()</code></td>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptors"><code>Object.getOwnPropertyDescriptors()</code></a> returns an object containing a property descriptor of each passed-in object. Returns an empty object if the passed-in object has no owned property descriptors.</td>
+   <td>N/A</td>
+  </tr>
+  <tr>
+   <td><code>getPrototypeOf()</code></td>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getPrototypeOf"><code>Object.getPrototypeOf()</code></a> returns the prototype of the given object. Returns&nbsp;<code>null</code>&nbsp;if there are no inherited properties. Throws a&nbsp;<code>TypeError</code>&nbsp;for non-objects in ES5, but coerces non-objects in ES2015.</td>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/getPrototypeOf"><code>Reflect.getPrototypeOf()</code></a> returns the prototype of the given object. Returns&nbsp;<code>null</code>&nbsp;if there are no inherited properties, and throws a&nbsp;<code>TypeError</code>&nbsp;for non-objects.</td>
+  </tr>
+  <tr>
+   <td><code>setPrototypeOf()</code></td>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf"><code>Object.setPrototypeOf()</code></a> returns the object itself if its prototype was set successfully. Throws a&nbsp;<code>TypeError</code>&nbsp;if the prototype being set was anything other than an&nbsp;<code>Object</code>&nbsp;or&nbsp;<code>null</code>, or if the prototype for the object being modified is non-extensible.&nbsp;</td>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/setPrototypeOf"><code>Reflect.setPrototypeOf()</code></a> returns&nbsp;<code>true</code>&nbsp;if the prototype was successfully set on the object and&nbsp;<code>false</code> if it wasn't (including if the prototype is non-extensible). Throws a&nbsp;<code>TypeError</code>&nbsp;if the target passed in was not an&nbsp;<code>Object</code>, or if the prototype being set was anything other than an&nbsp;<code>Object</code>&nbsp;or&nbsp;<code>null</code>.</td>
+  </tr>
+  <tr>
+   <td><code>isExtensible()</code></td>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/isExtensible"><code>Object.isExtensible()</code></a> returns&nbsp;<code>true</code>&nbsp;if the object is extensible, and&nbsp;<code>false</code>&nbsp;if it is not. Throws a&nbsp;<code>TypeError</code>&nbsp;in ES5 if the first argument is not an object (a primitive). In ES2015, it will be coerced into a non-extensible, ordinary object and will return&nbsp;<code>false</code>.</td>
+   <td>
+    <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/isExtensible"><code>Reflect.isExtensible()</code></a> returns&nbsp;<code>true</code>&nbsp;if the object is extensible, and&nbsp;<code>false</code>&nbsp;if it is not. Throws a&nbsp;<code>TypeError</code> if the first argument is not an object (a primitive).</p>
+   </td>
+  </tr>
+  <tr>
+   <td><code>preventExtensions()</code></td>
+   <td>
+    <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/preventExtensions"><code>Object.preventExtensions()</code></a>&nbsp;returns the object that is being made non-extensible. Throws a&nbsp;<code>TypeError</code>in ES5 if the argument is not an object (a primitive). In ES2015, treats the argument as a non-extensible, ordinary object and returns&nbsp;the object itself.</p>
+   </td>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/preventExtensions"><code>Reflect.preventExtensions()</code></a> returns&nbsp;<code>true</code>&nbsp;if the object has been made non-extensible, and&nbsp;<code>false</code>&nbsp;if it has not. Throws a&nbsp;<code>TypeError</code>&nbsp;if the argument is not an object (a primitive).</td>
+  </tr>
+  <tr>
+   <td><code>keys()</code></td>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys"><code>Object.keys()</code></a>&nbsp;returns an&nbsp;<code>Array</code>&nbsp;of strings that map to the target object's own (enumerable) property keys. Throws a&nbsp;<code>TypeError</code>&nbsp;in ES5 if the target is not an object, but coerces non-object targets into objects in ES2015.</td>
+   <td>N/A</td>
+  </tr>
+  <tr>
+   <td><code>ownKeys()</code></td>
+   <td>N/A</td>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/ownKeys"><code>Reflect.ownKeys()</code></a> returns an&nbsp;<code>Array</code>&nbsp;of property names that map to the target object's own property keys. Throws a&nbsp;<code>TypeError</code>&nbsp;if the target is not an&nbsp;<code>Object</code>.</td>
+  </tr>
+ </tbody>
+</table></div>

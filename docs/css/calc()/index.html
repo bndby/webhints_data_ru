@@ -1,0 +1,97 @@
+<h1>Функция calc()</h1><div><div></div>
+
+<p><code>calc()</code> - это функция CSS, которая даёт возможность рассчитать значения свойств CSS во время их определения. Она может быть использована везде, где применимы <a href="/css/length/"><code>&lt;length&gt;</code></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/frequency"><code>&lt;frequency&gt;</code> <span>(en-US)</span></a>, <a href="/css/angle/"><code>&lt;angle&gt;</code></a>, <a href="/css/time/"><code>&lt;time&gt;</code></a>, <a href="/css/number/"><code>&lt;number&gt;</code></a>, или <a href="/css/integer/"><code>&lt;integer&gt;</code></a>.</p>
+
+<p><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/function-calc.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><p>Функция <code>calc()</code> принимает в качестве параметра математическое выражение, результат вычисления которого можно использовать как значение CSS свойства. Выражение может включать операторы +, -, *, / <span id="result_box" lang="ru"><span class="hps">с использованием стандартных</span> <span class="hps">правил</span> <span class="hps">приоритета операторов</span></span>:</p>
+
+<dl>
+ <dt><strong>+</strong></dt>
+ <dd>Сложение</dd>
+ <dt><strong>-</strong></dt>
+ <dd>Вычитание.</dd>
+ <dt><strong>*</strong></dt>
+ <dd>Умножение. По крайней мере хоть один из сомножителей должен быть <a href="/css/number/"><code>&lt;number&gt;</code></a>.</dd>
+ <dt><strong>/</strong></dt>
+ <dd>Деление. Делитель должен быть&nbsp; <a href="/css/number/"><code>&lt;number&gt;</code></a>.</dd>
+</dl>
+
+<p>Операнды в expression могут быть различными выражениями <a href="/css/length/"><code>&lt;length&gt;</code></a>. Если пожелаете, то можете использовать разные единицы измерения для каждого из операндов. Вы также можете использовать скобки, чтобы указать порядок вычисления.</p>
+
+<div class="note notecard"><strong>Внимание:</strong> Деление на ноль выдаст ошибку при парсинге HTML.</div>
+
+<div class="note notecard"><strong>Note:</strong> Операторы + и - всегда должны быть по обеим сторонам отделены пробелом. Выражение <code>calc(50% -8px)</code> будет интерпретировано как величина в процентах и следующее за ним отрицательное число в пикселях (не верное выражение), в то время как <code>calc(50% - 8px)</code> - правильное выражение, будет интерпретировано как вычитание из процентов длины в пикселях.<br>
+Операторы * и / не требуют отделения от операндов знаком пробела, но это не запрещено и даже приветствуется.</div>
+
+<dl>
+</dl></div><h3 id="формальный_синтаксис"><a href="#формальный_синтаксис" title="Permalink to Формальный синтаксис">Формальный синтаксис</a></h3><div><pre class="syntaxbox notranslate">calc(<em>expression</em>)</pre></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="позиционирование_объекта_в_окне_с_помощью_отступа"><a href="#позиционирование_объекта_в_окне_с_помощью_отступа" title="Permalink to Позиционирование объекта в окне с помощью отступа">Позиционирование объекта в окне с помощью отступа</a></h3><div><p><code>calc()</code> делает простым позиционирование объекта с помощью отступа. В этом примере создаётся баннер занимающий в ширину все окно с отступами по краям в 40px.&nbsp;</p>
+
+<pre class="brush: css notranslate"><code><span class="token selector">.banner</span> <span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> 5%<span class="token punctuation">;</span>                 <span class="token comment">/* для браузеров не поддерживающих calc() */</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span>40px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 90%<span class="token punctuation">;</span>               <span class="token comment">/* для браузеров не поддерживающих calc() */</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span>100% - 80px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> solid black 1px<span class="token punctuation">;</span>
+  <span class="token property">box-shadow</span><span class="token punctuation">:</span> 1px 2px<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 6px<span class="token punctuation">;</span>
+  <span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>banner<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Это баннер!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<p><iframe class="sample-code-frame" id="frame_Позиционирование_объекта_в_окне_с_помощью_отступа" width="100%" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/calc()/_sample_.%D0%9F%D0%BE%D0%B7%D0%B8%D1%86%D0%B8%D0%BE%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%B0_%D0%B2_%D0%BE%D0%BA%D0%BD%D0%B5_%D1%81_%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E_%D0%BE%D1%82%D1%81%D1%82%D1%83%D0%BF%D0%B0.html" loading="lazy"></iframe></p></div><h3 id="автоматическое_изменение_размера_формы_ввода_для_соответствия_размеру_контейнера"><a href="#автоматическое_изменение_размера_формы_ввода_для_соответствия_размеру_контейнера" title="Permalink to Автоматическое изменение размера формы ввода для соответствия размеру контейнера">Автоматическое изменение размера формы ввода для соответствия размеру контейнера</a></h3><div><p>В следующем случае <code>calc()</code> помогает обеспечить не выпадание полей формы за края блока, задав отступ.</p>
+
+<p>Давайте посмотрим некоторый код CSS:</p>
+
+<pre class="brush: css notranslate"><code><span class="token selector">input</span> <span class="token punctuation">{</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 2px<span class="token punctuation">;</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 98%<span class="token punctuation">;</span>               <span class="token comment">/* для браузеров, не поддерживающих calc() */</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span>100% - 1em<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">#formbox</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 130px<span class="token punctuation">;</span>             <span class="token comment">/* для браузеров, не поддерживающих calc() */</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span>100% / 6<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 1px solid black<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 4px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p>Здесь ширина формы становится 1/6 от ширины окна. Затем, чтобы задать&nbsp; размер полей, мы вновь используем функцию&nbsp;<code>calc()</code>, которая вычитает 1em из ширины блока. Теперь применим этот CSS к следующему HTML-коду:</p>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>formbox<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span><span class="token punctuation">&gt;</span></span>Type something:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<p><iframe class="sample-code-frame" id="frame_Автоматическое_изменение_размера_формы_ввода_для_соответствия_размеру_контейнера" width="100%" height="80" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/calc()/_sample_.%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B5_%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D0%B7%D0%BC%D0%B5%D1%80%D0%B0_%D1%84%D0%BE%D1%80%D0%BC%D1%8B_%D0%B2%D0%B2%D0%BE%D0%B4%D0%B0_%D0%B4%D0%BB%D1%8F_%D1%81%D0%BE%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%81%D1%82%D0%B2%D0%B8%D1%8F_%D1%80%D0%B0%D0%B7%D0%BC%D0%B5%D1%80%D1%83_%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D0%B0.html" loading="lazy"></iframe></p></div><h3 id="вложенный_calc_с_css_переменными"><a href="#вложенный_calc_с_css_переменными" title="Permalink to Вложенный calc()&nbsp;с CSS переменными">Вложенный <code>calc()</code>&nbsp;с CSS переменными</a></h3><div><p>Вы также можете использовать <code>calc()</code> с CSS переменными. Рассмотрим пример кода:</p>
+
+<pre class="notranslate">.foo {
+  --widthA: 100px;
+  --widthB: calc(var(--widthA) / 2);
+  --widthC: calc(var(--widthB) / 2);
+  width: var(--widthC);
+}</pre></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Замечания</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-values-3/#calc-notation" hreflang="en" lang="en" class="external" rel=" noopener">CSS Values and Units Module Level&nbsp;3<br><small lang="ru">Определение 'calc()' в этой спецификации.</small></a></td>
+   <td><span class="spec-cr">Кандидат в рекомендации</span></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="поддержка_браузерами"><a href="#поддержка_браузерами" title="Permalink to Поддержка браузерами">Поддержка браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="https://hacks.mozilla.org/2010/06/css3-calc/" title="Firefox 4: CSS3 calc() ✩ Mozilla Hacks – the Web developer blog" class="external" rel=" noopener">Firefox 4: CSS3 calc() ✩ Mozilla Hacks – the Web developer blog</a></li>
+</ul></div>

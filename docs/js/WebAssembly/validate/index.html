@@ -1,0 +1,28 @@
+<h1>WebAssembly.validate()</h1><div><div></div>
+
+<p>The <strong><code>WebAssembly.validate()</code></strong> function validates a given <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays">typed array</a> of WebAssembly binary
+  code, returning whether the bytes form a valid wasm module (<code>true</code>) or not
+  (<code>false</code>).</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: js notranslate"><code>WebAssembly<span class="token punctuation">.</span><span class="token function">validate</span><span class="token punctuation">(</span>bufferSource<span class="token punctuation">)</span></code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Parameters">Parameters</a></h3><div><dl>
+  <dt><code>bufferSource</code></dt>
+  <dd>A <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays">typed array</a> or <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer">ArrayBuffer</a>
+    containing WebAssembly binary code to be validated.</dd>
+</dl></div><h3 id="return_value"><a href="#return_value" title="Permalink to Return value">Return value</a></h3><div><p>A boolean that specifies whether <code>bufferSource</code> is valid wasm code
+  (<code>true</code>) or not (<code>false</code>).</p></div><h3 id="exceptions"><a href="#exceptions" title="Permalink to Exceptions">Exceptions</a></h3><div><p>If <code>bufferSource</code> is not a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays">typed array</a> or <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer">ArrayBuffer</a>,
+  a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError"><code>TypeError</code></a> is thrown.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="using_validate"><a href="#using_validate" title="Permalink to Using validate">Using validate</a></h3><div><p>The following example (see the validate.html <a href="https://github.com/mdn/webassembly-examples/blob/master/js-api-examples/validate.html" class="external" rel=" noopener">source
+    code</a>, and <a href="https://mdn.github.io/webassembly-examples/js-api-examples/validate.html" class="external" rel=" noopener">see it
+    live too</a>) fetches a .wasm module and converts it into a typed array. The
+  <code>validate()</code> method is then used to check whether the module is valid.</p>
+
+<pre class="brush: js notranslate"><code><span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">'simple.wasm'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">response</span> <span class="token operator">=&gt;</span>
+  response<span class="token punctuation">.</span><span class="token function">arrayBuffer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">bytes</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> valid <span class="token operator">=</span> WebAssembly<span class="token punctuation">.</span><span class="token function">validate</span><span class="token punctuation">(</span>bytes<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"The given bytes are "</span>
+    <span class="token operator">+</span> <span class="token punctuation">(</span>valid <span class="token operator">?</span> <span class="token string">""</span> <span class="token operator">:</span> <span class="token string">"not "</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"a valid wasm module"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://webassembly.github.io/spec/js-api/#dom-webassembly-validate">WebAssembly JavaScript Interface<!-- --> <br><small># <!-- -->dom-webassembly-validate</small></a></td></tr></tbody></table><div></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+  <li><a href="https://developer.mozilla.org/en-US/docs/WebAssembly">WebAssembly</a> overview page</li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/WebAssembly/Concepts">WebAssembly concepts</a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/WebAssembly/Using_the_JavaScript_API">Using the WebAssembly
+      JavaScript API</a></li>
+</ul></div>

@@ -1,0 +1,27 @@
+<h1>Array.prototype.toSource()</h1><div><div>
+  <div class="notecard warning">
+        <h4 id="не_стандартно">Не стандартно</h4>
+        <p>Эта возможность не является стандартной и стандартизировать её пока никто не собирается. Не используйте её на сайтах, смотрящих во внешний мир: она будет работать не у всех пользователей. Также могут присутствовать большие несовместимости между реализациями и её поведение может в будущем измениться.</p>
+      </div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Метод <code><strong>toSource()</strong></code> возвращает строковое представление исходного кода массива.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code><var>arr</var>.toSource()</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><p>Нет.</p></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Метод <code>toSource</code> возвращает следующие значения:</p>
+<ul>
+ <li>Для встроенного объекта <a href="/js/Array/"><code>Array</code></a>, метод <code>toSource</code> возвращает следующую строку, указывающую, что исходный код недоступен:
+  <pre class="brush: js notranslate"><code><span class="token keyword">function</span> <span class="token function">Array</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">[</span>native code<span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre>
+ </li>
+ <li>Для экземпляров класса <a href="/js/Array/"><code>Array</code></a>, метод <code>toSource</code> возвращает строковое представление исходного кода.</li>
+</ul>
+<p>Этот метод обычно вызывается внутри движка JavaScript, а не явно в коде. Вы можете вызвать <code>toSource</code> во время отладки для просмотра содержимого массива.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_examining_the_source_code_of_an_array"><a href="#example_examining_the_source_code_of_an_array" title="Permalink to Пример: рассмотрение исходного кода массива">Пример: рассмотрение исходного кода массива</a></h3><div><p>Для просмотра исходного кода массива:</p>
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> alpha <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+alpha<span class="token punctuation">.</span><span class="token function">toSource</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// вернёт ['a', 'b', 'c']</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><p>Не является частью какого-либо стандарта. Реализована в JavaScript 1.3.</p></div><p>BCD tables only load in the browser</p><div><div>
+<p></p><p></p>
+
+
+<ul>
+ <li><a href="/js/Object/toSource/"><code>Object.prototype.toSource()</code></a></li>
+ <li><a href="/js/Array/toString/"><code>Array.prototype.toString()</code></a></li>
+</ul>
+</div></div>

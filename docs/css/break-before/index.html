@@ -1,0 +1,203 @@
+<h1>break-before</h1><div><div></div>
+
+<p>The <strong><code>break-before</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> property sets how page, column, or region breaks should behave before a generated box. If there is no generated box, the property is ignored.</p>
+
+<pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* Generic break values */</span>
+<span class="token property">break-before</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+<span class="token property">break-before</span><span class="token punctuation">:</span> avoid<span class="token punctuation">;</span>
+<span class="token property">break-before</span><span class="token punctuation">:</span> always<span class="token punctuation">;</span>
+<span class="token property">break-before</span><span class="token punctuation">:</span> all<span class="token punctuation">;</span>
+
+<span class="token comment">/* Page break values */</span>
+<span class="token property">break-before</span><span class="token punctuation">:</span> avoid-page<span class="token punctuation">;</span>
+<span class="token property">break-before</span><span class="token punctuation">:</span> page<span class="token punctuation">;</span>
+<span class="token property">break-before</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span>
+<span class="token property">break-before</span><span class="token punctuation">:</span> right<span class="token punctuation">;</span>
+<span class="token property">break-before</span><span class="token punctuation">:</span> recto<span class="token punctuation">;</span>
+<span class="token property">break-before</span><span class="token punctuation">:</span> verso<span class="token punctuation">;</span>
+
+<span class="token comment">/* Column break values */</span>
+<span class="token property">break-before</span><span class="token punctuation">:</span> avoid-column<span class="token punctuation">;</span>
+<span class="token property">break-before</span><span class="token punctuation">:</span> column<span class="token punctuation">;</span>
+
+<span class="token comment">/* Region break values */</span>
+<span class="token property">break-before</span><span class="token punctuation">:</span> avoid-region<span class="token punctuation">;</span>
+<span class="token property">break-before</span><span class="token punctuation">:</span> region<span class="token punctuation">;</span>
+
+<span class="token comment">/* Global values */</span>
+<span class="token property">break-before</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">break-before</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">break-before</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre>
+
+<p>Each possible break point (in other words, each element boundary) is affected by three properties: the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/break-after"><code>break-after</code></a> value of the previous element, the <code>break-before</code> value of the next element, and the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/break-inside"><code>break-inside</code></a> value of the containing element.</p>
+
+<p>To determine if a break must be done, the following rules are applied:</p>
+
+<ol>
+ <li>If any of the three concerned values is a <em>forced break value</em> (<code>always</code>, <code>left</code>, <code>right</code>, <code>page</code>, <code>column</code>, or <code>region</code>), it has precedence. If more than one of them are such a break, the one of the element that appears the latest in the flow is taken (i.e., the <code>break-before</code> value has precedence over the <code>break-after</code> value, which itself has precedence over the <code>break-inside</code> value).</li>
+ <li>If any of the three concerned values is an <em>avoid break value</em> (<code>avoid</code>, <code>avoid-page</code>, <code>avoid-region</code>, or <code>avoid-column</code>), no such break will be applied at that point.</li>
+</ol>
+
+<p>Once forced breaks have been applied, soft breaks may be added if needed, but not on element boundaries that resolve in a corresponding <code>avoid</code> value.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><p>The <code>break-before</code> property is specified as one of the keyword values from the list below.</p></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><h4 id="generic_break_values">Generic break values</h4>
+
+<dl>
+ <dt><code>auto</code></dt>
+ <dd>Allows, but does not force, any break (page, column, or region) to be inserted right before the principal box.</dd>
+ <dt><code>avoid</code></dt>
+ <dd>Avoids any break (page, column, or region) from being inserted right before the principal box.</dd>
+ <dt><code>always</code>&nbsp;</dt>
+ <dd>Forces a page break right after the principal box.&nbsp;The type of this break is that of the immediately-containing fragmentation context. If we are inside a multicol container then it would force a column break, inside paged media (but not inside a multicol container) a page break.</dd>
+ <dt><code>all</code>&nbsp;</dt>
+ <dd>Forces a page break right after the principal box. Breaking through all possible fragmentation contexts. So a break inside a multicol container, which was inside a page container would force a column and page break.</dd>
+</dl>
+
+<h4 id="page_break_values">Page break values</h4>
+
+<dl>
+ <dt><code>avoid-page</code></dt>
+ <dd>Avoids any page break right before the principal box.</dd>
+ <dt><code>page</code></dt>
+ <dd>Forces a page break right before the principal box.</dd>
+ <dt><code>left</code></dt>
+ <dd>Forces one or two page breaks right before the principal box, whichever will make the next page into a left page.</dd>
+ <dt><code>right</code></dt>
+ <dd>Forces one or two page breaks right before the principal box, whichever will make the next page into a right page.</dd>
+ <dt><code>recto</code> </dt>
+ <dd>Forces one or two page breaks right before the principal box, whichever will make the next page into a recto page. (A recto page is a right page in a left-to-right spread or a left page in a right-to-left spread.)</dd>
+ <dt><code>verso</code> </dt>
+ <dd>Forces one or two page breaks right before the principal box, whichever will make the next page into a verso page. (A verso page is a left page in a left-to-right spread or a left right in a right-to-left spread.)</dd>
+</dl>
+
+<h4 id="column_break_values">Column break values</h4>
+
+<dl>
+ <dt><code>avoid-column</code></dt>
+ <dd>Avoids any column break right before the principal box.</dd>
+ <dt><code>column</code></dt>
+ <dd>Forces a column break right before the principal box.</dd>
+</dl>
+
+<h4 id="region_break_values">Region break values</h4>
+
+<dl>
+ <dt><code>avoid-region</code> </dt>
+ <dd>Avoids any region break right before the principal box.</dd>
+ <dt><code>region</code> </dt>
+ <dd>Forces a region break right before the principal box.</dd>
+</dl></div><h2 id="page_break_aliases"><a href="#page_break_aliases" title="Permalink to Page break aliases">Page break aliases</a></h2><div><p>For compatibility reasons, the legacy <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/page-break-before"><code>page-break-before</code></a> property should be treated by browsers as an alias of <code>break-before</code>. This ensures that sites using <code>page-break-before</code> continue to work as designed.&nbsp;A&nbsp;subset of values should be aliased as follows:</p>
+
+<table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">page-break-before</th>
+   <th scope="col">break-before</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><code>auto</code></td>
+   <td><code>auto</code></td>
+  </tr>
+  <tr>
+   <td><code>left</code></td>
+   <td><code>left</code></td>
+  </tr>
+  <tr>
+   <td><code>right</code></td>
+   <td><code>right</code></td>
+  </tr>
+  <tr>
+   <td><code>avoid</code></td>
+   <td><code>avoid</code></td>
+  </tr>
+  <tr>
+   <td><code>always</code></td>
+   <td><code>page</code></td>
+  </tr>
+ </tbody>
+</table>
+
+<div class="notecard note">
+<p>The <code>always</code> value of <code>page-break-*</code> was implemented by browsers as a page break, and not as a column break. Therefore the aliasing is to <code>page</code>, rather than the <code>always</code> value in the Level 4 spec.</p>
+</div></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td><code>auto</code></td></tr><tr><th scope="row">Applies to</th><td>block-level elements</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance">Inherited</a></th><td>no</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>as specified</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate">auto <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> avoid <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> always <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> all <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> avoid-page <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> page <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> left <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> right <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> recto <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> verso <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> avoid-column <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> column <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> avoid-region <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> region</pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="breaking_into_neat_columns"><a href="#breaking_into_neat_columns" title="Permalink to Breaking into neat columns">Breaking into neat columns</a></h3><div><p>In the following example we have a container that contains an <code>&lt;h1&gt;</code> spanning all columns (achieved using <code>column-span: all</code>) and a series of <code>&lt;h2&gt;</code>s and paragraphs laid out in multiple columns using <code>column-width: 200px</code>.</p>
+
+<p>By default, the subheadings and paragraphs were laid out rather messily because the headings were not in a uniform place. However, we used&nbsp;<code>break-before: column</code> on the <code>&lt;h2&gt;</code> elements to force a column break before each one, meaning that you end up with an <code>&lt;h2&gt;</code> neatly at the top of each column.</p>
+
+<h4 id="html">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>article</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>Main heading<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>Subheading<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae fringilla mauris. Quisque commodo eget nisi sed pretium. Mauris luctus nec lacus in ultricies. Mauris vitae hendrerit arcu, ac scelerisque lacus. Aliquam lobortis in lacus sit amet posuere. Fusce iaculis urna id neque dapibus, eu lacinia lectus dictum.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>Subheading<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Praesent condimentum dui dui, sit amet rutrum diam tincidunt eu. Cras suscipit porta leo sit amet rutrum. Sed vehicula ornare tincidunt. Curabitur a ipsum ac diam mattis volutpat ac ut elit. Nullam luctus justo non vestibulum gravida. Morbi metus libero, pharetra non porttitor a, molestie nec nisi.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>Subheading<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Vivamus eleifend metus vitae neque placerat, eget interdum elit mattis. Donec eu vulputate nibh. Ut turpis leo, malesuada quis nisl nec, volutpat egestas tellus.
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>Subheading<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>In finibus viverra enim vel suscipit. Quisque consequat velit eu orci malesuada, ut interdum tortor molestie. Proin sed pellentesque augue. Nam risus justo, faucibus non porta a, congue vel massa. Cras luctus lacus nisl, sed tincidunt velit pharetra ac. Duis suscipit faucibus dui sed ultricies.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>article</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<h4 id="css">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token selector">html</span> <span class="token punctuation">{</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> helvetica<span class="token punctuation">,</span> arial<span class="token punctuation">,</span> sans-serif<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">h1</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 3rem<span class="token punctuation">;</span>
+  <span class="token property">letter-spacing</span><span class="token punctuation">:</span> 2px<span class="token punctuation">;</span>
+  <span class="token property">column-span</span><span class="token punctuation">:</span> all<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">h2</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 1.2rem<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token property">letter-spacing</span><span class="token punctuation">:</span> 1px<span class="token punctuation">;</span>
+  <span class="token property">break-before</span><span class="token punctuation">:</span> column<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">p</span> <span class="token punctuation">{</span>
+  <span class="token property">line-height</span><span class="token punctuation">:</span> 1.5<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">article</span> <span class="token punctuation">{</span>
+  <span class="token property">column-width</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+  <span class="token property">gap</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div><h3 id="result"><a href="#result" title="Permalink to Result">Result</a></h3><div><p><iframe class="sample-code-frame" id="frame_Breaking_into_neat_columns" width="100%" height="600" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/break-before/_sample_.Breaking_into_neat_columns.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-break-3/#break-between" hreflang="en" lang="en" class="external" rel=" noopener">CSS Fragmentation Module Level&nbsp;3<br><small lang="en-US">The definition of 'break-before' in that specification.</small></a></td>
+   <td><span class="spec-cr">Candidate Recommendation</span></td>
+   <td>Adds the <code>recto</code> and <code>verso</code> keywords. Changes the media type of this property from <code>paged</code> to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media"><code>visual</code></a>. Defines the breaking algorithm with different kinds of breaks.</td>
+  </tr>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-regions-1/#region-flow-break" hreflang="en" lang="en" class="external" rel=" noopener">CSS Regions Module Level&nbsp;1<br><small lang="en-US">The definition of 'break-before' in that specification.</small></a></td>
+   <td><span class="spec-wd">Working Draft</span></td>
+   <td>Extends the property to handle region breaks. Adds the <code>avoid-region</code> and <code>region</code> keywords.</td>
+  </tr>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-multicol-1/#break-before-break-after-break-inside" hreflang="en" lang="en" class="external" rel=" noopener">CSS Multi-column Layout Module<br><small lang="en-US">The definition of 'break-before' in that specification.</small></a></td>
+   <td><span class="spec-wd">Working Draft</span></td>
+   <td>Initial definition. Extends the CSS 2.1 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/page-break-before"><code>page-break-before</code></a> property to handle both page and column breaks.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><div></div><h3 id="support_in_multi-column_layout"><a href="#support_in_multi-column_layout" title="Permalink to Support in multi-column layout">Support in multi-column layout</a></h3><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h3 id="support_in_paged_media"><a href="#support_in_paged_media" title="Permalink to Support in paged media">Support in paged media</a></h3><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Multiple-column_Layout">Multiple-column Layout</a></li>
+ <li><a href="https://www.smashingmagazine.com/2019/02/css-fragmentation/" class="external" rel=" noopener">Breaking Boxes With CSS Fragmentation</a></li>
+</ul></div>

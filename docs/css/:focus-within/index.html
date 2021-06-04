@@ -1,0 +1,50 @@
+<h1>:focus-within</h1><div><div></div>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a>&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes">Псевдо-класс</a>&nbsp;<strong><code>:focus-within</code></strong>&nbsp;соответствует элементу, который либо сам находится в фокусе, либо содержит элемент, который находится в фокусе. Другими словами, он представляет элементу, который соответствует псевдоклассу <a href="/css/:focus/"><code>:focus</code></a> либо имеет потомка, который соответствует&nbsp;<code>:focus</code>. (Включая потомков в <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM">shadow trees</a>.)</p>
+
+<pre class="brush: css no-line-numbers notranslate"><code><span class="token comment">/* Выделяет &lt;div&gt; когда один из его потомков находится в фокусе */</span>
+<span class="token selector">div:focus-within</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> cyan<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<p>Этот селектор может оказаться полезным, например, для подсвечивания всего контейнера&nbsp;<a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/form"><code>&lt;form&gt;</code></a>, когда пользователь устанавливает фокус на одном из его полей ввода&nbsp;<a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/Input"><code>&lt;input&gt;</code></a>.</p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="notranslate">:focus-within</pre></div><h2 id="пример"><a href="#пример" title="Permalink to Пример">Пример</a></h2><div><p>В этом примере форма раскрашивается при помощи специального правила стилей, когда один из её дочерних полей для ввода&nbsp;находится в фокусе.</p></div><h3 id="html"><a href="#html" title="Permalink to HTML">HTML</a></h3><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Try typing into this form.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>given_name<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Given Name:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>given_name<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>family_name<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Family Name:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>family_name<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span></code></pre></div><h3 id="css"><a href="#css" title="Permalink to CSS">CSS</a></h3><div><pre class="brush: css highlight[7] notranslate"><code><span class="token selector">form</span> <span class="token punctuation">{</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 1px solid<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> gray<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 4px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">form:focus-within</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> #ff8<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">input</span> <span class="token punctuation">{</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 4px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="итог"><a href="#итог" title="Permalink to Итог">Итог</a></h3><div><p><iframe class="sample-code-frame" id="frame_Example" width="500" height="150" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/:focus-within/_sample_.Example.html" loading="lazy"></iframe></p></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/selectors-4/#the-focus-within-pseudo" hreflang="en" lang="en" class="external" rel=" noopener">Selectors Level&nbsp;4<br><small lang="ru">Определение ':focus-within' в этой спецификации.</small></a></td>
+   <td><span class="spec-wd">Рабочий черновик</span></td>
+   <td>Initial definition.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="совместимость_с_браузерами"><a href="#совместимость_с_браузерами" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="/css/:focus/"><code>:focus</code></a></li>
+ <li><a href="/css/:focus-visible/"><code>:focus-visible</code></a> </li>
+</ul></div>

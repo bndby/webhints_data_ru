@@ -1,0 +1,35 @@
+<h1>String.prototype.bold()</h1><div><div> <div class="notecard deprecated">
+            <h4 id="устарело">Устарело</h4>
+            <p>Эта возможность была удалена из веб-стандартов. Хотя некоторые браузеры по-прежнему могут поддерживать её, она находится в процессе удаления. Не используйте её ни в старых, ни в новых проектах. Страницы или веб-приложения, использующие её, могут в любой момент сломаться.</p>
+        </div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Метод <strong><code>bold()</code></strong> создаёт HTML-элемент <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/b"><code>&lt;b&gt;</code></a>, заставляющий строку отображаться полужирным шрифтом.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code><var>str</var>.bold()</code></pre></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Метод <code>bold()</code> заключает строку в тег <code>&lt;b&gt;</code>: <code>"&lt;b&gt;str&lt;/b&gt;"</code>.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_using_bold"><a href="#example_using_bold" title="Permalink to Пример: использование метода bold()">Пример: использование метода <code>bold()</code></a></h3><div><p>В следующем примере демонстрируется использование нескольких строковых методов для изменения форматирования строки:</p>
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> worldString <span class="token operator">=</span> <span class="token string">'Привет, мир'</span><span class="token punctuation">;</span>
+
+document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>worldString<span class="token punctuation">.</span><span class="token function">blink</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>worldString<span class="token punctuation">.</span><span class="token function">bold</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>worldString<span class="token punctuation">.</span><span class="token function">italics</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>worldString<span class="token punctuation">.</span><span class="token function">strike</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Этот пример генерирует такой же вывод, как и следующий HTML:</p>
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>blink</span><span class="token punctuation">&gt;</span></span>Привет, мир<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>blink</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>b</span><span class="token punctuation">&gt;</span></span>Привет, мир<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>b</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span><span class="token punctuation">&gt;</span></span>Привет, мир<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strike</span><span class="token punctuation">&gt;</span></span>Привет, мир<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>strike</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-string.prototype.bold" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'String.prototype.bold' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Изначальное определение. Реализована в JavaScript 1.0.<br>
+    Определена в (нормативном) Приложении B по Дополнительным возможностям ECMAScript для веб-браузеров.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/String/blink/"><code>String.prototype.blink()</code></a></li>
+ <li><a href="/js/String/italics/"><code>String.prototype.italics()</code></a></li>
+ <li><a href="/js/String/strike/"><code>String.prototype.strike()</code></a></li>
+</ul></div>

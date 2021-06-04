@@ -1,0 +1,22 @@
+<h1>InternalError() constructor</h1><div><div> <div class="notecard warning">
+        <h4 id="non-standard">Non-standard</h4>
+        <p>This feature is non-standard and is not on a standards track. Do not use it on production sites facing the Web: it will not work for every user. There may also be large incompatibilities between implementations and the behavior may change in the future.</p>
+      </div></div>
+
+<p>The <strong><code>InternalError()</code></strong> constructor creates an error that
+  indicates an error that occurred internally in the JavaScript engine. For example:
+  "<strong>InternalError</strong>: too much recursion".</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: js notranslate"><code><span class="token keyword">new</span> <span class="token class-name">InternalError</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">new</span> <span class="token class-name">InternalError</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span>
+<span class="token keyword">new</span> <span class="token class-name">InternalError</span><span class="token punctuation">(</span>message<span class="token punctuation">,</span> fileName<span class="token punctuation">)</span>
+<span class="token keyword">new</span> <span class="token class-name">InternalError</span><span class="token punctuation">(</span>message<span class="token punctuation">,</span> fileName<span class="token punctuation">,</span> lineNumber<span class="token punctuation">)</span>
+</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Parameters">Parameters</a></h3><div><dl>
+  <dt><code><var>message</var></code> <span class="badge inline optional">Optional</span></dt>
+  <dd>Human-readable description of the error.</dd>
+  <dt><code><var>fileName</var></code> <span class="badge inline optional">Optional</span></dt>
+  <dd>The name of the file containing the code that caused the exception</dd>
+  <dt><code><var>lineNumber</var></code> <span class="badge inline optional">Optional</span></dt>
+  <dd>The line number of the code that caused the exception</dd>
+</dl></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="creating_a_new_internalerror"><a href="#creating_a_new_internalerror" title="Permalink to Creating a new InternalError">Creating a new InternalError</a></h3><div><pre class="brush: js notranslate"><code><span class="token keyword">new</span> <span class="token class-name">InternalError</span><span class="token punctuation">(</span><span class="token string">"Engine failure"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><p>Not part of any standard.</p></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error"><code>Error</code></a></li>
+</ul></div>

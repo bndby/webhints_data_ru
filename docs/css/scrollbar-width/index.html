@@ -1,0 +1,82 @@
+<h1>scrollbar-width</h1><div><div></div>
+
+<p>The <strong><code>scrollbar-width</code></strong> property allows the author to set the maximum thickness of an element’s scrollbars when they are shown.</p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/scrollbar-width.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+<p></p><table class="properties"><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td><code>auto</code></td></tr><tr><th scope="row">Applies to</th><td>scrolling boxes</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance">Inherited</a></th><td>no</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>as specified</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: css notranslate"><code><span class="token comment">/* Keyword values */</span>
+<span class="token property">scrollbar-width</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+<span class="token property">scrollbar-width</span><span class="token punctuation">:</span> thin<span class="token punctuation">;</span>
+<span class="token property">scrollbar-width</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+
+<span class="token comment">/* Global values */</span>
+<span class="token property">scrollbar-width</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">scrollbar-width</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">scrollbar-width</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+ <dt><var>&lt;scrollbar-width&gt;</var></dt>
+ <dd>Defines the width of the scrollbar as a keyword. It must be one of the following values:
+ <table class="standard-table">
+  <tbody>
+   <tr>
+    <td><code>auto</code></td>
+    <td>The default scrollbar width for the platform.</td>
+   </tr>
+   <tr>
+    <td><code>thin</code></td>
+    <td>A thin scrollbar width variant on platforms that provide that option, or a thinner scrollbar than the default platform scrollbar width.</td>
+   </tr>
+   <tr>
+    <td><code>none</code></td>
+    <td>No scrollbar shown, however the element will still be scrollable.</td>
+   </tr>
+  </tbody>
+ </table>
+
+ <div class="note notecard">
+ <p><strong>Note</strong>: User Agents must apply any <code>scrollbar-width</code> value set on the root element to the viewport.</p>
+ </div>
+ </dd>
+</dl></div><h2 id="accessibility_concerns"><a href="#accessibility_concerns" title="Permalink to Accessibility concerns">Accessibility concerns</a></h2><div><p>Use this property with caution — setting <code>scrollbar-width</code> to <code>thin</code> or <code>none</code> can make content hard or impossible to scroll if the author does not provide an alternative scrolling mechanism. While swiping gestures or mouse wheels can enable scrolling on such content, some devices have no scroll alternative.</p>
+
+<p>WCAG criterion 2.1.1 (Keyboard) has been in place for a long time to advise on basic keyboard accessibility, and this should include scrolling of content areas. And introduced in WCAG 2.1, criterion 2.5.5 (Target Size) advises that touch targets should be at least 44px in width and height (although the problem is compounded on high-resolution screens; thorough testing is advised).</p>
+
+<ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/Understanding_WCAG/Operable#guideline_2.1_%e2%80%94_keyboard_accessible_make_all_functionality_available_from_a_keyboard">MDN Understanding WCAG, Guideline 2.1 explanations</a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/Understanding_WCAG/Operable#guideline_2.5_input_modalities_make_it_easier_for_users_to_operate_functionality_through_various_inputs_beyond_keyboard.s/">MDN Understanding WCAG, Guideline 2.5 explanations</a></li>
+ <li><a href="https://www.w3.org/WAI/WCAG21/Understanding/keyboard" class="external" rel=" noopener">Understanding Success Criterion 2.1.1 | W3C Understanding WCAG 2.1</a></li>
+ <li><a href="https://www.w3.org/WAI/WCAG21/Understanding/target-size.html" rel="noopener" class="external">Understanding Success Criterion 2.5.5 | W3C Understanding WCAG 2.1</a></li>
+</ul></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td><code>auto</code></td></tr><tr><th scope="row">Applies to</th><td>scrolling boxes</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance">Inherited</a></th><td>no</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>as specified</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate">auto <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> thin <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> none</pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="sizing_overflow_scrollbars"><a href="#sizing_overflow_scrollbars" title="Permalink to Sizing overflow scrollbars">Sizing overflow scrollbars</a></h3><div><h4 id="css">CSS</h4>
+
+<pre class="brush:css notranslate"><code><span class="token selector">.scroller</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+  <span class="token property">overflow-y</span><span class="token punctuation">:</span> scroll<span class="token punctuation">;</span>
+  <span class="token property">scrollbar-width</span><span class="token punctuation">:</span> thin<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<h4 id="html">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>scroller<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic. Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<h4 id="result">Result</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Sizing_overflow_scrollbars" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/scrollbar-width/_sample_.Sizing_overflow_scrollbars.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-scrollbars-1/#scrollbar-width" hreflang="en" lang="en" class="external" rel=" noopener">CSS Scrollbars Level&nbsp;1<br><small lang="en-US">The definition of 'scrollbar-width' in that specification.</small></a></td>
+   <td><span class="spec-wd">Working Draft</span></td>
+   <td>Initial Definition</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a class="page-not-created" title="The documentation about this has not yet been written; please consider contributing!"><code>-ms-overflow-style</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-scrollbar"><code>::-webkit-scrollbar</code></a></li>
+</ul></div>

@@ -1,0 +1,185 @@
+<h1>Object.create()</h1><div><div></div>
+
+<p>Метод <code><strong>Object.create()</strong></code> создаёт новый объект с указанным&nbsp;прототипом&nbsp;и свойствами.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code>Object.create(<var>proto</var>[, <var>propertiesObject</var>])</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>proto</code></dt>
+ <dd>Объект, который станет прототипом вновь созданного объекта.</dd>
+ <dt><code>propertiesObject</code></dt>
+ <dd>Необязательный параметр. Если указан и не равен <a href="/js/undefined/"><code>undefined</code></a>, должен быть объектом, чьи собственные перечисляемые свойства (то есть такие, которые определены на самом объекте, а не унаследованы по цепочке прототипов) указывают дескрипторы свойств, добавляемых в новый объект. Имена добавляемых свойств совпадают с именами&nbsp;свойств в этом объекте. Эти свойства соответствуют второму аргументу метода <a href="/js/Object/defineProperties/"><code>Object.defineProperties()</code></a>.</dd>
+</dl></div><h3 id="возвращаемые_значения"><a href="#возвращаемые_значения" title="Permalink to Возвращаемые значения">Возвращаемые значения</a></h3><div><p>Новый объект с заданным прототипом и свойствами</p></div><h3 id="throws"><a href="#throws" title="Permalink to Выбрасываемые исключения">Выбрасываемые исключения</a></h3><div><p>Выбрасывает исключение <a href="/js/TypeError/"><code>TypeError</code></a>, если параметр <code>proto</code> не является <a href="/js/null/"><code>null</code></a> или объектом (исключение составляют объекты-обёртки примитивных типов).</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example.3a_classical_inheritance_with_object.create"><a href="#example.3a_classical_inheritance_with_object.create" title="Permalink to Пример: классическое наследование с Object.create()">Пример: классическое наследование с <code>Object.create()</code></a></h3><div><p>Ниже показан пример использования <code>Object.create()</code> для имитации классического наследования. Это пример одиночного наследования, поскольку только его поддерживает JavaScript.</p>
+
+<pre class="brush: js notranslate"><code><span class="token comment">// Shape — суперкласс</span>
+<span class="token keyword">function</span> <span class="token function">Shape</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>x <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>y <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// метод суперкласса</span>
+<span class="token class-name">Shape</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">move</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">x<span class="token punctuation">,</span> y</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>x <span class="token operator">+=</span> x<span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>y <span class="token operator">+=</span> y<span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">'Фигура переместилась.'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Rectangle — подкласс</span>
+<span class="token keyword">function</span> <span class="token function">Rectangle</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">Shape</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// вызываем конструктор суперкласса</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// подкласс расширяет суперкласс</span>
+<span class="token class-name">Rectangle</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token class-name">Shape</span><span class="token punctuation">.</span>prototype<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">Rectangle</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>constructor <span class="token operator">=</span> Rectangle<span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> rect <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Rectangle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Является ли rect экземпляром Rectangle? '</span> <span class="token operator">+</span> <span class="token punctuation">(</span>rect <span class="token keyword">instanceof</span> <span class="token class-name">Rectangle</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Является ли rect экземпляром Shape? '</span> <span class="token operator">+</span> <span class="token punctuation">(</span>rect <span class="token keyword">instanceof</span> <span class="token class-name">Shape</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
+rect<span class="token punctuation">.</span><span class="token function">move</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// выведет 'Фигура переместилась.'</span>
+</code></pre>
+
+<p>Если вы хотите наследоваться от нескольких объектов, то это возможно сделать при помощи примесей.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">function</span> <span class="token function">MyClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">SuperClass</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">OtherSuperClass</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token class-name">MyClass</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token class-name">SuperClass</span><span class="token punctuation">.</span>prototype<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// наследование</span>
+<span class="token function">mixin</span><span class="token punctuation">(</span><span class="token class-name">MyClass</span><span class="token punctuation">.</span>prototype<span class="token punctuation">,</span> <span class="token class-name">OtherSuperClass</span><span class="token punctuation">.</span>prototype<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// примешивание</span>
+
+<span class="token class-name">MyClass</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">myMethod</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// что-то делаем</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+
+<p>Функция примешивания должна копировать функции из прототипа суперкласса в прототип подкласса, она должна предоставляться пользователем. Примером примеси может служить функция <a href="https://api.jquery.com/jQuery.extend/" class="external" rel=" noopener">jQuery.extend()</a>.</p></div><h3 id="example.3a_using_propertiesobject_argument_with_object.create"><a href="#example.3a_using_propertiesobject_argument_with_object.create" title="Permalink to Пример: использование аргумента propertiesObject с Object.create()">Пример: использование аргумента <code>propertiesObject</code> с <code>Object.create()</code></a></h3><div><pre class="brush: js notranslate"><code><span class="token keyword">var</span> o<span class="token punctuation">;</span>
+
+<span class="token comment">// создаём объект с нулевым прототипом</span>
+o <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+o <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token comment">// эквивалентно этому:</span>
+o <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+<span class="token comment">// В этом примере мы создаём объект с несколькими свойствами.</span>
+<span class="token comment">// (Обратите внимание, что второй параметр отображает ключи на *дескрипторы свойств*.)</span>
+o <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token comment">// foo является рядовым 'свойством-значением'</span>
+  foo<span class="token operator">:</span> <span class="token punctuation">{</span> writable<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> configurable<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token string">'привет'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">// bar является свойством с геттером и сеттером (свойством доступа)</span>
+  bar<span class="token operator">:</span> <span class="token punctuation">{</span>
+    configurable<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">get</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token number">10</span><span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">set</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Установка `o.bar` в'</span><span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token comment">/* при использовании методов доступа ES5 наш код мог бы выглядеть так:
+    get function() { return 10; },
+    set function(value) { console.log('Установка `o.bar` в', value); } */</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+<span class="token keyword">function</span> <span class="token function">Constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+o <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// эквивалентно этому:</span>
+o <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token class-name">Constructor</span><span class="token punctuation">.</span>prototype<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Конечно, если бы в функции Constructor был бы реальный код инициализации,</span>
+<span class="token comment">// метод с Object.create() не был бы эквивалентным</span>
+
+
+<span class="token comment">// создаём новый объект, чей прототип является новым пустым объектом</span>
+<span class="token comment">// и добавляем простое свойство 'p' со значением 42</span>
+o <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> p<span class="token operator">:</span> <span class="token punctuation">{</span> value<span class="token operator">:</span> <span class="token number">42</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// по умолчанию свойства НЕ ЯВЛЯЮТСЯ записываемыми, перечисляемыми или настраиваемыми:</span>
+o<span class="token punctuation">.</span>p <span class="token operator">=</span> <span class="token number">24</span><span class="token punctuation">;</span>
+o<span class="token punctuation">.</span>p<span class="token punctuation">;</span>
+<span class="token comment">// 42</span>
+
+o<span class="token punctuation">.</span>q <span class="token operator">=</span> <span class="token number">12</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> prop <span class="token keyword">in</span> o<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>prop<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 'q'</span>
+
+<span class="token keyword">delete</span> o<span class="token punctuation">.</span>p<span class="token punctuation">;</span>
+<span class="token comment">// false</span>
+
+<span class="token comment">// для определения свойства ES3</span>
+o2 <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  p<span class="token operator">:</span> <span class="token punctuation">{</span>
+    value<span class="token operator">:</span> <span class="token number">42</span><span class="token punctuation">,</span>
+    writable<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    enumerable<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    configurable<span class="token operator">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="polyfill"><a href="#polyfill" title="Permalink to Полифил">Полифил</a></h2><div><p>Для этого полифила необходима правильно работающая Object.prototype.hasOwnProperty.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> Object<span class="token punctuation">.</span>create <span class="token operator">!=</span> <span class="token string">'function'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Этапы производства ECMA-262, издание 5, 15.2.3.5</span>
+  <span class="token comment">// Ссылка: http://es5.github.io/#x15.2.3.5</span>
+  Object<span class="token punctuation">.</span>create <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Чтобы сэкономить память, используйте общий конструктор</span>
+    <span class="token keyword">function</span> <span class="token function">Temp</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+    <span class="token comment">// делает безопасную ссылку на Object.prototype.hasOwnProperty</span>
+    <span class="token keyword">var</span> hasOwn <span class="token operator">=</span> <span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>hasOwnProperty<span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token constant">O</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 1. Если Type(O) не является Object or Null выдаётся исключение TypeError.</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> <span class="token constant">O</span> <span class="token operator">!=</span> <span class="token string">'object'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">throw</span> <span class="token function">TypeError</span><span class="token punctuation">(</span><span class="token string">'Object prototype may only be an Object or null'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+
+      <span class="token comment">// 2. Пусть obj будет результатом создания нового объекта, как если бы</span>
+      <span class="token comment">//    выражение new Object(), где Object является стандартным встроенным</span>
+      <span class="token comment">//    конструктором  с таким именем</span>
+      <span class="token comment">// 3. Установите для внутреннего свойства [[Prototype]] объекта obj значение O.</span>
+      <span class="token class-name">Temp</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token constant">O</span><span class="token punctuation">;</span>
+      <span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Temp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token class-name">Temp</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span> <span class="token comment">// Давайте не будем держать случайные ссылки на О...</span>
+
+      <span class="token comment">// 4.  Если аргумент Properties присутствует и не определён, добавляем</span>
+      <span class="token comment">//    собственные свойства к obj, как будто вызывая стандартную встроенную</span>
+      <span class="token comment">//    функцию Object.defineProperties с аргументами obj и</span>
+      <span class="token comment">//    Properties.</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>arguments<span class="token punctuation">.</span>length <span class="token operator">&gt;</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// Object.defineProperties делает ToObject своим первым аргументом.</span>
+        <span class="token keyword">var</span> Properties <span class="token operator">=</span> <span class="token function">Object</span><span class="token punctuation">(</span>arguments<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> prop <span class="token keyword">in</span> Properties<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">hasOwn</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>Properties<span class="token punctuation">,</span> prop<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            obj<span class="token punctuation">[</span>prop<span class="token punctuation">]</span> <span class="token operator">=</span> Properties<span class="token punctuation">[</span>prop<span class="token punctuation">]</span><span class="token punctuation">;</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+
+      <span class="token comment">// 5. Возвращает obj</span>
+      <span class="token keyword">return</span> obj<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-15.2.3.5" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 5.1 (ECMA-262)<br><small lang="ru">Определение 'Object.create' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Изначальное определение. Реализована в JavaScript 1.8.5.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-object.create" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Object.create' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><div></div></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/Object/defineProperty/"><code>Object.defineProperty()</code></a></li>
+ <li><a href="/js/Object/defineProperties/"><code>Object.defineProperties()</code></a></li>
+ <li><a href="/js/Object/isPrototypeOf/"><code>Object.prototype.isPrototypeOf()</code></a></li>
+ <li>Запись в блоге Джона Резига о <a href="http://ejohn.org/blog/objectgetprototypeof/" class="external" rel=" noopener">getPrototypeOf()</a></li>
+</ul></div>

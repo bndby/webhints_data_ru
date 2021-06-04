@@ -1,0 +1,63 @@
+<h1>font-style</h1><div><div></div>
+
+<p><strong><code>font-style</code></strong>&nbsp;это CSS свойство&nbsp;определяющее каким образом шрифт должен быть стилизирован, будь то это&nbsp;normal, italic, или&nbsp;oblique face из его&nbsp;<a href="/css/font-family/"><code>font-family</code></a>.</p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/font-style.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+<p><strong>Italic</strong> шрифты в общем курсивные по своей сути, обычно занимают меньше горизонтального пространства чем их нестилизированные копии, тогда как&nbsp;<strong>oblique</strong> шрифты обычно просто наклонная&nbsp;версия&nbsp;регулярного шрифта. Когда определённый стиль не доступен, оба italic и oblique шрифты&nbsp;симулируются искусственно наклоняя глифы регулярного шрифта&nbsp;(используйте <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-synthesis"><code>font-synthesis</code> <span>(en-US)</span></a> для управления этим поведением).</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush:css no-line-numbers notranslate"><code><span class="token property">font-style</span><span class="token punctuation">:</span> normal<span class="token punctuation">;</span>
+<span class="token property">font-style</span><span class="token punctuation">:</span> italic<span class="token punctuation">;</span>
+<span class="token property">font-style</span><span class="token punctuation">:</span> oblique<span class="token punctuation">;</span>
+
+<span class="token comment">/* Глобальные значения */</span>
+<span class="token property">font-style</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">font-style</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">font-style</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre>
+
+<p>Свойство&nbsp;<code>font-style</code>&nbsp;определяется как единственное ключевое слово выбранное из списка значений внизу.</p></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+ <dt><code>normal</code></dt>
+ <dd>Выделяет шрифт который классифицирован как <code>normal</code> в&nbsp;<a href="/css/font-family/"><code>font-family</code></a>.</dd>
+ <dt><code>italic</code></dt>
+ <dd>Выделяет шрифт который классифицирован как&nbsp; <code>italic</code>. Если не доступна&nbsp;курсивная версия шрифта, взамен используется&nbsp;<code>oblique</code>&nbsp;классификация. Если не одна версия&nbsp;не доступна, то стиль симулируется искусственно.</dd>
+ <dt><code>oblique</code></dt>
+ <dd>Выделяет шрифт который классифицирован как&nbsp; <code>oblique</code>. Если не доступна&nbsp;косая версия шрифта, взамен используется&nbsp; <code>italic</code>&nbsp;классификация.&nbsp;Если не одна версия&nbsp;не доступна, то стиль симулируется искусственно.</dd>
+</dl></div><h3 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h3><div><pre class="notranslate">normal <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> italic <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> oblique <a href="/css/angle/" title="Возможные значения: a number followed by'deg', 'grad', 'rad' или 'turn', как 2turn, 1.3rad, -60deg или 0grad.">&lt;angle&gt;</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#question_mark_()" title="Currently only available in English (US)" class="only-in-en-us">? (en-US)</a></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="font_styles"><a href="#font_styles" title="Permalink to Font styles">Font styles</a></h3><div><pre class="brush: css notranslate"><code><span class="token selector">.normal</span> <span class="token punctuation">{</span>
+  <span class="token property">font-style</span><span class="token punctuation">:</span> normal<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.italic</span> <span class="token punctuation">{</span>
+  <span class="token property">font-style</span><span class="token punctuation">:</span> italic<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.oblique</span> <span class="token punctuation">{</span>
+  <span class="token property">font-style</span><span class="token punctuation">:</span> oblique<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<p><iframe class="sample-code-frame" id="frame_Font_styles" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/font-style/_sample_.Font_styles.html" loading="lazy"></iframe></p></div><h2 id="specific​ations"><a href="#specific​ations" title="Permalink to Specific​ations">Specific​ations</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-fonts-3/#font-style-prop" hreflang="en" lang="en" class="external" rel=" noopener">CSS Fonts Module Level&nbsp;3<br><small lang="ru">Определение 'font-style' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>No change</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/CSS2/fonts.html#propdef-font-style" hreflang="en" lang="en" class="external" rel=" noopener">CSS Level&nbsp;2 (Revision&nbsp;1)<br><small lang="ru">Определение 'font-style' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>No change</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/CSS1/#font-style" hreflang="en" lang="en" class="external" rel=" noopener">CSS Level&nbsp;1<br><small lang="ru">Определение 'font-style' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table>
+
+<p></p><table class="properties"><tbody><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td><code>normal</code></td></tr><tr><th scope="row">Применяется к</th><td>все элементы. Это также применяется к <a href="/css/::first-letter/"><code>::first-letter</code></a> и <a href="/css/::first-line/"><code>::first-line</code></a>.</td></tr><tr><th scope="row"><a href="/css/inheritance/">Наследуется</a></th><td>да</td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>как указано</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div>

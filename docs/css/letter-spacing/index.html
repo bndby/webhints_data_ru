@@ -1,0 +1,80 @@
+<h1>letter-spacing</h1><div><div></div>
+
+<p>Свойство&nbsp;<strong><code>letter-spacing</code></strong>&nbsp;определяет межбуквенное расстояние в тексте.</p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/letter-spacing.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+</div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* Значения - ключевые слова */</span>
+<span class="token property">letter-spacing</span><span class="token punctuation">:</span> normal<span class="token punctuation">;</span>
+
+<span class="token comment">/* Значения &lt;length&gt; */</span>
+<span class="token property">letter-spacing</span><span class="token punctuation">:</span> 0.3em<span class="token punctuation">;</span>
+<span class="token property">letter-spacing</span><span class="token punctuation">:</span> 3px<span class="token punctuation">;</span>
+<span class="token property">letter-spacing</span><span class="token punctuation">:</span> .3px<span class="token punctuation">;</span>
+
+<span class="token comment">/* Глобальные значения */</span>
+<span class="token property">letter-spacing</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">letter-spacing</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">letter-spacing</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre></div><h3 id="значения"><a href="#значения" title="Permalink to Значения">Значения</a></h3><div><dl>
+ <dt><code>normal</code></dt>
+ <dd>Стандартное межбуквенное расстояние для текущего шрифта. В отличие от значения&nbsp;<code>0</code>, это ключевое слово позволяет&nbsp;<a href="https://developer.mozilla.org/ru/docs/Glossary/User_agent">агенту пользователя</a> изменить расстояние между буквами для выравнивания текста.</dd>
+ <dt><a href="/css/length/"><code>&lt;length&gt;</code></a></dt>
+ <dd>Определяет дополнительное расстояние между буквами&nbsp;<em>добавляющееся</em>&nbsp;к стандартному расстоянию между символами. Значение может быть отрицательным, но при этом могут быть&nbsp;ограничения, зависящие от конкретной реализации. Агент пользователя может не увеличивать или уменьшать межбуквенное расстояние для выравнивания текста.</dd>
+</dl></div><h3 id="формальный_синтаксис"><a href="#формальный_синтаксис" title="Permalink to Формальный синтаксис">Формальный синтаксис</a></h3><div><pre class="notranslate">normal <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <a href="/css/length/" title="Возможные значения: a number followed by'em', 'ex', 'ch', 'rem', 'px', 'cm', 'mm', 'in', 'vh', 'vw', 'vmin', 'vmax', 'pt', 'pc' или 'px', как 3px, 1.5cm, -0.5em или 0">&lt;length&gt;</a></pre></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="html"><a href="#html" title="Permalink to HTML">HTML</a></h3><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>normal<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>letter spacing<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>em-wide<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>letter spacing<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>em-wider<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>letter spacing<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>em-tight<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>letter spacing<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>px-wide<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>letter spacing<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h3 id="css"><a href="#css" title="Permalink to CSS">CSS</a></h3><div><pre class="brush: css notranslate"><code><span class="token selector">.normal</span>   <span class="token punctuation">{</span> <span class="token property">letter-spacing</span><span class="token punctuation">:</span> normal<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token selector">.em-wide</span>  <span class="token punctuation">{</span> <span class="token property">letter-spacing</span><span class="token punctuation">:</span> 0.4em<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token selector">.em-wider</span> <span class="token punctuation">{</span> <span class="token property">letter-spacing</span><span class="token punctuation">:</span> 1em<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token selector">.em-tight</span> <span class="token punctuation">{</span> <span class="token property">letter-spacing</span><span class="token punctuation">:</span> -0.05em<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token selector">.px-wide</span>  <span class="token punctuation">{</span> <span class="token property">letter-spacing</span><span class="token punctuation">:</span> 6px<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+</code></pre></div><h3 id="результат"><a href="#результат" title="Permalink to Результат">Результат</a></h3><div><p><iframe class="sample-code-frame" id="frame_Примеры" width="440" height="185" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/letter-spacing/_sample_.%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D1%8B.html" loading="lazy"></iframe></p></div><h2 id="проблемы_доступности"><a href="#проблемы_доступности" title="Permalink to Проблемы доступности">Проблемы доступности</a></h2><div><p>Большие положительные или отрицательные значения свойства&nbsp;<code>letter-spacing</code>&nbsp;могут сделать текст, к которому применяется форматирование, нечитаемым. При очень больших&nbsp;положительных&nbsp;значениях этого свойства,&nbsp;буквы в тексте будут настолько далеко друг от друга, что не будут восприниматься как цельные&nbsp;слова.&nbsp;При очень больших отрицательных значениях буквы будут перекрываться друг другом до такой степени, что слова могут стать&nbsp;неразличимы.</p>
+
+<p>Межбуквенное расстояние должно быть&nbsp;определено&nbsp;индивидуально&nbsp;для&nbsp;каждого случая, так как в разных&nbsp;семействах шрифтов ширина символов различна. Нет какого-то универсального значения, которое может быть применено&nbsp;для наилучшего отображения во всех семействах шрифтов.</p>
+
+<ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/Understanding_WCAG/Perceivable#Guideline_1.4_Make_it_easier_for_users_to_see_and_hear_content_including_separating_foreground_from_background">MDN Understanding WCAG, Guideline 1.4 explanations</a></li>
+ <li><a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-visual-presentation.html" rel="noopener" class="external">Understanding Success Criterion 1.4.8 &nbsp;| W3C Understanding WCAG 2.0</a>&nbsp;</li>
+</ul></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-text-3/#letter-spacing-property" hreflang="en" lang="en" class="external" rel=" noopener">CSS Text Module Level&nbsp;3<br><small lang="ru">Определение 'letter-spacing' в этой спецификации.</small></a></td>
+   <td><span class="spec-cr">Кандидат в рекомендации</span></td>
+   <td>Без изменений.</td>
+  </tr>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-transitions/#animatable-css" hreflang="en" lang="en" class="external" rel=" noopener">CSS Transitions<br><small lang="ru">Определение 'letter-spacing' в этой спецификации.</small></a></td>
+   <td><span class="spec-wd">Рабочий черновик</span></td>
+   <td>Определяет&nbsp;<code>letter-spacing</code>&nbsp;как доступное к анимированию.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/CSS2/text.html#propdef-letter-spacing" hreflang="en" lang="en" class="external" rel=" noopener">CSS Level&nbsp;2 (Revision&nbsp;1)<br><small lang="ru">Определение 'letter-spacing' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Без изменений.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/SVG11/text.html#LetterSpacingProperty" hreflang="en" lang="en" class="external" rel=" noopener">Scalable Vector Graphics (SVG) 1.1 (Second Edition)<br><small lang="ru">Определение 'letter-spacing' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Первоначальное определение в SVG.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/CSS1/#letter-spacing" hreflang="en" lang="en" class="external" rel=" noopener">CSS Level&nbsp;1<br><small lang="ru">Определение 'letter-spacing' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Первоначальное определение.</td>
+  </tr>
+ </tbody>
+</table>
+
+<p></p><table class="properties"><tbody><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td><code>normal</code></td></tr><tr><th scope="row">Применяется к</th><td>все элементы. Это также применяется к <a href="/css/::first-letter/"><code>::first-letter</code></a> и <a href="/css/::first-line/"><code>::first-line</code></a>.</td></tr><tr><th scope="row"><a href="/css/inheritance/">Наследуется</a></th><td>да</td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>оптимальное значение состоит из абсолютной длины или ключевого слова <code>normal</code></td></tr><tr><th scope="row">Animation type</th><td><a href="/css/length#interpolation/" title="Значения типа данных CSS <длина> интерполируются как вещественные числа с плавающей запятой.">длина</a></td></tr></tbody></table><p></p></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Браузерная совместимость">Браузерная совместимость</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-kerning"><code>font-kerning</code> <span>(en-US)</span></a></li>
+</ul></div>

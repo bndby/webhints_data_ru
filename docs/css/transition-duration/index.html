@@ -1,0 +1,78 @@
+<h1>transition-duration</h1><div><div></div>
+
+<p>Свойство <strong><code>transition-duration</code></strong> определяет продолжительность выполнения анимации. Значение по умолчанию равняется <code>0s</code>, т.е. отсутствие анимации.</p>
+
+<p><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/transition-duration.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></p>
+
+
+
+<p>You may specify multiple durations; each duration will be applied to the corresponding property as specified by the <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/transition-property"><code>transition-property</code> <span>(en-US)</span></a> property, which acts as a master list. If there are fewer durations specified than in the master list, the user agent repeat the list of durations. If there are more durations, the list is simply truncated to the right size. In both case the CSS declaration stays valid.</p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* &lt;time&gt; values */</span>
+<span class="token property">transition-duration</span><span class="token punctuation">:</span> 6s<span class="token punctuation">;</span>
+<span class="token property">transition-duration</span><span class="token punctuation">:</span> 120ms<span class="token punctuation">;</span>
+<span class="token property">transition-duration</span><span class="token punctuation">:</span> 1s<span class="token punctuation">,</span> 15s<span class="token punctuation">;</span>
+<span class="token property">transition-duration</span><span class="token punctuation">:</span> 10s<span class="token punctuation">,</span> 30s<span class="token punctuation">,</span> 230ms<span class="token punctuation">;</span>
+
+<span class="token comment">/* Глобальные значения */</span>
+<span class="token property">transition-duration</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">transition-duration</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">transition-duration</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+ <dt><code>&lt;time&gt;</code></dt>
+ <dd>Is a <a href="/css/time/"><code>&lt;time&gt;</code></a> denoting the amount of time the transition from the old value of a property to the new value should take. A time of <code>0s</code> indicates that no transition will happen, that is the switch between the two states will be instantaneous. A negative value for the time renders the declaration invalid.</dd>
+</dl></div><h3 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h3><div><pre class="notranslate"><a href="/css/time/" title="Возможные значения: a number followed by's' или 'ms', как 3s, -2.5ms или 0s.">&lt;time&gt;</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#hash_mark_()" title="Currently only available in English (US)" class="only-in-en-us"># (en-US)</a></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div><div>
+<div id="duration_0_5s" style="width: 251px; display: inline-block; margin-right: 1px; margin-bottom: 1px;">
+<p><code>transition-duration: 0.5s</code></p>
+
+
+
+<div><iframe class="sample-code-frame" id="frame_duration_0_5s" width="275" height="150" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/transition-duration/_sample_.duration_0_5s.html" loading="lazy"></iframe></div>
+</div>
+
+<div id="duration_1s" style="width: 251px; display: inline-block; margin-right: 1px; margin-bottom: 1px;">
+<p><code>transition-duration: 1s</code></p>
+
+
+
+<div><iframe class="sample-code-frame" id="frame_duration_1s" width="275" height="150" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/transition-duration/_sample_.duration_1s.html" loading="lazy"></iframe></div>
+</div>
+
+<div id="duration_2s" style="width: 251px; display: inline-block; margin-right: 1px; margin-bottom: 1px;">
+<p><code>transition-duration: 2s</code></p>
+
+
+
+<div><iframe class="sample-code-frame" id="frame_duration_2s" width="275" height="150" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/transition-duration/_sample_.duration_2s.html" loading="lazy"></iframe></div>
+</div>
+
+<div id="duration_4s" style="width: 251px; display: inline-block; margin-right: 1px; margin-bottom: 1px;">
+<p><code>transition-duration: 4s</code></p>
+
+
+
+<div><iframe class="sample-code-frame" id="frame_duration_4s" width="275" height="150" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/transition-duration/_sample_.duration_4s.html" loading="lazy"></iframe></div>
+</div>
+</div></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Состояние</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-transitions/#transition-duration" hreflang="en" lang="en" class="external" rel=" noopener">CSS Transitions<br><small lang="ru">Определение 'transition-duration' в этой спецификации.</small></a></td>
+   <td><span class="spec-wd">Рабочий черновик</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table>
+
+<p></p><table class="properties"><tbody><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td><code>0s</code></td></tr><tr><th scope="row">Применяется к</th><td>все элементы, <a href="/css/::before/"><code>::before</code></a> и <a href="/css/::after/"><code>::after</code></a> <a href="/css/Pseudo-elements/">псевдоэлементы</a></td></tr><tr><th scope="row"><a href="/css/inheritance/">Наследуется</a></th><td>нет</td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>как указано</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions">Using CSS transitions</a></li>
+ <li><a href="/css/transition/"><code>transition</code></a></li>
+ <li><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/transition-property"><code>transition-property</code> <span>(en-US)</span></a></li>
+ <li><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing-function"><code>transition-timing-function</code> <span>(en-US)</span></a></li>
+ <li><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/transition-delay"><code>transition-delay</code> <span>(en-US)</span></a></li>
+ <li><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/API/TransitionEvent"><code>TransitionEvent</code> <span>(en-US)</span></a></li>
+</ul></div>

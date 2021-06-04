@@ -1,0 +1,70 @@
+<h1>String.prototype.matchAll()</h1><div><div></div>
+
+<p>Метод&nbsp;<strong><code>matchAll()</code></strong> возвращает итератор по всем результатам&nbsp;при сопоставлении <em>строки с регулярным выражением</em>.</p>
+
+<div><iframe class="interactive" width="100%" height="490" src="https://interactive-examples.mdn.mozilla.net/pages/js/string-matchall.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><var>str</var>.matchAll(<var>regexp</var>)</pre></div><h3 id="параметры"><a href="#параметры" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>regexp</code></dt>
+ <dd>Объект регулярного выражения. Если передано значение, не являющееся объектом регулярного выражения, оно неявно преобразуется в <a href="/js/RegExp/"><code>RegExp</code></a> используя <code>new RegExp(obj)</code>.</dd>
+</dl></div><h3 id="возвращаемое_значение"><a href="#возвращаемое_значение" title="Permalink to Возвращаемое значение">Возвращаемое значение</a></h3><div><p>Возвращается&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators">iterator</a> (не перезапускаемый).</p></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="regexp.exec_и_matchall"><a href="#regexp.exec_и_matchall" title="Permalink to Regexp.exec() и matchAll()">Regexp.exec() и matchAll()</a></h3><div><p>До добавления метода&nbsp;<code>matchAll</code> в JavaScript, можно было использовать метод&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec">regexp.exec</a> (и регулярные выражения с флагом&nbsp;<code>/g</code> ) в цикле для получения доступа к совпадениям:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">const</span> regexp <span class="token operator">=</span> <span class="token function">RegExp</span><span class="token punctuation">(</span><span class="token string">'foo*'</span><span class="token punctuation">,</span><span class="token string">'g'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> str <span class="token operator">=</span> <span class="token string">'table football, foosball'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>matches <span class="token operator">=</span> regexp<span class="token punctuation">.</span><span class="token function">exec</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">!==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Found </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>matches<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">. Next starts at </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>regexp<span class="token punctuation">.</span>lastIndex<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">.</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// expected output: "Found foo. Next starts at 9."</span>
+  <span class="token comment">// expected output: "Found foo. Next starts at 19."</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p>С появлением&nbsp;<code>matchAll</code>, нет необходимости использовать цикл&nbsp;<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while">while</a></code> и метод&nbsp;<code>exec</code> с флагом&nbsp;<code>/g</code>.<br>
+ Используя вместо этого метод&nbsp;<code>matchAll</code>, вы получаете итератор, который вы можете использовать более удобно с конструкциями&nbsp;<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of">for...of</a></code>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax">array spread</a>, или <a href="/js/Array/from/"><code>Array.from()</code></a> :</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">const</span> regexp <span class="token operator">=</span> <span class="token function">RegExp</span><span class="token punctuation">(</span><span class="token string">'foo*'</span><span class="token punctuation">,</span><span class="token string">'g'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> str <span class="token operator">=</span> <span class="token string">'table football, foosball'</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> matches <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">matchAll</span><span class="token punctuation">(</span>regexp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> match <span class="token keyword">of</span> matches<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>match<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// Array [ "foo" ]</span>
+<span class="token comment">// Array [ "foo" ]</span>
+
+<span class="token comment">// итерация больше недоступна после вызова for of</span>
+<span class="token comment">// Для создания нового итератора вызовите matchAll повторно</span>
+matches <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">matchAll</span><span class="token punctuation">(</span>regexp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+Array<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>matches<span class="token punctuation">,</span> <span class="token parameter">m</span> <span class="token operator">=&gt;</span> m<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Array [ "foo", "foo" ]</span>
+</code></pre></div><h3 id="улучшенный_доступ_к_группам_захвата"><a href="#улучшенный_доступ_к_группам_захвата" title="Permalink to Улучшенный доступ к группам захвата">Улучшенный доступ к группам захвата</a></h3><div><p>Ещё одна веская причина использовать&nbsp;<code>matchAll</code> это улучшенный доступ к группам захвата. Группы захвата игнорируются при использовании&nbsp;<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match">match()</a></code> с глобальным флагом&nbsp;<code>/g</code>:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> regexp <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">t(e)(st(\d?))</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">'test1test2'</span><span class="token punctuation">;</span>
+
+str<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span>regexp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Array ['test1', 'test2']</span></code></pre>
+
+<p>С <code>matchAll</code> у вас появляется к ним доступ:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">let</span> array <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span>str<span class="token punctuation">.</span><span class="token function">matchAll</span><span class="token punctuation">(</span>regexp<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+array<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token comment">// ['test1', 'e', 'st1', '1', index: 0, input: 'test1test2', length: 4]</span>
+array<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token comment">// ['test2', 'e', 'st2', '2', index: 5, input: 'test1test2', length: 4]</span>
+</code></pre></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+  </tr>
+  <tr>
+   <td><a href="https://tc39.github.io/proposal-string-matchall/#sec-string-prototype-matchall" class="external" rel=" noopener">String.prototype.matchAll</a></td>
+   <td>Stage 3</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="браузерная_совместимость"><a href="#браузерная_совместимость" title="Permalink to Браузерная совместимость">Браузерная совместимость</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/RegExp/"><code>RegExp</code></a></li>
+ <li><a href="/js/RegExp/exec/"><code>RegExp.prototype.exec()</code></a></li>
+ <li><a href="/js/RegExp/test/"><code>RegExp.prototype.test()</code></a></li>
+</ul></div>

@@ -1,0 +1,62 @@
+<h1>font-optical-sizing</h1><div><div></div>
+
+<p><span class="seoSummary">The <strong><code>font-optical-sizing</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> property sets whether text rendering is optimized for viewing at different sizes.</span></p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/font-optical-sizing.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* keyword values */</span>
+<span class="token property">font-optical-sizing</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token property">font-optical-sizing</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span> <span class="token comment">/* default */</span>
+
+<span class="token comment">/* Global values */</span>
+<span class="token property">font-optical-sizing</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">font-optical-sizing</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">font-optical-sizing</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+ <dt>none</dt>
+ <dd>The browser will not modify the shape of glyphs for optimal viewing.</dd>
+ <dt>auto</dt>
+ <dd>The browser will modify the shape of glyphs for optimal viewing.</dd>
+</dl></div><h2 id="description"><a href="#description" title="Permalink to Description">Description</a></h2><div><p>Optical sizing is enabled by default for fonts that have an optical size variation axis. The optical size variation axis is represented by <code>opsz</code> in <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variation-settings"><code>font-variation-settings</code></a>.</p>
+
+<p>When optical sizing is used, small text sizes are often rendered with thicker strokes and larger serifs, whereas larger text is often rendered more delicately with more contrast between thicker and thinner strokes.</p></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td><code>auto</code></td></tr><tr><th scope="row">Applies to</th><td>all elements. It also applies to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::first-letter"><code>::first-letter</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::first-line"><code>::first-line</code></a>.</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance">Inherited</a></th><td>yes</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>as specified</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate">auto <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> none</pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="disabling_optical_sizing"><a href="#disabling_optical_sizing" title="Permalink to Disabling optical sizing">Disabling optical sizing</a></h3><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>optical-sizing<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This paragraph is optically sized.
+ This is the default across browsers.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>no-optical-sizing<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This paragraph is not optically sized.
+ You should see a difference in supporting browsers.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<pre class="brush: css notranslate"><code><span class="token atrule"><span class="token rule">@font-face</span></span> <span class="token punctuation">{</span>
+    <span class="token property">src</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string url">'AmstelvarAlpha-VF.ttf'</span><span class="token punctuation">)</span></span><span class="token punctuation">;</span>
+    <span class="token property">font-family</span><span class="token punctuation">:</span><span class="token string">'Amstelvar'</span><span class="token punctuation">;</span>
+    <span class="token property">font-style</span><span class="token punctuation">:</span> normal<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">p</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 36px<span class="token punctuation">;</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> Amstelvar<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.no-optical-sizing</span> <span class="token punctuation">{</span>
+  <span class="token property">font-optical-sizing</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<div class="note notecard">
+<p><strong>Note</strong>: The font referenced above — which includes optical sizing and is freely-licensed — is good for testing. You can <a href="https://github.com/TypeNetwork/Amstelvar/releases" class="external" rel=" noopener">download it on GitHub</a>.</p>
+</div></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-fonts-4/#font-optical-sizing-def" hreflang="en" lang="en" class="external" rel=" noopener">CSS Fonts Module Level&nbsp;4<br><small lang="en-US">The definition of 'font-optical-sizing' in that specification.</small></a></td>
+   <td><span class="spec-wd">Working Draft</span></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-size"><code>font-size</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-size-adjust"><code>font-size-adjust</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Fundamentals">Fundamental text and font styling</a></li>
+</ul></div>

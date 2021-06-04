@@ -1,0 +1,56 @@
+<h1>fit-content</h1><div><div></div>
+
+<p><span class="seoSummary">The <strong><code>fit-content</code></strong>&nbsp;behaves as <code>fit-content(stretch)</code>. In practice this means that the box will use the available space, but never more than <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/max-content"><code>max-content</code></a>.</span></p>
+
+<p>When used as laid out box size for <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/width"><code>width</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/height"><code>height</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/min-width"><code>min-width</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/min-height"><code>min-height</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/max-width"><code>max-width</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/max-height"><code>max-height</code></a>&nbsp;the maximum and minimum sizes refer&nbsp;to the&nbsp;content size.</p>
+
+<div class="notecard note">
+<p>The CSS Sizing specification also&nbsp;defines the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/fit-content()"><code>fit-content()</code></a> function. This page details the keyword.</p>
+</div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: css no-line-numbers notranslate"><code><span class="token property">width</span><span class="token punctuation">:</span> fit-content
+<span class="token property">block-size</span><span class="token punctuation">:</span> fit-content
+</code></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="using_fit-content_for_box_sizing"><a href="#using_fit-content_for_box_sizing" title="Permalink to Using fit-content for box sizing">Using fit-content for box sizing</a></h3><div><h4 id="html">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Item<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Item with more text in it.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Item with more text in it, hopefully we have added enough text so the text will start to wrap.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<h4 id="css">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token selector">.container</span> <span class="token punctuation">{</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 2px solid #ccc<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 20em<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.item</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> -moz-fit-content<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> fit-content<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #8ca0ff<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 5px<span class="token punctuation">;</span>
+  <span class="token property">margin-bottom</span><span class="token punctuation">:</span> 1em<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<h4 id="result">Result</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Using_fit-content_for_box_sizing" width="100%" height="200" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/fit-content/_sample_.Using_fit-content_for_box_sizing.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th>Specification</th>
+   <th>Status</th>
+   <th>Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-sizing-4/#valdef-width-fit-content" hreflang="en" lang="en" class="external" rel=" noopener">CSS Box Sizing Module Level&nbsp;4<br><small lang="en-US">The definition of 'fit-content' in that specification.</small></a></td>
+   <td><span class="spec-ed">Editor's Draft</span></td>
+   <td>Defines the value as laid out box size for <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/width"><code>width</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/height"><code>height</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/min-width"><code>min-width</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/min-height"><code>min-height</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/max-width"><code>max-width</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/max-height"><code>max-height</code></a>.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><div></div><h3 id="supported_for_width_and_other_sizing_properties"><a href="#supported_for_width_and_other_sizing_properties" title="Permalink to Supported for width (and other sizing properties)">Supported for width (and other sizing properties)</a></h3><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li>Related sizing keywords:&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/min-content"><code>min-content</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/max-content"><code>max-content</code></a>&nbsp;</li>
+</ul></div>

@@ -1,0 +1,38 @@
+<h1>RegExp.prototype.compile()</h1><div><div> <div class="notecard deprecated">
+            <h4 id="deprecated">Deprecated</h4>
+            <p>This feature is no longer recommended. Though some browsers might still support it, it may have already been removed from the relevant web standards, may be in the process of being dropped, or may only be kept for compatibility purposes. Avoid using it, and update existing code if possible; see the <a href="#browser_compatibility">compatibility table</a> at the bottom of this page to guide your decision. Be aware that this feature may cease to work at any time.</p>
+        </div></div>
+
+<p>The deprecated <code><strong>compile</strong></code><strong><code>()</code></strong>
+  method is used to (re-)compile a regular expression during execution of a script. It is
+  basically the same as the <code>RegExp</code> constructor.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: js notranslate"><code><span class="token function">compile</span><span class="token punctuation">(</span>pattern<span class="token punctuation">,</span> flags<span class="token punctuation">)</span></code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Parameters">Parameters</a></h3><div><dl>
+  <dt><code>pattern</code></dt>
+  <dd>The text of the regular expression.</dd>
+  <dt><code>flags</code></dt>
+  <dd>
+    <p>If specified, flags can have any combination of the following values:</p>
+
+    <dl>
+      <dt><code>g</code></dt>
+      <dd>global match</dd>
+      <dt><code>i</code></dt>
+      <dd>ignore case</dd>
+      <dt><code>m</code></dt>
+      <dd>multiline; treat beginning and end characters (^ and $) as working over multiple
+        lines (i.e., match the beginning or end of <em>each</em> line (delimited by \n or
+        \r), not only the very beginning or end of the whole input string)</dd>
+      <dt><code>y</code></dt>
+      <dd>sticky; matches only from the index indicated by the <code>lastIndex</code>
+        property of this regular expression in the target string (and does not attempt to
+        match from any later indexes).</dd>
+    </dl>
+  </dd>
+</dl></div><h2 id="description"><a href="#description" title="Permalink to Description">Description</a></h2><div><p>&nbsp;The <code>compile</code> method is deprecated. You can just use the
+  <code>RegExp</code> constructor to achieve the same effect.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="using_compile"><a href="#using_compile" title="Permalink to Using compile()">Using <code>compile()</code></a></h3><div><p>The following example shows how to recompile a regular expression with a new pattern
+  and a new flag.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> regexObj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">RegExp</span><span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">,</span> <span class="token string">'gi'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+regexObj<span class="token punctuation">.</span><span class="token function">compile</span><span class="token punctuation">(</span><span class="token string">'new foo'</span><span class="token punctuation">,</span> <span class="token string">'g'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://tc39.es/ecma262/#sec-regexp.prototype.compile">Unknown specification<!-- --> <br><small># <!-- -->sec-regexp.prototype.compile</small></a></td></tr></tbody></table><div></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp"><code>RegExp</code></a></li>
+</ul></div>

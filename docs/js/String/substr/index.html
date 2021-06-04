@@ -1,0 +1,101 @@
+<h1>String.prototype.substr()</h1><p>BCD tables only load in the browser</p><div><div>
+<div></div>
+
+<div></div>
+
+<div class="warning notecard">Внимание: так как <code>String.prototype.substr(…)</code> не полностью упразднена (а лишь "удалена из стандартов по вебу"), она считается <strong>унаследованной функцией</strong>, использование которой лучше избегать там, где это возможно. Она не является частью ядра языка JavaScript и может быть удалена в будущем. Если есть возможность, используйте метод <code><a href="/js/String/substring/">substring()</a></code>.</div>
+
+<p>Метод <strong><code>substr()</code></strong> возвращает указанное количество символов из строки, начиная с указанной позиции.</p>
+<iframe class="interactive" width="100%" height="490" src="https://interactive-examples.mdn.mozilla.net/pages/js/string-substr.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe>
+
+
+
+
+
+<pre class="syntaxbox notranslate"><code><var>str</var>.substr(<var>start</var>[, <var>length</var>])</code></pre>
+
+
+
+<dl>
+ <dt><code>start</code></dt>
+ <dd>Позиция, с которой начинать извлекать символы. Если передано отрицательное число, она трактуется как <code>strLength - start</code>, где <code>strLength</code> равна длине строки (например, если параметр <code>start</code> равен -3, то он трактуется как <code>strLength - 3</code>.)</dd>
+ <dt><code>length</code></dt>
+ <dd>Необязательный параметр. Количество извлекаемых символов.</dd>
+</dl>
+
+
+
+<p>Новая строка, содержащая часть исходной, обрезанной по переданным параметрам.</p>
+
+
+
+<p>Параметр <code>start</code> является индексом символа. Индекс первого символа равен 0, а последнего символа&nbsp;— на один меньше длины строки. Метод <code>substr()</code> начинает извлекать символы начиная с позиции <code>start</code> и собирая <code>length</code> символов (если он не достигнет раньше конца строки, в этом случае будет возвращено меньшее количество символов).</p>
+
+<p>Если параметр <code>start</code> является положительным и он больше, либо равен длине строки, метод <code>substr()</code> вернёт пустую строку.</p>
+
+<p>Если параметр <code>start</code> является отрицательным, метод <code>substr()</code> использует&nbsp;его как индекс символа, начиная с конца строки. Если параметр <code>start</code> отрицателен и по модулю больше длины строки, метод <code>substr()</code> будет использовать 0 в качестве начального индекса. Обратите внимание: описанная обработка отрицательных значений аргумента <code>start</code> не поддерживается JScript от Microsoft.</p>
+
+<p>Если параметр <code>length</code> равен нулю или отрицателен, метод <code>substr()</code> вернёт пустую строку. Если параметр <code>length</code> опущен, метод <code>substr()</code> извлечёт все символы до конца строки.</p>
+
+
+
+
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">'абвгдеёжзи'</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'(1, 2): '</span>   <span class="token operator">+</span> str<span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// '(1, 2): бв'</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'(-3, 2): '</span>  <span class="token operator">+</span> str<span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// '(-3, 2): жз'</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'(-3): '</span>     <span class="token operator">+</span> str<span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">// '(-3): жзи'</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'(1): '</span>      <span class="token operator">+</span> str<span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">// '(1): бвгдеёжзи'</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'(-20, 2): '</span> <span class="token operator">+</span> str<span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// '(-20, 2): аб'</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'(20, 2): '</span>  <span class="token operator">+</span> str<span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// '(20, 2): '</span>
+</code></pre>
+
+
+
+<p>JScript от Microsoft не поддерживает отрицательные значения для начального индекса. Если вы хотите использовать эту возможность, вы можете использовать следующий код совместимости для обхода этой ошибки:</p>
+
+<pre class="brush: js notranslate"><code><span class="token comment">// only run when the substr() function is broken</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token string">'ab'</span><span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token string">'b'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">/**
+   *  Get the substring of a string
+   *  @param  {integer}  start   where to start the substring
+   *  @param  {integer}  length  how many characters to return
+   *  @return {string}
+   */</span>
+  <span class="token class-name">String</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">substr</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">substr</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">start<span class="token punctuation">,</span> length</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// call the original method</span>
+      <span class="token keyword">return</span> <span class="token function">substr</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span>
+      	<span class="token comment">// did we get a negative start, calculate how much it is from the beginning of the string</span>
+        <span class="token comment">// adjust the start parameter for negative value</span>
+        start <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token operator">?</span> <span class="token keyword">this</span><span class="token punctuation">.</span>length <span class="token operator">+</span> start <span class="token operator">:</span> start<span class="token punctuation">,</span>
+        length<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>substr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+
+
+<table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+  </tr>
+  <tr>
+   <td><a href="https://tc39.es/ecma262/#sec-string.prototype.substr" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript (ECMA-262)<br><small lang="ru">Определение 'String.prototype.substr' в этой спецификации.</small></a></td>
+  </tr>
+ </tbody>
+</table>
+
+
+<p></p><p></p>
+
+
+
+<ul>
+ <li><a href="/js/String/slice/"><code>String.prototype.slice()</code></a></li>
+ <li><a href="/js/String/substring/"><code>String.prototype.substring()</code></a></li>
+</ul>
+</div></div>

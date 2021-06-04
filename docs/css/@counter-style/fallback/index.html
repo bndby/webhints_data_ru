@@ -1,0 +1,54 @@
+<h1>fallback</h1><div><div></div>
+
+<p><span class="seoSummary">The <strong><code>fallback</code></strong> descriptor can be used to specify a counter style to fall back to if the current counter style cannot create a marker representation for a particular counter value.</span></p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush: css notranslate"><code><span class="token comment">/* Keyword values */</span>
+<span class="token property">fallback</span><span class="token punctuation">:</span> lower-alpha<span class="token punctuation">;</span>
+<span class="token property">fallback</span><span class="token punctuation">:</span> custom-gangnam-style<span class="token punctuation">;</span>
+</code></pre></div><h2 id="description"><a href="#description" title="Permalink to Description">Description</a></h2><div><p>If the specified fallback style is also unable to construct a representation, then its fallback style will be used. If a valid fallback style is not specified, it defaults to <code>decimal</code>.</p>
+
+<p>A couple of scenarios where a fallback style will be used are:</p>
+
+<ul>
+ <li>When the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@counter-style/range"><code>range</code></a> descriptor is specified for a counter style, the fallback style will be used to represent values that fall outside the range.</li>
+ <li>When the <code>fixed</code> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@counter-style/system"><code>system</code></a> is used and there are not enough symbols to cover all the list items, the fallback style will be used for the rest of the list items.</li>
+</ul></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row">Related <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule">at-rule</a></th><td><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@counter-style"><code>@counter-style</code></a></td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td><code>decimal</code></td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>as specified</td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate"><a href="#counter-style-name">&lt;counter-style-name&gt;</a><p style="font-family:Open Sans,Arial,sans-serif; margin: 10px 0 0 0;">where <br><code style="font-family:Consolas,Monaco,&quot;Andale Mono&quot;,monospace;"><span id="counter-style-name">&lt;counter-style-name&gt;</span> = <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/custom-ident" title>&lt;custom-ident&gt;</a></code></p></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="specifying_a_fallback_counter_style"><a href="#specifying_a_fallback_counter_style" title="Permalink to Specifying a fallback counter style">Specifying a fallback counter style</a></h3><div><h4 id="html">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>list<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>One<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>Two<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>Three<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>Four<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>Five<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<h4 id="css">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token atrule"><span class="token rule">@counter-style</span> fallback-example</span> <span class="token punctuation">{</span>
+  <span class="token property">system</span><span class="token punctuation">:</span> fixed<span class="token punctuation">;</span> <span class="token property">symbols</span><span class="token punctuation">:</span> <span class="token string">"\24B6"</span> <span class="token string">"\24B7"</span> <span class="token string">"\24B8"</span><span class="token punctuation">;</span>
+  <span class="token property">fallback</span><span class="token punctuation">:</span> upper-alpha<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.list</span> <span class="token punctuation">{</span>
+  <span class="token property">list-style</span><span class="token punctuation">:</span> fallback-example<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<h4 id="result">Result</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Specifying_a_fallback_counter_style" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/@counter-style/fallback/_sample_.Specifying_a_fallback_counter_style.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-counter-styles-3/#counter-style-fallback" hreflang="en" lang="en" class="external" rel=" noopener">CSS Counter Styles Level&nbsp;3<br><small lang="en-US">The definition of 'fallback' in that specification.</small></a></td>
+   <td><span class="spec-cr">Candidate Recommendation</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/list-style"><code>list-style</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-image"><code>list-style-image</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-position"><code>list-style-position</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/symbols()"><code>symbols()</code></a>: the functional notation creating anonymous counter styles</li>
+</ul></div>

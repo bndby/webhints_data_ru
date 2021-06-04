@@ -1,0 +1,53 @@
+<h1>inherit</h1><div><div></div>
+
+<p><span class="seoSummary">Ключевое слово <strong> <code>inherit</code></strong> (CSS) вынуждает элемент использовать <a href="/css/computed_value/">вычисленное значение</a> аналогичного свойства родительского элемента.</span> Это может быть применено к любому свойству CSS, включая CSS свойство <a href="/css/all/"><code>all</code></a>.</p>
+
+<p>Для <a href="/css/inheritance/" title="ru/docs/Web/CSS/inheritance">наследуемых свойств</a>, это усиливает поведение по умолчанию и требуется только для переопределения другого правила. Для <a href="/css/inheritance/" title="/ru/docs/Web/CSS/inheritance">ненаследуемых свойств</a>, это указывает на поведение, которое обычно имеет относительно мало смысла, и вы можете рассмотреть возможность использовать вместо него <a href="/css/initial/"><code>initial</code></a> или <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/unset"><code>unset</code> <span>(en-US)</span></a> со свойством <a href="/css/all/"><code>all</code></a>.</p>
+
+<p><span id="result_box" lang="ru"><span>Наследование происходит всегда от родительского элемента в дереве документов, даже если родительский элемент не является содержащим блоком.</span></span></p></div><h2 id="пример"><a href="#пример" title="Permalink to Пример">Пример</a></h2><div><pre class="brush: css notranslate"><code><span class="token comment">/* Делает заголовки второго уровня зелёными */</span>
+<span class="token selector">h2</span> <span class="token punctuation">{</span> <span class="token property">color</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+
+<span class="token comment">/* ...но не делает зелёными элементы боковой панели, которые используют цвет своего родителя */</span>
+<span class="token selector">#sidebar h2</span> <span class="token punctuation">{</span> <span class="token property">color</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+</code></pre>
+
+<p>В этом примере элементы <code> h2 внутри боковой панели могут быть разных цветов. Например, если один из них был дочерним элементом div, соответствующим правилу ...</code></p>
+
+<pre class="brush: css notranslate"><code>
+<span class="token selector">div#current</span> <span class="token punctuation">{</span> <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+</code></pre>
+
+<p><code>... </code><span class="short_text" id="result_box" lang="ru"><span>он был бы синим</span></span><code>.</code></p></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации"><code>Спецификации</code></a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th><code>Спецификация</code></th>
+   <th><code>Статус</code></th>
+   <th><code>Комментарии</code></th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><code><a href="https://drafts.csswg.org/css-cascade/#inherit" hreflang="en" lang="en" class="external" rel=" noopener">CSS Cascading and Inheritance Level&nbsp;4<br><small lang="ru">Определение 'inherit' в этой спецификации.</small></a></code></td>
+   <td><code><span class="spec-cr">Кандидат в рекомендации</span></code></td>
+   <td><code>Нет изменений с уровня 3.</code></td>
+  </tr>
+  <tr>
+   <td><code><a href="https://drafts.csswg.org/css-values-3/#common-keywords" hreflang="en" lang="en" class="external" rel=" noopener">CSS Values and Units Module Level&nbsp;3<br><small lang="ru">Определение 'inherit' в этой спецификации.</small></a></code></td>
+   <td><code><span class="spec-cr">Кандидат в рекомендации</span></code></td>
+   <td><code>Никаких существенных изменений с <a href="https://www.w3.org/TR/CSS2/" hreflang="en" lang="en" class="external" title="Спецификация 'CSS Level&nbsp;2 (Revision&nbsp;1)'" rel=" noopener">CSS Level&nbsp;2 (Revision&nbsp;1)</a>.</code></td>
+  </tr>
+  <tr>
+   <td><code><a href="https://www.w3.org/TR/CSS2/cascade.html#value-def-inherit" hreflang="en" lang="en" class="external" rel=" noopener">CSS Level&nbsp;2 (Revision&nbsp;1)<br><small lang="ru">Определение 'inherit' в этой спецификации.</small></a></code></td>
+   <td><code><span class="spec-rec">Рекомендация</span></code></td>
+   <td><code>Начальное определение.</code></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="совместимость_с_браузерами"><a href="#совместимость_с_браузерами" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><div>
+<p></p><p></p>
+</div></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также"><code>Смотрите также</code></a></h2><div><ul>
+ <li><code><a class="internal" href="/css/inheritance/" title="/ru/docs/Web/CSS/inheritance">Наследование</a></code></li>
+ <li><code>Используйте <a href="/css/initial/"><code>initial</code></a>, чтобы установить свойство в его начальное значение.</code></li>
+ <li><code>Используйте <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/unset"><code>unset</code> <span>(en-US)</span></a>, чтобы установить свойство в его унаследованное значение, если оно наследует, или его начальное значение, если нет.</code></li>
+ <li><code>Используйте <a href="/css/revert/"><code>revert</code></a> для сброса свойства до значения, установленного таблицей стилей пользователя-агента (или стилями пользователя, если они существуют).</code></li>
+ <li><code>Свойство <a href="/css/all/"><code>all</code></a> позволяет сбросить все свойства сразу до начального (initial), унаследованного (inherited), возвращённого (reverted) или неустановленного (unset) состояния.</code></li>
+</ul></div>

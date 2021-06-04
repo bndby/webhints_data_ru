@@ -1,0 +1,66 @@
+<h1>font-variant-numeric</h1><div><div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Summary">Summary</a></h2><div><p>Свойство CSS <strong><code>font-variant-numeric</code></strong> управляет использованием альтернативных начертаний для цифр, дробей и порядковых числительных.</p>
+
+<p></p><table class="properties"><tbody><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td><code>normal</code></td></tr><tr><th scope="row">Применяется к</th><td>все элементы. Это также применяется к <a href="/css/::first-letter/"><code>::first-letter</code></a> и <a href="/css/::first-line/"><code>::first-line</code></a>.</td></tr><tr><th scope="row"><a href="/css/inheritance/">Наследуется</a></th><td>да</td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>как указано</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="twopartsyntaxbox notranslate"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax" title="CSS/Value_definition_syntax">Formal syntax</a>: <pre class="notranslate">normal <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> <a href="#numeric-figure-values">&lt;numeric-figure-values&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_bar" title="Currently only available in English (US)" class="only-in-en-us">|| (en-US)</a> <a href="#numeric-spacing-values">&lt;numeric-spacing-values&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_bar" title="Currently only available in English (US)" class="only-in-en-us">|| (en-US)</a> <a href="#numeric-fraction-values">&lt;numeric-fraction-values&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_bar" title="Currently only available in English (US)" class="only-in-en-us">|| (en-US)</a> ordinal <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_bar" title="Currently only available in English (US)" class="only-in-en-us">|| (en-US)</a> slashed-zero <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a><p style="font-family:Open Sans,Arial,sans-serif; margin: 10px 0 0 0;">где <br><code style="font-family:Consolas,Monaco,&quot;Andale Mono&quot;,monospace;"><span id="numeric-figure-values">&lt;numeric-figure-values&gt;</span> = <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> lining-nums <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> oldstyle-nums <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a><br><span id="numeric-spacing-values">&lt;numeric-spacing-values&gt;</span> = <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> proportional-nums <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> tabular-nums <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a><br><span id="numeric-fraction-values">&lt;numeric-fraction-values&gt;</span> = <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">[ (en-US)</a> diagonal-fractions <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> stacked-fractions <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#brackets" title="Currently only available in English (US)" class="only-in-en-us">] (en-US)</a></code></p></pre></pre>
+
+<pre class="notranslate">font-variant-numeric: normal
+font-variant-<span style="font-size: 1rem;">numeric</span><span style="font-size: 1rem;">: ordinal</span>
+font-variant-<span style="font-size: 1rem;">numeric</span><span style="font-size: 1rem;">: slashed-zero</span>
+font-variant-<span style="font-size: 1rem;">numeric</span><span style="font-size: 1rem;">: lining-nums         /* &lt;numeric-figure-values&gt; */</span>
+font-variant-<span style="font-size: 1rem;">numeric</span><span style="font-size: 1rem;">: oldstyle-nums       /* &lt;numeric-figure-values&gt; */</span>
+font-variant-<span style="font-size: 1rem;">numeric</span><span style="font-size: 1rem;">: proportional-nums   /* &lt;numeric-spacing-values&gt; */</span>
+font-variant-<span style="font-size: 1rem;">numeric</span><span style="font-size: 1rem;">: tabular-nums        /* &lt;numeric-spacing-values&gt; */</span>
+font-variant-<span style="font-size: 1rem;">numeric</span><span style="font-size: 1rem;">: diagonal-fractions  /* &lt;numeric-fraction-values&gt; */</span>
+font-variant-<span style="font-size: 1rem;">numeric</span><span style="font-size: 1rem;">: stacked-fractions   /* &lt;numeric-fraction-values&gt; */</span>
+font-variant-<span style="font-size: 1rem;">numeric</span><span style="font-size: 1rem;">: oldstyle-nums stacked-fractions</span>
+
+font-variant-<span style="font-size: 1rem;">numeric</span><span style="font-size: 1rem;">: initial</span>
+font-variant-<span style="font-size: 1rem;">numeric</span><span style="font-size: 1rem;">: inherit</span>
+font-variant-<span style="font-size: 1rem;">numeric</span><span style="font-size: 1rem;">: unset</span>
+</pre></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+ <dt><code>normal</code></dt>
+ <dd>Это ключевое слово отключает все альтернативные начертания.</dd>
+ <dt><code>ordinal</code></dt>
+ <dd>Это ключевое слово включает специальные глифы для порядковых числительных, например, 1<sup>st</sup>, 2<sup>nd</sup>, 3<sup>rd</sup>, 4<sup>th</sup> в английском или 1<sup>a</sup> в итальянском (в русском такие типографские изыски не приняты, пишут просто «1-й»). Это соответствует значению OpenType <code>ordn</code>.</dd>
+ <dt><code>slashed-zero</code></dt>
+ <dd>Это ключевое слово включает перечёркнутый ноль; это полезно, когда нужно чёткое различие между буквой O и цифрой 0. Это соответствует значению OpenType <code>zero</code>.</dd>
+ <dt><em>&lt;numeric-figure-values</em>&gt;</dt>
+ <dd>Эти значения управляют тем, какими знаками будут отображаться цифры. Возможны два значения:
+ <ul>
+  <li><code>lining-nums</code> включает маюскульные («заглавные») цифры, стоящие на опорной линии текста. Это соответствует значению OpenType <code>lnum</code>.</li>
+  <li><code>oldstyle-nums</code> включает минускульные («строчные») цифры, в которых некоторые знаки (3, 4, 7, 9) уходят нижним краем под опорную линию (в русской типографике не принято, зато широко используется в западной, в основном в шрифтах с засечками). Это соответствует значению OpenType <code>onum</code>.</li>
+ </ul>
+ </dd>
+ <dt><em>&lt;numeric-spacing-values</em>&gt;</dt>
+ <dd>Эти значения управляют горизонтальным размером цифр. Возможны два значения:
+ <ul>
+  <li><code>proportional-nums</code> включает цифры разной ширины. Это соответствует значению OpenType <code>pnum</code>.</li>
+  <li><code>tabular-nums</code> включает цифры одинаковой ширины, которые легко выравниваются, как в таблицах. Это соответствуют значению OpenType <code>tnum</code>.</li>
+ </ul>
+ </dd>
+ <dt><em>&lt;numeric-fraction-values</em>&gt;</dt>
+ <dd>Эти значения управляют отображением дробей. Возможны два значения:
+ <ul>
+  <li><code>diagonal-fractions</code> включает символы дробей, в которых числитель и знаменатель уменьшены и разделены косой чертой. Это соответствует значению OpenType <code>frac</code>.</li>
+  <li><code>stacked-fractions</code> включает символы дробей, где числитель и знаменатель уменьшены, поставлены друг над другом и разделены горизонтальной чертой.&nbsp; Это соответствует значению OpenType <code>afrc</code>.</li>
+ </ul>
+ </dd>
+</dl></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div><pre class="brush:css notranslate"><code><span class="token selector">p</span> <span class="token punctuation">{</span>
+  <span class="token property">font-variant-numeric</span><span class="token punctuation">:</span> ordinal<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-fonts-3/#propdef-font-variant-numeric" hreflang="en" lang="en" class="external" rel=" noopener">CSS Fonts Module Level&nbsp;3<br><small lang="ru">Определение 'font-variant-numeric' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser Compatibility">Browser Compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant"><code>font-variant</code> <span>(en-US)</span></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-kerning"><code>font-kerning</code> <span>(en-US)</span></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-east-asian"><code>font-variant-east-asian</code> <span>(en-US)</span></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-caps"><code>font-variant-caps</code> <span>(en-US)</span></a>, <a href="/css/font-variant-ligatures/"><code>font-variant-ligatures</code></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-position"><code>font-variant-position</code> <span>(en-US)</span></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-alternates"><code>font-variant-alternates</code> <span>(en-US)</span></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-synthesis"><code>font-synthesis</code> <span>(en-US)</span></a>.</li>
+</ul></div>

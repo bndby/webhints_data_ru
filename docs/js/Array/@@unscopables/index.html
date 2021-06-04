@@ -1,0 +1,51 @@
+<h1>Array.prototype[@@unscopables]</h1><div><div></div>
+
+<p>The <code><strong>@@unscopable</strong></code> symbol property contains property names that were not included in the ECMAScript standard prior to the ES2015 version. These properties are excluded from <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/with">with</a></code> statement bindings.</p></div><h2 id="description"><a href="#description" title="Permalink to Description">Description</a></h2><div><p>The default array properties that are excluded from <code>with</code> bindings are:</p>
+
+<ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/at"><code>at()</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/copyWithin"><code>copyWithin()</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/entries"><code>entries()</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/fill"><code>fill()</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find"><code>find()</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex"><code>findIndex()</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes"><code>includes()</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/keys"><code>keys()</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/values"><code>values()</code></a></li>
+</ul>
+
+<p>See <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/unscopables"><code>Symbol.unscopables</code></a> for how to set <code>unscopables</code> for your own objects.</p>
+
+<p></p><table class="standard-table">
+  <thead>
+    <tr>
+      <th class="header" colspan="2">Property attributes of <code>Array.prototype[@@unscopables]</code></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Writable</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <td>Enumerable</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <td>Configurable</td>
+      <td>yes</td>
+    </tr>
+  </tbody>
+</table><p></p></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="use_in_with_environments"><a href="#use_in_with_environments" title="Permalink to Use in with environments">Use in with environments</a></h3><div><p>The following code works fine in ES5 and below. However, in ECMAScript 2015 and later, the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/keys"><code>Array.prototype.keys()</code></a> method was introduced. That means that inside <code>with</code> environments, "keys" would now be the method and not the variable. This is where now the built-in <code>@@unscopables</code> <code>Array.prototype[@@unscopables]</code> symbol property comes into play and prevents that some of the Array methods are being scoped into the <code>with</code> statement.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> keys <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">with</span> <span class="token punctuation">(</span><span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  keys<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">'something'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span><span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">[</span>Symbol<span class="token punctuation">.</span>unscopables<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// ["at", "copyWithin", "entries", "fill", "find", "findIndex",</span>
+<span class="token comment">//  "includes", "keys", "values"]</span></code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://tc39.es/ecma262/#sec-array.prototype-@@unscopables">Unknown specification<!-- --> <br><small># <!-- -->sec-array.prototype-@@unscopables</small></a></td></tr></tbody></table><div></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/unscopables"><code>Symbol.unscopables</code></a></li>
+</ul></div>

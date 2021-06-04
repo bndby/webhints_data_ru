@@ -1,0 +1,65 @@
+<h1>border-image-slice</h1><div><div></div></div><h2 id="описание"><a href="#описание" title="Permalink to Описание">Описание</a></h2><div><p>CSS свойство&nbsp;<strong><code>border-image-slice</code></strong>&nbsp; делит изображение указанное в <a href="/css/border-image-source/"><code>border-image-source</code></a> на девять областей: четыре угла, четыре края и середину. Это происходит путём указания 4 внутренних смещений.</p>
+
+<p><a href="https://developer.mozilla.org/files/3814/border-image-slice.png" style="float: left;" class="page-not-created" title="This is a link to an unwritten page"><img alt="The nine slices defined by the CSS border-image shorthand or border-image-slice longhand properties" src="/files/3814/border-image-slice.png" style="margin: 1px; padding: 1em;" loading="lazy"></a>Четыре значения управляют положением линий среза. If some are not specified, they are inferred from the other with the usual 4-value syntax of CSS.</p>
+
+<p>The middle is not used by the border itself but is used as a background-image if the keyword <code>fill</code> is set. The keyword can be set at any position in the property (before, after or between the other values).</p>
+
+<p>The <a href="/css/border-image-repeat/"><code>border-image-repeat</code></a>, <a href="/css/border-image-width/"><code>border-image-width</code></a>, <a href="/css/border-image-outset/"><code>border-image-outset</code></a> properties define how these images will be used.</p>
+
+<p>The shorthand CSS property <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-image"><code>border-image</code> <span>(en-US)</span></a> may reset this property to its default value.</p>
+
+<p></p><table class="properties"><tbody><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td><code>100%</code></td></tr><tr><th scope="row">Применяется к</th><td>все элементы, кроме внутренних табличных элементов, когда <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-collapse" class="only-in-en-us" title="Currently only available in English (US)">border-collapse (en-US)</a>:<code>collapse</code>. Это также применяется к <a href="/css/::first-letter/"><code>::first-letter</code></a>.</td></tr><tr><th scope="row"><a href="/css/inheritance/">Наследуется</a></th><td>нет</td></tr><tr><th scope="row">Проценты</th><td>относятся к размеру рамки изображения</td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>одно к четырём процентам (как указано) или абсолютной длине(ам), плюс ключевое слово <code>fill</code>, если указано</td></tr><tr><th scope="row">Animation type</th><td>by computed value type</td></tr></tbody></table><p></p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="brush:css notranslate"><code><span class="token comment">/* border-image-slice: slice */</span>
+<span class="token property">border-image-slice</span><span class="token punctuation">:</span> 30%<span class="token punctuation">;</span>
+
+<span class="token comment">/* border-image-slice: horizontal vertical */</span>
+<span class="token property">border-image-slice</span><span class="token punctuation">:</span> 10% 30%<span class="token punctuation">;</span>
+
+<span class="token comment">/* border-image-slice: top horizontal bottom */</span>
+<span class="token property">border-image-slice</span><span class="token punctuation">:</span> 30 30% 45<span class="token punctuation">;</span>
+
+<span class="token comment">/* border-image-slice: top right bottom left */</span>
+<span class="token property">border-image-slice</span><span class="token punctuation">:</span> 7 12 14 5<span class="token punctuation">;</span>
+
+<span class="token comment">/* border-image-slice: … fill */</span>
+<span class="token comment">/* The fill value can be placed between any value */</span>
+<span class="token property">border-image-slice</span><span class="token punctuation">:</span> 10% fill 7 12<span class="token punctuation">;</span>
+
+<span class="token comment">/* Глобальные значения */</span>
+<span class="token property">border-image-slice</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">border-image-slice</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">border-image-slice</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre></div><h3 id="значения"><a href="#значения" title="Permalink to Значения">Значения</a></h3><div><dl>
+ <dt><em>slice</em></dt>
+ <dd>Is a <a href="/css/number/"><code>&lt;number&gt;</code></a> or a <a href="/css/percentage/"><code>&lt;percentage&gt;</code></a> of the offset for the four slicing lines. Note that a <a href="/css/length/"><code>&lt;length&gt;</code></a> value is not allowed, and therefore invalid. The <a href="/css/number/"><code>&lt;number&gt;</code></a> represents <em>pixels</em> for raster images and <em>coordinates</em> for vector images. Also, <a href="/css/percentage/"><code>&lt;percentage&gt;</code></a> values are relative to the height or width of the image, whichever is adequate. Negative values are invalid and values greater than the relevant size, height or width, are clamped to <code>100%</code>.</dd>
+ <dt><em>horizontal</em></dt>
+ <dd>Is a <a href="/css/number/"><code>&lt;number&gt;</code></a> or a <a href="/css/percentage/"><code>&lt;percentage&gt;</code></a> of the offset for the two horizontal slicing lines, the top and the bottom ones. Note that a <a href="/css/length/"><code>&lt;length&gt;</code></a> value is not allowed, and therefore invalid. The <a href="/css/number/"><code>&lt;number&gt;</code></a> represents <em>pixels</em> for raster images and <em>coordinates</em> for vector images. Also, <a href="/css/percentage/"><code>&lt;percentage&gt;</code></a> values are relative to the height or width of the image, whichever is adequate. Negative values are invalid and values greater than the relevant size, height or width, are clamped to <code>100%</code>.</dd>
+ <dt><em>vertical</em></dt>
+ <dd>Is a <a href="/css/number/"><code>&lt;number&gt;</code></a> or a <a href="/css/percentage/"><code>&lt;percentage&gt;</code></a> of the offset for the two vertical slicing lines, the right and the left ones. Note that a <a href="/css/length/"><code>&lt;length&gt;</code></a> value is not allowed, and therefore invalid. The <a href="/css/number/"><code>&lt;number&gt;</code></a> represents <em>pixels</em> for raster images and <em>coordinates</em> for vector images. Also, <a href="/css/percentage/"><code>&lt;percentage&gt;</code></a> values are relative to the height or width of the image, whichever is adequate. Negative values are invalid and values greater than the relevant size, height or width, are clamped to <code>100%</code>.</dd>
+ <dt><em>top</em></dt>
+ <dd>Is a <a href="/css/number/"><code>&lt;number&gt;</code></a> or a <a href="/css/percentage/"><code>&lt;percentage&gt;</code></a> of the offset for the top slicing line. Note that a <a href="/css/length/"><code>&lt;length&gt;</code></a> value is not allowed, and therefore invalid. The <a href="/css/number/"><code>&lt;number&gt;</code></a> represents <em>pixels</em> for raster images and <em>coordinates</em> for vector images. Also, <a href="/css/percentage/"><code>&lt;percentage&gt;</code></a> values are relative to the height or width of the image, whichever is adequate. Negative values are invalid and values greater than the relevant size, height or width, are clamped to <code>100%</code>.</dd>
+ <dt><em>bottom</em></dt>
+ <dd>Is a <a href="/css/number/"><code>&lt;number&gt;</code></a> or a <a href="/css/percentage/"><code>&lt;percentage&gt;</code></a> of the offset for the bottom slicing line. Note that a <a href="/css/length/"><code>&lt;length&gt;</code></a> value is not allowed, and therefore invalid. The <a href="/css/number/"><code>&lt;number&gt;</code></a> represents <em>pixels</em> for raster images and <em>coordinates</em> for vector images. Also, <a href="/css/percentage/"><code>&lt;percentage&gt;</code></a> values are relative to the height or width of the image, whichever is adequate. Negative values are invalid and values greater than the relevant size, height or width, are clamped to <code>100%</code>.</dd>
+ <dt><em>right</em></dt>
+ <dd>Is a <a href="/css/number/"><code>&lt;number&gt;</code></a> or a <a href="/css/percentage/"><code>&lt;percentage&gt;</code></a> of the offset for the right slicing line. Note that a <a href="/css/length/"><code>&lt;length&gt;</code></a> value is not allowed, and therefore invalid. The <a href="/css/number/"><code>&lt;number&gt;</code></a> represents <em>pixels</em> for raster images and <em>coordinates</em> for vector images. Also, <a href="/css/percentage/"><code>&lt;percentage&gt;</code></a> values are relative to the height or width of the image, whichever is adequate. Negative values are invalid and values greater than the relevant size, height or width, are clamped to <code>100%</code>.</dd>
+ <dt><em>left</em></dt>
+ <dd>Is a <a href="/css/number/"><code>&lt;number&gt;</code></a> or a <a href="/css/percentage/"><code>&lt;percentage&gt;</code></a> of the offset for the left slicing line. Note that a <a href="/css/length/"><code>&lt;length&gt;</code></a> value is not allowed, and therefore invalid. The <a href="/css/number/"><code>&lt;number&gt;</code></a> represents <em>pixels</em> for raster images and <em>coordinates</em> for vector images. Also, <a href="/css/percentage/"><code>&lt;percentage&gt;</code></a> values are relative to the height or width of the image, whichever is adequate. Negative values are invalid and values greater than the relevant size, height or width, are clamped to <code>100%</code>.</dd>
+ <dt><code>fill</code></dt>
+ <dd>Is a keyword whose presence forces the use of the middle image slice to be displayed over the background image, its size and height are resized like those of the top and left image slices, respectively.</dd>
+ <dt><code>inherit</code></dt>
+ <dd>Is a keyword indicating that all four values are inherited from their parent's element calculated value.</dd>
+</dl></div><h3 id="формальный_синтаксис"><a href="#формальный_синтаксис" title="Permalink to Формальный синтаксис">Формальный синтаксис</a></h3><div><pre class="notranslate"><a href="#number-percentage">&lt;number-percentage&gt;</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#curly_braces_(_)" title="Currently only available in English (US)" class="only-in-en-us">{ (en-US)</a>1,4<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#curly_braces_(_)" title="Currently only available in English (US)" class="only-in-en-us">} (en-US)</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#double_ampersand" title="Currently only available in English (US)" class="only-in-en-us">&amp;&amp; (en-US)</a> fill<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#question_mark_()" title="Currently only available in English (US)" class="only-in-en-us">? (en-US)</a><p style="font-family:Open Sans,Arial,sans-serif; margin: 10px 0 0 0;">где <br><code style="font-family:Consolas,Monaco,&quot;Andale Mono&quot;,monospace;"><span id="number-percentage">&lt;number-percentage&gt;</span> = <a href="/css/number/" title>&lt;number&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <a href="/css/percentage/" title>&lt;percentage&gt;</a></code></p></pre></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-backgrounds-3/#border-image-slice" hreflang="en" lang="en" class="external" rel=" noopener">CSS Backgrounds and Borders Module Level&nbsp;3<br><small lang="ru">Определение 'border-image-slice' в этой спецификации.</small></a></td>
+   <td><span class="spec-cr">Кандидат в рекомендации</span></td>
+   <td>Первоначальное определение</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="совместимость_с_браузерами"><a href="#совместимость_с_браузерами" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div>

@@ -1,0 +1,83 @@
+<h1>overflow-x</h1><div><div></div>
+
+<p>The <strong><code>overflow-x</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> property sets what shows when content overflows a block-level element's left and right edges. This may be nothing, a scroll bar, or the overflow content.</p>
+
+<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/overflow-x.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* Keyword values */</span>
+<span class="token property">overflow-x</span><span class="token punctuation">:</span> visible<span class="token punctuation">;</span>
+<span class="token property">overflow-x</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+<span class="token property">overflow-x</span><span class="token punctuation">:</span> clip<span class="token punctuation">;</span>
+<span class="token property">overflow-x</span><span class="token punctuation">:</span> scroll<span class="token punctuation">;</span>
+<span class="token property">overflow-x</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+
+<span class="token comment">/* Global values */</span>
+<span class="token property">overflow-x</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">overflow-x</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">overflow-x</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre>
+
+<p>The <code>overflow-x</code> property is specified as a single keyword chosen from the list of values below.</p></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
+ <dt><code>visible</code></dt>
+ <dd>Content is not clipped and may be rendered outside the padding box's left and right edges. If <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-y"><code>overflow-y</code></a> is <code>hidden</code>, <code>scroll</code> or <code>auto</code> and this property is <code>visible</code>, it will implicitly compute to <code>auto</code>.</dd>
+ <dt><code>hidden</code></dt>
+ <dd>Content is clipped if necessary to fit horizontally in the padding box. No scrollbars are provided.</dd>
+ <dt><code>clip</code> </dt>
+ <dd>Like for <code>hidden</code>, the content is clipped to the element's padding box. The difference between <code>clip</code> and <code>hidden</code> is that the <code>clip</code> keyword also forbids all scrolling, including programmatic scrolling. The box is not a scroll container, and does not start a new formatting context. If you wish to start a new formatting context, you can use <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display#flow-root"><code>display: flow-root</code></a> to do so.</dd>
+ <dt><code>scroll</code></dt>
+ <dd>Content is clipped if necessary to fit horizontally in the padding box. Browsers display scrollbars whether or not any content is actually clipped. (This prevents scrollbars from appearing or disappearing when the content changes.) Printers may still print overflowing content.</dd>
+ <dt><code>auto</code></dt>
+ <dd>Depends on the user agent. If content fits inside the padding box, it looks the same as <code>visible</code>, but still establishes a new block-formatting context. Desktop browsers provide scrollbars if content overflows.</dd>
+</dl></div><h2 id="formal_definition"><a href="#formal_definition" title="Permalink to Formal definition">Formal definition</a></h2><div><p></p><table class="properties"><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial_value">Initial value</a></th><td><code>visible</code></td></tr><tr><th scope="row">Applies to</th><td>Block-containers, flex containers, and grid containers</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance">Inherited</a></th><td>no</td></tr><tr><th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value">Computed value</a></th><td>as specified, except with <code>visible</code>/<code>clip</code> computing to <code>auto</code>/<code>hidden</code> respectively if one of <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-x" aria-current="page"><code>overflow-x</code></a> or <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-y"><code>overflow-y</code></a> is neither <code>visible</code> nor clip</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="formal_syntax"><a href="#formal_syntax" title="Permalink to Formal syntax">Formal syntax</a></h2><div><pre class="notranslate">visible <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> hidden <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> clip <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> scroll <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Single bar: exactly one of the entities must be present">|</a> auto</pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="html"><a href="#html" title="Permalink to HTML">HTML</a></h3><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>code</span><span class="token punctuation">&gt;</span></span>overflow-x:hidden<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>code</span><span class="token punctuation">&gt;</span></span> — hides the text outside the box
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>div1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+      ABCDEFGHIJKLMOPQRSTUVWXYZABCDEFGHIJKLMOPQRSTUVWXYZ
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>code</span><span class="token punctuation">&gt;</span></span>overflow-x:scroll<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>code</span><span class="token punctuation">&gt;</span></span> — always adds a scrollbar
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>div2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+      ABCDEFGHIJKLMOPQRSTUVWXYZABCDEFGHIJKLMOPQRSTUVWXYZ
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>code</span><span class="token punctuation">&gt;</span></span>overflow-x:visible<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>code</span><span class="token punctuation">&gt;</span></span> — displays the text outside the box if needed
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>div3<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+      ABCDEFGHIJKLMOPQRSTUVWXYZABCDEFGHIJKLMOPQRSTUVWXYZ
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>code</span><span class="token punctuation">&gt;</span></span>overflow-x:auto<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>code</span><span class="token punctuation">&gt;</span></span> — on most browsers, equivalent to <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>code</span><span class="token punctuation">&gt;</span></span>scroll<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>code</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>div4<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+      ABCDEFGHIJKLMOPQRSTUVWXYZABCDEFGHIJKLMOPQRSTUVWXYZ
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h3 id="css"><a href="#css" title="Permalink to CSS">CSS</a></h3><div><pre class="brush: css notranslate"><code><span class="token selector">#div1, #div2, #div3, #div4</span> <span class="token punctuation">{</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 1px solid black<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span>  250px<span class="token punctuation">;</span>
+  <span class="token property">margin-bottom</span><span class="token punctuation">:</span> 12px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">#div1</span> <span class="token punctuation">{</span> <span class="token property">overflow-x</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span><span class="token punctuation">}</span>
+<span class="token selector">#div2</span> <span class="token punctuation">{</span> <span class="token property">overflow-x</span><span class="token punctuation">:</span> scroll<span class="token punctuation">;</span><span class="token punctuation">}</span>
+<span class="token selector">#div3</span> <span class="token punctuation">{</span> <span class="token property">overflow-x</span><span class="token punctuation">:</span> visible<span class="token punctuation">;</span><span class="token punctuation">}</span>
+<span class="token selector">#div4</span> <span class="token punctuation">{</span> <span class="token property">overflow-x</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span><span class="token punctuation">}</span>
+</code></pre></div><h3 id="result"><a href="#result" title="Permalink to Result">Result</a></h3><div><figure>
+<p><iframe class="sample-code-frame" id="frame_Examples" width="100%" height="270" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/overflow-x/_sample_.Examples.html" loading="lazy"></iframe></p>
+</figure></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-overflow-3/#propdef-overflow-x" hreflang="en" lang="en" class="external" rel=" noopener">CSS Overflow Module Level 3<br><small lang="en-US">The definition of 'overflow-x' in that specification.</small></a></td>
+   <td><span class="spec-wd">Working Draft</span></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li>Related CSS properties: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-overflow"><code>text-overflow</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/white-space"><code>white-space</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/overflow"><code>overflow</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-y"><code>overflow-y</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/clip"><code>clip</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display"><code>display</code></a></li>
+</ul></div>

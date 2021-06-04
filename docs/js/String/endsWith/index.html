@@ -1,0 +1,44 @@
+<h1>String.prototype.endsWith()</h1><div><div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Метод <strong><code>endsWith()</code></strong> позволяет определить, заканчивается ли строка символами указанными в скобках, возвращая, соответственно, <code>true</code> или <code>false</code>.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code><var>str</var>.endsWith(<var>searchString</var>[, <var>length</var>])</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>searchString</code></dt>
+ <dd>Символы, искомые в конце строки.</dd>
+ <dt><code><var>length</var></code></dt>
+ <dd>Необязательный параметр. Позволяет искать внутри строки, обрезая её по диапазону; по умолчанию равен длине строки.</dd>
+</dl></div><h3 id="возвращаемое_значение"><a href="#возвращаемое_значение" title="Permalink to Возвращаемое значение">Возвращаемое значение</a></h3><div><p><strong><code>true</code></strong> если данные символы находятся в конце строки; в противном случае, <strong><code>false</code></strong>.</p></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Этот метод позволяет определять, заканчивается ли строка искомыми символами. Метод чувствителен к регистру.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_using_endswith"><a href="#example_using_endswith" title="Permalink to Пример: использование метода endsWith()">Пример: использование метода <code>endsWith()</code></a></h3><div><pre class="brush: js notranslate"><code><span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">'Быть или не быть, вот в чём вопрос.'</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">endsWith</span><span class="token punctuation">(</span><span class="token string">'вопрос.'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// true</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">endsWith</span><span class="token punctuation">(</span><span class="token string">'быть'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">// false</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">endsWith</span><span class="token punctuation">(</span><span class="token string">'быть'</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// true</span>
+</code></pre></div><h2 id="polyfill"><a href="#polyfill" title="Permalink to Полифил">Полифил</a></h2><div><p>Этот метод был добавлен к спецификации ECMAScript 6 и может быть доступен ещё не во всех реализациях JavaScript. Однако, вы можете легко эмулировать этот метод при помощи следующего кода:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token class-name">String</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>endsWith<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">.</span>prototype<span class="token punctuation">,</span> <span class="token string">'endsWith'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">value</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">searchString<span class="token punctuation">,</span> position</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">var</span> subjectString <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>position <span class="token operator">===</span> <span class="token keyword">undefined</span> <span class="token operator">||</span> position <span class="token operator">&gt;</span> subjectString<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        position <span class="token operator">=</span> subjectString<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      position <span class="token operator">-=</span> searchString<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+      <span class="token keyword">var</span> lastIndex <span class="token operator">=</span> subjectString<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>searchString<span class="token punctuation">,</span> position<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span> lastIndex <span class="token operator">!==</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token operator">&amp;&amp;</span> lastIndex <span class="token operator">===</span> position<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-string.prototype.endswith" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'String.prototype.endsWith' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Изначальное определение.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/String/startsWith/"><code>String.prototype.startsWith()</code></a> </li>
+ <li><a href="/js/String/includes/"><code>String.prototype.contains()</code></a> </li>
+ <li><a href="/js/String/indexOf/"><code>String.prototype.indexOf()</code></a></li>
+ <li><a href="/js/String/lastIndexOf/"><code>String.prototype.lastIndexOf()</code></a></li>
+</ul></div>

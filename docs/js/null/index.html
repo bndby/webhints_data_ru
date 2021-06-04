@@ -1,0 +1,63 @@
+<h1>null</h1><div><div></div>
+
+<div></div>
+
+<p>Значение <code>null</code>&nbsp;представляет отсутствие какого-либо объектного значения. В&nbsp;JavaScript, <code>null</code> является <a href="https://developer.mozilla.org/ru/docs/Glossary/Primitive">примитивом</a>, и в контексте логических операций, рассматривается как <a href="https://developer.mozilla.org/ru/docs/Glossary/Falsy">ложное (falsy)</a>.</p>
+
+<p><iframe class="interactive" width="100%" height="490" src="https://interactive-examples.mdn.mozilla.net/pages/js/globalprops-null.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code>null</code></pre></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Значение <code>null</code>&nbsp;записывается литералом <code>null</code>. Оно является самостоятельным, а не свойством глобального объекта (как <a href="/js/undefined/"><code>undefined</code></a>). В API,&nbsp;<code>null</code> часто присутствует в местах где ожидается объект, но подходящего объекта нет.</p>
+
+<pre class="brush: js notranslate"><code><span class="token comment">// переменная foo не существует - она не была определена и никогда не инициализировалась:</span>
+<span class="token operator">&gt;</span> foo
+<span class="token string">'ReferenceError: foo is not defined'</span>
+
+<span class="token comment">// переменная foo существует, но она не имеет ни типа, ни значения:</span>
+<span class="token operator">&gt;</span> <span class="token keyword">var</span> foo <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span> foo
+<span class="token string">'null'</span>
+</code></pre></div><h3 id="difference_between_null_and_undefined"><a href="#difference_between_null_and_undefined" title="Permalink to Отличия между null и undefined">Отличия между <code>null</code> и <code>undefined</code></a></h3><div><p><code>null</code> является определённым значением отсутствия объекта, тогда как&nbsp;<a href="/js/undefined/"><code>undefined</code></a> обозначает неопределённость. Например:&nbsp;</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> element<span class="token punctuation">;</span>
+<span class="token comment">// значение переменной element до её инициализации не определённо: undefined</span>
+
+element <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'not-exists'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// здесь при попытке получения несуществующего элемента, метод getElementById возвращает null</span>
+<span class="token comment">// переменная element теперь инициализирована значением null, её значение определено</span>
+</code></pre>
+
+<p>При проверке на <code>null</code> или <a href="/js/undefined/"><code>undefined</code></a>, помните о <a href="https://developer.mozilla.org/ru/docs/conflicting/Web/JavaScript/Reference/Operators_69135a8d5772f8b6e45265523df05d89#%d0%98%d1%81%d0%bf%d0%be%d0%bb%d1%8c%d0%b7%d0%be%d0%b2%d0%b0%d0%bd%d0%b8%d0%b5_%d0%be%d0%bf%d0%b5%d1%80%d0%b0%d1%82%d0%be%d1%80%d0%be%d0%b2_%d1%80%d0%b0%d0%b2%d0%b5%d0%bd%d1%81%d1%82%d0%b2%d0%b0">различии между операторами равенства (==) и идентичности (===)</a>: с первым, выполняется преобразование типов.&nbsp;</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">typeof</span> <span class="token keyword">null</span>        <span class="token comment">// object (не "null" из соображений обратной совместимости)</span>
+<span class="token keyword">typeof</span> <span class="token keyword">undefined</span>   <span class="token comment">// undefined</span>
+<span class="token keyword">null</span> <span class="token operator">===</span> <span class="token keyword">undefined</span> <span class="token comment">// false</span>
+<span class="token keyword">null</span>  <span class="token operator">==</span> <span class="token keyword">undefined</span> <span class="token comment">// true</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td>ECMAScript 1-е издание.</td>
+   <td>Стандарт</td>
+   <td>Изначальное определение.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-4.3.11" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 5.1 (ECMA-262)<br><small lang="ru">Определение 'значение null' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-null-value" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'значение null' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td><a href="https://tc39.es/ecma262/#sec-null-value" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript (ECMA-262)<br><small lang="ru">Определение 'null value' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><div></div></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/undefined/"><code>undefined</code></a></li>
+ <li><a href="/js/NaN/"><code>NaN</code></a></li>
+</ul></div>

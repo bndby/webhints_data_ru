@@ -1,0 +1,43 @@
+<h1>animation-play-state</h1><div><div><div class="notecard experimental">
+    <h4 id="experimental">Experimental</h4>
+    <p><strong>Это экспериментальная технология</strong><br>Так как спецификация этой технологии ещё не стабилизировалась, смотрите <a href="#browser_compatibility">таблицу совместимости</a> по поводу использования в различных браузерах. Также заметьте, что синтаксис и поведение экспериментальной технологии может измениться в будущих версиях браузеров, вслед за изменениями спецификации.</p>
+</div></div></div><h2 id="описание"><a href="#описание" title="Permalink to Описание">Описание</a></h2><div><p>Свойство&nbsp;<strong><code>animation-play-state</code></strong>&nbsp;определяет&nbsp;состояние анимации, паузы или проигрыша.&nbsp;Это можно использовать, чтобы определить текущее состояние анимации, например, в скриптах.</p>
+
+<p>Если возобновить приостановленную анимацию, то она запустит её с того места, где она была поставлена на паузу, а не начнётся с начала.</p>
+
+<p></p><table class="properties"><tbody><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td><code>running</code></td></tr><tr><th scope="row">Применяется к</th><td>все элементы, <a href="/css/::before/"><code>::before</code></a> и <a href="/css/::after/"><code>::after</code></a> <a href="/css/Pseudo-elements/">псевдоэлементы</a></td></tr><tr><th scope="row"><a href="/css/inheritance/">Наследуется</a></th><td>нет</td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>как указано</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="brush: css notranslate"><code><span class="token comment">/* Одна анимация */</span>
+<span class="token property">animation-play-state</span><span class="token punctuation">:</span> running<span class="token punctuation">;</span>
+<span class="token property">animation-play-state</span><span class="token punctuation">:</span> paused<span class="token punctuation">;</span>
+
+<span class="token comment">/* Несколько анимаций */</span>
+<span class="token property">animation-play-state</span><span class="token punctuation">:</span> paused<span class="token punctuation">,</span> running<span class="token punctuation">,</span> running<span class="token punctuation">;</span>
+
+<span class="token comment">/* Глобальный значения */</span>
+<span class="token property">animation-play-state</span><span class="token punctuation">:</span> inherited<span class="token punctuation">;</span>
+<span class="token property">animation-play-state</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">animation-play-state</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+</code></pre></div><h3 id="значения"><a href="#значения" title="Permalink to Значения">Значения</a></h3><div><dl>
+ <dt><code>running</code></dt>
+ <dd>Анимация проигрывается.</dd>
+ <dt><code>paused</code></dt>
+ <dd>Анимация поставлена на паузу.</dd>
+</dl></div><h3 id="формальный_синтаксис"><a href="#формальный_синтаксис" title="Permalink to Формальный синтаксис">Формальный синтаксис</a></h3><div><pre class="syntaxbox notranslate"><code><pre class="notranslate"><a href="#single-animation-play-state">&lt;single-animation-play-state&gt;</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#hash_mark_()" title="Currently only available in English (US)" class="only-in-en-us"># (en-US)</a><p style="font-family:Open Sans,Arial,sans-serif; margin: 10px 0 0 0;">где <br><code style="font-family:Consolas,Monaco,&quot;Andale Mono&quot;,monospace;"><span id="single-animation-play-state">&lt;single-animation-play-state&gt;</span> = running <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> paused</code></p></pre></code>
+</pre></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div><p>См. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations" title="CSS/CSS_animations">CSS animations</a>.</p></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-animations-1/#animation-play-state" hreflang="en" lang="en" class="external" rel=" noopener">CSS Animations Level 1<br><small lang="ru">Определение 'animation-play-state' в этой спецификации.</small></a></td>
+   <td><span class="spec-wd">Рабочий черновик</span></td>
+   <td>Начальное определение</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="совместимость_с_браузерами"><a href="#совместимость_с_браузерами" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations" title="Tutorial about CSS animations">Использование CSS анимаций</a></li>
+ <li><a href="https://developer.mozilla.org/ru/docs/Web/API/AnimationEvent" title="AnimationEvent"><code>AnimationEvent</code></a></li>
+</ul></div>

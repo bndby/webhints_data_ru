@@ -1,0 +1,77 @@
+<h1>background-clip</h1><div><div></div></div><h2 id="описание"><a href="#описание" title="Permalink to Описание">Описание</a></h2><div><p>Свойство CSS&nbsp;<strong><code>background-clip</code></strong>&nbsp;определяет как цвет фона или фоновое изображение будут выводиться под границами блока.</p>
+
+<p>Если фоновое изображение или цвет не заданы, это свойство будет иметь визуальный эффект, только если у границы есть прозрачные области или частично непрозрачные области (из-за <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-style"><code>border-style</code> <span>(en-US)</span></a> или <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-image"><code>border-image</code> <span>(en-US)</span></a>); в противном случае граница скрывает разницу.</p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="brush: css notranslate"><code><span class="token comment">/* Значения ключевых слов */</span>
+<span class="token property">background-clip</span><span class="token punctuation">:</span> border-box<span class="token punctuation">;</span>
+<span class="token property">background-clip</span><span class="token punctuation">:</span> padding-box<span class="token punctuation">;</span>
+<span class="token property">background-clip</span><span class="token punctuation">:</span> content-box<span class="token punctuation">;</span>
+<span class="token property">background-clip</span><span class="token punctuation">:</span> text<span class="token punctuation">;</span>
+
+<span class="token comment">/* Глобальные значения */</span>
+<span class="token property">background-clip</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+<span class="token property">background-clip</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+<span class="token property">background-clip</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span></code></pre></div><h3 id="значения"><a href="#значения" title="Permalink to Значения">Значения</a></h3><div><dl>
+ <dt><code>border-box</code></dt>
+ <dd>Фон распространяется до внешнего края границы (но под границей в z-порядке).</dd>
+ <dt><code>padding-box</code></dt>
+ <dd>Фон распространяется до внешнего края отступа. Под границей фон не рисуется.</dd>
+ <dt><code>content-box</code></dt>
+ <dd>Фон закрашивается внутри (обрезается) поля содержимого.</dd>
+ <dt><code>text</code>&nbsp;</dt>
+ <dd>Фон закрашивается внутри (обрезается) текста переднего плана.</dd>
+</dl></div><h3 id="формальный_синтаксис"><a href="#формальный_синтаксис" title="Permalink to Формальный синтаксис">Формальный синтаксис</a></h3><div><pre class="notranslate"><a href="#box">&lt;box&gt;</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#hash_mark_()" title="Currently only available in English (US)" class="only-in-en-us"># (en-US)</a><p style="font-family:Open Sans,Arial,sans-serif; margin: 10px 0 0 0;">где <br><code style="font-family:Consolas,Monaco,&quot;Andale Mono&quot;,monospace;"><span id="box">&lt;box&gt;</span> = border-box <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> padding-box <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> content-box</code></p></pre></div><h2 id="example"><a href="#example" title="Permalink to Примеры">Примеры</a></h2><div><h4 id="html">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>border-box<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>The background extends behind the border.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>padding-box<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>The background extends to the inside edge of the border.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>content-box<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>The background extends only to the edge of the content box.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>The background is clipped to the foreground text.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<h4 id="css">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token selector">p</span> <span class="token punctuation">{</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> .8em darkviolet<span class="token punctuation">;</span>
+  <span class="token property">border-style</span><span class="token punctuation">:</span> dotted double<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 1em 0<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 1.4em<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>60deg<span class="token punctuation">,</span> red<span class="token punctuation">,</span> yellow<span class="token punctuation">,</span> red<span class="token punctuation">,</span> yellow<span class="token punctuation">,</span> red<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">font</span><span class="token punctuation">:</span> 900 1.2em sans-serif<span class="token punctuation">;</span>
+  <span class="token property">text-decoration</span><span class="token punctuation">:</span> underline<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.border-box</span> <span class="token punctuation">{</span> <span class="token property">background-clip</span><span class="token punctuation">:</span> border-box<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token selector">.padding-box</span> <span class="token punctuation">{</span> <span class="token property">background-clip</span><span class="token punctuation">:</span> padding-box<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token selector">.content-box</span> <span class="token punctuation">{</span> <span class="token property">background-clip</span><span class="token punctuation">:</span> content-box<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+
+<span class="token selector">.text</span> <span class="token punctuation">{</span>
+  <span class="token property">background-clip</span><span class="token punctuation">:</span> text<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">rgba</span><span class="token punctuation">(</span>0<span class="token punctuation">,</span>0<span class="token punctuation">,</span>0<span class="token punctuation">,</span>.2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<h4 id="результат">Результат</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Example" width="600" height="580" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/background-clip/_sample_.Example.html" loading="lazy"></iframe></p></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table>
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-backgrounds-3/#the-background-clip" hreflang="en" lang="en" class="external" rel=" noopener">CSS Backgrounds and Borders Module Level&nbsp;3<br><small lang="ru">Определение 'background-clip' в этой спецификации.</small></a></td>
+   <td><span class="spec-cr">Кандидат в рекомендации</span></td>
+   <td>Первоначальное определение.</td>
+  </tr>
+  <tr>
+   <td><a href="https://drafts.csswg.org/css-backgrounds-4/#background-clip" hreflang="en" lang="en" class="external" rel=" noopener">CSS Backgrounds and Borders Module Level&nbsp;4<br><small lang="ru">Определение 'background-clip' в этой спецификации.</small></a></td>
+   <td><span class="spec-ed">Редакторский черновик</span></td>
+   <td>Добавляет значение <code>text</code>.</td>
+  </tr>
+ </tbody>
+</table>
+
+<p></p><table class="properties"><tbody><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td><code>border-box</code></td></tr><tr><th scope="row">Применяется к</th><td>все элементы. Это также применяется к <a href="/css/::first-letter/"><code>::first-letter</code></a> и <a href="/css/::first-line/"><code>::first-line</code></a>.</td></tr><tr><th scope="row"><a href="/css/inheritance/">Наследуется</a></th><td>нет</td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>как указано</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="совместимость_с_браузерами"><a href="#совместимость_с_браузерами" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li>Свойство <a href="/css/clip-path/"><code>clip-path</code></a> создаёт область отсечения, которая определяет, которая определяет, какая часть целого элемента должна отображаться.</li>
+ <li>Свойства фона: <a href="/css/background/"><code>background</code></a>, <a href="/css/background-color/"><code>background-color</code></a>, <a href="/css/background-image/"><code>background-image</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/box_model">Введение в блочную модель CSS</a></li>
+</ul></div>

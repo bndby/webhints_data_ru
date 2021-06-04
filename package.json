@@ -2,22 +2,16 @@
   "name": "webhints",
   "version": "1.0.0",
   "description": "data files",
-  "main": "index.js",
+  "type": "module",
   "repository": "https://github.com/bndby/webhints_data_ru.git",
-  "author": "Bandarenka Yura <by@klen.by>",
+  "author": "Bandarenka Yura <info@bnd.by>",
   "license": "MIT",
-  "dependencies": {
-    "cpy": "^8.1.0",
-    "husky": "^3.1.0",
-    "markdown-json": "^1.4.1"
-  },
   "scripts": {
-    "data": "node ./src/data2.js"
+    "build": "node js.js && node css.js"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run data && git add ."
-    }
-  },
-  "devDependencies": {}
+  "devDependencies": {
+    "cheerio": "0.22.0",
+    "fs-extra": "^10.0.0",
+    "node-fetch": "^2.6.1"
+  }
 }

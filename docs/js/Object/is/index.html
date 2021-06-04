@@ -1,0 +1,74 @@
+<h1>Object.is()</h1><div><div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Метод <code><strong>Object.is()</strong></code> определяет, являются ли два значения <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness" class="only-in-en-us" title="Currently only available in English (US)">одинаковыми значениями (en-US)</a>.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code>var <var>isSame</var> = Object.is(<var>value1</var>, <var>value2</var>);</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>value1</code></dt>
+ <dd>Первое сравниваемое значение.</dd>
+ <dt><code>value2</code></dt>
+ <dd>Второе сравниваемое значение.</dd>
+</dl></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Метод <code>Object.is()</code> определяет, являются ли два значения <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness" class="only-in-en-us" title="Currently only available in English (US)">одинаковыми значениями (en-US)</a>. Два значения являются одинаковыми в следующих случаях:</p>
+
+<ul>
+ <li>оба равны <a href="/js/undefined/"><code>undefined</code></a></li>
+ <li>оба равны <a href="/js/null/"><code>null</code></a></li>
+ <li>оба равны <code>true</code>, либо оба равны <code>false</code></li>
+ <li>оба являются строками с одинаковой длиной и одинаковыми символами</li>
+ <li>оба являются одним и тем же объектом</li>
+ <li>оба являются числами и
+  <ul>
+   <li>оба равны <code>+0</code></li>
+   <li>оба равны <code>-0</code></li>
+   <li>оба равны <a href="/js/NaN/"><code>NaN</code></a></li>
+   <li>либо оба не равны нулю или <a href="/js/NaN/"><code>NaN</code></a> и оба имеют одинаковое значение</li>
+  </ul>
+ </li>
+</ul>
+
+<p>Поведение этого метода <em>не</em> аналогично оператору <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators"><code>==</code> <span>(en-US)</span></a>. Оператор <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators"><code>==</code> <span>(en-US)</span></a> использует приведение типов обоих операндов (если они имеют различный тип) перед проверкой на равенство (в результате получается, что проверка <code>"" == false</code> даёт <code>true</code>), а метод <code>Object.is</code> приведение типов не выполняет.</p>
+
+<p>Поведение этого метода <em>не</em> аналогично оператору <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators"><code>===</code> <span>(en-US)</span></a>. Оператор <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators"><code>===</code> <span>(en-US)</span></a> (также как и оператор <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators"><code>==</code> <span>(en-US)</span></a>) считает числовые значения <code>-0</code> и <code>+0</code> равными, а значение <a href="/js/Number/NaN/"><code>Number.NaN</code></a> не равным самому себе.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div><pre class="brush: js notranslate"><code>Object<span class="token punctuation">.</span><span class="token function">is</span><span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">,</span> <span class="token string">'foo'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">// true</span>
+Object<span class="token punctuation">.</span><span class="token function">is</span><span class="token punctuation">(</span>window<span class="token punctuation">,</span> window<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// true</span>
+
+Object<span class="token punctuation">.</span><span class="token function">is</span><span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">,</span> <span class="token string">'bar'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">// false</span>
+Object<span class="token punctuation">.</span><span class="token function">is</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>           <span class="token comment">// false</span>
+
+<span class="token keyword">var</span> test <span class="token operator">=</span> <span class="token punctuation">{</span> a<span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+Object<span class="token punctuation">.</span><span class="token function">is</span><span class="token punctuation">(</span>test<span class="token punctuation">,</span> test<span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment">// true</span>
+
+Object<span class="token punctuation">.</span><span class="token function">is</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment">// true</span>
+
+<span class="token comment">// Специальные случаи</span>
+Object<span class="token punctuation">.</span><span class="token function">is</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>            <span class="token comment">// false</span>
+Object<span class="token punctuation">.</span><span class="token function">is</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>           <span class="token comment">// true</span>
+Object<span class="token punctuation">.</span><span class="token function">is</span><span class="token punctuation">(</span><span class="token number">NaN</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token comment">// true</span>
+</code></pre></div><h2 id="polyfill"><a href="#polyfill" title="Permalink to Полифил">Полифил</a></h2><div><p>Метод <code>Object.is</code> предложен в дополнение к стандарту ECMA-262; поэтому он может быть недоступен в некоторых браузерах. Это можно обойти, вставив приведённый ниже фрагмент кода в начало ваших скриптов. Он позволит вам использовать метод <code>Object.is</code> в случаях, когда он не имеет родной поддержки браузером.</p>
+
+<pre class="notranslate"><code>if (!Object.is) {
+  Object.is = function(x, y) {
+    // SameValue algorithm
+    if (x === y) { // Steps 1-5, 7-10
+      // Steps 6.b-6.e: +0 != -0
+      return x !== 0 || 1 / x === 1 / y;
+    } else {
+      // Step 6.a: NaN == NaN
+      return x !== x &amp;&amp; y !== y;
+    }
+  };
+}</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-object.is" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Object.is' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Изначальное определение.</td>
+  </tr>
+  <tr>
+   <td><a href="https://tc39.es/ecma262/#sec-object.is" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript (ECMA-262)<br><small lang="ru">Определение 'Object.is' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><div></div></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness" class="only-in-en-us" title="Currently only available in English (US)">Руководство по JavaScript: одинаковость (en-US)</a>&nbsp;— сравнение всех трёх встроенных способов проверки на одинаковость</li>
+</ul></div>

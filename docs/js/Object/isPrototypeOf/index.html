@@ -1,0 +1,72 @@
+<h1>Object.prototype.isPrototypeOf()</h1><div><div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Метод <code><strong>isPrototypeOf()</strong></code> проверяет, входит ли объект в цепочку прототипов другого объекта.</p>
+
+<div class="note notecard">
+<p><strong>Обратите внимание:</strong> метод <code>isPrototypeOf()</code> отличается от оператора <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/instanceof"><code>instanceof</code></a>. Выражение "<code>object instanceof AFunction</code>" проверяет, присутствует ли в цепочке прототипов объекта <code>object</code> объект <code>AFunction.prototype</code>, а не сам объект <code>AFunction</code>.</p>
+</div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code><var>prototypeObj</var>.isPrototypeOf(<var>object</var>)</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>prototypeObj</code></dt>
+ <dd>Объект, проверяемый на каждую ссылку в цепочке прототипов аргумента <strong>object</strong>.</dd>
+ <dt><code>object</code></dt>
+ <dd>Объект, в чьей цепочке прототипов производится поиск.</dd>
+</dl></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Метод <code>isPrototypeOf()</code> позволяет вам проверять, существует ли объект в цепочке прототипов другого объекта.</p>
+
+<p>Например, рассмотрим следующую цепочку прототипов:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">function</span> <span class="token function">Fee</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">Fi</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+<span class="token class-name">Fi</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Fee</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">Fo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+<span class="token class-name">Fo</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Fi</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">Fum</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+<span class="token class-name">Fum</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Fo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+<p>Если позже вы создадите экземпляр объекта <code>Fum</code> и захотите проверить, что прототип <code>Fi</code> существует в цепочке прототипов <code>Fum</code>, вы можете сделать следующее:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> fum <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Fum</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// ...</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token class-name">Fi</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">isPrototypeOf</span><span class="token punctuation">(</span>fum<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// здесь безопасно что-то делать</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p>Таким образом, вместе с оператором <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/instanceof"><code>instanceof</code></a>, это особенно пригождается, если у вас есть код, который может работать только с объектами, имеющими определённую цепочку прототипов, к примеру, чтобы он мог гарантировать, что в объекте присутствуют определённые методы или свойства.</p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td>ECMAScript 3-е издание.</td>
+   <td>Стандарт</td>
+   <td>Изначальное определение.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-15.2.4.5" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 5.1 (ECMA-262)<br><small lang="ru">Определение 'Object.prototype.hasOwnProperty' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-object.prototype.hasownproperty" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'Object.prototype.hasOwnProperty' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/instanceof"><code>instanceof</code></a></li>
+ <li><a href="/js/Object/getPrototypeOf/"><code>Object.getPrototypeOf()</code></a></li>
+ <li><a href="/js/Object/setPrototypeOf/"><code>Object.setPrototypeOf()</code></a></li>
+ <li><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/proto"><code>Object.prototype.__proto__</code> <span>(en-US)</span></a></li>
+</ul></div>

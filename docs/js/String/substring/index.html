@@ -1,0 +1,92 @@
+<h1>String.prototype.substring()</h1><div><div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Метод <strong><code>substring()</code></strong> возвращает подстроку строки между двумя индексами, или от одного индекса и до конца строки.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code><var>str</var>.substring(<var>indexA</var>[, <var>indexB</var>])</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>indexA</code></dt>
+ <dd>Целое число от <code>0</code> до длины строки, определяющее смещение в строке первого символа, который будет включён в результирующую подстроку.</dd>
+ <dt><code>indexB</code></dt>
+ <dd>Необязательный параметр. Целое число от <code>0</code> до длины строки, определяющее смещение в строке первого символа, который <strong>не будет</strong> включён в результирующую подстроку.</dd>
+</dl></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Метод <code>substring()</code> извлекает символы, начиная с индекса <code>indexA</code> до, но не включая, индекс <code>indexB</code>. В частности:</p>
+
+<ul>
+ <li>Если аргумент <code>indexA</code> равен аргументу <code>indexB</code>, метод <code>substring()</code> вернёт пустую строку.</li>
+ <li>Если аргумент <code>indexB</code> опущен, метод <code>substring()</code> извлечёт символы до конца строки.</li>
+ <li>Если любой из аргументов меньше, либо равен нулю или равен <a href="/js/NaN/"><code>NaN</code></a>, он будет трактоваться как равный 0.</li>
+ <li>Если любой из аргументов больше, чем <code>stringName.length</code>, он будет трактоваться как равный <code>stringName.length</code>.</li>
+</ul>
+
+<p>Если аргумент <code>indexA</code> будет больше аргумента <code>indexB</code>, то метод <code>substring()</code> сработает так, как если бы аргументы были поменяны местами; например, <code><em>str</em>.substring(1, 0) == <em>str</em>.substring(0, 1)</code>.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_using_substring"><a href="#example_using_substring" title="Permalink to Пример: использование метода substring()">Пример: использование метода <code>substring()</code></a></h3><div><p>В следующем примере метод <code>substring()</code> используется для отображения символов из строки <code>'Mozilla'</code>:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> anyString <span class="token operator">=</span> <span class="token string">'Mozilla'</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Отобразит 'Moz'</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>anyString<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>anyString<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Отобразит 'lla'</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>anyString<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>anyString<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Отобразит 'Mozill'</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>anyString<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Отобразит 'Mozilla'</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>anyString<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>anyString<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="example_using_substring_with_length_property"><a href="#example_using_substring_with_length_property" title="Permalink to Пример: использование метода substring() вместе со свойством length">Пример: использование метода <code>substring()</code> вместе со свойством <code>length</code></a></h3><div><p>Следующий пример использует метод <code>substring()</code> и свойство <a href="/js/String/length/"><code>length</code></a> для извлечения последних символов из строки. Этот метод может оказаться легче для запоминания, особенно если учесть, что вам не нужно знать начальный и конечный индексы, как это было в примере выше.</p>
+
+<pre class="brush: js notranslate"><code><span class="token comment">// Отобразит 'illa' - последние 4 символа</span>
+<span class="token keyword">var</span> anyString <span class="token operator">=</span> <span class="token string">'Mozilla'</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> anyString4 <span class="token operator">=</span> anyString<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span>anyString<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>anyString4<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Отобразит 'zilla' - последние 5 символов</span>
+<span class="token keyword">var</span> anyString <span class="token operator">=</span> <span class="token string">'Mozilla'</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> anyString5 <span class="token operator">=</span> anyString<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span>anyString<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>anyString5<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="example_replacing_a_substring_within_a_string"><a href="#example_replacing_a_substring_within_a_string" title="Permalink to Пример: замена подстроки в строке">Пример: замена подстроки в строке</a></h3><div><p>Следующий пример демонстрирует замену подстроки в строке. Он заменит как отдельные символы, так и целые подстроки. Вызов функции в конце примера изменит строку <code>'Дивный новый мир'</code> на строку <code>'Дивный новый веб'</code>.</p>
+
+<pre class="brush: js notranslate"><code><span class="token comment">// Заменяет oldS на newS в строке fullS</span>
+<span class="token keyword">function</span> <span class="token function">replaceString</span><span class="token punctuation">(</span><span class="token parameter">oldS<span class="token punctuation">,</span> newS<span class="token punctuation">,</span> fullS</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> fullS<span class="token punctuation">.</span>length<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>fullS<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> i <span class="token operator">+</span> oldS<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token operator">==</span> oldS<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      fullS <span class="token operator">=</span> fullS<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> i<span class="token punctuation">)</span> <span class="token operator">+</span> newS <span class="token operator">+</span> fullS<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span>i <span class="token operator">+</span> oldS<span class="token punctuation">.</span>length<span class="token punctuation">,</span> fullS<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> fullS<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">replaceString</span><span class="token punctuation">(</span><span class="token string">'мир'</span><span class="token punctuation">,</span> <span class="token string">'веб'</span><span class="token punctuation">,</span> <span class="token string">'Дивный новый мир'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+<p>Обратите внимание, что функция может скатиться в бесконечный цикл, если строка <code>oldS</code> сама является подстрокой для <code>newS</code>&nbsp;— например, если вы попытаетесь заменить слово «мир» на слово «другоймир». Лучше использоваться следующий метод для замены строк:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">function</span> <span class="token function">replaceString</span><span class="token punctuation">(</span><span class="token parameter">oldS<span class="token punctuation">,</span> newS<span class="token punctuation">,</span> fullS</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> fullS<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span>oldS<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>newS<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p>Код выше следует рассматривать всего лишь как пример работы с подстроками. Если вам нужно заменить подстроки, скорее всего вы захотите использовать метод <a href="/js/String/replace/"><code>String.prototype.replace()</code></a>.</p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+  <tr>
+   <td>ECMAScript 1-е издание.</td>
+   <td>Стандарт</td>
+   <td>Реализована в JavaScript 1.0.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-15.5.4.15" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 5.1 (ECMA-262)<br><small lang="ru">Определение 'String.prototype.substring' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-string.prototype.substring" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'String.prototype.substring' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/String/substr/"><code>String.prototype.substr()</code></a></li>
+ <li><a href="/js/String/slice/"><code>String.prototype.slice()</code></a></li>
+</ul></div>

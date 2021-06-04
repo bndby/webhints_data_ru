@@ -1,0 +1,76 @@
+<h1>encodeURIComponent()</h1><div><div></div>
+
+<p><code><strong>encodeURIComponent()</strong></code>&nbsp;- метод,&nbsp;кодирующий компонент&nbsp;универсального&nbsp;идентификатора ресурса&nbsp;(URI) заменой каждой определённой последовательности символов&nbsp;одной, двумя, тремя или четырьмя&nbsp;последовательностями символов, представленных в&nbsp;кодировке&nbsp;UTF-8 &nbsp;(будет только 4 управляющих&nbsp;последовательности для символов, состоящих из 2 "суррогатных" символов).</p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate">encodeURIComponent(str);</pre></div><h3 id="параметры"><a href="#параметры" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+ <dt><code>str</code></dt>
+ <dd>Строка. Компонент URI.</dd>
+</dl></div><h2 id="описание"><a href="#описание" title="Permalink to Описание">Описание</a></h2><div><p><code>encodeURIComponent</code>&nbsp;изменяет&nbsp;все&nbsp;символы, за исключением следующих: латинские буквы, десятичные цифры, <code>- _ .&nbsp;! ~ * ' ( )</code></p>
+
+<p>Замечание: <a href="/js/URIError/"><code>URIError</code></a> будет брошена, если попытаться закодировать суррогат, который не является частью высоко-низкой пары, например:</p>
+
+<pre class="brush: js notranslate"><code><span class="token comment">// низко-высокая пара - нормально</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">encodeURIComponent</span><span class="token punctuation">(</span><span class="token string">'\uD800\uDFFF'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// один высокий суррогат бросит "URIError: malformed URI sequence"</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">encodeURIComponent</span><span class="token punctuation">(</span><span class="token string">'\uD800'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// один низкий суррогат бросит "URIError: malformed URI sequence"</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">encodeURIComponent</span><span class="token punctuation">(</span><span class="token string">'\uDFFF'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+<p>Чтоб избежать неожиданных запросов к серверу, вам следует вызывать&nbsp;<code>encodeURIComponent</code>&nbsp;для любых вводимых пользователем параметров, используемых как часть URI. Например, он мог написать&nbsp;"<code>Thyme &amp;time=again</code>" для переменной <code>comment</code>. Неиспользование&nbsp;<code>encodeURIComponent</code>&nbsp;для неё&nbsp;даст&nbsp;<code>comment=Thyme%20&amp;time=again</code>. Заметьте, что амперсанд и знак равно выделяют новую пару ключ-значение. Так что&nbsp;вместо комментария&nbsp;"<code>Thyme &amp;time=again</code>", вы получите два&nbsp;POST параметра, один -&nbsp;&nbsp;"<code>Thyme </code>", а другой&nbsp;(<code>time</code>) равный "<code>again"</code>.</p>
+
+<p><code>Для&nbsp;<a href="https://www.whatwg.org/specs/web-apps/current-work/multipage/association-of-controls-and-forms.html#application/x-www-form-urlencoded-encoding-algorithm" class="external" rel=" noopener">application/x-www-form-urlencoded</a></code>&nbsp;пробелы должны быть заменены&nbsp;на "+", поэтому вам может понадобиться&nbsp;<code>encodeURIComponent</code>&nbsp;с дополнительной заменой "%20" на&nbsp;"+".</p>
+
+<p>Чтобы строго соблюдать&nbsp;<a class="external" href="https://tools.ietf.org/html/rfc3986" rel=" noopener">RFC 3986</a> (который резервирует&nbsp;!, ', (, ), и&nbsp;*), даже не смотря на то, что символы&nbsp;не используют сформированных URI разделителей, можно безопасно использовать следующие:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">function</span> <span class="token function">fixedEncodeURIComponent</span> <span class="token punctuation">(</span><span class="token parameter">str</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token function">encodeURIComponent</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">[!'()*]</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">c</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token string">'%'</span> <span class="token operator">+</span> c<span class="token punctuation">.</span><span class="token function">charCodeAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div><p>Пример представляет специальное кодирование, требуемое для заголовков сервера в&nbsp;UTF-8:&nbsp;<code>Content-Disposition</code>&nbsp;и&nbsp;<code>Link&nbsp;</code>(к примеру, имена файлов в&nbsp;UTF-8):</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> fileName <span class="token operator">=</span> <span class="token string">'my file(2).txt'</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> header <span class="token operator">=</span> <span class="token string">"Content-Disposition: attachment; filename*=UTF-8''"</span>
+             <span class="token operator">+</span> <span class="token function">encodeRFC5987ValueChars</span><span class="token punctuation">(</span>fileName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>header<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// логирует "Content-Disposition: attachment; filename*=UTF-8''my%20file%282%29.txt"</span>
+
+
+<span class="token keyword">function</span> <span class="token function">encodeRFC5987ValueChars</span> <span class="token punctuation">(</span><span class="token parameter">str</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">encodeURIComponent</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">.</span>
+        <span class="token comment">// Замечание: хотя RFC3986 резервирует "!", RFC5987 это не делает, так что нам не нужно избегать этого</span>
+        <span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">['()]</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> escape<span class="token punctuation">)</span><span class="token punctuation">.</span> <span class="token comment">// i.e., %27 %28 %29</span>
+        <span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\*</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">'%2A'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>
+            <span class="token comment">// Следующее не требуется для кодирования процентов для RFC5987, так что мы можем разрешить немного больше читаемости через провод: |`^</span>
+            <span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">%(?:7C|60|5E)</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> unescape<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-262,%203rd%20edition,%20December%201999.pdf" hreflang="en" lang="en" class="external" title="Спецификация 'ECMAScript 3rd Edition (ECMA-262)'" rel=" noopener">ECMAScript 3rd Edition (ECMA-262)</a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>Initial definition.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-15.1.3.4" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 5.1 (ECMA-262)<br><small lang="ru">Определение 'encodeURIComponent' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-encodeuricomponent-uricomponent" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="ru">Определение 'encodeURIComponent' в этой спецификации.</small></a></td>
+   <td><span class="spec-standard">Стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="поддержка_браузерами"><a href="#поддержка_браузерами" title="Permalink to Поддержка браузерами">Поддержка браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/decodeURI/"><code>decodeURI</code></a></li>
+ <li><a href="/js/encodeURI/"><code>encodeURI</code></a></li>
+ <li><a href="/js/decodeURIComponent/"><code>decodeURIComponent</code></a></li>
+</ul></div>
