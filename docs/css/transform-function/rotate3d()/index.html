@@ -1,6 +1,6 @@
 <h1>rotate3d()</h1><div><div></div>
 
-<div>Функция&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a>&nbsp;<strong><code>rotate3d()</code>&nbsp;</strong>трансформирует элемент без деформации, вращая его в трёхмерном пространстве вокруг зафиксированной оси.&nbsp;Её&nbsp;результатом является тип <a href="/css/transform-function/"><code>&lt;transform-function&gt;</code></a>.</div>
+<div>Функция&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a>&nbsp;<strong><code>rotate3d()</code>&nbsp;</strong>трансформирует элемент без деформации, вращая его в трёхмерном пространстве вокруг зафиксированной оси.&nbsp;Её&nbsp;результатом является тип <a href="/webhints_data_ru/css/transform-function/"><code>&lt;transform-function&gt;</code></a>.</div>
 
 <div>&nbsp;</div>
 
@@ -10,18 +10,18 @@
 
 <p>In 3D space, rotations have three degrees of liberty, which together describe a single axis of rotation. The axis of rotation is defined by an [x, y, z] vector and pass by the origin (as defined by the <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin"><code>transform-origin</code> <span>(en-US)</span></a> property). If, as specified, the vector is not <em>normalized</em> (i.e., if the sum of the square of its three coordinates is not 1), the <a href="https://developer.mozilla.org/ru/docs/Glossary/User_agent">user agent</a> will normalize it internally. A non-normalizable vector, such as the null vector, [0, 0, 0], will cause the rotation to be ignored, but without invaliding the whole CSS property.</p>
 
-<div class="note notecard"><strong>Note:</strong> Unlike rotations in the 2D plane, the composition of 3D rotations is usually not commutative. In other words, the order in which the rotations are applied impacts the result.</div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><p>The amount of rotation created by <code>rotate3d()</code> is specified by three <a href="/css/number/"><code>&lt;number&gt;</code></a>s and one <a href="/css/angle/"><code>&lt;angle&gt;</code></a>. The <code>&lt;number&gt;</code>s represent the x-, y-, and z-coordinates of the vector denoting the axis of rotation. The <code>&lt;angle&gt;</code> represents the angle of rotation; if positive, the movement will be clockwise; if negative, it will be counter-clockwise.</p>
+<div class="note notecard"><strong>Note:</strong> Unlike rotations in the 2D plane, the composition of 3D rotations is usually not commutative. In other words, the order in which the rotations are applied impacts the result.</div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><p>The amount of rotation created by <code>rotate3d()</code> is specified by three <a href="/webhints_data_ru/css/number/"><code>&lt;number&gt;</code></a>s and one <a href="/webhints_data_ru/css/angle/"><code>&lt;angle&gt;</code></a>. The <code>&lt;number&gt;</code>s represent the x-, y-, and z-coordinates of the vector denoting the axis of rotation. The <code>&lt;angle&gt;</code> represents the angle of rotation; if positive, the movement will be clockwise; if negative, it will be counter-clockwise.</p>
 
 <pre class="syntaxbox notranslate">rotate3d(<em>x</em>, <em>y</em>, <em>z</em>, <em>a</em>)
 </pre></div><h3 id="values"><a href="#values" title="Permalink to Values">Values</a></h3><div><dl>
  <dt><code>x</code></dt>
- <dd>Is a <a href="/css/number/"><code>&lt;number&gt;</code></a> describing the x-coordinate of the vector denoting the axis of rotation which could between 0 and 1.</dd>
+ <dd>Is a <a href="/webhints_data_ru/css/number/"><code>&lt;number&gt;</code></a> describing the x-coordinate of the vector denoting the axis of rotation which could between 0 and 1.</dd>
  <dt><code>y</code></dt>
- <dd>Is a <a href="/css/number/"><code>&lt;number&gt;</code></a> describing the y-coordinate of the vector denoting the axis of rotation which could between 0 and 1.</dd>
+ <dd>Is a <a href="/webhints_data_ru/css/number/"><code>&lt;number&gt;</code></a> describing the y-coordinate of the vector denoting the axis of rotation which could between 0 and 1.</dd>
  <dt><code>z</code></dt>
- <dd>Is a <a href="/css/number/"><code>&lt;number&gt;</code></a> describing the z-coordinate of the vector denoting the axis of rotation which could between 0 and 1.</dd>
+ <dd>Is a <a href="/webhints_data_ru/css/number/"><code>&lt;number&gt;</code></a> describing the z-coordinate of the vector denoting the axis of rotation which could between 0 and 1.</dd>
  <dt><code>a</code></dt>
- <dd>Is an <a href="/css/angle/"><code>&lt;angle&gt;</code></a> representing the angle of the rotation. A positive angle denotes a clockwise rotation, a negative angle a counter-clockwise one.</dd>
+ <dd>Is an <a href="/webhints_data_ru/css/angle/"><code>&lt;angle&gt;</code></a> representing the angle of the rotation. A positive angle denotes a clockwise rotation, a negative angle a counter-clockwise one.</dd>
 </dl>
 
 <table class="standard-table">
@@ -93,6 +93,6 @@
 <h4 id="result_2">Result</h4>
 
 <p><iframe class="sample-code-frame" id="frame_Rotating_on_a_custom_axis" width="auto" height="180" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/CSS/transform-function/rotate3d()/_sample_.Rotating_on_a_custom_axis.html" loading="lazy"></iframe></p></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><div><p>Please see the <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function#browser_compatibility">&lt;transform-function&gt;</a></code> data type for compatibility info.</p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
- <li><a href="/css/transform/"><code>transform</code></a></li>
- <li><a href="/css/transform-function/"><code>&lt;transform-function&gt;</code></a></li>
+ <li><a href="/webhints_data_ru/css/transform/"><code>transform</code></a></li>
+ <li><a href="/webhints_data_ru/css/transform-function/"><code>&lt;transform-function&gt;</code></a></li>
 </ul></div>

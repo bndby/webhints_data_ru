@@ -2,7 +2,7 @@
 
 <p></p><p></p>
 
-<p><strong><code>Function</code>&nbsp;constructor</strong>&nbsp;создаёт новый объект&nbsp;<code>Function</code>. Вызов&nbsp;<code>constructor</code>&nbsp;создаёт функцию динамически, но страдает от проблем безопасности и аналогичных (но гораздо менее значительных) проблем производительности <a href="/js/eval/"><code>eval</code></a>. Однако, в отличие от eval, конструктор функций создаёт функции, которые выполняются только в глобальной области..</p>
+<p><strong><code>Function</code>&nbsp;constructor</strong>&nbsp;создаёт новый объект&nbsp;<code>Function</code>. Вызов&nbsp;<code>constructor</code>&nbsp;создаёт функцию динамически, но страдает от проблем безопасности и аналогичных (но гораздо менее значительных) проблем производительности <a href="/webhints_data_ru/js/eval/"><code>eval</code></a>. Однако, в отличие от eval, конструктор функций создаёт функции, которые выполняются только в глобальной области..</p>
 
 <p><iframe class="interactive" width="100%" height="490" src="https://interactive-examples.mdn.mozilla.net/pages/js/function-constructor.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></p>
 
@@ -18,37 +18,37 @@
 <p>Все аргументы, переданные в функцию, трактуются как имена идентификаторов параметров создаваемой функции, и имеют тот же порядок следования, что и при их передаче в конструктор функции.</p>
 
 <div class="note notecard">
-<p><strong>Примечание:</strong> функции, созданные конструктором <code>Function</code>, не создают замыканий на их контексты создания; они всегда создаются в глобальной области видимости. При их вызове, они получат доступ только к своим локальным переменным и переменным из глобальной области видимости, но не к переменным в той области видимости, в которой вызывался конструктор <code>Function</code>. Это поведение отличается от поведения при использовании функции <a href="/js/eval/"><code>eval</code></a> с кодом создания функции.</p>
+<p><strong>Примечание:</strong> функции, созданные конструктором <code>Function</code>, не создают замыканий на их контексты создания; они всегда создаются в глобальной области видимости. При их вызове, они получат доступ только к своим локальным переменным и переменным из глобальной области видимости, но не к переменным в той области видимости, в которой вызывался конструктор <code>Function</code>. Это поведение отличается от поведения при использовании функции <a href="/webhints_data_ru/js/eval/"><code>eval</code></a> с кодом создания функции.</p>
 </div>
 
 <p>Вызов конструктора <code>Function</code> как функции (без использования оператора <code>new</code>) имеет тот же самый эффект, что и вызов его как конструктора.</p></div><h2 id="properties_and_methods_of_function"><a href="#properties_and_methods_of_function" title="Permalink to Свойства и методы объекта Function">Свойства и методы объекта <code>Function</code></a></h2><div><p>Глобальный объект <code>Function</code> не имеет собственных методов или свойств, однако, поскольку он сам является функцией, он наследует некоторые методы и свойства через цепочку прототипов объекта <a href="https://developer.mozilla.org/ru/docs/conflicting/Web/JavaScript/Reference/Global_Objects/Function"><code>Function.prototype</code></a>.</p></div><h2 id="function_prototype_object"><a href="#function_prototype_object" title="Permalink to Прототип объекта Function">Прототип объекта <code>Function</code></a></h2><div></div><h3 id="properties"><a href="#properties" title="Permalink to Свойства">Свойства</a></h3><div><div><dl>
- <dt><a href="/js/Function/arguments/"><code>Function.arguments</code></a> </dt>
- <dd>Массив, соответствующий аргументам, переданным в функцию. Это устаревшее свойство <a href="/js/Function/" aria-current="page"><code>Function</code></a>, используйте вместо него объект <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments"><code>arguments</code> <span>(en-US)</span></a>, доступный внутри функции.</dd>
+ <dt><a href="/webhints_data_ru/js/Function/arguments/"><code>Function.arguments</code></a> </dt>
+ <dd>Массив, соответствующий аргументам, переданным в функцию. Это устаревшее свойство <a href="/webhints_data_ru/js/Function/" aria-current="page"><code>Function</code></a>, используйте вместо него объект <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments"><code>arguments</code> <span>(en-US)</span></a>, доступный внутри функции.</dd>
  <dt><s class="obsoleteElement"><a class="page-not-created" title="Документация об этом ещё не написана; пожалуйста, поспособствуйте её написанию!"><code>Function.arity</code></a> </s></dt>
- <dd><s class="obsoleteElement">Использовалось для определения количества аргументов, ожидаемых функцией, но было удалено. Вместо него используйте свойство <a href="/js/Function/length/"><code>length</code></a>.</s></dd>
- <dt><a href="/js/Function/caller/"><code>Function.caller</code></a> </dt>
+ <dd><s class="obsoleteElement">Использовалось для определения количества аргументов, ожидаемых функцией, но было удалено. Вместо него используйте свойство <a href="/webhints_data_ru/js/Function/length/"><code>length</code></a>.</s></dd>
+ <dt><a href="/webhints_data_ru/js/Function/caller/"><code>Function.caller</code></a> </dt>
  <dd>Определяет функцию, вызвавшую текущую выполняющуюся функцию.</dd>
- <dt><a href="/js/Function/length/"><code>Function.length</code></a></dt>
+ <dt><a href="/webhints_data_ru/js/Function/length/"><code>Function.length</code></a></dt>
  <dd>Определяет количество аргументов, ожидаемых функцией.</dd>
- <dt><a href="/js/Function/name/"><code>Function.name</code></a> </dt>
+ <dt><a href="/webhints_data_ru/js/Function/name/"><code>Function.name</code></a> </dt>
  <dd>Имя функции.</dd>
- <dt><a href="/js/Function/displayName/"><code>Function.displayName</code></a> </dt>
+ <dt><a href="/webhints_data_ru/js/Function/displayName/"><code>Function.displayName</code></a> </dt>
  <dd>Отображаемое имя функции.</dd>
  <dt><code>Function.prototype.constructor</code></dt>
- <dd>Определяет функцию, создающую прототип объекта. Смотрите документацию по <a href="/js/Object/constructor/"><code>Object.prototype.constructor</code></a>.</dd>
+ <dd>Определяет функцию, создающую прототип объекта. Смотрите документацию по <a href="/webhints_data_ru/js/Object/constructor/"><code>Object.prototype.constructor</code></a>.</dd>
 </dl></div></div><h3 id="methods"><a href="#methods" title="Permalink to Методы">Методы</a></h3><div><div><dl>
- <dt><a href="/js/Function/apply/"><code>Function.prototype.apply()</code></a></dt>
- <dd>Вызывает функцию и устанавливает <strong><code>this </code></strong>в контекст предоставленного значения; аргументы передаются объектом <a href="/js/Array/"><code>Array</code></a>.</dd>
- <dt><a href="/js/Function/bind/"><code>Function.prototype.bind()</code></a></dt>
+ <dt><a href="/webhints_data_ru/js/Function/apply/"><code>Function.prototype.apply()</code></a></dt>
+ <dd>Вызывает функцию и устанавливает <strong><code>this </code></strong>в контекст предоставленного значения; аргументы передаются объектом <a href="/webhints_data_ru/js/Array/"><code>Array</code></a>.</dd>
+ <dt><a href="/webhints_data_ru/js/Function/bind/"><code>Function.prototype.bind()</code></a></dt>
  <dd>Создаёт новую функцию, которая, при вызове, самостоятельно вызывает эту функцию в контексте предоставленного значения, с данной последовательностью аргументов, предшествующих любым аргументам, переданным в новую функцию при её вызове. Устанавливает <strong><code>this </code></strong>в контекст предоставленного значения.</dd>
- <dt><a href="/js/Function/call/"><code>Function.prototype.call()</code></a></dt>
+ <dt><a href="/webhints_data_ru/js/Function/call/"><code>Function.prototype.call()</code></a></dt>
  <dd>Вызывает (выполняет) функцию и устанавливает <strong><code>this </code></strong>в контекст предоставленного значения; аргументы передаются как есть.</dd>
  <dt><a class="page-not-created" title="Документация об этом ещё не написана; пожалуйста, поспособствуйте её написанию!"><code>Function.prototype.isGenerator()</code></a> </dt>
  <dd>Возвращает <code>true</code>, если функция является <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Iterators_and_Generators">генератором</a>; в противном случае возвращает <code>false</code>.</dd>
- <dt><a href="/js/Function/toSource/"><code>Function.prototype.toSource()</code></a> </dt>
- <dd>Возвращает строку, представляющую исходный код функции. Переопределяет метод <a href="/js/Object/toSource/"><code>Object.prototype.toSource</code></a>.</dd>
- <dt><a href="/js/Function/toString/"><code>Function.prototype.toString()</code></a></dt>
- <dd>Возвращает строку, представляющую исходный код функции. Переопределяет метод <a href="/js/Object/toString/"><code>Object.prototype.toString</code></a>.</dd>
+ <dt><a href="/webhints_data_ru/js/Function/toSource/"><code>Function.prototype.toSource()</code></a> </dt>
+ <dd>Возвращает строку, представляющую исходный код функции. Переопределяет метод <a href="/webhints_data_ru/js/Object/toSource/"><code>Object.prototype.toSource</code></a>.</dd>
+ <dt><a href="/webhints_data_ru/js/Function/toString/"><code>Function.prototype.toString()</code></a></dt>
+ <dd>Возвращает строку, представляющую исходный код функции. Переопределяет метод <a href="/webhints_data_ru/js/Object/toString/"><code>Object.prototype.toString</code></a>.</dd>
 </dl></div></div><h2 id="function_instances"><a href="#function_instances" title="Permalink to Экземпляры объекта Function">Экземпляры объекта <code>Function</code></a></h2><div><p>Экземпляры объекта <code>Function</code> наследуют методы и свойства из объекта <a href="https://developer.mozilla.org/ru/docs/conflicting/Web/JavaScript/Reference/Global_Objects/Function"><code>Function.prototype</code></a>. Как и со всеми другими конструкторами, вы можете изменить объект прототипа конструктора для применения изменений ко всем экземплярам объекта <code>Function</code>.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_specifying_arguments_with_the_function_constructor"><a href="#example_specifying_arguments_with_the_function_constructor" title="Permalink to Пример: указание аргументов в конструкторе Function">Пример: указание аргументов в конструкторе <code>Function</code></a></h3><div><p>Следующий код создаёт объект <code>Function</code>, который принимает два аргумента.</p>
 
 <pre class="brush: js notranslate"><code><span class="token comment">// Пример может быть запущен непосредственно в вашей консоли JavaScript</span>
@@ -152,10 +152,10 @@
  </tbody>
 </table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
  <li><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions">Функции и их область видимости <span>(en-US)</span></a></li>
- <li><a href="/js/Function/" aria-current="page"><code>Function</code></a></li>
+ <li><a href="/webhints_data_ru/js/Function/" aria-current="page"><code>Function</code></a></li>
  <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/function">инструкция function</a></li>
  <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/function">выражение function</a></li>
  <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/function*">инструкция function*</a></li>
  <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/function*">выражение function*</a></li>
- <li><a href="/js/GeneratorFunction/"><code>GeneratorFunction</code></a></li>
+ <li><a href="/webhints_data_ru/js/GeneratorFunction/"><code>GeneratorFunction</code></a></li>
 </ul></div>

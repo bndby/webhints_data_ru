@@ -1,12 +1,12 @@
 <h1>box-sizing</h1><div><div></div>
 
-<p><span class="seoSummary"><a href="/css/">CSS</a> свойство <strong><code>box-sizing</code></strong> определяет как вычисляется общая ширина и высота элемента.</span></p>
+<p><span class="seoSummary"><a href="/webhints_data_ru/css/">CSS</a> свойство <strong><code>box-sizing</code></strong> определяет как вычисляется общая ширина и высота элемента.</span></p>
 
 <div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/box-sizing.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
 
 <div></div>
 
-<p>По умолчанию в <a href="/css/CSS_Box_Model/Introduction_to_the_CSS_box_model/" title="CSS/Box_model">блоковой&nbsp;модели CSS</a> ширина и высота, которую вы задаёте элементу применяется только для контента элемента. Если у элемента есть граница или внутренний отступ, то они добавляются к ширине и высоте, чтобы получить&nbsp;отображаемый на экране размер. Это значит, что когда вы выставляете ширину и высоту, вам придётся изменять значение, при добавлении границ и отступов. Например, если у вас есть четыре блока с <code>width: 25%;</code> , и у какого-нибудь из них есть граница или внутренний отступ слева или справа, то&nbsp;по умолчанию они не поместятся на одной строке.</p>
+<p>По умолчанию в <a href="/webhints_data_ru/css/CSS_Box_Model/Introduction_to_the_CSS_box_model/" title="CSS/Box_model">блоковой&nbsp;модели CSS</a> ширина и высота, которую вы задаёте элементу применяется только для контента элемента. Если у элемента есть граница или внутренний отступ, то они добавляются к ширине и высоте, чтобы получить&nbsp;отображаемый на экране размер. Это значит, что когда вы выставляете ширину и высоту, вам придётся изменять значение, при добавлении границ и отступов. Например, если у вас есть четыре блока с <code>width: 25%;</code> , и у какого-нибудь из них есть граница или внутренний отступ слева или справа, то&nbsp;по умолчанию они не поместятся на одной строке.</p>
 
 <p>Свойство <code>box-sizing</code> может изменять это поведение:</p>
 
@@ -19,13 +19,13 @@
 <p><strong>Примечание: </strong>Часто выставление <code>box-sizing: border-box</code> полезно для размещения элементов. Оно сильно упрощает работу с размерами элементов, и как правило устраняет ряд подводных камней, на которые вы можете наткнуться, размещая контент. С другой стороны, используя <code>position-relative</code> или <code>position: absolute</code>, <code>box-sizing: content-box</code> позволяет позиционным значениям быть зависимыми только от контента, а не от границ и отступов, что иногда желательно.</p>
 </div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><p>Для свойства <code>box-sizing</code>&nbsp; устанавливается единственное ключевое слово из списка значений ниже.</p></div><h3 id="values"><a href="#values" title="Permalink to Значения">Значения</a></h3><div><dl>
  <dt><code>content-box</code></dt>
- <dd>Это значение по умолчанию, определённое в CSS стандарте. Свойства <a href="/css/width/">width</a> и <a href="/css/height/">height</a> включают исключительно контент, и не включают <a href="/css/padding/">padding</a> и <a href="/css/border/">border</a>. Например&nbsp;<code>.box {width: 350px; border: 10px solid black;}</code>&nbsp; будет иметь ширину 370 пикселей.</dd>
+ <dd>Это значение по умолчанию, определённое в CSS стандарте. Свойства <a href="/webhints_data_ru/css/width/">width</a> и <a href="/webhints_data_ru/css/height/">height</a> включают исключительно контент, и не включают <a href="/webhints_data_ru/css/padding/">padding</a> и <a href="/webhints_data_ru/css/border/">border</a>. Например&nbsp;<code>.box {width: 350px; border: 10px solid black;}</code>&nbsp; будет иметь ширину 370 пикселей.</dd>
  <dd>Размеры элемента рассчитываются следующим образом: <em>width = ширина контента</em>, и <em>height = высота контента</em>. (Границы и внутренние отступы не включаются в вычисление.)</dd>
 </dl>
 
 <dl>
  <dt><code>border-box</code></dt>
- <dd>Свойства <a href="/css/width/">width</a> и <a href="/css/height/">height</a> включают контент, внутренний отступ и границы, но не включают внешний отступ. Заметьте, что внутренний отступ и граница будут внутри блока. Например, <code>.box {width: 350px; border: 10px solid black;}</code> будет иметь общую ширину 350 пикселей, а ширина контента составит 330 пикселей. Размер контента не может быть отрицательным, минимальное значение - 0, поэтому <code>border-box</code> невозможно использовать для скрытия элемента.</dd>
+ <dd>Свойства <a href="/webhints_data_ru/css/width/">width</a> и <a href="/webhints_data_ru/css/height/">height</a> включают контент, внутренний отступ и границы, но не включают внешний отступ. Заметьте, что внутренний отступ и граница будут внутри блока. Например, <code>.box {width: 350px; border: 10px solid black;}</code> будет иметь общую ширину 350 пикселей, а ширина контента составит 330 пикселей. Размер контента не может быть отрицательным, минимальное значение - 0, поэтому <code>border-box</code> невозможно использовать для скрытия элемента.</dd>
  <dd>Размеры элемента рассчитываются следующим образом: <em>width = граница + внутренний отступ + ширина контента</em>, и <em>height = граница + внутренний отступ + высота контента</em>.</dd>
 </dl></div><h3 id="формальный_синтаксис"><a href="#формальный_синтаксис" title="Permalink to Формальный синтаксис">Формальный синтаксис</a></h3><div><pre class="notranslate">content-box <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> border-box</pre>
 
@@ -72,6 +72,6 @@
  </tbody>
 </table>
 
-<p></p><table class="properties"><tbody><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td><code>content-box</code></td></tr><tr><th scope="row">Применяется к</th><td>все элементы, которые могут иметь ширину и высоту</td></tr><tr><th scope="row"><a href="/css/inheritance/">Наследуется</a></th><td>нет</td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>как указано</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
- <li><a href="/css/CSS_Box_Model/Introduction_to_the_CSS_box_model/" title="CSS/Box model">Блоковая модель CSS</a></li>
+<p></p><table class="properties"><tbody><tr><th scope="row"><a href="/webhints_data_ru/css/initial_value/">Начальное значение</a></th><td><code>content-box</code></td></tr><tr><th scope="row">Применяется к</th><td>все элементы, которые могут иметь ширину и высоту</td></tr><tr><th scope="row"><a href="/webhints_data_ru/css/inheritance/">Наследуется</a></th><td>нет</td></tr><tr><th scope="row"><a href="/webhints_data_ru/css/computed_value/">Обработка значения</a></th><td>как указано</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/webhints_data_ru/css/CSS_Box_Model/Introduction_to_the_CSS_box_model/" title="CSS/Box model">Блоковая модель CSS</a></li>
 </ul></div>

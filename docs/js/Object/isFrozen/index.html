@@ -1,7 +1,7 @@
 <h1>Object.isFrozen()</h1><div><div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Метод <code><strong>Object.isFrozen()</strong></code> определяет, был ли объект заморожен.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code>Object.isFrozen(<var>obj</var>)</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
  <dt><code>obj</code></dt>
  <dd>Проверяемый объект.</dd>
-</dl></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Объект является замороженным только в том случае, если он не <a href="/js/Object/isExtensible/">расширяем</a>, все его свойства являются не настраиваемыми и все его свойства данных (то есть такие, которые не являются свойствами доступа с функциями сеттера или геттера) являются не записываемыми.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div><pre class="brush: js notranslate"><code><span class="token comment">// Новый объект является расширяемым, так что он не заморожен.</span>
+</dl></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Объект является замороженным только в том случае, если он не <a href="/webhints_data_ru/js/Object/isExtensible/">расширяем</a>, все его свойства являются не настраиваемыми и все его свойства данных (то есть такие, которые не являются свойствами доступа с функциями сеттера или геттера) являются не записываемыми.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div><pre class="brush: js notranslate"><code><span class="token comment">// Новый объект является расширяемым, так что он не заморожен.</span>
 <span class="token function">assert</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span><span class="token function">isFrozen</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span class="token comment">// Пустой не расширяемый объект по определению заморожен.</span>
@@ -61,7 +61,7 @@ Object<span class="token punctuation">.</span><span class="token function">freez
 
 <span class="token comment">// Также, по определению, замороженный объект является запечатанным.</span>
 <span class="token function">assert</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span><span class="token function">isSealed</span><span class="token punctuation">(</span>frozen<span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre></div><h2 id="notes"><a href="#notes" title="Permalink to Примечания">Примечания</a></h2><div><p>В ES5, если аргумент метода не является объектом (является примитивным значением), будет выброшено исключение <a href="/js/TypeError/"><code>TypeError</code></a>. В ES6 такой аргумент будет рассматриваться, как простой замороженный объект и метод просто вернёт <code>true</code>.</p>
+</code></pre></div><h2 id="notes"><a href="#notes" title="Permalink to Примечания">Примечания</a></h2><div><p>В ES5, если аргумент метода не является объектом (является примитивным значением), будет выброшено исключение <a href="/webhints_data_ru/js/TypeError/"><code>TypeError</code></a>. В ES6 такой аргумент будет рассматриваться, как простой замороженный объект и метод просто вернёт <code>true</code>.</p>
 
 <pre class="brush: js notranslate"><code><span class="token operator">&gt;</span> Object<span class="token punctuation">.</span><span class="token function">isFrozen</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
 TypeError<span class="token operator">:</span> <span class="token number">1</span> is not an object <span class="token comment">// код ES5</span>
@@ -87,9 +87,9 @@ TypeError<span class="token operator">:</span> <span class="token number">1</spa
   </tr>
  </tbody>
 </table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><div></div></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
- <li><a href="/js/Object/freeze/"><code>Object.freeze()</code></a></li>
- <li><a href="/js/Object/preventExtensions/"><code>Object.preventExtensions()</code></a></li>
- <li><a href="/js/Object/isExtensible/"><code>Object.isExtensible()</code></a></li>
- <li><a href="/js/Object/seal/"><code>Object.seal()</code></a></li>
- <li><a href="/js/Object/isSealed/"><code>Object.isSealed()</code></a></li>
+ <li><a href="/webhints_data_ru/js/Object/freeze/"><code>Object.freeze()</code></a></li>
+ <li><a href="/webhints_data_ru/js/Object/preventExtensions/"><code>Object.preventExtensions()</code></a></li>
+ <li><a href="/webhints_data_ru/js/Object/isExtensible/"><code>Object.isExtensible()</code></a></li>
+ <li><a href="/webhints_data_ru/js/Object/seal/"><code>Object.seal()</code></a></li>
+ <li><a href="/webhints_data_ru/js/Object/isSealed/"><code>Object.isSealed()</code></a></li>
 </ul></div>

@@ -3,7 +3,7 @@
 <div><dl>
  <dt><code>locales</code></dt>
  <dd>
- <p>Необязательный параметр. Строка с языковой меткой BCP 47, либо массив таких строк. Описание общей формы и интерпретации аргумента <code>locales</code> смотрите на <a href="/js/Intl#locale_identification_and_negotiation/">странице, посвящённой объекту Intl</a>. Разрешены следующие ключи расширения Unicode:</p>
+ <p>Необязательный параметр. Строка с языковой меткой BCP 47, либо массив таких строк. Описание общей формы и интерпретации аргумента <code>locales</code> смотрите на <a href="/webhints_data_ru/js/Intl#locale_identification_and_negotiation/">странице, посвящённой объекту Intl</a>. Разрешены следующие ключи расширения Unicode:</p>
 
  <dl>
   <dt><code>nu</code></dt>
@@ -18,7 +18,7 @@
 
  <dl>
   <dt><code>localeMatcher</code></dt>
-  <dd>Используемый алгоритм сопоставления локалей. Возможными значениями являются <code>"lookup"</code> и <code>"best fit"</code>; значением по умолчанию является <code>"best fit"</code>. Информацию по этой опции смотрите на <a href="/js/Intl#locale_negotiation/">странице, посвящённой объекту Intl</a>.</dd>
+  <dd>Используемый алгоритм сопоставления локалей. Возможными значениями являются <code>"lookup"</code> и <code>"best fit"</code>; значением по умолчанию является <code>"best fit"</code>. Информацию по этой опции смотрите на <a href="/webhints_data_ru/js/Intl#locale_negotiation/">странице, посвящённой объекту Intl</a>.</dd>
   <dt><code>timeZone</code></dt>
   <dd>Используемый часовой пояс. Единственным значением, которые реализации обязаны распознавать, является <code>"UTC"</code>; значением по умолчанию является часовой пояс по умолчанию среды выполнения. Реализации также могут распознавать названия часовых поясов из <a href="https://www.iana.org/time-zones" class="external" rel=" noopener">базы данных часовых поясов IANA</a>, например <code>"Asia/Shanghai"</code>, <code>"Asia/Kolkata"</code> или <code>"America/New_York"</code>.</dd>
   <dt><code>hour12</code></dt>
@@ -66,7 +66,7 @@
  </dd>
 </dl></div>
 
-<p>Значением по умолчанию для каждой компоненты даты-времени является <a href="/js/undefined/"><code>undefined</code></a>, однако, если все свойства <code>weekday</code>, <code>year</code>, <code>month</code>, <code>day</code>, <code>hour</code>, <code>minute</code> и <code>second</code> равны <a href="/js/undefined/"><code>undefined</code></a>, то их значения предполагаются равными <code>"numeric"</code>.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_using_tolocalestring"><a href="#example_using_tolocalestring" title="Permalink to Пример: использование метода toLocaleString()">Пример: использование метода <code>toLocaleString()</code></a></h3><div><p>При базовом использовании без указания локали возвращается строка, отформатированная в соответствии с локалью и опциями по умолчанию.</p>
+<p>Значением по умолчанию для каждой компоненты даты-времени является <a href="/webhints_data_ru/js/undefined/"><code>undefined</code></a>, однако, если все свойства <code>weekday</code>, <code>year</code>, <code>month</code>, <code>day</code>, <code>hour</code>, <code>minute</code> и <code>second</code> равны <a href="/webhints_data_ru/js/undefined/"><code>undefined</code></a>, то их значения предполагаются равными <code>"numeric"</code>.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_using_tolocalestring"><a href="#example_using_tolocalestring" title="Permalink to Пример: использование метода toLocaleString()">Пример: использование метода <code>toLocaleString()</code></a></h3><div><p>При базовом использовании без указания локали возвращается строка, отформатированная в соответствии с локалью и опциями по умолчанию.</p>
 
 <pre class="brush: js notranslate"><code><span class="token keyword">var</span> date <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>Date<span class="token punctuation">.</span><span class="token constant">UTC</span><span class="token punctuation">(</span><span class="token number">2012</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
@@ -74,7 +74,7 @@
 <span class="token comment">// локали по умолчанию и часового пояса по умолчанию</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>date<span class="token punctuation">.</span><span class="token function">toLocaleString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">// → "12/11/2012, 7:00:00 PM", если код запущен с локалью en-US и часовым поясом America/Los_Angeles</span>
-</code></pre></div><h3 id="example_checking_for_support_for_locales_and_options_arguments"><a href="#example_checking_for_support_for_locales_and_options_arguments" title="Permalink to Пример: проверка поддержки аргументов locales и options">Пример: проверка поддержки аргументов <code>locales</code> и <code>options</code></a></h3><div><p>Аргументы <code>locales</code> и <code>options</code> поддерживаются ещё не всеми браузерами. Для проверки того, поддерживает ли их уже реализация, можно затребовать несуществующую метку языка и проверить, будет ли выброшено исключение <a href="/js/RangeError/"><code>RangeError</code></a>:</p>
+</code></pre></div><h3 id="example_checking_for_support_for_locales_and_options_arguments"><a href="#example_checking_for_support_for_locales_and_options_arguments" title="Permalink to Пример: проверка поддержки аргументов locales и options">Пример: проверка поддержки аргументов <code>locales</code> и <code>options</code></a></h3><div><p>Аргументы <code>locales</code> и <code>options</code> поддерживаются ещё не всеми браузерами. Для проверки того, поддерживает ли их уже реализация, можно затребовать несуществующую метку языка и проверить, будет ли выброшено исключение <a href="/webhints_data_ru/js/RangeError/"><code>RangeError</code></a>:</p>
 
 <pre class="brush: js notranslate"><code><span class="token keyword">function</span> <span class="token function">toLocaleStringSupportsLocales</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">try</span> <span class="token punctuation">{</span>
@@ -137,7 +137,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token comment">// Иногда даже в США нужен 24-х часовой формат времени</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>date<span class="token punctuation">.</span><span class="token function">toLocaleString</span><span class="token punctuation">(</span><span class="token string">'en-US'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> hour12<span class="token operator">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">// → "12/19/2012, 19:00:00"</span>
-</code></pre></div><h2 id="performance"><a href="#performance" title="Permalink to Производительность">Производительность</a></h2><div><p>При форматировании большого количества дат лучшим вариантом будет создание объекта <a href="/js/Intl/DateTimeFormat/"><code>Intl.DateTimeFormat</code></a> и использование функции, предоставляемой его свойством <a href="/js/Intl/DateTimeFormat/format/"><code>format</code></a>.</p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+</code></pre></div><h2 id="performance"><a href="#performance" title="Permalink to Производительность">Производительность</a></h2><div><p>При форматировании большого количества дат лучшим вариантом будет создание объекта <a href="/webhints_data_ru/js/Intl/DateTimeFormat/"><code>Intl.DateTimeFormat</code></a> и использование функции, предоставляемой его свойством <a href="/webhints_data_ru/js/Intl/DateTimeFormat/format/"><code>format</code></a>.</p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
  <tbody>
   <tr>
    <th scope="col">Спецификация</th>
@@ -166,8 +166,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
   </tr>
  </tbody>
 </table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
- <li><a href="/js/Intl/DateTimeFormat/"><code>Intl.DateTimeFormat</code></a></li>
- <li><a href="/js/Date/toLocaleDateString/"><code>Date.prototype.toLocaleDateString()</code></a></li>
- <li><a href="/js/Date/toLocaleTimeString/"><code>Date.prototype.toLocaleTimeString()</code></a></li>
- <li><a href="/js/Date/toString/"><code>Date.prototype.toString()</code></a></li>
+ <li><a href="/webhints_data_ru/js/Intl/DateTimeFormat/"><code>Intl.DateTimeFormat</code></a></li>
+ <li><a href="/webhints_data_ru/js/Date/toLocaleDateString/"><code>Date.prototype.toLocaleDateString()</code></a></li>
+ <li><a href="/webhints_data_ru/js/Date/toLocaleTimeString/"><code>Date.prototype.toLocaleTimeString()</code></a></li>
+ <li><a href="/webhints_data_ru/js/Date/toString/"><code>Date.prototype.toString()</code></a></li>
 </ul></div>

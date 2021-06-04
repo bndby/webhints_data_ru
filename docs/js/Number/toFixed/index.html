@@ -1,11 +1,11 @@
 <h1>Number.prototype.toFixed()</h1><div><div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Метод <strong><code>toFixed()</code></strong> форматирует число, используя запись с фиксированной запятой.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code><var>numObj</var>.toFixed([<var>digits</var>])</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
  <dt><code>digits</code></dt>
  <dd>Необязательный параметр. Количество цифр после десятичной запятой; может быть значением между 0 и 20 включительно, хотя реализации могут поддерживать и больший диапазон значений. Если аргумент опущен, он считается равным 0.</dd>
-</dl></div><h3 id="returns"><a href="#returns" title="Permalink to Возвращаемое значение">Возвращаемое значение</a></h3><div><p>Строка, представляющая <code>numObj</code>, не использующая экспоненциальную запись и содержащая ровно <code>digits</code> цифр после десятичной запятой. Число округляется при необходимости, а дробная часть дополняется нулями таким образом, чтобы иметь указанную длину. Если <code>numObj</code> больше или равно&nbsp;<code>1e+21</code>, этот метод просто вызывает метод <a href="/js/Number/toString/"><code>Number.prototype.toString()</code></a> и возвращает строку в экспоненциальной записи.</p></div><h3 id="throws"><a href="#throws" title="Permalink to Выбрасываемые исключения">Выбрасываемые исключения</a></h3><div><dl>
- <dt><a href="/js/RangeError/"><code>RangeError</code></a></dt>
- <dd>Если параметр <code>digits</code> слишком маленький или слишком большой. Значения между 0 и 20 включительно не будут порождать исключение <a href="/js/RangeError/"><code>RangeError</code></a>. Также реализации могут поддерживать большие и меньшие значения.</dd>
- <dt><a href="/js/TypeError/"><code>TypeError</code></a></dt>
- <dd>Если этот метод вызывается на объекте, не являющимся объектом <a href="/js/Number/"><code>Number</code></a>.</dd>
+</dl></div><h3 id="returns"><a href="#returns" title="Permalink to Возвращаемое значение">Возвращаемое значение</a></h3><div><p>Строка, представляющая <code>numObj</code>, не использующая экспоненциальную запись и содержащая ровно <code>digits</code> цифр после десятичной запятой. Число округляется при необходимости, а дробная часть дополняется нулями таким образом, чтобы иметь указанную длину. Если <code>numObj</code> больше или равно&nbsp;<code>1e+21</code>, этот метод просто вызывает метод <a href="/webhints_data_ru/js/Number/toString/"><code>Number.prototype.toString()</code></a> и возвращает строку в экспоненциальной записи.</p></div><h3 id="throws"><a href="#throws" title="Permalink to Выбрасываемые исключения">Выбрасываемые исключения</a></h3><div><dl>
+ <dt><a href="/webhints_data_ru/js/RangeError/"><code>RangeError</code></a></dt>
+ <dd>Если параметр <code>digits</code> слишком маленький или слишком большой. Значения между 0 и 20 включительно не будут порождать исключение <a href="/webhints_data_ru/js/RangeError/"><code>RangeError</code></a>. Также реализации могут поддерживать большие и меньшие значения.</dd>
+ <dt><a href="/webhints_data_ru/js/TypeError/"><code>TypeError</code></a></dt>
+ <dd>Если этот метод вызывается на объекте, не являющимся объектом <a href="/webhints_data_ru/js/Number/"><code>Number</code></a>.</dd>
 </dl></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_using_tofixed"><a href="#example_using_tofixed" title="Permalink to Пример: использование toFixed">Пример: использование <code>toFixed</code></a></h3><div><pre class="brush: js notranslate"><code><span class="token keyword">var</span> numObj <span class="token operator">=</span> <span class="token number">12345.6789</span><span class="token punctuation">;</span>
 
 numObj<span class="token punctuation">.</span><span class="token function">toFixed</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment">// Вернёт '12346': обратите внимание на округление, дробной части нет</span>
@@ -41,7 +41,7 @@ numObj<span class="token punctuation">.</span><span class="token function">toFix
   </tr>
  </tbody>
 </table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><div></div></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
- <li><a href="/js/Number/toExponential/"><code>Number.prototype.toExponential()</code></a></li>
- <li><a href="/js/Number/toPrecision/"><code>Number.prototype.toPrecision()</code></a></li>
- <li><a href="/js/Number/toString/"><code>Number.prototype.toString()</code></a></li>
+ <li><a href="/webhints_data_ru/js/Number/toExponential/"><code>Number.prototype.toExponential()</code></a></li>
+ <li><a href="/webhints_data_ru/js/Number/toPrecision/"><code>Number.prototype.toPrecision()</code></a></li>
+ <li><a href="/webhints_data_ru/js/Number/toString/"><code>Number.prototype.toString()</code></a></li>
 </ul></div>

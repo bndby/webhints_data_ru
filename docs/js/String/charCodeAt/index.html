@@ -5,7 +5,7 @@
 
 <p>Обратите внимание, что метод <code>charCodeAt()</code> всегда возвращает значение, меньшее 65536. Так происходит потому, что большие кодовые точки представляются парой (меньших значений) «суррогатных» псевдо-символов, которые используются для составления настоящего символа. Поэтому для того, чтобы получить полный символ для значений символов от 65536 и выше, необходимо получить не только значение <code>charCodeAt(i)</code>, но также значение <code>charCodeAt(i + 1)</code> (как если бы строка состояла из двух букв). Смотрите второй и третий примеры ниже.</p>
 
-<p>Метод <code>charCodeAt()</code> возвращает <a href="/js/NaN/"><code>NaN</code></a>, если указанный индекс меньше нуля или больше длины строки.</p>
+<p>Метод <code>charCodeAt()</code> возвращает <a href="/webhints_data_ru/js/NaN/"><code>NaN</code></a>, если указанный индекс меньше нуля или больше длины строки.</p>
 
 <p>Обратная совместимость: в более старых версиях (например, в JavaScript 1.2) метод <code>charCodeAt()</code> возвращал число из кодировки ISO-Latin-1 по указанному индексу. Диапазон символов в кодировке ISO-Latin-1 простирается от 0 до 255. Первые 127 чисел напрямую отображаются в кодировку ASCII.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_using_charcodeat"><a href="#example_using_charcodeat" title="Permalink to Пример: использование метода charCodeAt()">Пример: использование метода <code>charCodeAt()</code></a></h3><div><p>В следующем примере возвращается число 65, значение Unicode для латинского символа «A».</p>
 
@@ -97,8 +97,8 @@
   </tr>
  </tbody>
 </table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
- <li><a href="/js/String/fromCharCode/"><code>String.fromCharCode()</code></a></li>
- <li><a href="/js/String/charAt/"><code>String.prototype.charAt()</code></a></li>
- <li><a href="/js/String/fromCodePoint/"><code>String.fromCodePoint()</code></a></li>
- <li><a href="/js/String/codePointAt/"><code>String.prototype.codePointAt()</code></a></li>
+ <li><a href="/webhints_data_ru/js/String/fromCharCode/"><code>String.fromCharCode()</code></a></li>
+ <li><a href="/webhints_data_ru/js/String/charAt/"><code>String.prototype.charAt()</code></a></li>
+ <li><a href="/webhints_data_ru/js/String/fromCodePoint/"><code>String.fromCodePoint()</code></a></li>
+ <li><a href="/webhints_data_ru/js/String/codePointAt/"><code>String.prototype.codePointAt()</code></a></li>
 </ul></div>

@@ -7,7 +7,7 @@
 <p><strong>Примечание:</strong> <code>:matches()</code> был переименован в&nbsp;<code>:is()</code>&nbsp;в&nbsp;<a href="https://github.com/w3c/csswg-drafts/issues/3258" style="white-space: nowrap;" class="external" rel=" noopener">CSSWG issue&nbsp;#3258</a>.</p>
 </div>
 
-<p><strong><code>:is()</code></strong>&nbsp;это функция&nbsp;<a href="/css/">псевдокласс CSS</a>&nbsp;принимающая&nbsp;список селекторов как аргумент, и выбирает любой элемент, который может быть выбран одним из селекторов в этом списке. Это полезно при переписи огромных селекторов в более компактную форму.</p>
+<p><strong><code>:is()</code></strong>&nbsp;это функция&nbsp;<a href="/webhints_data_ru/css/">псевдокласс CSS</a>&nbsp;принимающая&nbsp;список селекторов как аргумент, и выбирает любой элемент, который может быть выбран одним из селекторов в этом списке. Это полезно при переписи огромных селекторов в более компактную форму.</p>
 
 <p>Заметьте, что в данный момент браузеры поддерживают её функциональность как&nbsp;<code>:matches()</code>, или даже как более старый, префиксный псевдокласс&nbsp;— <code>:any()</code>, включая старые версии&nbsp;Chrome, Firefox, и Safari. <code>:any()</code> работает точно таким же образом как и&nbsp;<code>:matches()</code>/<code>:is()</code>, за исключением того, что&nbsp; <code>:any()</code>&nbsp;требует постановку префиксов и не поддерживает <a href="https://developer.mozilla.org/ru/docs/Learn/CSS/Building_blocks/Selectors">комплексные селекторы</a>.</p>
 
@@ -173,7 +173,7 @@ nav section h1, nav article h1, nav aside h1, nav nav h1</span> <span class="tok
 :is(section, article, aside, nav)
 :is(section, article, aside, nav) h1</span> <span class="token punctuation">{</span>
   <span class="token property">font-size</span><span class="token punctuation">:</span> 15px<span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre></div><h3 id="как_избежать_аннулирования_списка_селекторов"><a href="#как_избежать_аннулирования_списка_селекторов" title="Permalink to Как избежать аннулирования списка селекторов">Как избежать аннулирования списка селекторов</a></h3><div><p>В отличие от&nbsp;<a href="/css/Selector_list/">списка селекторов</a>, псевдокласс&nbsp;<code>:is()</code>&nbsp;не аннулируется, когда из селекторов, попавший туда не поддерживается браузером.</p>
+<span class="token punctuation">}</span></code></pre></div><h3 id="как_избежать_аннулирования_списка_селекторов"><a href="#как_избежать_аннулирования_списка_селекторов" title="Permalink to Как избежать аннулирования списка селекторов">Как избежать аннулирования списка селекторов</a></h3><div><p>В отличие от&nbsp;<a href="/webhints_data_ru/css/Selector_list/">списка селекторов</a>, псевдокласс&nbsp;<code>:is()</code>&nbsp;не аннулируется, когда из селекторов, попавший туда не поддерживается браузером.</p>
 
 <pre class="brush: css notranslate"><code><span class="token selector">:is(:valid, :unsupported)</span> <span class="token punctuation">{</span>
   ...
@@ -201,7 +201,7 @@ nav section h1, nav article h1, nav aside h1, nav nav h1</span> <span class="tok
   </tr>
  </tbody>
 </table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Браузерная совместимость">Браузерная совместимость</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
- <li><a href="/css/:where/"><code>:where()</code></a>&nbsp; - Like <code>:is()</code>, but with 0&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity">specificity</a>.</li>
- <li><a href="/css/Selector_list/">Список селекторов</a></li>
+ <li><a href="/webhints_data_ru/css/:where/"><code>:where()</code></a>&nbsp; - Like <code>:is()</code>, but with 0&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity">specificity</a>.</li>
+ <li><a href="/webhints_data_ru/css/Selector_list/">Список селекторов</a></li>
  <li><a href="https://developer.mozilla.org/ru/docs/Web/Web_Components">Веб компоненты</a></li>
 </ul></div>

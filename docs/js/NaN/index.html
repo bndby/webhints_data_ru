@@ -26,9 +26,9 @@
 
 <p><iframe class="interactive" width="100%" height="490" src="https://interactive-examples.mdn.mozilla.net/pages/js/globalprops-nan.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></p></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p><code>NaN</code> является свойством <em>глобального объекта</em>.</p>
 
-<p>Начальным значением <code>NaN</code> является Not-A-Number (не-число)&nbsp;— то же самое значение, что и&nbsp;у <a href="/js/Number/NaN/"><code>Number.NaN</code></a>. В современных браузерах <code>NaN</code> является ненастраиваемым и незаписываемым свойством. Даже когда это не так, избегайте его переопределения.</p>
+<p>Начальным значением <code>NaN</code> является Not-A-Number (не-число)&nbsp;— то же самое значение, что и&nbsp;у <a href="/webhints_data_ru/js/Number/NaN/"><code>Number.NaN</code></a>. В современных браузерах <code>NaN</code> является ненастраиваемым и незаписываемым свойством. Даже когда это не так, избегайте его переопределения.</p>
 
-<p>В программах <code>NaN</code> используется довольно редко. Это возвращаемое значение в ситуациях, когда&nbsp;математические (<a href="/js/Math/"><code>Math</code></a>) функции не срабатывают должным образом&nbsp;(например, при вызове <code>Math.sqrt(-1)</code>) или когда функция, пытающаяся считать число из строки, терпит неудачу по причине того, что в строке не число (<code>parseInt('blabla')</code>).</p></div><h3 id="testing_against_nan"><a href="#testing_against_nan" title="Permalink to Проверка на равенство NaN">Проверка на равенство <code>NaN</code></a></h3><div><p><code>NaN</code>&nbsp;является неравным (посредством сравнения через&nbsp;<code>==</code>,&nbsp;<code>!=</code>,&nbsp;<code>===</code>, and&nbsp;<code>!==</code>) любому&nbsp;другому значению, включая другое значение&nbsp;NaN. Используйте <a href="/js/Number/isNaN/"><code>Number.isNaN()</code></a> или <a href="/js/isNaN/"><code>isNaN()</code></a>, чтобы наиболее понятным образом&nbsp;определить является ли значение значением&nbsp;NaN. Или выполните&nbsp;само-сравнение: NaN, и только NaN, в результате такого сравнения будет неравным самому себе.</p>
+<p>В программах <code>NaN</code> используется довольно редко. Это возвращаемое значение в ситуациях, когда&nbsp;математические (<a href="/webhints_data_ru/js/Math/"><code>Math</code></a>) функции не срабатывают должным образом&nbsp;(например, при вызове <code>Math.sqrt(-1)</code>) или когда функция, пытающаяся считать число из строки, терпит неудачу по причине того, что в строке не число (<code>parseInt('blabla')</code>).</p></div><h3 id="testing_against_nan"><a href="#testing_against_nan" title="Permalink to Проверка на равенство NaN">Проверка на равенство <code>NaN</code></a></h3><div><p><code>NaN</code>&nbsp;является неравным (посредством сравнения через&nbsp;<code>==</code>,&nbsp;<code>!=</code>,&nbsp;<code>===</code>, and&nbsp;<code>!==</code>) любому&nbsp;другому значению, включая другое значение&nbsp;NaN. Используйте <a href="/webhints_data_ru/js/Number/isNaN/"><code>Number.isNaN()</code></a> или <a href="/webhints_data_ru/js/isNaN/"><code>isNaN()</code></a>, чтобы наиболее понятным образом&nbsp;определить является ли значение значением&nbsp;NaN. Или выполните&nbsp;само-сравнение: NaN, и только NaN, в результате такого сравнения будет неравным самому себе.</p>
 
 <pre class="notranslate"><code>NaN === NaN;        // false
 Number.NaN === NaN; // false
@@ -76,7 +76,7 @@ Number.isNaN('hello world'); // false</code></pre></div><h2 id="specifications">
 <div id="compat-desktop"></div>
 
 <div id="compat-mobile"></div></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
- <li><a href="/js/Number/NaN/"><code>Number.NaN</code></a></li>
- <li><a href="/js/Number/isNaN/"><code>Number.isNaN()</code></a></li>
- <li><a href="/js/isNaN/"><code>isNaN()</code></a></li>
+ <li><a href="/webhints_data_ru/js/Number/NaN/"><code>Number.NaN</code></a></li>
+ <li><a href="/webhints_data_ru/js/Number/isNaN/"><code>Number.isNaN()</code></a></li>
+ <li><a href="/webhints_data_ru/js/isNaN/"><code>isNaN()</code></a></li>
 </ul></div>

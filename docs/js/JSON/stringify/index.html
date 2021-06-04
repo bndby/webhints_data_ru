@@ -10,8 +10,8 @@
 
 <ul>
  <li>Порядок преобразования в строку свойств объектов, не являющихся массивами, не гарантируется. Не полагайтесь на порядок свойств во время преобразования.</li>
- <li>Объекты <a href="/js/Boolean/"><code>Boolean</code></a>, <a href="/js/Number/"><code>Number</code></a> и <a href="/js/String/"><code>String</code></a> преобразуются в соответствующие примитивные значения, в соответствии с традиционным соглашением о семантике преобразований.</li>
- <li>Значение <a href="/js/undefined/"><code>undefined</code></a>, функция или символ, встреченные во время преобразования, будут либо опущены (если они найдены в объекте), либо превращены в <a href="/js/null/"><code>null</code></a> (если они найдены в массиве).</li>
+ <li>Объекты <a href="/webhints_data_ru/js/Boolean/"><code>Boolean</code></a>, <a href="/webhints_data_ru/js/Number/"><code>Number</code></a> и <a href="/webhints_data_ru/js/String/"><code>String</code></a> преобразуются в соответствующие примитивные значения, в соответствии с традиционным соглашением о семантике преобразований.</li>
+ <li>Значение <a href="/webhints_data_ru/js/undefined/"><code>undefined</code></a>, функция или символ, встреченные во время преобразования, будут либо опущены (если они найдены в объекте), либо превращены в <a href="/webhints_data_ru/js/null/"><code>null</code></a> (если они найдены в массиве).</li>
  <li>Все свойства, имеющие ключ в виде символа, будут полностью проигнорированы, даже при использовании функции <code>replacer</code>.</li>
 </ul>
 
@@ -58,7 +58,7 @@
 </code></pre></div><h3 id="tojson_behavior"><a href="#tojson_behavior" title="Permalink to Поведение метода toJSON()">Поведение метода <code>toJSON()</code></a></h3><div><p>Если преобразуемый в&nbsp;строку объект имеет свойство с именем <code>toJSON</code> и значением свойства, установленным в функцию, то этот метод <code>toJSON()</code> изменит стандартное поведение преобразования в JSON: вместо преобразования объекта будет использоваться значение, возвращаемое методом <code>toJSON()</code>. Например:</p>
 
 <div class="warning notecard">
-<p>Функции не являются допустимыми данными в JSON, так что они не будут работать. Кроме того, некоторые объекты, например, объект <a href="/js/Date/"><code>Date</code></a>, станут строками после применения <a href="/js/JSON/parse/"><code>JSON.parse()</code></a>.</p>
+<p>Функции не являются допустимыми данными в JSON, так что они не будут работать. Кроме того, некоторые объекты, например, объект <a href="/webhints_data_ru/js/Date/"><code>Date</code></a>, станут строками после применения <a href="/webhints_data_ru/js/JSON/parse/"><code>JSON.parse()</code></a>.</p>
 </div>
 
 <pre class="brush: js notranslate"><code><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
@@ -129,5 +129,5 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <p></p><p></p>
 </div></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON" class="only-in-en-us" title="Currently only available in English (US)">Использование родного объекта JSON (en-US)</a></li>
- <li><a href="/js/JSON/parse/"><code>JSON.parse()</code></a></li>
+ <li><a href="/webhints_data_ru/js/JSON/parse/"><code>JSON.parse()</code></a></li>
 </ul></div>

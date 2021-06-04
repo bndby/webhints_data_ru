@@ -8,7 +8,7 @@
 <ul>
  <li>Если аргумент <code>indexA</code> равен аргументу <code>indexB</code>, метод <code>substring()</code> вернёт пустую строку.</li>
  <li>Если аргумент <code>indexB</code> опущен, метод <code>substring()</code> извлечёт символы до конца строки.</li>
- <li>Если любой из аргументов меньше, либо равен нулю или равен <a href="/js/NaN/"><code>NaN</code></a>, он будет трактоваться как равный 0.</li>
+ <li>Если любой из аргументов меньше, либо равен нулю или равен <a href="/webhints_data_ru/js/NaN/"><code>NaN</code></a>, он будет трактоваться как равный 0.</li>
  <li>Если любой из аргументов больше, чем <code>stringName.length</code>, он будет трактоваться как равный <code>stringName.length</code>.</li>
 </ul>
 
@@ -30,7 +30,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token comment">// Отобразит 'Mozilla'</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>anyString<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>anyString<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre></div><h3 id="example_using_substring_with_length_property"><a href="#example_using_substring_with_length_property" title="Permalink to Пример: использование метода substring() вместе со свойством length">Пример: использование метода <code>substring()</code> вместе со свойством <code>length</code></a></h3><div><p>Следующий пример использует метод <code>substring()</code> и свойство <a href="/js/String/length/"><code>length</code></a> для извлечения последних символов из строки. Этот метод может оказаться легче для запоминания, особенно если учесть, что вам не нужно знать начальный и конечный индексы, как это было в примере выше.</p>
+</code></pre></div><h3 id="example_using_substring_with_length_property"><a href="#example_using_substring_with_length_property" title="Permalink to Пример: использование метода substring() вместе со свойством length">Пример: использование метода <code>substring()</code> вместе со свойством <code>length</code></a></h3><div><p>Следующий пример использует метод <code>substring()</code> и свойство <a href="/webhints_data_ru/js/String/length/"><code>length</code></a> для извлечения последних символов из строки. Этот метод может оказаться легче для запоминания, особенно если учесть, что вам не нужно знать начальный и конечный индексы, как это было в примере выше.</p>
 
 <pre class="brush: js notranslate"><code><span class="token comment">// Отобразит 'illa' - последние 4 символа</span>
 <span class="token keyword">var</span> anyString <span class="token operator">=</span> <span class="token string">'Mozilla'</span><span class="token punctuation">;</span>
@@ -63,7 +63,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token punctuation">}</span>
 </code></pre>
 
-<p>Код выше следует рассматривать всего лишь как пример работы с подстроками. Если вам нужно заменить подстроки, скорее всего вы захотите использовать метод <a href="/js/String/replace/"><code>String.prototype.replace()</code></a>.</p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+<p>Код выше следует рассматривать всего лишь как пример работы с подстроками. Если вам нужно заменить подстроки, скорее всего вы захотите использовать метод <a href="/webhints_data_ru/js/String/replace/"><code>String.prototype.replace()</code></a>.</p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
  <tbody>
   <tr>
    <th scope="col">Спецификация</th>
@@ -87,6 +87,6 @@ console<span class="token punctuation">.</span><span class="token function">log<
   </tr>
  </tbody>
 </table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
- <li><a href="/js/String/substr/"><code>String.prototype.substr()</code></a></li>
- <li><a href="/js/String/slice/"><code>String.prototype.slice()</code></a></li>
+ <li><a href="/webhints_data_ru/js/String/substr/"><code>String.prototype.substr()</code></a></li>
+ <li><a href="/webhints_data_ru/js/String/slice/"><code>String.prototype.slice()</code></a></li>
 </ul></div>

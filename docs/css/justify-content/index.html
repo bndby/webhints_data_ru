@@ -1,12 +1,12 @@
 <h1>justify-content</h1><div><div></div>
 
-<p><a href="/css/">CSS</a>&nbsp;свойство&nbsp; <strong><code>justify-content</code></strong> определяет, как браузер распределяет пространство между&nbsp;и вокруг элементов контента&nbsp;вдоль <a href="https://developer.mozilla.org/ru/docs/Glossary/Main_Axis">главной оси</a> flex контейнера, или вдоль строчной оси grid контейнера.</p>
+<p><a href="/webhints_data_ru/css/">CSS</a>&nbsp;свойство&nbsp; <strong><code>justify-content</code></strong> определяет, как браузер распределяет пространство между&nbsp;и вокруг элементов контента&nbsp;вдоль <a href="https://developer.mozilla.org/ru/docs/Glossary/Main_Axis">главной оси</a> flex контейнера, или вдоль строчной оси grid контейнера.</p>
 
 <p>Интерактивный пример ниже демонстрирует некоторые значения, используя Grid размещение.</p>
 
 <p><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/justify-content.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></p>
 
-<p>Выравнивание выполняется после того, как применяются длины и автоматические поля, что означает, что если во <a href="/css/CSS_Flexible_Box_Layout/">Flexbox разметке</a> есть хотя бы один flex-элемент, с <a href="/css/flex-grow/"><code>flex-grow</code></a> отличным от <code>0</code>, эффект не будет применён, потому что не останется свободного места.</p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* Позиционное выравнивание */</span>
+<p>Выравнивание выполняется после того, как применяются длины и автоматические поля, что означает, что если во <a href="/webhints_data_ru/css/CSS_Flexible_Box_Layout/">Flexbox разметке</a> есть хотя бы один flex-элемент, с <a href="/webhints_data_ru/css/flex-grow/"><code>flex-grow</code></a> отличным от <code>0</code>, эффект не будет применён, потому что не останется свободного места.</p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* Позиционное выравнивание */</span>
 <span class="token property">justify-content</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>     <span class="token comment">/* Выравнивание элементов по центру */</span>
 <span class="token property">justify-content</span><span class="token punctuation">:</span> start<span class="token punctuation">;</span>      <span class="token comment">/* Выравнивание элементов в начале */</span>
 <span class="token property">justify-content</span><span class="token punctuation">:</span> end<span class="token punctuation">;</span>        <span class="token comment">/* Выравнивание элементов в конце */</span>
@@ -48,9 +48,9 @@
  <dt><code>end</code></dt>
  <dd>Элементы располагаются друг за другом и прижимаются к концу контейнера по главной оси.</dd>
  <dt><code>flex-start</code></dt>
- <dd>Элементы располагаются друг за другом и прижимаются к началу контейнера по главной оси, в зависимости от её направления (<a href="/css/flex-direction/">flex-direction</a>).&nbsp;Для элементов, которые не являются дочерними элементами flex контейнера, это значение обрабатывается как&nbsp;<code>start</code>.</dd>
+ <dd>Элементы располагаются друг за другом и прижимаются к началу контейнера по главной оси, в зависимости от её направления (<a href="/webhints_data_ru/css/flex-direction/">flex-direction</a>).&nbsp;Для элементов, которые не являются дочерними элементами flex контейнера, это значение обрабатывается как&nbsp;<code>start</code>.</dd>
  <dt><code>flex-end</code></dt>
- <dd>Элементы располагаются друг за другом и прижимаются к концу&nbsp;контейнера по главной оси, в зависимости от её направления (<a href="/css/flex-direction/">flex-direction</a>).&nbsp;Для элементов, которые не являются дочерними элементами flex контейнера, это значение обрабатывается как&nbsp;<code>end</code>.</dd>
+ <dd>Элементы располагаются друг за другом и прижимаются к концу&nbsp;контейнера по главной оси, в зависимости от её направления (<a href="/webhints_data_ru/css/flex-direction/">flex-direction</a>).&nbsp;Для элементов, которые не являются дочерними элементами flex контейнера, это значение обрабатывается как&nbsp;<code>end</code>.</dd>
  <dt><code>center</code></dt>
  <dd>Элементы располагаются друг за другом в центре контейнера по главной оси.</dd>
  <dt><code>left</code></dt>
@@ -71,7 +71,7 @@
  <dt><code>space-evenly</code></dt>
  <dd>Элементы равномерно распределены вдоль главной оси контейнера. Расстояния между каждой парой соседних элементов равны расстояниям от начала контейнера до первого элемента и от последнего элемента до конца контейнера.</dd>
  <dt><code>stretch</code></dt>
- <dd>If the combined size of the items is less than the size of the alignment container, any <code>auto</code>-sized items have their size increased equally (not proportionally), while still respecting the constraints imposed by <a href="/css/max-height/"><code>max-height</code></a>/<a href="/css/max-width/"><code>max-width</code></a> (or equivalent functionality), so that the combined size exactly fills the alignment container along the main axis.</dd>
+ <dd>If the combined size of the items is less than the size of the alignment container, any <code>auto</code>-sized items have their size increased equally (not proportionally), while still respecting the constraints imposed by <a href="/webhints_data_ru/css/max-height/"><code>max-height</code></a>/<a href="/webhints_data_ru/css/max-width/"><code>max-width</code></a> (or equivalent functionality), so that the combined size exactly fills the alignment container along the main axis.</dd>
 </dl>
 
 <div class="note notecard">
@@ -115,9 +115,9 @@
  </tbody>
 </table>
 
-<p></p><table class="properties"><tbody><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td><code>normal</code></td></tr><tr><th scope="row">Применяется к</th><td>flex-контейнеры</td></tr><tr><th scope="row"><a href="/css/inheritance/">Наследуется</a></th><td>нет</td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>как указано</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="совместимость_с_браузерами"><a href="#совместимость_с_браузерами" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><div></div><h3 id="поддержка_в_flex_разметке"><a href="#поддержка_в_flex_разметке" title="Permalink to Поддержка в Flex разметке">Поддержка в Flex разметке</a></h3><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h3 id="поддержка_в_grid_разметке"><a href="#поддержка_в_grid_разметке" title="Permalink to Поддержка в Grid разметке">Поддержка в Grid разметке</a></h3><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to &nbsp;Смотрите также">&nbsp;Смотрите также</a></h2><div><ul>
- <li>Гид по CSS Flexbox: <em><a href="/css/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox/">Основные понятия Flexbox</a></em></li>
- <li>CSS Flexbox Guide: <em><a href="/css/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container/">Выравнивание элементов во Flex контейнере</a></em></li>
- <li>CSS Grid Guide: <em><a href="/css/CSS_Grid_Layout/Box_Alignment_in_CSS_Grid_Layout/">Выравнивание ячейки в CSS Grid layout</a></em></li>
- <li><a href="/css/CSS_Box_Alignment/">Выравнивание полей CSS</a></li>
+<p></p><table class="properties"><tbody><tr><th scope="row"><a href="/webhints_data_ru/css/initial_value/">Начальное значение</a></th><td><code>normal</code></td></tr><tr><th scope="row">Применяется к</th><td>flex-контейнеры</td></tr><tr><th scope="row"><a href="/webhints_data_ru/css/inheritance/">Наследуется</a></th><td>нет</td></tr><tr><th scope="row"><a href="/webhints_data_ru/css/computed_value/">Обработка значения</a></th><td>как указано</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p></div><h2 id="совместимость_с_браузерами"><a href="#совместимость_с_браузерами" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><div></div><h3 id="поддержка_в_flex_разметке"><a href="#поддержка_в_flex_разметке" title="Permalink to Поддержка в Flex разметке">Поддержка в Flex разметке</a></h3><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h3 id="поддержка_в_grid_разметке"><a href="#поддержка_в_grid_разметке" title="Permalink to Поддержка в Grid разметке">Поддержка в Grid разметке</a></h3><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to &nbsp;Смотрите также">&nbsp;Смотрите также</a></h2><div><ul>
+ <li>Гид по CSS Flexbox: <em><a href="/webhints_data_ru/css/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox/">Основные понятия Flexbox</a></em></li>
+ <li>CSS Flexbox Guide: <em><a href="/webhints_data_ru/css/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container/">Выравнивание элементов во Flex контейнере</a></em></li>
+ <li>CSS Grid Guide: <em><a href="/webhints_data_ru/css/CSS_Grid_Layout/Box_Alignment_in_CSS_Grid_Layout/">Выравнивание ячейки в CSS Grid layout</a></em></li>
+ <li><a href="/webhints_data_ru/css/CSS_Box_Alignment/">Выравнивание полей CSS</a></li>
 </ul></div>

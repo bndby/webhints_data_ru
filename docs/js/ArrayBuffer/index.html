@@ -1,6 +1,6 @@
 <h1>ArrayBuffer</h1><div><div></div>
 
-<p>Объект&nbsp;<strong><code>ArrayBuffer</code></strong>&nbsp;используется для работы с бинарными данными. Он представляет собой ссылку на поток "сырых" двоичных данных, однако работать с ними напрямую возможности не даёт. Вместо этого, вы можете создать&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray">типизированный массив</a>&nbsp;или объект&nbsp;<a href="/js/DataView/"><code>DataView</code></a>, который можно использовать&nbsp;для чтения и записи данных в&nbsp;<strong><code>ArrayBuffer</code></strong>.&nbsp;</p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate">new ArrayBuffer(length)
+<p>Объект&nbsp;<strong><code>ArrayBuffer</code></strong>&nbsp;используется для работы с бинарными данными. Он представляет собой ссылку на поток "сырых" двоичных данных, однако работать с ними напрямую возможности не даёт. Вместо этого, вы можете создать&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray">типизированный массив</a>&nbsp;или объект&nbsp;<a href="/webhints_data_ru/js/DataView/"><code>DataView</code></a>, который можно использовать&nbsp;для чтения и записи данных в&nbsp;<strong><code>ArrayBuffer</code></strong>.&nbsp;</p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate">new ArrayBuffer(length)
 </pre></div><h3 id="параметры"><a href="#параметры" title="Permalink to Параметры">Параметры</a></h3><div><dl>
  <dt><code>length</code></dt>
  <dd>Длина создаваемого буфера в байтах.</dd>
@@ -13,13 +13,13 @@
  <dt><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer"><code>ArrayBuffer.prototype</code> <span>(en-US)</span></a></dt>
  <dd>Позволяет расширить прототип всех&nbsp;<code>ArrayBuffer</code>&nbsp;объектов.</dd>
 </dl></div><h2 id="методы"><a href="#методы" title="Permalink to Методы">Методы</a></h2><div><dl>
- <dt><a href="/js/ArrayBuffer/isView/"><code>ArrayBuffer.isView(arg)</code></a></dt>
- <dd>Возвращает&nbsp;<code>true</code>&nbsp;если&nbsp;<code>arg</code> – одно из представлений <code>ArrayBuffer</code>, например&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray">типизированный массив</a>&nbsp;или&nbsp;<a href="/js/DataView/"><code>DataView</code></a>. Вернёт&nbsp;<code>false</code>&nbsp;в остальных случаях.</dd>
+ <dt><a href="/webhints_data_ru/js/ArrayBuffer/isView/"><code>ArrayBuffer.isView(arg)</code></a></dt>
+ <dd>Возвращает&nbsp;<code>true</code>&nbsp;если&nbsp;<code>arg</code> – одно из представлений <code>ArrayBuffer</code>, например&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray">типизированный массив</a>&nbsp;или&nbsp;<a href="/webhints_data_ru/js/DataView/"><code>DataView</code></a>. Вернёт&nbsp;<code>false</code>&nbsp;в остальных случаях.</dd>
  <dt><a class="page-not-created" title="Документация об этом ещё не написана; пожалуйста, поспособствуйте её написанию!"><code>ArrayBuffer.transfer(oldBuffer [, newByteLength])</code></a> </dt>
  <dd>
  <div class="line" id="file-arraybuffer-transfer-LC6">Вернёт новый&nbsp;<code>ArrayBuffer</code>, контент которого будет взят из данных&nbsp;<code>oldBuffer</code>, а затем усечён или дополнен нулевыми значениями до<font face="Open Sans, Arial, sans-serif">&nbsp;</font><code>newByteLength</code>.</div>
  </dd>
-</dl></div><h2 id="пример"><a href="#пример" title="Permalink to Пример">Пример</a></h2><div><p>В этом примере мы создаём 8-байтный&nbsp;буфер с&nbsp;<a href="/js/Int32Array/"><code>Int32Array</code></a> представлением:</p>
+</dl></div><h2 id="пример"><a href="#пример" title="Permalink to Пример">Пример</a></h2><div><p>В этом примере мы создаём 8-байтный&nbsp;буфер с&nbsp;<a href="/webhints_data_ru/js/Int32Array/"><code>Int32Array</code></a> представлением:</p>
 
 <pre class="brush: js notranslate"><code><span class="token keyword">var</span> buffer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayBuffer</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">var</span> view   <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Int32Array</span><span class="token punctuation">(</span>buffer<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div><h2 id="спецификация"><a href="#спецификация" title="Permalink to Спецификация">Спецификация</a></h2><div><table class="standard-table">

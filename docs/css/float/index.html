@@ -2,9 +2,9 @@
 
 <p><strong>Плавающий элемент</strong>&nbsp;- это любой элемент со свойством <code>float</code> отличным от&nbsp;<code>none</code>.</p>
 
-<p></p><table class="properties"><tbody><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td><code>none</code></td></tr><tr><th scope="row">Применяется к</th><td>все элементы, но не будет эффекта, если <code>display: none</code></td></tr><tr><th scope="row"><a href="/css/inheritance/">Наследуется</a></th><td>нет</td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>как указано</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p>
+<p></p><table class="properties"><tbody><tr><th scope="row"><a href="/webhints_data_ru/css/initial_value/">Начальное значение</a></th><td><code>none</code></td></tr><tr><th scope="row">Применяется к</th><td>все элементы, но не будет эффекта, если <code>display: none</code></td></tr><tr><th scope="row"><a href="/webhints_data_ru/css/inheritance/">Наследуется</a></th><td>нет</td></tr><tr><th scope="row"><a href="/webhints_data_ru/css/computed_value/">Обработка значения</a></th><td>как указано</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p>
 
-<p>Поскольку&nbsp;<code>float</code>&nbsp;подразумевает использование блочной модели, это свойство изменяет вычисляемые значения&nbsp;<a href="/css/display/"><code>display</code></a> в следующих случаях:</p>
+<p>Поскольку&nbsp;<code>float</code>&nbsp;подразумевает использование блочной модели, это свойство изменяет вычисляемые значения&nbsp;<a href="/webhints_data_ru/css/display/"><code>display</code></a> в следующих случаях:</p>
 
 <table class="standard-table">
  <thead>
@@ -114,14 +114,14 @@ This is some text. This is some text. This is some text. This is some text. This
 
 <p><img src="/@api/deki/files/4927/=floats.png" loading="lazy"></p></div><h3 id="clearing_floats"><a href="#clearing_floats" title="Permalink to Clearing floats">Clearing floats</a></h3><div><p>In the example above, the floated elements are shorter vertically than the block of text they're floated within. However, if the text was not long enough to wrap below the bottom of all the floats, we might see unanticipated effects. If the paragraph above, for instance, only read "Lorem ipsum dolor sit amet," and was followed by another heading of the same style as the "Floats Example" heading, the second heading would appear between the red boxes. Most likely, we want the next heading to be aligned all the way to the left. To accomplish that, we'd need to clear the floats.</p>
 
-<p>The simplest way to clear the floats in this example is to add the <a href="/css/clear/"><code>clear</code></a> property to the new heading we want to be sure is aligned left:</p>
+<p>The simplest way to clear the floats in this example is to add the <a href="/webhints_data_ru/css/clear/"><code>clear</code></a> property to the new heading we want to be sure is aligned left:</p>
 
 <pre class="brush:css notranslate"><code><span class="token selector">h2.secondHeading</span> <span class="token punctuation">{</span> <span class="token property">clear</span><span class="token punctuation">:</span> both<span class="token punctuation">;</span> <span class="token punctuation">}</span>
 </code></pre>
 
 <p>However, this method only works if there are no other elements within the same <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context" rel="internal" class="only-in-en-us" title="Currently only available in English (US)">block formatting context (en-US)</a> that we <em>do</em> want the heading to continue to appear next to horizontally. If our <code>H2</code> has siblings which are a sidebars floated to the left and right, using <code>clear</code> will force it to appear below both sidebars, which is probably not what we want.</p>
 
-<p>If clearing floats on an element below them is not an option, another approach is to limit the block formatting context of the floats' container. Referring to the example above again, it appears that all three red boxes are within a <code>P</code> element. We can set the <a href="/css/overflow/"><code>overflow</code></a> property on that P to <code>hidden</code> or <code>auto</code> to cause it to expand to contain them, but not allow them to drop out the bottom of it:</p>
+<p>If clearing floats on an element below them is not an option, another approach is to limit the block formatting context of the floats' container. Referring to the example above again, it appears that all three red boxes are within a <code>P</code> element. We can set the <a href="/webhints_data_ru/css/overflow/"><code>overflow</code></a> property on that P to <code>hidden</code> or <code>auto</code> to cause it to expand to contain them, but not allow them to drop out the bottom of it:</p>
 
 <pre class="brush:css notranslate"><code><span class="token selector">p.withRedBoxes</span> <span class="token punctuation">{</span> <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span> <span class="token property">height</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span> <span class="token punctuation">}</span>
 </code></pre>

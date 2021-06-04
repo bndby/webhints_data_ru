@@ -7,14 +7,14 @@
 <var>obj</var>.toSource();</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><p>Нет.</p></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Метод <code>toSource()</code> возвращает следующие значения:</p>
 
 <ul>
- <li>Для встроенного объекта <a href="/js/Object/"><code>Object</code></a>, метод <code>toSource()</code> возвращает следующую строку, указывающую, что исходный код не доступен:
+ <li>Для встроенного объекта <a href="/webhints_data_ru/js/Object/"><code>Object</code></a>, метод <code>toSource()</code> возвращает следующую строку, указывающую, что исходный код не доступен:
 
   <pre class="brush: js notranslate"><code><span class="token keyword">function</span> <span class="token function">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token punctuation">[</span>native code<span class="token punctuation">]</span>
 <span class="token punctuation">}</span>
 </code></pre>
  </li>
- <li>Для экземпляров <a href="/js/Object/"><code>Object</code></a>, метод <code>toSource()</code> возвращает строку, представляющую исходный код.</li>
+ <li>Для экземпляров <a href="/webhints_data_ru/js/Object/"><code>Object</code></a>, метод <code>toSource()</code> возвращает строку, представляющую исходный код.</li>
 </ul>
 
 <p>Вы можете вызывать метод <code>toSource()</code> во время отладки для просмотра содержимого объекта.</p></div><h3 id="overriding_the_tosource_method"><a href="#overriding_the_tosource_method" title="Permalink to Переопределение метода toSource()">Переопределение метода <code>toSource()</code></a></h3><div><p>Вы можете безопасно переопределять метод <code>toSource()</code> для объектов. Например:</p>
@@ -31,14 +31,14 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </code></pre></div><h3 id="built-in_tostring_methods"><a href="#built-in_tostring_methods" title="Permalink to Встроенные методы toSource()">Встроенные методы <code>toSource()</code></a></h3><div><p>Каждый тип ядра JavaScript имеет свой собственный метод <code>toSource()</code>. Вот эти объекты:</p>
 
 <ul>
- <li><a href="/js/Array/toSource/"><code>Array.prototype.toSource()</code></a> &nbsp;— метод объекта <a href="/js/Array/"><code>Array</code></a>.</li>
- <li><a href="/js/Boolean/toSource/"><code>Boolean.prototype.toSource()</code></a> &nbsp;— метод объекта <a href="/js/Boolean/"><code>Boolean</code></a>.</li>
- <li><a href="/js/Date/toSource/"><code>Date.prototype.toSource()</code></a> &nbsp;— метод объекта <a href="/js/Date/"><code>Date</code></a>.</li>
- <li><a href="/js/Function/toSource/"><code>Function.prototype.toSource()</code></a> &nbsp;— метод объекта <a href="/js/Function/"><code>Function</code></a>.</li>
- <li><a href="/js/Number/toSource/"><code>Number.prototype.toSource()</code></a> &nbsp;— метод объекта <a href="/js/Number/"><code>Number</code></a>.</li>
- <li><a href="/js/RegExp/toSource/"><code>Regexp.prototype.toSource()</code></a> &nbsp;— метод объекта <a href="/js/RegExp/"><code>RegExp</code></a>.</li>
- <li><a href="/js/String/toSource/"><code>String.prototype.toSource()</code></a> &nbsp;— метод объекта <a href="/js/String/"><code>String</code></a>.</li>
- <li><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toSource"><code>Symbol.prototype.toSource()</code> <span>(en-US)</span></a> &nbsp;— метод объекта <a href="/js/Symbol/"><code>Symbol</code></a>.</li>
+ <li><a href="/webhints_data_ru/js/Array/toSource/"><code>Array.prototype.toSource()</code></a> &nbsp;— метод объекта <a href="/webhints_data_ru/js/Array/"><code>Array</code></a>.</li>
+ <li><a href="/webhints_data_ru/js/Boolean/toSource/"><code>Boolean.prototype.toSource()</code></a> &nbsp;— метод объекта <a href="/webhints_data_ru/js/Boolean/"><code>Boolean</code></a>.</li>
+ <li><a href="/webhints_data_ru/js/Date/toSource/"><code>Date.prototype.toSource()</code></a> &nbsp;— метод объекта <a href="/webhints_data_ru/js/Date/"><code>Date</code></a>.</li>
+ <li><a href="/webhints_data_ru/js/Function/toSource/"><code>Function.prototype.toSource()</code></a> &nbsp;— метод объекта <a href="/webhints_data_ru/js/Function/"><code>Function</code></a>.</li>
+ <li><a href="/webhints_data_ru/js/Number/toSource/"><code>Number.prototype.toSource()</code></a> &nbsp;— метод объекта <a href="/webhints_data_ru/js/Number/"><code>Number</code></a>.</li>
+ <li><a href="/webhints_data_ru/js/RegExp/toSource/"><code>Regexp.prototype.toSource()</code></a> &nbsp;— метод объекта <a href="/webhints_data_ru/js/RegExp/"><code>RegExp</code></a>.</li>
+ <li><a href="/webhints_data_ru/js/String/toSource/"><code>String.prototype.toSource()</code></a> &nbsp;— метод объекта <a href="/webhints_data_ru/js/String/"><code>String</code></a>.</li>
+ <li><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toSource"><code>Symbol.prototype.toSource()</code> <span>(en-US)</span></a> &nbsp;— метод объекта <a href="/webhints_data_ru/js/Symbol/"><code>Symbol</code></a>.</li>
  <li><code>Math.toSource()</code>&nbsp;— возвращает строку "Math".</li>
 </ul></div><h3 id="limitations_on_cyclical_objects"><a href="#limitations_on_cyclical_objects" title="Permalink to Ограничение на циклические объекты">Ограничение на циклические объекты</a></h3><div><p>В том случае, если объекты содержат ссылки на самих себя, например циклический связанный список или дерево, которое можно обходить в обоих направлениях, метод <code>toSource()</code> не создаёт такие ссылки, начиная с Firefox 24. Например:</p>
 
@@ -80,5 +80,5 @@ theDog <span class="token operator">=</span> <span class="token keyword">new</sp
 <div>&nbsp;</div>
 
 <div id="compat-mobile">&nbsp;</div></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
- <li><a href="/js/Object/toString/"><code>Object.prototype.toString()</code></a></li>
+ <li><a href="/webhints_data_ru/js/Object/toString/"><code>Object.prototype.toString()</code></a></li>
 </ul></div>

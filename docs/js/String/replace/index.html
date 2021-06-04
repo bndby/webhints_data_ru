@@ -1,15 +1,15 @@
-<h1>String.prototype.replace()</h1><div><div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Метод <strong><code>replace()</code></strong> возвращает новую строку с некоторыми или всеми сопоставлениями с шаблоном, заменёнными на заменитель. Шаблон может быть строкой или <a href="/js/RegExp/">регулярным выражением</a>, а заменитель может быть строкой или функцией, вызываемой при каждом сопоставлении.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code><var>str</var>.replace(<var>regexp</var>|<var>substr</var>, <var>newSubStr</var>|<var>function</var>[, <var>flags</var>])</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
+<h1>String.prototype.replace()</h1><div><div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Метод <strong><code>replace()</code></strong> возвращает новую строку с некоторыми или всеми сопоставлениями с шаблоном, заменёнными на заменитель. Шаблон может быть строкой или <a href="/webhints_data_ru/js/RegExp/">регулярным выражением</a>, а заменитель может быть строкой или функцией, вызываемой при каждом сопоставлении.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code><var>str</var>.replace(<var>regexp</var>|<var>substr</var>, <var>newSubStr</var>|<var>function</var>[, <var>flags</var>])</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
  <dt><code>regexp</code></dt>
- <dd>Объект регулярного выражения <a href="/js/RegExp/"><code>RegExp</code></a>. Сопоставление заменяется возвращаемым значением второго параметра.</dd>
+ <dd>Объект регулярного выражения <a href="/webhints_data_ru/js/RegExp/"><code>RegExp</code></a>. Сопоставление заменяется возвращаемым значением второго параметра.</dd>
  <dt><code>substr</code></dt>
- <dd><a href="/js/String/">Строка</a>, заменяемая на <code>newSubStr</code>. Обратите внимание, будет заменено только первое вхождение искомой строки.</dd>
+ <dd><a href="/webhints_data_ru/js/String/">Строка</a>, заменяемая на <code>newSubStr</code>. Обратите внимание, будет заменено только первое вхождение искомой строки.</dd>
  <dt><code>newSubStr</code></dt>
- <dd><a href="/js/String/">Строка</a>, заменяющая подстроку из первого параметра. Поддерживает несколько специальных шаблонов замены; смотрите ниже раздел <a href="#specifying_a_string_as_a_parameter">Передача строки в качестве второго параметра</a>.</dd>
+ <dd><a href="/webhints_data_ru/js/String/">Строка</a>, заменяющая подстроку из первого параметра. Поддерживает несколько специальных шаблонов замены; смотрите ниже раздел <a href="#specifying_a_string_as_a_parameter">Передача строки в качестве второго параметра</a>.</dd>
  <dt><code>function</code></dt>
  <dd>Функция, вызываемая для создания новой подстроки (помещаемой вместо подстроки из первого параметра). Аргументы, передаваемые функции, описаны ниже в разделе <a href="#specifying_a_function_as_a_parameter">Передача функции в качестве второго параметра</a>.</dd>
  <dt><code>flags</code> </dt>
  <dd>
- <p><strong>Обратите внимание: аргумент <code>flags</code> не работает в ядре v8 (движок JavaScript в Chrome и NodeJs).</strong> Строка, задающая комбинацию <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Regular_Expressions#advanced_searching_with_flags">флагов регулярного выражения</a>. Параметр <code>flags</code> в методе <code>String.prototype.replace()</code> является нестандартным расширением. Вместо использования этого параметра используйте объект <a href="/js/RegExp/"><code>RegExp</code></a> с соответствующими флагами. Значение этого параметра, если он используется, должно быть строкой, состоящей из одного или более следующих символов, следующим образом влияющих на обработку регулярного выражения:</p>
+ <p><strong>Обратите внимание: аргумент <code>flags</code> не работает в ядре v8 (движок JavaScript в Chrome и NodeJs).</strong> Строка, задающая комбинацию <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Regular_Expressions#advanced_searching_with_flags">флагов регулярного выражения</a>. Параметр <code>flags</code> в методе <code>String.prototype.replace()</code> является нестандартным расширением. Вместо использования этого параметра используйте объект <a href="/webhints_data_ru/js/RegExp/"><code>RegExp</code></a> с соответствующими флагами. Значение этого параметра, если он используется, должно быть строкой, состоящей из одного или более следующих символов, следующим образом влияющих на обработку регулярного выражения:</p>
 
  <dl>
   <dt><code>g</code></dt>
@@ -22,7 +22,7 @@
   <dd>«липкий» поиск, сопоставление начинается с текущей позиции в строке</dd>
  </dl>
  </dd>
-</dl></div><h3 id="returns"><a href="#returns" title="Permalink to Возвращаемое значение">Возвращаемое значение</a></h3><div><p>Новая строка с некоторыми или всеми сопоставлениями шаблона, заменёнными на заменитель.</p></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Этот метод не изменяет объект <a href="/js/String/"><code>String</code></a>, на котором он вызывается. Он просто возвращает новую строку.</p>
+</dl></div><h3 id="returns"><a href="#returns" title="Permalink to Возвращаемое значение">Возвращаемое значение</a></h3><div><p>Новая строка с некоторыми или всеми сопоставлениями шаблона, заменёнными на заменитель.</p></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Этот метод не изменяет объект <a href="/webhints_data_ru/js/String/"><code>String</code></a>, на котором он вызывается. Он просто возвращает новую строку.</p>
 
 <p>Для выполнения глобального поиска и замены либо включите флаг <code>g</code> в регулярное выражение, либо, если первый параметр является строкой, включите флаг <code>g</code> в параметр <code>flags</code>.</p></div><h3 id="specifying_a_string_as_a_parameter"><a href="#specifying_a_string_as_a_parameter" title="Permalink to Передача строки в качестве второго параметра">Передача строки в качестве второго параметра</a></h3><div><p>строка замены может включать следующие специальные шаблоны замены:</p>
 
@@ -50,7 +50,7 @@
   </tr>
   <tr>
    <td><code>$<em>n</em></code> или <code>$<em>nn</em></code></td>
-   <td>Символы <code><em>n</em></code> или <code><em>nn</em></code> являются десятичными цифрами, вставляет <em>n</em>-ную сопоставившуюся подгруппу из объекта <a href="/js/RegExp/"><code>RegExp</code></a> в первом параметре.</td>
+   <td>Символы <code><em>n</em></code> или <code><em>nn</em></code> являются десятичными цифрами, вставляет <em>n</em>-ную сопоставившуюся подгруппу из объекта <a href="/webhints_data_ru/js/RegExp/"><code>RegExp</code></a> в первом параметре.</td>
   </tr>
  </tbody>
 </table></div><h3 id="specifying_a_function_as_a_parameter"><a href="#specifying_a_function_as_a_parameter" title="Permalink to Передача функции в качестве второго параметра">Передача функции в качестве второго параметра</a></h3><div><p>В качестве второго параметра вы можете передать функцию. В этом случае функция будет выполнена после произошедшего сопоставления. Результат вызова функции (её возвращаемое значение) будет использоваться в качестве строки замены (обратите внимание: описанные выше специальные шаблоны замены в этом случае <em>не</em> применяются). Обратите внимание, что функция будет вызвана несколько раз для каждого полного сопоставления, если регулярное выражение в первом параметре является глобальным.</p>
@@ -69,7 +69,7 @@
   </tr>
   <tr>
    <td><code>p1, p2, ...</code></td>
-   <td><em>n</em>-ная сопоставившаяся подгруппа из объекта <a href="/js/RegExp/"><code>RegExp</code></a> в первом параметре метода <code>replace()</code> (соответствует шаблонам замены <code>$1</code>, <code>$2</code> и так далее, описанным выше). Например, если в качестве шаблона передано регулярное выражение <code>/(\a+)(\b+)/</code>, параметр <code>p1</code> будет значение сопоставления с подгруппой <code>\a+</code>, а параметр <code>p2</code>&nbsp;— с подгруппой <code>\b+</code>.</td>
+   <td><em>n</em>-ная сопоставившаяся подгруппа из объекта <a href="/webhints_data_ru/js/RegExp/"><code>RegExp</code></a> в первом параметре метода <code>replace()</code> (соответствует шаблонам замены <code>$1</code>, <code>$2</code> и так далее, описанным выше). Например, если в качестве шаблона передано регулярное выражение <code>/(\a+)(\b+)/</code>, параметр <code>p1</code> будет значение сопоставления с подгруппой <code>\a+</code>, а параметр <code>p2</code>&nbsp;— с подгруппой <code>\b+</code>.</td>
   </tr>
   <tr>
    <td><code>offset</code></td>
@@ -82,7 +82,7 @@
  </tbody>
 </table>
 
-<p>Точное число аргументов будет зависеть от того, был ли первым аргументом объект <a href="/js/RegExp/"><code>RegExp</code></a> и, если был, сколько подгрупп в нём определено.</p>
+<p>Точное число аргументов будет зависеть от того, был ли первым аргументом объект <a href="/webhints_data_ru/js/RegExp/"><code>RegExp</code></a> и, если был, сколько подгрупп в нём определено.</p>
 
 <p>Следующий пример установит переменную <code>newString</code> в значение <code>'abc - 12345 - #$*%'</code>:</p>
 
@@ -127,7 +127,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 <p>Вызов <code>styleHyphenFormat('borderTop')</code> вернёт строку 'border-top'.</p>
 
-<p>Поскольку мы хотим провести дополнительные преобразования <em>результата</em> сопоставления до того, как будет использована окончательная подстановка, мы должны использовать функцию. Это заставляет нас принудительно вычислить сопоставление перед использование метода <a href="/js/String/toLowerCase/"><code>toLowerCase()</code></a>. Если бы мы попытались использовать сопоставление без функции, метод <a href="/js/String/toLowerCase/"><code>toLowerCase()</code></a> не сработал бы.</p>
+<p>Поскольку мы хотим провести дополнительные преобразования <em>результата</em> сопоставления до того, как будет использована окончательная подстановка, мы должны использовать функцию. Это заставляет нас принудительно вычислить сопоставление перед использование метода <a href="/webhints_data_ru/js/String/toLowerCase/"><code>toLowerCase()</code></a>. Если бы мы попытались использовать сопоставление без функции, метод <a href="/webhints_data_ru/js/String/toLowerCase/"><code>toLowerCase()</code></a> не сработал бы.</p>
 
 <pre class="brush: js notranslate"><code><span class="token keyword">var</span> newString <span class="token operator">=</span> propertyName<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">[A-Z]</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">'-'</span> <span class="token operator">+</span> <span class="token string">'$&amp;'</span><span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// не работает</span>
 </code></pre>
@@ -204,7 +204,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
   </tr>
  </tbody>
 </table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><div></div></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
- <li><a href="/js/String/match/"><code>String.prototype.match()</code></a></li>
- <li><a href="/js/RegExp/exec/"><code>RegExp.prototype.exec()</code></a></li>
- <li><a href="/js/RegExp/test/"><code>RegExp.prototype.test()</code></a></li>
+ <li><a href="/webhints_data_ru/js/String/match/"><code>String.prototype.match()</code></a></li>
+ <li><a href="/webhints_data_ru/js/RegExp/exec/"><code>RegExp.prototype.exec()</code></a></li>
+ <li><a href="/webhints_data_ru/js/RegExp/test/"><code>RegExp.prototype.test()</code></a></li>
 </ul></div>

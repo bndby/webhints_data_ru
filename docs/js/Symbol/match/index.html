@@ -1,6 +1,6 @@
 <h1>Symbol.match</h1><div><div></div>
 
-<p><code><strong>Symbol.match</strong></code>&nbsp;— известный символ, определяющий соответствие строки регулярному выражению. Этот&nbsp;метод вызывается функцией&nbsp;<a href="/js/String/match/"><code>String.prototype.match()</code></a>.</p>
+<p><code><strong>Symbol.match</strong></code>&nbsp;— известный символ, определяющий соответствие строки регулярному выражению. Этот&nbsp;метод вызывается функцией&nbsp;<a href="/webhints_data_ru/js/String/match/"><code>String.prototype.match()</code></a>.</p>
 
 <div><table class="standard-table">
   <thead>
@@ -22,7 +22,7 @@
       <td>нет</td>
     </tr>
   </tbody>
-</table></div></div><h2 id="описание"><a href="#описание" title="Permalink to Описание">Описание</a></h2><div><p>Данный метод&nbsp;также используется для того,&nbsp;чтобы определить, обладает ли объект поведением регулярного выражения. Например, методы&nbsp;<a href="/js/String/startsWith/"><code>String.prototype.startsWith()</code></a>, <a href="/js/String/endsWith/"><code>String.prototype.endsWith()</code></a> и&nbsp;<a href="/js/String/includes/"><code>String.prototype.includes()</code></a> проверяют, является ли первый аргумент регулярным выражением,&nbsp;и бросают&nbsp;<a href="/js/TypeError/"><code>TypeError</code></a>, если это&nbsp;так. Соответственно, если символ&nbsp;<code>match</code>&nbsp;установлен в&nbsp;<code>false</code> (или имеет <a href="https://developer.mozilla.org/ru/docs/Glossary/Falsy">ложное</a>&nbsp;значение) — это говорит о том, что объект не предназначен для использования в качестве регулярного выражения.</p></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="блокировка_проверки_isregexp"><a href="#блокировка_проверки_isregexp" title="Permalink to Блокировка проверки&nbsp;isRegExp">Блокировка проверки&nbsp;i<code>sRegExp</code></a></h3><div><p>Следующий код выбросит&nbsp;<a href="/js/TypeError/"><code>TypeError</code></a>:</p>
+</table></div></div><h2 id="описание"><a href="#описание" title="Permalink to Описание">Описание</a></h2><div><p>Данный метод&nbsp;также используется для того,&nbsp;чтобы определить, обладает ли объект поведением регулярного выражения. Например, методы&nbsp;<a href="/webhints_data_ru/js/String/startsWith/"><code>String.prototype.startsWith()</code></a>, <a href="/webhints_data_ru/js/String/endsWith/"><code>String.prototype.endsWith()</code></a> и&nbsp;<a href="/webhints_data_ru/js/String/includes/"><code>String.prototype.includes()</code></a> проверяют, является ли первый аргумент регулярным выражением,&nbsp;и бросают&nbsp;<a href="/webhints_data_ru/js/TypeError/"><code>TypeError</code></a>, если это&nbsp;так. Соответственно, если символ&nbsp;<code>match</code>&nbsp;установлен в&nbsp;<code>false</code> (или имеет <a href="https://developer.mozilla.org/ru/docs/Glossary/Falsy">ложное</a>&nbsp;значение) — это говорит о том, что объект не предназначен для использования в качестве регулярного выражения.</p></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="блокировка_проверки_isregexp"><a href="#блокировка_проверки_isregexp" title="Permalink to Блокировка проверки&nbsp;isRegExp">Блокировка проверки&nbsp;i<code>sRegExp</code></a></h3><div><p>Следующий код выбросит&nbsp;<a href="/webhints_data_ru/js/TypeError/"><code>TypeError</code></a>:</p>
 
 <pre class="brush: js notranslate"><code><span class="token string">"/bar/"</span><span class="token punctuation">.</span><span class="token function">startsWith</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">bar</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Бросает TypeError, так как /bar/ является</span>
                            <span class="token comment">// регулярным выражением и Symbol.match не изменён.</span></code></pre>
@@ -47,7 +47,7 @@ re<span class="token punctuation">[</span>Symbol<span class="token punctuation">
   </tr>
  </tbody>
 </table></div><h2 id="поддержка_браузерами"><a href="#поддержка_браузерами" title="Permalink to Поддержка браузерами">Поддержка браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
- <li><a href="/js/Symbol/replace/"><code>Symbol.replace</code></a></li>
- <li><a href="/js/Symbol/search/"><code>Symbol.search</code></a></li>
- <li><a href="/js/Symbol/split/"><code>Symbol.split</code></a></li>
+ <li><a href="/webhints_data_ru/js/Symbol/replace/"><code>Symbol.replace</code></a></li>
+ <li><a href="/webhints_data_ru/js/Symbol/search/"><code>Symbol.search</code></a></li>
+ <li><a href="/webhints_data_ru/js/Symbol/split/"><code>Symbol.split</code></a></li>
 </ul></div>

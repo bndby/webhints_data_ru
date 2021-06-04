@@ -79,7 +79,7 @@ const fixLinks = (content, selector, root) => {
       const resolvedUrl = new URL(href, root);
       if ( resolvedUrl.href.startsWith(root) ){
         const shortUrl = resolvedUrl.href.substring(root.length);
-        el.attribs.href = '/js' + shortUrl + '/';
+        el.attribs.href = '/webhints_data_ru/js' + shortUrl + '/';
       } else {
         el.attribs.href = resolvedUrl.href;
       }

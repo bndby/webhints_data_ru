@@ -4,7 +4,7 @@
   <code>obj</code></dt>
  <dd>
   Проверяемый объект.</dd>
-</dl></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Возвращает <code>true</code>, если объект является запечатанным, иначе возвращает <code>false</code>. Объект является запечатанным, если он является не <a href="/js/Object/isExtensible/">расширяемым</a> и если все его свойства являются не настраиваемыми и, следовательно, не удаляемыми (но не обязательно не записываемыми).</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div><pre class="brush: js notranslate"><code><span class="token comment">// По умолчанию объекты не запечатаны.</span>
+</dl></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Возвращает <code>true</code>, если объект является запечатанным, иначе возвращает <code>false</code>. Объект является запечатанным, если он является не <a href="/webhints_data_ru/js/Object/isExtensible/">расширяемым</a> и если все его свойства являются не настраиваемыми и, следовательно, не удаляемыми (но не обязательно не записываемыми).</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div><pre class="brush: js notranslate"><code><span class="token comment">// По умолчанию объекты не запечатаны.</span>
 <span class="token keyword">var</span> empty <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span class="token function">assert</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span><span class="token function">isSealed</span><span class="token punctuation">(</span>empty<span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
@@ -37,7 +37,7 @@ Object<span class="token punctuation">.</span><span class="token function">seal<
 
 <span class="token keyword">var</span> s3 <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">seal</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token keyword">get</span> <span class="token function">p</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token function">assert</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span><span class="token function">isFrozen</span><span class="token punctuation">(</span>s3<span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// для свойств доступа значение имеет только их настраиваемость</span>
-</code></pre></div><h2 id="notes"><a href="#notes" title="Permalink to Примечания">Примечания</a></h2><div><p>В ES5, если аргумент метода не является объектом (является примитивным значением), будет выброшено исключение <a href="/js/TypeError/"><code>TypeError</code></a>. В ES6 такой аргумент будет рассматриваться, как простой запечатанный объект и метод просто вернёт <code>true</code>.</p>
+</code></pre></div><h2 id="notes"><a href="#notes" title="Permalink to Примечания">Примечания</a></h2><div><p>В ES5, если аргумент метода не является объектом (является примитивным значением), будет выброшено исключение <a href="/webhints_data_ru/js/TypeError/"><code>TypeError</code></a>. В ES6 такой аргумент будет рассматриваться, как простой запечатанный объект и метод просто вернёт <code>true</code>.</p>
 <pre class="brush: js notranslate"><code><span class="token operator">&gt;</span> Object<span class="token punctuation">.</span><span class="token function">isSealed</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
 TypeError<span class="token operator">:</span> <span class="token number">1</span> is not an object <span class="token comment">// код ES5</span>
 
@@ -66,10 +66,10 @@ TypeError<span class="token operator">:</span> <span class="token number">1</spa
 
 
 <ul>
- <li><a href="/js/Object/seal/"><code>Object.seal()</code></a></li>
- <li><a href="/js/Object/preventExtensions/"><code>Object.preventExtensions()</code></a></li>
- <li><a href="/js/Object/isExtensible/"><code>Object.isExtensible()</code></a></li>
- <li><a href="/js/Object/freeze/"><code>Object.freeze()</code></a></li>
- <li><a href="/js/Object/isFrozen/"><code>Object.isFrozen()</code></a></li>
+ <li><a href="/webhints_data_ru/js/Object/seal/"><code>Object.seal()</code></a></li>
+ <li><a href="/webhints_data_ru/js/Object/preventExtensions/"><code>Object.preventExtensions()</code></a></li>
+ <li><a href="/webhints_data_ru/js/Object/isExtensible/"><code>Object.isExtensible()</code></a></li>
+ <li><a href="/webhints_data_ru/js/Object/freeze/"><code>Object.freeze()</code></a></li>
+ <li><a href="/webhints_data_ru/js/Object/isFrozen/"><code>Object.isFrozen()</code></a></li>
 </ul>
 </div></div>

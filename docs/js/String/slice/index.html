@@ -2,11 +2,11 @@
 
 <p><iframe class="interactive" width="100%" height="692" src="https://interactive-examples.mdn.mozilla.net/pages/js/string-slice.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code><var>str</var>.slice(<var>beginIndex</var>[, <var>endIndex</var>])</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
  <dt><em><code>beginIndex</code></em></dt>
- <dd>Индекс, с которого начинать извлечение (нумерация начинается с нуля). Если аргумент отрицателен, то трактуется как <code><em>str</em>.length + <em>beginIndex</em></code>&nbsp;(например, если&nbsp;<em><code>beginIndex</code></em> равен <code>-3</code>, то он трактуется как <code><em>str</em>.length - 3</code>). Если&nbsp;<em><code>beginIndex</code></em>&nbsp; не является числом при проверке&nbsp;<a href="/js/Number/"><code>Number(<var>beginIndex</var>)</code></a>, он&nbsp;трактуется&nbsp;как <code>0</code>.</dd>
+ <dd>Индекс, с которого начинать извлечение (нумерация начинается с нуля). Если аргумент отрицателен, то трактуется как <code><em>str</em>.length + <em>beginIndex</em></code>&nbsp;(например, если&nbsp;<em><code>beginIndex</code></em> равен <code>-3</code>, то он трактуется как <code><em>str</em>.length - 3</code>). Если&nbsp;<em><code>beginIndex</code></em>&nbsp; не является числом при проверке&nbsp;<a href="/webhints_data_ru/js/Number/"><code>Number(<var>beginIndex</var>)</code></a>, он&nbsp;трактуется&nbsp;как <code>0</code>.</dd>
  <dd>Если&nbsp;<code><em>beginIndex</em></code>&nbsp;больше или равен <code><em>str</em>.length</code>, возвращается пустая строка.</dd>
  <dt><em><code>endIndex</code></em></dt>
  <dd>Индекс, <em>перед</em> которым заканчивать извлечение (нумерация начинается с нуля). Символ по этому индексу не будет включён.</dd>
- <dd>Если <em><code>endIndex</code>&nbsp;</em>опущен или является <code>undefined</code> или больше чем&nbsp;<code><em>str</em>.length</code>, <code>slice()</code> извлечёт всё до конца строки. Если аргумент отрицателен, то трактуется как <code><em>str</em>.length +&nbsp;<em>endIndex</em></code><em>&nbsp;</em>(например, если&nbsp;<em><code>endIndex</code></em> равен <code>-3</code>, то он трактуется как <code><em>str</em>.length - 3</code>). Если аргумент не <code>undefined</code> и не является числом при проверке&nbsp;<a href="/js/Number/"><code>Number(<var>endIndex</var>)</code></a>, возвращается пустая строка.</dd>
+ <dd>Если <em><code>endIndex</code>&nbsp;</em>опущен или является <code>undefined</code> или больше чем&nbsp;<code><em>str</em>.length</code>, <code>slice()</code> извлечёт всё до конца строки. Если аргумент отрицателен, то трактуется как <code><em>str</em>.length +&nbsp;<em>endIndex</em></code><em>&nbsp;</em>(например, если&nbsp;<em><code>endIndex</code></em> равен <code>-3</code>, то он трактуется как <code><em>str</em>.length - 3</code>). Если аргумент не <code>undefined</code> и не является числом при проверке&nbsp;<a href="/webhints_data_ru/js/Number/"><code>Number(<var>endIndex</var>)</code></a>, возвращается пустая строка.</dd>
  <dd>Если&nbsp;<em><code>endIndex</code></em> указан и меньше&nbsp;<em><code>startIndex</code></em>, то&nbsp;возвращается пустая строка (например, <code>slice(-1, -3)</code>&nbsp;или&nbsp;<code>slice(3, 1)</code> вернут <code>""</code>).</dd>
 </dl></div><h3 id="возвращаемое_значение"><a href="#возвращаемое_значение" title="Permalink to Возвращаемое значение">Возвращаемое значение</a></h3><div><p>Новая строка, содержащая извлечённую часть строки.</p></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Метод <code>slice()</code> извлекает текст из одной строки и возвращает новую строку. Изменения текста в одной строке не влияют на другую строку.</p>
 
@@ -66,7 +66,7 @@ str<span class="token punctuation">.</span><span class="token function">slice</s
   </tr>
  </tbody>
 </table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
- <li><a href="/js/String/substr/"><code>String.prototype.substr()</code></a></li>
- <li><a href="/js/String/substring/"><code>String.prototype.substring()</code></a></li>
- <li><a href="/js/Array/slice/"><code>Array.prototype.slice()</code></a></li>
+ <li><a href="/webhints_data_ru/js/String/substr/"><code>String.prototype.substr()</code></a></li>
+ <li><a href="/webhints_data_ru/js/String/substring/"><code>String.prototype.substring()</code></a></li>
+ <li><a href="/webhints_data_ru/js/Array/slice/"><code>Array.prototype.slice()</code></a></li>
 </ul></div>
