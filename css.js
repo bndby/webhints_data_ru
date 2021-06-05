@@ -26,6 +26,7 @@ const clearContent = (content) => {
   const $ = cheerio.load(content, {decodeEntities: false});
 
   $('svg').remove();
+  $('h1').remove();
   $('.bc-table abbr').remove();
   $('.bc-table button').remove();
   $('.bc-table .bc-icon').remove();
@@ -168,7 +169,7 @@ for await (let [_key, link] of links){
   const subDir = _key; //link.substring(ROOT.length);
   const c = await loadPage(link);
   const cc = clearContent(c);
-  const title = getTitle(cc, 'body h1');
+  const title = getTitle(c, 'body h1');
   const fc = fixLinks(cc, 'article a[href]', ROOT);
   const filename = subDir + '/index.html';
 
