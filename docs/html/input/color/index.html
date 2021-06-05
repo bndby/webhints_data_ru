@@ -1,0 +1,147 @@
+<h1>&lt;input type="color"&gt;</h1><div><div></div>
+
+<p><span class="seoSummary"><a href="/html/Input/"><code>&lt;input&gt;</code></a> элементы типа <strong><code>color</code></strong> предоставляют элемент пользовательского интерфейса, который позволяет пользователю указать цвет либо с помощью визуального интерфейса выбора цвета, либо путём ввода цвета в текстовое поле в шестнадцатеричном формате #rrggbb. Разрешены только простые цвета (без альфа-канала), хотя CSS colors имеет больше форматов, например названия цветов, функциональные обозначения и шестнадцатеричный формат с альфа-каналом.</span></p>
+
+<p>Представление элемента может существенно отличаться от одного браузера и/или платформы к другой — это может быть простой текстовый ввод, который автоматически проверяет правильность ввода информации о цвете в соответствующем формате, или стандартный для платформы выбор цвета, или какое-то пользовательское окно выбора цвета.</p>
+
+<div><iframe class="interactive" width="100%" height="445" src="https://interactive-examples.mdn.mozilla.net/pages/tabbed/input-color.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+
+
+<table class="properties">
+ <tbody>
+  <tr>
+   <td><strong><a href="#value">Value</a></strong></td>
+   <td>7-значная <a href="https://developer.mozilla.org/ru/docs/Web/API/DOMString"><code>DOMString</code></a> , указывающая <a href="https://developer.mozilla.org/ru/docs/Web/CSS/color_value"><code>&lt;color&gt;</code></a> в строчной шестнадцатеричной системе счисления</td>
+  </tr>
+  <tr>
+   <td><strong>События</strong></td>
+   <td><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event"><code>change</code> <span>(en-US)</span></a> и <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event"><code>input</code> <span>(en-US)</span></a></td>
+  </tr>
+  <tr>
+   <td><strong>Поддерживаемые общие атрибуты</strong></td>
+   <td><a href="/html/Input#attr-autocomplete/"><code>autocomplete</code></a> и <a href="/html/Input#attr-list/"><code>list</code></a></td>
+  </tr>
+  <tr>
+   <td><strong>IDL атрибуты</strong></td>
+   <td><code>list</code> и&nbsp;<code>value</code></td>
+  </tr>
+  <tr>
+   <td><strong>Методы</strong></td>
+   <td><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/select"><code>select()</code> <span>(en-US)</span></a></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="value"><a href="#value" title="Permalink to Value">Value</a></h2><div><p><a href="/html/Input#attr-value/"><code>value</code></a> элемента <a href="/html/Input/"><code>&lt;input&gt;</code></a> типа <code>color</code>&nbsp;всегда является <a href="https://developer.mozilla.org/ru/docs/Web/API/DOMString"><code>DOMString</code></a>, который содержит 7-символьную строку, задающую цвет RGB в шестнадцатеричном формате. Хотя вы можете ввести цвет в верхнем или нижнем регистре, он будет сохранён в виде нижнего регистра. Value&nbsp;никогда не бывает в какой-либо другой форме и никогда не бывает пустым.</p>
+
+<div class="note notecard">
+<p><strong>Примечание:</strong> установка значения на всё, что не является допустимым, полностью непрозрачным цветом RGB в шестнадцатеричной системе счисления, приведёт к тому, что значение будет установлено на #000000. В частности, вы не можете использовать стандартные имена цветов CSS или любой синтаксис функций CSS для установки значения. Это имеет смысл, если иметь в виду, что HTML и CSS-это отдельные языки и спецификации. Кроме того, цвета с альфа-каналом не поддерживаются; указание цвета в 9-символьной шестнадцатеричной системе счисления (например, #009900aa) также приведёт к тому, что цвет будет установлен на #000000.</p>
+</div></div><h2 id="использование_настроек_цвета"><a href="#использование_настроек_цвета" title="Permalink to Использование настроек цвета">Использование настроек цвета</a></h2><div><p>Входные данные типа <code>color</code> просты из-за ограниченного числа атрибутов, которые они поддерживают.</p></div><h3 id="предоставление_цвета_по_умолчанию"><a href="#предоставление_цвета_по_умолчанию" title="Permalink to Предоставление цвета по умолчанию">Предоставление цвета по умолчанию</a></h3><div><p>Вы можете обновить простой пример выше, чтобы установить значение по умолчанию, так что цветовая заливка будет предварительно заполнена цветом по умолчанию, и палитра цветов (если таковая имеется) также будет по умолчанию использовать этот цвет:</p>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>color<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#ff0000<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<p><iframe class="sample-code-frame" id="frame_Providing_a_default_color" width="700" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/Input/color/_sample_.Providing_a_default_color.html" loading="lazy"></iframe></p>
+
+<p>Если вы не зададите значение, то по умолчанию будет <code>#000000</code>, то есть чёрный цвет. Значение должно быть в семизначной шестнадцатеричной системе счисления, то есть символ"#", за которым следуют две цифры, каждая из которых представляет красный, зелёный и синий цвета, например: #rrggbb. Если у вас есть цвета в любом другом формате (например, имена цветов CSS или цветовые функции CSS, такие как rgb () или rgba ()), вам придётся преобразовать их в шестнадцатеричные перед установкой значения.</p></div><h3 id="отслеживание_изменений_цвета"><a href="#отслеживание_изменений_цвета" title="Permalink to Отслеживание изменений цвета">Отслеживание изменений цвета</a></h3><div><p>Как и в случае с другими типами <a href="/html/Input/"><code>&lt;input&gt;</code></a>, есть два события, которые могут быть использованы для обнаружения изменения цвета значения: <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event"><code>input</code> <span>(en-US)</span></a> и <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event"><code>change</code> <span>(en-US)</span></a>. <code>input</code> запускается на элементе <code>&lt;input&gt;</code> каждый раз, когда меняется цвет. <code>change</code> событие&nbsp;запускается, когда пользователь отклоняет средство выбора цвета. В обоих случаях вы можете определить новое значение элемента, посмотрев на его <a class="page-not-created" title="Документация об этом ещё не написана; пожалуйста, поспособствуйте её написанию!"><code>value</code></a>.</p>
+
+<p>Вот пример, который наблюдает за изменениями со временем значения цвета:</p>
+
+<pre class="brush: js notranslate"><code>colorPicker<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"input"</span><span class="token punctuation">,</span> updateFirst<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+colorPicker<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"change"</span><span class="token punctuation">,</span> watchColorPicker<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">watchColorPicker</span><span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">"p"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">p</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    p<span class="token punctuation">.</span>style<span class="token punctuation">.</span>color <span class="token operator">=</span> event<span class="token punctuation">.</span>target<span class="token punctuation">.</span>value<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="выбор_значения"><a href="#выбор_значения" title="Permalink to Выбор значения">Выбор значения</a></h3><div><p>Если реализация элемента <a href="/html/Input/"><code>&lt;input&gt;</code></a> типа <code>color</code> в браузере пользователя не поддерживается правильно, а вместо этого является текстовым полем для непосредственного ввода строки цвета, вы можете использовать <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/select"><code> select ()</code> <span>(en-US)</span></a> метод выбора текста, находящегося в данный момент в поле редактирования. Если браузер вместо этого верно использует <code>color</code>, select () ничего не делает. Вы должны знать об этом, чтобы ваш код мог адекватно реагировать в любом случае.</p>
+
+<pre class="brush: js notranslate"><code>colorWell<span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div><h3 id="вариации_внешнего_вида"><a href="#вариации_внешнего_вида" title="Permalink to Вариации внешнего вида">Вариации внешнего вида</a></h3><div><p>Как уже упоминалось ранее, когда браузер не поддерживает интерфейс выбора цвета, его реализация цветовых входов будет представлять собой текстовое поле, которое автоматически проверяет содержимое, чтобы убедиться, что значение находится в правильном формате. Например, в Safari 10.1 вы увидите что-то похожее на это:<img alt="Screenshot of the example taken in Safari." src="https://mdn.mozillademos.org/files/14899/input-color-safari.png" style="border-style: solid; border-width: 1px;" loading="lazy"></p>
+
+<p>То же самое можно увидеть&nbsp;и в Firefox 55:<img alt="Screenshot of the example taken in Firefox 55 for macOS" src="https://mdn.mozillademos.org/files/14901/input-color-firefox.png" style="border-style: solid; border-width: 1px;" loading="lazy"></p>
+
+<p>В этом случае при нажатии на цветовой колодец отображается палитра цветов платформы, из которой вы можете выбрать нужный цвет (в данном случае это палитра macOS):</p>
+
+<p><img alt="Screenshot of the element with the color picker open in Firefox Mac." src="https://mdn.mozillademos.org/files/14903/input-with-picker-firefox-mac.png" style="border-style: solid; border-width: 1px;" loading="lazy"></p></div><h2 id="validation"><a href="#validation" title="Permalink to Validation">Validation</a></h2><div><p>Значение цветового ввода считается недопустимым, если <a href="https://developer.mozilla.org/ru/docs/Glossary/User_agent">user agent</a> не может преобразовать пользовательский ввод в семизначную строчную шестнадцатеричную нотацию. В этом случае к элементу применяется псевдокласс <a href="https://developer.mozilla.org/ru/docs/Web/CSS/:invalid"><code>:invalid</code></a>.</p></div><h2 id="пример"><a href="#пример" title="Permalink to Пример">Пример</a></h2><div><p>Давайте создадим пример, который делает немного больше с цветом входного сигнала путём отслеживания <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event"><code>change</code> <span>(en-US)</span></a> и <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event"><code>input</code> <span>(en-US)</span></a> событий, чтобы взять новый цвет и применить его к каждому <a href="/html/%D1%80/" class="page-not-created" title="This is a link to an unwritten page"><code>&lt;р&gt;</code></a> элемента в документе.</p></div><h3 id="html"><a href="#html" title="Permalink to HTML">HTML</a></h3><div><p>HTML довольно прост — пара абзацев описательного материала с <a href="/html/Input/"><code>&lt;input&gt;</code></a> типа <code>color </code>с идентификатором <code>colorWell</code>, который мы будем использовать для изменения цвета текста абзацев.</p>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>An example demonstrating the use of the <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>code</span><span class="token punctuation">&gt;</span></span><span class="token entity named-entity" title="<">&amp;lt;</span>input type="color"<span class="token entity named-entity" title=">">&amp;gt;</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>code</span><span class="token punctuation">&gt;</span></span>
+   control.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>colorWell<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Color:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>color<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#ff0000<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>colorWell<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Watch the paragraph colors change when you adjust the color picker.
+   As you make changes in the color picker, the first paragraph's
+   color changes, as a preview (this uses the <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>code</span><span class="token punctuation">&gt;</span></span>input<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>code</span><span class="token punctuation">&gt;</span></span>
+   event). When you close the color picker, the <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>code</span><span class="token punctuation">&gt;</span></span>change<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>code</span><span class="token punctuation">&gt;</span></span>
+   event fires, and we detect that to change every paragraph to
+   the selected color.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span></code></pre></div><h3 id="javascript"><a href="#javascript" title="Permalink to JavaScript">JavaScript</a></h3><div><p>Во-первых, есть некоторые настройки. Здесь мы объявляем некоторые переменные. Объявляя переменную, содержащую цвет, который мы установим, когда загрузим страницу, а затем устанавливаем обработчик <a href="https://developer.mozilla.org/ru/docs/Web/API/Window/load_event" title="load"><code>load</code></a> для выполнения основной работы запуска, как только страница будет полностью загружена.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> colorWell<span class="token punctuation">;</span>
+<span class="token keyword">var</span> defaultColor <span class="token operator">=</span> <span class="token string">"#0000ff"</span><span class="token punctuation">;</span>
+
+window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"load"</span><span class="token punctuation">,</span> startup<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+<h4 id="инициализация">Инициализация</h4>
+
+<p>Как только страница загружена, вызывается наш обработчик событий загрузки <code>startup()</code>:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">function</span> <span class="token function">startup</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  colorWell <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">"#colorWell"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  colorWell<span class="token punctuation">.</span>value <span class="token operator">=</span> defaultColor<span class="token punctuation">;</span>
+  colorWell<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"input"</span><span class="token punctuation">,</span> updateFirst<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  colorWell<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"change"</span><span class="token punctuation">,</span> updateAll<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  colorWell<span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p>Это возвращает ссылку на элемент color<strong> </strong><code>&lt;input&gt;</code><strong> </strong>в переменной <code>colorWell</code>, а затем устанавливает значение входного цвета в значение <code>defaultColor</code>. То цвет входное&nbsp;<a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event"><code>input</code> <span>(en-US)</span></a> событие настроено, чтобы вызвать&nbsp;<code>updateFirst()</code> функцию&nbsp;и <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event"><code>change</code> <span>(en-US)</span></a> событие, вызывается <code>updateAll()</code>. Они оба видны ниже.</p>
+
+<p>Наконец, мы вызываем <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/select"><code> select ()</code> <span>(en-US)</span></a> для выбора текстового содержимого цветового ввода, если элемент управления реализован в виде текстового поля (это не имеет никакого эффекта, если вместо него предусмотрен интерфейс выбора цвета).</p>
+
+<h4 id="реакция_на_изменение_цвета">Реакция на изменение цвета</h4>
+
+<p>Мы предоставляем две функции, которые имеют дело с изменением цвета. Функция <code>updateFirst()</code> вызывается в ответ на <code>input</code> событие. Он изменяет цвет первого элемента абзаца в документе, чтобы соответствовать новому значению входного цвета. Поскольку <code>input</code> события запускаются каждый раз, когда производится корректировка значения (например, если яркость цвета увеличивается), они будут происходить повторно при использовании средства выбора цвета.</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">function</span> <span class="token function">updateFirst</span><span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> p <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">"p"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>p<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    p<span class="token punctuation">.</span>style<span class="token punctuation">.</span>color <span class="token operator">=</span> event<span class="token punctuation">.</span>target<span class="token punctuation">.</span>value<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+
+<p>Когда средство выбора цвета закрывается, указывая, что значение больше не будет меняться (если пользователь повторно не откроет средство выбора цвета), в элемент отправляется событие <code>change</code>. Мы обрабатываем это событие с помощью функции <code>updateAll()</code>, используя <a class="page-not-created" title="Документация об этом ещё не написана; пожалуйста, поспособствуйте её написанию!"><code>Event.target.value</code></a>&nbsp;для получения окончательного выбранного цвета:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">function</span> <span class="token function">updateAll</span><span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">"p"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">p</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    p<span class="token punctuation">.</span>style<span class="token punctuation">.</span>color <span class="token operator">=</span> event<span class="token punctuation">.</span>target<span class="token punctuation">.</span>value<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p>Это устанавливает цвет каждого элемента <a href="/html/p/"><code>&lt;p&gt;</code></a> таким образом, чтобы его атрибут <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/color"><code>color</code> <span>(en-US)</span></a> соответствовал текущему значению входного цвета, на которое ссылаются с помощью <a href="https://developer.mozilla.org/ru/docs/Web/API/Event/target" title="event.target"><code>event.target</code></a>.</p></div><h3 id="результат"><a href="#результат" title="Permalink to Результат">Результат</a></h3><div><p>Финальный результат выглядит так:</p>
+
+<p><iframe class="sample-code-frame" id="frame_Example" width="700" height="200" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/Input/color/_sample_.Example.html" loading="lazy"></iframe></p></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://html.spec.whatwg.org/multipage/#color-state-(type=color)" hreflang="en" lang="en" class="external" title="Спецификация 'HTML Living Standard'" rel=" noopener">HTML Living Standard</a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td>Первоначальное определение</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html52/forms.html#the-input-element" hreflang="en" lang="en" class="external" title="Спецификация 'HTML5'" rel=" noopener">HTML5</a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Первоначальное определение</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="браузерная_совместимость"><a href="#браузерная_совместимость" title="Permalink to Браузерная совместимость">Браузерная совместимость</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="изучите_также"><a href="#изучите_также" title="Permalink to Изучите также">Изучите также</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Learn/Forms/Property_compatibility_table_for_form_controls">Compatibility of CSS properties</a></li>
+</ul></div>

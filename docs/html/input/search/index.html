@@ -1,0 +1,325 @@
+<h1>&lt;input type="search"&gt;</h1><div><div></div>
+
+<p><span class="seoSummary"><a href="/html/Input/"><code>&lt;input&gt;</code></a> элементы с типом&nbsp;<code><strong>search</strong></code>&nbsp;это текстовые поля разработанные для ввода пользователем поисковых запросов. Функциональность идентична элементам&nbsp;с типом&nbsp;<code><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/text">text</a></code>, но может отличаться стилизация за счёт&nbsp;<a href="https://developer.mozilla.org/ru/docs/Glossary/User_agent">user agent</a>, а также наличием специального&nbsp;<strong>не стандартизированного</strong>&nbsp;события </span><a class="page-not-created" title="Документация об этом ещё не написана; пожалуйста, поспособствуйте её написанию!"><code>onsearch</code></a>.</p>
+
+<div><iframe class="interactive" width="100%" height="445" src="https://interactive-examples.mdn.mozilla.net/pages/tabbed/input-search.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+
+
+<table class="properties">
+ <tbody>
+  <tr>
+   <td><strong><a href="#value">Value</a></strong></td>
+   <td>A <a href="https://developer.mozilla.org/ru/docs/Web/API/DOMString"><code>DOMString</code></a> representing the value contained in the search field.</td>
+  </tr>
+  <tr>
+   <td><strong>Events</strong></td>
+   <td><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event"><code>change</code> <span>(en-US)</span></a> and <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event"><code>input</code> <span>(en-US)</span></a></td>
+  </tr>
+  <tr>
+   <td><strong>Supported Common Attributes</strong></td>
+   <td><a href="/html/Input#attr-autocomplete/"><code>autocomplete</code></a>, <a href="/html/Input#attr-list/"><code>list</code></a>, <a href="/html/Input#attr-maxlength/"><code>maxlength</code></a>, <a href="/html/Input#attr-minlength/"><code>minlength</code></a>, <a href="/html/Input#attr-pattern/"><code>pattern</code></a>, <a href="/html/Input#attr-placeholder/"><code>placeholder</code></a>, <a href="/html/Input#attr-required/"><code>required</code></a>, <a href="/html/Input#attr-size/"><code>size</code></a>.</td>
+  </tr>
+  <tr>
+   <td><strong>IDL attributes</strong></td>
+   <td><code>value</code></td>
+  </tr>
+  <tr>
+   <td><strong>Methods</strong></td>
+   <td><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/select"><code>select()</code> <span>(en-US)</span></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/setRangeText"><code>setRangeText()</code> <span>(en-US)</span></a>, <a href="https://developer.mozilla.org/ru/docs/Web/API/HTMLInputElement/setSelectionRange" title="setSelectionRange()"><code>setSelectionRange()</code></a>.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="value"><a href="#value" title="Permalink to Value">Value</a></h2><div><p>The <a href="/html/Input#attr-value/"><code>value</code></a> attribute contains a <a href="https://developer.mozilla.org/ru/docs/Web/API/DOMString"><code>DOMString</code></a> representing the value contained in the search field. You can retrieve this using the <a class="page-not-created" title="Документация об этом ещё не написана; пожалуйста, поспособствуйте её написанию!"><code>HTMLInputElement.value</code></a> property in JavaScript.</p>
+
+<pre class="brush: js notranslate"><code>searchTerms <span class="token operator">=</span> mySearch<span class="token punctuation">.</span>value<span class="token punctuation">;</span>
+</code></pre>
+
+<p>If no validation constraints are in place for the input (see <a href="#validation">Validation</a> for more details), the value can be any text string or an empty string (<code>""</code>).</p></div><h2 id="additional_attributes"><a href="#additional_attributes" title="Permalink to Additional attributes">Additional attributes</a></h2><div><p>In addition to the attributes that operate on all <a href="/html/Input/"><code>&lt;input&gt;</code></a> elements regardless of their type, search field inputs support the following attributes:</p>
+
+<table>
+ <thead>
+  <tr>
+   <th scope="col">Attribute</th>
+   <th scope="col">Description</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><code><a href="#list">list</a></code></td>
+   <td>The id of the &lt;datalist&gt; element that contains the optional pre-defined autocomplete options</td>
+  </tr>
+  <tr>
+   <td><code><a href="#maxlength">maxlength</a></code></td>
+   <td>The maximum number of characters the input should accept</td>
+  </tr>
+  <tr>
+   <td><code><a href="#minlength">minlength</a></code></td>
+   <td>The minimum number of characters long the input can be and still be considered valid</td>
+  </tr>
+  <tr>
+   <td><code><a href="#pattern">pattern</a></code></td>
+   <td>A regular expression the input's contents must match in order to be valid</td>
+  </tr>
+  <tr>
+   <td><code><a href="#placeholder">placeholder</a></code></td>
+   <td>An exemplar value to display in the input field whenever it is empty</td>
+  </tr>
+  <tr>
+   <td><code><a href="#readonly">readonly</a></code></td>
+   <td>A Boolean attribute indicating whether or not the contents of the input should be read-only</td>
+  </tr>
+  <tr>
+   <td><code><a href="#size">size</a></code></td>
+   <td>A number indicating how many characters wide the input field should be</td>
+  </tr>
+  <tr>
+   <td><code><a href="#spellcheck">spellcheck</a></code></td>
+   <td>Controls whether or not to enable spell checking for the input field, or if the default spell checking configuration should be used</td>
+  </tr>
+ </tbody>
+</table>
+
+<p id="htmlattrdeflist"></p></div><h3 id="htmlattrdefmaxlength"><a href="#htmlattrdefmaxlength" title="Permalink to maxlength"></a><a id="attr-maxlength" href="#attr-maxlength"><b><code>maxlength</code></b></a></h3><div><p>The maximum number of characters (as UTF-16 code units) the user can enter into the search field. This must be an integer value 0 or higher. If no <code>maxlength</code> is specified, or an invalid value is specified, the search field has no maximum length. This value must also be greater than or equal to the value of <code>minlength</code>.</p>
+
+<p>The input will fail <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Constraint_validation">constraint validation</a> if the length of the text entered into the field is greater than <code>maxlength</code> UTF-16 code units long.</p></div><h3 id="htmlattrdefminlength"><a href="#htmlattrdefminlength" title="Permalink to minlength"></a><a id="attr-minlength" href="#attr-minlength"><b><code>minlength</code></b></a></h3><div><p>The minimum number of characters (as UTF-16 code units) the user can enter into the search field. This must be a non-negative integer value smaller than or equal to the value specified by <code>maxlength</code>. If no <code>minlength</code> is specified, or an invalid value is specified, the search input has no minimum length.</p>
+
+<p>The search field will fail <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Constraint_validation">constraint validation</a> if the length of the text entered into the field is fewer than <code>minlength</code> UTF-16 code units long.</p></div><h3 id="htmlattrdefpattern"><a href="#htmlattrdefpattern" title="Permalink to pattern"></a><a id="attr-pattern" href="#attr-pattern"><b><code>pattern</code></b></a></h3><div><p></p><p>The <code>pattern</code> attribute, when specified, is a regular expression that the input's <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes#attr-value"><code>value</code></a> must match in order for the value to pass <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Constraint_validation">constraint validation</a>. It must be a valid JavaScript regular expression, as used by the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp"><code>RegExp</code></a> type, and as documented in our <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions">guide on regular expressions</a>; the <code>'u'</code> flag is specified when compiling the regular expression, so that the pattern is treated as a sequence of Unicode code points, instead of as ASCII. No forward slashes should be specified around the pattern text.</p><p>If the specified pattern is not specified or is invalid, no regular expression is applied and this attribute is ignored completely.</p><div class="note notecard">
+<p><strong>Tip:</strong> Use the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attr-title"><code>title</code></a> attribute to specify text that most browsers will display as a tooltip to explain what the requirements are to match the pattern. You should also include other explanatory text nearby.</p>
+</div><p></p>
+
+<p>See the section <a href="#specifying_a_pattern">Specifying a pattern</a> for details and an example.</p>
+
+<p></p>
+
+<p></p>
+
+<p></p></div><h3 id="htmlattrdefspellcheck"><a href="#htmlattrdefspellcheck" title="Permalink to spellcheck"></a><a id="attr-spellcheck" href="#attr-spellcheck"><b><code>spellcheck</code></b></a></h3><div><p>{{page("/en-US/docs/Web/HTML/Element/input/text", "spellcheck-include")}}</p></div><h2 id="non-standard_attributes"><a href="#non-standard_attributes" title="Permalink to Non-standard attributes">Non-standard attributes</a></h2><div><p>The following non-standard attributes are available to search input fields. As a general rule, you should avoid using them unless it can't be helped.</p>
+
+<table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Attribute</th>
+   <th scope="col">Description</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><code><a href="#autocorrect">autocorrect</a></code></td>
+   <td>Whether or not to allow autocorrect while editing this input field. <strong>Safari only.</strong></td>
+  </tr>
+  <tr>
+   <td><code><a href="#incremental">incremental</a></code></td>
+   <td>Whether or not to send repeated <code><a href="https://developer.mozilla.org/ru/docs/Web/Reference/Events/search" title="This is a link to an unwritten page" class="page-not-created">search</a></code> events to allow updating live search results while the user is still editing the value of the field. <strong>WebKit and Blink only (Safari, Chrome, Opera, etc.).</strong></td>
+  </tr>
+  <tr>
+   <td><code><a href="#mozactionhint">mozactionhint</a></code></td>
+   <td>A string indicating the type of action that will be taken when the user presses the <kbd>Enter</kbd> or <kbd>Return</kbd> key while editing the field; this is used to determine an appropriate label for that key on a virtual keyboard. <strong>Firefox for Android only.</strong></td>
+  </tr>
+  <tr>
+   <td><code><a href="#results">results</a></code></td>
+   <td>The maximum number of items that should be displayed in the drop-down list of previous search queries. <strong>Safari only.</strong></td>
+  </tr>
+ </tbody>
+</table></div><h3 id="htmlattrdefautocorrect_non-standard_inline"><a href="#htmlattrdefautocorrect_non-standard_inline" title="Permalink to autocorrect 
+    
+"></a><a id="attr-autocorrect" href="#attr-autocorrect"><b><code>autocorrect</code></b></a> </h3><div><p></p><p>A Safari extension, the <code>autocorrect</code> attribute is a string which indicates whether or not to activate automatic correction while the user is editing this field. Permitted values are:</p><dl>
+ <dt><code>on</code></dt>
+ <dd>Enable automatic correction of typos, as well as processing of text substitutions if any are configured.</dd>
+ <dt><code>off</code></dt>
+ <dd>Disable automatic correction and text substitutions.</dd>
+</dl><p></p></div><h3 id="htmlattrdefincremental_non-standard_inline"><a href="#htmlattrdefincremental_non-standard_inline" title="Permalink to incremental 
+    
+"></a><a id="attr-incremental" href="#attr-incremental"><b><code>incremental</code></b></a> </h3><div><div id="incremental-include">
+<p>The Boolean attribute <code>incremental</code> is a WebKit and Blink extension (so supported by Safari, Opera, Chrome, etc.) which, if present, tells the <a href="https://developer.mozilla.org/ru/docs/Glossary/User_agent">user agent</a> to process the input as a live search. As the user edits the value of the field, the user agent sends <code><a href="https://developer.mozilla.org/ru/docs/Web/Reference/Events/search" title="This is a link to an unwritten page" class="page-not-created">search</a></code> events to the <a href="https://developer.mozilla.org/ru/docs/Web/API/HTMLInputElement"><code>HTMLInputElement</code></a> object representing the search box. This allows your code to update the search results in real time as the user edits the search.</p>
+
+<p>If <code>incremental</code> is not specified, the <code><a href="https://developer.mozilla.org/ru/docs/Web/Reference/Events/search" title="This is a link to an unwritten page" class="page-not-created">search</a></code> event is only sent when the user explicitly initiates a search (such as by pressing the <kbd>Enter</kbd> or <kbd>Return</kbd> key while editing the field).</p>
+
+<p>The <code>search</code> event is rate-limited so that it is not sent more more frequently than an implementation-defined interval.</p>
+</div></div><h3 id="htmlattrdefmozactionhint_non-standard_inline"><a href="#htmlattrdefmozactionhint_non-standard_inline" title="Permalink to mozactionhint 
+    
+"></a><a id="attr-mozactionhint" href="#attr-mozactionhint"><b><code>mozactionhint</code></b></a> </h3><div><p></p><p>A Mozilla extension, supported by Firefox for Android, which provides a hint as to what sort of action will be taken if the user presses the <kbd>Enter</kbd> or <kbd>Return</kbd> key while editing the field. This information is used to decide what kind of label to use on the <kbd>Enter</kbd> key on the virtual keyboard.</p><div class="note notecard">
+<p><strong>Note:</strong> This <a href="https://html.spec.whatwg.org/#input-modalities:-the-enterkeyhint-attribute" class="external" rel=" noopener">has been standardized</a> as the global attribute <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes#attr-enterkeyhint"><code>enterkeyhint</code></a>, but is not yet widely implemented. To see the status of the change being implemented in Firefox, see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1490661" class="external" rel=" noopener">bug&nbsp;1490661</a>.</p>
+</div><p>Permitted values are: <code>go</code>, <code>done</code>, <code>next</code>, <code>search</code>, and <code>send</code>. The browser decides, using this hint, what label to put on the enter key.</p><p></p></div><h3 id="htmlattrdefresults_non-standard_inline"><a href="#htmlattrdefresults_non-standard_inline" title="Permalink to results 
+    
+"></a><a id="attr-results" href="#attr-results"><b><code>results</code></b></a> </h3><div><div id="results-include">
+<p>The <code>results</code> attribute—supported only by Safari—is a numeric value that lets you override the maximum number of entries to be displayed in the <a href="/html/Input/"><code>&lt;input&gt;</code></a> element's natively-provided drop-down menu of previous search queries.</p>
+
+<p>The value must be a non-negative decimal number. If not provided, or an invalid value is given, the browser's default maximum number of entries is used.</p>
+</div></div><h2 id="using_search_inputs"><a href="#using_search_inputs" title="Permalink to Using search inputs">Using search inputs</a></h2><div><p><code>&lt;input&gt;</code> elements of type <code>search</code> are very similar to those of type <code>text</code>, except that they are specifically intended for handling search terms. They are basically equivalent in behavior, but user agents may choose to style them differently by default (and, of course, sites may use stylesheets to apply custom styles to them).</p></div><h3 id="basic_example"><a href="#basic_example" title="Permalink to Basic example">Basic example</a></h3><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>search<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mySearch<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>q<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><span class="token punctuation">&gt;</span></span>Search<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<p>This renders like so:</p>
+
+<p><iframe class="sample-code-frame" id="frame_Basic_example" width="600" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/Input/search/_sample_.Basic_example.html" loading="lazy"></iframe></p>
+
+<p><code>q</code> is the most common <code>name</code> given to search inputs, although it's not mandatory. When submitted, the data name/value pair sent to the server will be <code>q=searchterm</code>.</p>
+
+<div class="note notecard">
+<p>You must remember to set a <a href="/html/Input#attr-name/"><code>name</code></a> for your input, otherwise nothing will be submitted.</p>
+</div></div><h3 id="differences_between_search_and_text_types"><a href="#differences_between_search_and_text_types" title="Permalink to Differences between search and text types">Differences between search and text types</a></h3><div><p>The main basic differences come in the way browsers handle them. The first thing to note is that some browsers show a cross icon that can be clicked on to remove the search term instantly if desired. The following screenshot comes from Chrome:</p>
+
+<p><img alt src="https://mdn.mozillademos.org/files/15235/chrome-cross-icon.png" style="display: block; margin: 0px auto;" loading="lazy"></p>
+
+<p>In addition, modern browsers also tend to automatically store search terms previously entered across domains, which then come up as autocomplete options when subsequent searches are performed in search inputs on that domain. This helps users who tend to do searches on the same or similar search queries over time. This screenshot is from Firefox:</p>
+
+<p><img alt src="https://mdn.mozillademos.org/files/15237/firefox-auto-complete.png" style="display: block; margin: 0px auto;" loading="lazy">At this point, let's look at some useful techniques you can apply to your search forms.</p></div><h3 id="setting_placeholders"><a href="#setting_placeholders" title="Permalink to Setting placeholders">Setting placeholders</a></h3><div><p>You can provide a useful placeholder inside your search input that could give a hint on what to do using the <a href="/html/Input#attr-placeholder/"><code>placeholder</code></a> attribute. Look at the following example:</p>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>search<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mySearch<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>q<span class="token punctuation">"</span></span>
+     <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Search the site...<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><span class="token punctuation">&gt;</span></span>Search<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<p>You can see how the placeholder is rendered below:</p>
+
+<p><iframe class="sample-code-frame" id="frame_Setting_placeholders" width="600" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/Input/search/_sample_.Setting_placeholders.html" loading="lazy"></iframe></p></div><h3 id="search_form_labels_and_accessibility"><a href="#search_form_labels_and_accessibility" title="Permalink to Search form labels and accessibility">Search form labels and accessibility</a></h3><div><p>One problem with search forms is their accessibility; a common design practice is not to provide a label for the search field (although there might be a magnifying glass icon or similar), as the purpose of a search form is normally fairly obvious for sighted users due to placement (<a href="https://mdn.github.io/learning-area/accessibility/aria/website-aria-roles/" class="external" rel=" noopener">this example shows a typical pattern</a>).</p>
+
+<p>This could, however, cause confusion for screenreader users, since they will not have any verbal indication of what the search input is. One way around this that won't impact on your visual design is to use <a href="https://developer.mozilla.org/en-US/docs/Learn/Accessibility/WAI-ARIA_basics">WAI-ARIA</a> features:</p>
+
+<ul>
+ <li>A <code>role</code> attribute of value <code>search</code> on the <code>&lt;form&gt;</code> element will cause screenreaders to announce that the form is a search form.</li>
+ <li>If that isn't enough, you can use an <code>aria-label</code> attribute on the <a href="/html/Input/"><code>&lt;input&gt;</code></a> itself. This should be a descriptive text label that will be read out by the screenreader; it's used as a non-visual equivalent to <code>&lt;label&gt;</code>.</li>
+</ul>
+
+<p>Let's have a look at an example:</p>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>search<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>search<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mySearch<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>q<span class="token punctuation">"</span></span>
+     <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Search the site...<span class="token punctuation">"</span></span>
+     <span class="token attr-name">aria-label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Search through site content<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><span class="token punctuation">&gt;</span></span>Search<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<p>You can see how this is rendered below:</p>
+
+<p><iframe class="sample-code-frame" id="frame_Search_form_labels_and_accessibility" width="600" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/Input/search/_sample_.Search_form_labels_and_accessibility.html" loading="lazy"></iframe></p>
+
+<p>There is no visual difference from the previous example, but screenreader users have way more information available to them.</p>
+
+<div class="note notecard">
+<p><strong>Note</strong>: See <a href="https://developer.mozilla.org/en-US/docs/Learn/Accessibility/WAI-ARIA_basics#signpostslandmarks">Signposts/Landmarks</a> for more information about such accessibility features.</p>
+</div></div><h3 id="physical_input_element_size"><a href="#physical_input_element_size" title="Permalink to Physical input element size">Physical input element size</a></h3><div><p>The physical size of the input box can be controlled using the <a href="/html/Input#attr-size/"><code>size</code></a> attribute. With it, you can specify the number of characters the input box can display at a time. In this example, for instance, the search box is 30 characters wide:</p>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>search<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mySearch<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>q<span class="token punctuation">"</span></span>
+    <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Search the site...<span class="token punctuation">"</span></span> <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>30<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><span class="token punctuation">&gt;</span></span>Search<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<p>The result is this wider input box:</p>
+
+<p><iframe class="sample-code-frame" id="frame_Physical_input_element_size" width="600" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/Input/search/_sample_.Physical_input_element_size.html" loading="lazy"></iframe></p></div><h2 id="validation"><a href="#validation" title="Permalink to Validation">Validation</a></h2><div><p><code>&lt;input&gt;</code> elements of type <code>search</code> have the same validation features available to them as regular <code>text</code> inputs. It is less likely that you'd want to use validation features in general for search boxes. In many cases, users should just be allowed to search for anything, but there are a few cases to consider, such as searches against data of a known format.</p>
+
+<div class="note notecard">
+<p><strong>Note</strong>: HTML form validation is <em>not</em> a substitute for scripts that ensure that the entered data is in the proper format. It's far too easy for someone to make adjustments to the HTML that allow them to bypass the validation, or to remove it entirely. It's also possible for someone to simply bypass your HTML entirely and submit the data directly to your server. If your server-side code fails to validate the data it receives, disaster could strike when improperly-formatted data (or data which is too large, is of the wrong type, and so forth) is entered into your database.</p>
+</div></div><h3 id="a_note_on_styling"><a href="#a_note_on_styling" title="Permalink to A note on styling">A note on styling</a></h3><div><p>There are useful pseudo-classes available for styling valid/invalid form elements: <a href="https://developer.mozilla.org/ru/docs/Web/CSS/:valid"><code>:valid</code></a> and <a href="https://developer.mozilla.org/ru/docs/Web/CSS/:invalid"><code>:invalid</code></a>. In this section, we'll use the following CSS, which will place a check (tick) next to inputs containing valid values, and a cross next to inputs containing invalid values.</p>
+
+<pre class="brush: css notranslate"><code><span class="token selector">input:invalid ~ span:after</span> <span class="token punctuation">{</span>
+    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">'✖'</span><span class="token punctuation">;</span>
+    <span class="token property">padding-left</span><span class="token punctuation">:</span> 5px<span class="token punctuation">;</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">input:valid ~ span:after</span> <span class="token punctuation">{</span>
+    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">'✓'</span><span class="token punctuation">;</span>
+    <span class="token property">padding-left</span><span class="token punctuation">:</span> 5px<span class="token punctuation">;</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<p>The technique also requires a <a href="/html/span/"><code>&lt;span&gt;</code></a> element to be placed after the form element, which acts as a holder for the icons. This was necessary because some input types on some browsers don't display icons placed directly after them very well.</p></div><h3 id="making_input_required"><a href="#making_input_required" title="Permalink to Making input required">Making input required</a></h3><div><p>You can use the <a href="/html/Input#attr-required/"><code>required</code></a> attribute as an easy way of making entering a value required before form submission is allowed:</p>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>search<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mySearch<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>q<span class="token punctuation">"</span></span>
+    <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Search the site...<span class="token punctuation">"</span></span> <span class="token attr-name">required</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><span class="token punctuation">&gt;</span></span>Search<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>validity<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+
+
+<p>This renders like so:</p>
+
+<p><iframe class="sample-code-frame" id="frame_Making_input_required" width="600" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/Input/search/_sample_.Making_input_required.html" loading="lazy"></iframe></p>
+
+<p>In addition, if you try to submit the form with no search term entered into it, the browser will show a message. The following example is from Firefox:</p>
+
+<p><img alt="form field with attached message that says Please fill out this field" src="https://mdn.mozillademos.org/files/15241/firefox-required-message.png" style="display: block; margin: 0 auto;" loading="lazy"></p>
+
+<p>Different messages will be shown when you try to submit the form with different types of invalid data contained inside the inputs; see the below examples.</p></div><h3 id="input_value_length"><a href="#input_value_length" title="Permalink to Input value length">Input value length</a></h3><div><p>You can specify a minimum length, in characters, for the entered value using the <a href="/html/Input#attr-minlength/"><code>minlength</code></a> attribute; similarly, use <a href="/html/Input#attr-maxlength/"><code>maxlength</code></a> to set the maximum length of the entered value.</p>
+
+<p>The example below requires that the entered value be 4–8 characters in length.</p>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mySearch<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Search for user<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>search<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mySearch<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>q<span class="token punctuation">"</span></span>
+    <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>User IDs are 4–8 characters in length<span class="token punctuation">"</span></span> <span class="token attr-name">required</span>
+    <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>30<span class="token punctuation">"</span></span> <span class="token attr-name">minlength</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>4<span class="token punctuation">"</span></span> <span class="token attr-name">maxlength</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>8<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><span class="token punctuation">&gt;</span></span>Search<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>validity<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+
+
+<p>This renders like so:</p>
+
+<p><iframe class="sample-code-frame" id="frame_Input_value_length" width="600" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/Input/search/_sample_.Input_value_length.html" loading="lazy"></iframe></p>
+
+<p>If you try to submit the form with less than 4 characters, you'll be given an appropriate error message (which differs between browsers). If you try to go beyond 8 characters in length, the browser won't let you.</p></div><h3 id="specifying_a_pattern"><a href="#specifying_a_pattern" title="Permalink to Specifying a pattern">Specifying a pattern</a></h3><div><p>You can use the <a href="/html/Input#attr-pattern/"><code>pattern</code></a> attribute to specify a regular expression that the inputted value must follow to be considered valid (see <a href="https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation#validating_against_a_regular_expression">Validating against a regular expression</a> for a simple crash course).</p>
+
+<p>Let's look at an example. Say we wanted to provide a product ID search form, and the IDs were all codes of two letters followed by four numbers. The following example covers it:</p>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mySearch<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Search for product by ID:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>search<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mySearch<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>q<span class="token punctuation">"</span></span>
+    <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>two letters followed by four numbers<span class="token punctuation">"</span></span> <span class="token attr-name">required</span>
+    <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>30<span class="token punctuation">"</span></span> <span class="token attr-name">pattern</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>[A-z]{2}[0-9]{4}<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><span class="token punctuation">&gt;</span></span>Search<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>validity<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+
+
+<p>This renders like so:</p>
+
+<p><iframe class="sample-code-frame" id="frame_Specifying_a_pattern" width="600" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/Input/search/_sample_.Specifying_a_pattern.html" loading="lazy"></iframe></p></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div><p>You can see a good example of a search form used in context at our <a class="external external-icon" href="https://github.com/mdn/learning-area/tree/master/accessibility/aria/website-aria-roles" rel=" noopener">website-aria-roles</a> example (<a class="external external-icon" href="https://mdn.github.io/learning-area/accessibility/aria/website-aria-roles/" rel=" noopener">see it live</a>).</p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://html.spec.whatwg.org/multipage/input.html#text-(type=text)-state-and-search-state-(type=search)" hreflang="en" lang="en" class="external" rel=" noopener">HTML Living Standard<br><small lang="ru">Определение '&lt;input type="search"&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td>Initial definition</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html51/sec-forms.html#text-typetext-state-and-search-state-typesearch" hreflang="en" lang="en" class="external" rel=" noopener">HTML 5.1<br><small lang="ru">Определение '&lt;input type="search"&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Learn/Forms">HTML Forms</a></li>
+ <li><a href="/html/Input/"><code>&lt;input&gt;</code></a> and the <a href="https://developer.mozilla.org/ru/docs/Web/API/HTMLInputElement"><code>HTMLInputElement</code></a> interface it's based upon</li>
+ <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/text">&lt;input type="text"&gt;</a></code></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Learn/Forms/Property_compatibility_table_for_form_controls">Compatibility of CSS properties</a></li>
+</ul></div>

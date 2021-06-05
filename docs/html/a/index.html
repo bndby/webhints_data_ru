@@ -1,373 +1,323 @@
-<h1>&lt;a&gt;: The Anchor element</h1><div><div></div>
+<h1>&lt;a&gt;</h1><div><p>HTML-элемент <code>&lt;a&gt;</code>&nbsp;определяет гиперссылку для перехода на определённое место на странице или&nbsp;на другую страницу в Интернете. Также он может быть использован (в&nbsp;устаревшем варианте) для создания якоря — это место назначения для гиперссылок внутри страницы:&nbsp;так ссылки не ограничены только в&nbsp;перемещении между страницами.</p>
 
-<p><span class="seoSummary">The <strong><code>&lt;a&gt;</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a> element (or <em>anchor</em> element), with <a href="#href">its <code>href</code> attribute</a>, creates a hyperlink to web pages, files, email addresses, locations in the same page, or anything else a URL can address.</span> Content within each <code>&lt;a&gt;</code> <strong>should</strong> indicate the link's destination. If <span class="seoSummary"><a href="#href">the&nbsp;<code>href</code> attribute</a></span> is present, pressing the enter key while focused on the <code>&lt;a&gt;</code>&nbsp;element will activate it.</p>
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://developer.mozilla.org<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>MDN<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span></code></pre>
 
-<div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/tabbed/a.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div></div><h2 id="attributes"><a href="#attributes" title="Permalink to Attributes">Attributes</a></h2><div><p>This element's attributes include the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes">global attributes</a>.</p>
-
-<dl>
- <dt id="download"><a id="attr-download" href="#attr-download"><b><code>download</code></b></a></dt>
- <dd>Prompts the user to save the linked URL instead of navigating to it. Can be used with or without a value:</dd>
- <dd>
- <ul>
-  <li>Without a value, the browser will suggest a filename/extension, generated from various sources:
-   <ul>
-    <li>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Disposition"><code>Content-Disposition</code></a> HTTP header</li>
-    <li>The final segment in the URL <a href="https://developer.mozilla.org/en-US/docs/Web/API/URL/pathname">path</a></li>
-    <li>The <a href="https://developer.mozilla.org/en-US/docs/Glossary/MIME_type">media type</a> (from the <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type"><code>Content-Type</code></a> header, the start of a <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URIs"><code>data:</code> URL</a>, or <a href="https://developer.mozilla.org/en-US/docs/Web/API/Blob/type"><code>Blob.type</code></a> for a <a href="https://developer.mozilla.org/en-US/docs/Web/API/URL/createObjectURL"><code>blob:</code> URL</a>)</li>
-   </ul>
-  </li>
-  <li>Defining a value suggests it as the filename. <code>/</code> and <code>\</code> characters are converted to underscores (<code>_</code>). Filesystems may forbid other characters in filenames, so browsers will adjust the suggested name if necessary.</li>
- </ul>
-
- <div class="notecard note">
- <h4 id="notes">Notes</h4>
-
- <ul>
-  <li><code>download</code> only works for <a href="https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy">same-origin URLs</a>, or the <code>blob:</code> and <code>data:</code> schemes.</li>
-  <li>
-   <p>If the <code>Content-Disposition</code> header has different information from the <code>download</code> attribute, resulting behavior may differ:</p>
-
-   <ul>
-    <li>
-     <p>If the header specifies a <code>filename</code>, it takes priority over a filename specified in the <code>download</code> attribute.</p>
-    </li>
-    <li>
-     <p>If the header specifies a disposition of <code>inline</code>, Chrome, and Firefox 82 and later, prioritize the attribute and treat it as a download. Firefox versions before 82 prioritize the header and will display the content inline.</p>
-    </li>
-   </ul>
-  </li>
- </ul>
- </div>
- </dd>
- <dt id="href"><a id="attr-href" href="#attr-href"><b><code>href</code></b></a></dt>
- <dd>
- <p>The URL that the hyperlink points to. Links are not restricted to HTTP-based URLs — they can use any URL scheme supported by browsers:</p>
-
- <ul>
-  <li>Sections of a page with fragment URLs</li>
-  <li>Pieces of media files with media fragments</li>
-  <li>Telephone numbers with <code>tel:</code> URLs</li>
-  <li>Email addresses with <code>mailto:</code> URLs</li>
-  <li>While web browsers may not support other URL schemes, web sites can with <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator/registerProtocolHandler">registerProtocolHandler()</a></code></li>
- </ul>
- </dd>
- <dt id="hreflang"><a id="attr-hreflang" href="#attr-hreflang"><b><code>hreflang</code></b></a></dt>
- <dd>Hints at the human language of the linked URL. No built-in functionality. Allowed values are the same as <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang">the global <code>lang</code> attribute</a>.</dd>
- <dt id="ping"><a id="attr-ping" href="#attr-ping"><b><code>ping</code></b></a></dt>
- <dd>A space-separated list of URLs. When the link is followed, the browser will send <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST"><code>POST</code></a> requests with the body <code>PING</code> to the URLs. Typically for tracking.</dd>
- <dt id="referrerpolicy"><a id="attr-referrerpolicy" href="#attr-referrerpolicy"><b><code>referrerpolicy</code></b></a></dt>
- <dd>How much of the <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer">referrer</a> to send when following the link. See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy"><code>Referrer-Policy</code></a> for possible values and their effects.</dd>
- <dt id="rel"><a id="attr-rel" href="#attr-rel"><b><code>rel</code></b></a></dt>
- <dd>The relationship of the linked URL as space-separated <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types">link types</a>.</dd>
- <dt id="target"><a id="attr-target" href="#attr-target"><b><code>target</code></b></a></dt>
- <dd>Where to display the linked URL, as the name for a <em>browsing context</em> (a tab, window, or <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe"><code>&lt;iframe&gt;</code></a>). The following keywords have special meanings for where to load the URL:
- <ul>
-  <li><code>_self</code>: the current browsing context. (Default)</li>
-  <li><code>_blank</code>: usually a new tab, but users can configure browsers to open a new window instead.</li>
-  <li><code>_parent</code>: the parent browsing context of the current one. If no parent, behaves as <code>_self</code>.</li>
-  <li><code>_top</code>: the topmost browsing context (the "highest" context that’s an ancestor of the current one). If no ancestors, behaves as <code>_self</code>.</li>
- </ul>
-
- <div class="notecard note">
- <h4 id="note">Note</h4>
- <p>Setting <code>target="_blank"</code> on <code>&lt;a&gt;</code> elements implicitly provides the same <code>rel</code> behavior as setting <code><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/noopener">rel="noopener"</a></code> which does not set <code>window.opener</code>. See <a href="#browser_compatibility">browser compatibility</a> for support status.</p>
- </div>
- </dd>
- <dt id="type"><a id="attr-type" href="#attr-type"><b><code>type</code></b></a></dt>
- <dd>Hints at the linked URL’s format with a <a href="https://developer.mozilla.org/en-US/docs/Glossary/MIME_type">MIME type</a>. No built-in functionality.</dd>
-</dl></div><h3 id="deprecated_attributes"><a href="#deprecated_attributes" title="Permalink to Deprecated attributes">Deprecated attributes</a></h3><div><dl>
- <dt id="charset"><a id="attr-charset" href="#attr-charset"><b><code>charset</code></b></a></dt>
- <dd>Hinted at the <a href="https://developer.mozilla.org/en-US/docs/Glossary/character_encoding">character encoding</a> of the linked URL.
- <div class="notecard note">
- <h4 id="note_2">Note</h4>
- <p>This attribute is deprecated and <strong>should not be used by authors</strong>. Use the HTTP <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type"><code>Content-Type</code></a> header on the linked URL.</p>
- </div>
- </dd>
- <dt id="coords"><a id="attr-coords" href="#attr-coords"><b><code>coords</code></b></a></dt>
- <dd>Used with <a href="#shape">the <code>shape</code> attribute</a>. A comma-separated list of coordinates.</dd>
- <dt id="name"><a id="attr-name" href="#attr-name"><b><code>name</code></b></a></dt>
- <dd>Was required to define a possible target location in a page. In HTML 4.01, <code>id</code> and <code>name</code> could both be used on <code>&lt;a&gt;</code>, as long as they had identical values.
- <div class="notecard note">
- <h4 id="note_3">Note</h4>
- <p>Use the global attribute <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes#attr-id"><code>id</code></a> instead.</p>
- </div>
- </dd>
- <dt id="rev"><a id="attr-rev" href="#attr-rev"><b><code>rev</code></b></a></dt>
- <dd>Specified a reverse link; the opposite of <a href="#rel">the <code>rel</code> attribute</a>. Deprecated for being very confusing.</dd>
- <dt id="shape"><a id="attr-shape" href="#attr-shape"><b><code>shape</code></b></a></dt>
- <dd>The shape of the hyperlink’s region in an image map.
- <div class="notecard note">
- <h4 id="note_4">Note</h4>
- <p>Use the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area"><code>&lt;area&gt;</code></a> element for image maps instead.</p>
- </div>
- </dd>
-</dl></div><h2 id="properties"><a href="#properties" title="Permalink to Properties">Properties</a></h2><div><table class="properties">
+<table class="properties">
  <tbody>
   <tr>
-   <th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories">Content categories</a></th>
-   <td><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#flow_content">Flow content</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#phrasing_content">phrasing content</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#interactive_content">interactive content</a>, palpable content.</td>
+   <th scope="row"><a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Content_categories" title="HTML/Content_categories">Категории контента</a>&nbsp;</th>
+   <td><a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Content_categories#%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%BE%D0%B9_%D0%BF%D0%BE%D1%82%D0%BE%D0%BA" title="HTML/Content categories#Flow content">Основной поток</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#phrasing_content" title="HTML/Content categories#Phrasing content">текстовый контент</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#interactive_content">интерактивный контент</a>, скрытый контент.</td>
   </tr>
   <tr>
-   <th scope="row">Permitted content</th>
-   <td><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#transparent_content_model">Transparent</a>, containing either <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#flow_content">flow content</a> (excluding <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#interactive_content">interactive content</a>) or <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#phrasing_content">phrasing content</a>.</td>
+   <th scope="row">Разрешённый контент</th>
+   <td><a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Content_categories#%D0%BB%D0%BE%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%BD%D1%82" title="HTML/Content_categories#Transparent_content_model">Логический контент</a>, содержащий либо&nbsp;<a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Content_categories#%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%BE%D0%B9_%D0%BF%D0%BE%D1%82%D0%BE%D0%BA" title="HTML/Content_categories#Flow_content">основной поток</a>&nbsp;(исключая&nbsp;<a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Content_categories#interactive_content">интерактивный контент</a>), либо&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#phrasing_content" title="HTML/Content_categories#Phrasing_content">заголовочный контент</a>.</td>
   </tr>
   <tr>
-   <th scope="row">Tag omission</th>
-   <td>None, both the starting and ending tag are mandatory.</td>
+   <th scope="row">Опускание тегов</th>
+   <td>Открывающий и закрывающий теги обязательны.</td>
   </tr>
   <tr>
-   <th scope="row">Permitted parents</th>
-   <td>Any element that accepts <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#phrasing_content">phrasing content</a>, or any element that accepts <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#flow_content">flow content</a>, but not other <code>&lt;a&gt;</code> elements.</td>
+   <th scope="row">Разрешённые родительские элементы</th>
+   <td>Любые элементы, в которых разрешён <a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Content_categories#%D0%B7%D0%B0%D0%B3%D0%BE%D0%BB%D0%BE%D0%B2%D0%BE%D1%87%D0%BD%D1%8B%D0%B9_%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%BD%D1%82">текстовый контент</a> или элементы, в которых разрешёны элементы <a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Content_categories#%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%BE%D0%B9_%D0%BF%D0%BE%D1%82%D0%BE%D0%BA">основного потока</a>.</td>
   </tr>
   <tr>
-   <th scope="row">Implicit ARIA role</th>
-   <td><code><a href="https://w3c.github.io/aria/#link" class="external" rel=" noopener">link</a></code> when <code>href</code> attribute is present, otherwise <a href="https://www.w3.org/TR/html-aria/#dfn-no-corresponding-role" class="external" rel=" noopener">no corresponding role</a></td>
-  </tr>
-  <tr>
-   <th scope="row">Permitted ARIA roles</th>
-   <td>
-    <p>When <code>href</code> attribute is present:</p>
-
-    <ul>
-     <li><code><a href="https://w3c.github.io/aria/#button" class="external" rel=" noopener">button</a></code></li>
-     <li><code><a href="https://w3c.github.io/aria/#checkbox" class="external" rel=" noopener">checkbox</a></code></li>
-     <li><code><a href="https://w3c.github.io/aria/#menuitem" class="external" rel=" noopener">menuitem</a></code></li>
-     <li><code><a href="https://w3c.github.io/aria/#menuitemcheckbox" class="external" rel=" noopener">menuitemcheckbox</a></code></li>
-     <li><code><a href="https://w3c.github.io/aria/#menuitemradio" class="external" rel=" noopener">menuitemradio</a></code></li>
-     <li><code><a href="https://w3c.github.io/aria/#option" class="external" rel=" noopener">option</a></code></li>
-     <li><code><a href="https://w3c.github.io/aria/#radio" class="external" rel=" noopener">radio</a></code></li>
-     <li><code><a href="https://w3c.github.io/aria/#switch" class="external" rel=" noopener">switch</a></code></li>
-     <li><code><a href="https://w3c.github.io/aria/#tab" class="external" rel=" noopener">tab</a></code></li>
-     <li><code><a href="https://w3c.github.io/aria/#treeitem" class="external" rel=" noopener">treeitem</a></code></li>
-    </ul>
-
-    <p>When <code>href</code> attribute is not present:</p>
-
-    <ul>
-     <li>any</li>
-    </ul>
-   </td>
-  </tr>
-  <tr>
-   <th scope="row">DOM interface</th>
-   <td><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLAnchorElement"><code>HTMLAnchorElement</code></a></td>
+   <th scope="row">DOM-интерфейс</th>
+   <td><a href="https://developer.mozilla.org/ru/docs/Web/API/HTMLAnchorElement"><code>HTMLAnchorElement</code></a></td>
   </tr>
  </tbody>
-</table></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="linking_to_an_absolute_url"><a href="#linking_to_an_absolute_url" title="Permalink to Linking to an absolute URL">Linking to an absolute URL</a></h3><div><h4 id="html">HTML</h4>
+</table></div><h2 id="attributes"><a href="#attributes" title="Permalink to Атрибуты">Атрибуты</a></h2><div><p>Этот элемент включает в себя <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Global_attributes">общие атрибуты</a>.</p>
 
-<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://www.mozilla.com<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-  Mozilla
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span></code></pre>
+<dl>
+ <dt><strong><code><a id="attr-download" href="#attr-download"><b><code>download</code></b></a> <span class="badge inline html-version"><a href="https://developer.mozilla.org/ru/docs/orphaned/Web/Guide/HTML/HTML5">HTML5</a></span></code></strong></dt>
+ <dd>Этот атрибут сообщает о том, что эта ссылка должна быть использована для скачивания&nbsp;файла, и, когда пользователь нажимает на ссылку, ему будет предложено сохранить файл как локальный. Если у этого атрибута есть значение, оно будет использовано как заполненное название файла в Окне сохранения, которое открывается, когда пользователь нажимает на ссылку (пользователь может поменять название перед сохранением файла). Ограничений на позволенные значения нет (хотя оно будет конвертировано в нижние подчёркивания, предотвращая специфичные пути), но стоит обратить внимание, что у большинства файловых систем есть ограничения на то, какие знаки препинания поддерживаются файловой системой, и браузеры регулируют названия согласно ограничениям.</dd>
+ <dd></dd>
+</dl>
 
-<h4 id="result">Result</h4>
-
-<p><iframe class="sample-code-frame" id="frame_Linking_to_an_absolute_URL" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/HTML/Element/a/_sample_.Linking_to_an_absolute_URL.html" loading="lazy"></iframe></p></div><h3 id="linking_to_relative_urls"><a href="#linking_to_relative_urls" title="Permalink to Linking to relative URLs">Linking to relative URLs</a></h3><div><h4 id="html_2">HTML</h4>
-
-<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>//example.com<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Scheme-relative URL<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/en-US/docs/Web/HTML<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Origin-relative URL<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>./p<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Directory-relative URL<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
-</code></pre>
-
-
-
-<h4 id="result_2">Result</h4>
-
-<p><iframe class="sample-code-frame" id="frame_Linking_to_relative_URLs" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/HTML/Element/a/_sample_.Linking_to_relative_URLs.html" loading="lazy"></iframe></p></div><h3 id="linking_to_an_element_on_the_same_page"><a href="#linking_to_an_element_on_the_same_page" title="Permalink to Linking to an element on the same page">Linking to an element on the same page</a></h3><div><pre class="brush: html notranslate"><code><span class="token comment">&lt;!-- &lt;a&gt; element links to the section below --&gt;</span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#Section_further_down<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-  Jump to the heading below
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
-
-<span class="token comment">&lt;!-- Heading to link to --&gt;</span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Section_further_down<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Section further down<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
-</code></pre>
-
-<div class="notecard note">
-<h4 id="note_5">Note</h4>
-<p>You can use <code>href="#top"</code> or the empty fragment (<code>href="#"</code>) to link to the top of the current page, <a href="https://html.spec.whatwg.org/multipage/browsing-the-web.html#scroll-to-the-fragment-identifier" class="external" rel=" noopener">as defined in the HTML specification</a>.</p>
-</div></div><h3 id="linking_to_an_email_address"><a href="#linking_to_an_email_address" title="Permalink to Linking to an email address">Linking to an email address</a></h3><div><p>To create links that open in the user's email program to let them send a new message, use the <code>mailto:</code> scheme:</p>
-
-<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mailto:nowhere@mozilla.org<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Send email to nowhere<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span></code></pre>
-
-<p>For details about <code>mailto:</code> URLs, such as including a subject or body, see <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks#e-mail_links">Email links</a> or <a href="https://tools.ietf.org/html/rfc6068" class="external" rel=" noopener">RFC 6068</a>.</p></div><h3 id="linking_to_telephone_numbers"><a href="#linking_to_telephone_numbers" title="Permalink to Linking to telephone numbers">Linking to telephone numbers</a></h3><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tel:+49.157.0156<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>+49 157 0156<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tel:+1(555)5309<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>(555) 5309<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span></code></pre>
-
-<p><code>tel:</code> link behavior varies with device capabilities:</p>
+<div class="note notecard">
+<p><strong>Примечание:</strong></p>
 
 <ul>
- <li>Cellular devices autodial the number.</li>
- <li>Most operating systems have programs that can make calls, like Skype or FaceTime.</li>
- <li>Websites can make phone calls with <a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator/registerProtocolHandler" title="registerProtocolHandler"><code>registerProtocolHandler</code></a>, such as <code>web.skype.com</code>.</li>
- <li>Other behaviors include saving the number to contacts, or sending the number to another device.</li>
+ <li>Атрибут может быть использован вместе&nbsp;с <a href="https://developer.mozilla.org/ru/docs/Web/API/URL/createObjectURL">blob: URLs</a> и <code>data: URLs</code>, чтобы пользователи могли проще скачать контент, который сгенерирован с помощью JavaScript (например, картинка, созданная с помощью онлайн-сайта для рисования).</li>
+ <li>Если представлен HTTP-заголовок&nbsp;<code>Content-Disposition:,</code>&nbsp;и он содержит иное название, у HTTP-заголовка есть преимущество над атрибутом.</li>
+ <li>Если этот атрибут установлен и&nbsp;<code>Content-Disposition:</code> установлен на <code>inline</code>, Firefox отдаёт преимущество&nbsp;<code>Content-Disposition</code>, но в тоже время&nbsp;Chrome отдаёт преимущество атрибуту <code>download</code>.</li>
+ <li>Этот атрибут соблюдается только на ресурсах с тем же доменом.</li>
+</ul>
+</div>
+
+<dl>
+ <dt><a id="attr-href" href="#attr-href"><b><code>href</code></b></a></dt>
+ <dd>Единственный обязательный атрибут для определения ссылки в HTML4, но больше необязательный в HTML5. Упущение этого атрибута создаёт ссылку-заполнитель.&nbsp;Атрибут&nbsp;<code>href</code>&nbsp;указывает ссылку: либо URL, либо якорь. Якорь&nbsp;— это название после символа&nbsp;<code>#</code>, который&nbsp;указывает на элемент (<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes#attr-id" class="only-in-en-us" title="Currently only available in English (US)">ID (en-US)</a>) на текущей странице. URL не ограничены только ссылками на HTTP,&nbsp;они могут использовать любой протокол, поддерживающийся браузером. Например, <code>file</code>, <code>ftp</code> и <code>mailto</code> работают в большинстве браузеров.</dd>
+</dl>
+
+<div class="note notecard">
+<p><strong>Примечание:</strong>&nbsp;Вы можете использовать специальное значение&nbsp;«top», чтобы создать ссылки в начало страницы, например:&nbsp;<code>&lt;a href="#top"&gt;Вернуться наверх&lt;/a&gt;</code>.&nbsp;<a href="https://www.whatwg.org/specs/web-apps/current-work/multipage/history.html#scroll-to-fragid" lang="en" title="http://www.whatwg.org/specs/web-apps/current-work/multipage/history.html#scroll-to-fragid" class="external" rel=" noopener">Это поведение указано в Спецификациях&nbsp;HTML5</a>.</p>
+</div>
+
+<dl>
+ <dt><a id="attr-hreflang" href="#attr-hreflang"><b><code>hreflang</code></b></a></dt>
+ <dd>Этот атрибут сообщает язык документа по ссылке. Это&nbsp;чисто контрольная информация.&nbsp;Разрешённые значения определены&nbsp;в&nbsp;<a href="https://www.ietf.org/rfc/bcp/bcp47.txt" title="http://www.ietf.org/rfc/bcp/bcp47.txt" class="external" rel=" noopener">BCP47</a>&nbsp;для HTML5 и <a href="https://www.ietf.org/rfc/rfc1766.txt" title="http://www.ietf.org/rfc/rfc1766.txt" class="external" rel=" noopener">RFC1766</a>&nbsp;для&nbsp;HTML4. Используйте этот атрибут, только если задан&nbsp;<a href="/html/A#attr-href/" aria-current="page"><code>href</code></a>.</dd>
+ <dt><a id="attr-ping" href="#attr-ping"><b><code>ping</code></b></a> <span class="badge inline html-version"><a href="https://developer.mozilla.org/ru/docs/orphaned/Web/Guide/HTML/HTML5">HTML5</a></span></dt>
+ <dd>Этот атрибут уведомляет&nbsp;указанные&nbsp;в нём&nbsp;URL, что пользователь перешёл по ссылке.</dd>
+ <dt><a id="attr-referrerpolicy" href="#attr-referrerpolicy"><b><code>referrerpolicy</code></b></a> </dt>
+ <dd>Этот атрибут сообщает, какую информацию передавать ресурсу по ссылке:</dd>
+ <dd>
+ <ul>
+  <li><code>"no-referrer"</code>&nbsp;не отправляет заголовок <code>Referer</code>.</li>
+  <li><code>"no-referrer-when-downgrade"</code>&nbsp;не отправляет заголовок <code>Referer</code>&nbsp;ресурсу без&nbsp;TLS (HTTPS). Это стандартное поведение браузера, если не указана иная политика.</li>
+  <li><code>"origin"</code>&nbsp;отправляет такую информацию о&nbsp;текущей странице, как адрес, протокол, хост&nbsp;и порт.</li>
+  <li><code>"origin-when-cross-origin"</code>&nbsp;отправляет другим ресурсам только протокол, хост и порт, а внутри ресурса также отправляет путь.&nbsp;</li>
+  <li><code>"unsafe-url"</code>&nbsp;отправляет только ресурс и адрес (но не пароли или никнеймы). Это значение небезопасно, так как могут утечь ресурс и адрес с TLS-защищённых ресурсов на небезопасные.</li>
+ </ul>
+ </dd>
+</dl>
+
+<dl>
+ <dt><a id="attr-rel" href="#attr-rel"><b><code>rel</code></b></a></dt>
+ <dd>Для ссылок, которые содержат атрибут&nbsp;<code>href</code>, этот атрибут устанавливает отношения между ссылками. Значением является&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types">список значений</a>, разделённый пробелами. Значения и их семантика будут зарегистрированы&nbsp;другими сайтами, которые могут иметь произвольное значение к документу автора. Значением по умолчанию является <code>void</code>, если не задано иное. Используйте этот тег, только если задан атрибут <a href="/html/A#attr-href/" aria-current="page"><code>href</code></a>.</dd>
+</dl>
+
+<dl>
+ <dt><a id="attr-target" href="#attr-target"><b><code>target</code></b></a></dt>
+ <dd>Этот атрибут определяет, где показать содержимое по ссылке. В HTML4, это название и ключевое слово фрейма. В HTML5, это название или ключевое слово в браузере (например, вкладка, окно или iframe). У следующих ключевых слов специальные значения:</dd>
+ <dd>
+ <ul>
+  <li><code>_self</code> загружает документ в текущем&nbsp;фрейме в HTML4&nbsp;(или текущей вкладке в HTML5) как текущий. Это значение по умолчанию, если не указано иное значение.</li>
+  <li><code>_blank</code>&nbsp;загружает документ в новой окне в HTML4 или вкладке в HTML5.</li>
+  <li><code>_parent</code>&nbsp;загружает документ в родительском фрейме в HTML4 или в родительской вкладке в HTML5. Если нет родителя, параметр будет вести себя как<code> _self</code>:&nbsp;Load the response into the HTML4 frameset parent of the current frame or HTML5 parent browsing context of the current one. If there is no parent, this option behaves the same way as&nbsp;<code>_self</code>.</li>
+  <li><code>_top</code>&nbsp;в HTML4 загружает документ в новом окне, игнорируя другие фреймы. В HTML5 загружает в окне высшего уровня. Если родителя нет, опция ведёт себя как <code>_self</code>.</li>
+ </ul>
+ Используйте этот атрибут&nbsp;только если указан&nbsp;<a href="/html/A#attr-href/" aria-current="page"><code>href</code></a>.</dd>
+</dl>
+
+<div class="note notecard">
+<p><strong>Примечание:</strong>&nbsp;Используя <code>target</code>, вы должны добавлять&nbsp;<code>rel="noopener noreferrer"</code>, чтобы избежать эксплуатацию API <code>window.opener</code>.</p>
+</div>
+
+<dl>
+ <dt><a id="attr-type" href="#attr-type"><b><code>type</code></b></a></dt>
+ <dd>Этот атрибут определяет <a href="https://www.w3.org/TR/html4/references.html#ref-MIMETYPES" class="external" rel=" noopener">MIME-тип</a>&nbsp;для документа по ссылке. Обычно это используется как контрольная информация, но в будущем&nbsp;браузеры могут добавлять маленькую иконку для медиафайлов. Например, браузер может добавить маленькую иконку мегафона, если тип файла установлен как <code>audio/wav</code>.</dd>
+ <dd>Используйте этот атрибут только если указан&nbsp;<a href="/html/A#attr-href/" aria-current="page"><code>href</code></a>.</dd>
+</dl></div><h3 id="устаревшие"><a href="#устаревшие" title="Permalink to Устаревшие&nbsp;">Устаревшие&nbsp;</a></h3><div><dl>
+ <dt><a id="attr-charset" href="#attr-charset"><b><code>charset</code></b></a> <span title class="notecard inline obsolete">Вышла из употребления с версии <a href="https://developer.mozilla.org/ru/docs/orphaned/Web/Guide/HTML/HTML5">HTML5</a></span></dt>
+ <dd>Этот атрибут определяет кодировку документа по ссылке. Значением является разделённый пробелами или запятыми <a href="https://tools.ietf.org/html/rfc2045" class="external" rel=" noopener">список кодировок</a>. Значением по умолчанию является&nbsp;ISO-8859-1.</dd>
+</dl>
+
+<div class="warning notecard">
+<p><strong>Предупреждение:</strong>&nbsp;Этот атрибут является устарелым в HTML5 и <strong>не должен использоваться</strong>. Чтобы достичь такого же эффекта, используйте HTTP-заголовок <code>Content-Type</code> на ссылающемся ресурсе.</p>
+</div>
+
+<dl>
+ <dt><a id="attr-coords" href="#attr-coords"><b><code>coords</code></b></a> <span class="badge inline html-version"><a href="https://developer.mozilla.org/ru/docs/Web/HTML">HTML 4</a></span><span title class="notecard inline obsolete">Вышла из употребления с версии <a href="https://developer.mozilla.org/ru/docs/orphaned/Web/Guide/HTML/HTML5">HTML5</a></span></dt>
+ <dd>Для использования с формой объекта, этот атрибут использует разделённый запятыми список чисел для определения координат объекта на странице.</dd>
+ <dt><code><strong>name</strong></code><strong style="font-weight: 700; line-height: 1.5;">&nbsp;</strong><strong><span class="badge inline html-version"><a href="https://developer.mozilla.org/ru/docs/Web/HTML">HTML 4</a></span></strong>&nbsp;<strong><span title class="notecard inline obsolete">Вышла из употребления с версии <a href="https://developer.mozilla.org/ru/docs/orphaned/Web/Guide/HTML/HTML5">HTML5</a></span></strong></dt>
+ <dd>Этот атрибут обязателен в определении якоря на странице. Значение имени схоже со значением <code>id</code> и должен быть уникальным идентификатором и состоять из букв и цифр. Согласно спецификации HTML 4.01, и <code>id</code>, и <code>name</code>&nbsp;могут быть использованы с элементом <code>&lt;a&gt;</code>, пока у них идентичные значения.</dd>
+ <dt><strong style="font-weight: 700; line-height: 1.5;"><code>rev</code>&nbsp;</strong><strong><span class="badge inline html-version"><a href="https://developer.mozilla.org/ru/docs/Web/HTML">HTML 4</a></span></strong>&nbsp;<strong><span title class="notecard inline obsolete">Вышла из употребления с версии <a href="https://developer.mozilla.org/ru/docs/orphaned/Web/Guide/HTML/HTML5">HTML5</a></span></strong></dt>
+ <dd>Этот атрибут определяет обратную ссылку, обратные отношения атрибута <code>rel</code>. Это полезно,&nbsp;чтобы отобразить, откуда пришёл объект&nbsp;как автор или документ.</dd>
+</dl>
+
+<dl>
+ <dt><code>shape</code>&nbsp;<span class="badge inline html-version"><a href="https://developer.mozilla.org/ru/docs/Web/HTML">HTML 4</a></span>&nbsp;<span title class="notecard inline obsolete">Вышла из употребления с версии <a href="https://developer.mozilla.org/ru/docs/orphaned/Web/Guide/HTML/HTML5">HTML5</a></span></dt>
+ <dd>Этот атрибут используется, чтобы определить выбранный регион для ссылок на&nbsp;источник&nbsp;гипертекста, которые соединены с фигурой для создания изображения-карты. Значения для атрибута&nbsp;— <code>circle</code>, <code>default</code>, <code>polygon</code> и <code>rect</code>. Формат координат зависит от выбранной формы. Для <code>circle</code>&nbsp;— <code>x</code>, <code>y</code>, <code>r</code>, где <code>x</code> и <code>y</code> — пиксельные&nbsp;координаты центра круга и <code>r</code>&nbsp;— радиус в пикселях. Для rect&nbsp;— <code>x</code>, <code>y</code>, <code>w</code>, <code>h</code>, где <code>x</code> и&nbsp;<code>y</code>&nbsp;— координаты верхнего левого угла прямоугольника, а <code>w</code> и <code>h</code> — ширина и высота соответственно. Значениями&nbsp;<code>polygon</code> для координатор&nbsp;формы являются&nbsp;<code>x1</code>, <code>y1</code>, <code>x2</code>, <code>y2</code>...&nbsp;Каждая пара <code>x</code>, <code>y</code>&nbsp;определяет точку в полигоне, с последующей точкой становится прямой линией, и последняя точка объединяется с первой. Значение <code>default</code>&nbsp;для форм требует, чтобы полностью закрытая территория, например, изображение, было использовано.</dd>
+</dl>
+
+<div class="note notecard">
+<p><strong>Примечание:</strong>&nbsp;Желательно использовать атрибут <code>usemap</code>&nbsp;для элемента <code><a href="/html/img/">&lt;img&gt;</a></code>&nbsp;и связанного элемента <code><a href="/html/map/">&lt;map&gt;</a></code>, чтобы определить горячие точки вместо атрибутов формы.</p>
+</div></div><h3 id="нестандартные"><a href="#нестандартные" title="Permalink to Нестандартные">Нестандартные</a></h3><div><dl>
+ <dt><a id="attr-datafld" href="#attr-datafld"><b><code>datafld</code></b></a>&nbsp;</dt>
+ <dd>Этот атрибут определяет название столбца из объекта исходных данных, который принимает связанные данные.</dd>
+</dl>
+
+<div class="warning notecard">
+<p><strong>Предупреждение: </strong>Этот атрибут нестандартный и&nbsp;<strong>не должен использоваться</strong>. Для достижения такого же эффекта, используйте скрипты и такие&nbsp;механизмы, как&nbsp;<a href="https://developer.mozilla.org/ru/docs/nsIXMLHttpRequest" title="This is a link to an unwritten page" class="page-not-created">XMLHttpRequest</a>, чтобы динамично заполнять страницу.</p>
+</div>
+
+<table>
+ <tbody>
+  <tr>
+   <td rowspan="2">Поддержка</td>
+   <td>Gecko</td>
+   <td>Presto</td>
+   <td>WebKit</td>
+   <td>Trident</td>
+  </tr>
+  <tr>
+   <td>Не реализована</td>
+   <td>Не реализована</td>
+   <td>Не реализована</td>
+   <td>IE4, IE5, IE6, IE7 (Убрана в IE8)</td>
+  </tr>
+  <tr>
+   <td>Нормативный документ</td>
+   <td colspan="4"><a href="http://msdn.microsoft.com/en-us/library/ms533703%28VS.85%29.aspx" class="external" rel=" noopener">Microsoft's Data Binding: dataFld Property (MSDN)</a></td>
+  </tr>
+ </tbody>
+</table>
+
+<dl>
+ <dt><a id="attr-datasrc" href="#attr-datasrc"><b><code>datasrc</code></b></a>&nbsp;</dt>
+ <dd>Этот атрибут сообщает ID объекта исходных данных, который принимает связанные данные с этим элементом.</dd>
+</dl>
+
+<div class="warning notecard">
+<p><strong>Предупреждение: </strong>Этот атрибут нестандартный и&nbsp;<strong>не должен использоваться</strong>. Для достижения такого же эффекта, используйте скрипты и такие&nbsp;механизмы, как&nbsp;<a href="https://developer.mozilla.org/ru/docs/nsIXMLHttpRequest" title="This is a link to an unwritten page" class="page-not-created">XMLHttpRequest</a>, чтобы динамично заполнять страницу.</p>
+</div>
+
+<table>
+ <tbody>
+  <tr>
+   <td rowspan="2">Поддержка</td>
+   <td>Gecko</td>
+   <td>Presto</td>
+   <td>WebKit</td>
+   <td>Trident</td>
+  </tr>
+  <tr>
+   <td>Не реализована</td>
+   <td>Не реализована</td>
+   <td>Не реализована</td>
+   <td>IE4, IE5, IE6, IE7 (Убрана в IE8)</td>
+  </tr>
+  <tr>
+   <td>Нормативный документ</td>
+   <td colspan="4"><a href="http://msdn.microsoft.com/en-us/library/ms533709(VS.85).aspx" title="http://msdn.microsoft.com/en-us/library/ms533709(VS.85).aspx" class="external" rel=" noopener">Microsoft's Data Binding: dataSrc Property (MSDN)</a></td>
+  </tr>
+ </tbody>
+</table>
+
+<dl>
+ <dt><a id="attr-methods" href="#attr-methods"><b><code>methods</code></b></a><strong style="font-weight: 700; line-height: 1.5;">&nbsp;</strong></dt>
+ <dd>Значение этого атрибута предоставляет информацию о функциях, которые могут быть выполнены на объекте. Обычно значения даны HTTP-протоколом, когда он использован, но может (для похожих целей, как для атрибута <code>title</code>) быть полезным для включения контрольной информации в ссылке. Например, браузер может выбрать другой тип рендеринга для ссылки как функцию определённых методов; что-то, что может быть найдено, может иметь другую иконку, или внешняя ссылка может получить индикатор перехода с текущего сайта.&nbsp;Этот элемент не понимается или не поддерживается полностью даже браузером Internet Explorer 4, который определил этот атрибут.&nbsp;<a class="external" href="http://msdn.microsoft.com/en-us/library/ms534168(VS.85).aspx" rel=" noopener">Значения <code>methods</code>&nbsp;(MSDN)</a>.</dd>
+ <dt><a id="attr-urn" href="#attr-urn"><b><code>urn</code></b></a><strong style="font-size: 14px; font-weight: 700; line-height: 1.5;">&nbsp;</strong></dt>
+ <dd>Этот&nbsp;атрибут, предложенный&nbsp;Micosoft, определяет отношения&nbsp;уникального названия ресурса (URN) с ссылкой. Хотя он основан на стандартах работы нескольких лет назад, значение URN всё ещё не определено полностью, поэтому этот атрибут не имеет значения.&nbsp;<a class="external" href="http://msdn.microsoft.com/en-us/library/ms534710(VS.85).aspx" rel=" noopener">Значения <font face="Consolas, Liberation Mono, Courier, monospace">urn</font>&nbsp;(MSDN)</a>.</dd>
+</dl></div><h2 id="example"><a href="#example" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="ссылка_на_внешний_сайт"><a href="#ссылка_на_внешний_сайт" title="Permalink to Ссылка на внешний сайт">Ссылка на внешний сайт</a></h3><div><pre class="brush: html notranslate"><code><span class="token comment">&lt;!-- Ссылка на внешний файл --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.mozilla.com/<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Внешняя ссылка<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<h4 id="результат">Результат:</h4>
+
+<p><a class="external" href="http://www.mozilla.com/" rel=" noopener">Внешняя ссылка</a></p></div><h3 id="создание_кликабельной_картинки"><a href="#создание_кликабельной_картинки" title="Permalink to Создание кликабельной картинки">Создание кликабельной картинки</a></h3><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://developer.mozilla.org/ru/<span class="token punctuation">"</span></span> <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>_blank<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://mdn.mozillademos.org/files/6851/mdn_logo.png<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>MDN logo<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<h4 id="результат_2">Результат:</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Создание_кликабельной_картинки" width="320" height="64" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/A/_sample_.%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5_%D0%BA%D0%BB%D0%B8%D0%BA%D0%B0%D0%B1%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9_%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B8.html" loading="lazy"></iframe></p></div><h3 id="создания_ссылки_для_написания_письма"><a href="#создания_ссылки_для_написания_письма" title="Permalink to Создания ссылки для написания письма">Создания ссылки для написания письма</a></h3><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mailto:nowhere@mozilla.org<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Отправить сообщение в никуда<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<p>Результат выглядит примерно так:&nbsp;<a href="mailto:nowhere@mozilla.org">Отправить сообщение в никуда</a>.</p>
+
+<p>Для дополнительных деталей использования <code>mailto</code>, таких как тема, текст или другое, смотрите&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks#E-mail_links" class="only-in-en-us" title="Currently only available in English (US)">Email-ссылки (en-US)</a>&nbsp;или <a href="https://tools.ietf.org/html/rfc6068" class="external" rel=" noopener">RFC 6068</a>.</p></div><h3 id="создание_ссылки_с_номером_телефона"><a href="#создание_ссылки_с_номером_телефона" title="Permalink to Создание ссылки с номером телефона">Создание ссылки с номером телефона</a></h3><div><p>С телефонами, способными выходить в Интернет и ноутбуками, которые привязаны к телефонам, ссылки с номером телефона становятся&nbsp;всё больше и больше&nbsp;полезными.</p>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tel:+491570156<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>+49 157 0156<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<p>Для дополнительных деталей о протоколе&nbsp;<code>tel</code>, смотрите&nbsp;<a href="https://tools.ietf.org/html/rfc2806" class="external" rel=" noopener">RFC 2806</a> и <a href="https://tools.ietf.org/html/rfc2396" class="external" rel=" noopener">RFC 2396</a>.</p></div><h3 id="использование_download_для_сохранения_canvas_как_png"><a href="#использование_download_для_сохранения_canvas_как_png" title="Permalink to Использование download для сохранения canvas как PNG">Использование <code>download</code> для сохранения canvas как PNG</a></h3><div><p>Если вы хотите позволить пользователю скачивать HTML canvas как картинку, вы можете создать ссылку с атрибутом <code>download</code>&nbsp;и данные canvas как <code>data: URL</code>:</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> link <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+link<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">'download image'</span><span class="token punctuation">;</span>
+
+link<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"click"</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">ev</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  link<span class="token punctuation">.</span>href <span class="token operator">=</span> canvas<span class="token punctuation">.</span><span class="token function">toDataURL</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  link<span class="token punctuation">.</span>download <span class="token operator">=</span> <span class="token string">"mypainting.png"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>link<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+<p class="brush: js">Вы можете посмотреть на это в действии:&nbsp;<a href="http://jsfiddle.net/codepo8/V6ufG/2/" class="external" rel=" noopener">jsfiddle.net/codepo8/V6ufG/2/</a>.</p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Примечание</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://w3c.github.io/webappsec-referrer-policy/#referrer-policy-delivery-referrer-attribute" hreflang="en" lang="en" class="external" rel=" noopener">Referrer Policy<br><small lang="ru">Определение 'referrer attribute' в этой спецификации.</small></a></td>
+   <td><span class="spec-cr">Кандидат в рекомендации</span></td>
+   <td>Добавлен атрибут <code>referrerpolicy</code>.</td>
+  </tr>
+  <tr>
+   <td><a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML Living Standard<br><small lang="ru">Определение '&lt;a&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html52/text-level-semantics.html#the-a-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML5<br><small lang="ru">Определение '&lt;a&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html401/struct/links.html#h-12.2" hreflang="en" lang="en" class="external" rel=" noopener">HTML 4.01 Specification<br><small lang="ru">Определение '&lt;a&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>&nbsp;</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="нажатие_и_фокус"><a href="#нажатие_и_фокус" title="Permalink to Нажатие и фокус">Нажатие и фокус</a></h2><div><p>Нажатие на <a href="/html/a/" aria-current="page"><code>&lt;a&gt;</code></a> приводит&nbsp;(по умолчанию) к фокусировке элемента, но оно может быть разным в зависимости от браузера и ОС.</p>
+
+<table>
+ <caption>
+ <p>Фокусируется ли элемент нажатием на <a href="/html/a/" aria-current="page"><code>&lt;a&gt;</code></a>?</p>
+ </caption>
+ <tbody>
+  <tr>
+   <td>Настольные</td>
+   <th>Windows 8.1</th>
+   <th>OS X 10.9</th>
+  </tr>
+  <tr>
+   <th>Firefox 30.0</th>
+   <td>Да</td>
+   <td>Да</td>
+  </tr>
+  <tr>
+   <th>Chrome ≥39<br>
+    (<a href="https://code.google.com/p/chromium/issues/detail?id=388666" title="Issue 388666: Focus anchor (A) elements on mousedown" class="external" rel=" noopener">Chromium bug 388666</a>)</th>
+   <td>Да</td>
+   <td>Да</td>
+  </tr>
+  <tr>
+   <th>Safari 7.0.5</th>
+   <td>Нет данных</td>
+   <td>Только с заданным&nbsp;<code>tabindex</code></td>
+  </tr>
+  <tr>
+   <th>Internet Explorer 11</th>
+   <td>Да</td>
+   <td>Нет данных</td>
+  </tr>
+  <tr>
+   <th>Presto (Opera 12)</th>
+   <td>Да</td>
+   <td>Да</td>
+  </tr>
+ </tbody>
+</table>
+
+<table>
+ <tbody>
+  <tr>
+   <td>Мобильные</td>
+   <th>iOS 7.1.2</th>
+   <th>Android 4.4.4</th>
+  </tr>
+  <tr>
+   <th>Safari Mobile</th>
+   <td>Только с заданным&nbsp;<code>tabindex</code></td>
+   <td>Нет данных</td>
+  </tr>
+  <tr>
+   <th>Chrome 35</th>
+   <td>Неизвестно</td>
+   <td>Только с заданным&nbsp;<code>tabindex</code></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="notes"><a href="#notes" title="Permalink to Примечания">Примечания</a></h2><div><p>HTML 3.2 включает в себя только <code>name</code>, <code>href</code>, <code>rel</code>, <code>rev</code> и <code>title</code>.</p>
+
+<p>Атрибут <code>target</code> не работает в браузерах, не поддерживающих фреймы, таких как Netscape 1 generation. Кроме того, <code>target</code> не допускается в «строгих»&nbsp;вариантах <a href="https://developer.mozilla.org/en-US/XHTML" title="en/XHTML">XHTML</a>, но разрешён в формах frameset или «переходных» формах.</p></div><h3 id="рекомендации_по_javascript"><a href="#рекомендации_по_javascript" title="Permalink to Рекомендации по JavaScript">Рекомендации по JavaScript</a></h3><div><p>Часто якорь используется с событием <code>onclick</code>. Для избежания обновления страницы, <code>href</code> часто устанавливается на <code>#</code>, либо на <code>javascript:void(0)</code>. Оба этих значения могут привести&nbsp;к некоторым неожиданным ошибкам во время копирования ссылки или открытия ссылки в новой вкладке или окне. Помните об этом, чтобы сделать юзабилити удобнее, когда пользователи используют якори и вы не допускаете стандартного поведения.</p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li>Другие элементы:&nbsp;<a href="/html/abbr/"><code>&lt;abbr&gt;</code></a>, <a href="/html/em/"><code>&lt;em&gt;</code></a>, <a href="/html/strong/"><code>&lt;strong&gt;</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/small" class="only-in-en-us" title="Currently only available in English (US)">&lt;small&gt; (en-US)</a>, <a href="/html/cite/"><code>&lt;cite&gt;</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q" class="only-in-en-us" title="Currently only available in English (US)">&lt;q&gt; (en-US)</a>, <a href="/html/dfn/"><code>&lt;dfn&gt;</code></a>, <a href="/html/time/"><code>&lt;time&gt;</code></a>, <a href="/html/code/"><code>&lt;code&gt;</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/var" class="only-in-en-us" title="Currently only available in English (US)">&lt;var&gt; (en-US)</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/samp" class="only-in-en-us" title="Currently only available in English (US)">&lt;samp&gt; (en-US)</a>, <a href="/html/kbd/"><code>&lt;kbd&gt;</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/sub" class="only-in-en-us" title="Currently only available in English (US)">&lt;sub&gt; (en-US)</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/sup" class="only-in-en-us" title="Currently only available in English (US)">&lt;sup&gt; (en-US)</a>, <a href="/html/b/"><code>&lt;b&gt;</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/i" class="only-in-en-us" title="Currently only available in English (US)">&lt;i&gt; (en-US)</a>, <a href="/html/mark/"><code>&lt;mark&gt;</code></a>, <a href="/html/ruby/"><code>&lt;ruby&gt;</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/rp" class="only-in-en-us" title="Currently only available in English (US)">&lt;rp&gt; (en-US)</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/rt" class="only-in-en-us" title="Currently only available in English (US)">&lt;rt&gt; (en-US)</a>, <a href="/html/bdo/"><code>&lt;bdo&gt;</code></a>, <a href="/html/span/"><code>&lt;span&gt;</code></a>, <a href="/html/br/"><code>&lt;br&gt;</code></a>, <a href="/html/wbr/"><code>&lt;wbr&gt;</code></a>.</li>
 </ul>
 
-<p>See <a href="https://tools.ietf.org/html/rfc3966" class="external" rel=" noopener">RFC 3966</a> for syntax, additional features, and other details about the <code>tel:</code> URL scheme.</p></div><h3 id="using_the_download_attribute_to_save_a_<canvas>_as_a_png"><a href="#using_the_download_attribute_to_save_a_<canvas>_as_a_png" title="Permalink to Using the download attribute to save a <canvas> as a PNG">Using the download attribute to save a &lt;canvas&gt; as a PNG</a></h3><div><p>To save a <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas"><code>&lt;canvas&gt;</code></a> element’s contents as an image, you can create a link with a <code>download</code> attribute and the canvas data as a <code>data:</code> URL:</p>
-
-<h4 id="example_painting_app_with_save_link">Example painting app with save link</h4>
-
-<h5 id="html_3">HTML</h5>
-
-<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Paint by holding down the mouse button and moving it.
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">download</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>my_painting.png<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Download my painting<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
-
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>canvas</span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>300<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>300<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>canvas</span><span class="token punctuation">&gt;</span></span>
-</code></pre>
-
-<h5 id="css_2">CSS</h5>
-
-<pre class="brush: css notranslate"><code><span class="token selector">html</span> <span class="token punctuation">{</span>
-  <span class="token property">font-family</span><span class="token punctuation">:</span> sans-serif<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token selector">canvas</span> <span class="token punctuation">{</span>
-  <span class="token property">background</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>
-  <span class="token property">border</span><span class="token punctuation">:</span> 1px dashed<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token selector">a</span> <span class="token punctuation">{</span>
-  <span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span>
-  <span class="token property">background</span><span class="token punctuation">:</span> #69c<span class="token punctuation">;</span>
-  <span class="token property">color</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>
-  <span class="token property">padding</span><span class="token punctuation">:</span> 5px 10px<span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-
-<h5 id="javascript">JavaScript</h5>
-
-<pre class="brush: js notranslate"><code><span class="token keyword">var</span> canvas <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'canvas'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    c <span class="token operator">=</span> canvas<span class="token punctuation">.</span><span class="token function">getContext</span><span class="token punctuation">(</span><span class="token string">'2d'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-c<span class="token punctuation">.</span>fillStyle <span class="token operator">=</span> <span class="token string">'hotpink'</span><span class="token punctuation">;</span>
-
-<span class="token keyword">function</span> <span class="token function">draw</span><span class="token punctuation">(</span><span class="token parameter">x<span class="token punctuation">,</span> y</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>isDrawing<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    c<span class="token punctuation">.</span><span class="token function">beginPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    c<span class="token punctuation">.</span><span class="token function">arc</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> Math<span class="token punctuation">.</span><span class="token constant">PI</span><span class="token operator">*</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    c<span class="token punctuation">.</span><span class="token function">closePath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    c<span class="token punctuation">.</span><span class="token function">fill</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-canvas<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'mousemove'</span><span class="token punctuation">,</span> <span class="token parameter">event</span> <span class="token operator">=&gt;</span>
-  <span class="token function">draw</span><span class="token punctuation">(</span>event<span class="token punctuation">.</span>offsetX<span class="token punctuation">,</span> event<span class="token punctuation">.</span>offsetY<span class="token punctuation">)</span>
-<span class="token punctuation">)</span><span class="token punctuation">;</span>
-canvas<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'mousedown'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> isDrawing <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-canvas<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'mouseup'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> isDrawing <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token parameter">event</span> <span class="token operator">=&gt;</span>
-  event<span class="token punctuation">.</span>target<span class="token punctuation">.</span>href <span class="token operator">=</span> canvas<span class="token punctuation">.</span><span class="token function">toDataURL</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-
-<h5 id="result_3">Result</h5>
-
-<p><iframe class="sample-code-frame" id="frame_Example_painting_app_with_save_link" width="100%" height="400" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/HTML/Element/a/_sample_.Example_painting_app_with_save_link.html" loading="lazy"></iframe></p></div><h2 id="security_and_privacy"><a href="#security_and_privacy" title="Permalink to Security and privacy">Security and privacy</a></h2><div><p><code>&lt;a&gt;</code> elements can have consequences for users’ security and privacy. See <a href="https://developer.mozilla.org/en-US/docs/Web/Security/Referer_header:_privacy_and_security_concerns"><code>Referer</code> header: privacy and security concerns</a> for information.</p>
-
-<p>Using <code>target="_blank"</code> without <code><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/noreferrer">rel="noreferrer"</a></code> and <code><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/noopener">rel="noopener"</a></code> makes the website vulnerable to <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/opener"><code>window.opener</code></a> API exploitation attacks (<a href="https://www.jitbit.com/alexblog/256-targetblank---the-most-underestimated-vulnerability-ever/" class="external" rel=" noopener">vulnerability description</a>), although note that, in newer browser versions setting <code>target="_blank"</code> implicitly provides the same protection as setting <code>rel="noopener"</code>. See <a href="#browser_compatibility">browser compatibility</a> for details.</p></div><h2 id="accessibility"><a href="#accessibility" title="Permalink to Accessibility">Accessibility</a></h2><div></div><h3 id="strong_link_text"><a href="#strong_link_text" title="Permalink to Strong link text">Strong link text</a></h3><div><p><strong>The content inside a link should indicate where the link goes</strong>, even out of context.</p>
-
-<h4 id="inaccessible_weak_link_text">Inaccessible, weak link text</h4>
-
-<p>A sadly common mistake is to only link the words “click here” or “here”:</p>
-
-<pre class="brush: html example-bad notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>
-  Learn more about our products <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/products<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>here<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>.
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
-</code></pre>
-
-<h4 id="strong_link_text_2">Strong link text</h4>
-
-<p>Luckily, this is an easy fix, and it’s actually shorter than the inaccessible version!</p>
-
-<pre class="brush: html example-good notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>
-  Learn more <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/products<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>about our products<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>.
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span></code></pre>
-
-<p>Assistive software have shortcuts to list all links on a page. However, strong link text benefits all users — the “list all links” shortcut emulates how sighted users quickly scan pages.</p></div><h3 id="onclick_events"><a href="#onclick_events" title="Permalink to onclick events">onclick events</a></h3><div><p>Anchor elements are often abused as fake buttons by setting their <code>href</code> to <code>#</code> or <code>javascript:void(0)</code> to prevent the page from refreshing, then listening for their <code>click</code> events .</p>
-
-<p>These bogus <code>href</code> values cause unexpected behavior when copying/dragging links, opening links in a new tab/window, bookmarking, or when JavaScript is loading, errors, or is disabled. They also convey incorrect semantics to assistive technologies, like screen readers.</p>
-
-<p>Use a <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button"><code>&lt;button&gt;</code></a> instead. In general, <strong>you should only use a hyperlink for navigation to a real URL</strong>.</p></div><h3 id="external_links_and_linking_to_non-html_resources"><a href="#external_links_and_linking_to_non-html_resources" title="Permalink to External links and linking to non-HTML resources">External links and linking to non-HTML resources</a></h3><div><p>Links that open in a new tab/window via <code>target="_blank"</code>, or links that point to a download file should indicate what will happen when the link is followed.</p>
-
-<p>People experiencing low vision conditions, navigating with the aid of screen reading technology, or with cognitive concerns may be confused when a new tab, window, or application opens unexpectedly. Older screen-reading software may not even announce the behavior.</p>
-
-<h4 id="link_that_opens_a_new_tabwindow">Link that opens a new tab/window</h4>
-
-<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>_blank<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://www.wikipedia.org<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-  Wikipedia (opens in new tab)
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
-</code></pre>
-
-<h4 id="link_to_a_non-html_resource">Link to a non-HTML resource</h4>
-
-<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2017-annual-report.ppt<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-  2017 Annual Report (PowerPoint)
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
-</code></pre>
-
-<p>If an icon is used to signify link behavior, make sure it has <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-alt">alt text</a>:</p>
-
-<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span>  <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>_blank<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://www.wikipedia.org<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-  Wikipedia
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>(opens in new tab)<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>newtab.svg<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
-
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2017-annual-report.ppt<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-  2017 Annual Report
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>(PowerPoint file)<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ppt-icon.svg<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span></code></pre>
-
-<ul>
- <li><a href="https://webaim.org/techniques/hypertext/hypertext_links" class="external" rel=" noopener">WebAIM: Links and Hypertext - Hypertext Links</a></li>
- <li><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/Understanding_WCAG/Understandable#guideline_3.2_%E2%80%94_predictable_make_web_pages_appear_and_operate_in_predictable_ways">MDN / Understanding WCAG, Guideline 3.2</a></li>
- <li><a href="https://www.w3.org/TR/WCAG20-TECHS/G200.html" class="external" rel=" noopener">G200: Opening new windows and tabs from a link only when necessary</a></li>
- <li><a href="https://www.w3.org/TR/WCAG20-TECHS/G201.html" class="external" rel=" noopener">G201: Giving users advanced warning when opening a new window</a></li>
-</ul></div><h3 id="skip_links"><a href="#skip_links" title="Permalink to Skip links">Skip links</a></h3><div><p>A <strong>skip link</strong> is a link placed as early as possible in <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/body"><code>&lt;body&gt;</code></a> content that points to the beginning of the page's main content. Usually, CSS hides a skip link offscreen until focused.</p>
-
-<pre class="notranslate">&lt;body&gt;
-  &lt;a href="#content"&gt;Skip to main content&lt;/a&gt;
-
-  &lt;header&gt;
-    …
-  &lt;/header&gt;
-
-  &lt;main id="content"&gt; &lt;!-- The skip link jumps to here --&gt;
-</pre>
-
-<pre class="brush: css notranslate"><code><span class="token selector">.skip-link</span> <span class="token punctuation">{</span>
-  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
-  <span class="token property">top</span><span class="token punctuation">:</span> -3em<span class="token punctuation">;</span>
-  <span class="token property">background</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token selector">.skip-link:focus</span> <span class="token punctuation">{</span>
-  <span class="token property">top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-
-<p>Skip links let keyboard users bypass content repeated throughout multiple pages, such as header navigation.</p>
-
-<p>Skip links are especially useful for people who navigate with the aid of assistive technology such as switch control, voice command, or mouth sticks/head wands, where the act of moving through repetitive links can be laborious.</p>
-
-<ul>
- <li><a href="https://webaim.org/techniques/skipnav/" class="external" rel=" noopener">WebAIM: "Skip Navigation" Links</a></li>
- <li><a href="https://a11yproject.com/posts/2013-05-11-skip-nav-links/" class="external" rel=" noopener">How-to: Use Skip Navigation links</a></li>
- <li><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/Understanding_WCAG/Operable#guideline_2.4_%e2%80%94_navigable_provide_ways_to_help_users_navigate_find_content_and_determine_where_they_are">MDN / Understanding WCAG, Guideline 2.4 explanations</a></li>
- <li><a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-skip.html" class="external" rel=" noopener">Understanding Success Criterion 2.4.1</a></li>
-</ul></div><h3 id="size_and_proximity"><a href="#size_and_proximity" title="Permalink to Size and proximity">Size and proximity</a></h3><div><h4 id="size">Size</h4>
-
-<p>Interactive elements, like links, should provide an area large enough that it is easy to activate them. This helps a variety of people, including those with motor control issues and those using imprecise inputs such as a touchscreen. A minimum size of 44×44 <a href="https://www.w3.org/TR/WCAG21/#dfn-css-pixels" class="external" rel=" noopener">CSS pixels</a> is recommended.</p>
-
-<p>Text-only links in prose content are exempt from this requirement, but it’s still a good idea to make sure enough text is hyperlinked to be easily activated.</p>
-
-<ul>
- <li><a href="https://www.w3.org/WAI/WCAG21/Understanding/target-size.html" class="external" rel=" noopener">Understanding Success Criterion 2.5.5: Target Size</a></li>
- <li><a href="https://adrianroselli.com/2019/06/target-size-and-2-5-5.html" class="external" rel=" noopener">Target Size and 2.5.5</a></li>
- <li><a href="https://a11yproject.com/posts/large-touch-targets/" class="external" rel=" noopener">Quick test: Large touch targets</a></li>
-</ul>
-
-<h4 id="proximity">Proximity</h4>
-
-<p>Interactive elements, like links, placed in close visual proximity should have space separating them. Spacing helps people with motor control issues, who may otherwise accidentally activate the wrong interactive content.</p>
-
-<p>Spacing may be created using CSS properties like <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/margin"><code>margin</code></a>.</p>
-
-<ul>
- <li><a href="https://axesslab.com/hand-tremors/" class="external" rel=" noopener">Hand tremors and the giant-button-problem</a></li>
-</ul></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element">HTML Standard<!-- --> <!-- -->(HTML)<br><small># <!-- -->the-a-element</small></a></td></tr></tbody></table><div><p></p><p></p></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
- <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link"><code>&lt;link&gt;</code></a> is similar to <code>&lt;a&gt;</code>, but for metadata hyperlinks that are invisible to users.</li>
- <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:link"><code>:link</code></a> is a CSS pseudo-class that will match <code>&lt;a&gt;</code> elements with valid <code>href</code> attributes.</li>
-</ul></div>
+<div></div></div>

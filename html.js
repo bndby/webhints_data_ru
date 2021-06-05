@@ -10,10 +10,15 @@ import fetch from 'node-fetch';
  * @returns {string} Loaded content
  */
 const loadPage = async (url) => {
-  const rawData = await fetch(url);
-  const data = await rawData.text();
-
-  return data;
+  try {
+    const rawData = await fetch(url);
+    if(rawData.status !== 200) return false;
+    const data = await rawData.text();
+    return data;
+  } catch (e) {
+    console.log('Error:', e)
+    return false;
+  }
 }
 
 /**
@@ -127,7 +132,7 @@ const ROOT = 'https://developer.mozilla.org/ru/docs/Web/HTML/Element';
 const ROOT_EN = 'https://developer.mozilla.org/en-US/docs/Web/HTML/Element';
 
 const OUTDIR = 'docs/html';
-const SELECTOR = 'article a[href]';
+const SELECTOR = '#sidebar-quicklinks a[href]';
 
 const startContent = await loadPage(START);
 const startContentEn = await loadPage(START_EN);
@@ -167,6 +172,7 @@ console.log('Prepared links:', links.size);
 for await (let [_key, link] of links){
   const subDir = _key; //link.substring(ROOT.length);
   const c = await loadPage(link);
+  if(!c) continue;
   const cc = clearContent(c);
   const preTitle = getTitle(cc, 'body h1');
   const title = preTitle.substring(preTitle.indexOf('&lt;') + 4, preTitle.indexOf('&gt;'));

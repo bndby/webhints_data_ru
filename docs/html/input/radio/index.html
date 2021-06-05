@@ -1,0 +1,271 @@
+<h1>&lt;input type="radio"&gt;</h1><div><div></div>
+
+<p><span class="seoSummary">Атрибут<strong> type</strong> тега <code>&lt;input&gt;</code> со значением <strong><code>radio</code></strong> обычно используется для создания группы радиокнопок (переключателей), описывающих набор взаимосвязанных параметров.</span>&nbsp;Одновременно пользователь может выбрать лишь одну радиокнопку из предложенных. Радиокнопки обычно отображаются как небольшие кружки, которые заполняются или подсвечиваются при наведении.</p>
+
+<div id="Basic_example">
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>radioButton<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<p><iframe class="sample-code-frame" id="frame_Basic_example" width="600" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/Input/radio/_sample_.Basic_example.html" loading="lazy"></iframe></p>
+
+<p>Исходный код к данному интерактивному примеру находиться на GitHub репозитории. Если вы желаете внести свой вклад в проект интерактивных примеров, то склонируйте удалённый репозиторий <a href="https://github.com/mdn/interactive-examples" class="external" rel=" noopener">https://github.com/mdn/interactive-examples </a>и отправьте нам запрос на включение сделанных вами изменений «pull request».</p>
+
+<p>Радиокнопки называются так потому, что выглядят и функционируют в схожей манере с кнопками старомодных радиоприёмников, подобных представленному ниже.&nbsp;</p>
+
+<p><img alt="Shows what radio buttons looked like in the olden days." src="https://mdn.mozillademos.org/files/15610/old-radio.jpg" title="Photo of an old-time radio" loading="lazy"></p>
+</div>
+
+<div class="note notecard">
+<p><strong>Примечание</strong>: <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox">Чекбоксы</a>&nbsp;похожи на радиокнопки, но с одним важным отличием: радиокнопки предназначены для выбора одного значения из предложенных, в то время как чекбоксы позволяют "включать" и "выключать"&nbsp; значения. Если существует несколько элементов управления, то с помощью радиокнопок&nbsp;пользователь сможет выбрать лишь один из них, а чекбоксы позволят выбрать несколько значений одновременно.</p>
+</div>
+
+<table class="properties">
+ <tbody>
+  <tr>
+   <td><strong><a href="#value">Value</a></strong></td>
+   <td><a class="page-not-created" title="Документация об этом ещё не написана; пожалуйста, поспособствуйте её написанию!"><code>Строка DOM</code></a> отображающая значение радиокнопки</td>
+  </tr>
+  <tr>
+   <td><strong>События</strong></td>
+   <td><code><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event" title="Currently only available in English (US)" class="only-in-en-us">change (en-US)</a></code> и <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event" title="Currently only available in English (US)" class="only-in-en-us">input (en-US)</a></code></td>
+  </tr>
+  <tr>
+   <td><strong>Универсальные атрибуты</strong></td>
+   <td><a href="/html/Input#attr-checked/"><code>checked</code></a></td>
+  </tr>
+  <tr>
+   <td><strong>Атрибуты IDL</strong></td>
+   <td><code>checked</code>&nbsp;и&nbsp;<code>value</code></td>
+  </tr>
+  <tr>
+   <td><strong>Методы</strong></td>
+   <td><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/select"><code>select()</code> <span>(en-US)</span></a></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="атрибут_value"><a href="#атрибут_value" title="Permalink to Атрибут value&nbsp;">Атрибут value&nbsp;</a></h2><div><p>Атрибут&nbsp;<code>value</code>&nbsp;- это&nbsp;<a class="page-not-created" title="Документация об этом ещё не написана; пожалуйста, поспособствуйте её написанию!"><code>строка DOM</code></a>, содержащая значение радиокнопки. Это значение никогда не показывается пользователю его веб-браузером. Атрибут value используется для того,&nbsp;чтобы точно определить какая из радиокнопок была выбрана пользователем.</p></div><h3 id="создание_группы_радиокнопок"><a href="#создание_группы_радиокнопок" title="Permalink to Создание группы радиокнопок">Создание группы радиокнопок</a></h3><div><p>Группа радиокнопок определяется путём присвоения каждой радиокнопке в данной группе одного и того же значения атрибута (<a href="/html/Input#attr-name/"><code>name</code></a>). Выбор любой радиокнопки в этой группе автоматически отменяет выбор&nbsp;другой радиокнопки в той же группе.&nbsp;</p>
+
+<p>Вы можете создать любое количество групп радиокнопок, если каждой&nbsp;из этих групп будет присвоено своё уникальное значение атрибута&nbsp;<code>name</code>.</p>
+
+<p>Например, если&nbsp;в вашей форме необходимо запросить&nbsp; предпочитаемый способ контакта с пользователем,&nbsp;то вы можете создать три радиокнопки с <strong>name=&nbsp;<code>"contact"</code>&nbsp;, </strong>но с разными<strong>&nbsp;value =&nbsp;</strong><code>"email"</code>, <strong>value =</strong><code>"phone"</code> и&nbsp;<strong>value =</strong>&nbsp; <code>"mail"</code> соответственно.&nbsp;Пользователь не видит атрибуты&nbsp;<code>name</code>&nbsp; и&nbsp;<code>value</code> (если только вы не добавляете код для их отображения).</p>
+
+<p>HTML будет выглядеть&nbsp;следующим образом:</p>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Please select your preferred contact method:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>contactChoice1<span class="token punctuation">"</span></span>
+     <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>contact<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>email<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>contactChoice1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Email<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>contactChoice2<span class="token punctuation">"</span></span>
+     <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>contact<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>phone<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>contactChoice2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Phone<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>contactChoice3<span class="token punctuation">"</span></span>
+     <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>contact<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mail<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>contactChoice3<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Mail<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Submit<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<p>Здесь вы видите три радиокнопки, каждая из которых имеет атрибут&nbsp;<code>name</code>&nbsp; со значением&nbsp;<code>"contact"</code>&nbsp;и уникальный атрибут&nbsp;<code>value</code>, который однозначно идентифицирует эту радиокнопку в данной группе. Каждой радиокнопке присвоен уникальный&nbsp;<a href="https://developer.mozilla.org/ru/docs/Web/API/Element/id" title="id"><code>id</code></a>,&nbsp; связанный с тегом&nbsp;<a href="/html/label/"><code>&lt;label&gt;</code></a> через атрибут&nbsp;<a href="/html/label#attr-for/"><code>for</code></a>&nbsp; для установления связи между конкретной меткой и конкретной радиокнопкой.&nbsp;</p>
+
+<p>Вы можете опробовать этот код здесь:&nbsp;</p>
+
+<p><iframe class="sample-code-frame" id="frame_Defining_a_radio_group" width="600" height="130" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/Input/radio/_sample_.Defining_a_radio_group.html" loading="lazy"></iframe></p></div><h3 id="представление_данных_группы_радиокнопок"><a href="#представление_данных_группы_радиокнопок" title="Permalink to Представление данных группы радиокнопок">Представление данных группы радиокнопок</a></h3><div><p>Когда представленная выше форма отправляется на сервер с информацией о выбранной&nbsp;радиокнопке,&nbsp; то её данные&nbsp;&nbsp;включают запись в виде&nbsp;<strong>"contact=name".</strong>&nbsp;Например, если пользователь кликает на радиокнопку "Phone", а затем отправляет форму на сервер, данные формы будут включать в себя строку&nbsp;<code>"contact=phone"</code>.</p>
+
+<p>Если вы пренебрежёте&nbsp;атрибутом&nbsp;<code>value</code> в&nbsp; вашем HTML, то отправленные&nbsp;данные просто присвоят&nbsp;данной группе значение&nbsp;<code>"on"</code>.&nbsp; То есть, если пользователь кликнет&nbsp;на радиокнопку&nbsp;"Phone" и отправит форму, итоговые данные отобразятся как&nbsp; <code>"contact=on"</code>&nbsp;и будут абсолютно бесполезны. Поэтому никогда не забывайте указывать атрибут&nbsp;<code>value</code>!</p>
+
+<div class="note notecard">
+<p><strong>Примечание</strong>: Если в отправленной форме&nbsp;не была выбрана ни одна радиокнопка, то группа радиокнопок вообще не будет включать в себя никакие&nbsp;данные, так как отсутствуют значения для отправки.</p>
+</div>
+
+<p>Поскольку отправлять пустую форму в большинстве случаев не имеет никакого смысла, то разумно оставлять&nbsp;одну радиокнопку активированной по умолчанию с помощью атрибута&nbsp;<code>"checked"</code>.&nbsp;Смотрите здесь <a href="#selecting_a_radio_button_by_default">Selecting a radio button by default</a>.</p>
+
+<p>Давайте добавим немного кода в наш пример для того, чтобы изучить данные, полученные из этой формы.&nbsp;HTML изменяется путём добавления блока&nbsp;<a href="/html/pre/"><code>&lt;pre&gt;</code></a> для вывода данных формы.&nbsp;</p>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Please select your preferred contact method:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>contactChoice1<span class="token punctuation">"</span></span>
+           <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>contact<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>email<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>contactChoice1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Email<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>contactChoice2<span class="token punctuation">"</span></span>
+           <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>contact<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>phone<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>contactChoice2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Phone<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>contactChoice3<span class="token punctuation">"</span></span>
+           <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>contact<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mail<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>contactChoice3<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Mail<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Submit<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>pre</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>log<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>pre</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<p>Затем добавим немного&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a>.&nbsp;Установим&nbsp;обработчик события <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/submit_event" title="Currently only available in English (US)" class="only-in-en-us">submit (en-US)</a></code>, которая будет отправляться при клике пользователя на кнопку "Отправить":</p>
+
+<pre class="brush: js notranslate"><code><span class="token keyword">var</span> form <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">"form"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> log <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">"#log"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+form<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"submit"</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> data <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FormData</span><span class="token punctuation">(</span>form<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">var</span> output <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> entry <span class="token keyword">of</span> data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    output <span class="token operator">=</span> entry<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">"="</span> <span class="token operator">+</span> entry<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">"\r"</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  log<span class="token punctuation">.</span>innerText <span class="token operator">=</span> output<span class="token punctuation">;</span>
+  event<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+<p>Опробуйте этот пример и убедитесь, что для группы радиокнопок&nbsp; <code>"contact"</code>&nbsp;&nbsp;будет только один результат.</p>
+
+<p><iframe class="sample-code-frame" id="frame_Data_representation_of_a_radio_group" width="600" height="130" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/Input/radio/_sample_.Data_representation_of_a_radio_group.html" loading="lazy"></iframe></p></div><h2 id="использование_радиокнопок"><a href="#использование_радиокнопок" title="Permalink to Использование радиокнопок">Использование радиокнопок</a></h2><div><p>Мы уже осветили основные моменты&nbsp;работы с радиокнопками выше.&nbsp;Давайте рассмотрим другие распространённые&nbsp; функции и методы, связанные с использованием радиокнопок, о которых вам нужно знать.</p></div><h3 id="выбор_радиокнопки_по_умолчанию"><a href="#выбор_радиокнопки_по_умолчанию" title="Permalink to Выбор радиокнопки по умолчанию">Выбор радиокнопки по умолчанию</a></h3><div><p>Чтобы установить радиокнопку как выбранную&nbsp;по умолчанию, вам необходимо подключить атрибут&nbsp;<code>checked</code>,&nbsp;как показано ниже в немного изменённой версии предыдущего примера.</p>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Please select your preferred contact method:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>contactChoice1<span class="token punctuation">"</span></span>
+     <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>contact<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>email<span class="token punctuation">"</span></span> <span class="token attr-name">checked</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>contactChoice1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Email<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>contactChoice2<span class="token punctuation">"</span></span>
+     <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>contact<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>phone<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>contactChoice2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Phone<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>contactChoice3<span class="token punctuation">"</span></span>
+     <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>contact<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mail<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>contactChoice3<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Mail<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Submit<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<p><iframe class="sample-code-frame" id="frame_Selecting_a_radio_button_by_default" width="600" height="130" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/Input/radio/_sample_.Selecting_a_radio_button_by_default.html" loading="lazy"></iframe></p>
+
+<p>В данном случае первая радиокнопка будет выбрана по умолчанию.</p>
+
+<div class="note notecard">
+<p><strong>Примечание</strong>: Если вы устанавливаете атрибут&nbsp;<code>checked</code> более чем на одну кнопку, то стоит иметь в виду, что каждый последующий атрибут <code>checked</code>&nbsp;отменяет предыдущий, то&nbsp; есть как отмеченная будет выбрана последняя радиокнопка с атрибутом&nbsp;<code>checked</code>. Это происходит потому, что в каждой группе радиокнопок одновременно&nbsp;может быть выбрана только одна кнопка, и браузер автоматически отменяет другие выбранные до этого радиокнопки.</p>
+</div></div><h3 id="providing_a_bigger_hit_area_for_your_radio_buttons"><a href="#providing_a_bigger_hit_area_for_your_radio_buttons" title="Permalink to Providing a bigger hit area for your radio buttons">Providing a bigger hit area for your radio buttons</a></h3><div><p>В примерах,&nbsp;представленных выше, вы могли заметить, что можно выбрать радиокнопку, кликнув как на соединённый с ней элемент&nbsp; <a href="/html/label/"><code>&lt;label&gt;</code></a>, так и на саму кнопку. Это действительно полезная функция&nbsp;HTML-форм,&nbsp;которая облегчает пользователям выбор нужной опции, особенно на устройствах с небольшим экраном, таких как смартфоны.&nbsp;&nbsp;Помимо специальных возможностей, это другая веская причина для правильного использования элементов&nbsp;&nbsp;<code>&lt;label&gt;</code> &nbsp;в ваших формах.</p></div><h2 id="валидация_формы"><a href="#валидация_формы" title="Permalink to Валидация формы">Валидация формы</a></h2><div><p>Радиокнопки не участвуют в проверке ограничений, так как у них нет реальных значений для ограничения.</p></div><h2 id="установка_стилей_радиокнопок"><a href="#установка_стилей_радиокнопок" title="Permalink to Установка стилей радиокнопок">Установка стилей радиокнопок</a></h2><div><p>Следующий пример отображает немного более проработанную версию примера,&nbsp;который мы использовали на протяжении всей статьи,&nbsp;&nbsp;с некоторыми дополнительными стилями и с лучшей семантикой, установленной с помощью специализированных элементов.</p>
+
+<p>HTML будет выглядеть следующим образом:</p>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>fieldset</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>legend</span><span class="token punctuation">&gt;</span></span>Please select your preferred contact method:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>legend</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>contactChoice1<span class="token punctuation">"</span></span>
+       <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>contact<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>email<span class="token punctuation">"</span></span> <span class="token attr-name">checked</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>contactChoice1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Email<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>contactChoice2<span class="token punctuation">"</span></span>
+       <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>contact<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>phone<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>contactChoice2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Phone<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>contactChoice3<span class="token punctuation">"</span></span>
+       <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>contact<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mail<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>contactChoice3<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Mail<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Submit<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>fieldset</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<p>Здесь не так много нового, кроме дополнения в виде элементов&nbsp;<a href="/html/fieldset/"><code>&lt;fieldset&gt;</code></a> и&nbsp;<a href="/html/legend/"><code>&lt;legend&gt;</code></a>, которые позволяют сгруппировать элементы форм между собой функционально и семантически.</p>
+
+<p>CSS будет выглядеть так:</p>
+
+<pre class="brush: css notranslate"><code><span class="token selector">html</span> <span class="token punctuation">{</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> sans-serif<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">div:first-of-type</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+  <span class="token property">align-items</span><span class="token punctuation">:</span> flex-start<span class="token punctuation">;</span>
+  <span class="token property">margin-bottom</span><span class="token punctuation">:</span> 5px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">label</span> <span class="token punctuation">{</span>
+  <span class="token property">margin-right</span><span class="token punctuation">:</span> 15px<span class="token punctuation">;</span>
+  <span class="token property">line-height</span><span class="token punctuation">:</span> 32px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">input</span> <span class="token punctuation">{</span>
+  <span class="token property">-webkit-appearance</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+  <span class="token property">-moz-appearance</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+  <span class="token property">appearance</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 16px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 16px<span class="token punctuation">;</span>
+
+  <span class="token property">border</span><span class="token punctuation">:</span> 2px solid #999<span class="token punctuation">;</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span> 0.2s all linear<span class="token punctuation">;</span>
+  <span class="token property">outline</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+  <span class="token property">margin-right</span><span class="token punctuation">:</span> 5px<span class="token punctuation">;</span>
+
+  <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> 4px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">input:checked</span> <span class="token punctuation">{</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 6px solid black<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">button,
+legend</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 5px 10px<span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 14px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">button:hover,
+button:focus</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> #999<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">button:active</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+  <span class="token property">outline</span><span class="token punctuation">:</span> 1px solid black<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<p>Самым примечательным здесь является использование свойства&nbsp;<a href="https://developer.mozilla.org/ru/docs/Web/CSS/appearance"><code>appearance</code></a> с использованием префиксов некоторых браузеров. По умолчанию радиокнопки (и чекбоксы) уже имеют собственные стили в каждой операционной системе. Придав свойству&nbsp;<code>appearance</code> значение&nbsp;<code>none</code>, вы можете отменить все "родные" настройки стилей операционной системы и создать свои собственные. Здесь мы использовали свойства&nbsp;<a href="https://developer.mozilla.org/ru/docs/Web/CSS/border"><code>border</code></a> и&nbsp; <a href="https://developer.mozilla.org/ru/docs/Web/CSS/border-radius"><code>border-radius</code></a>, а также свойство&nbsp;<a href="https://developer.mozilla.org/ru/docs/Web/CSS/transition"><code>transition</code></a> для создания хорошо анимированного выбора радиокнопок. Заметьте также, что псевдокласс&nbsp;<a href="https://developer.mozilla.org/ru/docs/Web/CSS/:checked"><code>:checked</code></a> используется для указания стилей внешнего вида кнопок при их выборе.</p>
+
+<p>Стоит иметь в виду, что свойство&nbsp; <code>appearance</code>&nbsp;неплохо работает для создания простых стилей, но имеет тенденцию вести себя несколько непоследовательно в некоторых браузерах и полностью не работает в&nbsp;Internet Explorer. Тщательно проверяйте как работает ваш сайт в каждом браузере!&nbsp;</p>
+
+<p><iframe class="sample-code-frame" id="frame_Styling_radio_inputs" width="600" height="120" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/Input/radio/_sample_.Styling_radio_inputs.html" loading="lazy"></iframe></p>
+
+<p>Обратите внимание, что при клике на радиокнопку, на предыдущей выбранной кнопке появляется&nbsp;мягкий эффект угасания. Кроме того, стиль и окраска легенды и кнопки "Submit" имеет сильный контраст с остальным текстом. Возможно, это не совсем тот эффект,&nbsp;который вы хотели бы видеть в своём реальном веб-приложении, но этот пример хорошо отображает возможности CSS.</p></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th>Specification</th>
+   <th>Status</th>
+   <th></th>
+  </tr>
+  <tr>
+  </tr>
+  <tr>
+   <td><a href="https://html.spec.whatwg.org/multipage/forms.html#radio-button-state-(type=radio)" hreflang="en" lang="en" class="external" rel=" noopener">HTML Living Standard<br><small lang="ru">Определение '&lt;input type="radio"&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html52/forms.html#radio-button-state-(type=radio)" hreflang="en" lang="en" class="external" rel=" noopener">HTML5<br><small lang="ru">Определение '&lt;input type="radio"&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="совместимость_с_браузерами"><a href="#совместимость_с_браузерами" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/html/Input/"><code>&lt;input&gt;</code></a> and the <a href="https://developer.mozilla.org/ru/docs/Web/API/HTMLInputElement"><code>HTMLInputElement</code></a> interface that implements it.</li>
+ <li><a class="page-not-created" title="Документация об этом ещё не написана; пожалуйста, поспособствуйте её написанию!"><code>RadioNodeList</code></a>: the interface that describes a list of radio buttons</li>
+</ul></div>

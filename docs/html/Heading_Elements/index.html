@@ -1,52 +1,42 @@
-<h1>&lt;h1&gt;–&lt;h6&gt;: The HTML Section Heading elements</h1><div><div></div>
-
-<p>The <strong><code>&lt;h1&gt;</code></strong> to <strong><code>&lt;h6&gt;</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a> elements represent six levels of section headings. <code>&lt;h1&gt;</code> is the highest section level and <code>&lt;h6&gt;</code> is the lowest.</p>
-
-<div><iframe class="interactive" width="100%" height="445" src="https://interactive-examples.mdn.mozilla.net/pages/tabbed/h1-h6.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+<h1>&lt;h1&gt;–&lt;h6&gt;: HTML элементы заголовков секций</h1><div><p id="Summary"><span class="seoSummary"><strong>HTML элементы <code>&lt;h1&gt;</code>–<code>&lt;h6&gt;</code></strong>&nbsp;представляют собой 6 уровней заголовков секций. <code>&lt;h1&gt;</code> это наибольший заголовок&nbsp;и<code>&lt;h6&gt;</code> - наименьший</span></p>
 
 <table class="properties">
  <tbody>
   <tr>
-   <th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories">Content categories</a></th>
-   <td><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#flow_content">Flow content</a>, heading content, palpable content.</td>
+   <th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories">Категории контента</a></th>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#flow_content">Поток контента</a>, заголовок контента, явный контент.</td>
   </tr>
   <tr>
-   <th scope="row">Permitted content</th>
-   <td><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#phrasing_content">Phrasing content</a>.</td>
+   <th scope="row">Разрешённый контент</th>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#phrasing_content">Фразированное содержание</a>.</td>
   </tr>
   <tr>
-   <th scope="row">Tag omission</th>
-   <td>None, both the starting and ending tag are mandatory.</td>
+   <th scope="row">Пропуск тега</th>
+   <td>Нет, открывающий и закрывающий теги обязательны.</td>
   </tr>
   <tr>
-   <th scope="row">Permitted parents</th>
-   <td>Any element that accepts <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#flow_content">flow content</a>; don't use a heading element as a child of the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hgroup"><code>&lt;hgroup&gt;</code></a> element — it is now deprecated.</td>
+   <th scope="row">Разрешённые родители</th>
+   <td>Любые элементы которые принимают&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#flow_content">Содержание потока</a>; не используй как дочерний <a href="/html/hgroup/"><code>&lt;hgroup&gt;</code></a> элемент, сейчас он устарел</td>
   </tr>
   <tr>
-   <th scope="row">Implicit ARIA role</th>
-   <td><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/heading_role">heading</a></td>
+   <th scope="row">Разрешённые роли ДМИП</th>
+   <td><code><a href="https://w3c.github.io/aria/#tab" class="external" rel=" noopener">tab</a></code>, <code><a href="https://w3c.github.io/aria/#presentation" class="external" rel=" noopener">presentation</a></code></td>
   </tr>
   <tr>
-   <th scope="row">Permitted ARIA roles</th>
-   <td><code><a href="https://w3c.github.io/aria/#tab" class="external" rel=" noopener">tab</a></code>, <code><a href="https://w3c.github.io/aria/#presentation" class="external" rel=" noopener">presentation</a></code> or <code><a href="https://w3c.github.io/aria/#none" class="external" rel=" noopener">none</a></code></td>
-  </tr>
-  <tr>
-   <th scope="row">DOM interface</th>
-   <td><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLHeadingElement"><code>HTMLHeadingElement</code></a></td>
+   <th scope="row">DOM интерфейс</th>
+   <td><a href="https://developer.mozilla.org/ru/docs/Web/API/HTMLHeadingElement"><code>HTMLHeadingElement</code></a></td>
   </tr>
  </tbody>
-</table></div><h2 id="attributes"><a href="#attributes" title="Permalink to Attributes">Attributes</a></h2><div><p>These elements only include the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes">global attributes</a>.</p>
+</table></div><h2 id="атрибуты"><a href="#атрибуты" title="Permalink to Атрибуты">Атрибуты</a></h2><div><p>Эти элементы включают&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes">глобальные атрибуты</a>.</p>
 
 <div class="note notecard">
-<p>The <code>align</code> attribute is obsolete; don't use it.</p>
-</div></div><h2 id="usage_notes"><a href="#usage_notes" title="Permalink to Usage notes">Usage notes</a></h2><div><ul>
- <li>Heading information can be used by user agents to construct a table of contents for a document automatically.</li>
- <li>Avoid using heading elements to resize text. Instead, use the <a href="https://developer.mozilla.org/en-US/docs/Glossary/CSS">CSS</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-size"><code>font-size</code></a> property.</li>
- <li>Avoid skipping heading levels: always start from <code>&lt;h1&gt;</code>, followed by <code>&lt;h2&gt;</code> and so on.</li>
- <li>Use only one <code>&lt;h1&gt;</code> per page or view. It should concisely describe the overall purpose of the content.</li>
- <li>Using more than one <code>&lt;h1&gt;</code> will not result in an error, but is not considered a best practice. Using only one <code>&lt;h1&gt;</code> is beneficial for screenreader users, and <a href="https://developer.mozilla.org/en-US/docs/Glossary/SEO">SEO</a>.</li>
- <li>While HTML5 allows a <code>&lt;h1&gt;</code> per <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML_sections_and_outlines#section_elements_in_html5">sectioning element</a>, it is not considered best practice, and may subvert the expectations of how screen reader users navigate.</li>
-</ul></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="all_headings"><a href="#all_headings" title="Permalink to All headings">All headings</a></h3><div><p>The following code shows all the heading levels, in use.</p>
+<p>Атрибут&nbsp;<code>align</code>&nbsp;устаревший; не используйте его.</p>
+</div></div><h2 id="примечания_к_использованию"><a href="#примечания_к_использованию" title="Permalink to Примечания к использованию">Примечания к использованию</a></h2><div><ul>
+ <li>Информация о заголовке может использоваться пользовательскими агентами, например, для автоматического создания оглавления для документа</li>
+ <li>Не используйте низкие уровни чтобы снизить размер шрифта: используйте&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> <a href="https://developer.mozilla.org/ru/docs/Web/CSS/font-size"><code>font-size</code></a> вместо.</li>
+ <li>Избегайте пропуск уровней заголовков: всегда начинайте с&nbsp;<code>&lt;h1&gt;</code>, потом используйте&nbsp;<code>&lt;h2&gt;</code>,&nbsp;и так далее.</li>
+ <li>Вам следует рассмотреть избегание использования&nbsp;&lt;h1&gt; более раза на страницу. Смотрите <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML_sections_and_outlines#defining_sections">Defining sections</a> в <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML_sections_and_outlines">Using HTML sections and outlines</a>.</li>
+</ul></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="все_заголовки"><a href="#все_заголовки" title="Permalink to Все заголовки">Все заголовки</a></h3><div><p>Следующий код показывает все уровни заголовков в действии</p>
 
 <pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>Heading level 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>Heading level 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
@@ -56,9 +46,9 @@
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h6</span><span class="token punctuation">&gt;</span></span>Heading level 6<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h6</span><span class="token punctuation">&gt;</span></span>
 </code></pre>
 
-<p>Here is the result of this code:</p>
+<p>Вот результат этого кода:</p>
 
-<p><iframe class="sample-code-frame" id="frame_All_headings" width="280" height="300" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/HTML/Element/Heading_Elements/_sample_.All_headings.html" loading="lazy"></iframe></p></div><h3 id="example_page"><a href="#example_page" title="Permalink to Example page">Example page</a></h3><div><p>The following code shows a few headings with some content under them.</p>
+<p><iframe class="sample-code-frame" id="frame_Все_заголовки" width="280" height="300" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/Heading_Elements/_sample_.%D0%92%D1%81%D0%B5_%D0%B7%D0%B0%D0%B3%D0%BE%D0%BB%D0%BE%D0%B2%D0%BA%D0%B8.html" loading="lazy"></iframe></p></div><h3 id="пример_страницы"><a href="#пример_страницы" title="Permalink to Пример страницы">Пример страницы</a></h3><div><p>Следующий код показывает несколько заголовков с некоторым содержанием под ними&nbsp;.</p>
 
 <pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>Heading elements<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>Summary<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
@@ -75,104 +65,131 @@
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Some text here...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
 </code></pre>
 
-<p>Here is the result of this code:</p>
+<p>Результат кода:</p>
 
-<p><iframe class="sample-code-frame" id="frame_Example_page" width="280" height="480" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/HTML/Element/Heading_Elements/_sample_.Example_page.html" loading="lazy"></iframe></p></div><h2 id="accessibility_concerns"><a href="#accessibility_concerns" title="Permalink to Accessibility concerns">Accessibility concerns</a></h2><div></div><h3 id="navigation"><a href="#navigation" title="Permalink to Navigation">Navigation</a></h3><div><p>A common navigation technique for users of screen reading software is jumping from heading to heading to quickly determine the content of the page. Because of this, it is important to not skip one or more heading levels. Doing so may create confusion, as the person navigating this way may be left wondering where the missing heading is.</p>
+<p><iframe class="sample-code-frame" id="frame_Пример_страницы" width="280" height="480" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/Heading_Elements/_sample_.%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B.html" loading="lazy"></iframe></p></div><h2 id="проблемы_доступности"><a href="#проблемы_доступности" title="Permalink to Проблемы доступности">Проблемы доступности</a></h2><div></div><h3 id="навигация"><a href="#навигация" title="Permalink to Навигация">Навигация</a></h3><div><p dir="ltr" id="tw-target-text">Обычный метод навигации для пользователей программ чтения с экрана - это переход от заголовка к заголовку для быстрого определения содержимого страницы. Из-за этого важно не пропускать один или несколько уровней заголовка. Это может создать путаницу, так как человеку, который движется по этому пути, может быть интересно узнать, где находится отсутствующий заголовок.</p>
 
-<h4 id="dont">Don't</h4>
+<h4 id="не_делай">Не делай</h4>
 
-<pre class="brush: html example-bad notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>Heading level 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">&gt;</span></span>Heading level 3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h4</span><span class="token punctuation">&gt;</span></span>Heading level 4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h4</span><span class="token punctuation">&gt;</span></span>
-</code></pre>
+<pre class="notranslate">&lt;h1&gt;Heading level 1&lt;/h1&gt;
+&lt;h3&gt;Heading level 3&lt;/h3&gt;
+&lt;h4&gt;Heading level 4&lt;/h4&gt;
+</pre>
 
-<h4 id="do">Do</h4>
+<h4 id="делай">Делай</h4>
 
-<pre class="brush: html example-good notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>Heading level 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>Heading level 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">&gt;</span></span>Heading level 3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">&gt;</span></span>
-</code></pre>
+<pre class="notranslate">&lt;h1&gt;Heading level 1&lt;/h1&gt;
+&lt;h2&gt;Heading level 2&lt;/h2&gt;
+&lt;h3&gt;Heading level 3&lt;/h3&gt;
+</pre>
 
-<h4 id="nesting">Nesting</h4>
+<h4 id="расположение">Расположение</h4>
 
-<p>Headings may be nested as subsections to reflect the organization of the content of the page. Most screen readers can also generate an ordered list of all the headings on a page, which can help a person quickly determine the hierarchy of the content:</p>
+<p dir="ltr" id="tw-target-text">Заголовки могут быть вложены в подразделы, чтобы отразить организацию содержимого страницы. Большинство программ чтения с экрана также могут создавать упорядоченный список всех заголовков на странице, что может помочь человеку быстро определить иерархию содержимого:</p>
 
 <ol>
- <li><code>h1</code> Beetles
+ <li><code>h1</code>&nbsp;Жуки
 
   <ol>
-   <li><code>h2</code> Etymology</li>
-   <li><code>h2</code> Distribution and Diversity</li>
-   <li><code>h2</code> Evolution
+   <li><code>h2</code>&nbsp;Этимология</li>
+   <li><code>h2</code>&nbsp;Распределение и разнообразие</li>
+   <li><code>h2</code><span>&nbsp;Эволюция</span>
     <ol>
-     <li><code>h3</code> Late Paleozoic</li>
-     <li><code>h3</code> Jurassic</li>
-     <li><code>h3</code> Cretaceous</li>
-     <li><code>h3</code> Cenozoic</li>
+     <li><code>h3</code>&nbsp;Поздний полиозой</li>
+     <li><code>h3</code>&nbsp;Юрский период</li>
+     <li><code>h3</code>&nbsp;Меловойский период</li>
+     <li><code>h3</code><span>&nbsp;К</span>айнозойский период</li>
     </ol>
    </li>
-   <li><code>h2</code> External Morphology
+   <li><code>h2</code>&nbsp;Внешняя морфология
     <ol>
-     <li><code>h3</code> Head
+     <li><code>h3</code>&nbsp;Голова
       <ol>
-       <li><code>h4</code> Mouthparts</li>
+       <li><code>h4</code>&nbsp;Рот</li>
       </ol>
      </li>
-     <li><code>h3</code> Thorax
+     <li><code>h3</code>&nbsp;Туловище
       <ol>
-       <li><code>h4</code> Prothorax</li>
-       <li><code>h4</code> Pterothorax</li>
+       <li><code>h4</code>&nbsp;Передгрудь</li>
+       <li><code>h4</code>&nbsp;Пиероторакс</li>
       </ol>
      </li>
-     <li><code>h3</code> Legs</li>
-     <li><code>h3</code> Wings</li>
-     <li><code>h3</code> Abdomen</li>
+     <li><code>h3</code>&nbsp;Ноги</li>
+     <li><code>h3</code>&nbsp;Крыла</li>
+     <li><code>h3</code>&nbsp;Живот</li>
     </ol>
    </li>
   </ol>
  </li>
 </ol>
 
-<p>When headings are nested, heading levels may be "skipped" when closing a subsection.</p>
+<p>Когда заголовки вложены, уровни заголовков могут быть «пропущены» при закрытии подраздела.</p>
 
 <ul>
- <li><a href="https://www.w3.org/WAI/tutorials/page-structure/headings/" class="external" rel=" noopener">Headings • Page Structure • WAI Web Accessibility Tutorials</a></li>
- <li><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/Understanding_WCAG/Perceivable#guideline_1.3_%E2%80%94_create_content_that_can_be_presented_in_different_ways">MDN Understanding WCAG, Guideline 1.3 explanations</a></li>
- <li><a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/content-structure-separation-programmatic.html" class="external" rel=" noopener">Understanding Success Criterion 1.3.1 | W3C Understanding WCAG 2.0</a></li>
- <li><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/Understanding_WCAG/Operable#guideline_2.4_%E2%80%94_navigable_provide_ways_to_help_users_navigate_find_content_and_determine_where_they_are">MDN Understanding WCAG, Guideline 2.4 explanations</a></li>
- <li><a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-skip.html" class="external" rel=" noopener">Understanding Success Criterion 2.4.1 | W3C Understanding WCAG 2.0</a></li>
- <li><a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-descriptive.html" class="external" rel=" noopener">Understanding Success Criterion 2.4.6 | W3C Understanding WCAG 2.0</a></li>
- <li><a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-headings.html" class="external" rel=" noopener">Understanding Success Criterion 2.4.10 | W3C Understanding WCAG 2.0</a></li>
-</ul></div><h3 id="labeling_section_content"><a href="#labeling_section_content" title="Permalink to Labeling section content">Labeling section content</a></h3><div><p>Another common navigation technique for users of screen reading software is to generate a list of <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element#content_sectioning">sectioning content</a> and use it to determine the page's layout.</p>
+ <li><a href="https://www.w3.org/WAI/tutorials/page-structure/headings/" class="external" rel=" noopener">Заголовки • Структура страницы • Обучающие материалы по веб-доступности WAI</a></li>
+ <li><a href="https://wiki.developer.mozilla.org/en-US/docs/Web/Accessibility/Understanding_WCAG/Perceivable#Guideline_1.3_%E2%80%94_Create_content_that_can_be_presented_in_different_ways" class="external" rel=" noopener">MDN Понимание WCAG, объяснение Руководства 1.3</a></li>
+ <li><a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/content-structure-separation-programmatic.html" class="external" rel=" noopener">Понимание критерия успеха 1.3.1 | W3C Понимание WCAG 2.0</a></li>
+ <li><a href="https://wiki.developer.mozilla.org/en-US/docs/Web/Accessibility/Understanding_WCAG/Operable#Guideline_2.4_%E2%80%94_Navigable_Provide_ways_to_help_users_navigate_find_content_and_determine_where_they_are" class="external" rel=" noopener">MDN Понимание WCAG, Руководство 2.4 пояснения</a></li>
+ <li><a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-skip.html" class="external" rel=" noopener">Понимание критерия успеха 2.4.1 | W3C Понимание WCAG 2.0 </a></li>
+ <li><a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-descriptive.html" class="external" rel=" noopener">Понимание критерия успеха 2.4.6 | W3C Понимание WCAG 2.0</a></li>
+ <li><a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-headings.html" class="external" rel=" noopener">Понимание критерия успеха 2.4.10 | W3C Понимание WCAG 2.0</a></li>
+</ul></div><h3 id="содержание_раздела_маркировки"><a href="#содержание_раздела_маркировки" title="Permalink to Содержание раздела маркировки">Содержание раздела маркировки</a></h3><div><p dir="ltr" id="tw-target-text">Другим распространённым методом навигации для пользователей программ чтения с экрана является создание списка содержимого секций и использование его для определения макета страницы.</p>
 
-<p>Sectioning content can be labeled using a combination of the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute">aria-labelledby</a></code> and <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes#attr-id"><code>id</code></a> attributes, with the label concisely describing the purpose of the section. This technique is useful for situations where there is more than one sectioning element on the same page.</p>
+<p dir="ltr" id="tw-target-text">Содержимое секционирования можно пометить, используя комбинацию&nbsp;<code><a href="https://wiki.developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute" class="external" rel=" noopener">aria-labelledby</a></code>&nbsp;и <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Global_attributes#attr-id"><code>id</code></a> атрибута, с ярлыком, кратко описывающим назначение раздела. Этот метод полезен в ситуациях, когда на одной странице имеется более одного элемента секционирования.</p>
 
-<h4 id="example">Example</h4>
+<h4 id="пример">Пример</h4>
 
-<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nav</span> <span class="token attr-name">aria-labelledby</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>primary-navigation<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>primary-navigation<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Primary navigation<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
-    <span class="token comment">&lt;!-- navigation items --&gt;</span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nav</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>header</span><span class="token punctuation">&gt;</span></span>
+<pre class="notranslate">&lt;header&gt;
+  &lt;nav aria-labelledby="primary-navigation"&gt;
+    &lt;h2 id="primary-navigation"&gt;Primary navigation&lt;/h2&gt;
+    &lt;!-- navigation items --&gt;
+  &lt;/nav&gt;
+&lt;/header&gt;
 
-<span class="token comment">&lt;!-- page content --&gt;</span>
+&lt;!-- page content --&gt;
 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>footer</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nav</span> <span class="token attr-name">aria-labelledby</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>footer-navigation<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>footer-navigation<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Footer navigation<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
-    <span class="token comment">&lt;!-- navigation items --&gt;</span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nav</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>footer</span><span class="token punctuation">&gt;</span></span>
-</code></pre>
+&lt;footer&gt;
+  &lt;nav aria-labelledby="footer-navigation"&gt;
+    &lt;h2 id="footer-navigation"&gt;Footer navigation&lt;/h2&gt;
+    &lt;!-- navigation items --&gt;
+  &lt;/nav&gt;
+&lt;/footer&gt;
+</pre>
 
-<p>In this example, screen reading technology would announce that there are two <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav"><code>&lt;nav&gt;</code></a> sections, one called "Primary navigation" and one called "Footer navigation". If labels were not provided, the person using screen reading software may have to investigate each <code>nav</code> element's contents to determine their purpose.</p>
+<p dir="ltr" id="tw-target-text">В этом примере технология чтения с экрана объявила бы, что есть два&nbsp;<a href="/html/nav/"><code>&lt;nav&gt;</code></a> разделы, один называется «Основная навигация», а другой - «Нижний колонтитул». Если ярлыки не были предоставлены, человеку, использующему программное обеспечение для чтения с экрана, возможно, придётся расследовать каждый&nbsp;<code>nav</code>&nbsp;содержание элемента, чтобы определить их назначение.</p>
 
 <ul>
- <li><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute">Using the aria-labelledby attribute</a></li>
- <li><a href="https://www.w3.org/WAI/tutorials/page-structure/labels/#using-aria-labelledby" class="external" rel=" noopener">Labeling Regions • Page Structure • W3C WAI Web Accessibility Tutorials</a></li>
-</ul></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://html.spec.whatwg.org/multipage/sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements">HTML Standard<!-- --> <!-- -->(HTML)<br><small># <!-- -->the-h1,-h2,-h3,-h4,-h5,-and-h6-elements</small></a></td></tr></tbody></table><div><p></p><p></p></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
- <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p"><code>&lt;p&gt;</code></a></li>
- <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div"><code>&lt;div&gt;</code></a></li>
- <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/section"><code>&lt;section&gt;</code></a></li>
-</ul></div>
+ <li><a href="https://wiki.developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute" class="external" rel=" noopener">Использование атрибута aria-labelledby</a></li>
+ <li><a href="https://www.w3.org/WAI/tutorials/page-structure/labels/#using-aria-labelledby" class="external" rel=" noopener">Обозначение регионов • Структура страницы • Учебные пособия по WAC WAI</a></li>
+</ul></div><h2 id="характеристики"><a href="#характеристики" title="Permalink to Характеристики">Характеристики</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Характеристика</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://html.spec.whatwg.org/multipage/sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements" hreflang="en" lang="en" class="external" rel=" noopener">HTML Living Standard<br><small lang="ru">Определение '&lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;, &lt;h4&gt;, &lt;h5&gt;, and &lt;h6&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html52/sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements" hreflang="en" lang="en" class="external" rel=" noopener">HTML5<br><small lang="ru">Определение '&lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;, &lt;h4&gt;, &lt;h5&gt;, and &lt;h6&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html401/struct/global.html#h-7.5.5" hreflang="en" lang="en" class="external" rel=" noopener">HTML 4.01 Specification<br><small lang="ru">Определение '&lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;, &lt;h4&gt;, &lt;h5&gt;, and &lt;h6&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="совместимость_с_браузером"><a href="#совместимость_с_браузером" title="Permalink to Совместимость с браузером">Совместимость с браузером</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/html/p/"><code>&lt;p&gt;</code></a></li>
+ <li><a href="/html/div/"><code>&lt;div&gt;</code></a></li>
+ <li><a href="/html/section/"><code>&lt;section&gt;</code></a></li>
+</ul>
+
+<div></div></div>
