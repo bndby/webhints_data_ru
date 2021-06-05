@@ -168,7 +168,8 @@ for await (let [_key, link] of links){
   const subDir = _key; //link.substring(ROOT.length);
   const c = await loadPage(link);
   const cc = clearContent(c);
-  const title = getTitle(cc, 'body h1');
+  const preTitle = getTitle(cc, 'body h1');
+  const title = preTitle.substring(preTitle.indexOf('<') + 1, preTitle.indexOf('>'));
   const fc = fixLinks(cc, 'article a[href]', ROOT);
   const filename = subDir + '/index.html';
 
