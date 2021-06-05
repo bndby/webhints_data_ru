@@ -1,0 +1,101 @@
+<h1>&lt;details&gt;</h1><div><div></div>
+
+<p>HTML-элемент<strong>&nbsp;<code>&lt;details&gt;</code></strong>&nbsp;используется для раскрытия скрытой (дополнительной) информации.</p>
+
+<p>Виджет раскрытия обычно представлен на экране с использованием небольшого треугольника, который&nbsp;поворачивается, чтобы показать состояние открытия / закрытия, с меткой рядом с треугольником. Если первый дочерний элемент элемента <code>&lt;details&gt; </code>является <code>&lt;summary&gt;</code>, содержимое элемента <code>&lt;summary&gt;</code> используется в качестве метки для виджета раскрытия.</p>
+
+<p><iframe class="interactive" width="100%" height="445" src="https://interactive-examples.mdn.mozilla.net/pages/tabbed/details.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></p>
+
+<p>&nbsp;</p>
+
+<table class="properties">
+ <tbody>
+  <tr>
+   <th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories">Content categories</a></th>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#flow_content">Flow content</a>, sectioning root, interactive content, palpable content.</td>
+  </tr>
+  <tr>
+   <th scope="row">Permitted content</th>
+   <td>One <a href="/html/summary/"><code>&lt;summary&gt;</code></a> element followed by <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#flow_content">flow content</a>.</td>
+  </tr>
+  <tr>
+   <th scope="row">Tag omission</th>
+   <td>Нет, открывающий и закрывающий теги обязательны.</td>
+  </tr>
+  <tr>
+   <th scope="row">Permitted parents</th>
+   <td>Any element that accepts <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#flow_content">flow content</a>.</td>
+  </tr>
+  <tr>
+   <th scope="row">Permitted ARIA roles</th>
+   <td>None</td>
+  </tr>
+  <tr>
+   <th scope="row">DOM interface</th>
+   <td><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLDetailsElement"><code>HTMLDetailsElement</code> <span>(en-US)</span></a></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="атрибуты"><a href="#атрибуты" title="Permalink to Атрибуты">Атрибуты</a></h2><div><p>Элемент поддерживает только <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes">глобальные атрибуты</a>.</p>
+
+<dl>
+ <dt><a id="attr-open" href="#attr-open"><b><code>open</code></b></a></dt>
+ <dd>Данный логический атрибут указывает, будет ли дополнительная информация отображаться пользователю при загрузке страницы. По умолчанию установлено значение false, поэтому дополнительная информация будет скрыта.</dd>
+</dl></div><h2 id="пример"><a href="#пример" title="Permalink to Пример">Пример</a></h2><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>details</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>summary</span><span class="token punctuation">&gt;</span></span>Some details<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>summary</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>More info about the details.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>details</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>details</span> <span class="token attr-name">open</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>summary</span><span class="token punctuation">&gt;</span></span>Even more details<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>summary</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Here are even more details about the details.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>details</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h3 id="result"><a href="#result" title="Permalink to Result">Result</a></h3><div><p><iframe class="sample-code-frame" id="frame_Example" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/details/_sample_.Example.html" loading="lazy"></iframe></p>
+
+<div class="note notecard">
+<p><strong>Примечание: </strong>Если приведённый выше пример не работает, см.&nbsp;<a href="#browser_compatibility">Browser compatibility</a> , чтобы определить поддерживает ли вообще ваш браузер эту функцию.&nbsp;</p>
+</div></div><h2 id="примеры_стилизации"><a href="#примеры_стилизации" title="Permalink to Примеры стилизации">Примеры стилизации</a></h2><div><p>Следуя более новой спецификации, Firefox отображает элемент summary как&nbsp;<code>display: list-item</code>&nbsp; и маркер можно стилизовать так же, как и элементы списка.</p>
+
+<p>Следуя более старой спецификации, в Chrome and Safari существует пользовательский псевдо-элемент&nbsp;<code>::-webkit-details-marker</code>, с помощью которого можно стилизовать маркер.&nbsp;</p>
+
+<p>Для кроссбраузерной стилизации маркера, чтобы скрыть дефолтный и добавить кастомный, необходимо для Firefox установить элементу&nbsp;<code>summary {display: block;}, а для&nbsp;</code>Chrome и Safari's установить&nbsp;<code>::-webkit-details-marker {display: none;}</code>. После этого дефолтный маркер будет скрыт, после чего можно установить свой маркер любым доступным способом стилизации. В примере ниже с помощью псевдоэлементов маркер возвращается обратно. &nbsp;</p></div><h3 id="html"><a href="#html" title="Permalink to HTML">HTML</a></h3><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>details</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>summary</span><span class="token punctuation">&gt;</span></span>Some details<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>summary</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>More info about the details.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>details</span><span class="token punctuation">&gt;</span></span></code></pre></div><h3 id="css"><a href="#css" title="Permalink to CSS">CSS</a></h3><div><pre class="brush: css notranslate"><code><span class="token selector">summary</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+  <span class="token selector">summary::-webkit-details-marker</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">summary::before</span> <span class="token punctuation">{</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">'\25B6'</span><span class="token punctuation">;</span>
+  <span class="token property">padding-right</span><span class="token punctuation">:</span> 0.5em<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">details[open] &gt; summary::before</span> <span class="token punctuation">{</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">'\25BC'</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="result_2"><a href="#result_2" title="Permalink to Result">Result</a></h3><div><p><iframe class="sample-code-frame" id="frame_Example_with_styling" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/details/_sample_.Example_with_styling.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://html.spec.whatwg.org/multipage/forms.html#the-details-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML Living Standard<br><small lang="ru">Определение '&lt;details&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html51/semantics.html#the-details-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML 5.1<br><small lang="ru">Определение '&lt;details&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="/html/summary/"><code>&lt;summary&gt;</code></a></li>
+</ul></div>

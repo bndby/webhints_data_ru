@@ -1,0 +1,67 @@
+<h1>&lt;data&gt;</h1><div><div></div>
+
+<p><span class="seoSummary"><strong>HTML-элемент <code>&lt;data&gt;</code></strong> связывает данное содержимое с машиночитаемым представлением.</span> Если содержимое относится к времени или дате, необходимо использовать элемент <a href="/html/time/"><code>&lt;time&gt;</code></a>.</p>
+
+<div><iframe class="interactive" width="100%" height="375" src="https://interactive-examples.mdn.mozilla.net/pages/tabbed/data.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+
+
+<table class="properties">
+ <tbody>
+  <tr>
+   <th scope="row"><a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Content_categories">Категории контента</a></th>
+   <td><a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Content_categories#%D0%BF%D0%BE%D1%82%D0%BE%D0%BA%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%BD%D1%82">Потоковый контент</a>, <a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Content_categories#phrasing_content">фразовый контент</a>, явный контент.</td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённое содержимое</th>
+   <td><a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Content_categories#phrasing_content">Фразовый контент</a>.</td>
+  </tr>
+  <tr>
+   <th scope="row">Пропуск тегов</th>
+   <td>Нет, открывающий и закрывающий теги обязательны.</td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённые родители</th>
+   <td>Любой элемент который принимает <a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Content_categories#phrasing_content">фразовый контент</a>.</td>
+  </tr>
+  <tr>
+   <th scope="row">DOM-интерфейс</th>
+   <td><a href="https://developer.mozilla.org/ru/docs/Web/API/HTMLDataElement"><code>HTMLDataElement</code></a></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="атрибуты"><a href="#атрибуты" title="Permalink to Атрибуты">Атрибуты</a></h2><div><p>Этот элемент включает <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Global_attributes">глобальные атрибуты</a>.</p>
+
+<dl>
+ <dt><a id="attr-value" href="#attr-value"><b><code>value</code></b></a></dt>
+ <dd>Этот атрибут определяет машиночитаемый перевод содержимого элемента.</dd>
+</dl></div><h2 id="пример"><a href="#пример" title="Permalink to Пример">Пример</a></h2><div><p>Следующий пример отображает названия продуктов, а также связывает каждое имя с номером продукта.</p>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>New Products<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>data</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>398<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Mini Ketchup<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>data</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>data</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>399<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Jumbo Ketchup<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>data</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>data</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>400<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Mega Jumbo Ketchup<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>data</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://html.spec.whatwg.org/multipage/semantics.html#the-data-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML Living Standard<br><small lang="ru">Определение '&lt;data&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td>Нет изменений с <a href="https://www.w3.org/TR/html52/" hreflang="en" lang="en" class="external" title="Спецификация 'HTML5'" rel=" noopener">HTML5</a></td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html52/text-level-semantics.html#the-data-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML5<br><small lang="ru">Определение '&lt;data&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Начальное определение.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="поддержка_браузерами"><a href="#поддержка_браузерами" title="Permalink to Поддержка браузерами">Поддержка браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li>HTML-элемент <a href="/html/time/"><code>&lt;time&gt;</code></a>.</li>
+</ul></div>

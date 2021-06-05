@@ -1,0 +1,120 @@
+<h1>&lt;figure&gt;: Элемент иллюстрации с необязательной подписью</h1><div><div></div>
+
+<p><span class="seoSummary"><strong>HTML-элемент <code>&lt;figure&gt;</code> (Иллюстрация с необязательной подписью)</strong> представляет самостоятельный контент, часто с подписью (заголовком), которая указывается с помощью элемента (<a href="/html/figcaption/"><code>&lt;figcaption&gt;</code></a>).</span> Диаграмма и её подпись представляет собой единое целое.</p>
+
+<div><iframe class="interactive" width="100%" height="375" src="https://interactive-examples.mdn.mozilla.net/pages/tabbed/figure.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+
+
+<table class="properties">
+ <tbody>
+  <tr>
+   <th scope="row"><a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Content_categories">Категории контента</a></th>
+   <td><a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Content_categories#%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%BE%D0%B9_%D0%BF%D0%BE%D1%82%D0%BE%D0%BA" title="HTML/Content categories#Flow content">Основной поток</a>, <a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Content_categories#%D0%BF%D1%80%D0%BE%D1%87%D0%B8%D0%B5_%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%B8_%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%BD%D1%82%D0%B0">секционный корень</a>, явный контент</td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённое содержимое</th>
+   <td>Элемент <a href="/html/figcaption/"><code>&lt;figcaption&gt;</code></a> за которым следует <a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Content_categories#%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%BE%D0%B9_%D0%BF%D0%BE%D1%82%D0%BE%D0%BA" title="HTML/Content categories#Flow content">основной поток</a>; или поточный контент за которым следует элемент <a href="/html/figcaption/"><code>&lt;figcaption&gt;</code></a>; или поточный контент.</td>
+  </tr>
+  <tr>
+   <th scope="row">Пропуск тегов</th>
+   <td>Нет, открывающий и закрывающий теги обязательны.</td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённые родители</th>
+   <td>Любые элементы принимающие <a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Content_categories#%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%BE%D0%B9_%D0%BF%D0%BE%D1%82%D0%BE%D0%BA" title="HTML/Content categories#Flow content">основной поток</a>.</td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённые ARIA-роли</th>
+   <td><code><a href="https://w3c.github.io/aria/#group" class="external" rel=" noopener">group</a></code>, <code><a href="https://w3c.github.io/aria/#presentation" class="external" rel=" noopener">presentation</a></code></td>
+  </tr>
+  <tr>
+   <th scope="row">DOM-интерфейс</th>
+   <td><a href="https://developer.mozilla.org/ru/docs/Web/API/HTMLElement"><code>HTMLElement</code></a></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="атрибуты"><a href="#атрибуты" title="Permalink to Атрибуты">Атрибуты</a></h2><div><p>Этот элемент поддерживает только <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Global_attributes">глобальные атрибуты</a>.</p></div><h2 id="примечания_по_использованию"><a href="#примечания_по_использованию" title="Permalink to Примечания по использованию">Примечания по использованию</a></h2><div><ul>
+ <li>Обычно <code>&lt;figure&gt;</code> это рисунок, иллюстрация, диаграмма, фрагмент кода, и т.д., на который ссылаются в основном потоке документа, но может быть перенесён в другую часть документа или в приложение не нарушив основной поток.</li>
+ <li>Являясь <a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Content_categories#%D0%BF%D1%80%D0%BE%D1%87%D0%B8%D0%B5_%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%B8_%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%BD%D1%82%D0%B0" title="Sections and Outlines of an HTML5 document#Sectioning root">секционным корнем</a>, структура содержимого элемента <code>&lt;figure&gt;</code> исключается из основной структуры документа.</li>
+ <li>Подпись может быть связана с элементом <code>&lt;figure&gt;</code> с помощью вставки <a href="/html/figcaption/"><code>&lt;figcaption&gt;</code></a> внутри него (как первый или последний потомок). Первый элемент <code>&lt;figcaption&gt;</code> в иллюстрации предоставляет её подпись (заголовок).</li>
+</ul></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="иллюстрации"><a href="#иллюстрации" title="Permalink to Иллюстрации">Иллюстрации</a></h3><div><pre class="brush: html notranslate"><code><span class="token comment">&lt;!-- Just an image --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figure</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span>
+  <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://developer.mozilla.org/static/img/favicon144.png<span class="token punctuation">"</span></span>
+  <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>The beautiful MDN logo.<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figure</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token comment">&lt;!-- Image with a caption --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figure</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span>
+  <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://developer.mozilla.org/static/img/favicon144.png<span class="token punctuation">"</span></span>
+  <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>The beautiful MDN logo.<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figcaption</span><span class="token punctuation">&gt;</span></span>MDN Logo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figcaption</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figure</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<div><iframe class="sample-code-frame" id="frame_Иллюстрации" width="100%" height="375" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/figure/_sample_.%D0%98%D0%BB%D0%BB%D1%8E%D1%81%D1%82%D1%80%D0%B0%D1%86%D0%B8%D0%B8.html" loading="lazy"></iframe></div></div><h3 id="фрагменты_кода"><a href="#фрагменты_кода" title="Permalink to Фрагменты кода">Фрагменты кода</a></h3><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figure</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figcaption</span><span class="token punctuation">&gt;</span></span>Get browser details using <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>code</span><span class="token punctuation">&gt;</span></span>navigator<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>code</span><span class="token punctuation">&gt;</span></span>.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figcaption</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>pre</span><span class="token punctuation">&gt;</span></span>
+function NavigatorExample() {
+  var txt;
+  txt = "Browser CodeName: " + navigator.appCodeName + "; ";
+  txt+= "Browser Name: " + navigator.appName + "; ";
+  txt+= "Browser Version: " + navigator.appVersion  + "; ";
+  txt+= "Cookies Enabled: " + navigator.cookieEnabled  + "; ";
+  txt+= "Platform: " + navigator.platform  + "; ";
+  txt+= "User-agent header: " + navigator.userAgent  + "; ";
+  console.log("NavigatorExample", txt);
+}
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>pre</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figure</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<div><iframe class="sample-code-frame" id="frame_Фрагменты_кода" width="100%" height="250" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/figure/_sample_.%D0%A4%D1%80%D0%B0%D0%B3%D0%BC%D0%B5%D0%BD%D1%82%D1%8B_%D0%BA%D0%BE%D0%B4%D0%B0.html" loading="lazy"></iframe></div></div><h3 id="цитирования"><a href="#цитирования" title="Permalink to Цитирования">Цитирования</a></h3><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figure</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figcaption</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>cite</span><span class="token punctuation">&gt;</span></span>Edsger Dijkstra:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>cite</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figcaption</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>blockquote</span><span class="token punctuation">&gt;</span></span>If debugging is the process of removing software bugs,
+  then programming must be the process of putting them in.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>blockquote</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figure</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<div><iframe class="sample-code-frame" id="frame_Цитирования" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/figure/_sample_.%D0%A6%D0%B8%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F.html" loading="lazy"></iframe></div>
+
+<blockquote>"Если отладка — процесс удаления ошибок, то программирование должно быть процессом их внесения", — Эдсгер Дейкстра.</blockquote></div><h3 id="стихи"><a href="#стихи" title="Permalink to Стихи">Стихи</a></h3><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figure</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token style-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token style language-css"><span class="token property">white-space</span><span class="token punctuation">:</span>pre</span><span class="token punctuation">"</span></span></span><span class="token punctuation">&gt;</span></span>
+Bid me discourse, I will enchant thine ear,
+  Or like a fairy trip upon the green,
+Or, like a nymph, with long dishevell'd hair,
+  Dance on the sands, and yet no footing seen:
+Love is a spirit all compact of fire,
+  Not gross to sink, but light, and will aspire.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figcaption</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>cite</span><span class="token punctuation">&gt;</span></span>Venus and Adonis<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>cite</span><span class="token punctuation">&gt;</span></span>,
+    by William Shakespeare<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figcaption</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figure</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<div><iframe class="sample-code-frame" id="frame_Стихи" width="100%" height="250" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/figure/_sample_.%D0%A1%D1%82%D0%B8%D1%85%D0%B8.html" loading="lazy"></iframe></div></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://html.spec.whatwg.org/multipage/semantics.html#the-figure-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML Living Standard<br><small lang="ru">Определение '&lt;figure&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html52/grouping-content.html#the-figure-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML 5.2<br><small lang="ru">Определение '&lt;figure&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>No changes from HTML 5.0.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html52/grouping-content.html#the-figure-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML5<br><small lang="ru">Определение '&lt;figure&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="поддержка_браузерами"><a href="#поддержка_браузерами" title="Permalink to Поддержка браузерами">Поддержка браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li>Элемент <a href="/html/figcaption/"><code>&lt;figcaption&gt;</code></a>.</li>
+</ul></div>

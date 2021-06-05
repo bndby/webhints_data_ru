@@ -1,0 +1,154 @@
+<h1>&lt;dfn&gt;: Элемент определения</h1><div><div></div>
+
+<p><span class="seoSummary"><strong>Элемент определения&nbsp;HTML</strong>&nbsp;(<strong><dfn>&lt;dfn&gt;</dfn></strong>) используется для указания термина, определяемого в контексте фразы или предложения.</span> Элемент<a href="/html/p/"><code>&lt;p&gt;</code></a>, пара<a href="/html/dt/"><code>&lt;dt&gt;</code></a>/<a href="/html/dd/"><code>&lt;dd&gt;</code></a> или <a href="/html/section/"><code>&lt;section&gt;</code></a> элемент, который является ближайшим предком <code>&lt;dfn&gt;</code> считается определением термина.</p>
+
+<p>&nbsp;</p>
+
+<div><iframe class="interactive" width="100%" height="375" src="https://interactive-examples.mdn.mozilla.net/pages/tabbed/dfn.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+
+
+<table class="properties">
+ <tbody>
+  <tr>
+   <th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories">Категории Контента</a></th>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#flow_content">Потоковый контент</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#phrasing_content">фразовый контент</a>, явный контент.</td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённый контент</th>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#phrasing_content">Фразовый контент</a>, но ни один <a href="/html/dfn/" aria-current="page"><code>&lt;dfn&gt;</code></a> элемент не должен быть потомком.</td>
+  </tr>
+  <tr>
+   <th scope="row">Пропуск тега</th>
+   <td>Нет, открывающий и закрывающий теги обязательны.</td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённые родители</th>
+   <td>Любой элемент, который принимает <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#phrasing_content">фразовый контент</a>.</td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённые роли ARIA</th>
+   <td>Любые</td>
+  </tr>
+  <tr>
+   <th scope="row">DOM интерфейс</th>
+   <td><a href="https://developer.mozilla.org/ru/docs/Web/API/HTMLElement"><code>HTMLElement</code></a></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="атрибуты"><a href="#атрибуты" title="Permalink to Атрибуты">Атрибуты</a></h2><div><p>Атрибуты этого элемента включают <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes">глобальные атрибуты</a>.</p>
+
+<p>В HTML5 <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Global_attributes#attr-title"><code>title</code></a> атрибут имеет особое значение, как указано ниже.</p></div><h2 id="примечания_по_использованию"><a href="#примечания_по_использованию" title="Permalink to Примечания по использованию">Примечания по использованию</a></h2><div><p>Есть несколько не совсем очевидных аспектов использования элемента<code>&lt;dfn&gt;</code>. Мы рассмотрим их здесь.</p></div><h3 id="определяемый_термин"><a href="#определяемый_термин" title="Permalink to Определяемый термин">Определяемый термин</a></h3><div><p>Определяемый термин устанавливается в соответствии с этими правилами:</p>
+
+<ol>
+ <li>Если <code>&lt;dfn&gt;</code> элемент имеет <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Global_attributes#attr-title"><code>title</code></a> атрибут, значение атрибута <code>title</code> считается определяемым термином. Элемент должен по-прежнему иметь текст внутри него, но этот текст может быть аббревиатурой (возможно, с использованием<a href="/html/abbr/"><code>&lt;abbr&gt;</code></a>) или другой формой термина.</li>
+ <li>Если объект <code>&lt;dfn&gt;</code> содержит единственный дочерний элемент и не имеет собственного текстового содержимого, а дочерний элемент является <a href="/html/abbr/"><code>&lt;abbr&gt;</code></a> элементом с атрибутом <code>title</code>, то строго значение&nbsp;<code>title</code>&nbsp;<code>&lt;abbr&gt;</code>&nbsp;элемента является определяемым термином.</li>
+ <li>В противном случае текстовое содержимое <code>&lt;dfn&gt;</code> элемента является определяемым термином. Это показано <a href="#базовая_идентификация_термина">в примере ниже</a>.</li>
+</ol>
+
+<div class="note notecard">
+<p>Если <code>&lt;dfn&gt;</code> элемент имеет атрибут <code>title</code>, он <em>должен</em> содержать определяемый термин и никакой другой текст.</p>
+</div></div><h3 id="ссылки_на_<dfn>_элементы"><a href="#ссылки_на_<dfn>_элементы" title="Permalink to Ссылки на <dfn> элементы">Ссылки на <code>&lt;dfn&gt;</code> элементы</a></h3><div><p>Если вы включаете атрибут <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Global_attributes#attr-id"><code>id</code></a> в <code>&lt;dfn&gt;</code> элемент, вы можете ссылаться на него, используя <a href="/html/A/"><code>&lt;a&gt;</code></a> элементы. Они должны ссылаться на использование термина, чтобы читатель смог быстро перейти к определению термина, если он ещё не знает его, нажав на ссылку термина.</p>
+
+<p>Это показано ниже в примере <a href="#ссылки_на_определения">Ссылки на определения</a>.</p></div><h2 id="примечания_по_использованию_2"><a href="#примечания_по_использованию_2" title="Permalink to Примечания по использованию">Примечания по использованию</a></h2><div><ul>
+ <li>Элемент <code>&lt;dfn&gt;</code> отмечает определяемый термин; определение термина должно быть дано окружающим <a href="/html/p/"><code>&lt;p&gt;</code></a>,&nbsp; &nbsp; <a href="/html/section/"><code>&lt;section&gt;</code></a> или группой списков определений (обычно пара <a href="/html/dt/"><code>&lt;dt&gt;</code></a><a href="/html/dd/"><code>&lt;dd&gt;</code></a>).</li>
+ <li>Точное значение определяемого термина определяется следующими правилами:
+  <ol>
+   <li>Если элемент <code>&lt;dfn&gt;</code> имеет <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Global_attributes#attr-title"><code>title</code></a> атрибут, то термин является значением этого атрибута.</li>
+   <li>Иначе, если он содержит только <a href="/html/abbr/"><code>&lt;abbr&gt;</code></a> элемент с <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Global_attributes#attr-title"><code>title</code></a> атрибутом, тогда термин является значением этого атрибута. Это продемонстрировано в <a href="#использование_сокращений_и_определений_вместе">Использование сокращений и определений вместе</a> ниже.</li>
+   <li>В противном случае текстовое содержимое <code>&lt;dfn&gt;</code> элемента является определяемым термином.</li>
+  </ol>
+ </li>
+</ul></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div><p>Давайте рассмотрим несколько примеров различных сценариев использования.</p></div><h3 id="базовая_идентификация_термина"><a href="#базовая_идентификация_термина" title="Permalink to Базовая идентификация термина">Базовая идентификация термина</a></h3><div><p>В этом примере просто используется <code>&lt;dfn&gt;</code> элемент для нахождения местоположения термина в определении.<code>(&lt;strong&gt;&lt;dfn&gt;&amp;lt;dfn&amp;gt;&lt;/dfn&gt;&lt;/strong&gt;)</code></p>
+
+<h4 id="html">HTML</h4>
+
+<p>&nbsp;</p>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strong</span><span class="token punctuation">&gt;</span></span>Элемент определения HTML<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>strong</span><span class="token punctuation">&gt;</span></span> (<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strong</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dfn</span><span class="token punctuation">&gt;</span></span><span class="token entity named-entity" title="<">&amp;lt;</span>dfn<span class="token entity named-entity" title=">">&amp;gt;</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dfn</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>strong</span><span class="token punctuation">&gt;</span></span>)
+используется для обозначения термина, определяемого в контексте фразы или предложения.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span> </code></pre>
+
+<p>&nbsp;</p>
+
+<p>Поскольку <code>&lt;dfn&gt;</code> элемент не имеет <code>title</code>, текстовое содержимое самого <code>&lt;dfn&gt;</code> элемента используется в качестве определяемого термина.</p>
+
+<h4 id="результат">Результат</h4>
+
+<p>Это выглядит так в вашем браузере:</p>
+
+<p><iframe class="sample-code-frame" id="frame_Базовая_идентификация_термина" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/dfn/_sample_.%D0%91%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%8F_%D0%B8%D0%B4%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F_%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D0%B0.html" loading="lazy"></iframe></p></div><h3 id="ссылки_на_определения"><a href="#ссылки_на_определения" title="Permalink to Ссылки на определения">Ссылки на определения</a></h3><div><p>Чтобы добавить ссылки к определениям, вы создаёте ссылку так же, как и всегда, с <a href="/html/A/"><code>&lt;a&gt;</code></a> элементом.&nbsp;&lt;p&gt;&lt;strong&gt;Элемент определения HTML&lt;/strong&gt; <code>(&lt;strong&gt;&lt;dfn&gt;&amp;lt;dfn&amp;gt;&lt;/dfn&gt;&lt;/strong&gt;)</code> используется для обозначения термина, определяемого в контексте фразы или предложения. &lt;/p&gt;</p>
+
+<h4 id="html_2">HTML</h4>
+
+<p>&nbsp;</p>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strong</span><span class="token punctuation">&gt;</span></span>Элемент определения HTML<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>strong</span><span class="token punctuation">&gt;</span></span> (<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strong</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dfn</span><span class="token punctuation">&gt;</span></span><span class="token entity named-entity" title="<">&amp;lt;</span>dfn<span class="token entity named-entity" title=">">&amp;gt;</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dfn</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>strong</span><span class="token punctuation">&gt;</span></span>)
+используется для обозначения термина, определяемого в контексте фразы или предложения.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Graece donan, Latine voluptatem
+vocant. Confecta res esset. Duo Reges: constructio interrete. Scrupulum, inquam, abeunti; <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Negare non possum. Dat enim intervalla et relaxat. Quonam modo? Equidem e Cn. Quid de
+Pythagora? In schola desinis.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Ubi ut eam caperet aut quando? Cur iustitia laudatur? Aperiendum est igitur, quid sit
+voluptas; Quid enim? Non est igitur voluptas bonum. Urgent tamen et nihil remittunt. Quid
+enim possumus hoc agere divinius?<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Из-за всего этого мы решили использовать
+элемент<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>code</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#definition-dfn<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token entity named-entity" title="<">&amp;lt;</span>dfn<span class="token entity named-entity" title=">">&amp;gt;</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>code</span><span class="token punctuation">&gt;</span></span> для этого проекта.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<p>&nbsp;</p>
+
+<p>Здесь мы видим определение - теперь с атрибутом <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Global_attributes#attr-id"><code>id</code></a> <code>«definition-dfn»</code>, который может использоваться в качестве цели для ссылки. Позднее создаётся ссылка с использованием<code> &lt;a&gt;</code> и с <a href="/html/A#attr-href/"><code>href</code></a>атрибутом, установленным на <code>«#definition-dfn»</code>, чтобы установить ссылку обратно на определение.</p>
+
+<h4 id="результат_2">Результат</h4>
+
+<p>Полученный контент выглядит так:</p>
+
+<p><iframe class="sample-code-frame" id="frame_HTML_2" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/dfn/_sample_.HTML_2.html" loading="lazy"></iframe></p></div><h3 id="использование_сокращений_и_определений_вместе"><a href="#использование_сокращений_и_определений_вместе" title="Permalink to Использование сокращений и определений вместе">Использование сокращений и определений вместе</a></h3><div><p>В некоторых случаях вы можете использовать сокращение для термина при его определении. Это можно сделать с помощью<code>&lt;dfn&gt;</code> и <a href="/html/abbr/"><code>&lt;abbr&gt;</code></a> элементов вместе, например так:</p>
+
+<h4 id="html_3">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dfn</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>abbr</span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Hubble Space Telescope<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>HST<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>abbr</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dfn</span><span class="token punctuation">&gt;</span></span> является одним из самых
+производительных научных инструментов, когда-либо созданных.
+Он находится на орбите более 20 лет, просматривая небо и отправляя данные и фотографии
+беспрецедентного качества и детализации.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Действительно, HST, возможно, <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>abbr</span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Hubble Space Telescope<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>abbr</span><span class="token punctuation">&gt;</span></span> сделал больше
+для развития науки, чем любое другое устройство, когда-либо созданное.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span> </code></pre>
+
+<p>Обратите внимание на <code>&lt;abbr&gt;</code> элемент, вложенный в <code>&lt;dfn&gt;</code>. Первый устанавливает, что термин является аббревиатурой («HST») и определяет полный термин («Hubble Space Telescope (Космический телескоп „Хаббл“)») в своём атрибуте <code>title</code>. Последнее указывает на то, что сокращённый термин представляет собой определяемый термин.</p>
+
+<h4 id="результат_3">Результат</h4>
+
+<p>Вывод приведённого выше кода выглядит следующим образом:</p>
+
+<p><iframe class="sample-code-frame" id="frame_HTML_3" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/dfn/_sample_.HTML_3.html" loading="lazy"></iframe></p></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://html.spec.whatwg.org/multipage/semantics.html#the-dfn-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML Living Standard<br><small lang="ru">Определение '&lt;dfn&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html52/text-level-semantics.html#the-dfn-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML5<br><small lang="ru">Определение '&lt;dfn&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html401/struct/text.html#h-9.2.1" hreflang="en" lang="en" class="external" rel=" noopener">HTML 4.01 Specification<br><small lang="ru">Определение '&lt;dfn&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>&nbsp;</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="совместимость_в_браузерах"><a href="#совместимость_в_браузерах" title="Permalink to Совместимость в браузерах">Совместимость в браузерах</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li>Элементы, связанные со списками определений: <a href="/html/dl/"><code>&lt;dl&gt;</code></a><a href="/html/dt/"><code>&lt;dt&gt;</code></a><a href="/html/dd/"><code>&lt;dd&gt;</code></a></li>
+ <li><a href="/html/abbr/"><code>&lt;abbr&gt;</code></a></li>
+</ul></div>

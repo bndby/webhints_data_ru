@@ -1,12 +1,12 @@
 <h1>top</h1><div><div></div>
 
-<p><a href="/webhints_data_ru/css/" title="CSS">CSS</a> свойство <strong><code>top</code></strong> частично определяет вертикальную позицию позиционируемого элемента. Оно не влияет на непозиционируемые элементы (т.е. <strong><code>top</code></strong> не применится, если задано <code>position: static</code>).</p>
+<p><a href="/css/" title="CSS">CSS</a> свойство <strong><code>top</code></strong> частично определяет вертикальную позицию позиционируемого элемента. Оно не влияет на непозиционируемые элементы (т.е. <strong><code>top</code></strong> не применится, если задано <code>position: static</code>).</p>
 
 <div><iframe class="interactive" width="100%" height="390" src="https://interactive-examples.mdn.mozilla.net/pages/css/top.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
 
 
 
-<p>Эффект свойства <code>top</code> зависит от того, как позиционируется элемент (то есть от значения свойства <a href="/webhints_data_ru/css/position/"><code>position</code></a>):</p>
+<p>Эффект свойства <code>top</code> зависит от того, как позиционируется элемент (то есть от значения свойства <a href="/css/position/"><code>position</code></a>):</p>
 
 <ul>
  <li>Когда задано <code>position: absolute</code> или <code>fixed</code> — значение свойства&nbsp;<code>top</code> устанавливается как расстояние между верхней гранью элемента и верхней гранью родительского контейнера.</li>
@@ -15,7 +15,7 @@
  <li>Когда задано <code>position: static</code> — свойство <code>top</code> <em>не имеет никакого эффекта</em>.</li>
 </ul>
 
-<p>Когда заданы оба свойства <code>top</code> и <a href="/webhints_data_ru/css/bottom/"><code>bottom</code></a>, а свойство <a href="/webhints_data_ru/css/position/"><code>position</code></a> установлено как <code>absolute</code>&nbsp;или&nbsp;<code>fixed</code>, то оба свойства <code>top</code> и <a href="/webhints_data_ru/css/bottom/"><code>bottom</code></a> учитываются. Во всех остальных ситуациях, если <a href="/webhints_data_ru/css/height/"><code>height</code></a> как-либо ограничена или <code>position</code>&nbsp;установлено как&nbsp;<code>relative</code>, то свойство <code>top</code> будет учтено, а <a href="/webhints_data_ru/css/bottom/"><code>bottom</code></a> — проигнорировано.</p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* Значения величин */</span>
+<p>Когда заданы оба свойства <code>top</code> и <a href="/css/bottom/"><code>bottom</code></a>, а свойство <a href="/css/position/"><code>position</code></a> установлено как <code>absolute</code>&nbsp;или&nbsp;<code>fixed</code>, то оба свойства <code>top</code> и <a href="/css/bottom/"><code>bottom</code></a> учитываются. Во всех остальных ситуациях, если <a href="/css/height/"><code>height</code></a> как-либо ограничена или <code>position</code>&nbsp;установлено как&nbsp;<code>relative</code>, то свойство <code>top</code> будет учтено, а <a href="/css/bottom/"><code>bottom</code></a> — проигнорировано.</p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="brush:css no-line-numbers notranslate"><code><span class="token comment">/* Значения величин */</span>
 <span class="token property">top</span><span class="token punctuation">:</span> 3px<span class="token punctuation">;</span>
 <span class="token property">top</span><span class="token punctuation">:</span> 2.4em<span class="token punctuation">;</span>
 
@@ -30,25 +30,25 @@
 <span class="token property">top</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
 <span class="token property">top</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
 </code></pre></div><h3 id="значения"><a href="#значения" title="Permalink to Значения">Значения</a></h3><div><dl>
- <dt><a href="/webhints_data_ru/css/length/"><code>&lt;length&gt;</code></a></dt>
+ <dt><a href="/css/length/"><code>&lt;length&gt;</code></a></dt>
  <dd>Отрицательная, нулевая или положительная величина, которая представляет:
  <ul>
   <li>для <em>абсолютно позиционируемых элементов</em> &amp;mdash расстояние от верхнего края содержащего их блока;</li>
   <li>для <em>относительно позиционируемых элементов</em> &amp;mdash расстояние, на которое элемент смещается вниз, относительно своего положения в нормальном потоке.</li>
  </ul>
  </dd>
- <dt><a href="/webhints_data_ru/css/percentage/"><code>&lt;percentage&gt;</code></a></dt>
+ <dt><a href="/css/percentage/"><code>&lt;percentage&gt;</code></a></dt>
  <dd>Процент от высоты родительского блока.</dd>
  <dt><code>auto</code></dt>
  <dd>Это ключевое слово, которое означает:
  <ul>
-  <li>для <em>абсолютно спозиционированных элементов</em> — позиция элемента опирается на свойство <a href="/webhints_data_ru/css/bottom/"><code>bottom</code></a>, пока <code>height: auto</code> обрабатывается как высота в зависимости от содержимого; если так же и <code>bottom: auto</code>, то элемент располагается так же, как при статическом позиционировании.</li>
-  <li>для <em>относительно спозиционированных элементов</em> — расстояние элемента от его обычной позиции основано на свойстве <a href="/webhints_data_ru/css/bottom/"><code>bottom</code></a>; если значение <code>bottom</code> также <code>auto</code>, элемент вообще не перемещается по вертикали.</li>
+  <li>для <em>абсолютно спозиционированных элементов</em> — позиция элемента опирается на свойство <a href="/css/bottom/"><code>bottom</code></a>, пока <code>height: auto</code> обрабатывается как высота в зависимости от содержимого; если так же и <code>bottom: auto</code>, то элемент располагается так же, как при статическом позиционировании.</li>
+  <li>для <em>относительно спозиционированных элементов</em> — расстояние элемента от его обычной позиции основано на свойстве <a href="/css/bottom/"><code>bottom</code></a>; если значение <code>bottom</code> также <code>auto</code>, элемент вообще не перемещается по вертикали.</li>
  </ul>
  </dd>
  <dt><code>inherit</code></dt>
- <dd>Это ключевое слово указывает, что значение будет соответствовать вычисленному значению родительского блока (необязательно непосредственного родителя). Вычисляемое значение обрабатывается так же, как <a href="/webhints_data_ru/css/length/"><code>&lt;length&gt;</code></a>, <a href="/webhints_data_ru/css/percentage/"><code>&lt;percentage&gt;</code></a> или ключевое слово <code>auto</code>.</dd>
-</dl></div><h3 id="формальный_синтаксис"><a href="#формальный_синтаксис" title="Permalink to Формальный синтаксис">Формальный синтаксис</a></h3><div><pre class="notranslate"><a href="/webhints_data_ru/css/length/" title="Возможные значения: a number followed by'em', 'ex', 'ch', 'rem', 'px', 'cm', 'mm', 'in', 'vh', 'vw', 'vmin', 'vmax', 'pt', 'pc' или 'px', как 3px, 1.5cm, -0.5em или 0">&lt;length&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <a href="/webhints_data_ru/css/percentage/" title>&lt;percentage&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> auto</pre></div><h2 id="пример"><a href="#пример" title="Permalink to Пример">Пример</a></h2><div><pre class="brush: css notranslate"><code><span class="token comment">/* Для body могут быть использованы единицы px, также и для div */</span>
+ <dd>Это ключевое слово указывает, что значение будет соответствовать вычисленному значению родительского блока (необязательно непосредственного родителя). Вычисляемое значение обрабатывается так же, как <a href="/css/length/"><code>&lt;length&gt;</code></a>, <a href="/css/percentage/"><code>&lt;percentage&gt;</code></a> или ключевое слово <code>auto</code>.</dd>
+</dl></div><h3 id="формальный_синтаксис"><a href="#формальный_синтаксис" title="Permalink to Формальный синтаксис">Формальный синтаксис</a></h3><div><pre class="notranslate"><a href="/css/length/" title="Возможные значения: a number followed by'em', 'ex', 'ch', 'rem', 'px', 'cm', 'mm', 'in', 'vh', 'vw', 'vmin', 'vmax', 'pt', 'pc' или 'px', как 3px, 1.5cm, -0.5em или 0">&lt;length&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> <a href="/css/percentage/" title>&lt;percentage&gt;</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax#single_bar" title="Currently only available in English (US)" class="only-in-en-us">| (en-US)</a> auto</pre></div><h2 id="пример"><a href="#пример" title="Permalink to Пример">Пример</a></h2><div><pre class="brush: css notranslate"><code><span class="token comment">/* Для body могут быть использованы единицы px, также и для div */</span>
 <span class="token selector">body</span><span class="token punctuation">{</span>
   <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
   <span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>

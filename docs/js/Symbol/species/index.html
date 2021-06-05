@@ -22,7 +22,7 @@
       <td>нет</td>
     </tr>
   </tbody>
-</table></div></div><h2 id="описание"><a href="#описание" title="Permalink to Описание">Описание</a></h2><div><p>Свойство <code><strong>Symbol.species</strong></code>, содержащее аксессор (геттер),&nbsp;позволяет подклассам переопределить конструктор, используемый по умолчанию для создания новых объектов.</p></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div><p>Вам может понадобиться возвращать объекты типа <a href="/webhints_data_ru/js/Array/"><code>Array</code></a> в методах вашего производного&nbsp;класса&nbsp;<code>MyArray</code>. Например, при использовании метода вроде <a href="/webhints_data_ru/js/Array/map/"><code>map()</code></a>, использующего конструктор по умолчанию, вам может потребоваться возвращать объект родительского&nbsp;типа&nbsp;<code>Array</code>, вместо&nbsp;<code>MyArray</code>. Символ <code><strong>species</strong></code> позволит вам это сделать:</p>
+</table></div></div><h2 id="описание"><a href="#описание" title="Permalink to Описание">Описание</a></h2><div><p>Свойство <code><strong>Symbol.species</strong></code>, содержащее аксессор (геттер),&nbsp;позволяет подклассам переопределить конструктор, используемый по умолчанию для создания новых объектов.</p></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div><p>Вам может понадобиться возвращать объекты типа <a href="/js/Array/"><code>Array</code></a> в методах вашего производного&nbsp;класса&nbsp;<code>MyArray</code>. Например, при использовании метода вроде <a href="/js/Array/map/"><code>map()</code></a>, использующего конструктор по умолчанию, вам может потребоваться возвращать объект родительского&nbsp;типа&nbsp;<code>Array</code>, вместо&nbsp;<code>MyArray</code>. Символ <code><strong>species</strong></code> позволит вам это сделать:</p>
 
 <pre class="brush: js notranslate"><code><span class="token keyword">class</span> <span class="token class-name">MyArray</span> <span class="token keyword">extends</span> <span class="token class-name">Array</span> <span class="token punctuation">{</span>
   <span class="token comment">// Перегружаем species для использования родительского конструктора Array</span>
@@ -52,6 +52,6 @@ console<span class="token punctuation">.</span><span class="token function">log<
   </tr>
  </tbody>
 </table></div><h2 id="поддержка_браузерами"><a href="#поддержка_браузерами" title="Permalink to Поддержка браузерами">Поддержка браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
- <li><a href="/webhints_data_ru/js/Map/@@species/"><code>Map[@@species]</code></a></li>
+ <li><a href="/js/Map/@@species/"><code>Map[@@species]</code></a></li>
  <li><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/@@species"><code>Set[@@species]</code> <span>(en-US)</span></a></li>
 </ul></div>

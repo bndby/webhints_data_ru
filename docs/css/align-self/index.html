@@ -1,6 +1,6 @@
 <h1>align-self</h1><div><p></p><p></p></div><h2 id="описание"><a href="#описание" title="Permalink to Описание">Описание</a></h2><div><p>Свойство&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/CSS" title="CSS">CSS</a> <strong><code>align-self</code></strong> выравнивает flex-элементы по текущей flex-линии, переопределяя значение свойства&nbsp;<a href="https://developer.mozilla.org/en-US/CSS/align-items" title="en/CSS/flex-align"><code>align-items</code></a>. Если у какого-либо flex-элемента <strong>margin</strong> в поперечной оси выставлен&nbsp;в <code>auto</code>, то&nbsp;<code>align-self</code>&nbsp;игнорируется.</p>
 
-<p></p><table class="properties"><tbody><tr><th scope="row"><a href="/webhints_data_ru/css/initial_value/">Начальное значение</a></th><td><code>auto</code></td></tr><tr><th scope="row">Применяется к</th><td>flex items, grid items, and absolutely-positioned boxes</td></tr><tr><th scope="row"><a href="/webhints_data_ru/css/inheritance/">Наследуется</a></th><td>нет</td></tr><tr><th scope="row"><a href="/webhints_data_ru/css/computed_value/">Обработка значения</a></th><td>при <code>auto</code> абсолютно позиционированные элементы вычисляют сами и вычисленное значение <a href="/webhints_data_ru/css/align-items/"><code>align-items</code></a> для родителя (кроме ключевых слов) на остальных блоках, или <code>start</code>, если у блока нет родителя. Его поведение зависит от модели макета, описываемой <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/justify-self" class="only-in-en-us" title="Currently only available in English (US)">justify-self (en-US)</a>. Иначе указанное значение.</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p>
+<p></p><table class="properties"><tbody><tr><th scope="row"><a href="/css/initial_value/">Начальное значение</a></th><td><code>auto</code></td></tr><tr><th scope="row">Применяется к</th><td>flex items, grid items, and absolutely-positioned boxes</td></tr><tr><th scope="row"><a href="/css/inheritance/">Наследуется</a></th><td>нет</td></tr><tr><th scope="row"><a href="/css/computed_value/">Обработка значения</a></th><td>при <code>auto</code> абсолютно позиционированные элементы вычисляют сами и вычисленное значение <a href="/css/align-items/"><code>align-items</code></a> для родителя (кроме ключевых слов) на остальных блоках, или <code>start</code>, если у блока нет родителя. Его поведение зависит от модели макета, описываемой <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/justify-self" class="only-in-en-us" title="Currently only available in English (US)">justify-self (en-US)</a>. Иначе указанное значение.</td></tr><tr><th scope="row">Animation type</th><td>discrete</td></tr></tbody></table><p></p>
 
 <p>Данное свойство не применяется к block-level boxes и к ячейкам таблицы</p>
 
@@ -33,7 +33,7 @@
 <span class="token property">align-self</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
 <span class="token property">align-self</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span></code></pre></div><h3 id="значения"><a href="#значения" title="Permalink to Значения">Значения</a></h3><div><dl>
  <dt><code>auto</code></dt>
- <dd>Computes to the parent's <a href="/webhints_data_ru/css/align-items/"><code>align-items</code></a> value.</dd>
+ <dd>Computes to the parent's <a href="/css/align-items/"><code>align-items</code></a> value.</dd>
  <dt><code>normal</code></dt>
  <dd>The effect of this keyword is dependent of the layout mode we are in:
  <ul>
@@ -60,7 +60,7 @@
  <dd>Specifies participation in first- or last-baseline alignment: aligns the alignment baseline of the box’s first or last baseline set with the corresponding baseline in the shared first or last baseline set of all the boxes in its baseline-sharing group.<br>
  The fallback alignment for <code>first baseline</code> is <code>start</code>, the one for <code>last baseline</code> is <code>end</code>.</dd>
  <dt><code>stretch</code></dt>
- <dd>If the combined size of the items along the cross axis is less than the size of the alignment container and the item is <code>auto</code>-sized, its size is increased equally (not proportionally), while still respecting the constraints imposed by <a href="/webhints_data_ru/css/max-height/"><code>max-height</code></a>/<a href="/webhints_data_ru/css/max-width/"><code>max-width</code></a> (or equivalent functionality), so that the combined size of all <code>auto</code>-sized items exactly fills the alignment container along the cross axis.</dd>
+ <dd>If the combined size of the items along the cross axis is less than the size of the alignment container and the item is <code>auto</code>-sized, its size is increased equally (not proportionally), while still respecting the constraints imposed by <a href="/css/max-height/"><code>max-height</code></a>/<a href="/css/max-width/"><code>max-width</code></a> (or equivalent functionality), so that the combined size of all <code>auto</code>-sized items exactly fills the alignment container along the cross axis.</dd>
  <dt><code>safe</code></dt>
  <dd>If the size of the item overflows the alignment container, the item is instead aligned as if the alignment mode were <code>start</code>.</dd>
  <dt><code>unsafe</code></dt>
@@ -89,5 +89,5 @@
  <li>CSS Flexbox Guide: <em><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container">Aligning items in a flex container</a></em></li>
  <li>CSS Grid Guide: <em><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Box_Alignment_in_CSS_Grid_Layout">Box alignment in CSS Grid layouts</a></em></li>
  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Alignment">CSS Box Alignment</a></li>
- <li>The <a href="/webhints_data_ru/css/align-items/"><code>align-items</code></a> property</li>
+ <li>The <a href="/css/align-items/"><code>align-items</code></a> property</li>
 </ul></div>

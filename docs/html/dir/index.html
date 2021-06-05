@@ -1,0 +1,25 @@
+<h1>&lt;dir&gt;: The Directory element</h1><div><div><div class="notecard deprecated">
+            <h4 id="deprecated">Deprecated</h4>
+            <p>This feature is no longer recommended. Though some browsers might still support it, it may have already been removed from the relevant web standards, may be in the process of being dropped, or may only be kept for compatibility purposes. Avoid using it, and update existing code if possible; see the <a href="#browser_compatibility">compatibility table</a> at the bottom of this page to guide your decision. Be aware that this feature may cease to work at any time.</p>
+        </div></div>
+
+<p>The <strong><code>&lt;dir&gt;</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a> element is used as a container for a directory of files and/or folders, potentially with styles and icons applied by the <a href="https://developer.mozilla.org/en-US/docs/Glossary/User_agent">user agent</a>. Do not use this obsolete element; instead, you should use the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul"><code>&lt;ul&gt;</code></a> element for lists, including lists of files.</p>
+
+<div class="note notecard"><strong>Usage note:</strong> Do not use this element. Though present in early HTML specifications, it has been deprecated in HTML 4, and has since been removed entirely. <strong>No major browsers support this element.</strong></div></div><h2 id="dom_interface"><a href="#dom_interface" title="Permalink to DOM interface">DOM interface</a></h2><div><p>This element implements the <a class="page-not-created" title="The documentation about this has not yet been written; please consider contributing!"><code>HTMLDirectoryElement</code></a> interface.</p></div><h2 id="attributes"><a href="#attributes" title="Permalink to Attributes">Attributes</a></h2><div><p>Like all other HTML elements, this element supports the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes" title="HTML/Global attributes">global attributes</a>.</p>
+
+<dl>
+ <dt><a id="attr-compact" href="#attr-compact"><b><code>compact</code></b></a></dt>
+ <dd>This Boolean attribute hints that the list should be rendered in a compact style. The interpretation of this attribute depends on the user agent and it doesn't work in all browsers.
+ <div class="note notecard"><strong>Usage note:</strong> Do not use this attribute, as it has been deprecated: the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dir" aria-current="page"><code>&lt;dir&gt;</code></a> element should be styled using <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a>. To give a similar effect as that achieved with the <code>compact</code> attribute, the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> property <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/line-height"><code>line-height</code></a> can be used with a value of <code>80%</code>.</div>
+ </dd>
+</dl></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><p>Not part of any current specifications.</p></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li>Other list-related HTML Elements: <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol"><code>&lt;ol&gt;</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul"><code>&lt;ul&gt;</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li"><code>&lt;li&gt;</code></a>, and <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/menu"><code>&lt;menu&gt;</code></a>;</li>
+ <li>CSS properties that may be specially useful to style the <code>&lt;dir&gt;</code> element:
+  <ul>
+   <li>The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/list-style"><code>list-style</code></a> property, useful to choose the way the ordinal is displayed.</li>
+   <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Lists_and_Counters/Using_CSS_counters">CSS counters</a>, useful to handle complex nested lists.</li>
+   <li>The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/line-height"><code>line-height</code></a> property, useful to simulate the deprecated <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dir#attr-compact" aria-current="page"><code>compact</code></a> attribute.</li>
+   <li>The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/margin"><code>margin</code></a> property, useful to control the indent of the list.</li>
+  </ul>
+ </li>
+</ul></div>

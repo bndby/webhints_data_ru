@@ -1,0 +1,130 @@
+<h1>&lt;track&gt;: Встраиваемая текстовая дорожка</h1><div><div></div>
+
+<p><strong>HTML-элемент <code>&lt;track&gt;</code>&nbsp;</strong> используется как дочерний элемент медиа-элементов <a href="/html/audio/"><code>&lt;audio&gt;</code></a> and <a href="/html/video/"><code>&lt;video&gt;</code></a>. Позволяет указать синхронизированные текстовые дорожки (или данные на основе времени), например, для автоматической обработки субтитров. Файлы треков используют <a href="https://developer.mozilla.org/ru/docs/Web/API/WebVTT_API">формат WebVTT</a> (<code>.vtt</code> файлы) — Web Video Text Tracks или <a href="https://w3c.github.io/ttml2/index.html" class="external" rel=" noopener">Timed Text Markup Language (TTML).</a></p>
+
+<div><iframe class="interactive" width="100%" height="445" src="https://interactive-examples.mdn.mozilla.net/pages/tabbed/track.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+
+
+<table class="properties">
+ <tbody>
+  <tr>
+   <th scope="row"><a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Content_categories">Категории контента</a></th>
+   <td>Нет</td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённое содержимое</th>
+   <td>Нет, это <a href="https://developer.mozilla.org/ru/docs/Glossary/Empty_element">пустой элемент</a>.</td>
+  </tr>
+  <tr>
+   <th scope="row">Пропуск тегов</th>
+   <td>Так как это пустой элемент, то открывающий тег обязателен, закрывающего не должно быть.</td>
+  </tr>
+  <tr>
+   <th scope="row">Неявная ARIA-роль</th>
+   <td><a href="https://www.w3.org/TR/html-aria/#dfn-no-corresponding-role" class="external" rel=" noopener">Нет соответствующей роли</a></td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённые родители</th>
+   <td>Медиа элемент, перед любым <a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Content_categories#%d0%9f%d0%be%d1%82%d0%be%d0%ba%d0%be%d0%b2%d1%8b%d0%b9_%d0%ba%d0%be%d0%bd%d1%82%d0%b5%d0%bd%d1%82">потоковым контентом</a>.</td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённые ARIA-роли</th>
+   <td>Нет</td>
+  </tr>
+  <tr>
+   <th scope="row">DOM интерфейс</th>
+   <td><a href="https://developer.mozilla.org/ru/docs/Web/API/HTMLTrackElement"><code>HTMLTrackElement</code></a></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="атрибуты"><a href="#атрибуты" title="Permalink to Атрибуты">Атрибуты</a></h2><div><p>Этот элемент использует <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Global_attributes">глобальные атрибуты</a>.</p>
+
+<dl>
+ <dt><a id="attr-default" href="#attr-default"><b><code>default</code></b></a></dt>
+ <dd>Этот атрибут указывает, что дорожка должна быть включена, если пользовательские настройки не указывают, что другая дорожка является более подходящей. Может использоваться только для одного элемента <code>track</code> в элементе мультимедиа.</dd>
+ <dt><a id="attr-kind" href="#attr-kind"><b><code>kind</code></b></a></dt>
+ <dd>Как текстовый трек должен быть использован. Если значение опущено, тип по умолчанию — <code>subtitles</code> (субтитры). Если атрибут отсутствует, будет использоваться <code>subtitles</code>. Если атрибут содержит недопустимое значение, оно принимает значение <code>metadata</code>. (Версии Chrome ранее 52 рассматривали недопустимое значение как <code>subtitles</code>.) Допускаются следующие ключевые слова:
+ <ul>
+  <li><code>subtitles</code>
+   <ul>
+    <li>Субтитры обеспечивают перевод контента, который не может быть понят зрителем. Например, диалог или текст, который не является английским, в фильме на английском языке.</li>
+    <li>Субтитры могут содержать дополнительный контент, обычно дополнительную справочную информацию. Например, текст в начале фильмов «Звёздных войн» или дата, время и место действия сцены.</li>
+   </ul>
+  </li>
+  <li><code>captions</code>
+   <ul>
+    <li>Подписи обеспечивают транскрипцию и, возможно, перевод аудио.</li>
+    <li>Подписи могут включать важную невербальную информацию, такую ​​как музыкальные сигналы или звуковые эффекты. Возможно указывать источник сигналов (например, музыка, текст, персонаж).</li>
+    <li>Подходит для пользователей со слабым слухом или когда звук отключён.</li>
+   </ul>
+  </li>
+  <li><code>descriptions</code>
+   <ul>
+    <li>Текстовое описание видеоконтента.</li>
+    <li>Подходит для слепых пользователей или там, где видео не видно.</li>
+   </ul>
+  </li>
+  <li><code>chapters</code>
+   <ul>
+    <li>Названия глав предназначены для использования при навигации по медиа-ресурсу.</li>
+   </ul>
+  </li>
+  <li><code>metadata</code>
+   <ul>
+    <li>Данные, используемые скриптами. Не видны пользователю.</li>
+   </ul>
+  </li>
+ </ul>
+ </dd>
+ <dt><a id="attr-label" href="#attr-label"><b><code>label</code></b></a></dt>
+ <dd>Видимый пользователю заголовок текстовой дорожки, который используется браузером при выводе списка доступных текстовых дорожек.</dd>
+ <dt><a id="attr-src" href="#attr-src"><b><code>src</code></b></a></dt>
+ <dd>Адрес файла текстовой дорожки (<code>.vtt</code> файл). Должен быть действительным URL. Этот атрибут должен быть указан, а его значение URL должно иметь то же происхождение, что и документ — исключая случаи, когда родительский <a href="/html/audio/"><code>&lt;audio&gt;</code></a> или <a href="/html/video/"><code>&lt;video&gt;</code></a> данного <code>track</code> элемента имеет атрибут <code><a href="https://developer.mozilla.org/ru/docs/Web/HTML/Attributes/crossorigin">crossorigin</a></code>.</dd>
+ <dt><a id="attr-srclang" href="#attr-srclang"><b><code>srclang</code></b></a></dt>
+ <dd>Язык текстовых данных трека. Это должен быть валидный <a href="https://r12a.github.io/app-subtags/" class="external" rel=" noopener">BCP 47</a> языковой тег (см. также <a href="https://www.w3.org/International/articles/language-tags/" class="external" rel=" noopener">языковые тэги в HTML и XML)</a>. Если для атрибута <code>kind</code> установлено значение <code>subtitles</code>, должен быть определён атрибут <code>srclang</code>.</dd>
+</dl></div><h2 id="примечания_по_использованию"><a href="#примечания_по_использованию" title="Permalink to Примечания по использованию">Примечания по использованию</a></h2><div></div><h3 id="типы_данных_дорожки"><a href="#типы_данных_дорожки" title="Permalink to Типы данных дорожки">Типы данных дорожки</a></h3><div><p>Тип данных, которые трек добавляет на носитель, задаётся в атрибуте <code>kind</code>, который может принимать значения <code>subtitles</code>, <code>captions</code>, <code>descriptions</code>, <code>chapters</code> или <code>metadata</code>. Элемент указывает на исходный файл, содержащий синхронизированный по времени текст, который браузер предоставляет, когда пользователь запрашивает дополнительные данные.</p>
+
+<p>Отдельный <code>media</code> элемент не может иметь элементы <code>track</code> с одинаковыми значениями <code>kind</code>, <code>srclang</code> и <code>label</code>.</p></div><h3 id="обнаружение_изменений_сигнала"><a href="#обнаружение_изменений_сигнала" title="Permalink to Обнаружение изменений сигнала">Обнаружение изменений сигнала</a></h3><div><p>{{page("/ru/docs/Web/API/TextTrack/cuechange_event", "On the track element")}}</p></div><h2 id="пример"><a href="#пример" title="Permalink to Пример">Пример</a></h2><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>video</span> <span class="token attr-name">controls</span> <span class="token attr-name">poster</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/images/sample.gif<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>sample.mp4<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>video/mp4<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>sample.ogv<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>video/ogv<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>track</span> <span class="token attr-name">kind</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>captions<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>sampleCaptions.vtt<span class="token punctuation">"</span></span> <span class="token attr-name">srclang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>track</span> <span class="token attr-name">kind</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>descriptions<span class="token punctuation">"</span></span>
+     <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>sampleDescriptions.vtt<span class="token punctuation">"</span></span> <span class="token attr-name">srclang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>track</span> <span class="token attr-name">kind</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>chapters<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>sampleChapters.vtt<span class="token punctuation">"</span></span> <span class="token attr-name">srclang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>track</span> <span class="token attr-name">kind</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>subtitles<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>sampleSubtitles_de.vtt<span class="token punctuation">"</span></span> <span class="token attr-name">srclang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>de<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>track</span> <span class="token attr-name">kind</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>subtitles<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>sampleSubtitles_en.vtt<span class="token punctuation">"</span></span> <span class="token attr-name">srclang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>track</span> <span class="token attr-name">kind</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>subtitles<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>sampleSubtitles_ja.vtt<span class="token punctuation">"</span></span> <span class="token attr-name">srclang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ja<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>track</span> <span class="token attr-name">kind</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>subtitles<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>sampleSubtitles_oz.vtt<span class="token punctuation">"</span></span> <span class="token attr-name">srclang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>oz<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>track</span> <span class="token attr-name">kind</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>metadata<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>keyStage1.vtt<span class="token punctuation">"</span></span> <span class="token attr-name">srclang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span>
+     <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Key Stage 1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>track</span> <span class="token attr-name">kind</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>metadata<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>keyStage2.vtt<span class="token punctuation">"</span></span> <span class="token attr-name">srclang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span>
+     <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Key Stage 2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>track</span> <span class="token attr-name">kind</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>metadata<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>keyStage3.vtt<span class="token punctuation">"</span></span> <span class="token attr-name">srclang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span>
+     <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Key Stage 3<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+   <span class="token comment">&lt;!-- Fallback --&gt;</span>
+   ...
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>video</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://html.spec.whatwg.org/multipage/embedded-content.html#the-track-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML Living Standard<br><small lang="ru">Определение 'track element' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html52/semantics-embedded-content.html#the-track-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML5<br><small lang="ru">Определение 'track element' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="поддержка_браузерами"><a href="#поддержка_браузерами" title="Permalink to Поддержка браузерами">Поддержка браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/ru/docs/Web/API/WebVTT_API">WebVTT — формат файлов текстовой дорожки</a></li>
+ <li><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/textTracks"><code>HTMLMediaElement.textTracks</code> <span>(en-US)</span></a></li>
+</ul></div>

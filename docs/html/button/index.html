@@ -1,0 +1,192 @@
+<h1>&lt;button&gt;</h1><h2 id="описание"><a href="#описание" title="Permalink to Описание">Описание</a></h2><div><p><strong>HTML-элемент&nbsp;<em><code>&lt;button&gt;</code></em></strong>&nbsp;создаёт кликабельную кнопку,&nbsp;которая может быть использована в формах или в любом другом месте документа, который требует простой, стандартной кнопки.&nbsp;По умолчанию, кнопки HTML обычно представлены в стиле, аналогичном стилю хост-платформы, на которой работает <a href="https://developer.mozilla.org/ru/docs/Glossary/User_agent">user agent</a>, но вы можете изменить внешний вид кнопки, используя CSS.</p>
+
+
+
+<table class="properties">
+ <tbody>
+  <tr>
+   <th scope="row"><a href="https://developer.mozilla.org/ru/docs/HTML/Content_categories/" class="page-not-created" title="This is a link to an unwritten page">Категории контента</a></th>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#flow_content">Общий поток</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#phrasing_content">текстовый контент</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#interactive_content">интерактивный контент</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#form_listed" title="HTML/Content categories#Form listed">listed</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#form_labelable" title="HTML/Content categories#Form labelable">labelable</a>, и&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#form_submittable" title="HTML/Content categories#Form submittable">submittable</a>&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#form-associated_" title="HTML/Content categories#Form-associated ">form-associated</a> элемент, очевидный контент.</td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённый контент</th>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#phrasing_content">Текстовый контент</a>.</td>
+  </tr>
+  <tr>
+   <th scope="row">Tag omission</th>
+   <td>Нет, открывающий и закрывающий теги обязательны.&nbsp;</td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённый родительский контент</th>
+   <td>Любой элемент с поддержкой&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#phrasing_content">текстового контента</a>.</td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённые роли ARIA</th>
+   <td>
+    <p><code><a href="https://w3c.github.io/aria/#checkbox" class="external" rel=" noopener">checkbox</a></code>, <code><a href="https://w3c.github.io/aria/#link" class="external" rel=" noopener">link</a></code>, <code><a href="https://w3c.github.io/aria/#menuitem" class="external" rel=" noopener">menuitem</a></code>,&nbsp;<br>
+     <code><a href="https://w3c.github.io/aria/#menuitemcheckbox" class="external" rel=" noopener">menuitemcheckbox</a></code>, <code><a href="https://w3c.github.io/aria/#menuitemradio" class="external" rel=" noopener">menuitemradio</a></code>, <code><a href="https://w3c.github.io/aria/#radio" class="external" rel=" noopener">radio</a></code>, <code><a href="https://w3c.github.io/aria/#switch" class="external" rel=" noopener">switch</a></code>, <code><a href="https://w3c.github.io/aria/#tab" class="external" rel=" noopener">tab</a></code></p>
+   </td>
+  </tr>
+  <tr>
+   <th scope="row">DOM interface</th>
+   <td><a href="https://developer.mozilla.org/ru/docs/Web/API/HTMLButtonElement"><code>HTMLButtonElement</code></a></td>
+  </tr>
+  <tr>
+   <th scope="row">Тип</th>
+   <td>Строчный</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="атрибуты"><a href="#атрибуты" title="Permalink to Атрибуты">Атрибуты</a></h2><div><p><span style="line-height: 21px;">Элемент поддерживает <a href="https://developer.mozilla.org/en-US/docs/HTML/Global_attributes">глобальные атрибуты</a>.</span></p>
+
+<dl>
+ <dt><a id="attr-autofocus" href="#attr-autofocus"><b><code>autofocus</code></b></a> <span class="badge inline html-version"><a href="https://developer.mozilla.org/ru/docs/orphaned/Web/Guide/HTML/HTML5">HTML5</a></span></dt>
+ <dd>Данный булевый атрибут позволяет указать, будет ли кнопка автоматически сфокусирована после загрузки страницы, до тех пор, пока пользователь не изменит фокус в ручную, например выбрав другой элемент. Только один связанный с формой элемент в документе может иметь данный атрибут.</dd>
+ <dt><a id="attr-autocomplete" href="#attr-autocomplete"><b><code>autocomplete</code></b></a> </dt>
+ <dd>Использование данного атрибута на элементе <code>&lt;button&gt;</code> не описано в стандарте и используется только в Firefox браузере. По умолчанию, в отличие от прочих браузеров, <a href="https://stackoverflow.com/questions/5985839/bug-with-firefox-disabled-attribute-of-input-not-resetting-when-refreshing" class="external" rel=" noopener">Firefox сохраняет назначенное&nbsp;динамически отключённое состояние </a>для элемента <code>&lt;button&gt;</code> при последующих загрузках страницы. Установка для данного атрибута значения <code>off</code>&nbsp;отключает подобное поведение. Смотрите <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=654072" class="external" rel=" noopener">баг&nbsp;654072</a>.</dd>
+ <dt><a id="attr-disabled" href="#attr-disabled"><b><code>disabled</code></b></a></dt>
+ <dd>
+ <p>Булевый атрибут, указывающий, что пользователь не может взаимодействовать с кнопкой. Если атрибут не установлен, то кнопка наследует его от элемента-контейнера, в котором она расположена, например от <a href="/html/fieldset/"><code>&lt;fieldset&gt;</code></a>; если отсутствует элемент-контейнер, с установленным атрибутом <strong>disabled</strong>, то кнопка доступна для взаимодействия.</p>
+
+ <p>Firefox по умолчанию, в отличие от прочих браузеров, <a href="https://stackoverflow.com/questions/5985839/bug-with-firefox-disabled-attribute-of-input-not-resetting-when-refreshing" class="external" rel=" noopener">сохраняет назначенное&nbsp;динамически отключённое состояние </a>для элемента <code>&lt;button&gt;</code>, даже при обновлении страницы.&nbsp;Чтобы изменить поведение браузера в этом случае, используйте атрибут <a href="/html/button#attr-autocomplete/" aria-current="page"><code>autocomplete</code></a>.</p>
+ </dd>
+ <dt><a id="attr-form" href="#attr-form"><b><code>form</code></b></a> <span class="badge inline html-version"><a href="https://developer.mozilla.org/ru/docs/orphaned/Web/Guide/HTML/HTML5">HTML5</a></span></dt>
+ <dd>Атрибут <strong>form</strong>&nbsp;позволяет указать элемент <a href="/html/form/"><code>&lt;form&gt;</code></a>, с которым связана кнопка. Данный атрибут должен хранить значение&nbsp;<strong>id</strong>&nbsp;элемента <a href="/html/form/"><code>&lt;form&gt;</code></a>. Если данный атрибут не установлен, то элемент&nbsp;<code>&lt;button&gt;</code>&nbsp;будет связан с родительским&nbsp;элементом <a href="/html/form/"><code>&lt;form&gt;</code></a>, если последний существует.</dd>
+ <dd>Атрибут работает независимо от расположения элементов в документе, поэтому он позволяет связать элемент&nbsp;<code>&lt;button&gt;</code>&nbsp;с формой, даже в случае, если <code>&lt;button&gt;</code> не является наследником элемента <a href="/html/form/"><code>&lt;form&gt;</code></a>.</dd>
+ <dt><a id="attr-formaction" href="#attr-formaction"><b><code>formaction</code></b></a> <span class="badge inline html-version"><a href="https://developer.mozilla.org/ru/docs/orphaned/Web/Guide/HTML/HTML5">HTML5</a></span></dt>
+ <dd>Ссылка на обработчик формы.&nbsp;Если атрибут определён —&nbsp;он переопределит&nbsp;атрибут&nbsp;<a href="/html/form#attr-action/"><code>action</code></a> у формы-родителя.</dd>
+ <dt><a id="attr-formenctype" href="#attr-formenctype"><b><code>formenctype</code></b></a> <span class="badge inline html-version"><a href="https://developer.mozilla.org/ru/docs/orphaned/Web/Guide/HTML/HTML5">HTML5</a></span></dt>
+ <dd>Если <code>button</code> имеет тип <code>submit</code>, то этот атрибут определяет тип контента, отправляемого на сервер. Возможные значения данного атрибута:
+ <ul>
+  <li><code>application/x-www-form-urlencoded</code>: значение по умолчанию, если атрибут не указан.</li>
+  <li><code>multipart/form-data</code>: следует использовать это значение, если форма содержит элемент <a href="/html/Input/"><code>&lt;input&gt;</code></a> со значением атрибута&nbsp;<a href="/html/Input#attr-type/"><code>type</code></a> <code>file</code>.</li>
+  <li><code>text/plain</code></li>
+ </ul>
+
+ <p>Если этот атрибут определён, он переопределяет атрибут&nbsp;<a href="/html/form#attr-enctype/"><code>enctype</code></a> у формы-родителя.</p>
+ </dd>
+ <dt><a id="attr-formmethod" href="#attr-formmethod"><b><code>formmethod</code></b></a> <span class="badge inline html-version"><a href="https://developer.mozilla.org/ru/docs/orphaned/Web/Guide/HTML/HTML5">HTML5</a></span></dt>
+ <dd>Если <code>button</code> имеет тип <code>submit</code>, то этот атрибут определяет метод HTTP-запроса для отправки данных на сервер. Возможные варианты:
+ <ul>
+  <li><code>post</code>: данные формы включаются в тело сообщения и отправляются на сервер.</li>
+  <li><code>get</code>: данные формы отправляются на сервер в виде ссылки, состоящей из URI атрибута&nbsp;<a href="/html/form#attr-action/"><code>action</code></a> и непосредственно данных, отделённых знаком '?'. Данные формы будут иметь вид ключ/значение и разделены амперсандом, например name=Name&amp;id=35.&nbsp;Следует использовать этот метод только если нет побочных эффектов и данные формы содержат лишь ASCII-символы.</li>
+ </ul>
+
+ <p>Если этот атрибут определён, он переопределяет атрибут <a href="/html/form#attr-method/"><code>method</code></a> у формы-родителя.</p>
+ </dd>
+ <dt><a id="attr-formnovalidate" href="#attr-formnovalidate"><b><code>formnovalidate</code></b></a> <span class="badge inline html-version"><a href="https://developer.mozilla.org/ru/docs/orphaned/Web/Guide/HTML/HTML5">HTML5</a></span></dt>
+ <dd>Булевый атрибут. Указывает, что данные формы не будут валидироваться при отправке.</dd>
+ <dd>Если этот атрибут определён, он переопределяет атрибут <a href="/html/form#attr-novalidate/"><code>novalidate</code></a> у формы-родителя.</dd>
+ <dt><a id="attr-formtarget" href="#attr-formtarget"><b><code>formtarget</code></b></a> <span class="badge inline html-version"><a href="https://developer.mozilla.org/ru/docs/orphaned/Web/Guide/HTML/HTML5">HTML5</a></span></dt>
+ <dd>Если <code>button</code> имеет тип <code>submit</code>, этот атрибут&nbsp;<span style>является именем или ключевым словом</span>,
+ <p dir="ltr" id="tw-target-text">указывающим, где отображать ответ, полученный после отправки формы<span style>. This is a name of, or keyword for, a </span><em>browsing context</em><span style> (for example, tab, window, or inline frame). If this attribute is specified, it overrides the <a href="/html/form#attr-target/"><code>target</code></a> attribute of the button's form owner. The following keywords have special meanings:</span></p>
+
+ <ul>
+  <li><code>_self</code>: Load the response into the same browsing context as the current one. This value is the default if the attribute is not specified.</li>
+  <li><code>_blank</code>: Load the response into a new unnamed browsing context.</li>
+  <li><code>_parent</code>: Load the response into the parent browsing context of the current one. If there is no parent, this option behaves the same way as <code>_self</code>.</li>
+  <li><code>_top</code>: Load the response into the top-level browsing context (that is, the browsing context that is an ancestor of the current one, and has no parent). If there is no parent, this option behaves the same way as <code>_self</code>.</li>
+ </ul>
+ </dd>
+ <dt><a id="attr-name" href="#attr-name"><b><code>name</code></b></a></dt>
+ <dd>The name of the button, which is submitted with the form data.</dd>
+ <dt><a id="attr-type" href="#attr-type"><b><code>type</code></b></a></dt>
+ <dd>The type of the button. Possible values are:
+ <ul>
+  <li><code>submit</code>: The button submits the form data to the server. This is the default if the attribute is not specified, or if the attribute is dynamically changed to an empty or invalid value.</li>
+  <li><code>reset</code>: The button resets all the controls to their initial values.</li>
+  <li><code>button</code>: The button has no default behavior. It can have client-side scripts associated with the element's events, which are triggered when the events occur.</li>
+  <li>menu: The button opens a popup menu defined via its designated <a href="/html/menu/"><code>&lt;menu&gt;</code></a> element.</li>
+ </ul>
+ </dd>
+ <dt><a id="attr-value" href="#attr-value"><b><code>value</code></b></a></dt>
+ <dd>The initial value of the button.</dd>
+</dl></div><h2 id="example"><a href="#example" title="Permalink to Пример">Пример</a></h2><div><pre class="brush:html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Тык!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<p><iframe class="sample-code-frame" id="frame_Example" width="200" height="64" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/button/_sample_.Example.html" loading="lazy"></iframe></p></div><h3 id="clicking_and_focus"><a href="#clicking_and_focus" title="Permalink to Clicking and focus">Clicking and focus</a></h3><div><p>Whether clicking on a <a href="/html/button/" aria-current="page"><code>&lt;button&gt;</code></a> causes it to (by default) become focused varies by browser and OS. The results for <a href="/html/Input/"><code>&lt;input&gt;</code></a> of <code>type="button"</code> and <code>type="submit"</code> are the same.</p>
+
+<table>
+ <caption>Does clicking on a <a href="/html/button/" aria-current="page"><code>&lt;button&gt;</code></a> give it focus?</caption>
+ <thead>
+  <tr>
+   <th>Desktop Browsers</th>
+   <th>Windows 8.1</th>
+   <th>OS X 10.X</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <th>Firefox</th>
+   <td class="bc-supports-yes">Yes - Firefox 30.0</td>
+   <td class="bc-supports-no">No (even with a <code>tabindex</code>) Firefox 63</td>
+  </tr>
+  <tr>
+   <th>Chrome</th>
+   <td class="bc-supports-yes">Yes - Chrome 35</td>
+   <td class="bc-supports-yes">Yes - Chrome 65</td>
+  </tr>
+  <tr>
+   <th>Safari</th>
+   <td style="background: #eee;">N/A</td>
+   <td class="bc-supports-no">No (even with a <code>tabindex</code>) Safari 12 (<a href="https://bugs.webkit.org/show_bug.cgi?id=22261" class="external" rel=" noopener">bug 22261</a>)</td>
+  </tr>
+  <tr>
+   <th>Internet Explorer</th>
+   <td class="bc-supports-yes">Yes - Internet Explorer 11</td>
+   <td style="background: #eee;">N/A</td>
+  </tr>
+  <tr>
+   <th>Presto</th>
+   <td class="bc-supports-yes">Yes - Opera 12</td>
+   <td class="bc-supports-yes">Yes - Opera 12</td>
+  </tr>
+ </tbody>
+</table>
+
+<table>
+ <caption>Does tapping on a <a href="/html/button/" aria-current="page"><code>&lt;button&gt;</code></a> give it focus?</caption>
+ <thead>
+  <tr>
+   <th>Mobile Browsers</th>
+   <th>iOS 7.1.2</th>
+   <th>Android 4.4.4</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <th>Safari Mobile</th>
+   <td class="bc-supports-no">No (even with a <code>tabindex</code>)</td>
+   <td style="background-color: #eeeeee;">N/A</td>
+  </tr>
+  <tr>
+   <th>Chrome 35</th>
+   <td class="bc-supports-no">No (even with a <code>tabindex</code>)</td>
+   <td class="bc-supports-yes">Yes</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://html.spec.whatwg.org/multipage/the-button-element.html#the-button-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML Living Standard<br><small lang="ru">Определение '&lt;button&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html52/forms.html#the-button-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML5<br><small lang="ru">Определение '&lt;button&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html401/interact/forms.html#h-17.5" hreflang="en" lang="en" class="external" rel=" noopener">HTML 4.01 Specification<br><small lang="ru">Определение '&lt;button&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div>

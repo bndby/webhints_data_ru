@@ -1,0 +1,82 @@
+<h1>&lt;optgroup&gt;</h1><div><p><strong>HTML-элемент&nbsp;<code>&lt;optgroup&gt;</code>&nbsp;</strong>позволяет группировать опции, находящиеся внутри элемента <a href="/html/select/"><code>&lt;select&gt;</code></a>.</p>
+
+<table class="properties">
+ <tbody>
+  <tr>
+   <th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories">Категории контента</a></th>
+   <td>Нет</td>
+  </tr>
+  <tr>
+   <th scope="row">Допустимый контент</th>
+   <td>Ноль или более <a href="/html/option/"><code>&lt;option&gt;</code></a> элементов.</td>
+  </tr>
+  <tr>
+   <th scope="row">Пропуск тегов</th>
+   <td>Открывающий тег обязателен. Закрывающий тег может быть опущен, если сразу после элемента находится следующий элемент&nbsp;<code>&lt;optgroup&gt;</code>, или если это последний элемент внутри родителя.</td>
+  </tr>
+  <tr>
+   <th scope="row">Допустимые родители</th>
+   <td>Элемент <a href="/html/select/"><code>&lt;select&gt;</code></a></td>
+  </tr>
+  <tr>
+   <th scope="row">Допустимые ARIA-роли</th>
+   <td>Нет</td>
+  </tr>
+  <tr>
+   <th scope="row">DOM-интерфейс</th>
+   <td><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLOptGroupElement"><code>HTMLOptGroupElement</code> <span>(en-US)</span></a></td>
+  </tr>
+ </tbody>
+</table>
+
+<p></p><div class="notecard note"><h4 id="примечание">Примечание:</h4>Элементы optgroup не могут быть вложенными друг в друга.</div><p></p></div><h2 id="атрибуты"><a href="#атрибуты" title="Permalink to Атрибуты">Атрибуты</a></h2><div><p>Элемент&nbsp;<code>&lt;optgroup&gt;</code>&nbsp;допускает использование&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes">глобальных атрибутов</a>.</p>
+
+<dl>
+ <dt><a id="attr-disabled" href="#attr-disabled"><b><code>disabled</code></b></a></dt>
+ <dd>Если установить&nbsp;этот атрибут, опции, находящиеся внутри элемента станут недоступными для выбора. Часто браузеры отображают эти опции серым цветом и игнорируют&nbsp;срабатывающие на&nbsp;них события, такие как события&nbsp;мыши или события получения фокуса.</dd>
+ <dt><a id="attr-label" href="#attr-label"><b><code>label</code></b></a></dt>
+ <dd>Имя группы, которое будет отображено браузером в выпадающем списке. Этот атрибут обязателен.</dd>
+</dl></div><h2 id="пример"><a href="#пример" title="Permalink to Пример">Пример</a></h2><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>optgroup</span> <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Группа 1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span><span class="token punctuation">&gt;</span></span>Опция 1.1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>optgroup</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>optgroup</span> <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Группа 2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span><span class="token punctuation">&gt;</span></span>Опция 2.1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span><span class="token punctuation">&gt;</span></span>Опция 2.2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>optgroup</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>optgroup</span> <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Группа 3<span class="token punctuation">"</span></span> <span class="token attr-name">disabled</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span><span class="token punctuation">&gt;</span></span>Опция 3.1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span><span class="token punctuation">&gt;</span></span>Опция 3.2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span><span class="token punctuation">&gt;</span></span>Опция 3.3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>optgroup</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h3 id="результат"><a href="#результат" title="Permalink to Результат">Результат</a></h3><div><p><iframe class="sample-code-frame" id="frame_Пример" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/optgroup/_sample_.%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80.html" loading="lazy"></iframe></p></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://html.spec.whatwg.org/multipage/forms.html#the-optgroup-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML Living Standard<br><small lang="ru">Определение '&lt;optgroup&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html52/forms.html#the-optgroup-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML5<br><small lang="ru">Определение '&lt;optgroup&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html401/interact/forms.html#h-17.6" hreflang="en" lang="en" class="external" rel=" noopener">HTML 4.01 Specification<br><small lang="ru">Определение '&lt;optgroup&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>&nbsp;</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="совместимость_с_браузерами"><a href="#совместимость_с_браузерами" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li>Элементы, имеющие отношение к формам: <a href="/html/form/"><code>&lt;form&gt;</code></a>, <a href="/html/legend/"><code>&lt;legend&gt;</code></a>, <a href="/html/label/"><code>&lt;label&gt;</code></a>, <a href="/html/button/"><code>&lt;button&gt;</code></a>, <a href="/html/select/"><code>&lt;select&gt;</code></a>, <a href="/html/datalist/"><code>&lt;datalist&gt;</code></a>, <a href="/html/option/"><code>&lt;option&gt;</code></a>, <a href="/html/fieldset/"><code>&lt;fieldset&gt;</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea" class="only-in-en-us" title="Currently only available in English (US)">&lt;textarea&gt; (en-US)</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/keygen" class="only-in-en-us" title="Currently only available in English (US)">&lt;keygen&gt; (en-US)</a>, <a href="/html/Input/"><code>&lt;input&gt;</code></a>, <a href="/html/output/"><code>&lt;output&gt;</code></a>, <a href="/html/progress/"><code>&lt;progress&gt;</code></a> и <a href="/html/meter/"><code>&lt;meter&gt;</code></a>.</li>
+</ul>
+
+<p></p><p></p></div>

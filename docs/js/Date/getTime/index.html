@@ -4,7 +4,7 @@
 
 <p>Метод <strong><code>getTime()</code></strong> возвращает числовое значение, соответствующее указанной дате по всемирному координированному времени.</p>
 
-<p>Вы можете использовать этот метод для того, чтобы присвоить дату и время другому объекту <a href="/webhints_data_ru/js/Date/"><code>Date</code></a>. Этот метод функционально эквивалентен методу <a href="/webhints_data_ru/js/Date/valueOf/"><code>valueOf()</code></a>.</p>
+<p>Вы можете использовать этот метод для того, чтобы присвоить дату и время другому объекту <a href="/js/Date/"><code>Date</code></a>. Этот метод функционально эквивалентен методу <a href="/js/Date/valueOf/"><code>valueOf()</code></a>.</p>
 
 <p><iframe class="interactive" width="100%" height="490" src="https://interactive-examples.mdn.mozilla.net/pages/js/date-gettime.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></p>
 
@@ -15,7 +15,7 @@
 copy<span class="token punctuation">.</span><span class="token function">setTime</span><span class="token punctuation">(</span>birthday<span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>copy<span class="token punctuation">.</span><span class="token function">setTime</span><span class="token punctuation">(</span>birthday<span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 1611090000000</span>
-</code></pre></div><h3 id="example_measuring_execution_time"><a href="#example_measuring_execution_time" title="Permalink to Пример: замер времени выполнения">Пример: замер времени выполнения</a></h3><div><p>Вычитанием двух последовательных вызовов метода <code>getTime()</code> на заново сконструированных объектах <a href="/webhints_data_ru/js/Date/"><code>Date</code></a> можно замерить промежуток времени, произошедший между двумя этими вызовами. Это можно использовать для вычисления времени выполнения неких операций.</p>
+</code></pre></div><h3 id="example_measuring_execution_time"><a href="#example_measuring_execution_time" title="Permalink to Пример: замер времени выполнения">Пример: замер времени выполнения</a></h3><div><p>Вычитанием двух последовательных вызовов метода <code>getTime()</code> на заново сконструированных объектах <a href="/js/Date/"><code>Date</code></a> можно замерить промежуток времени, произошедший между двумя этими вызовами. Это можно использовать для вычисления времени выполнения неких операций.</p>
 
 <pre class="brush: js notranslate"><code><span class="token keyword">let</span> end<span class="token punctuation">,</span> start<span class="token punctuation">;</span>
 
@@ -50,6 +50,6 @@ console<span class="token punctuation">.</span><span class="token function">log<
   </tr>
  </tbody>
 </table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><div></div></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
- <li><a href="/webhints_data_ru/js/Date/setTime/"><code>Date.prototype.setTime()</code></a></li>
- <li><a href="/webhints_data_ru/js/Date/valueOf/"><code>Date.prototype.valueOf()</code></a></li>
+ <li><a href="/js/Date/setTime/"><code>Date.prototype.setTime()</code></a></li>
+ <li><a href="/js/Date/valueOf/"><code>Date.prototype.valueOf()</code></a></li>
 </ul></div>

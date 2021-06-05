@@ -1,0 +1,102 @@
+<h1>&lt;caption&gt;: The Table Caption element</h1><div><div></div>
+
+<p><span class="seoSummary"><strong>HTML</strong> элемент заголовка таблицы&nbsp;(<strong><code>&lt;caption&gt;</code></strong>) определяет название (заголовок) таблицы. Если этот элемент используется, он <em>всегда</em> должен быть первым вложенным элементом тэга&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table" class="only-in-en-us" title="Currently only available in English (US)">&lt;table&gt; (en-US)</a>.</span>&nbsp;Внешний вид и расположение заголовка по отношению к самой таблице может быть изменено&nbsp;с помощью стилей CSS <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/caption-side"><code>caption-side</code> <span>(en-US)</span></a> and <a href="https://developer.mozilla.org/ru/docs/Web/CSS/text-align"><code>text-align</code></a>.</p>
+
+<table class="properties">
+ <tbody>
+  <tr>
+   <th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories">Категории контента</a></th>
+   <td>Нет</td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённое содержимое</th>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#flow_content">Потоковый контент</a>.</td>
+  </tr>
+  <tr>
+   <th scope="row">Парность тегов</th>
+   <td>Конечный тег может быть опущен, если элемент не следует сразу за ASCII пробелом или комментарием.</td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённые родители</th>
+   <td>Элемент <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table" class="only-in-en-us" title="Currently only available in English (US)">&lt;table&gt; (en-US)</a> как его первый потомок</td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённые ARIA-роли</th>
+   <td>Нет</td>
+  </tr>
+  <tr>
+   <th scope="row">DOM interface</th>
+   <td><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableCaptionElement"><code>HTMLTableCaptionElement</code> <span>(en-US)</span></a></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="атрибуты"><a href="#атрибуты" title="Permalink to Атрибуты">Атрибуты</a></h2><div><p>Этот элемент включает&nbsp; <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes">глобальные атрибуты</a>.</p></div><h3 id="устаревшие_атрибуты"><a href="#устаревшие_атрибуты" title="Permalink to Устаревшие атрибуты">Устаревшие атрибуты</a></h3><div><p>Следующие атрибуты устаревшие и не должны использоваться. Они описаны ниже для справки при обновлении кода и для общего сведения.</p>
+
+<dl>
+ <dt><a id="attr-align" href="#attr-align"><b><code>align</code></b></a> </dt>
+ <dd>Этот пронумерованный атрибут указывает как заголовок должен быть выравнен по отношению к таблице. Он может иметь одно или несколько следующих значений :
+ <dl>
+  <dt><code>left</code></dt>
+  <dd>Заголовок отображается слева от таблицы.</dd>
+  <dt><code>top</code></dt>
+  <dd>Заголовок отображается над таблицей.</dd>
+  <dt><code>right</code></dt>
+  <dd>Заголовок отображается справа от таблицы.</dd>
+  <dt><code>bottom</code></dt>
+  <dd>Заголовок отображается под таблицей.</dd>
+ </dl>
+
+ <div class="note notecard"><strong>Примечание к использованию: </strong>Не используйте этот атрибут, так как он устарел. Элемент <a href="/html/caption/" aria-current="page"><code>&lt;caption&gt;</code></a> должен быть стилизован с использованием свойств <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/caption-side"><code>caption-side</code> <span>(en-US)</span></a> и<a href="https://developer.mozilla.org/ru/docs/Web/CSS/text-align"><code>text-align</code></a>.</div>
+ </dd>
+</dl></div><h2 id="примечание_к_использованию"><a href="#примечание_к_использованию" title="Permalink to Примечание к использованию">Примечание к использованию</a></h2><div><p>Когда элемент <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table" class="only-in-en-us" title="Currently only available in English (US)">&lt;table&gt; (en-US)</a>, содержащий <code>&lt;caption&gt;</code> является единственным потомком элемента <a href="/html/figure/"><code>&lt;figure&gt;</code></a>, вам следует использовать элемент <a href="/html/figcaption/"><code>&lt;figcaption&gt;</code></a> вместо <code>&lt;caption&gt;</code>.</p></div><h2 id="пример"><a href="#пример" title="Permalink to Пример">Пример</a></h2><div><p>Просто пример, представляющий таблицу, которая содержит&nbsp; заголовок.</p>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>caption</span><span class="token punctuation">&gt;</span></span>Example Caption<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>caption</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">&gt;</span></span>Login<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">&gt;</span></span>Email<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>user1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>user1@sample.com<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>user2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>user2@sample.com<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+
+
+<p><iframe class="sample-code-frame" id="frame_Example" width="650" height="100" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/caption/_sample_.Example.html" loading="lazy"></iframe></p></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://html.spec.whatwg.org/multipage/tables.html#the-caption-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML Living Standard<br><small lang="ru">Определение '&lt;caption&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html52/tabular-data.html#the-caption-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML5<br><small lang="ru">Определение '&lt;caption&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html401/struct/tables.html#h-11.2.2" hreflang="en" lang="en" class="external" rel=" noopener">HTML 4.01 Specification<br><small lang="ru">Определение '&lt;caption&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="поддержка_браузерами"><a href="#поддержка_браузерами" title="Permalink to Поддержка браузерами">Поддержка браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li>Другие связанные с таблицей HTML элементы: <a href="/html/col/"><code>&lt;col&gt;</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/colgroup" class="only-in-en-us" title="Currently only available in English (US)">&lt;colgroup&gt; (en-US)</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table" class="only-in-en-us" title="Currently only available in English (US)">&lt;table&gt; (en-US)</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tbody" class="only-in-en-us" title="Currently only available in English (US)">&lt;tbody&gt; (en-US)</a>, <a href="/html/td/"><code>&lt;td&gt;</code></a>, <a href="/html/tfoot/"><code>&lt;tfoot&gt;</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/th" class="only-in-en-us" title="Currently only available in English (US)">&lt;th&gt; (en-US)</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/thead" class="only-in-en-us" title="Currently only available in English (US)">&lt;thead&gt; (en-US)</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tr" class="only-in-en-us" title="Currently only available in English (US)">&lt;tr&gt; (en-US)</a>;</li>
+ <li>CSS свойства, которые могут быть применены для стилизации элемента <a href="/html/caption/" aria-current="page"><code>&lt;caption&gt;</code></a>:
+  <ul>
+   <li><a href="https://developer.mozilla.org/ru/docs/Web/CSS/text-align"><code>text-align</code></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/caption-side"><code>caption-side</code> <span>(en-US)</span></a>.</li>
+  </ul>
+ </li>
+</ul></div>

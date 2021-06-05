@@ -1,15 +1,15 @@
 <h1>Псевдоклассы</h1><div><div></div>
 
-<p><strong>Псевдокласс</strong> в&nbsp;CSS —&nbsp;<dfn>это ключевое слово, добавленное к селектору,</dfn>&nbsp;которое определяет его особое состояние. Например, <a href="/webhints_data_ru/css/:hover/"><code>:hover</code></a> может быть использован для изменения цвета кнопки при наведении курсора на неё.</p>
+<p><strong>Псевдокласс</strong> в&nbsp;CSS —&nbsp;<dfn>это ключевое слово, добавленное к селектору,</dfn>&nbsp;которое определяет его особое состояние. Например, <a href="/css/:hover/"><code>:hover</code></a> может быть использован для изменения цвета кнопки при наведении курсора на неё.</p>
 
 <pre class="brush: css no-line-numbers notranslate"><code><span class="token selector">div:hover</span> <span class="token punctuation">{</span>
   <span class="token property">background-color</span><span class="token punctuation">:</span> #F89B4D<span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
 
-<p>Псевдоклассы дают возможность стилизовать элемент на основе не только отношений в DOM-дереве, но и основываясь на внешних факторах, таких как история посещений&nbsp;(например, <a href="/webhints_data_ru/css/:visited/"><code>:visited</code></a>), состояние содержимого (вроде&nbsp;<a href="/webhints_data_ru/css/:checked/"><code>:checked</code></a> у некоторых элементов формы) или позиции курсора мыши (например,&nbsp;<a href="/webhints_data_ru/css/:hover/"><code>:hover</code></a> определяет, находится ли курсор мыши над элементом).</p>
+<p>Псевдоклассы дают возможность стилизовать элемент на основе не только отношений в DOM-дереве, но и основываясь на внешних факторах, таких как история посещений&nbsp;(например, <a href="/css/:visited/"><code>:visited</code></a>), состояние содержимого (вроде&nbsp;<a href="/css/:checked/"><code>:checked</code></a> у некоторых элементов формы) или позиции курсора мыши (например,&nbsp;<a href="/css/:hover/"><code>:hover</code></a> определяет, находится ли курсор мыши над элементом).</p>
 
 <div class="note notecard">
-<p><strong>Примечание:</strong>&nbsp;В отличие&nbsp;от псевдоклассов, <a href="/webhints_data_ru/css/Pseudo-elements/">псевдоэлементы</a>&nbsp;могут быть использованы для стилизации <em>определённой части</em> элемента.</p>
+<p><strong>Примечание:</strong>&nbsp;В отличие&nbsp;от псевдоклассов, <a href="/css/Pseudo-elements/">псевдоэлементы</a>&nbsp;могут быть использованы для стилизации <em>определённой части</em> элемента.</p>
 </div></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate">selector:pseudo-class {
   property: value;
 }
@@ -17,48 +17,48 @@
 
 <p>Как и с обычными классами, можно совмещать вместе в одном селекторе любое число псевдоклассов.</p></div><h2 id="список_стандартных_псевдоклассов"><a href="#список_стандартных_псевдоклассов" title="Permalink to Список стандартных псевдоклассов">Список стандартных псевдоклассов</a></h2><div><div class="index">
 <ul>
- <li><a href="/webhints_data_ru/css/:active/"><code>:active</code></a></li>
+ <li><a href="/css/:active/"><code>:active</code></a></li>
  <li><a href="https://developer.mozilla.org/ru/docs/conflicting/Web/CSS/:is"><code>:any</code></a></li>
- <li><a href="/webhints_data_ru/css/:any-link/"><code>:any-link</code></a></li>
- <li><a href="/webhints_data_ru/css/:checked/"><code>:checked</code></a></li>
- <li><a href="/webhints_data_ru/css/:default/"><code>:default</code></a></li>
- <li><a href="/webhints_data_ru/css/:defined/"><code>:defined</code></a></li>
- <li><a href="/webhints_data_ru/css/:dir/"><code>:dir()</code></a></li>
- <li><a href="/webhints_data_ru/css/:disabled/"><code>:disabled</code></a></li>
- <li><a href="/webhints_data_ru/css/:empty/"><code>:empty</code></a></li>
- <li><a href="/webhints_data_ru/css/:enabled/"><code>:enabled</code></a></li>
- <li><a href="/webhints_data_ru/css/:first/"><code>:first</code></a></li>
- <li><a href="/webhints_data_ru/css/:first-child/"><code>:first-child</code></a></li>
- <li><a href="/webhints_data_ru/css/:first-of-type/"><code>:first-of-type</code></a></li>
- <li><a href="/webhints_data_ru/css/:fullscreen/"><code>:fullscreen</code></a></li>
- <li><a href="/webhints_data_ru/css/:focus/"><code>:focus</code></a></li>
- <li><a href="/webhints_data_ru/css/:hover/"><code>:hover</code></a></li>
- <li><a href="/webhints_data_ru/css/:indeterminate/"><code>:indeterminate</code></a></li>
- <li><a href="/webhints_data_ru/css/:in-range/"><code>:in-range</code></a></li>
- <li><a href="/webhints_data_ru/css/:invalid/"><code>:invalid</code></a></li>
- <li><a href="/webhints_data_ru/css/:lang/"><code>:lang()</code></a></li>
- <li><a href="/webhints_data_ru/css/:last-child/"><code>:last-child</code></a></li>
- <li><a href="/webhints_data_ru/css/:last-of-type/"><code>:last-of-type</code></a></li>
- <li><a href="/webhints_data_ru/css/:left/"><code>:left</code></a></li>
- <li><a href="/webhints_data_ru/css/:link/"><code>:link</code></a></li>
- <li><a href="/webhints_data_ru/css/:not/"><code>:not()</code></a></li>
- <li><a href="/webhints_data_ru/css/:nth-child/"><code>:nth-child()</code></a></li>
- <li><a href="/webhints_data_ru/css/:nth-last-child/"><code>:nth-last-child()</code></a></li>
- <li><a href="/webhints_data_ru/css/:nth-last-of-type/"><code>:nth-last-of-type()</code></a></li>
- <li><a href="/webhints_data_ru/css/:nth-of-type/"><code>:nth-of-type()</code></a></li>
- <li><a href="/webhints_data_ru/css/:only-child/"><code>:only-child</code></a></li>
- <li><a href="/webhints_data_ru/css/:only-of-type/"><code>:only-of-type</code></a></li>
- <li><a href="/webhints_data_ru/css/:optional/"><code>:optional</code></a></li>
- <li><a href="/webhints_data_ru/css/:out-of-range/"><code>:out-of-range</code></a></li>
- <li><a href="/webhints_data_ru/css/:read-only/"><code>:read-only</code></a></li>
- <li><a href="/webhints_data_ru/css/:read-write/"><code>:read-write</code></a></li>
- <li><a href="/webhints_data_ru/css/:required/"><code>:required</code></a></li>
- <li><a href="/webhints_data_ru/css/:right/"><code>:right</code></a></li>
- <li><a href="/webhints_data_ru/css/:root/"><code>:root</code></a></li>
+ <li><a href="/css/:any-link/"><code>:any-link</code></a></li>
+ <li><a href="/css/:checked/"><code>:checked</code></a></li>
+ <li><a href="/css/:default/"><code>:default</code></a></li>
+ <li><a href="/css/:defined/"><code>:defined</code></a></li>
+ <li><a href="/css/:dir/"><code>:dir()</code></a></li>
+ <li><a href="/css/:disabled/"><code>:disabled</code></a></li>
+ <li><a href="/css/:empty/"><code>:empty</code></a></li>
+ <li><a href="/css/:enabled/"><code>:enabled</code></a></li>
+ <li><a href="/css/:first/"><code>:first</code></a></li>
+ <li><a href="/css/:first-child/"><code>:first-child</code></a></li>
+ <li><a href="/css/:first-of-type/"><code>:first-of-type</code></a></li>
+ <li><a href="/css/:fullscreen/"><code>:fullscreen</code></a></li>
+ <li><a href="/css/:focus/"><code>:focus</code></a></li>
+ <li><a href="/css/:hover/"><code>:hover</code></a></li>
+ <li><a href="/css/:indeterminate/"><code>:indeterminate</code></a></li>
+ <li><a href="/css/:in-range/"><code>:in-range</code></a></li>
+ <li><a href="/css/:invalid/"><code>:invalid</code></a></li>
+ <li><a href="/css/:lang/"><code>:lang()</code></a></li>
+ <li><a href="/css/:last-child/"><code>:last-child</code></a></li>
+ <li><a href="/css/:last-of-type/"><code>:last-of-type</code></a></li>
+ <li><a href="/css/:left/"><code>:left</code></a></li>
+ <li><a href="/css/:link/"><code>:link</code></a></li>
+ <li><a href="/css/:not/"><code>:not()</code></a></li>
+ <li><a href="/css/:nth-child/"><code>:nth-child()</code></a></li>
+ <li><a href="/css/:nth-last-child/"><code>:nth-last-child()</code></a></li>
+ <li><a href="/css/:nth-last-of-type/"><code>:nth-last-of-type()</code></a></li>
+ <li><a href="/css/:nth-of-type/"><code>:nth-of-type()</code></a></li>
+ <li><a href="/css/:only-child/"><code>:only-child</code></a></li>
+ <li><a href="/css/:only-of-type/"><code>:only-of-type</code></a></li>
+ <li><a href="/css/:optional/"><code>:optional</code></a></li>
+ <li><a href="/css/:out-of-range/"><code>:out-of-range</code></a></li>
+ <li><a href="/css/:read-only/"><code>:read-only</code></a></li>
+ <li><a href="/css/:read-write/"><code>:read-write</code></a></li>
+ <li><a href="/css/:required/"><code>:required</code></a></li>
+ <li><a href="/css/:right/"><code>:right</code></a></li>
+ <li><a href="/css/:root/"><code>:root</code></a></li>
  <li><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/:scope"><code>:scope</code> <span>(en-US)</span></a></li>
- <li><a href="/webhints_data_ru/css/:target/"><code>:target</code></a></li>
- <li><a href="/webhints_data_ru/css/:valid/"><code>:valid</code></a></li>
- <li><a href="/webhints_data_ru/css/:visited/"><code>:visited</code></a></li>
+ <li><a href="/css/:target/"><code>:target</code></a></li>
+ <li><a href="/css/:valid/"><code>:valid</code></a></li>
+ <li><a href="/css/:visited/"><code>:visited</code></a></li>
 </ul>
 </div></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
  <thead>
@@ -116,5 +116,5 @@
   </tr>
  </tbody>
 </table></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
- <li><a href="/webhints_data_ru/css/Pseudo-elements/">Псевдоэлементы</a></li>
+ <li><a href="/css/Pseudo-elements/">Псевдоэлементы</a></li>
 </ul></div>

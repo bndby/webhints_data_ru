@@ -31,7 +31,7 @@
  <li>массив, по которому осуществляется проход.</li>
 </ol>
 
-<p>Если в метод <code>filter()</code> был передан параметр <code>thisArg</code>, при вызове <code>callback</code> он будет использоваться в качестве значения <code>this</code>. В противном случае, в качестве значения <code>this</code> будет использоваться значение <code><a href="/webhints_data_ru/js/undefined/"><code>undefined</code></a></code>. В конечном итоге, значение <code>this</code>, наблюдаемое из функции <code>callback</code>, определяется согласно <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/this"><code>обычным правилам определения <code>this</code>, видимого из функции</code></a>.</p>
+<p>Если в метод <code>filter()</code> был передан параметр <code>thisArg</code>, при вызове <code>callback</code> он будет использоваться в качестве значения <code>this</code>. В противном случае, в качестве значения <code>this</code> будет использоваться значение <code><a href="/js/undefined/"><code>undefined</code></a></code>. В конечном итоге, значение <code>this</code>, наблюдаемое из функции <code>callback</code>, определяется согласно <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/this"><code>обычным правилам определения <code>this</code>, видимого из функции</code></a>.</p>
 
 <p>Метод <code>filter()</code> не изменяет массив, для которого он был вызван.</p>
 
@@ -159,7 +159,7 @@ words <span class="token operator">=</span> <span class="token punctuation">[</s
 
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>deleteWords<span class="token punctuation">)</span>
 <span class="token comment">// Заметьте, что 'elite' не получено, так как удалено из `words` до того,</span>
-<span class="token comment">// как filter смог получить его: ['spray', 'limit']</span></code></pre></div><h2 id="polyfill"><a href="#polyfill" title="Permalink to Полифил">Полифил</a></h2><div><p>Метод <code>filter()</code> был добавлен к стандарту ECMA-262 в 5-м издании; поэтому он может отсутствовать в других реализациях стандарта. Вы можете работать с ним, добавив следующий код в начало ваших скриптов, он позволяет использовать <code>filter()</code> в реализациях, которые не поддерживают этот метод. Этот алгоритм является точно тем, что описан в ECMA-262 5-го издания; он предполагает, что <code>fn.call</code> вычисляется в оригинальное значение <a href="/webhints_data_ru/js/Function/call/"><code>Function.prototype.call()</code></a> и что <a href="/webhints_data_ru/js/Array/push/"><code>Array.prototype.push()</code></a> содержит своё оригинальное значение.</p>
+<span class="token comment">// как filter смог получить его: ['spray', 'limit']</span></code></pre></div><h2 id="polyfill"><a href="#polyfill" title="Permalink to Полифил">Полифил</a></h2><div><p>Метод <code>filter()</code> был добавлен к стандарту ECMA-262 в 5-м издании; поэтому он может отсутствовать в других реализациях стандарта. Вы можете работать с ним, добавив следующий код в начало ваших скриптов, он позволяет использовать <code>filter()</code> в реализациях, которые не поддерживают этот метод. Этот алгоритм является точно тем, что описан в ECMA-262 5-го издания; он предполагает, что <code>fn.call</code> вычисляется в оригинальное значение <a href="/js/Function/call/"><code>Function.prototype.call()</code></a> и что <a href="/js/Array/push/"><code>Array.prototype.push()</code></a> содержит своё оригинальное значение.</p>
 
 <pre class="brush: js notranslate"><code><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>filter<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">filter</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>fun<span class="token comment">/*, thisArg*/</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -221,8 +221,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><div>
 <p></p><p></p>
 </div></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
- <li><a href="/webhints_data_ru/js/Array/forEach/"><code>Array.prototype.forEach()</code></a></li>
- <li><a href="/webhints_data_ru/js/Array/every/"><code>Array.prototype.every()</code></a></li>
- <li><a href="/webhints_data_ru/js/Array/some/"><code>Array.prototype.some()</code></a></li>
- <li><a href="/webhints_data_ru/js/Array/Reduce/"><code>Array.prototype.reduce()</code></a></li>
+ <li><a href="/js/Array/forEach/"><code>Array.prototype.forEach()</code></a></li>
+ <li><a href="/js/Array/every/"><code>Array.prototype.every()</code></a></li>
+ <li><a href="/js/Array/some/"><code>Array.prototype.some()</code></a></li>
+ <li><a href="/js/Array/Reduce/"><code>Array.prototype.reduce()</code></a></li>
 </ul></div>

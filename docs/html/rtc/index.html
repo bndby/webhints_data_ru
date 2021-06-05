@@ -1,0 +1,57 @@
+<h1>&lt;rtc&gt;: The Ruby Text Container element</h1><div><div><div class="notecard deprecated">
+            <h4 id="deprecated">Deprecated</h4>
+            <p>This feature is no longer recommended. Though some browsers might still support it, it may have already been removed from the relevant web standards, may be in the process of being dropped, or may only be kept for compatibility purposes. Avoid using it, and update existing code if possible; see the <a href="#browser_compatibility">compatibility table</a> at the bottom of this page to guide your decision. Be aware that this feature may cease to work at any time.</p>
+        </div></div>
+
+<p>The <strong><code>&lt;rtc&gt;</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a> element embraces semantic annotations of characters presented in a ruby of <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/rb"><code>&lt;rb&gt;</code></a> elements used inside of <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ruby"><code>&lt;ruby&gt;</code></a> element. <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/rb"><code>&lt;rb&gt;</code></a> elements can have both pronunciation (<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/rt"><code>&lt;rt&gt;</code></a>) and semantic (<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/rtc" aria-current="page"><code>&lt;rtc&gt;</code></a>) annotations.</p>
+
+<div><iframe class="interactive" width="100%" height="445" src="https://interactive-examples.mdn.mozilla.net/pages/tabbed/rtc.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+<table class="properties">
+ <tbody>
+  <tr>
+   <th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories">Content categories</a></th>
+   <td>None.</td>
+  </tr>
+  <tr>
+   <th scope="row">Permitted content</th>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#phrasing_content">Phrasing content</a> or <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/rt"><code>&lt;rt&gt;</code></a> elements.</td>
+  </tr>
+  <tr>
+   <th scope="row">Tag omission</th>
+   <td>The closing tag can be omitted if it is immediately followed by a <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/rb"><code>&lt;rb&gt;</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/rtc" aria-current="page"><code>&lt;rtc&gt;</code></a> or <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/rt"><code>&lt;rt&gt;</code></a> element opening tag or by its parent closing tag.</td>
+  </tr>
+  <tr>
+   <th scope="row">Permitted parents</th>
+   <td>A <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ruby"><code>&lt;ruby&gt;</code></a> element.</td>
+  </tr>
+  <tr>
+   <th scope="row">Permitted ARIA roles</th>
+   <td>Any</td>
+  </tr>
+  <tr>
+   <th scope="row">DOM interface</th>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement"><code>HTMLElement</code></a></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="attributes"><a href="#attributes" title="Permalink to Attributes">Attributes</a></h2><div><p>This element only includes the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes">global attributes</a>.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div><pre class="brush: html highlight[8] notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>info<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ruby</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rbc</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rb</span><span class="token punctuation">&gt;</span></span>旧<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rb</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rt</span><span class="token punctuation">&gt;</span></span>jiù<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rt</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rb</span><span class="token punctuation">&gt;</span></span>金<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rb</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rt</span><span class="token punctuation">&gt;</span></span>jīn<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rt</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rb</span><span class="token punctuation">&gt;</span></span>山<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rb</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rt</span><span class="token punctuation">&gt;</span></span>shān<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rt</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rbc</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rtc</span><span class="token punctuation">&gt;</span></span>San Francisco<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rtc</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ruby</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+
+
+<p><iframe class="sample-code-frame" id="frame_Examples" width="600" height="120" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/HTML/Element/rtc/_sample_.Examples.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://html.spec.whatwg.org/multipage/obsolete.html#rtc">HTML Standard<!-- --> <!-- -->(HTML)<br><small># <!-- -->rtc</small></a></td></tr></tbody></table><div><p></p><p></p></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ruby"><code>&lt;ruby&gt;</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/rp"><code>&lt;rp&gt;</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/rb"><code>&lt;rb&gt;</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/rt"><code>&lt;rt&gt;</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/rbc" class="page-not-created" title="This is a link to an unwritten page"><code>&lt;rbc&gt;</code></a></li>
+</ul></div>

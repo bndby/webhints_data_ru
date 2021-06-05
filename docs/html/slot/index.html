@@ -1,0 +1,92 @@
+<h1>&lt;slot&gt;</h1><div><p></p><p></p>
+
+<p><span class="seoSummary">HTML элемент <code>&lt;slot&gt;</code> является частью набора технологии <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components">Web Components</a>, является заполнителем внутри веб компонента, который можно заполнить собственной разметкой, которая позволяет создавать отдельные деревья DOM и представлять их вместе.</span></p>
+
+<table class="properties">
+ <tbody>
+  <tr>
+   <th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories">Категории контента</a></th>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#flow_content">Поток контента</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#phrasing_content">содержание формулировки</a></td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённый контент</th>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#transparent_content_model">Прозрачный</a></td>
+  </tr>
+  <tr>
+   <th scope="row">События</th>
+   <td><code><a href="https://developer.mozilla.org/ru/docs/Web/Reference/Events/slotchange" title="This is a link to an unwritten page" class="page-not-created">slotchange</a></code></td>
+  </tr>
+  <tr>
+   <th scope="row">Пропуск тега</th>
+   <td>Нет, открывающий и закрывающий теги обязательны.</td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённый родители</th>
+   <td>Любой элемент, который принимает<a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#phrasing_content"> содержание формулировки</a></td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённые роли ARIA</th>
+   <td>Никакой</td>
+  </tr>
+  <tr>
+   <th scope="row">Интерфейс DOM</th>
+   <td><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLSlotElement"><code>HTMLSlotElement</code> <span>(en-US)</span></a></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="атрибуты"><a href="#атрибуты" title="Permalink to Атрибуты">Атрибуты</a></h2><div><p>Этот элемент включает в себя <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes">глобальные атрибуты</a>.</p>
+
+<dl>
+ <dt><a id="attr-name" href="#attr-name"><b><code>name</code></b></a></dt>
+ <dd>Название слота.</dd>
+ <dd><dfn><strong>Именованный слот</strong></dfn> это элемент <code>&lt;slot&gt;</code> с атрибутом<code> name</code>.</dd>
+</dl></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>element-details-template<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+    <span class="token selector">details</span> <span class="token punctuation">{</span><span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">"Open Sans Light"</span><span class="token punctuation">,</span> Helvetica<span class="token punctuation">,</span> Arial<span class="token punctuation">,</span> sans-serif <span class="token punctuation">}</span>
+    <span class="token selector">.name</span> <span class="token punctuation">{</span><span class="token property">font-weight</span><span class="token punctuation">:</span> bold<span class="token punctuation">;</span> <span class="token property">color</span><span class="token punctuation">:</span> #217ac0<span class="token punctuation">;</span> <span class="token property">font-size</span><span class="token punctuation">:</span> 120% <span class="token punctuation">}</span>
+    <span class="token selector">h4</span> <span class="token punctuation">{</span>
+      <span class="token property">margin</span><span class="token punctuation">:</span> 10px 0 -8px 0<span class="token punctuation">;</span>
+      <span class="token property">background</span><span class="token punctuation">:</span> #217ac0<span class="token punctuation">;</span>
+      <span class="token property">color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+      <span class="token property">padding</span><span class="token punctuation">:</span> 2px 6px<span class="token punctuation">;</span>
+      <span class="token property">border</span><span class="token punctuation">:</span> 1px solid #cee9f9<span class="token punctuation">;</span>
+      <span class="token property">border-radius</span><span class="token punctuation">:</span> 4px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector">.attributes</span> <span class="token punctuation">{</span> <span class="token property">margin-left</span><span class="token punctuation">:</span> 22px<span class="token punctuation">;</span> <span class="token property">font-size</span><span class="token punctuation">:</span> 90% <span class="token punctuation">}</span>
+    <span class="token selector">.attributes p</span> <span class="token punctuation">{</span> <span class="token property">margin-left</span><span class="token punctuation">:</span> 16px<span class="token punctuation">;</span> <span class="token property">font-style</span><span class="token punctuation">:</span> italic <span class="token punctuation">}</span>
+  </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>details</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>summary</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>code</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>name<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token entity named-entity" title="<">&amp;lt;</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>slot</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>element-name<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>NEED NAME<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>slot</span><span class="token punctuation">&gt;</span></span><span class="token entity named-entity" title=">">&amp;gt;</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>code</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>desc<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>slot</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>description<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>NEED DESCRIPTION<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>slot</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>summary</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>attributes<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h4</span><span class="token punctuation">&gt;</span></span>Attributes<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h4</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>slot</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>attributes<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>None<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>slot</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>details</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>hr</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<div class="note notecard">
+<p><strong>Примечание</strong>: вы можете увидеть этот полный пример в действии на странице&nbsp; <a class="external external-icon" href="https://github.com/mdn/web-components-examples/tree/master/element-details" rel="noopener">element-details</a> (смотрите его <a class="external external-icon" href="https://mdn.github.io/web-components-examples/element-details/" rel="noopener">в режиме реального времени</a>). Кроме того, вы можете найти в разделе <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots">Использование шаблонов и слотов</a>.</p>
+</div></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://html.spec.whatwg.org/multipage/scripting.html#the-slot-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML Living Standard<br><small lang="ru">Определение '&lt;slot&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><a href="https://dom.spec.whatwg.org/#shadow-tree-slots" hreflang="en" lang="en" class="external" rel=" noopener">DOM<br><small lang="ru">Определение 'Slots' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="поддержка_браузерами"><a href="#поддержка_браузерами" title="Permalink to Поддержка браузерами">Поддержка браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div>

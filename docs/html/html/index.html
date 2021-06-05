@@ -1,0 +1,82 @@
+<h1>&lt;html&gt;</h1><div><p></p><p></p>
+
+<p><span class="seoSummary"><strong>HTML-элемент <code>&lt;html&gt;</code></strong> представляет собой корень (элемент верхнего уровня) HTML-документа, поэтому его так же называют корневым элементом. Все другие элементы должны быть потомками этого элемента (должны находиться внутри него).</span></p>
+
+<table class="properties">
+ <tbody>
+  <tr>
+   <th scope="row"><a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Content_categories">Категории контента</a></th>
+   <td>Отсутствуют.</td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённое содержимое</th>
+   <td>Один элемент <a href="/html/head/"><code>&lt;head&gt;</code></a>, за которым следует один элемент <a href="/html/body/"><code>&lt;body&gt;</code></a>.</td>
+  </tr>
+  <tr>
+   <th scope="row">Пропуск тега</th>
+   <td>Открывающий тег может быть пропущен, если первое, что находится внутри элемента <code>&lt;html&gt;</code>, не является комментарием.<br>
+    В <a href="https://developer.mozilla.org/ru/docs/Glossary/HTML5">HTML5</a> закрывающий тег может быть пропущен. В старых версиях HTML, если сразу за элементом <code>&lt;html&gt;</code> следует комментарий (при наличии элемента <a href="/html/body/"><code>&lt;body&gt;</code></a>), то закрывающий тег пропускать нельзя.</td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённые родительские элементы</th>
+   <td>Отсутствуют. Это корневой элемент документа.</td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённые роли ARIA</th>
+   <td>Отсутствуют.</td>
+  </tr>
+  <tr>
+   <th scope="row">DOM-интерфейс</th>
+   <td><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLHtmlElement"><code>HTMLHtmlElement</code> <span>(en-US)</span></a></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="атрибуты"><a href="#атрибуты" title="Permalink to Атрибуты">Атрибуты</a></h2><div><p>К этому элементу применимы <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Global_attributes">глобальные атрибуты</a>.</p>
+
+<dl>
+ <dt><a id="attr-manifest" href="#attr-manifest"><b><code>manifest</code></b></a> </dt>
+ <dd>Определяет <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Glossary/URI">URI <span>(en-US)</span></a> файла манифеста, указывающего ресурсы, которые должны быть сохранены в локальном кеше. Смотрите <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Using_the_application_cache" class="page-not-created" title="This is a link to an unwritten page">Использование кеша приложений</a>.</dd>
+ <dt><a id="attr-version" href="#attr-version"><b><code>version</code></b></a> </dt>
+ <dd>Определяет версию HTML DTD (Document Type Definition, больше известное как <a href="https://developer.mozilla.org/ru/docs/Glossary/Doctype">Doctype</a>), которая управляет текущим документом. Этот атрибут не нужен, потому что он является избыточным, так как есть информация, указываемая в объявлении типа документа.</dd>
+ <dt><a id="attr-xmlns" href="#attr-xmlns"><b><code>xmlns</code></b></a></dt>
+ <dd>Определяет <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Glossary/Namespace">пространство имён <span>(en-US)</span></a> <a href="https://developer.mozilla.org/ru/docs/Glossary/XHTML">XHTML-документа</a>. Значение по умолчанию <code>"http://www.w3.org/1999/xhtml"</code>. Это требуется при <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Glossary/Parse">парсинге <span>(en-US)</span></a> документов с помощью <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Glossary/Parser">парсера <span>(en-US)</span></a> <a href="https://developer.mozilla.org/ru/docs/Glossary/XML">XML</a> и необязательно для документов <code>text/html</code>.</dd>
+</dl></div><h2 id="пример"><a href="#пример" title="Permalink to Пример">Пример</a></h2><div><pre class="brush: html notranslate"><code><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h2 id="проблемы_доступности"><a href="#проблемы_доступности" title="Permalink to Проблемы доступности">Проблемы доступности</a></h2><div><p>Добавление атрибута <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Global_attributes#attr-lang"><code>lang</code></a> с допустимым (валидным) идентификатором языка (определены в документе IETF <a class="external" href="https://www.ietf.org/rfc/bcp/bcp47.txt" rel=" noopener">BCP47</a>) в элемент <code>&lt;html&gt;</code> поможет технологии чтения с экрана правильно определить язык. Идентификатор языка должен описывать язык, который используется большей частью содержимого страницы. Без него программы чтения с экрана, как правило, по умолчанию используют язык операционной системы, который может может стать причиной неправильного произношения.</p>
+
+<p>Добавление валидного атрибута <code>lang</code> в элемент <code>&lt;html&gt;</code> также гарантирует, что важные метаданные, содержащиеся в элементе <a href="/html/head/"><code>&lt;head&gt;</code></a>, например заголовок страницы <a href="/html/title/"><code>&lt;title&gt;</code></a>, также будут объявлены правильно.</p>
+
+<ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/Understanding_WCAG/Understandable#guideline_3.1_%e2%80%94_readable_make_text_content_readable_and_understandable">MDN Understanding WCAG, Guideline 3.1 explanations</a></li>
+ <li><a class="external" href="https://www.w3.org/TR/2016/NOTE-UNDERSTANDING-WCAG20-20161007/meaning-doc-lang-id.html" rel=" noopener">Understanding Success Criterion 3.1.1 | W3C Understanding WCAG 2.0</a></li>
+</ul></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://html.spec.whatwg.org/multipage/semantics.html#the-html-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML Living Standard<br><small lang="ru">Определение '&lt;html&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html52/semantics.html#the-html-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML5<br><small lang="ru">Определение '&lt;html&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Добавлена поддержка атрибута <code>manifest</code> (позже устарел). Атрибут <code>version</code> больше не поддерживается.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html401/struct/global.html#h-7.3" hreflang="en" lang="en" class="external" rel=" noopener">HTML 4.01 Specification<br><small lang="ru">Определение '&lt;html&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Устаревший атрибут <code>version</code>.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="поддержка_браузерами"><a href="#поддержка_браузерами" title="Permalink to Поддержка браузерами">Поддержка браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li>Элемент верхнего уровня MathML: <code><a href="https://developer.mozilla.org/ru/docs/Web/MathML/Element/math" title="<math>">&lt;math&gt;</a></code></li>
+ <li>Элемент верхнего уровня SVG: <a href="https://developer.mozilla.org/ru/docs/Web/SVG/Element/svg"><code>&lt;svg&gt;</code></a></li>
+</ul></div>

@@ -2,7 +2,7 @@
 Intl.Collator.call(<var>this</var>[, <var>locales</var>[, <var>options</var>]])</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
  <dt><code>locales</code></dt>
  <dd>
-  <p>Необязательный параметр. Строка с языковой меткой BCP 47, либо массив таких строк. Описание общей формы и интерпретации аргумента <code>locales</code> смотрите на <a href="/webhints_data_ru/js/Intl#locale_identification_and_negotiation/">странице, посвящённой объекту Intl</a>. Разрешены следующие ключи расширения Unicode:</p>
+  <p>Необязательный параметр. Строка с языковой меткой BCP 47, либо массив таких строк. Описание общей формы и интерпретации аргумента <code>locales</code> смотрите на <a href="/js/Intl#locale_identification_and_negotiation/">странице, посвящённой объекту Intl</a>. Разрешены следующие ключи расширения Unicode:</p>
   <dl>
    <dt><code>co</code></dt>
    <dd>Варианты сортировки для конкретных локалей. Возможные значения включают в себя: <code>"big5han"</code>, <code>"dict"</code>, <code>"direct"</code>, <code>"ducet"</code>, <code>"gb2312"</code>, <code>"phonebk"</code>, <code>"phonetic"</code>, <code>"pinyin"</code>, <code>"reformed"</code>, <code>"searchjl"</code>, <code>"stroke"</code>, <code>"trad"</code> и <code>"unihan"</code>. Значения <code>"standard"</code> и <code>"search"</code> игнорируются; они заменяются свойством <code>usage</code> аргумента <code>options</code> (смотрите ниже).</dd>
@@ -17,7 +17,7 @@ Intl.Collator.call(<var>this</var>[, <var>locales</var>[, <var>options</var>]])<
   <p>Необязательный параметр. Объект с некоторыми или всеми из следующих свойств:</p>
   <dl>
    <dt><code>localeMatcher</code></dt>
-   <dd>Используемый алгоритм сопоставления локалей. Возможными значениями являются <code>"lookup"</code> и <code>"best fit"</code>; значением по умолчанию является <code>"best fit"</code>. Информацию по этой опции смотрите на <a href="/webhints_data_ru/js/Intl#locale_negotiation/">странице, посвящённой объекту Intl</a>.</dd>
+   <dd>Используемый алгоритм сопоставления локалей. Возможными значениями являются <code>"lookup"</code> и <code>"best fit"</code>; значением по умолчанию является <code>"best fit"</code>. Информацию по этой опции смотрите на <a href="/js/Intl#locale_negotiation/">странице, посвящённой объекту Intl</a>.</dd>
    <dt><code>usage</code></dt>
    <dd>Определяет, используется ли сравнение для сортировки или для поиска совпадающих строк. Возможными значениями являются <code>"sort"</code> и <code>"search"</code>; значением по умолчанию является <code>"sort"</code>.</dd>
    <dt><code>sensitivity</code></dt>
@@ -43,24 +43,24 @@ Intl.Collator.call(<var>this</var>[, <var>locales</var>[, <var>options</var>]])<
  <dt><a href="https://developer.mozilla.org/ru/docs/conflicting/Web/JavaScript/Reference/Global_Objects/Intl/Collator"><code>Intl.Collator.prototype</code></a></dt>
  <dd>Позволяет добавлять свойства ко всем объектам.</dd>
 </dl></div><h2 id="methods"><a href="#methods" title="Permalink to Методы">Методы</a></h2><div><dl>
- <dt><a href="/webhints_data_ru/js/Intl/Collator/supportedLocalesOf/"><code>Intl.Collator.supportedLocalesOf()</code></a></dt>
+ <dt><a href="/js/Intl/Collator/supportedLocalesOf/"><code>Intl.Collator.supportedLocalesOf()</code></a></dt>
  <dd>Возвращает массив, содержащий те из предоставленных локалей, которые поддерживаются без отката к локали по умолчанию среды выполнения.</dd>
 </dl></div><h2 id="collator_instances"><a href="#collator_instances" title="Permalink to Экземпляры объекта Collator">Экземпляры объекта <code>Collator</code></a></h2><div></div><h3 id="properties_of_collator_instance"><a href="#properties_of_collator_instance" title="Permalink to Свойства">Свойства</a></h3><div><p>Экземпляры <code>Collator</code> наследуют следующие свойства из своего прототипа:</p>
 <div><dl>
  <dt><code>Intl.Collator.prototype.constructor</code></dt>
- <dd>Ссылка на <a href="/webhints_data_ru/js/Intl/Collator/" aria-current="page"><code>Intl.Collator</code></a>.</dd>
- <dt><a href="/webhints_data_ru/js/Intl/Collator/compare/"><code>Intl.Collator.prototype.compare</code></a></dt>
- <dd>Геттер; возвращает функцию, сравнивающую две строки согласно порядку сортировки этого объекта <a href="/webhints_data_ru/js/Intl/Collator/" aria-current="page"><code>Collator</code></a>.</dd>
+ <dd>Ссылка на <a href="/js/Intl/Collator/" aria-current="page"><code>Intl.Collator</code></a>.</dd>
+ <dt><a href="/js/Intl/Collator/compare/"><code>Intl.Collator.prototype.compare</code></a></dt>
+ <dd>Геттер; возвращает функцию, сравнивающую две строки согласно порядку сортировки этого объекта <a href="/js/Intl/Collator/" aria-current="page"><code>Collator</code></a>.</dd>
 </dl></div></div><h3 id="methods_of_collator_instance"><a href="#methods_of_collator_instance" title="Permalink to Методы">Методы</a></h3><div><p>Экземпляры <code>Collator</code> наследуют следующие методы из своего прототипа:</p>
 <div><dl>
- <dt><a href="/webhints_data_ru/js/Intl/Collator/resolvedOptions/"><code>Intl.Collator.prototype.resolvedOptions()</code></a></dt>
+ <dt><a href="/js/Intl/Collator/resolvedOptions/"><code>Intl.Collator.prototype.resolvedOptions()</code></a></dt>
  <dd>Возвращает новый объект со свойствами, отражающими локаль и опции сравнения строк, вычисленные при инициализации объекта.</dd>
 </dl></div></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_using_collator"><a href="#example_using_collator" title="Permalink to Пример: использование Collator">Пример: использование <code>Collator</code></a></h3><div><p>Следующий пример демонстрирует различные потенциальные результаты для строки, находящейся до, после или на том же самом уровне, что и другая строка:</p>
 <pre class="brush: js notranslate"><code>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Intl<span class="token punctuation">.</span>Collator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">compare</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// → отрицательное значение</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Intl<span class="token punctuation">.</span>Collator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">compare</span><span class="token punctuation">(</span><span class="token string">'c'</span><span class="token punctuation">,</span> <span class="token string">'a'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// → положительное значение</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Intl<span class="token punctuation">.</span>Collator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">compare</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'a'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// → 0</span>
 </code></pre>
-<p>Обратите внимание, что результат, показанный в коде выше, может сильно различаться в зависимости от браузера и его версии. Происходит это потому, что возвращаемые значения зависят от реализации. То есть, спецификация требует только чтобы при следовании строки до значение было отрицательным, а после&nbsp;— положительным.</p></div><h3 id="example_using_locales"><a href="#example_using_locales" title="Permalink to Пример: использование аргумента locales">Пример: использование аргумента <code>locales</code></a></h3><div><p>Результаты, предоставляемые функцией <a href="/webhints_data_ru/js/Intl/Collator/compare/"><code>Collator.prototype.compare()</code></a> сильно различаются в зависимости от языка. Для получения порядка сортировки языка, используемого в пользовательском интерфейсе вашего приложения, убедитесь, что вы указали этот язык (и, возможно, несколько запасных языков) через аргумент <code>locales</code>:</p>
+<p>Обратите внимание, что результат, показанный в коде выше, может сильно различаться в зависимости от браузера и его версии. Происходит это потому, что возвращаемые значения зависят от реализации. То есть, спецификация требует только чтобы при следовании строки до значение было отрицательным, а после&nbsp;— положительным.</p></div><h3 id="example_using_locales"><a href="#example_using_locales" title="Permalink to Пример: использование аргумента locales">Пример: использование аргумента <code>locales</code></a></h3><div><p>Результаты, предоставляемые функцией <a href="/js/Intl/Collator/compare/"><code>Collator.prototype.compare()</code></a> сильно различаются в зависимости от языка. Для получения порядка сортировки языка, используемого в пользовательском интерфейсе вашего приложения, убедитесь, что вы указали этот язык (и, возможно, несколько запасных языков) через аргумент <code>locales</code>:</p>
 <pre class="brush: js notranslate"><code><span class="token comment">// В немецком буква ä идёт рядом с буквой a</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Intl<span class="token punctuation">.</span>Collator</span><span class="token punctuation">(</span><span class="token string">'de'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">compare</span><span class="token punctuation">(</span><span class="token string">'ä'</span><span class="token punctuation">,</span> <span class="token string">'z'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">// → отрицательное значение</span>
@@ -68,7 +68,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token comment">// В шведском буква ä следует после буквы z</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Intl<span class="token punctuation">.</span>Collator</span><span class="token punctuation">(</span><span class="token string">'sv'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">compare</span><span class="token punctuation">(</span><span class="token string">'ä'</span><span class="token punctuation">,</span> <span class="token string">'z'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">// → положительное значение</span>
-</code></pre></div><h3 id="example_using_options"><a href="#example_using_options" title="Permalink to Пример: использование аргумента options">Пример: использование аргумента <code>options</code></a></h3><div><p>Результат, предоставляемый функцией <a href="/webhints_data_ru/js/Intl/Collator/compare/"><code>Collator.prototype.compare()</code></a>, может быть настроен с помощью аргумента <code>options</code>:</p>
+</code></pre></div><h3 id="example_using_options"><a href="#example_using_options" title="Permalink to Пример: использование аргумента options">Пример: использование аргумента <code>options</code></a></h3><div><p>Результат, предоставляемый функцией <a href="/js/Intl/Collator/compare/"><code>Collator.prototype.compare()</code></a>, может быть настроен с помощью аргумента <code>options</code>:</p>
 <pre class="brush: js notranslate"><code><span class="token comment">// В немецком буква a является базовой для буквы ä</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Intl<span class="token punctuation">.</span>Collator</span><span class="token punctuation">(</span><span class="token string">'de'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> sensitivity<span class="token operator">:</span> <span class="token string">'base'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">compare</span><span class="token punctuation">(</span><span class="token string">'ä'</span><span class="token punctuation">,</span> <span class="token string">'a'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">// → 0</span>
@@ -93,18 +93,18 @@ console<span class="token punctuation">.</span><span class="token function">log<
  <li>Введение: <a href="http://norbertlindenberg.com/2012/12/ecmascript-internationalization-api/index.html" class="external" rel=" noopener">API интернационализации ECMAScript</a></li>
  <li>Конструкторы
   <ul>
-   <li><a href="/webhints_data_ru/js/Intl/Collator/" aria-current="page"><code>Intl.Collator</code></a></li>
-   <li><a href="/webhints_data_ru/js/Intl/DateTimeFormat/"><code>Intl.DateTimeFormat</code></a></li>
-   <li><a href="/webhints_data_ru/js/Intl/NumberFormat/"><code>Intl.NumberFormat</code></a></li>
+   <li><a href="/js/Intl/Collator/" aria-current="page"><code>Intl.Collator</code></a></li>
+   <li><a href="/js/Intl/DateTimeFormat/"><code>Intl.DateTimeFormat</code></a></li>
+   <li><a href="/js/Intl/NumberFormat/"><code>Intl.NumberFormat</code></a></li>
   </ul>
  </li>
  <li>Методы
   <ul>
-   <li><a href="/webhints_data_ru/js/String/localeCompare/"><code>String.prototype.localeCompare()</code></a></li>
-   <li><a href="/webhints_data_ru/js/Number/toLocaleString/"><code>Number.prototype.toLocaleString()</code></a></li>
-   <li><a href="/webhints_data_ru/js/Date/toLocaleString/"><code>Date.prototype.toLocaleString()</code></a></li>
-   <li><a href="/webhints_data_ru/js/Date/toLocaleDateString/"><code>Date.prototype.toLocaleDateString()</code></a></li>
-   <li><a href="/webhints_data_ru/js/Date/toLocaleTimeString/"><code>Date.prototype.toLocaleTimeString()</code></a></li>
+   <li><a href="/js/String/localeCompare/"><code>String.prototype.localeCompare()</code></a></li>
+   <li><a href="/js/Number/toLocaleString/"><code>Number.prototype.toLocaleString()</code></a></li>
+   <li><a href="/js/Date/toLocaleString/"><code>Date.prototype.toLocaleString()</code></a></li>
+   <li><a href="/js/Date/toLocaleDateString/"><code>Date.prototype.toLocaleDateString()</code></a></li>
+   <li><a href="/js/Date/toLocaleTimeString/"><code>Date.prototype.toLocaleTimeString()</code></a></li>
   </ul>
  </li>
 </ul></div></div>

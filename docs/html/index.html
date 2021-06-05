@@ -1,0 +1,889 @@
+<h1>Элемент</h1><div><p></p><p></p>
+
+<p><span class="seoSummary">На этой странице собраны все <a href="https://developer.mozilla.org/ru/docs/Glossary/Element">элементы</a> <a href="https://developer.mozilla.org/ru/docs/Glossary/HTML">HTML</a>. Они сгруппированы по функциям, чтобы помочь вам найти то, что вам нужно для реализации ваших идей. Хотя это руководство написано для относительных новичков в программировании, мы хотим, чтобы оно было полезным для всех.</span></p></div><h2 id="основные_элементы"><a href="#основные_элементы" title="Permalink to Основные элементы"><span class="short_text" id="result_box" lang="ru"><span class="hps">Основные элементы</span></span></a></h2><div><p><span id="result_box" lang="ru"><span class="hps">Основные элементы</span> <span class="hps">являются основой</span> <span class="hps">любого</span> <span class="hps">HTML</span> <span class="hps">документа</span><span>.</span> <span class="hps">Вы увидите</span> <span class="hps">эти элементы</span> <span class="hps">в исходном коде</span> <span class="hps">для</span> <span class="atn hps">всех веб-</span><span>страниц</span> <span class="hps">после</span>&nbsp;задания&nbsp;<span class="hps">типа документа</span> <span class="hps">на первой строке</span>&nbsp;<span class="hps">на странице</span><span>.&nbsp;</span><span>DOCTYPE</span> <span class="hps">определяет, какую версию</span> <span class="atn hps">(</span><span>X) HTML</span><span> эта</span> <span class="hps">страница</span> <span class="hps">использует.</span> <span class="hps">Элементы страницы</span> <span class="hps">находятся</span> <span class="hps">между</span> <span class="atn hps">открывающим тегом &lt;</span><span>HTML&gt;</span> <span class="hps">и закрывающим</span>&nbsp;<span class="atn hps">&lt;</span><span>/</span> <span class="hps">HTML&gt;</span><span class="hps">. Элемент</span></span><a href="/html/html/"><code>&lt;html&gt;</code></a>&nbsp;<span lang="ru"><span class="hps">называется корневым</span>&nbsp;<span class="hps">элементом</span><span>.</span></span>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
+
+<p></p><table class="standard-table">
+ <thead>
+  <tr>
+
+   <th scope="col">Элемент</th>
+   <th scope="col">Описание</th>
+  </tr>
+ </thead>
+ <tbody>
+ 
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/html/"><code>&lt;html&gt;</code></a></td>
+   <td><strong>HTML-элемент <code>&lt;html&gt;</code></strong> представляет собой корень (элемент верхнего уровня) HTML-документа, поэтому его так же называют корневым элементом. Все другие элементы должны быть потомками этого элемента (должны находиться внутри него).</td>
+  </tr>
+
+ </tbody>
+</table><p></p></div><h2 id="метаданные_документа"><a href="#метаданные_документа" title="Permalink to Метаданные документа"><span class="short_text" id="result_box" lang="ru"><span class="hps">М</span></span><span class="short_text" lang="ru"><span class="hps">етаданные документа</span></span></a></h2><div><p><span id="result_box" lang="ru"><span class="hps">Метаданные содержат</span> <span class="hps">информацию о странице</span><span>.</span>&nbsp;Они<span class="hps">&nbsp;включают&nbsp;в себя</span> <span class="hps">информацию</span> <span class="hps">о стилях</span><span>, скрипты</span> <span class="hps">и данные</span><span>, чтобы помочь</span> <span class="atn hps">программному обеспечению</span> (<span>поисковые системы,</span> <a href="https://developer.mozilla.org/ru/docs/Glossary/Browser">браузеры</a> <span class="hps">и т.д.</span><span>) использовать и</span> <span class="hps">отображать страницу</span><span>.</span> <span class="hps">Метаданные для</span> <span class="hps">стилей</span> <span class="hps">и скрипты</span> <span class="hps">могут быть определены</span> <span class="hps">на странице</span> <span class="hps">или ссылке</span> <span class="hps">на другой файл</span><span>, который имеет</span> <span class="hps">информацию</span><span>.</span></span></p>
+
+<p></p><table class="standard-table">
+ <thead>
+  <tr>
+
+   <th scope="col">Элемент</th>
+   <th scope="col">Описание</th>
+  </tr>
+ </thead>
+ <tbody>
+ 
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/base/"><code>&lt;base&gt;</code></a></td>
+   <td><strong>HTML элемент</strong>&nbsp;<strong><code>&lt;base&gt;</code>&nbsp;</strong>определяет&nbsp;основной адрес (URL), используемый для всех относительных адресов (URLs) в документе. Может быть только один&nbsp;<strong><code>&lt;base&gt;</code></strong>&nbsp;элемент в одном документе.&nbsp;<br>
+ Основной адрес (URL) документа можно запросить скриптом используя&nbsp;<code>document.baseURI</code>.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/head/"><code>&lt;head&gt;</code></a></td>
+   <td><strong>HTML-элемент <code>&lt;head&gt;</code></strong> содержит машиночитаемую информацию (metadata) о документе, например его <a href="/html/title/">заголовок</a>, <a href="/html/script/">скрипты</a> и <a href="/html/style/">страницы стилей</a>.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/link/"><code>&lt;link&gt;</code></a></td>
+   <td><strong>Элемент HTML - Ссылка на Внешний Ресурс (<code>&lt;link&gt;</code>)</strong> определяет отношения между текущим документом и внешним ресурсом. Этот элемент чаще всего используется для ссылки на&nbsp; CSS, а также для создания иконок сайта (как для иконок в стиле "favicon", так и для иконок домашних экранов и приложений мобильных устройств) среди прочего.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/meta/"><code>&lt;meta&gt;</code></a></td>
+   <td><strong>HTML элемент <code>&lt;meta&gt;</code></strong> представляет такие Metadata, которые не могут быть представлены другими HTML-метатегами, такими как <code>base</code>, <code>link</code>, <code>script</code>, <code>style</code> или <code>title</code>.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/style/"><code>&lt;style&gt;</code></a></td>
+   <td><em>HTML-элемент <strong>&lt;style&gt;</strong></em> содержит стилевую информацию для документа или его части. По умолчанию стилевые инструкции внутри этого элемента считаются написанными на <a href="https://developer.mozilla.org/ru/docs/Web/CSS">CSS</a>.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/title/"><code>&lt;title&gt;</code></a></td>
+   <td><strong>HTML-элемент заголовка</strong> (<strong><code>&lt;title&gt;</code></strong>) определяет заголовок документа, который отображается в заголовке окна Browser или на вкладке страницы. Он содержит только текст, а теги внутри элемента игнорируются.</td>
+  </tr>
+
+ </tbody>
+</table><p></p></div><h2 id="секционирование_содержания"><a href="#секционирование_содержания" title="Permalink to Секционирование содержания">Секционирование содержания</a></h2><div><p>Секционирование содержания<span lang="ru">&nbsp;<span class="hps">элементов</span>&nbsp;<span class="hps">позволяет разложить</span> <span class="hps">содержимое документа</span> <span class="hps">на логические части</span><span>.</span> <span class="hps">Используйте</span> <span class="hps">секционирование</span> <span class="hps">элементов для создания</span> <span class="hps">общих черт</span>&nbsp;<span class="hps">содержания страницы</span><span>, включая</span>&nbsp;шапку&nbsp;и подвал&nbsp;<span class="hps">и заголовочные&nbsp;элементы</span>&nbsp;<span class="hps">для обозначения</span>&nbsp;<span class="hps">разделов</span><span>.</span></span>&nbsp; &nbsp;</p>
+
+<p></p><table class="standard-table">
+ <thead>
+  <tr>
+
+   <th scope="col">Элемент</th>
+   <th scope="col">Описание</th>
+  </tr>
+ </thead>
+ <tbody>
+ 
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/address/"><code>&lt;address&gt;</code></a></td>
+   <td><strong>HTML- тег&nbsp;<code>&lt;address&gt;</code>&nbsp; </strong>задаёт контактные данные для ближайшего родительского&nbsp;<code>article</code> или&nbsp;<code>body</code> ; В последнем случае применяется ко всему документу, визуально выделяется курсивом.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/article/"><code>&lt;article&gt;</code></a></td>
+   <td><strong>HTML-элемент <code>&lt;article&gt;</code></strong> представляет самостоятельную часть документа, страницы, приложения или сайта, предназначенную для независимого распространения или повторного использования.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/aside/"><code>&lt;aside&gt;</code></a></td>
+   <td><strong>HTML-элемент <code>&lt;aside&gt;</code></strong> представляет собой часть документа, чьё содержимое только косвенно связанно с основным содержимым документа.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/footer/"><code>&lt;footer&gt;</code></a></td>
+   <td><strong>HTML-элемент</strong> <strong> <code>&lt;footer&gt;</code> </strong>представляет собой нижний колонтитул (футер, подвал) для своего ближайшего <a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Using_HTML_sections_and_outlines#%d0%97%d0%b0%d0%b4%d0%b0%d0%bd%d0%b8%d0%b5_%d1%80%d0%b0%d0%b7%d0%b4%d0%b5%d0%bb%d0%be%d0%b2_%d0%b2_html5">секционного контента</a> или <a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Using_HTML_sections_and_outlines#%d0%9a%d0%be%d1%80%d0%bd%d0%b8_%d0%b7%d0%b0%d0%b4%d0%b0%d0%bd%d0%b8%d1%8f_%d1%80%d0%b0%d0%b7%d0%b4%d0%b5%d0%bb%d0%be%d0%b2">секционного корня</a>. Футер обычно содержит информацию об авторе раздела, информацию об авторском праве или ссылки на связанные документы.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/header/"><code>&lt;header&gt;</code></a></td>
+   <td><strong>HTML-элемент <code>&lt;header&gt;</code></strong> представляет собой вводный контент, обычно группу вводных или навигационных средств. Он может содержать другие элементы-заголовки, а также логотип, форму поиска, имя автора и другие элементы.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements" class="only-in-en-us" title="Currently only available in English (US)">&lt;h1&gt; (en-US)</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements" class="only-in-en-us" title="Currently only available in English (US)">&lt;h2&gt; (en-US)</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements" class="only-in-en-us" title="Currently only available in English (US)">&lt;h3&gt; (en-US)</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements" class="only-in-en-us" title="Currently only available in English (US)">&lt;h4&gt; (en-US)</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements" class="only-in-en-us" title="Currently only available in English (US)">&lt;h5&gt; (en-US)</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements" class="only-in-en-us" title="Currently only available in English (US)">&lt;h6&gt; (en-US)</a></td>
+   <td><strong>HTML элементы <code>&lt;h1&gt;</code>–<code>&lt;h6&gt;</code></strong>&nbsp;представляют собой 6 уровней заголовков секций. <code>&lt;h1&gt;</code> это наибольший заголовок&nbsp;и<code>&lt;h6&gt;</code> - наименьший</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/main/"><code>&lt;main&gt;</code></a></td>
+   <td><strong>HTML-элемент <code>&lt;main&gt;</code></strong> предназначен для основного контента (содержимого) <code>body</code> документа (страницы). Основной контент состоит из контента, который непосредственно относится к главной теме документа или её развивает.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/nav/"><code>&lt;nav&gt;</code></a></td>
+   <td><strong>HTML-элемент <code>&lt;nav&gt;</code></strong> определяет отдельную секцию документа, назначение которой обозначение ссылок навигации&nbsp;(как внутри текущего документа, так и ведущих на другую страницу). В качестве примера такой секции можно привести меню, якорные ссылки.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/section/"><code>&lt;section&gt;</code></a></td>
+   <td><strong>HTML-элемент <code>&lt;section&gt;</code></strong> представляет собой автономный раздел — который не может быть представлен более точным по семантике элементом — внутри HTML-документа.</td>
+  </tr>
+
+ </tbody>
+</table><p></p></div><h2 id="текстовое_содержание"><a href="#текстовое_содержание" title="Permalink to Текстовое содержание"><span class="short_text" id="result_box" lang="ru"><span class="hps">Текстовое содержание</span></span></a></h2><div><div id="gt-src-tools">
+<div id="tts_button"><span id="result_box" lang="ru"><span class="hps">Используйте</span>&nbsp;текстовые&nbsp;<span class="hps">элементы</span>&nbsp;<span class="hps">HTML для</span> <span class="hps">организации</span> <span class="hps">блоков</span> <span class="hps">или разделов</span> <span class="hps">содержания</span><span>, размещённые</span>&nbsp;<span class="hps">между тегами открытия</span> <span class="atn hps">&lt;</span><span>body&gt;</span> <span class="hps">и закрытия</span> <span class="atn hps">&lt;</span><span>/</span><span>body&gt;</span><span>.</span> <span class="hps">Важное значение для</span> <span class="atn hps"><a href="https://developer.mozilla.org/ru/docs/Glossary/Accessibility">accessibility</a></span> <span class="hps">и</span> <span class="atn hps"><a href="https://developer.mozilla.org/ru/docs/Glossary/SEO">SEO</a></span><span>,</span><span class="hps"> чтобы эти элементы</span><span class="hps"> определили</span> <span class="hps">цель или</span> <span class="hps">структуру</span> <span class="hps">этого контента</span><span>.</span></span></div>
+
+<div>&nbsp;</div>
+</div>
+
+<p></p><table class="standard-table">
+ <thead>
+  <tr>
+
+   <th scope="col">Элемент</th>
+   <th scope="col">Описание</th>
+  </tr>
+ </thead>
+ <tbody>
+ 
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/blockquote/"><code>&lt;blockquote&gt;</code></a></td>
+   <td><strong>HTML-элемент&nbsp;<code>&lt;blockquote&gt;</code> </strong>(от англ.&nbsp;<em>Block Quotation</em>) указывает на то, что заключённый в нем текст является развёрнутой цитатой. Обычно он (текст) визуально выделяется наклонным (смотри <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote#notes" title="HTML/Element/blockquote#Notes">Примечание</a>, где говорится о том, как это изменить). URI на источник цитаты можно указать в атрибуте&nbsp;<strong>cite</strong>, тогда как текстовое представление источника может быть задано элементом <code>cite</code>.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/dd/"><code>&lt;dd&gt;</code></a></td>
+   <td><strong>HTML-элемент <code>&lt;dd&gt;</code></strong> (<em>от англ. Description Details</em>) предоставляет подробности или определение предшествующего термина (<code>dt</code>) в списке определений (<code>dl</code>).</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/div/"><code>&lt;div&gt;</code></a></td>
+   <td><strong>Элемент разделения контента HTML</strong> (<code><strong>&lt;div&gt;</strong></code>) является универсальным контейнером для <a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Content_categories#%D0%BF%D0%BE%D1%82%D0%BE%D0%BA%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%BD%D1%82">потокового контента</a>. Он не влияет на контент или макет до тех пор, пока не будет стилизован с помощью CSS.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/dl/"><code>&lt;dl&gt;</code></a></td>
+   <td><strong>HTML-элемент&nbsp;<code>&lt;dl&gt;</code></strong>&nbsp;(<em>от англ.</em> <em>Description List</em>) представляет собой список описаний. Этот элемент служит контейнером для списка пар терминов (определяемых элементом <code>dt</code>) и их описаний (определяемых элементами <code>dd</code>). Этот элемент обычно используют при создании глоссария или для отображения метаданных (списка пар ключ-значение).</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/dt/"><code>&lt;dt&gt;</code></a></td>
+   <td><strong>HTML-элемент&nbsp;<code>&lt;dt&gt;</code>&nbsp;</strong>который определяет термин в описании или списке определений, как таковой должен использоваться внутри элемента&nbsp;&nbsp;<code>dl</code> .</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/figcaption/"><code>&lt;figcaption&gt;</code></a></td>
+   <td><strong>HTML-элемент <code>&lt;figcaption&gt;</code> или элемент подписи иллюстрации</strong> представляет собой подпись (заголовок) или легенду, описывающую остальную часть содержимого родительского элемента <code>figure</code>.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/figure/"><code>&lt;figure&gt;</code></a></td>
+   <td><strong>HTML-элемент <code>&lt;figure&gt;</code> (Иллюстрация с необязательной подписью)</strong> представляет самостоятельный контент, часто с подписью (заголовком), которая указывается с помощью элемента (<code>figcaption</code>).</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/hr/"><code>&lt;hr&gt;</code></a></td>
+   <td><strong>HTML <code>&lt;hr&gt;</code>&nbsp;элемент&nbsp;</strong>служит для тематического разделения абзацев.Рисует горизонтальную прямую</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/li/"><code>&lt;li&gt;</code></a></td>
+   <td><strong>HTML-элемент <code>&lt;li&gt;</code></strong> используется для создания элементов списка.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/ol/"><code>&lt;ol&gt;</code></a></td>
+   <td><strong>HTML-элемент <code>&lt;ol&gt;</code></strong> используется для упорядоченного списка — в частности для пронумерованного списка.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/p/"><code>&lt;p&gt;</code></a></td>
+   <td><strong>HTML-элемент <code>&lt;p&gt;</code></strong> представляет собой абзац.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/pre/"><code>&lt;pre&gt;</code></a></td>
+   <td><strong>Элемент&nbsp;HTML <code>&lt;pre&gt;</code> </strong>&nbsp;представляет собой предварительно отформатированный текст, который должен быть представлен точно так, как написано в HTML-файле.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/ul/"><code>&lt;ul&gt;</code></a></td>
+   <td><strong>HTML-элемент <code>&lt;ul&gt;</code> </strong>используется для неупорядоченного списка - в частности для маркированного списка.</td>
+  </tr>
+
+ </tbody>
+</table><p></p></div><h2 id="встроенные_текстовые_семантики"><a href="#встроенные_текстовые_семантики" title="Permalink to Встроенные текстовые семантики"><span class="short_text" id="result_box" lang="ru"><span class="hps">Встроенные</span> <span class="hps">текстовые</span> <span class="hps">семантики</span></span></a></h2><div><p><span id="result_box" lang="ru"><span class="hps">Используйте</span> <span class="hps">встроенную</span>&nbsp;в&nbsp;<span class="hps">HTML</span> </span><span lang="ru"><span class="hps">текстовую</span> <span class="hps">семантику</span><span>, чтобы определить</span> <span class="hps">смысл,</span> <span class="hps">структуру или</span> <span class="hps">стиль</span> <span class="hps">текста,</span> <span class="hps">линий&nbsp;или</span> <span class="hps">части</span> <span class="hps">текста.</span></span></p>
+
+<p></p><table class="standard-table">
+ <thead>
+  <tr>
+
+   <th scope="col">Элемент</th>
+   <th scope="col">Описание</th>
+  </tr>
+ </thead>
+ <tbody>
+ 
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/A/"><code>&lt;a&gt;</code></a></td>
+   <td>HTML-элемент <code>&lt;a&gt;</code>&nbsp;определяет гиперссылку для перехода на определённое место на странице или&nbsp;на другую страницу в Интернете. Также он может быть использован (в&nbsp;устаревшем варианте) для создания якоря — это место назначения для гиперссылок внутри страницы:&nbsp;так ссылки не ограничены только в&nbsp;перемещении между страницами.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/abbr/"><code>&lt;abbr&gt;</code></a></td>
+   <td><strong>Элемент HTML «аббревиатура» (<code>&lt;abbr&gt;</code>)</strong> представляет собой аббревиатуру и, опционально, может показывать её расшифровку. Расшифровка записывается в атрибут <code>title</code>. Иные значения <code>title</code>,&nbsp;кроме расшифровки аббревиатуры не допускаются.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/b/"><code>&lt;b&gt;</code></a></td>
+   <td><strong>HTML элемент&nbsp;<code>&lt;b&gt;</code> </strong>&nbsp;является частью текста&nbsp;стилистически отличающейся от нормального текста, не носящий&nbsp;какого-либо специального значения или важности, и как правило выделен жирным шрифтом.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/bdi/"><code>&lt;bdi&gt;</code></a></td>
+   <td><strong>HTML элемент <code>&lt;bdi&gt;</code></strong><em> </em>(<em>bidirectional isolation</em>, или изоляция двунаправленности [текста]) изолирует от окружающего текста текстовый фрагмент,&nbsp;направление в котором&nbsp;может отличаться от направления&nbsp;окружающего&nbsp;текста (но не обязательно отличается).</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/bdo/"><code>&lt;bdo&gt;</code></a></td>
+   <td><strong>HTML-элемент переопределения двунаправленного текста&nbsp;</strong> (<strong><code>&lt;bdo&gt;</code></strong>) переопределяет текущее направление текста так, что текст внутри отображается в другом направлении.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/br/"><code>&lt;br&gt;</code></a></td>
+   <td><strong>HTML-элемент&nbsp;<code>&lt;br&gt;</code></strong>&nbsp;устанавливает перевод строки в тексте (возврат каретки). Он полезен при написании поэмы или адреса, где важно деление на строки.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/cite/"><code>&lt;cite&gt;</code></a></td>
+   <td><strong>HTML-элемент &lt;cite&gt;</strong> (<em>от англ. Citation</em>)&nbsp;представляет из себя ссылку на источник цитаты. Он&nbsp;должен&nbsp;включать в себя название произведения или URL, который может быть в сокращённом виде в соответствии с правилами, используемых для добавления метаданных цитирования.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/code/"><code>&lt;code&gt;</code></a></td>
+   <td><strong>Элемент HTML <code>&lt;code&gt;</code></strong> отображает его содержимое в стиле, предназначенном для указания на то, что текст является коротким фрагментом компьютерного кода.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/data/"><code>&lt;data&gt;</code></a></td>
+   <td><strong>HTML-элемент <code>&lt;data&gt;</code></strong> связывает данное содержимое с машиночитаемым представлением.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/dfn/"><code>&lt;dfn&gt;</code></a></td>
+   <td><strong>Элемент определения&nbsp;HTML</strong>&nbsp;(<strong><dfn>&lt;dfn&gt;</dfn></strong>) используется для указания термина, определяемого в контексте фразы или предложения.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/em/"><code>&lt;em&gt;</code></a></td>
+   <td><strong>HTML <code>&lt;em&gt;</code> элемент</strong> отмечает акцентируемый текст. Элемент <code>&lt;em&gt;</code> может быть вложенным, причём каждый уровень вложенности указывает на большую степень акцента.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/i" class="only-in-en-us" title="Currently only available in English (US)">&lt;i&gt; (en-US)</a></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/kbd/"><code>&lt;kbd&gt;</code></a></td>
+   <td><strong>HTML элемент ввода с клавиатуры</strong> (<strong><code>&lt;kbd&gt;</code></strong>) указывает на то, что текст внутри элемента&nbsp; описывает пользовательский ввод с клавиатуры, голосовой ввод или ввод с использованием любого другого типа устройств ввода текста.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/mark/"><code>&lt;mark&gt;</code></a></td>
+   <td><strong>HTML</strong> <strong>элемент <code>&lt;mark&gt;</code> </strong>представляет текст, выделенный в&nbsp;справочных целях&nbsp;из-за своей&nbsp;<em>актуальности </em>в определённом контексте. <span id="result_box" lang="ru"><span>Например, он может</span> <span>быть использован на странице с результатом поиска, в которой&nbsp;выделяется</span><span>&nbsp;</span><span>каждый</span>&nbsp;<span>экземпляр</span>&nbsp;<span>искомого</span> <span>слова</span><span>.</span></span></td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q" class="only-in-en-us" title="Currently only available in English (US)">&lt;q&gt; (en-US)</a></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/rb" class="only-in-en-us" title="Currently only available in English (US)">&lt;rb&gt; (en-US)</a></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/rp" class="only-in-en-us" title="Currently only available in English (US)">&lt;rp&gt; (en-US)</a></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/rt" class="only-in-en-us" title="Currently only available in English (US)">&lt;rt&gt; (en-US)</a></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/rtc" class="only-in-en-us" title="Currently only available in English (US)">&lt;rtc&gt; (en-US)</a></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/ruby/"><code>&lt;ruby&gt;</code></a></td>
+   <td><code><font face="Open Sans, Arial, sans-serif">HTML элемент</font><strong>&lt;ruby&gt;</strong></code>&nbsp;предназначен для добавления небольшой аннотации сверху или снизу от заданного текста. Такая форма записи преимущественно используется для идеографической письменности вроде китайского языка, но может применяться и для других языков, если требуется написать один текст над другим.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/s" class="only-in-en-us" title="Currently only available in English (US)">&lt;s&gt; (en-US)</a></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/samp" class="only-in-en-us" title="Currently only available in English (US)">&lt;samp&gt; (en-US)</a></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/small" class="only-in-en-us" title="Currently only available in English (US)">&lt;small&gt; (en-US)</a></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/span/"><code>&lt;span&gt;</code></a></td>
+   <td><strong>HTML-элемент <code>&lt;span&gt;</code></strong> является основным строковым контейнером для фразового контента, который, по существу, ничего не представляет. Он может использоваться для группировки элементов в целях стилизации (использование атрибутов <code>class</code> или <code>id</code>) или потому, что они имеет общие значения атрибутов, например <code>lang</code>.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/strong/"><code>&lt;strong&gt;</code></a></td>
+   <td>Элемент <strong>сильной значимости</strong>&nbsp;(<strong><code>&lt;strong&gt;</code>)</strong> указывает на то, что его содержание имеет большое значение, серьёзность или срочность. Браузеры обычно отображают содержимое жирным шрифтом.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/sub" class="only-in-en-us" title="Currently only available in English (US)">&lt;sub&gt; (en-US)</a></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/sup" class="only-in-en-us" title="Currently only available in English (US)">&lt;sup&gt; (en-US)</a></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/time/"><code>&lt;time&gt;</code></a></td>
+   <td><strong>Элемент HTML</strong>&nbsp;<strong><code>&lt;time&gt;</code></strong>&nbsp;используется для представления либо времени в 24-рехчасовом формате, либо точной даты по&nbsp;<a class="external" href="http://ru.wikipedia.org/wiki/%D0%93%D1%80%D0%B8%D0%B3%D0%BE%D1%80%D0%B8%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9_%D0%BA%D0%B0%D0%BB%D0%B5%D0%BD%D0%B4%D0%B0%D1%80%D1%8C" title="http://ru.wikipedia.org/wiki/Григорианский_календарь" rel=" noopener">Григорианскому календарю</a>&nbsp;(с опциональным указанием времени и часового пояса).</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/u/"><code>&lt;u&gt;</code></a></td>
+   <td>The HTML <strong>Unarticulated Annotation Element</strong> (<strong><code>&lt;u&gt;</code></strong>) represents a span of inline text which should be rendered in a way that indicates that it has a non-textual annotation.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/var" class="only-in-en-us" title="Currently only available in English (US)">&lt;var&gt; (en-US)</a></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/wbr/"><code>&lt;wbr&gt;</code></a></td>
+   <td><strong>Элемент HTML <code>&lt;wbr&gt;</code></strong> предоставляет возможность переноса слова – позицию в тексте, где браузер может по желанию разбить строку, в противном случае его правила разрыва строки не будут создавать разрыв в этом месте.</td>
+  </tr>
+
+ </tbody>
+</table><p></p></div><h2 id="изображения_и_мультимедиа"><a href="#изображения_и_мультимедиа" title="Permalink to Изображения&nbsp;и мультимедиа"><span class="short_text" id="result_box" lang="ru"><span class="hps">Изображения</span>&nbsp;<span class="hps">и</span> <span class="hps">мультимедиа</span></span></a></h2><div><p><span id="result_box" lang="ru"><span class="hps">HTML</span> <span class="hps">позволяет использовать</span> <span class="hps">различные мультимедийные</span> <span class="hps">ресурсы</span><span>, такие как</span> <span class="hps">изображения</span><span>, аудио</span> <span class="hps">и</span> <span class="hps">видео.</span></span></p>
+
+<p></p><table class="standard-table">
+ <thead>
+  <tr>
+
+   <th scope="col">Элемент</th>
+   <th scope="col">Описание</th>
+  </tr>
+ </thead>
+ <tbody>
+ 
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/area/"><code>&lt;area&gt;</code></a></td>
+   <td>The source for this interactive example is stored in a GitHub repository. If you'd like to contribute to the interactive examples project, please clone <a href="https://github.com/mdn/interactive-examples" class="external" rel=" noopener">https://github.com/mdn/interactive-examples </a> and send us a pull request.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/audio/"><code>&lt;audio&gt;</code></a></td>
+   <td><strong>HTML-элемент <code>&lt;audio&gt;</code></strong> используется для встраивания звукового контента в документ. Он может содержать один или более источников аудио, представленных с помощью атрибута <code>src</code> или элемента <code>source</code> – браузер выберет один наиболее подходящий. Он так же может предназначаться для потокового мультимедиа, используя интерфейс <code>MediaStream</code>.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/img/"><code>&lt;img&gt;</code></a></td>
+   <td><strong>HTML-элемент <code>&lt;img&gt;</code></strong> встраивает изображение в документ. Это <a href="https://developer.mozilla.org/ru/docs/Web/CSS/Replaced_element">замещаемый элемент</a>.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/map/"><code>&lt;map&gt;</code></a></td>
+   <td><strong>HTML-элемент <code>&lt;map&gt;</code> </strong>используется с элементами <code>area</code> для определения карты изображения (интерактивной области ссылок).</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/track/"><code>&lt;track&gt;</code></a></td>
+   <td><strong>HTML-элемент <code>&lt;track&gt;</code>&nbsp;</strong> используется как дочерний элемент медиа-элементов <code>audio</code> and <code>video</code>. Позволяет указать синхронизированные текстовые дорожки (или данные на основе времени), например, для автоматической обработки субтитров. Файлы треков используют <a href="https://developer.mozilla.org/ru/docs/Web/API/WebVTT_API">формат WebVTT</a> (<code>.vtt</code> файлы) — Web Video Text Tracks или <a href="https://w3c.github.io/ttml2/index.html" class="external" rel=" noopener">Timed Text Markup Language (TTML).</a></td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/video/"><code>&lt;video&gt;</code></a></td>
+   <td>Для встраивания видео контента в документ используйте <strong>элемент HTML &lt;video&gt;</strong>. Видео элемент может содержать один или несколько источников видео. Чтобы указать источник видео, необходимо использовать атрибут <strong>src</strong> или элемент <code>source</code>; браузер сам определит наиболее подходящий источник.</td>
+  </tr>
+
+ </tbody>
+</table><p></p></div><h2 id="встроенное_содержание"><a href="#встроенное_содержание" title="Permalink to Встроенное содержание"><span class="short_text" id="result_box" lang="ru"><span class="hps">Встроенное содержание</span></span></a></h2><div><div id="gt-src-tools">
+<div id="tts_button"><span id="result_box" lang="ru"><span class="hps">С</span><span class="hps">одержание</span> <span class="hps">мультимедийных</span> <span class="hps">HTML</span><span class="hps"> включает в себя</span> <span class="hps">другие</span> <span class="hps">материалы</span><span>, даже</span> <span class="hps">если они не</span> <span class="hps">всегда легко</span> <span class="hps">взаимодействуют.</span></span></div>
+
+<div>&nbsp;</div>
+</div>
+
+<p></p><table class="standard-table">
+ <thead>
+  <tr>
+
+   <th scope="col">Элемент</th>
+   <th scope="col">Описание</th>
+  </tr>
+ </thead>
+ <tbody>
+ 
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/embed/"><code>&lt;embed&gt;</code></a></td>
+   <td><strong>HTML-элемент&nbsp;<code>&lt;embed&gt;</code>&nbsp;</strong>вставляет расширенный контент в выбранное место документа. Этот контент может быть представлен от внешнего приложения или другого источника интерактивного контента, такого как плагин для браузера, например.&nbsp;</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe" class="only-in-en-us" title="Currently only available in English (US)">&lt;iframe&gt; (en-US)</a></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/object" class="only-in-en-us" title="Currently only available in English (US)">&lt;object&gt; (en-US)</a></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/param" class="only-in-en-us" title="Currently only available in English (US)">&lt;param&gt; (en-US)</a></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/picture/"><code>&lt;picture&gt;</code></a></td>
+   <td><strong>HTML-элемент <code>&lt;picture&gt;</code> </strong> служит контейнером для одного или более элементов <code>source</code> и одного элемента <code>img</code> для обеспечения оптимальной версии изображения для различных размеров экрана.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/portal" class="only-in-en-us" title="Currently only available in English (US)">&lt;portal&gt; (en-US)</a></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/source/"><code>&lt;source&gt;</code></a></td>
+   <td><strong>HTML-элемент&nbsp;<code>&lt;source&gt;</code> </strong>&nbsp;указывает несколько медиа-ресурсов для элементов&nbsp;<code>picture</code>, <code>video</code> и&nbsp;<code>audio</code>. Это пустой элемент. Он обычно используется для обслуживания одного и того же медиа-контента <a href="https://developer.mozilla.org/en-US/docs/Web/Media/Formats">в нескольких форматах, поддерживаемых различными браузерами</a>.</td>
+  </tr>
+
+ </tbody>
+</table><p></p></div><h2 id="скриптинг"><a href="#скриптинг" title="Permalink to Скриптинг">Скриптинг</a></h2><div><p>Чтобы создавать динамический контент и веб-приложения, HTML поддерживает использование скриптовых языков, наиболее известным является&nbsp;JavaScript. Некоторые элементы поддерживают эту возможность.</p>
+
+<p></p><table class="standard-table">
+ <thead>
+  <tr>
+
+   <th scope="col">Элемент</th>
+   <th scope="col">Описание</th>
+  </tr>
+ </thead>
+ <tbody>
+ 
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/canvas/"><code>&lt;canvas&gt;</code></a></td>
+   <td><strong>HTML <code>&lt;canvas&gt;</code>&nbsp;Элемент </strong>может быть использован для отрисовки графики через скрипты&nbsp;(обычно используется&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a>). Например, его можно использовать для отрисовки графиков, делать композиции фото или даже&nbsp;выполнять анимации. Вы можете (и должны) дать альтернативное содержание&nbsp;внутри&nbsp;блока&nbsp;<code>&lt;canvas&gt;</code>. Этот контент будет рендерится в обоих браузерах, в старых которые не поддерживают canvas и в браузерах с отключённым JavaScript.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/noscript/"><code>&lt;noscript&gt;</code></a></td>
+   <td>Элемент&nbsp;HTML<strong> <code>&lt;noscript&gt;</code>&nbsp;</strong>определяет секцию html кода, которая будет вставлена, если в&nbsp;браузере пользователя нет либо отключена поддержка&nbsp;JavaScript.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/script/"><code>&lt;script&gt;</code></a></td>
+   <td>HTML Элемент<strong>&nbsp;<code>&lt;script&gt;</code> </strong></td>
+  </tr>
+
+ </tbody>
+</table><p></p></div><h2 id="разграничительные_правки"><a href="#разграничительные_правки" title="Permalink to Разграничительные правки">Разграничительные правки</a></h2><div><p>Эти элементы позволяют вам отметить определённые части текста.</p>
+
+<p></p><table class="standard-table">
+ <thead>
+  <tr>
+
+   <th scope="col">Элемент</th>
+   <th scope="col">Описание</th>
+  </tr>
+ </thead>
+ <tbody>
+ 
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/del/"><code>&lt;del&gt;</code></a></td>
+   <td>Элемент <strong>HTML <code>&lt;del&gt;</code> </strong>представляет диапазон текста, который был удалён из документа.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/ins/"><code>&lt;ins&gt;</code></a></td>
+   <td><strong>Элемент</strong> <strong>HTML <code>&lt;ins&gt;</code> </strong>представляет собой <span id="result_box" lang="ru"><span>диапазон текста</span><span>, который был добавлен</span> <span>в документ</span></span></td>
+  </tr>
+
+ </tbody>
+</table><p></p></div><h2 id="содержание_таблиц"><a href="#содержание_таблиц" title="Permalink to Содержание&nbsp;таблиц"><span class="short_text" id="result_box" lang="ru"><span class="hps">Содержание</span>&nbsp;т<span class="hps">аблиц</span></span></a></h2><div><p>Эти элементы используются для создания и обработки табличных данных.</p>
+
+<p></p><table class="standard-table">
+ <thead>
+  <tr>
+
+   <th scope="col">Элемент</th>
+   <th scope="col">Описание</th>
+  </tr>
+ </thead>
+ <tbody>
+ 
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/caption/"><code>&lt;caption&gt;</code></a></td>
+   <td><strong>HTML</strong> элемент заголовка таблицы&nbsp;(<strong><code>&lt;caption&gt;</code></strong>) определяет название (заголовок) таблицы. Если этот элемент используется, он <em>всегда</em> должен быть первым вложенным элементом тэга&nbsp;<code>table</code>.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/col/"><code>&lt;col&gt;</code></a></td>
+   <td><br>
+ <strong>HTML элемент</strong> <strong><code>&lt;col&gt;</code></strong> определяет столбец в таблице и используется для определения общей семантики на всех ячейках. Обычно он находится в элементе&nbsp; <code>colgroup</code>.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/colgroup" class="only-in-en-us" title="Currently only available in English (US)">&lt;colgroup&gt; (en-US)</a></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table" class="only-in-en-us" title="Currently only available in English (US)">&lt;table&gt; (en-US)</a></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tbody" class="only-in-en-us" title="Currently only available in English (US)">&lt;tbody&gt; (en-US)</a></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/td/"><code>&lt;td&gt;</code></a></td>
+   <td><strong>HTML элемент&nbsp;<code>&lt;td&gt;</code></strong>&nbsp;определяет ячейку таблицы которая&nbsp;содержит данные. Участвует в <em>табличной модели</em>.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/tfoot/"><code>&lt;tfoot&gt;</code></a></td>
+   <td><em>HTML </em>элемент подвала таблицы (<code>&lt;tfoot&gt;</code>) определяющий набор строк суммирующих столбцы таблицы.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/th" class="only-in-en-us" title="Currently only available in English (US)">&lt;th&gt; (en-US)</a></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/thead" class="only-in-en-us" title="Currently only available in English (US)">&lt;thead&gt; (en-US)</a></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tr" class="only-in-en-us" title="Currently only available in English (US)">&lt;tr&gt; (en-US)</a></td>
+   <td></td>
+  </tr>
+
+ </tbody>
+</table><p></p></div><h2 id="формы"><a href="#формы" title="Permalink to Формы">Формы</a></h2><div><p>HTML содержит некоторое количество элементов, которые используются вместе для создания форм, которые пользователь может заполнить и отправить на сервер. Доступно множество информации по этой теме в&nbsp;<a href="https://developer.mozilla.org/ru/docs/Learn/Forms">руководстве&nbsp;по HTML формам</a>.</p>
+
+<p></p><table class="standard-table">
+ <thead>
+  <tr>
+
+   <th scope="col">Элемент</th>
+   <th scope="col">Описание</th>
+  </tr>
+ </thead>
+ <tbody>
+ 
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/button/"><code>&lt;button&gt;</code></a></td>
+   <td><strong>HTML-элемент&nbsp;<em><code>&lt;button&gt;</code></em></strong>&nbsp;создаёт кликабельную кнопку,&nbsp;которая может быть использована в формах или в любом другом месте документа, который требует простой, стандартной кнопки.&nbsp;По умолчанию, кнопки HTML обычно представлены в стиле, аналогичном стилю хост-платформы, на которой работает user agent, но вы можете изменить внешний вид кнопки, используя CSS.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/datalist/"><code>&lt;datalist&gt;</code></a></td>
+   <td><strong>HTML-элемент<code> &lt;datalist&gt;</code></strong> содержит набор опций (<code>option</code>), доступных для выбора. Выбранное значение будет установлено для элемента <code>input</code>, с атрибутом <code>list</code>.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/fieldset/"><code>&lt;fieldset&gt;</code></a></td>
+   <td><strong>HTML-элемент <code>&lt;fieldset&gt;</code></strong> используется для группировки нескольких элементов управления без веб-форм.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/form/"><code>&lt;form&gt;</code></a></td>
+   <td><em>Элемент HTML form</em> (<code>&lt;form&gt;</code>) представляет (собой) раздел&nbsp;документа, содержащий интерактивные элементы управления, которые позволяют пользователю отправлять информацию на веб-сервер.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/Input/"><code>&lt;input&gt;</code></a></td>
+   <td><strong>Элемент</strong>&nbsp;<strong>HTML <code>&lt;input&gt;</code></strong>&nbsp;используется для создания интерактивных элементов управления в веб-формах для получения данных от пользователя; в зависимости от устройства и&nbsp;user agent, доступен&nbsp;широкий выбор типов входных данных и виджетов управления. Из-за огромного количества возможных сочетаний типов ввода и атрибутов это один из самых мощных и сложных элементов HTML.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/label/"><code>&lt;label&gt;</code></a></td>
+   <td><strong>HTML элемент <code>&lt;label&gt;</code> </strong>представляет собой подпись к элементу пользовательского интерфейса.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/legend/"><code>&lt;legend&gt;</code></a></td>
+   <td><strong>HTML-элемент&nbsp;<code>&lt;legend&gt;</code></strong> представляет собой заголовок содержания родительского элемента&nbsp;<code>fieldset</code>.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/meter/"><code>&lt;meter&gt;</code></a></td>
+   <td><strong>HTML-элемент <code>&lt;meter&gt;</code>&nbsp;</strong> представляет собой скалярное значение в пределах известного диапазона или дробного значения.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/optgroup/"><code>&lt;optgroup&gt;</code></a></td>
+   <td><strong>HTML-элемент&nbsp;<code>&lt;optgroup&gt;</code>&nbsp;</strong>позволяет группировать опции, находящиеся внутри элемента <code>select</code>.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/option/"><code>&lt;option&gt;</code></a></td>
+   <td><strong>HTML элемент <code>&lt;option&gt;</code></strong> используется для определения пункта списка контейнера <code>select</code>, элемента <code>optgroup</code>, или элемента <code>datalist</code>. Элемент <code>&lt;option&gt;</code> может представлять раздел меню всплывающих окон и других перечней или списков HTML документа.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/output/"><code>&lt;output&gt;</code></a></td>
+   <td><strong>HTML-элемент вывода </strong>(<strong><code>&lt;output&gt;</code></strong>) является контейнерным элементом, в котором сайт или приложение могут выводить результаты вычислений или действий пользователя.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/progress/"><code>&lt;progress&gt;</code></a></td>
+   <td><strong>HTML-элемент <code>&lt;progress&gt;</code> </strong>отображает индикатор, показывающий ход выполнения задачи, обычно отображаемый в виде прогресс бара (индикатора выполнения).</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/select/"><code>&lt;select&gt;</code></a></td>
+   <td><strong>HTML тэг&nbsp;<code>&lt;select&gt;</code></strong>&nbsp;представляет собой элемент управления который содержит меню опций:</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea" class="only-in-en-us" title="Currently only available in English (US)">&lt;textarea&gt; (en-US)</a></td>
+   <td></td>
+  </tr>
+
+ </tbody>
+</table><p></p></div><h2 id="интерактивные_элементы"><a href="#интерактивные_элементы" title="Permalink to Интерактивные элементы">Интерактивные элементы</a></h2><div><p>HTML содержит в себе элементы, которые помогают создавать интерактивные объекты пользовательского интерфейса.</p>
+
+<p></p><table class="standard-table">
+ <thead>
+  <tr>
+
+   <th scope="col">Элемент</th>
+   <th scope="col">Описание</th>
+  </tr>
+ </thead>
+ <tbody>
+ 
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/details/"><code>&lt;details&gt;</code></a></td>
+   <td>HTML-элемент<strong>&nbsp;<code>&lt;details&gt;</code></strong>&nbsp;используется для раскрытия скрытой (дополнительной) информации.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/dialog/"><code>&lt;dialog&gt;</code></a></td>
+   <td><strong>HTML-элемент&nbsp;<code>&lt;dialog&gt;</code>&nbsp;</strong>определяет диалоговое окно или другой интерактивный элемент, такой как инспектор или окно.&nbsp;Элементы&nbsp;<code>&lt;form&gt;</code> могут интегрироваться с диалогом с помощью указания атрибута <code>method="dialog"</code>. Когда отправляется такая форма, диалог закрывается с returnValue равным value нажатой кнопки submit.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/menu/"><code>&lt;menu&gt;</code></a></td>
+   <td><strong>HTML элемент <code>&lt;menu&gt;</code></strong> представляет группу команд, которые пользователь может выполнить или активировать. Он включает как меню-списки, которые могут отображаться в верхней части экрана, так и <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/menu#context_menu"> контекстные меню</a>, например, такие, что могут появиться под кнопкой после нажатия.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/summary/"><code>&lt;summary&gt;</code></a></td>
+   <td>The <strong>HTML Disclosure Summary element</strong> (<strong><code>&lt;summary&gt;</code></strong>) element specifies a summary, caption, or legend for a <code>details</code> element's disclosure box.</td>
+  </tr>
+
+ </tbody>
+</table><p></p></div><h2 id="веб-компоненты"><a href="#веб-компоненты" title="Permalink to Веб-компоненты"><span class="short_text" id="result_box" lang="ru"><span class="hps">Веб-компоненты</span></span></a></h2><div><p>Веб-компоненты - технология, относящаяся к HTML и делающая возможным создание и использование пользовательских элементов, как будто они в обычном&nbsp;HTML. Кроме того, вы можете даже создавать свои версии стандарта HTML элементов.</p>
+
+<div class="note notecard"><strong>Замечание:</strong> Эти элементы определены в <a href="https://developer.mozilla.org/ru/docs/Glossary/W3C">World Wide Web Consortium</a> (W3C)&nbsp;<a href="https://www.w3.org/TR/components-intro/" title="http://www.w3.org/TR/components-intro/" class="external" rel=" noopener">Web Components collection of specifications</a>&nbsp;скорее, чем в&nbsp;HTML спецификации. К тому же, спецификация Веб-компонентов не завершена и является темой для обсуждений.</div>
+
+<p></p><table class="standard-table">
+ <thead>
+  <tr>
+
+   <th scope="col">Элемент</th>
+   <th scope="col">Описание</th>
+  </tr>
+ </thead>
+ <tbody>
+ 
+  <tr>
+   <td style="vertical-align: top;"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/content" class="only-in-en-us" title="Currently only available in English (US)">&lt;content&gt; (en-US)</a></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/shadow" class="only-in-en-us" title="Currently only available in English (US)">&lt;shadow&gt; (en-US)</a></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/slot/"><code>&lt;slot&gt;</code></a></td>
+   <td>HTML элемент <code>&lt;slot&gt;</code> является частью набора технологии <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components">Web Components</a>, является заполнителем внутри веб компонента, который можно заполнить собственной разметкой, которая позволяет создавать отдельные деревья DOM и представлять их вместе.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/template/"><code>&lt;template&gt;</code></a></td>
+   <td><strong>HTML элемент контент шаблона  <code>&lt;template&gt;</code></strong> - это механизм для отложенного создания клиентского контента, который не отображается во время загрузки, но может быть инициализирован при помощи JavaScript.</td>
+  </tr>
+
+ </tbody>
+</table><p></p></div><h2 id="устаревшие_и_осуждаемые_элементы"><a href="#устаревшие_и_осуждаемые_элементы" title="Permalink to Устаревшие и осуждаемые&nbsp;элементы">Устаревшие и осуждаемые&nbsp;элементы</a></h2><div><div class="warning notecard" style="font-size: 14px;">
+<p><strong>Предупреждение:</strong>&nbsp;Эти&nbsp;HTML элементы являются&nbsp;устаревшими, и их использование не рекомендуется. <strong>Вы не должны использовать их для новых&nbsp;проектов, а также должны заменить их в старых проектах как можно быстрее.&nbsp;</strong>Они перечислены здесь только в информационных целях.</p>
+</div>
+
+<p></p><table class="standard-table">
+ <thead>
+  <tr>
+
+   <th scope="col">Элемент</th>
+   <th scope="col">Описание</th>
+  </tr>
+ </thead>
+ <tbody>
+ 
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/acronym/"><code>&lt;acronym&gt;</code></a></td>
+   <td>Элемент акронима (<code>&lt;acronym&gt;)</code> позволяет явно указать, что данная последовательность букв, являющуюся акронимом или аббревиатурой.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/applet/"><code>&lt;applet&gt;</code></a></td>
+   <td>Элемент HTML апплет (&lt;applet&gt;) определяет включение апплета java.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/basefont/"><code>&lt;basefont&gt;</code></a></td>
+   <td>The obsolete <strong>HTML Base Font element</strong> (<strong><code>&lt;basefont&gt;</code></strong>) sets a default font fa</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/bgsound" class="only-in-en-us" title="Currently only available in English (US)">&lt;bgsound&gt; (en-US)</a></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/big" class="only-in-en-us" title="Currently only available in English (US)">&lt;big&gt; (en-US)</a></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blink" class="only-in-en-us" title="Currently only available in English (US)">&lt;blink&gt; (en-US)</a></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/center" class="only-in-en-us" title="Currently only available in English (US)">&lt;center&gt; (en-US)</a></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/content" class="only-in-en-us" title="Currently only available in English (US)">&lt;content&gt; (en-US)</a></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dir" class="only-in-en-us" title="Currently only available in English (US)">&lt;dir&gt; (en-US)</a></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/font/"><code>&lt;font&gt;</code></a></td>
+   <td><em>HTML фонт элемент</em>(<code>&lt;font&gt;</code>) определяет размер шрифта, цвета и лицо для его содержимого</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/frame" class="only-in-en-us" title="Currently only available in English (US)">&lt;frame&gt; (en-US)</a></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/frameset" class="only-in-en-us" title="Currently only available in English (US)">&lt;frameset&gt; (en-US)</a></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/hgroup/"><code>&lt;hgroup&gt;</code></a></td>
+   <td>HTML &lt;hgroup&gt; Элемент (HTML Headings Group Element - Элемент Группы Заголовков HTML) представляет заголовок раздела. Он определяет один заголовок, который участвует в схеме документа как заголовок явно или неявно заданного&nbsp;раздела, к которому он принадлежит.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/image/"><code>&lt;image&gt;</code></a></td>
+   <td>Элемент HTML&nbsp;<code>&lt;image&gt;</code>&nbsp;был экспериментальным элементом, предназначенный&nbsp;для отображения изображений. Он никогда не был реализован, вместо него должен использоваться стандартный элемент&nbsp;<code>img</code>.</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/keygen" class="only-in-en-us" title="Currently only available in English (US)">&lt;keygen&gt; (en-US)</a></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="/html/marquee/"><code>&lt;marquee&gt;</code></a></td>
+   <td>HTML-элемент <code>&lt;marquee&gt;</code> используется для создания на странице прокручивающегося текста (бегущей строки).</td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/menuitem" class="only-in-en-us" title="Currently only available in English (US)">&lt;menuitem&gt; (en-US)</a></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nobr" class="only-in-en-us" title="Currently only available in English (US)">&lt;nobr&gt; (en-US)</a></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/noembed" class="only-in-en-us" title="Currently only available in English (US)">&lt;noembed&gt; (en-US)</a></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/noframes" class="only-in-en-us" title="Currently only available in English (US)">&lt;noframes&gt; (en-US)</a></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/plaintext" class="only-in-en-us" title="Currently only available in English (US)">&lt;plaintext&gt; (en-US)</a></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/rb" class="only-in-en-us" title="Currently only available in English (US)">&lt;rb&gt; (en-US)</a></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/rtc" class="only-in-en-us" title="Currently only available in English (US)">&lt;rtc&gt; (en-US)</a></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/shadow" class="only-in-en-us" title="Currently only available in English (US)">&lt;shadow&gt; (en-US)</a></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/spacer" class="only-in-en-us" title="Currently only available in English (US)">&lt;spacer&gt; (en-US)</a></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/strike" class="only-in-en-us" title="Currently only available in English (US)">&lt;strike&gt; (en-US)</a></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tt" class="only-in-en-us" title="Currently only available in English (US)">&lt;tt&gt; (en-US)</a></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td style="vertical-align: top;"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/xmp" class="only-in-en-us" title="Currently only available in English (US)">&lt;xmp&gt; (en-US)</a></td>
+   <td></td>
+  </tr>
+
+ </tbody>
+</table><p></p></div>

@@ -15,15 +15,15 @@
 <p>&nbsp;</p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate">parseFloat(<em>строка</em>)</pre></div><h3 id="параметры"><a href="#параметры" title="Permalink to Параметры">Параметры</a></h3><div><dl>
  <dt><code>строка</code></dt>
  <dd>Текстовая строка, из которой вам надо выделить десятичное число.</dd>
-</dl></div><h3 id="возвращаемое_значение"><a href="#возвращаемое_значение" title="Permalink to Возвращаемое значение">Возвращаемое значение</a></h3><div><p>Число с плавающей точкой, полученное из строки. Если первый символ не может быть сконвертирован в число, то возвращается <a href="/webhints_data_ru/js/NaN/"><code>NaN</code></a>.</p></div><h2 id="описание"><a href="#описание" title="Permalink to Описание">Описание</a></h2><div><p><code>parseFloat</code> - это высокоуровневая функция, не привязанная ни к одному объекту.</p>
+</dl></div><h3 id="возвращаемое_значение"><a href="#возвращаемое_значение" title="Permalink to Возвращаемое значение">Возвращаемое значение</a></h3><div><p>Число с плавающей точкой, полученное из строки. Если первый символ не может быть сконвертирован в число, то возвращается <a href="/js/NaN/"><code>NaN</code></a>.</p></div><h2 id="описание"><a href="#описание" title="Permalink to Описание">Описание</a></h2><div><p><code>parseFloat</code> - это высокоуровневая функция, не привязанная ни к одному объекту.</p>
 
 <p><code>parseFloat</code> разбирает текстовую строку, ищет и возвращает из неё десятичное число. Если функция встретит знак, отличный от (+ или -), цифр(0-9), разделительной точки, или показателя степени, она вернёт значение, предшествующее этому знаку, игнорируя все последующие символы . Допускаются позади и впереди идущие пробелы.</p>
 
 <p>Если первый символ нельзя привести к числовому виду, <code>parseFloat</code> вернёт<code> NaN</code>.</p>
 
-<p>С точки зрения математики, <code>значение NaN</code> не является числом в какой-либо системе счисления. Чтобы определить, вернёт ли <code>parseFloat </code>значение <a href="/webhints_data_ru/js/NaN/"><code>NaN</code></a> в качестве результата, можно вызвать функцию <a href="/webhints_data_ru/js/isNaN/"><code>isNaN</code></a>. Если <code>NaN</code> участвует в арифметических операциях, результатом также будет <code>NaN</code>.</p>
+<p>С точки зрения математики, <code>значение NaN</code> не является числом в какой-либо системе счисления. Чтобы определить, вернёт ли <code>parseFloat </code>значение <a href="/js/NaN/"><code>NaN</code></a> в качестве результата, можно вызвать функцию <a href="/js/isNaN/"><code>isNaN</code></a>. Если <code>NaN</code> участвует в арифметических операциях, результатом также будет <code>NaN</code>.</p>
 
-<p><code>parseFloat</code> также может вернуть значение <code>Infinity</code> ("бесконечность"). Вы можете использовать функцию <a href="/webhints_data_ru/js/isFinite/"><code>isFinite</code></a>, чтобы определить, является ли результат конечным числом&nbsp; (not <code>Infinity</code>, <code>-Infinity</code>, или <code>NaN</code>).</p></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="parsefloat_возвращает_число"><a href="#parsefloat_возвращает_число" title="Permalink to parseFloat возвращает число"><code>parseFloat</code> возвращает число</a></h3><div><p>Все примеры ниже вернут <strong>3.14</strong></p>
+<p><code>parseFloat</code> также может вернуть значение <code>Infinity</code> ("бесконечность"). Вы можете использовать функцию <a href="/js/isFinite/"><code>isFinite</code></a>, чтобы определить, является ли результат конечным числом&nbsp; (not <code>Infinity</code>, <code>-Infinity</code>, или <code>NaN</code>).</p></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="parsefloat_возвращает_число"><a href="#parsefloat_возвращает_число" title="Permalink to parseFloat возвращает число"><code>parseFloat</code> возвращает число</a></h3><div><p>Все примеры ниже вернут <strong>3.14</strong></p>
 
 <pre class="notranslate"><code>parseFloat(3.14);
 parseFloat('3.14');
@@ -75,9 +75,9 @@ parseFloat(foo);​​​​​</code></pre>
 <p></p><p></p>
 
 <p>&nbsp;</p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
- <li><a href="/webhints_data_ru/js/parseInt/"><code>parseInt()</code></a></li>
- <li><a href="/webhints_data_ru/js/Number/parseFloat/"><code>Number.parseFloat()</code></a></li>
- <li><a href="/webhints_data_ru/js/Number/parseInt/"><code>Number.parseInt()</code></a></li>
- <li><a href="/webhints_data_ru/js/Number/toFixed/"><code>Number.toFixed()</code></a></li>
- <li><a href="/webhints_data_ru/js/isNaN/"><code>isNaN()</code></a></li>
+ <li><a href="/js/parseInt/"><code>parseInt()</code></a></li>
+ <li><a href="/js/Number/parseFloat/"><code>Number.parseFloat()</code></a></li>
+ <li><a href="/js/Number/parseInt/"><code>Number.parseInt()</code></a></li>
+ <li><a href="/js/Number/toFixed/"><code>Number.toFixed()</code></a></li>
+ <li><a href="/js/isNaN/"><code>isNaN()</code></a></li>
 </ul></div>

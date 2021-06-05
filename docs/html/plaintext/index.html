@@ -1,0 +1,26 @@
+<h1>&lt;plaintext&gt;: The Plain Text element (Deprecated)</h1><div><div><div class="notecard deprecated">
+            <h4 id="deprecated">Deprecated</h4>
+            <p>This feature is no longer recommended. Though some browsers might still support it, it may have already been removed from the relevant web standards, may be in the process of being dropped, or may only be kept for compatibility purposes. Avoid using it, and update existing code if possible; see the <a href="#browser_compatibility">compatibility table</a> at the bottom of this page to guide your decision. Be aware that this feature may cease to work at any time.</p>
+        </div></div>
+
+<p>The <strong><code>&lt;plaintext&gt;</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a> element renders everything following the start tag as raw text, ignoring any following HTML. There is no closing tag, since everything after it is considered raw text.</p>
+
+<div class="note notecard"><strong>Note:</strong> Do not use this element.
+
+<ul>
+ <li><code>&lt;plaintext&gt;</code> is deprecated since HTML 2, and not all browsers implemented it. Browsers that did implement it didn't do so consistently.</li>
+ <li><code>&lt;plaintext&gt;</code> is obsolete in HTML5; browsers that accept it may instead treat it as a <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/pre"><code>&lt;pre&gt;</code></a> element that still interprets HTML within.</li>
+ <li>If <code>&lt;plaintext&gt;</code> is the first element on the page (other than any non-displayed elements, like <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/head"><code>&lt;head&gt;</code></a>), do not use HTML at all. Instead serve a text file with the <code>text/plain</code> <a href="https://developer.mozilla.org/en-US/docs/Learn/Server-side/Configuring_server_MIME_types" title="Properly Configuring Server MIME Types">MIME-type</a>.</li>
+ <li>Instead of <code>&lt;plaintext&gt;</code>, use the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/pre"><code>&lt;pre&gt;</code></a> element or, if semantically accurate (such as for inline text), the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/code"><code>&lt;code&gt;</code></a> element. Escape any <code>&lt;</code>, <code>&gt;</code> and <code>&amp;</code> characters, to prevent browsers inadvertently parsing content the element content as HTML.</li>
+ <li>A monospaced font can be applied to any HTML element via a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-family"><code>font-family</code></a> style with the <code>monospace</code> generic value.</li>
+</ul>
+</div></div><h2 id="attributes"><a href="#attributes" title="Permalink to Attributes">Attributes</a></h2><div><p>This element has no other attributes than the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes" rel="internal" title="HTML/global attributes">global attributes</a> common to all elements.</p></div><h2 id="dom_interface"><a href="#dom_interface" title="Permalink to DOM interface">DOM interface</a></h2><div><p>This element implements the <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement"><code>HTMLElement</code></a> interface.</p>
+
+<div class="note notecard">
+<p><strong>Implementation note:</strong> In Gecko 1.9.2 and before, Firefox implements the interface <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLSpanElement"><code>HTMLSpanElement</code></a> for this element.</p>
+</div></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://html.spec.whatwg.org/multipage/obsolete.html#plaintext">HTML Standard<!-- --> <!-- -->(HTML)<br><small># <!-- -->plaintext</small></a></td></tr></tbody></table><div><p></p><p></p></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/pre"><code>&lt;pre&gt;</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/code"><code>&lt;code&gt;</code></a> elements, which should be used instead.</li>
+ <li>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/listing" class="page-not-created" title="This is a link to an unwritten page"><code>&lt;listing&gt;</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/xmp"><code>&lt;xmp&gt;</code></a> elements, which are both obsolete elements similar to <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/plaintext" aria-current="page"><code>&lt;plaintext&gt;</code></a>.</li>
+</ul>
+
+<div></div></div>

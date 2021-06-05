@@ -15,14 +15,14 @@ new Date(<var>year</var>, <var>month</var>[, <var>day</var>[, <var>hour</var>[, 
 </div>
 
 <div class="note notecard">
-<p><strong>Обратите внимание:</strong> если функция Date вызывается в качестве конструктора с более чем одним аргументом, то указанные аргументы интерпретируются как локальное время. Если аргументы указывают время в UTC, используйте <code>new Date(<a href="/webhints_data_ru/js/Date/UTC/"><code>Date.UTC(...)</code></a>)</code> с теми же аргументами.</p>
+<p><strong>Обратите внимание:</strong> если функция Date вызывается в качестве конструктора с более чем одним аргументом, то указанные аргументы интерпретируются как локальное время. Если аргументы указывают время в UTC, используйте <code>new Date(<a href="/js/Date/UTC/"><code>Date.UTC(...)</code></a>)</code> с теми же аргументами.</p>
 </div>
 
 <dl>
  <dt><code>value</code></dt>
  <dd>Целое значение, представляющее количество миллисекунд, прошедших с 1 января 1970 00:00:00 по UTC (эпохи Unix).</dd>
  <dt><code>dateString</code></dt>
- <dd>Строковое значение, представляющее дату. Строка должна быть в одном из форматов, распознаваемых методом <a href="/webhints_data_ru/js/Date/parse/"><code>Date.parse()</code></a> (совместимые с IETF RFC 2822 временные метки [<a href="https://tools.ietf.org/html/rfc2822#page-14" class="external" rel=" noopener">на английском</a>, <a href="http://rfc2.ru/5322.rfc/print#p3.3" class="external" rel=" noopener">на русском</a>], а также версия ISO8601 [<a href="https://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15" class="external" rel=" noopener">на английском</a>, <a href="http://es5.javascript.ru/x15.9.html#x15.9.1.15" class="external" rel=" noopener">на русском</a>]).</dd>
+ <dd>Строковое значение, представляющее дату. Строка должна быть в одном из форматов, распознаваемых методом <a href="/js/Date/parse/"><code>Date.parse()</code></a> (совместимые с IETF RFC 2822 временные метки [<a href="https://tools.ietf.org/html/rfc2822#page-14" class="external" rel=" noopener">на английском</a>, <a href="http://rfc2.ru/5322.rfc/print#p3.3" class="external" rel=" noopener">на русском</a>], а также версия ISO8601 [<a href="https://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15" class="external" rel=" noopener">на английском</a>, <a href="http://es5.javascript.ru/x15.9.html#x15.9.1.15" class="external" rel=" noopener">на русском</a>]).</dd>
  <dt><code>year</code></dt>
  <dd>Целое значение, представляющее год. Значения с 0 по 99 отображаются на года с 1900 по 1999. Смотрите <a href="#example:_two_digit_years_map_to_1900_-_1999">пример ниже</a>.</dd>
  <dt><code>month</code></dt>
@@ -53,124 +53,124 @@ new Date(<var>year</var>, <var>month</var>[, <var>day</var>[, <var>hour</var>[, 
 
 <div><div class="notecard note">
 
-<div><span>Свойства, унаследованные из <a href="/webhints_data_ru/js/Function/"><code>Function</code></a>:</span></div>
-<div><a class="internal" href="/webhints_data_ru/js/Function/Arity/"><code>arity</code></a>, <a class="internal" href="/webhints_data_ru/js/Function/caller/"><code>caller</code></a>, <a class="internal only-in-en-us" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" title="Currently only available in English (US)">constructor (en-US)</a>, <a class="internal" href="/webhints_data_ru/js/Function/length/"><code>length</code></a>, <a class="internal" href="/webhints_data_ru/js/Function/name/"><code>name</code></a></div>
+<div><span>Свойства, унаследованные из <a href="/js/Function/"><code>Function</code></a>:</span></div>
+<div><a class="internal" href="/js/Function/Arity/"><code>arity</code></a>, <a class="internal" href="/js/Function/caller/"><code>caller</code></a>, <a class="internal only-in-en-us" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" title="Currently only available in English (US)">constructor (en-US)</a>, <a class="internal" href="/js/Function/length/"><code>length</code></a>, <a class="internal" href="/js/Function/name/"><code>name</code></a></div>
 </div></div></div><h2 id="methods"><a href="#methods" title="Permalink to Методы">Методы</a></h2><div><dl>
- <dt><a href="/webhints_data_ru/js/Date/now/"><code>Date.now()</code></a></dt>
+ <dt><a href="/js/Date/now/"><code>Date.now()</code></a></dt>
  <dd>Возвращает числовое значение, соответствующее текущему времени&nbsp;— количество миллисекунд, прошедших с 1 января 1970 года 00:00:00 по UTC.</dd>
- <dt><a href="/webhints_data_ru/js/Date/parse/"><code>Date.parse()</code></a></dt>
+ <dt><a href="/js/Date/parse/"><code>Date.parse()</code></a></dt>
  <dd>Разбирает строковое представление даты и возвращает количество миллисекунд с 1 января 1970 года 00:00:00 по местному времени.</dd>
- <dt><a href="/webhints_data_ru/js/Date/UTC/"><code>Date.UTC()</code></a></dt>
+ <dt><a href="/js/Date/UTC/"><code>Date.UTC()</code></a></dt>
  <dd>Принимает те же самые параметры, что и самый длинный вариант конструктора (то есть, от 2 до 7) и возвращает количество миллисекунд, прошедших с 1 января 1970 года 00:00:00 по UTC.</dd>
 </dl>
 
 <div><div class="notecard note">
 
-<div><span>Методы, унаследованные из <a href="/webhints_data_ru/js/Function/"><code>Function</code></a>:</span></div>
-<div><a class="internal" href="/webhints_data_ru/js/Function/apply/"><code>apply</code></a>, <a class="internal" href="/webhints_data_ru/js/Function/call/"><code>call</code></a>, <a class="internal" href="/webhints_data_ru/js/Function/toSource/"><code>toSource</code></a>, <a class="internal" href="/webhints_data_ru/js/Function/toString/"><code>toString</code></a></div>
+<div><span>Методы, унаследованные из <a href="/js/Function/"><code>Function</code></a>:</span></div>
+<div><a class="internal" href="/js/Function/apply/"><code>apply</code></a>, <a class="internal" href="/js/Function/call/"><code>call</code></a>, <a class="internal" href="/js/Function/toSource/"><code>toSource</code></a>, <a class="internal" href="/js/Function/toString/"><code>toString</code></a></div>
 </div></div></div><h2 id="date_instances"><a href="#date_instances" title="Permalink to Экземпляры объекта Date">Экземпляры объекта <code>Date</code></a></h2><div><p>Все экземпляры объекта <code>Date</code> наследуются от <a href="https://developer.mozilla.org/ru/docs/conflicting/Web/JavaScript/Reference/Global_Objects/Date"><code>Date.prototype</code></a>. Объект прототипа конструктора <code>Date</code> может быть изменён, чтобы затронуть все экземпляры объекта <code>Date</code>.</p></div><h3 id="методы"><a href="#методы" title="Permalink to Методы">Методы</a></h3><div><div><h3 id="Getter" name="Getter">Получения значения</h3><dl>
- <dt><a href="/webhints_data_ru/js/Date/getDate/"><code>Date.prototype.getDate()</code></a></dt>
+ <dt><a href="/js/Date/getDate/"><code>Date.prototype.getDate()</code></a></dt>
  <dd>Возвращает день месяца (1-31) указанной даты по местному времени.</dd>
- <dt><a href="/webhints_data_ru/js/Date/getDay/"><code>Date.prototype.getDay()</code></a></dt>
+ <dt><a href="/js/Date/getDay/"><code>Date.prototype.getDay()</code></a></dt>
  <dd>Возвращает день недели (0-6) указанной даты по местному времени.</dd>
- <dt><a href="/webhints_data_ru/js/Date/getFullYear/"><code>Date.prototype.getFullYear()</code></a></dt>
+ <dt><a href="/js/Date/getFullYear/"><code>Date.prototype.getFullYear()</code></a></dt>
  <dd>Возвращает год (4 цифры для 4-х значного года) указанной даты по местному времени.</dd>
- <dt><a href="/webhints_data_ru/js/Date/getHours/"><code>Date.prototype.getHours()</code></a></dt>
+ <dt><a href="/js/Date/getHours/"><code>Date.prototype.getHours()</code></a></dt>
  <dd>Возвращает часы (0-23) указанной даты по местному времени.</dd>
- <dt><a href="/webhints_data_ru/js/Date/getMilliseconds/"><code>Date.prototype.getMilliseconds()</code></a></dt>
+ <dt><a href="/js/Date/getMilliseconds/"><code>Date.prototype.getMilliseconds()</code></a></dt>
  <dd>Возвращает миллисекунды (0-999) указанной даты по местному времени.</dd>
- <dt><a href="/webhints_data_ru/js/Date/getMinutes/"><code>Date.prototype.getMinutes()</code></a></dt>
+ <dt><a href="/js/Date/getMinutes/"><code>Date.prototype.getMinutes()</code></a></dt>
  <dd>Возвращает минуты (0-59) указанной даты по местному времени.</dd>
- <dt><a href="/webhints_data_ru/js/Date/getMonth/"><code>Date.prototype.getMonth()</code></a></dt>
+ <dt><a href="/js/Date/getMonth/"><code>Date.prototype.getMonth()</code></a></dt>
  <dd>Возвращает месяц (0-11) указанной даты по местному времени.</dd>
- <dt><a href="/webhints_data_ru/js/Date/getSeconds/"><code>Date.prototype.getSeconds()</code></a></dt>
+ <dt><a href="/js/Date/getSeconds/"><code>Date.prototype.getSeconds()</code></a></dt>
  <dd>Возвращает секунды (0-59) указанной даты по местному времени.</dd>
- <dt><a href="/webhints_data_ru/js/Date/getTime/"><code>Date.prototype.getTime()</code></a></dt>
+ <dt><a href="/js/Date/getTime/"><code>Date.prototype.getTime()</code></a></dt>
  <dd>Возвращает числовое значение указанной даты как количество миллисекунд, прошедших с 1 января 1970 года 00:00:00 по UTC (отрицательное значение для даты до этого момента).</dd>
- <dt><a href="/webhints_data_ru/js/Date/getTimezoneOffset/"><code>Date.prototype.getTimezoneOffset()</code></a></dt>
+ <dt><a href="/js/Date/getTimezoneOffset/"><code>Date.prototype.getTimezoneOffset()</code></a></dt>
  <dd>Возвращает смещение часового пояса в минутах для текущей локали.</dd>
- <dt><a href="/webhints_data_ru/js/Date/getUTCDate/"><code>Date.prototype.getUTCDate()</code></a></dt>
+ <dt><a href="/js/Date/getUTCDate/"><code>Date.prototype.getUTCDate()</code></a></dt>
  <dd>Возвращает день месяца (1-31) указанной даты по всемирному координированному времени.</dd>
- <dt><a href="/webhints_data_ru/js/Date/getUTCDay/"><code>Date.prototype.getUTCDay()</code></a></dt>
+ <dt><a href="/js/Date/getUTCDay/"><code>Date.prototype.getUTCDay()</code></a></dt>
  <dd>Возвращает день недели (0-6) указанной даты по всемирному координированному времени.</dd>
- <dt><a href="/webhints_data_ru/js/Date/getUTCFullYear/"><code>Date.prototype.getUTCFullYear()</code></a></dt>
+ <dt><a href="/js/Date/getUTCFullYear/"><code>Date.prototype.getUTCFullYear()</code></a></dt>
  <dd>Возвращает год (4 цифры для 4-х значного года) указанной даты по всемирному координированному времени.</dd>
- <dt><a href="/webhints_data_ru/js/Date/getUTCHours/"><code>Date.prototype.getUTCHours()</code></a></dt>
+ <dt><a href="/js/Date/getUTCHours/"><code>Date.prototype.getUTCHours()</code></a></dt>
  <dd>Возвращает часы (0-23) указанной даты по всемирному координированному времени.</dd>
- <dt><a href="/webhints_data_ru/js/Date/getUTCMilliseconds/"><code>Date.prototype.getUTCMilliseconds()</code></a></dt>
+ <dt><a href="/js/Date/getUTCMilliseconds/"><code>Date.prototype.getUTCMilliseconds()</code></a></dt>
  <dd>Возвращает миллисекунды (0-999) указанной даты по всемирному координированному времени.</dd>
- <dt><a href="/webhints_data_ru/js/Date/getUTCMinutes/"><code>Date.prototype.getUTCMinutes()</code></a></dt>
+ <dt><a href="/js/Date/getUTCMinutes/"><code>Date.prototype.getUTCMinutes()</code></a></dt>
  <dd>Возвращает минуты (0-59) указанной даты по всемирному координированному времени.</dd>
- <dt><a href="/webhints_data_ru/js/Date/getUTCMonth/"><code>Date.prototype.getUTCMonth()</code></a></dt>
+ <dt><a href="/js/Date/getUTCMonth/"><code>Date.prototype.getUTCMonth()</code></a></dt>
  <dd>Возвращает месяц (0-11) указанной даты по всемирному координированному времени.</dd>
- <dt><a href="/webhints_data_ru/js/Date/getUTCSeconds/"><code>Date.prototype.getUTCSeconds()</code></a></dt>
+ <dt><a href="/js/Date/getUTCSeconds/"><code>Date.prototype.getUTCSeconds()</code></a></dt>
  <dd>Возвращает секунды (0-59) указанной даты по всемирному координированному времени.</dd>
- <dt><a href="/webhints_data_ru/js/Date/getYear/"><code>Date.prototype.getYear()</code></a> </dt>
- <dd>Возвращает год (обычно 2-3 цифры) указанной даты по всемирному координированному времени. Вместо него используйте метод <a href="/webhints_data_ru/js/Date/getFullYear/"><code>getFullYear()</code></a>.</dd>
+ <dt><a href="/js/Date/getYear/"><code>Date.prototype.getYear()</code></a> </dt>
+ <dd>Возвращает год (обычно 2-3 цифры) указанной даты по всемирному координированному времени. Вместо него используйте метод <a href="/js/Date/getFullYear/"><code>getFullYear()</code></a>.</dd>
 </dl><h3 id="Setter" name="Setter">Установки значения</h3><dl>
- <dt><a href="/webhints_data_ru/js/Date/setDate/"><code>Date.prototype.setDate()</code></a></dt>
+ <dt><a href="/js/Date/setDate/"><code>Date.prototype.setDate()</code></a></dt>
  <dd>Устанавливает день месяца указанной даты по местному времени.</dd>
- <dt><a href="/webhints_data_ru/js/Date/setFullYear/"><code>Date.prototype.setFullYear()</code></a></dt>
+ <dt><a href="/js/Date/setFullYear/"><code>Date.prototype.setFullYear()</code></a></dt>
  <dd>Устанавливает полный год (4 цифры для 4-х значного года) указанной даты по местному времени.</dd>
- <dt><a href="/webhints_data_ru/js/Date/setHours/"><code>Date.prototype.setHours()</code></a></dt>
+ <dt><a href="/js/Date/setHours/"><code>Date.prototype.setHours()</code></a></dt>
  <dd>Устанавливает часы указанной даты по местному времени.</dd>
- <dt><a href="/webhints_data_ru/js/Date/setMilliseconds/"><code>Date.prototype.setMilliseconds()</code></a></dt>
+ <dt><a href="/js/Date/setMilliseconds/"><code>Date.prototype.setMilliseconds()</code></a></dt>
  <dd>Устанавливает миллисекунды указанной даты по местному времени.</dd>
- <dt><a href="/webhints_data_ru/js/Date/setMinutes/"><code>Date.prototype.setMinutes()</code></a></dt>
+ <dt><a href="/js/Date/setMinutes/"><code>Date.prototype.setMinutes()</code></a></dt>
  <dd>Устанавливает минуты указанной даты по местному времени.</dd>
- <dt><a href="/webhints_data_ru/js/Date/setMonth/"><code>Date.prototype.setMonth()</code></a></dt>
+ <dt><a href="/js/Date/setMonth/"><code>Date.prototype.setMonth()</code></a></dt>
  <dd>Устанавливает месяц указанной даты по местному времени.</dd>
- <dt><a href="/webhints_data_ru/js/Date/setSeconds/"><code>Date.prototype.setSeconds()</code></a></dt>
+ <dt><a href="/js/Date/setSeconds/"><code>Date.prototype.setSeconds()</code></a></dt>
  <dd>Устанавливает секунды указанной даты по местному времени.</dd>
- <dt><a href="/webhints_data_ru/js/Date/setTime/"><code>Date.prototype.setTime()</code></a></dt>
- <dd>Устанавливает объект <a href="/webhints_data_ru/js/Date/" aria-current="page"><code>Date</code></a> во время, представляемое количеством миллисекунд, прошедших с 1 января 1970 года 00:00:00 по UTC (отрицательное значение устанавливает даты до этого момента).</dd>
- <dt><a href="/webhints_data_ru/js/Date/setUTCDate/"><code>Date.prototype.setUTCDate()</code></a></dt>
+ <dt><a href="/js/Date/setTime/"><code>Date.prototype.setTime()</code></a></dt>
+ <dd>Устанавливает объект <a href="/js/Date/" aria-current="page"><code>Date</code></a> во время, представляемое количеством миллисекунд, прошедших с 1 января 1970 года 00:00:00 по UTC (отрицательное значение устанавливает даты до этого момента).</dd>
+ <dt><a href="/js/Date/setUTCDate/"><code>Date.prototype.setUTCDate()</code></a></dt>
  <dd>Устанавливает день месяца указанной даты по всемирному координированному времени.</dd>
- <dt><a href="/webhints_data_ru/js/Date/setUTCFullYear/"><code>Date.prototype.setUTCFullYear()</code></a></dt>
+ <dt><a href="/js/Date/setUTCFullYear/"><code>Date.prototype.setUTCFullYear()</code></a></dt>
  <dd>Устанавливает полный год (4 цифры для 4-х значного года) указанной даты по всемирному координированному времени.</dd>
- <dt><a href="/webhints_data_ru/js/Date/setUTCHours/"><code>Date.prototype.setUTCHours()</code></a></dt>
+ <dt><a href="/js/Date/setUTCHours/"><code>Date.prototype.setUTCHours()</code></a></dt>
  <dd>Устанавливает часы указанной даты по всемирному координированному времени.</dd>
- <dt><a href="/webhints_data_ru/js/Date/setUTCMilliseconds/"><code>Date.prototype.setUTCMilliseconds()</code></a></dt>
+ <dt><a href="/js/Date/setUTCMilliseconds/"><code>Date.prototype.setUTCMilliseconds()</code></a></dt>
  <dd>Устанавливает миллисекунды указанной даты по всемирному координированному времени.</dd>
- <dt><a href="/webhints_data_ru/js/Date/setUTCMinutes/"><code>Date.prototype.setUTCMinutes()</code></a></dt>
+ <dt><a href="/js/Date/setUTCMinutes/"><code>Date.prototype.setUTCMinutes()</code></a></dt>
  <dd>Устанавливает минуты указанной даты по всемирному координированному времени.</dd>
- <dt><a href="/webhints_data_ru/js/Date/setUTCMonth/"><code>Date.prototype.setUTCMonth()</code></a></dt>
+ <dt><a href="/js/Date/setUTCMonth/"><code>Date.prototype.setUTCMonth()</code></a></dt>
  <dd>Устанавливает месяц указанной даты по всемирному координированному времени.</dd>
- <dt><a href="/webhints_data_ru/js/Date/setUTCSeconds/"><code>Date.prototype.setUTCSeconds()</code></a></dt>
+ <dt><a href="/js/Date/setUTCSeconds/"><code>Date.prototype.setUTCSeconds()</code></a></dt>
  <dd>Устанавливает секунды указанной даты по всемирному координированному времени.</dd>
- <dt><a href="/webhints_data_ru/js/Date/setYear/"><code>Date.prototype.setYear()</code></a> </dt>
- <dd>Устанавливает год (обычно 2-3 цифры) указанной даты по всемирному координированному времени. Вместо него используйте метод <a href="/webhints_data_ru/js/Date/setFullYear/"><code>setFullYear()</code></a>.</dd>
+ <dt><a href="/js/Date/setYear/"><code>Date.prototype.setYear()</code></a> </dt>
+ <dd>Устанавливает год (обычно 2-3 цифры) указанной даты по всемирному координированному времени. Вместо него используйте метод <a href="/js/Date/setFullYear/"><code>setFullYear()</code></a>.</dd>
 </dl><h3 id="Conversion_getter" name="Conversion_getter">Получения преобразованного значения</h3><dl>
- <dt><a href="/webhints_data_ru/js/Date/toDateString/"><code>Date.prototype.toDateString()</code></a></dt>
- <dd>Возвращает часть, содержащую только дату объекта <a href="/webhints_data_ru/js/Date/" aria-current="page"><code>Date</code></a> в качестве человеко-читаемой строки.</dd>
- <dt><a href="/webhints_data_ru/js/Date/toISOString/"><code>Date.prototype.toISOString()</code></a></dt>
+ <dt><a href="/js/Date/toDateString/"><code>Date.prototype.toDateString()</code></a></dt>
+ <dd>Возвращает часть, содержащую только дату объекта <a href="/js/Date/" aria-current="page"><code>Date</code></a> в качестве человеко-читаемой строки.</dd>
+ <dt><a href="/js/Date/toISOString/"><code>Date.prototype.toISOString()</code></a></dt>
  <dd>Преобразует дату в строку, следуя расширенному формату ISO 8601.</dd>
- <dt><a href="/webhints_data_ru/js/Date/toJSON/"><code>Date.prototype.toJSON()</code></a></dt>
- <dd>Возвращает строку, представляющую объект <a href="/webhints_data_ru/js/Date/" aria-current="page"><code>Date</code></a>, используя метод <a href="/webhints_data_ru/js/Date/toISOString/"><code>toISOString()</code></a>. Предназначен для использования методом <a href="/webhints_data_ru/js/JSON/stringify/"><code>JSON.stringify()</code></a>.</dd>
- <dt><a href="/webhints_data_ru/js/Date/toGMTString/"><code>Date.prototype.toGMTString()</code></a> </dt>
- <dd>Возвращает строку, представляющую объект <a href="/webhints_data_ru/js/Date/" aria-current="page"><code>Date</code></a>, на основе часового пояса GMT (всемирное время). Вместо него используйте метод <a href="/webhints_data_ru/js/Date/toUTCString/"><code>toUTCString()</code></a>.</dd>
- <dt><a href="/webhints_data_ru/js/Date/toLocaleDateString/"><code>Date.prototype.toLocaleDateString()</code></a></dt>
+ <dt><a href="/js/Date/toJSON/"><code>Date.prototype.toJSON()</code></a></dt>
+ <dd>Возвращает строку, представляющую объект <a href="/js/Date/" aria-current="page"><code>Date</code></a>, используя метод <a href="/js/Date/toISOString/"><code>toISOString()</code></a>. Предназначен для использования методом <a href="/js/JSON/stringify/"><code>JSON.stringify()</code></a>.</dd>
+ <dt><a href="/js/Date/toGMTString/"><code>Date.prototype.toGMTString()</code></a> </dt>
+ <dd>Возвращает строку, представляющую объект <a href="/js/Date/" aria-current="page"><code>Date</code></a>, на основе часового пояса GMT (всемирное время). Вместо него используйте метод <a href="/js/Date/toUTCString/"><code>toUTCString()</code></a>.</dd>
+ <dt><a href="/js/Date/toLocaleDateString/"><code>Date.prototype.toLocaleDateString()</code></a></dt>
  <dd>Возвращает строку с датой, чьё представление зависит от системных настроек локали.</dd>
  <dt><a class="page-not-created" title="Документация об этом ещё не написана; пожалуйста, поспособствуйте её написанию!"><code>Date.prototype.toLocaleFormat()</code></a> </dt>
  <dd>Преобразует дату в строку, используя строку форматирования.</dd>
- <dt><a href="/webhints_data_ru/js/Date/toLocaleString/"><code>Date.prototype.toLocaleString()</code></a></dt>
- <dd>Возвращает строку, чьё представление зависит от настроек локали. Переопределяет метод <a href="/webhints_data_ru/js/Object/toLocaleString/"><code>Object.prototype.toLocaleString()</code></a>.</dd>
- <dt><a href="/webhints_data_ru/js/Date/toLocaleTimeString/"><code>Date.prototype.toLocaleTimeString()</code></a></dt>
+ <dt><a href="/js/Date/toLocaleString/"><code>Date.prototype.toLocaleString()</code></a></dt>
+ <dd>Возвращает строку, чьё представление зависит от настроек локали. Переопределяет метод <a href="/js/Object/toLocaleString/"><code>Object.prototype.toLocaleString()</code></a>.</dd>
+ <dt><a href="/js/Date/toLocaleTimeString/"><code>Date.prototype.toLocaleTimeString()</code></a></dt>
  <dd>Возвращает строку со временем, чьё представление зависит от системных настроек локали.</dd>
- <dt><a href="/webhints_data_ru/js/Date/toSource/"><code>Date.prototype.toSource()</code></a> </dt>
- <dd>Возвращает строковое представление исходного кода эквивалентного объекта <a href="/webhints_data_ru/js/Date/" aria-current="page"><code>Date</code></a>; вы можете использовать это значение для создания нового объекта. Переопределяет метод <a href="/webhints_data_ru/js/Object/toSource/"><code>Object.prototype.toSource()</code></a>.</dd>
- <dt><a href="/webhints_data_ru/js/Date/toString/"><code>Date.prototype.toString()</code></a></dt>
- <dd>Возвращает строковое представление указанного объекта <a href="/webhints_data_ru/js/Date/" aria-current="page"><code>Date</code></a>. Переопределяет метод <a href="/webhints_data_ru/js/Object/toString/"><code>Object.prototype.toString()</code></a>.</dd>
- <dt><a href="/webhints_data_ru/js/Date/toTimeString/"><code>Date.prototype.toTimeString()</code></a></dt>
- <dd>Возвращает часть, содержащую только время объекта <a href="/webhints_data_ru/js/Date/" aria-current="page"><code>Date</code></a> в качестве человеко-читаемой строки.</dd>
- <dt><a href="/webhints_data_ru/js/Date/toUTCString/"><code>Date.prototype.toUTCString()</code></a></dt>
+ <dt><a href="/js/Date/toSource/"><code>Date.prototype.toSource()</code></a> </dt>
+ <dd>Возвращает строковое представление исходного кода эквивалентного объекта <a href="/js/Date/" aria-current="page"><code>Date</code></a>; вы можете использовать это значение для создания нового объекта. Переопределяет метод <a href="/js/Object/toSource/"><code>Object.prototype.toSource()</code></a>.</dd>
+ <dt><a href="/js/Date/toString/"><code>Date.prototype.toString()</code></a></dt>
+ <dd>Возвращает строковое представление указанного объекта <a href="/js/Date/" aria-current="page"><code>Date</code></a>. Переопределяет метод <a href="/js/Object/toString/"><code>Object.prototype.toString()</code></a>.</dd>
+ <dt><a href="/js/Date/toTimeString/"><code>Date.prototype.toTimeString()</code></a></dt>
+ <dd>Возвращает часть, содержащую только время объекта <a href="/js/Date/" aria-current="page"><code>Date</code></a> в качестве человеко-читаемой строки.</dd>
+ <dt><a href="/js/Date/toUTCString/"><code>Date.prototype.toUTCString()</code></a></dt>
  <dd>Преобразует дату в строку, используя часовой пояс UTC.</dd>
- <dt><a href="/webhints_data_ru/js/Date/valueOf/"><code>Date.prototype.valueOf()</code></a></dt>
- <dd>Возвращает примитивное значение объекта <a href="/webhints_data_ru/js/Date/" aria-current="page"><code>Date</code></a>. Переопределяет метод <a href="/webhints_data_ru/js/Object/valueOf/"><code>Object.prototype.valueOf()</code></a>.</dd>
+ <dt><a href="/js/Date/valueOf/"><code>Date.prototype.valueOf()</code></a></dt>
+ <dd>Возвращает примитивное значение объекта <a href="/js/Date/" aria-current="page"><code>Date</code></a>. Переопределяет метод <a href="/js/Object/valueOf/"><code>Object.prototype.valueOf()</code></a>.</dd>
 </dl><div><div class="notecard note">
 
-<div><span>Методы, унаследованные из <a href="/webhints_data_ru/js/Object/"><code>Object</code></a>:</span></div>
-<div><a class="internal only-in-en-us" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineGetter__" title="Currently only available in English (US)">defineGetter (en-US)</a>, <a class="internal only-in-en-us" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineSetter__" title="Currently only available in English (US)">defineSetter (en-US)</a>, <a class="internal" href="/webhints_data_ru/js/Object/hasOwnProperty/"><code>hasOwnProperty</code></a>, <a class="internal" href="/webhints_data_ru/js/Object/isPrototypeOf/"><code>isPrototypeOf</code></a>, <a class="internal only-in-en-us" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupGetter__" title="Currently only available in English (US)">lookupGetter (en-US)</a>, <a class="internal only-in-en-us" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupSetter__" title="Currently only available in English (US)">lookupSetter (en-US)</a>, <a class="internal" href="/webhints_data_ru/js/Object/Nosuchmethod/"><code>noSuchMethod</code></a>, <a class="internal" href="/webhints_data_ru/js/Object/propertyIsEnumerable/"><code>propertyIsEnumerable</code></a>, <a class="internal" href="/webhints_data_ru/js/Object/Unwatch/"><code>unwatch</code></a>, <a class="internal" href="/webhints_data_ru/js/Object/Watch/"><code>watch</code></a></div>
+<div><span>Методы, унаследованные из <a href="/js/Object/"><code>Object</code></a>:</span></div>
+<div><a class="internal only-in-en-us" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineGetter__" title="Currently only available in English (US)">defineGetter (en-US)</a>, <a class="internal only-in-en-us" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineSetter__" title="Currently only available in English (US)">defineSetter (en-US)</a>, <a class="internal" href="/js/Object/hasOwnProperty/"><code>hasOwnProperty</code></a>, <a class="internal" href="/js/Object/isPrototypeOf/"><code>isPrototypeOf</code></a>, <a class="internal only-in-en-us" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupGetter__" title="Currently only available in English (US)">lookupGetter (en-US)</a>, <a class="internal only-in-en-us" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupSetter__" title="Currently only available in English (US)">lookupSetter (en-US)</a>, <a class="internal" href="/js/Object/Nosuchmethod/"><code>noSuchMethod</code></a>, <a class="internal" href="/js/Object/propertyIsEnumerable/"><code>propertyIsEnumerable</code></a>, <a class="internal" href="/js/Object/Unwatch/"><code>unwatch</code></a>, <a class="internal" href="/js/Object/Watch/"><code>watch</code></a></div>
 </div></div></div></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_several_ways_to_assign_dates"><a href="#example_several_ways_to_assign_dates" title="Permalink to Пример: несколько способов создания объекта Date">Пример: несколько способов создания объекта <code>Date</code></a></h3><div><p>Следующие примеры показывают несколько способов создания дат в JavaScript:</p>
 
 <div class="note notecard">
@@ -182,7 +182,7 @@ new Date(<var>year</var>, <var>month</var>[, <var>day</var>[, <var>hour</var>[, 
 <span class="token keyword">var</span> birthday <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">'1995-12-17T03:24:00'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">var</span> birthday <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token number">1995</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">17</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">var</span> birthday <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token number">1995</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">17</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">24</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre></div><h3 id="example_two_digit_years_map_to_1900_-_1999"><a href="#example_two_digit_years_map_to_1900_-_1999" title="Permalink to Пример: двухциферный год отображается на 1900 - 1999 года">Пример: двухциферный год отображается на 1900 - 1999 года</a></h3><div><p>Для того, чтобы создать и получить даты между 0 и 99 годом, нужно использовать&nbsp;методы <a href="/webhints_data_ru/js/Date/setFullYear/"><code>Date.prototype.setFullYear()</code></a> и <a href="/webhints_data_ru/js/Date/getFullYear/"><code>Date.prototype.getFullYear()</code></a>.</p>
+</code></pre></div><h3 id="example_two_digit_years_map_to_1900_-_1999"><a href="#example_two_digit_years_map_to_1900_-_1999" title="Permalink to Пример: двухциферный год отображается на 1900 - 1999 года">Пример: двухциферный год отображается на 1900 - 1999 года</a></h3><div><p>Для того, чтобы создать и получить даты между 0 и 99 годом, нужно использовать&nbsp;методы <a href="/js/Date/setFullYear/"><code>Date.prototype.setFullYear()</code></a> и <a href="/js/Date/getFullYear/"><code>Date.prototype.getFullYear()</code></a>.</p>
 
 <pre class="brush: js notranslate"><code><span class="token keyword">var</span> date <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token number">98</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Sun Feb 01 1998 00:00:00 GMT+0000 (GMT)</span>
 
@@ -225,10 +225,10 @@ yourFunctionReturn <span class="token operator">=</span> <span class="token func
 </code></pre>
 
 <div class="note notecard">
-<p><strong>Обратите внимание:</strong> в браузерах, поддерживающих высокое временное разрешение с помощью <a href="https://developer.mozilla.org/ru/docs/Web/API/Window/performance" title="API замера производительности">API замера производительности</a>, метод <a href="https://developer.mozilla.org/ru/docs/Web/API/Performance/now"><code>Performance.now()</code></a> может обеспечить более надёжные и точные замеры затраченного времени, нежели метод <a href="/webhints_data_ru/js/Date/now/"><code>Date.now()</code></a>.</p>
+<p><strong>Обратите внимание:</strong> в браузерах, поддерживающих высокое временное разрешение с помощью <a href="https://developer.mozilla.org/ru/docs/Web/API/Window/performance" title="API замера производительности">API замера производительности</a>, метод <a href="https://developer.mozilla.org/ru/docs/Web/API/Performance/now"><code>Performance.now()</code></a> может обеспечить более надёжные и точные замеры затраченного времени, нежели метод <a href="/js/Date/now/"><code>Date.now()</code></a>.</p>
 </div></div><h3 id="получить_количество_секунд_с_начало_эпохи_unix"><a href="#получить_количество_секунд_с_начало_эпохи_unix" title="Permalink to Получить количество секунд с начало эпохи Unix">Получить количество секунд с начало эпохи Unix</a></h3><div><pre class="notranslate"><code>var seconds = Math.floor(Date.now() / 1000);</code></pre>
 
-<p>В этом случае важно возвращать только целое число (так что простое деление не подойдёт), а также возвращать только фактически прошедшие секунды (поэтому этот код использует <a href="/webhints_data_ru/js/Math/floor/"><code>Math.floor ()</code></a> а&nbsp;не <a href="/webhints_data_ru/js/Math/round/"><code>Math.round ()</code></a>).</p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+<p>В этом случае важно возвращать только целое число (так что простое деление не подойдёт), а также возвращать только фактически прошедшие секунды (поэтому этот код использует <a href="/js/Math/floor/"><code>Math.floor ()</code></a> а&nbsp;не <a href="/js/Math/round/"><code>Math.round ()</code></a>).</p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
  <tbody>
   <tr>
    <th scope="col">Спецификация</th>

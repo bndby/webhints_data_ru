@@ -2,14 +2,14 @@
 
 <p>Метод <code><strong>toString()</strong></code> возвращает строку, представляющую объект.</p>
 
-<p><iframe class="interactive" width="100%" height="490" src="https://interactive-examples.mdn.mozilla.net/pages/js/object-prototype-tostring.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code><var>obj</var>.toString()</code></pre></div><h3 id="возвращаемое_значение"><a href="#возвращаемое_значение" title="Permalink to Возвращаемое значение">Возвращаемое значение</a></h3><div><p>Строка, представляющая объект.</p></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Каждый объект имеет метод <code>toString()</code>, автоматически вызывающийся, когда объект должен быть представлен в виде текстового значения или когда объект участвует в выражении, где ожидается строка. По умолчанию, метод <code>toString()</code> наследуется каждым объектом, произошедшим от объекта <a href="/webhints_data_ru/js/Object/"><code>Object</code></a>. Если этот метод не переопределён в пользовательском объекте, <code>toString()</code> возвращает строку вида "[object <em>тип</em>]", где <code><em>тип</em></code>&nbsp;— это тип объекта. Это иллюстрирует следующий код:</p>
+<p><iframe class="interactive" width="100%" height="490" src="https://interactive-examples.mdn.mozilla.net/pages/js/object-prototype-tostring.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code><var>obj</var>.toString()</code></pre></div><h3 id="возвращаемое_значение"><a href="#возвращаемое_значение" title="Permalink to Возвращаемое значение">Возвращаемое значение</a></h3><div><p>Строка, представляющая объект.</p></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Каждый объект имеет метод <code>toString()</code>, автоматически вызывающийся, когда объект должен быть представлен в виде текстового значения или когда объект участвует в выражении, где ожидается строка. По умолчанию, метод <code>toString()</code> наследуется каждым объектом, произошедшим от объекта <a href="/js/Object/"><code>Object</code></a>. Если этот метод не переопределён в пользовательском объекте, <code>toString()</code> возвращает строку вида "[object <em>тип</em>]", где <code><em>тип</em></code>&nbsp;— это тип объекта. Это иллюстрирует следующий код:</p>
 
 <pre class="brush: js notranslate"><code><span class="token keyword">var</span> o <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 o<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>           <span class="token comment">// вернёт [object Object]</span>
 </code></pre>
 
 <div class="note notecard">
-<p><strong>Примечание:</strong> начиная с JavaScript 1.8.5, метод <code>toString()</code>, вызванный на <a href="/webhints_data_ru/js/null/"><code>null</code></a>, возвращает строку <code>[object <em>Null</em>]</code>, а вызванный для <a href="/webhints_data_ru/js/undefined/"><code>undefined</code></a>, возвращает строку <code>[object <em>Undefined</em>]</code>, как определено в 5-м издании ECMAScript и последующих исправлениях. Смотрите пример <a href="#using_tostring_to_detect_object_type">использование метода toString() для определения типа объекта</a>.</p>
+<p><strong>Примечание:</strong> начиная с JavaScript 1.8.5, метод <code>toString()</code>, вызванный на <a href="/js/null/"><code>null</code></a>, возвращает строку <code>[object <em>Null</em>]</code>, а вызванный для <a href="/js/undefined/"><code>undefined</code></a>, возвращает строку <code>[object <em>Undefined</em>]</code>, как определено в 5-м издании ECMAScript и последующих исправлениях. Смотрите пример <a href="#using_tostring_to_detect_object_type">использование метода toString() для определения типа объекта</a>.</p>
 </div></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_overriding_the_default_tostring_method"><a href="#example_overriding_the_default_tostring_method" title="Permalink to Пример: переопределение метода toString по умолчанию">Пример: переопределение метода <code>toString</code> по умолчанию</a></h3><div><p>Вы можете создать функцию, которая будет вызываться вместо метода <code>toString()</code> по умолчанию. Метод <code>toString()</code> не принимает аргументов и должен возвращать строку. Создаваемый вами метод <code>toString()</code> может возвращать любую строку, какую вы захотите, но он будет наиболее полезным, если будет возвращать информацию об объекте.</p>
 
 <p>Следующий код определяет объект <code>Dog</code> и создаёт <code>theDog</code>, объект типа <code>Dog</code>:</p>
@@ -24,7 +24,7 @@ o<span class="token punctuation">.</span><span class="token function">toString</
 theDog <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Dog</span><span class="token punctuation">(</span><span class="token string">'Болтушка'</span><span class="token punctuation">,</span> <span class="token string">'лабрадор'</span><span class="token punctuation">,</span> <span class="token string">'шоколадный'</span><span class="token punctuation">,</span> <span class="token string">'девочка'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 
-<p>Если вы вызовете метод <code>toString()</code> на этом пользовательском объекте, он вернёт значение по умолчанию, унаследованное от <a href="/webhints_data_ru/js/Object/"><code>Object</code></a>:</p>
+<p>Если вы вызовете метод <code>toString()</code> на этом пользовательском объекте, он вернёт значение по умолчанию, унаследованное от <a href="/js/Object/"><code>Object</code></a>:</p>
 
 <pre class="brush: js notranslate"><code>theDog<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// вернёт [object Object]</span>
 </code></pre>
@@ -46,7 +46,7 @@ theDog <span class="token operator">=</span> <span class="token keyword">new</sp
 <p>После объявления этого метода, при любом использовании переменной <code>theDog</code> в строковом контексте, JavaScript будет автоматически вызывать функцию <code>dogToString()</code>, возвращающую следующую строку:</p>
 
 <pre class="notranslate">Собачка Болтушка - девочка, шоколадный лабрадор
-</pre></div><h3 id="example_using_tostring_to_detect_object_type"><a href="#example_using_tostring_to_detect_object_type" title="Permalink to Пример: использование метода toString для определения типа объекта">Пример: использование метода <code>toString</code> для определения типа объекта</a></h3><div><p>Метод <code>toString()</code> можно использовать с любым объектом для получения его класса. Для использования метода <code>Object.prototype.toString()</code> с любым объектом, вам необходимо вызвать на нём функции <a href="/webhints_data_ru/js/Function/call/"><code>Function.prototype.call()</code></a> или <a href="/webhints_data_ru/js/Function/apply/"><code>Function.prototype.apply()</code></a>, передав объект, который вы хотите исследовать, первым параметром <code>thisArg</code>.</p>
+</pre></div><h3 id="example_using_tostring_to_detect_object_type"><a href="#example_using_tostring_to_detect_object_type" title="Permalink to Пример: использование метода toString для определения типа объекта">Пример: использование метода <code>toString</code> для определения типа объекта</a></h3><div><p>Метод <code>toString()</code> можно использовать с любым объектом для получения его класса. Для использования метода <code>Object.prototype.toString()</code> с любым объектом, вам необходимо вызвать на нём функции <a href="/js/Function/call/"><code>Function.prototype.call()</code></a> или <a href="/js/Function/apply/"><code>Function.prototype.apply()</code></a>, передав объект, который вы хотите исследовать, первым параметром <code>thisArg</code>.</p>
 
 <pre class="brush: js notranslate"><code><span class="token keyword">var</span> toString <span class="token operator">=</span> <span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>toString<span class="token punctuation">;</span>
 
@@ -77,7 +77,7 @@ theDog <span class="token operator">=</span> <span class="token keyword">new</sp
   <tr>
    <td><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-15.2.4.2" hreflang="en" lang="en" class="external" rel=" noopener">ECMAScript 5.1 (ECMA-262)<br><small lang="ru">Определение 'Object.prototype.toString' в этой спецификации.</small></a></td>
    <td><span class="spec-standard">Стандарт</span></td>
-   <td>Вызов метода на <a href="/webhints_data_ru/js/null/"><code>null</code></a> вернёт <code>[object <em>Null</em>]</code>, а на <a href="/webhints_data_ru/js/undefined/"><code>undefined</code></a>&nbsp;— <code>[object <em>Undefined</em>]</code></td>
+   <td>Вызов метода на <a href="/js/null/"><code>null</code></a> вернёт <code>[object <em>Null</em>]</code>, а на <a href="/js/undefined/"><code>undefined</code></a>&nbsp;— <code>[object <em>Undefined</em>]</code></td>
   </tr>
   <tr>
    <td><a href="https://www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-262,%201st%20edition,%20June%201997.pdf" hreflang="en" lang="en" class="external" title="Спецификация 'ECMAScript 1st Edition (ECMA-262)'" rel=" noopener">ECMAScript 1st Edition (ECMA-262)</a></td>
@@ -88,8 +88,8 @@ theDog <span class="token operator">=</span> <span class="token keyword">new</sp
 </table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><div></div>
 
 <div id="compat-mobile"></div></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
- <li><a href="/webhints_data_ru/js/Object/toSource/"><code>Object.prototype.toSource()</code></a></li>
- <li><a href="/webhints_data_ru/js/Object/valueOf/"><code>Object.prototype.valueOf()</code></a></li>
- <li><a href="/webhints_data_ru/js/Number/toString/"><code>Number.prototype.toString()</code></a></li>
- <li><a href="/webhints_data_ru/js/Symbol/toPrimitive/"><code>Symbol.toPrimitive</code></a></li>
+ <li><a href="/js/Object/toSource/"><code>Object.prototype.toSource()</code></a></li>
+ <li><a href="/js/Object/valueOf/"><code>Object.prototype.valueOf()</code></a></li>
+ <li><a href="/js/Number/toString/"><code>Number.prototype.toString()</code></a></li>
+ <li><a href="/js/Symbol/toPrimitive/"><code>Symbol.toPrimitive</code></a></li>
 </ul></div>

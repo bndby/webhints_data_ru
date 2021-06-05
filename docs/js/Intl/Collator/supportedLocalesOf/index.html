@@ -1,12 +1,12 @@
 <h1>Intl.Collator.supportedLocalesOf()</h1><div><div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Метод <strong><code>Intl.Collator.supportedLocalesOf()</code></strong> возвращает массив, содержащий те из предоставленных локалей, что поддерживаются при сравнении строк без отката к локали по умолчанию среды выполнения.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code>Intl.Collator.supportedLocalesOf(<var>locales</var>[, <var>options</var>])</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
  <dt><code>locales</code></dt>
- <dd>Строка с языковой меткой BCP 47, либо массив таких строк. Описание общей формы и интерпретации аргумента <code>locales</code> смотрите на <a href="/webhints_data_ru/js/Intl#locale_identification_and_negotiation/">странице, посвящённой объекту Intl</a>.</dd>
+ <dd>Строка с языковой меткой BCP 47, либо массив таких строк. Описание общей формы и интерпретации аргумента <code>locales</code> смотрите на <a href="/js/Intl#locale_identification_and_negotiation/">странице, посвящённой объекту Intl</a>.</dd>
  <dt><code>options</code></dt>
  <dd>
   <p>Необязательный параметр. Объект, который может содержать следующее свойство:</p>
   <dl>
    <dt><code>localeMatcher</code></dt>
-   <dd>Используемый алгоритм сопоставления локалей. Возможными значениями являются <code>"lookup"</code> и <code>"best fit"</code>; значением по умолчанию является <code>"best fit"</code>. Информацию по этой опции смотрите на <a href="/webhints_data_ru/js/Intl#locale_negotiation/">странице, посвящённой объекту Intl</a>.</dd>
+   <dd>Используемый алгоритм сопоставления локалей. Возможными значениями являются <code>"lookup"</code> и <code>"best fit"</code>; значением по умолчанию является <code>"best fit"</code>. Информацию по этой опции смотрите на <a href="/js/Intl#locale_negotiation/">странице, посвящённой объекту Intl</a>.</dd>
   </dl>
  </dd>
 </dl></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Возвращает массив с подмножеством языковых меток, предоставленных в аргументе <code>locales</code>. Возвращаются те языковые метки, для которых среда выполнения поддерживает сравнение строк без отката к локали по умолчанию; при поиске используется предоставленный алгоритм сопоставления локалей.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_using_supportedlocalesof"><a href="#example_using_supportedlocalesof" title="Permalink to Пример: использование supportedLocalesOf">Пример: использование <code>supportedLocalesOf</code></a></h3><div><p>Предполагая, что среда выполнения поддерживает индонезийское и немецкое, но на балийское сравнение строк, метод <code>supportedLocalesOf</code> вернёт неизменными индонезийскую и немецкую языковые метки, даже несмотря на то, что сортировка <code>pinyin</code> не используется с индонезийским языком и вряд ли будет поддерживаться в немецком языке для Индонезии. Обратите внимание на используемую здесь спецификацию алгоритма <code>"lookup"</code>&nbsp;— сопоставление <code>"best fit"</code> может решить, что индонезийский язык является адекватным сопоставлением с балийским, поскольку большинство людей, говорящих на балийском, также понимают индонезийский, и поэтому может возвратиться ещё и языковая метка балийского языка.</p>
@@ -28,5 +28,5 @@ console<span class="token punctuation">.</span><span class="token function">log<
   </tr>
  </tbody>
 </table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
- <li><a href="/webhints_data_ru/js/Intl/Collator/"><code>Intl.Collator</code></a></li>
+ <li><a href="/js/Intl/Collator/"><code>Intl.Collator</code></a></li>
 </ul></div>

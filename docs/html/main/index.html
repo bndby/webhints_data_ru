@@ -1,0 +1,118 @@
+<h1>&lt;main&gt;</h1><div><div></div>
+
+<p><span class="seoSummary"><strong>HTML-элемент <code>&lt;main&gt;</code></strong> предназначен для основного контента (содержимого) <a href="/html/body/"><code>&lt;body&gt;</code></a> документа (страницы). Основной контент состоит из контента, который непосредственно относится к главной теме документа или её развивает.</span></p>
+
+<div><iframe class="interactive" width="100%" height="375" src="https://interactive-examples.mdn.mozilla.net/pages/tabbed/main.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+
+
+<p>Документ не должен иметь более одного элемента <code>&lt;main&gt;</code> у которого не указан атрибут <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Global_attributes#attr-hidden"><code>hidden</code></a>.</p>
+
+<table class="properties">
+ <tbody>
+  <tr>
+   <th><a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Content_categories">Категории контента</a></th>
+   <td><a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Content_categories#%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%BE%D0%B9_%D0%BF%D0%BE%D1%82%D0%BE%D0%BA">Основной поток</a>, <a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Content_categories#%D1%8F%D0%B2%D0%BD%D1%8B%D0%B9_%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%BD%D1%82">явный контент</a>.</td>
+  </tr>
+  <tr>
+   <th>Разрешённое содержимое</th>
+   <td><a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Content_categories#%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%BE%D0%B9_%D0%BF%D0%BE%D1%82%D0%BE%D0%BA">Основной поток</a>.</td>
+  </tr>
+  <tr>
+   <th>Пропуск тега</th>
+   <td>Ни одного; Оба тега, открывающий и закрывающий, являются обязательными.</td>
+  </tr>
+  <tr>
+   <th>Разрешённые родительские элементы</th>
+   <td>Те, в которых разрешается <a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Content_categories#%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%BE%D0%B9_%D0%BF%D0%BE%D1%82%D0%BE%D0%BA">контент основного потока</a> в качестве содержимого, но только если это <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#hierarchically-correct-main-element" id="the-main-element:hierarchically-correct-main-element" class="external" rel=" noopener">иерархически корректный <code>main</code> элемент</a>.</td>
+  </tr>
+  <tr>
+   <th>Разрешённые ARIA роли</th>
+   <td>Роль <code>main</code> применяется к <code>&lt;main&gt;</code> по умолчанию, и роль <code><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_presentation_role">presentation</a></code> также разрешена.</td>
+  </tr>
+  <tr>
+   <th>DOM-интерфейс</th>
+   <td><a href="https://developer.mozilla.org/ru/docs/Web/API/HTMLElement"><code>HTMLElement</code></a></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="атрибуты"><a href="#атрибуты" title="Permalink to Атрибуты">Атрибуты</a></h2><div><p>К этому элементу применимы только <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Global_attributes">глобальные атрибуты</a>.</p></div><h2 id="примечание"><a href="#примечание" title="Permalink to Примечание">Примечание</a></h2><div><p>Содержимое элемента <code>&lt;main&gt;</code> должно быть уникальным для документа. Содержимое, которое повторяется в наборе документов или разделах документа, такое как боковые панели, навигационные ссылки, информация об авторских правах, логотипы сайта и поисковые формы, не должно добавляться, за исключением формы поиска, если она является основной функцией страницы.</p>
+
+<p><code>&lt;main&gt;</code> не вносит вклад в структуру документа; то есть, в отличие от таких элементов, как <a href="/html/body/"><code>&lt;body&gt;</code></a>, заголовков, таких как <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements" class="only-in-en-us" title="Currently only available in English (US)">&lt;h2&gt; (en-US)</a> и т.п., <code>&lt;main&gt;</code> не влияет на концепцию <a href="https://developer.mozilla.org/ru/docs/Glossary/DOM">DOM</a> структуры страницы. Он носит исключительно информативный характер.</p></div><h2 id="пример"><a href="#пример" title="Permalink to Пример">Пример</a></h2><div><pre class="brush: html notranslate"><code><span class="token comment">&lt;!-- другой контент --&gt;</span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>main</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>Яблоки<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Яблоко - плод яблони, который употребляется в пищу в свежем виде, служит сырьём в кулинарии и для приготовления напитков.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>article</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>Сорт "Ред Делишес"<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Эти ярко-красные яблоки являются одними из самых популярных в Соединённых Штатах.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>... <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>... <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>article</span><span class="token punctuation">&gt;</span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>article</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>Сорт "Гренни Смит";/h2&gt;
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Эти сочные, зелёные яблоки являются одними из самых популярных в мире.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>... <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>... <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>article</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>main</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token comment">&lt;!-- другой контент --&gt;</span></code></pre></div><h3 id="результат"><a href="#результат" title="Permalink to Результат">Результат</a></h3><div><p><iframe class="sample-code-frame" id="frame_Пример" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/main/_sample_.%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80.html" loading="lazy"></iframe></p></div><h2 id="проблемы_доступности"><a href="#проблемы_доступности" title="Permalink to Проблемы доступности">Проблемы доступности</a></h2><div></div><h3 id="ориентир"><a href="#ориентир" title="Permalink to Ориентир">Ориентир</a></h3><div><p>Элемент <code>&lt;main&gt;</code> ведёт себя как <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Main_role">роль-ориентир <code>main</code></a>. <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques#landmark_roles">Ориентиры</a> могут использоваться вспомогательными технологиями для быстрой идентификации и навигации по большим разделам документа. Предпочтительно использовать элемент <code>&lt;main&gt;</code> вместо объявления <code>role="main"</code>, если не нужна <a href="/html/main#%D0%9F%D0%BE%D0%B4%D0%B4%D0%B5%D1%80%D0%B6%D0%BA%D0%B0_%D0%B1%D1%80%D0%B0%D1%83%D0%B7%D0%B5%D1%80%D0%B0%D0%BC%D0%B8/" aria-current="page">поддержка старых браузеров</a>.</p></div><h3 id="пропуск_навигации"><a href="#пропуск_навигации" title="Permalink to Пропуск навигации">Пропуск навигации</a></h3><div><p>Пропуск навигации, также известный как "skipnav", это техника которая позволяет пользователю вспомогательных технологий совершать быстрый обход больших разделов повторяющегося контента (главная навигация, информационные баннеры и т.д.). Это позволяет пользователю получить доступ к основному контенту страницы быстрее.</p>
+
+<p>Добавление атрибута <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Global_attributes#attr-id"><code>id</code></a> в элемент <code>&lt;main&gt;</code> позволяет ему становится целью для ссылки пропуска навигации.</p>
+
+<pre class="notranslate"><span class="tag">&lt;body</span><span class="tag">&gt;
+  &lt;a href="#main-content"&gt;Перейти к основному контенту&lt;/a&gt;
+
+  &lt;!-- навигация и заголовок контента --&gt;
+
+  &lt;main id="main-content"&gt;
+    &lt;!-- основной контент страницы --&gt;
+  &lt;/main&gt;
+&lt;/body&gt;</span>
+</pre>
+
+<ul>
+ <li><a href="https://webaim.org/techniques/skipnav/" class="external" rel=" noopener">WebAIM: Ссылки "Пропуск навигации"</a></li>
+</ul></div><h3 id="режим_чтения"><a href="#режим_чтения" title="Permalink to Режим чтения">Режим чтения</a></h3><div><p>Функционально режим чтения браузера будет искать наличие элемента <code>&lt;main&gt;</code>, а также элементов <a href="/html/Heading_Elements/">заголовка</a> и <a href="/html#%d0%a1%d0%b5%d0%ba%d1%86%d0%b8%d0%be%d0%bd%d0%b8%d1%80%d0%be%d0%b2%d0%b0%d0%bd%d0%b8%d0%b5_%d1%81%d0%be%d0%b4%d0%b5%d1%80%d0%b6%d0%b0%d0%bd%d0%b8%d1%8f/">секционных элементов</a>, которые преобразовывают контент в специальный вид для чтения.</p>
+
+<ul>
+ <li><a href="https://medium.com/@mandy.michael/building-websites-for-safari-reader-mode-and-other-reading-apps-1562913c86c9" class="external" rel=" noopener">Создание сайтов для режима чтения Safari и других программ чтения.</a></li>
+</ul></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://html.spec.whatwg.org/multipage/#the-main-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML Living Standard<br><small lang="ru">Определение '&lt;main&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html51/grouping-content.html#the-main-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML 5.1<br><small lang="ru">Определение '&lt;main&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Нет изменений с <a href="https://www.w3.org/TR/html52/" hreflang="en" lang="en" class="external" title="Спецификация 'HTML5'" rel=" noopener">HTML5</a>.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html52/grouping-content.html#the-main-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML5<br><small lang="ru">Определение '&lt;main&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Первоначальное определение.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="поддержка_браузерами"><a href="#поддержка_браузерами" title="Permalink to Поддержка браузерами">Поддержка браузерами</a></h2><p>BCD tables only load in the browser</p><div><p>Элемент <code>&lt;main&gt;</code> широко поддерживается. Для Internet Explorer 11 и ниже предлагается добавить роль <a href="https://developer.mozilla.org/ru/docs/Glossary/ARIA">ARIA</a> <code>"main"</code> в элемент <code>&lt;main&gt;</code>, чтобы обеспечит его доступность (программы для чтения с экрана, такие как JAWS, используемые совместно со старыми версиями Internet Explorer, смогут понять семантическое значение элемента <code>&lt;main&gt;</code> после добавления атрибута <code>role</code>).</p>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>main</span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>main<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  ...
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>main</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li>Основные структурные элементы: <a href="/html/html/"><code>&lt;html&gt;</code></a>, <a href="/html/head/"><code>&lt;head&gt;</code></a>, <a href="/html/body/"><code>&lt;body&gt;</code></a></li>
+ <li>Связанные с этим разделом элементы: <a href="/html/article/"><code>&lt;article&gt;</code></a>, <a href="/html/aside/"><code>&lt;aside&gt;</code></a>, <a href="/html/footer/"><code>&lt;footer&gt;</code></a>, <a href="/html/header/"><code>&lt;header&gt;</code></a>, or <a href="/html/nav/"><code>&lt;nav&gt;</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Main_role">ARIA: роль main</a></li>
+</ul></div>

@@ -10,7 +10,7 @@
 </dl></div><h2 id="описание"><a href="#описание" title="Permalink to Описание">Описание</a></h2><div><p>Объекты <code>Set</code> представляют коллекции значений, по которым вы можете выполнить обход в порядке вставки элементов. Значение элемента в&nbsp;<code>Set</code>&nbsp;может присутствовать <strong>только в одном экземпляре</strong>, что обеспечивает его уникальность в&nbsp;коллекции&nbsp;<code>Set</code>.</p></div><h3 id="сравнение_значений"><a href="#сравнение_значений" title="Permalink to Сравнение значений">Сравнение значений</a></h3><div><p>Поскольку каждое значение в <code>Set</code> должно быть уникальным, сравнение значений основано на алгоритме "подобное значение": <code>NaN</code> равно&nbsp;<code>NaN</code> (несмотря на то, что&nbsp;<code>NaN !== NaN</code>); все другие значения рассматриваются равными исходя из семантики оператора строго равенства ===. В ранних версиях черновика ECMAScript 6&nbsp;<code>-0</code> и <code>+0</code>&nbsp;считались разными (несмотря на то, что&nbsp;<code>-0 === +0</code>), это было изменено в последующих версиях и адаптировано в Gecko 29 (Firefox 29 / Thunderbird 29 / SeaMonkey 2.26) (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=952870" class="external" rel=" noopener">баг&nbsp;952870</a>) и <a href="https://code.google.com/p/v8/issues/detail?id=3069" class="external" rel=" noopener">последней ночной сборке Chrome</a>.&nbsp;<code>NaN</code> и <code>undefined</code> также могут сохраняться в <code>Set</code>.</p></div><h2 id="properties"><a href="#properties" title="Permalink to Свойства">Свойства</a></h2><div><dl>
  <dt><code>Set.length</code></dt>
  <dd>Значение свойства&nbsp;<code>length</code> всегда равно 0.</dd>
- <dd>Чтобы узнать количество элементов в <code>Set</code>, используйте&nbsp;<a href="/webhints_data_ru/js/Set/size/"><code>Set.prototype.size</code></a>.</dd>
+ <dd>Чтобы узнать количество элементов в <code>Set</code>, используйте&nbsp;<a href="/js/Set/size/"><code>Set.prototype.size</code></a>.</dd>
  <dt><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/@@species"><code>get Set[@@species]</code> <span>(en-US)</span></a></dt>
  <dd>Функция-конструктор, которая используется для создания производных объектов.</dd>
  <dt><a href="https://developer.mozilla.org/ru/docs/conflicting/Web/JavaScript/Reference/Global_Objects/Set"><code>Set.prototype</code></a></dt>
@@ -156,7 +156,7 @@ mySet<span class="token punctuation">.</span>size<span class="token punctuation"
   </tr>
  </tbody>
 </table></div><h2 id="совместимость_с_браузерами"><a href="#совместимость_с_браузерами" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
- <li><a href="/webhints_data_ru/js/Map/"><code>Map</code></a></li>
- <li><a href="/webhints_data_ru/js/WeakMap/"><code>WeakMap</code></a></li>
- <li><a href="/webhints_data_ru/js/WeakSet/"><code>WeakSet</code></a></li>
+ <li><a href="/js/Map/"><code>Map</code></a></li>
+ <li><a href="/js/WeakMap/"><code>WeakMap</code></a></li>
+ <li><a href="/js/WeakSet/"><code>WeakSet</code></a></li>
 </ul></div>

@@ -1,0 +1,76 @@
+<h1>&lt;base&gt;</h1><div><p id="Summary"></p><p></p>
+
+<p><strong>HTML элемент</strong>&nbsp;<strong><code>&lt;base&gt;</code>&nbsp;</strong>определяет&nbsp;основной адрес (URL), используемый для всех относительных адресов (URLs) в документе. Может быть только один&nbsp;<strong><code>&lt;base&gt;</code></strong>&nbsp;элемент в одном документе.&nbsp;<br>
+ Основной адрес (URL) документа можно запросить скриптом используя&nbsp;<a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/API/Node/baseURI"><code>document.baseURI</code> <span>(en-US)</span></a>.</p>
+
+<table class="properties">
+ <tbody>
+  <tr>
+   <th><a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Content_categories" title="HTML/Content_categories">Категории элемента</a></th>
+   <td>Метаданные (Metadata)</td>
+  </tr>
+  <tr>
+   <th>Отображение на странице</th>
+   <td>Не отображается, это <a href="https://developer.mozilla.org/ru/docs/Glossary/Empty_element">empty element</a>.</td>
+  </tr>
+  <tr>
+   <th>Открывающий, закрывающий теги</th>
+   <td>Без закрывающего тега.</td>
+  </tr>
+  <tr>
+   <th>Содержится в</th>
+   <td><a href="/html/head/"><code>&lt;head&gt;</code></a>, <a href="/html/body/"><code>&lt;body&gt;</code></a>.</td>
+  </tr>
+  <tr>
+   <th>Использование в ARIA roles</th>
+   <td>Нет</td>
+  </tr>
+  <tr>
+   <th>Интерфейс DOM</th>
+   <td><a href="https://developer.mozilla.org/ru/docs/Web/API/HTMLBaseElement"><code>HTMLBaseElement</code></a></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="атрибуты_<base>"><a href="#атрибуты_<base>" title="Permalink to Атрибуты <base>">Атрибуты <strong><code>&lt;base&gt;</code></strong></a></h2><div><p><span style="line-height: 21px;">К элементу </span><strong><code>&lt;base&gt; </code></strong><code>можно применять</code><span style="line-height: 21px;"> </span><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes" style="line-height: 21px;" title="HTML/Global attributes">глобальные атрибуты.</a></p>
+
+<dl>
+ <dt><a id="attr-href" href="#attr-href"><b><code>href</code></b></a></dt>
+ <dd>Базовый адрес (URL) для указания полного пути (основной, главный адрес). Если указан данный атрибут, значит этот элемент должен находиться до других элементов с атрибутами URLs. Разрешены абсолютные (внешние) и относительные (внутренние) адреса (URLs).</dd>
+ <dt><a id="attr-target" href="#attr-target"><b><code>target</code></b></a></dt>
+ <dd>Значение атрибута определяет имя контекста, которое применяется для ссылок (<span class="tag">&lt;a&gt;</span>) и форм (<span class="tag">&lt;form&gt;</span>). Они нужны <em>для отображения контекста</em> (пример: вкладка, окно или встроенный фрейм). Следующие ключевые слова имеют специальные значения:
+ <ul>
+  <li><strong><code>_self</code></strong>: загружает результат в текущем окне или вкладке. <em>Если атрибут не указан, является значением по умолчанию.</em></li>
+  <li><code>_<strong>blank</strong></code>: загружает результат в новом окне или бланке.</li>
+  <li><strong><code>_parent</code></strong>: загружает данные в родительском окне. Если значение <strong>_ parent </strong>не указано, используется значение <strong><code>_self</code></strong>.</li>
+  <li><strong><code>_top</code></strong>: загружает данные в контексте верхнего уровня (то есть, отображает полученный контекст без обратного перехода, если не имеет родительского значения). Если нет родительских данных используется как <strong><code>_self</code></strong>.</li>
+ </ul>
+ </dd>
+</dl>
+
+<div class="note notecard"><strong>Примечание:</strong> <code>если указано несколько элементов &lt;base&gt;</code> , будут использованы только первые <strong>href</strong> и <strong>target</strong>; все последующие значения проигнорируются.</div></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>base</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.example.com/page.html<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>base</span> <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>_blank<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.example.com/page.html<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификация">Спецификация</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://html.spec.whatwg.org/multipage/semantics.html#the-base-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML Living Standard<br><small lang="ru">Определение '&lt;base&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td>Нет изменений</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html52/document-metadata#the-base-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML5<br><small lang="ru">Определение '&lt;base&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Указано для <code>target</code></td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html401/struct/links.html#h-12.4" hreflang="en" lang="en" class="external" rel=" noopener">HTML 4.01 Specification<br><small lang="ru">Определение '&lt;base&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Добавлен <code>target</code></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="совместимость_с_браузерами"><a href="#совместимость_с_браузерами" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div>

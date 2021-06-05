@@ -1,0 +1,68 @@
+<h1>&lt;wbr&gt;</h1><div><div></div>
+
+<p><strong>Элемент HTML <code>&lt;wbr&gt;</code></strong> предоставляет возможность переноса слова – позицию в тексте, где браузер может по желанию разбить строку, в противном случае его правила разрыва строки не будут создавать разрыв в этом месте.</p>
+
+<div><strong><iframe class="interactive" width="100%" height="375" src="https://interactive-examples.mdn.mozilla.net/pages/tabbed/wbr.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></strong></div>
+
+
+
+<table class="properties">
+ <tbody>
+  <tr>
+   <th scope="row">Категории контента</th>
+   <td><strong><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#flow_content">Основной поток</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#phrasing_content">фразовый контент</a>.</strong></td>
+  </tr>
+  <tr>
+   <th scope="row"><strong>Разрешённое содержимое</strong></th>
+   <td><strong>Отсутствует</strong></td>
+  </tr>
+  <tr>
+   <th scope="row">Пропуск тега</th>
+   <td><strong>It is an <a href="https://developer.mozilla.org/ru/docs/Glossary/Empty_element">empty element</a>; it must have a start tag, but must not have an end tag.</strong></td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённые родительские элементы</th>
+   <td><strong>Любой элемент принимающий&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#phrasing_content">фразовый контент</a>.</strong></td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённые роли ARIA</th>
+   <td><strong>Любые</strong></td>
+  </tr>
+  <tr>
+   <th scope="row">DOM-интерфейс</th>
+   <td><strong><a href="https://developer.mozilla.org/ru/docs/Web/API/HTMLElement"><code>HTMLElement</code></a></strong></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="атрибуты"><a href="#атрибуты" title="Permalink to Атрибуты"><strong>Атрибуты</strong></a></h2><div><p><strong>Элемент&nbsp;может содержать только&nbsp;<a href="https://developer.mozilla.org/ru-R/docs/HTML/Global_attributes" class="page-not-created" title="This is a link to an unwritten page">глобальные атрибуты</a>.</strong></p></div><h2 id="примечания"><a href="#примечания" title="Permalink to Примечания"><strong>Примечания</strong></a></h2><div><p>На страницах в кодировке UTF-8, элемент&nbsp;<code>&lt;wbr&gt;</code> ведёт себя как кодовое значение <code>U+200B ZERO-WIDTH SPACE</code> (пробел нулевой ширины). В частности, он ведёт себя как кодовое значение Unicode Bidi BN, то есть он не влияет на порядок <a href="https://developer.mozilla.org/ru/docs/Glossary/BiDi">bidi</a>-направления (двунаправленного потока) <code>&lt;div dir=rtl&gt;123,&lt;wbr&gt;456&lt;/div&gt;</code>: отображается, если выражение не разбито на две строки, <code>123 456</code> и не <code>456,123</code>.</p>
+
+<p>По той же причине, элемент <code>&lt;wbr&gt;</code> не вводит дефис в точке разрыва строки. Чтобы дефис отображался только в конце строки, используйте вместо него символ «мягкого дефиса» (<code>&amp;shy;</code>).</p>
+
+<p>Этот элемент был впервые реализован в Internet Explorer 5.5 и был официально определён в HTML5.</p></div><h2 id="пример"><a href="#пример" title="Permalink to Пример"><strong>Пример</strong></a></h2><div><p><a href="https://web.archive.org/web/20121105171040/http://styleguide.yahoo.com/" class="external" rel=" noopener">Руководство по стилю Yahoo</a>&nbsp;рекомендует <a href="https://web.archive.org/web/20121105171040/http://styleguide.yahoo.com/editing/treat-abbreviations-capitalization-and-titles-consistently/website-names-and-addresses" class="external" rel=" noopener">разбивать URL перед&nbsp;пунктуацией</a>, чтобы не оставлять знаки препинания в конце строки, которые читатель может ошибочно принять за конец URL.<strong> </strong></p>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>http://this<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>wbr</span><span class="token punctuation">&gt;</span></span>.is<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>wbr</span><span class="token punctuation">&gt;</span></span>.a<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>wbr</span><span class="token punctuation">&gt;</span></span>.really<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>wbr</span><span class="token punctuation">&gt;</span></span>.long<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>wbr</span><span class="token punctuation">&gt;</span></span>.example<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>wbr</span><span class="token punctuation">&gt;</span></span>.com/With<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>wbr</span><span class="token punctuation">&gt;</span></span>/deeper<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>wbr</span><span class="token punctuation">&gt;</span></span>/level<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>wbr</span><span class="token punctuation">&gt;</span></span>/pages<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>wbr</span><span class="token punctuation">&gt;</span></span>/deeper<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>wbr</span><span class="token punctuation">&gt;</span></span>/level<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>wbr</span><span class="token punctuation">&gt;</span></span>/pages<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>wbr</span><span class="token punctuation">&gt;</span></span>/deeper<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>wbr</span><span class="token punctuation">&gt;</span></span>/level<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>wbr</span><span class="token punctuation">&gt;</span></span>/pages<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>wbr</span><span class="token punctuation">&gt;</span></span>/deeper<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>wbr</span><span class="token punctuation">&gt;</span></span>/level<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>wbr</span><span class="token punctuation">&gt;</span></span>/pages<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>wbr</span><span class="token punctuation">&gt;</span></span>/deeper<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>wbr</span><span class="token punctuation">&gt;</span></span>/level<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>wbr</span><span class="token punctuation">&gt;</span></span>/pages<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span> </code></pre>
+
+<p><strong><iframe class="sample-code-frame" id="frame_Example" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/wbr/_sample_.Example.html" loading="lazy"></iframe></strong></p></div><h2 id="спецификация"><a href="#спецификация" title="Permalink to Спецификация"><strong>Спецификация</strong></a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col"><strong>Статус</strong></th>
+   <th scope="col">Комментарии</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><strong><a href="https://html.spec.whatwg.org/multipage/semantics.html#the-wbr-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML Living Standard<br><small lang="ru">Определение '&lt;wbr&gt;' в этой спецификации.</small></a></strong></td>
+   <td><strong><span class="spec-living">Живой стандарт</span></strong></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td><strong><a href="https://www.w3.org/TR/html52/text-level-semantics.html#the-wbr-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML5<br><small lang="ru">Определение '&lt;wbr&gt;' в этой спецификации.</small></a></strong></td>
+   <td><strong><span class="spec-rec">Рекомендация</span></strong></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="поддержка_браузерами"><a href="#поддержка_браузерами" title="Permalink to Поддержка браузерами">Поддержка браузерами</a></h2><p>BCD tables only load in the browser</p><div><p><strong></strong></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также"><strong>Смотрите также</strong></a></h2><div><ul>
+ <li><strong><a href="https://developer.mozilla.org/ru/docs/Web/CSS/overflow-wrap"><code>overflow-wrap</code></a></strong></li>
+ <li><strong><a href="https://developer.mozilla.org/ru/docs/Web/CSS/word-break"><code>word-break</code></a></strong></li>
+ <li><strong><a href="https://developer.mozilla.org/ru/docs/Web/CSS/hyphens"><code>hyphens</code></a></strong></li>
+</ul></div>

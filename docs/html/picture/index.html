@@ -1,0 +1,68 @@
+<h1>Элемент &lt;picture&gt;</h1><div><div></div>
+
+<p><span class="seoSummary"><strong>HTML-элемент <code>&lt;picture&gt;</code> </strong> служит контейнером для одного или более элементов <a href="/html/source/"><code>&lt;source&gt;</code></a> и одного элемента <a href="/html/img/"><code>&lt;img&gt;</code></a> для обеспечения оптимальной версии изображения для различных размеров экрана.</span>&nbsp;Браузер рассмотрит&nbsp;каждый из дочерних элементов&nbsp;&nbsp;<code>&lt;source&gt;</code>&nbsp;и выберет один, соответствующий лучшему совпадению; если совпадений среди элементов&nbsp;<code>&lt;source&gt;</code> найдено не будет, то будет выбран файл, указанный&nbsp; атрибутом&nbsp;&nbsp;<a href="/html/img#attr-src/"><code>src</code></a> элемента&nbsp;<code>&lt;img&gt;</code> . Затем выбранное изображение отображается в пространстве, занятом элементом&nbsp;<code>&lt;img&gt;</code>.&nbsp;</p>
+
+<p>Чтобы выбрать оптимальное изображение,&nbsp;<a href="https://developer.mozilla.org/ru/docs/Glossary/User_agent">user agent</a>&nbsp; анализирует атрибуты <a href="/html/source#attr-srcset/"><code>srcset</code></a>, <a href="/html/source#attr-media/"><code>media</code></a>, и&nbsp;<a href="/html/source#attr-type/"><code>type</code></a> элемента&nbsp;<code>&lt;source&gt;</code> и&nbsp;выбирает&nbsp;совместимое изображение, которое наилучшим образом соответствует текущему макету страницы, характеристикам устройства отображения и т. д.</p>
+
+<p>Элемент <code>&lt;picture&gt;</code>&nbsp;часто используют для&nbsp;того, чтобы обеспечить&nbsp;HiDPI (Retina)-версию&nbsp;изображений&nbsp;для дисплеев с высоким разрешением, а также для добавления&nbsp;других форматов&nbsp;изображений, не поддерживаемых всеми&nbsp;браузерами.</p>
+
+<table class="properties">
+ <tbody>
+  <tr>
+   <th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories">Категории контента</a></th>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#flow_content">Потоковый контент</a>, фразовый контент, встроенный контент</td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённый контент&nbsp;</th>
+   <td>Ноль или более элементов <a href="/html/source/"><code>&lt;source&gt;</code></a>, затем один элемент <a href="/html/img/"><code>&lt;img&gt;</code></a>, при необходимости смешанный с элементами поддержки сценариев.</td>
+  </tr>
+  <tr>
+   <th scope="row">Пропуск тегов</th>
+   <td>Нет. Открывающий и закрывающий тег являются обязательными.<br>
+   </td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённые родители</th>
+   <td>Любой элемент, который разрешает встроенный контент</td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённые ARIA roles</th>
+   <td>Нет</td>
+  </tr>
+  <tr>
+   <th scope="row">DOM interface</th>
+   <td><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLPictureElement"><code>HTMLPictureElement</code> <span>(en-US)</span></a></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="атрибуты"><a href="#атрибуты" title="Permalink to Атрибуты">Атрибуты</a></h2><div><p>Этот элемент содержит только&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes">универсальные атрибуты</a>.</p></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div><p>Эти примеры демонстрируют влияние различных атрибутов элемента&nbsp;<a href="/html/source/"><code>&lt;source&gt;</code></a> на выбор изображения,&nbsp;которое будет отображаться при их&nbsp;использовании внутри тега&nbsp;<code>&lt;picture&gt;</code>.</p></div><h3 id="атрибут_media"><a href="#атрибут_media" title="Permalink to Атрибут media">Атрибут <code>media</code></a></h3><div><p>Атрибут <code>media</code> позволяет определить медиавыражение, которое веб-браузер будет анализировать для выбора элемента&nbsp;<a href="/html/source/"><code>&lt;source&gt;</code></a>. Если медиавыражение определяется как ложное <code>(false)</code>, то элемент&nbsp;<a href="/html/source/"><code>&lt;source&gt;</code></a> пропускается.</p>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>picture</span><span class="token punctuation">&gt;</span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">srcset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mdn-logo-wide.png<span class="token punctuation">"</span></span> <span class="token attr-name">media</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>(min-width: 600px)<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mdn-logo-narrow.png<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>MDN<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>picture</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h3 id="атрибут_type"><a href="#атрибут_type" title="Permalink to Атрибут&nbsp;type">Атрибут&nbsp;<code>type</code></a></h3><div><p>Атрибут&nbsp;<code>type</code> позволяет вам обозначить MIME-тип данных,&nbsp;указанных в атрибуте&nbsp;<code>srcset</code>&nbsp;элемента <a href="/html/source/"><code>&lt;source&gt;</code></a>. Если браузер не поддерживает данный тип, то элемент&nbsp; <a href="/html/source/"><code>&lt;source&gt;</code></a> опускается.</p>
+
+<pre class="brush: html notranslate"><code>​<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>picture</span><span class="token punctuation">&gt;</span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">srcset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mdn-logo.svg<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>image/svg+xml<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mdn-logo.png<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>MDN<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>picture</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h2 id="спецификация"><a href="#спецификация" title="Permalink to Спецификация">Спецификация</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://html.spec.whatwg.org/multipage/embedded-content.html#the-picture-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML Living Standard<br><small lang="ru">Определение '&lt;picture&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td>Первоначальное определение</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="браузерная_совместимость"><a href="#браузерная_совместимость" title="Permalink to Браузерная совместимость">Браузерная совместимость</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li>Элемент <a href="/html/img/"><code>&lt;img&gt;</code></a>&nbsp;</li>
+ <li>Элемент <a href="/html/source/"><code>&lt;source&gt;</code></a></li>
+ <li>Позиционирование и определение размера изображения в рамках: <a href="https://developer.mozilla.org/ru/docs/Web/CSS/object-position"><code>object-position</code></a> и <a href="https://developer.mozilla.org/ru/docs/Web/CSS/object-fit"><code>object-fit</code></a></li>
+</ul></div>

@@ -1,0 +1,82 @@
+<h1>&lt;var&gt;: The Variable element</h1><div><div></div>
+
+<p>The <strong><code>&lt;var&gt;</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a> element represents the name of a variable in a mathematical expression or a programming context. It's typically presented using an italicized version of the current typeface, although that behavior is browser-dependent.</p>
+
+<div><iframe class="interactive" width="100%" height="375" src="https://interactive-examples.mdn.mozilla.net/pages/tabbed/var.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+<table class="properties">
+ <tbody>
+  <tr>
+   <th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories">Content categories</a></th>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#flow_content">Flow content</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#phrasing_content">phrasing content</a>, palpable content.</td>
+  </tr>
+  <tr>
+   <th scope="row">Permitted content</th>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#phrasing_content">Phrasing content</a>.</td>
+  </tr>
+  <tr>
+   <th scope="row">Tag omission</th>
+   <td>None, both the starting and ending tag are mandatory.</td>
+  </tr>
+  <tr>
+   <th scope="row">Permitted parents</th>
+   <td>Any element that accepts <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#phrasing_content">phrasing content</a>.</td>
+  </tr>
+  <tr>
+   <th scope="row">Implicit ARIA role</th>
+   <td><a href="https://www.w3.org/TR/html-aria/#dfn-no-corresponding-role" class="external" rel=" noopener">No corresponding role</a></td>
+  </tr>
+  <tr>
+   <th scope="row">Permitted ARIA roles</th>
+   <td>Any</td>
+  </tr>
+  <tr>
+   <th scope="row">DOM interface</th>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement"><code>HTMLElement</code></a></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="attributes"><a href="#attributes" title="Permalink to Attributes">Attributes</a></h2><div><p>This element only includes the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes">global attributes</a>.</p></div><h2 id="usage_notes"><a href="#usage_notes" title="Permalink to Usage notes">Usage notes</a></h2><div></div><h3 id="related_elements"><a href="#related_elements" title="Permalink to Related elements">Related elements</a></h3><div><p>Other elements that are used in contexts in which <code>&lt;var&gt;</code> is commonly used include:</p>
+
+<ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/code"><code>&lt;code&gt;</code></a>: The HTML Code element</li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/kbd"><code>&lt;kbd&gt;</code></a>: The HTML Keyboard input element</li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/samp"><code>&lt;samp&gt;</code></a>: The HTML Sample Output element</li>
+</ul>
+
+<p>If you encounter code that is mistakenly using <code>&lt;var&gt;</code> for style purposes rather than semantic purposes, you should either use a <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/span"><code>&lt;span&gt;</code></a> with appropriate CSS or, an appropriate semantic element among the following:</p>
+
+<ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/em"><code>&lt;em&gt;</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/i"><code>&lt;i&gt;</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q"><code>&lt;q&gt;</code></a></li>
+</ul></div><h3 id="default_style"><a href="#default_style" title="Permalink to Default style">Default style</a></h3><div><p>Most browsers apply <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-style"><code>font-style</code></a> to <code>"italic"</code> when rendering <code>&lt;var&gt;</code>. This can be overridden in CSS, like this:</p>
+
+<pre class="brush: css notranslate"><code><span class="token selector">var</span> <span class="token punctuation">{</span>
+  <span class="token property">font</span><span class="token punctuation">:</span> bold 15px <span class="token string">"Courier"</span><span class="token punctuation">,</span> <span class="token string">"Courier New"</span><span class="token punctuation">,</span> monospace<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="basic_example"><a href="#basic_example" title="Permalink to Basic example">Basic example</a></h3><div><p>Here's a simple example, using <code>&lt;var&gt;</code> to denote variable names in a mathematical equation.</p>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>A simple equation:
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>var</span><span class="token punctuation">&gt;</span></span>x<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>var</span><span class="token punctuation">&gt;</span></span> = <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>var</span><span class="token punctuation">&gt;</span></span>y<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>var</span><span class="token punctuation">&gt;</span></span> + 2 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<p>The output:</p>
+
+<p><iframe class="sample-code-frame" id="frame_Basic_example" width="650" height="80" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/HTML/Element/var/_sample_.Basic_example.html" loading="lazy"></iframe></p></div><h3 id="overriding_the_default_style"><a href="#overriding_the_default_style" title="Permalink to Overriding the default style">Overriding the default style</a></h3><div><p>Using CSS, you can override the default style for the <code>&lt;var&gt;</code> element. In this example, variable names are rendered using bold Courier if it's available, otherwise it falls back to the default monospace font.</p>
+
+<h4 id="css">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token selector">var</span> <span class="token punctuation">{</span>
+  <span class="token property">font</span><span class="token punctuation">:</span> bold 15px <span class="token string">"Courier"</span><span class="token punctuation">,</span> <span class="token string">"Courier New"</span><span class="token punctuation">,</span> monospace<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<h4 id="html">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>The variables <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>var</span><span class="token punctuation">&gt;</span></span>minSpeed<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>var</span><span class="token punctuation">&gt;</span></span> and <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>var</span><span class="token punctuation">&gt;</span></span>maxSpeed<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>var</span><span class="token punctuation">&gt;</span></span> control
+   the minimum and maximum speed of the apparatus in revolutions
+   per minute (RPM).<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<p>This HTML uses <code>&lt;var&gt;</code> to enclose the names of two variables.</p>
+
+<h4 id="result">Result</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Overriding_the_default_style" width="650" height="120" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/HTML/Element/var/_sample_.Overriding_the_default_style.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-var-element">HTML Standard<!-- --> <!-- -->(HTML)<br><small># <!-- -->the-var-element</small></a></td></tr></tbody></table><div><p></p><p></p></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div>

@@ -1,0 +1,70 @@
+<h1>&lt;option&gt;</h1><div><div></div>
+
+<p><span class="seoSummary"><strong>HTML элемент <code>&lt;option&gt;</code></strong> используется для определения пункта списка контейнера <a href="/html/select/"><code>&lt;select&gt;</code></a>, элемента <a href="/html/optgroup/"><code>&lt;optgroup&gt;</code></a>, или элемента <a href="/html/datalist/"><code>&lt;datalist&gt;</code></a>. Элемент <code>&lt;option&gt;</code> может представлять раздел меню всплывающих окон и других перечней или списков HTML документа.</span></p>
+
+<table class="properties">
+ <tbody>
+  <tr>
+   <th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories">Категория содержимого</a></th>
+   <td>Нет.</td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённое содержимое</th>
+   <td>Текст, допускаются <span class="short_text" id="result_box" lang="ru"><span>экранированные символы</span></span> (например <code>&amp;eacute;</code>).</td>
+  </tr>
+  <tr>
+   <th scope="row">Пропуск тега</th>
+   <td>Открывающий тег обязателен. Закрывающий тег опционален если за этим элементом следует другой элемент <code>&lt;option&gt;</code>, или элемент <a href="/html/optgroup/"><code>&lt;optgroup&gt;</code></a>, или если родительский элемент не имеет больше содержимого.</td>
+  </tr>
+  <tr>
+   <th scope="row"><span class="short_text" id="result_box" lang="ru"><span>Разрешённые родители</span></span></th>
+   <td>Элемент <a href="/html/select/"><code>&lt;select&gt;</code></a>,&nbsp; элемент <a href="/html/optgroup/"><code>&lt;optgroup&gt;</code></a> или элемент <a href="/html/datalist/"><code>&lt;datalist&gt;</code></a>.</td>
+  </tr>
+  <tr>
+   <th scope="row">Permitted ARIA roles</th>
+   <td>None</td>
+  </tr>
+  <tr>
+   <th scope="row">DOM interface</th>
+   <td><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLOptionElement"><code>HTMLOptionElement</code> <span>(en-US)</span></a></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="attributes"><a href="#attributes" title="Permalink to Атрибуты">Атрибуты</a></h2><div><p>Как и все HTML элементы, этот элемент поддерживает <a href="https://developer.mozilla.org/en-US/docs/HTML/Global_attributes" title="HTML/Global attributes">глобальные атрибуты</a>.</p>
+
+<dl>
+ <dt><a id="attr-disabled" href="#attr-disabled"><b><code>disabled</code></b></a> -- отключён(о)</dt>
+ <dd>Если этот Boolean атрибут установлен, эта опция недоступна для выделения. Часто браузеры выделяют&nbsp;такой элемент управления&nbsp;серым цветом и ему недоступны любые события браузера, такие&nbsp;как клики мыши или события,&nbsp;связанные с фокусировкой. Если этот атрибут не установлен, этот элемент все ещё можно отключить (может не работать), если&nbsp;отключён&nbsp;внешний(one of its ancestors)&nbsp;элемент&nbsp;<a href="/html/optgroup/"><code>&lt;optgroup&gt;</code></a>.</dd>
+ <dt><a id="attr-label" href="#attr-label"><b><code>label</code></b></a> -- метка, ярлык</dt>
+ <dd>Этот атрибут - текст ярлыка,&nbsp;отображающий значение(смысл, описание) опции. Если&nbsp;<code>label</code> не указан (отсутствует), то его значение совпадает с текстовым содержанием элемента <code>&lt;option&gt;</code>.</dd>
+ <dt><a id="attr-selected" href="#attr-selected"><b><code>selected</code></b></a> -- выбран(о)</dt>
+ <dd>(Если присутствует,) этот Boolean атрибут отображает то,&nbsp;что опция изначально выделена. Если&nbsp;элемент&nbsp;<code>&lt;option&gt;</code> принадлежит&nbsp;элементу <a href="/html/select/"><code>&lt;select&gt;</code></a>,&nbsp;чей атрибут&nbsp;<a href="/html/select#attr-multiple/"><code>multiple</code></a>&nbsp;не установлен, только одна-единственная&nbsp;<code>&lt;option&gt;</code> элемента <a href="/html/select/"><code>&lt;select&gt;</code></a> может иметь атрибут&nbsp;<code>selected</code>&nbsp;.</dd>
+ <dt><a id="attr-value" href="#attr-value"><b><code>value</code></b></a> -- значение, величина</dt>
+ <dd>Содержимое(содержание) этого атрибута отображает(представляет) значение,&nbsp;отправляемое формой, если выбрана(выделена) данная опция.&nbsp;Если (этот) атрибут&nbsp;value&nbsp;отсутствует, значение берётся из текстового содержания&nbsp;элемента&nbsp;<code>&lt;option&gt;</code>.</dd>
+</dl></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div><p>См. <a href="/html/select/"><code>&lt;select&gt;</code></a> for examples.</p></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://html.spec.whatwg.org/multipage/forms.html#the-option-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML Living Standard<br><small lang="ru">Определение '&lt;option&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html52/forms.html#the-option-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML5<br><small lang="ru">Определение '&lt;option&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html401/interact/forms.html#h-17.6" hreflang="en" lang="en" class="external" rel=" noopener">HTML 4.01 Specification<br><small lang="ru">Определение '&lt;option&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li>Other form-related elements: <a href="/html/form/"><code>&lt;form&gt;</code></a>, <a href="/html/legend/"><code>&lt;legend&gt;</code></a>, <a href="/html/label/"><code>&lt;label&gt;</code></a>, <a href="/html/button/"><code>&lt;button&gt;</code></a>, <a href="/html/select/"><code>&lt;select&gt;</code></a>, <a href="/html/datalist/"><code>&lt;datalist&gt;</code></a>, <a href="/html/optgroup/"><code>&lt;optgroup&gt;</code></a>, <a href="/html/fieldset/"><code>&lt;fieldset&gt;</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea" class="only-in-en-us" title="Currently only available in English (US)">&lt;textarea&gt; (en-US)</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/keygen" class="only-in-en-us" title="Currently only available in English (US)">&lt;keygen&gt; (en-US)</a>, <a href="/html/Input/"><code>&lt;input&gt;</code></a>, <a href="/html/output/"><code>&lt;output&gt;</code></a>, <a href="/html/progress/"><code>&lt;progress&gt;</code></a> and <a href="/html/meter/"><code>&lt;meter&gt;</code></a>.</li>
+</ul></div>

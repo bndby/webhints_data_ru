@@ -10,10 +10,10 @@
   <span class="token property">background-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
 
-<p><code>:dir()</code> учитывает только <em>семантическое </em>направление, т.е. заданное в самом документе. Он не учитывает <em>стилизованное </em>направление, т.е.&nbsp;заданное CSS-правилами, например <a href="/webhints_data_ru/css/direction/"><code>direction</code></a>.</p>
+<p><code>:dir()</code> учитывает только <em>семантическое </em>направление, т.е. заданное в самом документе. Он не учитывает <em>стилизованное </em>направление, т.е.&nbsp;заданное CSS-правилами, например <a href="/css/direction/"><code>direction</code></a>.</p>
 
 <div class="note notecard">
-<p><strong>Примечание:</strong>&nbsp; помните о том, что псевдокласс&nbsp;<code>:dir()</code>&nbsp;<strong>не эквивалентен</strong> <a href="/webhints_data_ru/css/Attribute_selectors/">выбору по атрибуту</a>&nbsp;<code>[dir=…]</code>. Последний применяется только к тем элементам&nbsp;HTML, у которых есть атрибут <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Global_attributes#attr-dir"><code>dir</code></a>, игнорируя те, у которых он не задан — даже если они унаследовали его значение. (Похожим образом&nbsp;<code>[dir=rtl]</code>&nbsp;и<code>[dir=ltr]</code> не будут включать&nbsp;<code>auto</code>.)&nbsp;<code>:dir()</code>, же, напротив, соответствует&nbsp;значению вычисленному <a href="https://developer.mozilla.org/ru/docs/Glossary/User_agent">user agent</a>, даже унаследованному.</p>
+<p><strong>Примечание:</strong>&nbsp; помните о том, что псевдокласс&nbsp;<code>:dir()</code>&nbsp;<strong>не эквивалентен</strong> <a href="/css/Attribute_selectors/">выбору по атрибуту</a>&nbsp;<code>[dir=…]</code>. Последний применяется только к тем элементам&nbsp;HTML, у которых есть атрибут <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Global_attributes#attr-dir"><code>dir</code></a>, игнорируя те, у которых он не задан — даже если они унаследовали его значение. (Похожим образом&nbsp;<code>[dir=rtl]</code>&nbsp;и<code>[dir=ltr]</code> не будут включать&nbsp;<code>auto</code>.)&nbsp;<code>:dir()</code>, же, напротив, соответствует&nbsp;значению вычисленному <a href="https://developer.mozilla.org/ru/docs/Glossary/User_agent">user agent</a>, даже унаследованному.</p>
 </div>
 
 <div class="note notecard">
@@ -60,5 +60,5 @@
 
 <p></p><p></p>
 </div></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
- <li>Языково-специфичные селекторы CSS: <a href="/webhints_data_ru/css/:lang/"><code>:lang</code></a>, <a href="/webhints_data_ru/css/:dir/" aria-current="page"><code>:dir</code></a></li>
+ <li>Языково-специфичные селекторы CSS: <a href="/css/:lang/"><code>:lang</code></a>, <a href="/css/:dir/" aria-current="page"><code>:dir</code></a></li>
 </ul></div>

@@ -1,0 +1,43 @@
+<h1>&lt;noscript&gt;</h1><div><div></div></div><h2 id="резюме"><a href="#резюме" title="Permalink to Резюме">Резюме</a></h2><div><p>Элемент&nbsp;HTML<strong> <code>&lt;noscript&gt;</code>&nbsp;</strong>определяет секцию html кода, которая будет вставлена, если в&nbsp;браузере пользователя нет либо отключена поддержка&nbsp;JavaScript.</p>
+
+<ul class="htmlelt">
+ <li><dfn><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories" title="HTML/Content_categories">Content categories</a></dfn> <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#metadata_content" title="HTML/Content_categories#Metadata_content">Metadata content</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#flow_content" title="HTML/Content categories#Flow content">flow content</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#phrasing_content" title="HTML/Content categories#Phrasing content">phrasing content</a>.</li>
+ <li><dfn>Permitted content</dfn> When scripting is disabled and when it is a descendant of the <a href="/html/head/"><code>&lt;head&gt;</code></a> element: in any order, zero or more <a href="/html/link/"><code>&lt;link&gt;</code></a> elements, zero or more <a href="/html/style/"><code>&lt;style&gt;</code></a> elements, and zero or more <a href="/html/meta/"><code>&lt;meta&gt;</code></a> elements.<br>
+  When scripting is disabled and when it isn't a descendant of the <a href="/html/head/"><code>&lt;head&gt;</code></a> element: any transparent content, but no <code>&lt;noscript&gt;</code> element must be among its descendants.<br>
+  Otherwise: flow content or phrasing content.</li>
+ <li><dfn>Tag omission</dfn> Нет, открывающий и закрывающий теги обязательны.</li>
+ <li><dfn>Permitted parent elements</dfn> Any element that accepts <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#phrasing_content" title="HTML/Content_categories#Phrasing_content">phrasing content</a>, if there are no ancestor <code>&lt;noscript&gt;</code> element, or in a <a href="/html/head/"><code>&lt;head&gt;</code></a> element (but only for an HTML document), here again if there are no ancestor <code>&lt;noscript&gt;</code> element.</li>
+ <li><dfn>DOM interface</dfn> <a href="https://developer.mozilla.org/ru/docs/Web/API/HTMLElement"><code>HTMLElement</code></a></li>
+</ul></div><h2 id="атрибуты"><a href="#атрибуты" title="Permalink to Атрибуты">Атрибуты</a></h2><div><p><span style="line-height: 21px;">Этот элемент включает в себя только <a href="https://developer.mozilla.org/en-US/docs/HTML/Global_attributes">глобальные атрибуты</a>.</span></p></div><h2 id="пример"><a href="#пример" title="Permalink to Пример">Пример</a></h2><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>noscript</span><span class="token punctuation">&gt;</span></span>
+  <span class="token comment">&lt;!-- anchor linking to external file --&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.mozilla.com/<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>External Link<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>noscript</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Rocks!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h3 id="пример_с_включённым_javascript'ом"><a href="#пример_с_включённым_javascript'ом" title="Permalink to Пример с включённым JavaScript">Пример с включённым JavaScript</a></h3><div><p>Rocks!</p></div><h3 id="результат_с_выключенным_javascript'ом"><a href="#результат_с_выключенным_javascript'ом" title="Permalink to Результат с выключенным JavaScript">Результат с выключенным JavaScript</a></h3><div><p><a class="external" href="http://www.mozilla.com/" rel=" noopener">External Link</a></p>
+
+<p>Rocks!</p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://html.spec.whatwg.org/multipage/scripting-1.html#the-noscript-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML Living Standard<br><small lang="ru">Определение '&lt;noscript&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html52/scripting-1.html#the-noscript-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML5<br><small lang="ru">Определение '&lt;noscript&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html401/interact/scripts.html#h-18.3.1" hreflang="en" lang="en" class="external" rel=" noopener">HTML 4.01 Specification<br><small lang="ru">Определение '&lt;noscript&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>&nbsp;</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div>

@@ -6,7 +6,7 @@
 </dl></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Поскольку метод <code>tanh()</code> является статическим методом объекта <code>Math</code>, вы всегда должны использовать его как <code>Math.tanh()</code>, а не пытаться вызывать метод на созданном экземпляре объекта <code>Math</code> (поскольку объект <code>Math</code> не является конструктором).</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_using_math.tanh"><a href="#example_using_math.tanh" title="Permalink to Пример: использование метода Math.tanh()">Пример: использование метода <code>Math.tanh()</code></a></h3><div><pre class="brush: js notranslate"><code>Math<span class="token punctuation">.</span><span class="token function">tanh</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment">// 0</span>
 Math<span class="token punctuation">.</span><span class="token function">tanh</span><span class="token punctuation">(</span><span class="token number">Infinity</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 1</span>
 Math<span class="token punctuation">.</span><span class="token function">tanh</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment">// 0.7615941559557649</span>
-</code></pre></div><h2 id="polyfill"><a href="#polyfill" title="Permalink to Полифил">Полифил</a></h2><div><p>Этот метод может эмулироваться при помощи двух вызовов метода <a href="/webhints_data_ru/js/Math/exp/"><code>Math.exp()</code></a>:</p>
+</code></pre></div><h2 id="polyfill"><a href="#polyfill" title="Permalink to Полифил">Полифил</a></h2><div><p>Этот метод может эмулироваться при помощи двух вызовов метода <a href="/js/Math/exp/"><code>Math.exp()</code></a>:</p>
 
 <pre class="brush: js notranslate"><code>Math<span class="token punctuation">.</span>tanh <span class="token operator">=</span> Math<span class="token punctuation">.</span>tanh <span class="token operator">||</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">x</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">if</span> <span class="token punctuation">(</span>x <span class="token operator">===</span> <span class="token number">Infinity</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -19,7 +19,7 @@ Math<span class="token punctuation">.</span><span class="token function">tanh</s
 <span class="token punctuation">}</span>
 </code></pre>
 
-<p>либо при помощи только одного вызова метода <a href="/webhints_data_ru/js/Math/exp/"><code>Math.exp()</code></a>:</p>
+<p>либо при помощи только одного вызова метода <a href="/js/Math/exp/"><code>Math.exp()</code></a>:</p>
 
 <pre class="brush: js notranslate"><code>Math<span class="token punctuation">.</span>tanh <span class="token operator">=</span> Math<span class="token punctuation">.</span>tanh <span class="token operator">||</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">x</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">if</span> <span class="token punctuation">(</span>x <span class="token operator">===</span> <span class="token number">Infinity</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -45,9 +45,9 @@ Math<span class="token punctuation">.</span><span class="token function">tanh</s
   </tr>
  </tbody>
 </table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
- <li><a href="/webhints_data_ru/js/Math/acosh/"><code>Math.acosh()</code></a> </li>
- <li><a href="/webhints_data_ru/js/Math/asinh/"><code>Math.asinh()</code></a> </li>
- <li><a href="/webhints_data_ru/js/Math/atanh/"><code>Math.atanh()</code></a> </li>
- <li><a href="/webhints_data_ru/js/Math/cosh/"><code>Math.cosh()</code></a> </li>
- <li><a href="/webhints_data_ru/js/Math/sinh/"><code>Math.sinh()</code></a> </li>
+ <li><a href="/js/Math/acosh/"><code>Math.acosh()</code></a> </li>
+ <li><a href="/js/Math/asinh/"><code>Math.asinh()</code></a> </li>
+ <li><a href="/js/Math/atanh/"><code>Math.atanh()</code></a> </li>
+ <li><a href="/js/Math/cosh/"><code>Math.cosh()</code></a> </li>
+ <li><a href="/js/Math/sinh/"><code>Math.sinh()</code></a> </li>
 </ul></div>

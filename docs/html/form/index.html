@@ -1,0 +1,104 @@
+<h1>&lt;form&gt;</h1><h2 id="summary"><a href="#summary" title="Permalink to Резюме">Резюме</a></h2><div><p><em>Элемент HTML form</em> (<code>&lt;form&gt;</code>) представляет (собой) раздел&nbsp;документа, содержащий интерактивные элементы управления, которые позволяют пользователю отправлять информацию на веб-сервер.</p>
+
+<p>Можно использовать <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:valid" rel="custom">:valid</a></code> и <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:invalid" rel="custom">:invalid</a></code> CSS псевдоклассы для стилизации <code>&lt;form&gt;</code> элемента, в зависимости от того, валиден или нет конкретный элемент&nbsp;<a href="https://developer.mozilla.org/ru/docs/Web/API/HTMLFormElement/elements" title="elements"><code>elements</code></a> внутри формы.</p></div><h2 id="usage_context"><a href="#usage_context" title="Permalink to Контекст Использования">Контекст Использования</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <td>Категория содержимого</td>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#flow_content" title="HTML/Content categories#Flow content">Flow content</a></td>
+  </tr>
+  <tr>
+   <td>Разрешённое содержимое</td>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#flow_content" title="HTML/Content categories#Flow content">Flow content</a>, но не содержащий <code>&lt;form&gt;</code> элементов</td>
+  </tr>
+  <tr>
+   <td>Пропуск тега</td>
+   <td>Нет. И открывающий и закрывающий тег должны быть.</td>
+  </tr>
+  <tr>
+   <td>Нормативный документ</td>
+   <td><a href="https://www.w3.org/TR/html5/forms.html#the-form-element" title="http://www.w3.org/TR/html5/forms.html#the-form-element" class="external" rel=" noopener">HTML5, section 4.10.3</a> (<a href="https://www.w3.org/TR/1999/REC-html401-19991224/interact/forms.html#h-17.3" title="http://www.w3.org/TR/1999/REC-html401-19991224/interact/forms.html#h-17.3" class="external" rel=" noopener">HTML4.01, section 17.3</a>)</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="attributes"><a href="#attributes" title="Permalink to Атрибуты">Атрибуты</a></h2><div><p>Как и все HTML элементы, этот элемент поддерживает <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes" title="HTML/Global attributes">глобальные атрибуты</a>.</p>
+
+<dl>
+ <dt><a id="attr-accept" href="#attr-accept"><b><code>accept</code></b></a> <span class="badge inline html-version"><a href="https://developer.mozilla.org/ru/docs/Web/HTML">HTML 4</a></span> </dt>
+ <dd>Список типов содержимого, разделённых&nbsp;запятой, которые&nbsp;принимает сервер.
+ <div class="note notecard"><strong>Примечание об использовании:</strong> Этот атрибут был удалён в HTML5 и его не следует больше использовать. Взамен, используйте <span class="st"><a href="/html/Input#attr-accept/"><code>accept</code></a></span> атрибут заданного <a href="/html/Input/"><code>&lt;input&gt;</code></a> элемента.</div>
+ </dd>
+ <dt><a id="attr-accept-charset" href="#attr-accept-charset"><b><code>accept-charset</code></b></a></dt>
+ <dd>Разделённые пробелами <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Localizations_and_character_encodings" class="page-not-created" title="This is a link to an unwritten page">символьные кодировки</a>, которые принимает сервер. Браузер использует их в том порядке, в котором они перечислены. Значение по умолчанию означает <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding">ту же кодировку что и у страницы</a>.<br>
+ (В предыдущей версии HTML, различные кодировки могли быть разделены запятыми.)</dd>
+ <dt><a id="attr-action" href="#attr-action"><b><code>action</code></b></a></dt>
+ <dd>URI-адрес программы, которая обрабатывает информацию переданную через форму. Это значение может быть переписано с помощью атрибута <a href="/html/button#attr-formaction/"><code>formaction</code></a> на <a href="/html/button/"><code>&lt;button&gt;</code></a> или <a href="/html/Input/"><code>&lt;input&gt;</code></a> элементе.</dd>
+ <dt><a id="attr-autocomplete" href="#attr-autocomplete"><b><code>autocomplete</code></b></a> <span class="badge inline html-version"><a href="https://developer.mozilla.org/ru/docs/orphaned/Web/Guide/HTML/HTML5">HTML5</a></span></dt>
+ <dd>Указывает, могут ли элементы управления автоматически быть дописаны в форме браузером. Эта настройка может быть переписана с помощью атрибута <code>autocomplete</code> на элементе формы. Возможные значения:
+ <ul>
+  <li><code>off</code>: Пользователь должен явно ввести значение в каждое поле или документ предоставит свой собственный метод автодополнения; браузер автоматически не дополняет записи.</li>
+  <li><code>on</code>: Браузер может автоматически дополнить значения, основанные на значениях, которые пользователь уже вводил, в течение предыдущего использования формы.</li>
+ </ul>
+
+ <div class="note notecard">
+ <p><strong>Примечание: </strong>Если вы установили значение <code>off</code> <code>для</code> <code>autocomplete</code> атрибута ​​​​​формы, из-за того, что документ предоставляет своё собственное автодополнение, то вам следует также установить значение <code>off</code> для <code>autocomplete</code> каждого <a href="/html/Input/"><code>&lt;input&gt;</code></a> элемента формы, которые документ может автоматически дополнить. Подробнее, смотрите <a href="#google_chrome_notes">Google Chrome notes</a>.</p>
+ </div>
+ </dd>
+ <dt><a id="attr-enctype" href="#attr-enctype"><b><code>enctype</code></b></a></dt>
+ <dd>Когда значение атрибута method равно <code>post</code>, атрибут - <a href="http://en.wikipedia.org/wiki/Mime_type" title="http://en.wikipedia.org/wiki/Mime_type" class="external" rel=" noopener">MIME тип</a> содержимого, которое используется, чтобы передать форму на сервер. Возможные значения:
+ <ul>
+  <li><code>application/x-www-form-urlencoded</code>: Значение по умолчанию, если атрибут не задан.</li>
+  <li><code>multipart/form-data</code>: Используйте это значение, если пользуетесь элементом <a href="/html/Input/"><code>&lt;input&gt;</code></a> атрибутом <code>type</code> установленным в "file".</li>
+  <li><code>text/plain (HTML5)</code></li>
+ </ul>
+
+ <p>Это значение может быть переписано атрибутом <a href="/html/button#attr-formenctype/"><code>formenctype</code></a> на элементе <a href="/html/button/"><code>&lt;button&gt;</code></a> или <a href="/html/Input/"><code>&lt;input&gt;</code></a>.</p>
+ </dd>
+ <dt><a id="attr-method" href="#attr-method"><b><code>method</code></b></a></dt>
+ <dd><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP" title="http://www.w3.org/Protocols/rfc2616/rfc2616.html">HTTP</a> метод, который браузер использует, для отправки формы. Возможные значения:
+ <ul>
+  <li><code>post</code>: Соответствует HTTP <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.5" title="http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.5" class="external" rel=" noopener">POST методу</a> ; данные из формы включаются в тело формы и посылаются на сервер.</li>
+  <li><code>get</code>: Соответствует <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.3" title="http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.3" class="external" rel=" noopener">GET методу</a>; данные из формы добавляются к URI атрибута <code>action</code>, их разделяет '?', и полученный URI посылается на сервер. Используйте этот метод, когда форма содержит только ASCII символы и не имеет побочного эффекта.</li>
+ </ul>
+
+ <p>Это значение может быть переписано атрибутом <a href="/html/button#attr-formmethod/"><code>formmethod</code></a> на <a href="/html/button/"><code>&lt;button&gt;</code></a> или <a href="/html/Input/"><code>&lt;input&gt;</code></a> элементе.</p>
+ </dd>
+ <dt><a id="attr-name" href="#attr-name"><b><code>name</code></b></a></dt>
+ <dd>Имя формы. В HTML 4 его использование запрещено (<code>id</code> следует использовать взамен). Оно должно быть уникальным и не пустым среди всех форм в документе в HTML 5.</dd>
+ <dt><a id="attr-novalidate" href="#attr-novalidate"><b><code>novalidate</code></b></a> <span class="badge inline html-version"><a href="https://developer.mozilla.org/ru/docs/orphaned/Web/Guide/HTML/HTML5">HTML5</a></span></dt>
+ <dd>Это Boolean атрибут показывает, что форма не проверяется на валидность, когда отправляется серверу. Если атрибут пропущен (и поэтому форма проверяется), эта настройка по умолчанию, может быть переписана атрибутом <a href="/html/button#attr-formnovalidate/"><code>formnovalidate</code></a> на <a href="/html/button/"><code>&lt;button&gt;</code></a> или <a href="/html/Input/"><code>&lt;input&gt;</code></a> элементе, принадлежащем форме.</dd>
+ <dt><a id="attr-target" href="#attr-target"><b><code>target</code></b></a></dt>
+ <dd>Имя или ключевое слово, показывающее где отображать ответ, который будет получен, после отправки формы. В HTML 4, это имя или ключевое слово для фрейма. В HTML5, это имя или ключевое слово, <em>контекста</em> <em>просмотра </em>(например, вкладка, окно, или линейный фрейм). Следующие ключевые слова имеют специальное значение:
+ <ul>
+  <li><code>_self</code>: Загружает ответ в том же самом фрейме HTML 4 (или HTML5 контексте просмотра) как текущий. Это значение по умолчанию, если атрибут не указан.</li>
+  <li><code>_blank</code>: Загружает ответ в новом безымянном окне HTML 4 или HTML5 контексте просмотра.</li>
+  <li><code>_parent</code>: Загружает ответ HTML 4 в родительском наборе фрейма для текущего фрейма или HTML5 родительский контекст просмотра для текущего просмотра. Если нет предка, эта опция действует точно так же как as <code>_self</code>.</li>
+  <li><code>_top</code>: HTML 4: Загружает ответ в полное, оригинальное окно, закрывая все другие фреймы. HTML5: Загружает ответ в верхний уровень контекста просмотра (т.е., контекст просмотра это предок текущего и не имеет других предков). Если нет предка, эта опция действует точно так же как as <code>_self</code>.</li>
+ </ul>
+
+ <p>HTML5: Это значение может быть перезаписано <a href="/html/button#attr-formtarget/"><code>formtarget</code></a> атрибутом на <a href="/html/button/"><code>&lt;button&gt;</code></a> или <a href="/html/Input/"><code>&lt;input&gt;</code></a> элементе.</p>
+ </dd>
+</dl></div><h2 id="dom_interface"><a href="#dom_interface" title="Permalink to DOM_interface">DOM_interface</a></h2><div><p>Этот элемент реализует <a href="https://developer.mozilla.org/ru/docs/Web/API/HTMLFormElement"><code>HTMLFormElement</code></a> интерфейс.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div><pre class="brush: html notranslate"><code><span class="token comment">&lt;!-- Простая форма, которая пошлёт GET запрос --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>GET-name<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Name:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>GET-name<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>name<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Save<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token comment">&lt;!-- Простая форма, которая пошлёт POST запрос --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>post<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>POST-name<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Name:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>POST-name<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>name<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Save<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token comment">&lt;!-- Форма с fieldset, legend, и label --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>post<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>fieldset</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>legend</span><span class="token punctuation">&gt;</span></span>Title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>legend</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Click me<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>fieldset</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость браузера">Совместимость браузера</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li>Другие элементы, которые используются для создания форм: <a href="/html/button/"><code>&lt;button&gt;</code></a>, <a href="/html/datalist/"><code>&lt;datalist&gt;</code></a>, <a href="/html/fieldset/"><code>&lt;fieldset&gt;</code></a>, <a href="/html/Input/"><code>&lt;input&gt;</code></a>,<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/keygen" class="only-in-en-us" title="Currently only available in English (US)">&lt;keygen&gt; (en-US)</a>, <a href="/html/label/"><code>&lt;label&gt;</code></a>, <a href="/html/legend/"><code>&lt;legend&gt;</code></a>, <a href="/html/meter/"><code>&lt;meter&gt;</code></a>, <a href="/html/optgroup/"><code>&lt;optgroup&gt;</code></a>, <a href="/html/option/"><code>&lt;option&gt;</code></a>, <a href="/html/output/"><code>&lt;output&gt;</code></a>, <a href="/html/progress/"><code>&lt;progress&gt;</code></a>, <a href="/html/select/"><code>&lt;select&gt;</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea" class="only-in-en-us" title="Currently only available in English (US)">&lt;textarea&gt; (en-US)</a>.</li>
+</ul>
+
+<p><label></label></p><p></p></div>

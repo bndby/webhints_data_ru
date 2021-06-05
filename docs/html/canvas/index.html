@@ -1,0 +1,72 @@
+<h1>&lt;canvas&gt;</h1><div><p><strong>HTML <code>&lt;canvas&gt;</code>&nbsp;Элемент </strong>может быть использован для отрисовки графики через скрипты&nbsp;(обычно используется&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a>). Например, его можно использовать для отрисовки графиков, делать композиции фото или даже&nbsp;выполнять анимации. Вы можете (и должны) дать альтернативное содержание&nbsp;внутри&nbsp;блока&nbsp;<code>&lt;canvas&gt;</code>. Этот контент будет рендерится в обоих браузерах, в старых которые не поддерживают canvas и в браузерах с отключённым JavaScript.</p>
+
+<p>Больше&nbsp;статей о canvas&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API">canvas topic page</a>.</p>
+
+<table class="properties" style="height: 537px; width: 437px;">
+ <tbody>
+  <tr>
+   <th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories">Content categories</a></th>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#flow_content">Flow content</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#phrasing_content">phrasing content</a>, <a href="https://developer.mozilla.org/en-US/docs/HTML/Content_categories#Embedded_content">embedded content</a>, palpable content.</td>
+  </tr>
+  <tr>
+   <th scope="row">Permitted content</th>
+   <td>Transparent но без <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#interactive_content">interactive content</a> descendants except(соглашаться?) для <a href="/html/A/"><code>&lt;a&gt;</code></a> элементы, <a href="/html/button/"><code>&lt;button&gt;</code></a> элементы, <a href="/html/Input/"><code>&lt;input&gt;</code></a> элементы как <a href="/html/Input#attr-type/"><code>type</code></a> атрибут is <code>checkbox</code>, <code>radio</code>, или <code>button</code>.</td>
+  </tr>
+  <tr>
+   <th scope="row">Tag omission</th>
+   <td>Нет, открывающий и закрывающий теги обязательны.</td>
+  </tr>
+  <tr>
+   <th scope="row">Permitted parent elements</th>
+   <td>Any element that accepts <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#phrasing_content">phrasing_content</a>.</td>
+  </tr>
+  <tr>
+   <th scope="row">DOM interface</th>
+   <td><a href="https://developer.mozilla.org/ru/docs/Web/API/HTMLCanvasElement"><code>HTMLCanvasElement</code></a></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="атрибуты"><a href="#атрибуты" title="Permalink to Атрибуты">Атрибуты</a></h2><div><p>Этот элемент включает&nbsp;<a href="https://developer.mozilla.org/en-US/docs/HTML/Global_attributes">global attributes</a>.</p>
+
+<dl>
+ <dt><a id="attr-height" href="#attr-height"><b><code>height</code></b></a></dt>
+ <dd>Высота&nbsp;в координатном&nbsp;пространстве в CSS пикселях. По умолчанию 150.</dd>
+ <dt><a id="attr-moz-opaque" href="#attr-moz-opaque"><b><code>moz-opaque</code></b></a> </dt>
+ <dd>Дай холсту знать будет ли фактором&nbsp;или нет полупрозрачность. Если холст знает что нет полупрозрачности, производительность рисования может быть оптимизирована.</dd>
+ <dt><a id="attr-width" href="#attr-width"><b><code>width</code></b></a></dt>
+ <dd>Ширина в координатном&nbsp;пространстве в CSS пикселях. По умолчанию 300.</dd>
+</dl></div><h2 id="описание"><a href="#описание" title="Permalink to Описание">Описание</a></h2><div></div><h3 id="обязательно_<canvas>_тег"><a href="#обязательно_<canvas>_тег" title="Permalink to Обязательно&nbsp;</canvas> тег">Обязательно&nbsp;<code>&lt;/canvas&gt;</code> тег</a></h3><div><p>В отличии от&nbsp;<a href="/html/img/"><code>&lt;img&gt;</code></a> элемента, <a href="/html/canvas/" aria-current="page"><code>&lt;canvas&gt;</code></a> элемент <strong>требует </strong>закрытия тега&nbsp;(<code>&lt;/canvas&gt;</code>).</p></div><h3 id="определение_размеров_холста"><a href="#определение_размеров_холста" title="Permalink to Определение размеров холста">Определение размеров холста</a></h3><div><p>Отображаемый размер холста может быть изменён используя stylesheet. Изображение масштабируется при рендеринге, чтобы соответствовать стилю&nbsp;размер. Если ваш рендеринг кажется искажённым,&nbsp;попытайтесь&nbsp;указать ваши&nbsp;атрибуты&nbsp;ширины и высоты точно в&nbsp;атрибутах&nbsp;<code>&lt;canvas&gt;</code>, и не используя&nbsp;CSS.</p></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>canvas</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>canvas<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>300<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>300<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  Извините, ваш браузер нет поддерживает<span class="token entity named-entity" title="<">&amp;lt;</span>canvas<span class="token entity named-entity" title=">">&amp;gt;</span> элемент.
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>canvas</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<p>Если ваш холст не использует transparency, установите&nbsp;<code>moz-opaque</code> атрибут на canvas теге. Это информация может быть использована для оптимизации рендеринга. Однако, этот атрибут&nbsp;не был стандартизирован&nbsp;и работает только в браузерах основанных&nbsp;на&nbsp;движках&nbsp;рендеринга&nbsp;Mozilla&nbsp;.</p>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>canvas</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mycanvas<span class="token punctuation">"</span></span> <span class="token attr-name">moz-opaque</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>canvas</span><span class="token punctuation">&gt;</span></span></code></pre></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://html.spec.whatwg.org/multipage/the-canvas-element.html#the-canvas-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML Living Standard<br><small lang="ru">Определение '&lt;canvas&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html52/the-canvas-element.html#the-canvas-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML5<br><small lang="ru">Определение '&lt;canvas&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="совместимость_браузеров"><a href="#совместимость_браузеров" title="Permalink to Совместимость браузеров">Совместимость браузеров</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API">MDN canvas portal</a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial">Canvas tutorial</a></li>
+ <li><a href="https://simon.html5.org/dump/html5-canvas-cheat-sheet.html" class="external" rel=" noopener">Canvas cheat sheet</a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/Demos_of_open_web_technologies">Canvas-related demos</a></li>
+ <li><a href="https://developer.apple.com/library/safari/documentation/AudioVideo/Conceptual/HTML-canvas-guide/Introduction/Introduction.html" class="external" rel=" noopener">Canvas introduction by Apple</a></li>
+</ul>
+
+<div></div></div>

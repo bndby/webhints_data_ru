@@ -1,6 +1,6 @@
 <h1>:where()</h1><div><div></div>
 
-<div><a href="/webhints_data_ru/css/">CSS</a> <a href="/webhints_data_ru/css/Pseudo-classes/">псевдокласс </a><strong><code>:where()</code> </strong>в качестве аргумента принимает список селекторов и выбирает только те элементы, которые могут быть выбраны из переданного списка.</div>
+<div><a href="/css/">CSS</a> <a href="/css/Pseudo-classes/">псевдокласс </a><strong><code>:where()</code> </strong>в качестве аргумента принимает список селекторов и выбирает только те элементы, которые могут быть выбраны из переданного списка.</div>
 
 <div></div>
 
@@ -19,7 +19,7 @@ footer p:hover</span> <span class="token punctuation">{</span>
   <span class="token property">cursor</span><span class="token punctuation">:</span> pointer<span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
 
-<p>Разница между <code>:where()</code> и <a href="/webhints_data_ru/css/:is/"><code>:is()</code></a> заключается в том, что <code>:where()</code> всегда имеет нулевую <a href="https://developer.mozilla.org/ru/docs/Web/ru/docs/Web/CSS/Specificity">специфичность селектора</a>, тогда как специфичность <code>:is()</code> равна самому специфичному селектору из списка переданных аргументов.</p></div><h3 id="парсинг_forgiving-селектора"><a href="#парсинг_forgiving-селектора" title="Permalink to Парсинг forgiving-селектора">Парсинг forgiving-селектора</a></h3><div><p>В спецификации псевдоклассы <code>:is()</code> и <code>:where()</code> относятся к так называемому <a href="https://drafts.csswg.org/selectors-4/#typedef-forgiving-selector-list" class="external" rel=" noopener">forgiving selector list</a> (прощающий список селекторов).</p>
+<p>Разница между <code>:where()</code> и <a href="/css/:is/"><code>:is()</code></a> заключается в том, что <code>:where()</code> всегда имеет нулевую <a href="https://developer.mozilla.org/ru/docs/Web/ru/docs/Web/CSS/Specificity">специфичность селектора</a>, тогда как специфичность <code>:is()</code> равна самому специфичному селектору из списка переданных аргументов.</p></div><h3 id="парсинг_forgiving-селектора"><a href="#парсинг_forgiving-селектора" title="Permalink to Парсинг forgiving-селектора">Парсинг forgiving-селектора</a></h3><div><p>В спецификации псевдоклассы <code>:is()</code> и <code>:where()</code> относятся к так называемому <a href="https://drafts.csswg.org/selectors-4/#typedef-forgiving-selector-list" class="external" rel=" noopener">forgiving selector list</a> (прощающий список селекторов).</p>
 
 <p>При использовании списка селекторов в CSS, если один из селекторов невалидный, то весь список селекторов будет считаться невалидным. В то же время при использовании <code>:is()</code> или <code>:where()</code> действует другое правило: если среди переданных аргументов будет некорректный или неподдерживаемый селектор, то он будет проигнорирован, для всех же остальных селекторов будут применены CSS-правила.</p>
 
@@ -114,7 +114,7 @@ footer p:hover</span> <span class="token punctuation">{</span>
 </table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><div>
 <p></p><p></p>
 </div></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
- <li><a href="/webhints_data_ru/css/:is/"><code>:is()</code></a></li>
+ <li><a href="/css/:is/"><code>:is()</code></a></li>
  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Selector_list">Список селекторов</a></li>
  <li><a href="https://developer.mozilla.org/ru/docs/Web/Web_Components">Веб-компоненты</a></li>
 </ul></div>

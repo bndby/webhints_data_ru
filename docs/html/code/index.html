@@ -1,0 +1,81 @@
+<h1>&lt;code&gt;: The Inline Code element</h1><div><div></div>
+
+<p id="Summary"><span class="seoSummary"><strong>Элемент HTML <code>&lt;code&gt;</code></strong> отображает его содержимое в стиле, предназначенном для указания на то, что текст является коротким фрагментом компьютерного кода.</span> По умолчанию текст содержимого отображается с использованием шрифта монопространства по умолчанию <a href="https://developer.mozilla.org/ru/docs/Glossary/User_agent">пользовательского агента</a>.</p>
+
+<div><iframe class="interactive" width="100%" height="375" src="https://interactive-examples.mdn.mozilla.net/pages/tabbed/code.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+
+
+<table class="properties">
+ <tbody>
+  <tr>
+   <th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories">Content categories</a></th>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#flow_content">Flow content</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#phrasing_content">phrasing content</a>, palpable content.</td>
+  </tr>
+  <tr>
+   <th scope="row">Permitted content</th>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#phrasing_content">Phrasing content</a>.</td>
+  </tr>
+  <tr>
+   <th scope="row">Tag omission</th>
+   <td>Нет, открывающий и закрывающий теги обязательны.</td>
+  </tr>
+  <tr>
+   <th scope="row">Permitted parents</th>
+   <td>Any element that accepts <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#phrasing_content">phrasing content</a>.</td>
+  </tr>
+  <tr>
+   <th scope="row">Implicit ARIA role</th>
+   <td><a href="https://www.w3.org/TR/html-aria/#dfn-no-corresponding-role" class="external" rel=" noopener">No corresponding role</a></td>
+  </tr>
+  <tr>
+   <th scope="row">Permitted ARIA roles</th>
+   <td>Any</td>
+  </tr>
+  <tr>
+   <th scope="row">DOM interface</th>
+   <td><a href="https://developer.mozilla.org/ru/docs/Web/API/HTMLElement"><code>HTMLElement</code></a> Up to Gecko 1.9.2 (Firefox 4) inclusive, Firefox implements the <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLSpanElement"><code>HTMLSpanElement</code> <span>(en-US)</span></a> interface for this element.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="атрибуты"><a href="#атрибуты" title="Permalink to Атрибуты">Атрибуты</a></h2><div><p>Этот элемент включает в себя только <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Global_attributes" title="HTML/Global attributes">глобальные атрибуты</a>.</p></div><h2 id="пример"><a href="#пример" title="Permalink to Пример">Пример</a></h2><div><p>Текстовый абзац, включающий <code>&lt;code&gt;</code>:</p>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>The function <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>code</span><span class="token punctuation">&gt;</span></span>selectAll()<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>code</span><span class="token punctuation">&gt;</span></span> highlights all the text in the
+input field so the user can, for example, copy or delete the text.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<p>Вывод, генерируемый этим HTML, выглядит так:</p>
+
+<p><iframe class="sample-code-frame" id="frame_Example" width="640" height="70" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/code/_sample_.Example.html" loading="lazy"></iframe></p></div><h2 id="примечания"><a href="#примечания" title="Permalink to Примечания">Примечания</a></h2><div><p>Для представления нескольких строк кода, оберните элемент <code>&lt;code&gt;</code> в элемент <a href="/html/pre/"><code>&lt;pre&gt;</code></a>. Элемент <code>&lt;code&gt;</code> сам по себе представляет только один элемент кода или строку кода.</p>
+
+<p>CSS правило может быть определено для того, чтобы селектор <code>code</code> переопределил шрифт браузера по умолчанию. Предпочтения, установленные пользователем, могут иметь приоритет над указанными CSS.</p></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://html.spec.whatwg.org/multipage/semantics.html#the-code-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML Living Standard<br><small lang="ru">Определение '&lt;code&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html52/textlevel-semantics.html#the-code-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML5<br><small lang="ru">Определение '&lt;code&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html401/struct/text.html#h-9.2.1" hreflang="en" lang="en" class="external" rel=" noopener">HTML 4.01 Specification<br><small lang="ru">Определение '&lt;code&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="совместимость_с_браузерами"><a href="#совместимость_с_браузерами" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/samp" class="only-in-en-us" title="Currently only available in English (US)">&lt;samp&gt; (en-US)</a></li>
+ <li><a href="/html/kbd/"><code>&lt;kbd&gt;</code></a></li>
+ <li><a href="/html/command/" class="page-not-created" title="This is a link to an unwritten page"><code>&lt;command&gt;</code></a> (deprecated)</li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/var" class="only-in-en-us" title="Currently only available in English (US)">&lt;var&gt; (en-US)</a></li>
+ <li><a href="/html/pre/"><code>&lt;pre&gt;</code></a></li>
+</ul></div>

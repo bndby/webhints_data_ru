@@ -1,0 +1,47 @@
+<h1>&lt;applet&gt;</h1><div><div><div class="notecard obsolete">
+                <h4 id="вышла_из_употребления">Вышла из употребления</h4>
+                <p>Эта возможность вышла из употребления. Хотя она может продолжать работать в некоторых браузерах, её использование не рекомендуется, поскольку она может быть удалена в любое время. Старайтесь избегать её использования.</p>
+            </div></div>
+
+<p>Элемент HTML апплет (&lt;applet&gt;) определяет включение апплета java.</p>
+
+<div class="note notecard">
+<p>Примечание: <a href="/html/applet/" aria-current="page"><code>&lt;applet&gt;</code></a> элемент был удалён в <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1279218" class="external" rel=" noopener">Gecko 56</a> и <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=470301" class="external" rel=" noopener">Chrome</a>&nbsp;в конце 2015 года. Удаление рассматривается в <a href="https://bugs.webkit.org/show_bug.cgi?id=157926" class="external" rel=" noopener">WebKit</a> и <a href="https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/11946645/" class="external" rel=" noopener">Edge</a>.</p>
+</div></div><h2 id="attributes"><a href="#attributes" title="Permalink to Атрибуты">Атрибуты</a></h2><div><dl>
+ <dt><a id="attr-align" href="#attr-align"><b><code>align</code></b></a></dt>
+ <dd>Этот атрибут используется для установки апплета на странице относительно содержания, которая может течь вокруг него. В HTML 4.01 определяет значения снизу, слева, посередине, справа и сверху, в то время как Microsoft и Netscape также может поддерживать <strong>absbottom</strong>, <strong>absmiddle</strong>, <strong>baseline</strong>, <strong>center</strong>, и <strong>texttop</strong>.</dd>
+ <dt><a id="attr-alt" href="#attr-alt"><b><code>alt</code></b></a></dt>
+ <dd>This attribute causes a descriptive text alternate to be displayed on browsers that do not support Java. Page designers should also remember that content enclosed within the <code>&lt;applet&gt;</code> element may also be rendered as alternative text.</dd>
+ <dt><a id="attr-archive" href="#attr-archive"><b><code>archive</code></b></a></dt>
+ <dd>This attribute refers to an archived or compressed version of the applet and its associated class files, which might help reduce download time.</dd>
+ <dt><a id="attr-code" href="#attr-code"><b><code>code</code></b></a></dt>
+ <dd>This attribute specifies the URL of the applet's class file to be loaded and executed. Applet filenames are identified by a .class filename extension. The URL specified by code might be relative to the <code>codebase</code> attribute.</dd>
+ <dt><a id="attr-codebase" href="#attr-codebase"><b><code>codebase</code></b></a></dt>
+ <dd>This attribute gives the absolute or relative URL of the directory where applets' .class files referenced by the code attribute are stored.</dd>
+ <dt><a id="attr-datafld" href="#attr-datafld"><b><code>datafld</code></b></a></dt>
+ <dd>This attribute, supported by Internet Explorer 4 and higher, specifies the column name from the data source object that supplies the bound data. This attribute might be used to specify the various&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/param" class="only-in-en-us" title="Currently only available in English (US)">&lt;param&gt; (en-US)</a> elements passed to the Java applet.</dd>
+ <dt><a id="attr-datasrc" href="#attr-datasrc"><b><code>datasrc</code></b></a></dt>
+ <dd>Like <code>datafld</code>, this attribute is used for data binding under Internet Explorer 4. It indicates the id of the data source object that supplies the data that is bound to the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/param" class="only-in-en-us" title="Currently only available in English (US)">&lt;param&gt; (en-US)</a> elements associated with the applet.</dd>
+ <dt><a id="attr-height" href="#attr-height"><b><code>height</code></b></a></dt>
+ <dd>This attribute specifies the height, in pixels, that the applet needs.</dd>
+ <dt><a id="attr-hspace" href="#attr-hspace"><b><code>hspace</code></b></a></dt>
+ <dd>This attribute specifies additional horizontal space, in pixels, to be reserved on either side of the applet.</dd>
+ <dt><a id="attr-mayscript" href="#attr-mayscript"><b><code>mayscript</code></b></a></dt>
+ <dd>In the Netscape implementation, this attribute allows access to an applet by programs in a scripting language embedded in the document.</dd>
+ <dt><a id="attr-name" href="#attr-name"><b><code>name</code></b></a></dt>
+ <dd>This attribute assigns a name to the applet so that it can be identified by other resources; particularly scripts.</dd>
+ <dt><a id="attr-object" href="#attr-object"><b><code>object</code></b></a></dt>
+ <dd>This attribute specifies the URL of a serialized representation of an applet.</dd>
+ <dt><a id="attr-src" href="#attr-src"><b><code>src</code></b></a></dt>
+ <dd>As defined for Internet Explorer 4 and higher, this attribute specifies a URL for an associated file for the applet. The meaning and use is unclear and not part of the HTML standard.</dd>
+ <dt><a id="attr-vspace" href="#attr-vspace"><b><code>vspace</code></b></a></dt>
+ <dd>This attribute specifies additional vertical space, in pixels, to be reserved above and below the applet.</dd>
+ <dt><a id="attr-width" href="#attr-width"><b><code>width</code></b></a></dt>
+ <dd>This attribute specifies in pixels the width that the applet needs.</dd>
+</dl></div><h2 id="example"><a href="#example" title="Permalink to Example">Example</a></h2><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>applet</span> <span class="token attr-name">code</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>game.class<span class="token punctuation">"</span></span> <span class="token attr-name">align</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>left<span class="token punctuation">"</span></span> <span class="token attr-name">archive</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>game.zip<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>250<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>350<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>param</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>difficulty<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>easy<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>b</span><span class="token punctuation">&gt;</span></span>Sorry, you need Java to play this game.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>b</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>applet</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="notes"><a href="#notes" title="Permalink to Notes">Notes</a></h2><div><p>The W3C specification does not encourage the use of <code>&lt;applet&gt;</code> and prefers the use of the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/object" class="only-in-en-us" title="Currently only available in English (US)">&lt;object&gt; (en-US)</a> tag. Under the strict definition of HTML 4.01, this element is deprecated and entirely obsolete in HTML5.</p>
+
+<div></div></div>

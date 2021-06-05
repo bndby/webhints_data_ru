@@ -1,0 +1,100 @@
+<h1>&lt;div&gt;: Элемент разделения контента</h1><div><div></div>
+
+<p><span class="seoSummary"><strong>Элемент разделения контента HTML</strong> (<code><strong>&lt;div&gt;</strong></code>) является универсальным контейнером для <a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Content_categories#%D0%BF%D0%BE%D1%82%D0%BE%D0%BA%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%BD%D1%82">потокового контента</a>. Он не влияет на контент или макет до тех пор, пока не будет стилизован с помощью <a href="https://developer.mozilla.org/ru/docs/Glossary/CSS">CSS</a>.</span></p>
+
+<div><iframe class="interactive" width="100%" height="445" src="https://interactive-examples.mdn.mozilla.net/pages/tabbed/div.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+
+
+<p>Являясь "чистым" контейнером, элемент <code>&lt;div&gt;</code>, по существу, не представляет ничего. Между тем, он используется для группировки контента, что позволяет легко его стилизовать, используя атрибуты <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Global_attributes#attr-class"><code>class</code></a> или <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Global_attributes#attr-id"><code>id</code></a>, помечать раздел документа, написанный на разных языках (используя&nbsp;атрибут <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Global_attributes#attr-lang"><code>lang</code></a>), и так далее.</p>
+
+<table class="properties">
+ <tbody>
+  <tr>
+   <th scope="row"><a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Content_categories">Категории контента</a></th>
+   <td><a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Content_categories#%D0%BF%D0%BE%D1%82%D0%BE%D0%BA%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%BD%D1%82">Потоковый контент</a>, <a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Content_categories#%D1%8F%D0%B2%D0%BD%D1%8B%D0%B9_%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%BD%D1%82">явный контент</a>.</td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённое содержимое</th>
+   <td><a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Content_categories#%D0%BF%D0%BE%D1%82%D0%BE%D0%BA%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%BD%D1%82">Потоковый контент</a> или (в <a href="https://developer.mozilla.org/ru/docs/Glossary/WHATWG">WHATWG</a> HTML), если родительским является элемент <a href="/html/dl/"><code>&lt;dl&gt;</code></a>: один или несколько элементов <a href="/html/dt/"><code>&lt;dt&gt;</code></a>, сопровождаемых одним или более элементами <a href="/html/dd/"><code>&lt;dd&gt;</code></a>, в ряде случаев смешанных с элементами <a href="/html/script/"><code>&lt;script&gt;</code></a> и <a href="/html/template/"><code>&lt;template&gt;</code></a>.</td>
+  </tr>
+  <tr>
+   <th scope="row">Пропуск тега</th>
+   <td>Ни одного; Оба тега, открывающий и закрывающий, являются обязательными.</td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённые родительские элементы</th>
+   <td>Любой элемент, который разрешает <a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Content_categories#%D0%BF%D0%BE%D1%82%D0%BE%D0%BA%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%BD%D1%82">потоковый контент</a> в качестве содержимого..<br>
+    Или (в <a href="https://developer.mozilla.org/ru/docs/Glossary/WHATWG">WHATWG</a> HTML): элемент <a href="/html/dl/"><code>&lt;dl&gt;</code></a>.</td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённые роли ARIA</th>
+   <td>Любые</td>
+  </tr>
+  <tr>
+   <th scope="row">DOM-интерфейс</th>
+   <td><a href="https://developer.mozilla.org/ru/docs/Web/API/HTMLDivElement"><code>HTMLDivElement</code></a></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="атрибуты"><a href="#атрибуты" title="Permalink to Атрибуты">Атрибуты</a></h2><div><p>К этому элементу применимы <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Global_attributes">глобальные атрибуты</a>.</p>
+
+<div class="note notecard">
+ <p><strong>Примечание:</strong> Атрибут <code>align</code> устарел и вышел из употребления; не используйте его больше. Вместо этого, вам следует использовать свойства <a href="https://developer.mozilla.org/ru/docs/Glossary/CSS">CSS</a> или методы, такие как <a href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Grid_Layout">CSS Grid</a> или <a href="https://developer.mozilla.org/ru/docs/Learn/CSS/CSS_layout/Flexbox">CSS Flexbox</a> для выравнивания и изменения положения элементов <code>&lt;div&gt;</code> на странице.</p>
+</div></div><h2 id="примечание"><a href="#примечание" title="Permalink to Примечание">Примечание</a></h2><div><ul>
+ <li>Элемент <code>&lt;div&gt;</code> следует использовать только в том случае, если никакой другой семантический элемент (такой как <a href="/html/article/"><code>&lt;article&gt;</code></a> или <a href="/html/nav/"><code>&lt;nav&gt;</code></a>) не подходит.</li>
+</ul></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="простой_пример"><a href="#простой_пример" title="Permalink to Простой пример">Простой пример</a></h3><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Любой тип контента. Например,
+  <span class="token entity named-entity" title="<">&amp;lt;</span>p<span class="token entity named-entity" title=">">&amp;gt;</span>, <span class="token entity named-entity" title="<">&amp;lt;</span>table<span class="token entity named-entity" title=">">&amp;gt;</span>. Все что угодно!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span> </code></pre>
+
+<p>Результат будет выглядеть так:</p>
+
+<p><iframe class="sample-code-frame" id="frame_Простой_пример" width="650" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/div/_sample_.%D0%9F%D1%80%D0%BE%D1%81%D1%82%D0%BE%D0%B9_%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80.html" loading="lazy"></iframe></p></div><h3 id="стилизованный_пример"><a href="#стилизованный_пример" title="Permalink to Стилизованный пример">Стилизованный пример</a></h3><div><p>Этот пример создаёт прямоугольник с тенью, применяя стили к&nbsp; <code>&lt;div&gt;</code> с помощью CSS. Заметьте, что&nbsp;использование атрибута <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Global_attributes#attr-class"><code>class</code></a> на элементе <code>&lt;div&gt;</code> даёт&nbsp;применение&nbsp;стилей <code>"shadowbox"</code> (в дословном переводе означает "теневая коробка") к элементу.</p>
+
+<h4 id="html">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>shadowbox<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Вот очень интересная заметка в прекрасном прямоугольнике с тенью.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<h4 id="css">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token selector">.shadowbox</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 15em<span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 1px solid #333<span class="token punctuation">;</span>
+  <span class="token property">box-shadow</span><span class="token punctuation">:</span> 8px 8px 5px #444<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 8px 12px<span class="token punctuation">;</span>
+  <span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>180deg<span class="token punctuation">,</span> #fff<span class="token punctuation">,</span> #ddd 40%<span class="token punctuation">,</span> #ccc<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<h4 id="результат">Результат</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Стилизованный_пример" width="650" height="120" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/div/_sample_.%D0%A1%D1%82%D0%B8%D0%BB%D0%B8%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80.html" loading="lazy"></iframe></p></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-div-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML Living Standard<br><small lang="ru">Определение '&lt;div&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td>Нет изменений с последнего "snapshot" (снапшот или снимок - состояние сохранённое в определённый момент времени)</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html52/grouping-content.html#the-div-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML5<br><small lang="ru">Определение '&lt;div&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Атрибут <code>align</code> больше не поддерживается</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html401/struct/global.html#h-7.5.4" hreflang="en" lang="en" class="external" rel=" noopener">HTML 4.01 Specification<br><small lang="ru">Определение '&lt;div&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>&nbsp;</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="поддержка_браузерами"><a href="#поддержка_браузерами" title="Permalink to Поддержка браузерами">Поддержка браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li>Семантические секционные элементы: <a href="/html/section/"><code>&lt;section&gt;</code></a>, <a href="/html/article/"><code>&lt;article&gt;</code></a>, <a href="/html/nav/"><code>&lt;nav&gt;</code></a>, <a href="/html/header/"><code>&lt;header&gt;</code></a>, <a href="/html/footer/"><code>&lt;footer&gt;</code></a></li>
+ <li>Элемент <a href="/html/span/"><code>&lt;span&gt;</code></a> для стилизации фразового контента.</li>
+</ul></div>

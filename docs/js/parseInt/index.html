@@ -20,11 +20,11 @@
 <dl>
  <dt><code>radix</code></dt>
  <dd>Целое число в диапазоне между 2 и 36,&nbsp;представляющее собой основание системы счисления числовой строки <code>string</code>, описанной выше. В основном пользователи используют десятичную систему счисления и указывают 10. <strong>Всегда указывайте этот параметр,</strong> чтобы исключить ошибки считывания и гарантировать корректность исполнения и предсказуемость результата. Когда основание системы счисления не указано, разные реализации могут возвращать разные результаты.</dd>
-</dl></div><h3 id="description"><a href="#description" title="Permalink to Возвращаемое значение">Возвращаемое значение</a></h3><div><p>Целое число, полученное парсингом (разбором и интерпретацией) переданной строки. Если первый символ не получилось сконвертировать в число, то возвращается <a href="/webhints_data_ru/js/NaN/"><code>NaN</code></a>.&nbsp;</p></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Функция <code>parseInt</code> преобразует первый переданный ей аргумент в строковый тип, интерпретирует его и возвращает целое число или значение <code>NaN</code>. Результат (если не <code>NaN</code>) является целым числом и представляет собой первый аргумент (<code>string</code>), рассматривающийся как число в указанной системе счисления (<code>radix</code>). Например, основание 10 указывает на преобразование из десятичного числа, 8 - восьмеричного, 16 - шестнадцатеричного и так далее. Если основание больше <code>10</code>, то для обозначения цифр больше <code>9</code> используются буквы. Например, для шестнадцатеричных чисел (основание 16) используются буквы от&nbsp;<code>A</code> до <code>F</code>.</p>
+</dl></div><h3 id="description"><a href="#description" title="Permalink to Возвращаемое значение">Возвращаемое значение</a></h3><div><p>Целое число, полученное парсингом (разбором и интерпретацией) переданной строки. Если первый символ не получилось сконвертировать в число, то возвращается <a href="/js/NaN/"><code>NaN</code></a>.&nbsp;</p></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Функция <code>parseInt</code> преобразует первый переданный ей аргумент в строковый тип, интерпретирует его и возвращает целое число или значение <code>NaN</code>. Результат (если не <code>NaN</code>) является целым числом и представляет собой первый аргумент (<code>string</code>), рассматривающийся как число в указанной системе счисления (<code>radix</code>). Например, основание 10 указывает на преобразование из десятичного числа, 8 - восьмеричного, 16 - шестнадцатеричного и так далее. Если основание больше <code>10</code>, то для обозначения цифр больше <code>9</code> используются буквы. Например, для шестнадцатеричных чисел (основание 16) используются буквы от&nbsp;<code>A</code> до <code>F</code>.</p>
 
 <p>Если функция <code>parseInt</code> встречает символ, не являющийся числом в указанной системе счисления, она пропускает этот и все последующие символы (даже, если они подходящие) и возвращает целое число, преобразованное из части строки, предшествовавшей этому символу. <code>parseInt</code> отсекает дробную часть числа. Пробелы в начале и конце строки разрешены.</p>
 
-<p>Так как некоторые числа включают символ <code>e</code> в своём строковом представлении (например, <strong><code>6.022e23</code></strong>), то использование <code>parseInt</code> для усечения числовых значений может дать неожиданные результаты, когда используются очень малые или очень большие величины. <code>parseInt</code> не должна использоваться как замена для <a href="/webhints_data_ru/js/Math/floor/"><code>Math.floor()</code></a>.</p>
+<p>Так как некоторые числа включают символ <code>e</code> в своём строковом представлении (например, <strong><code>6.022e23</code></strong>), то использование <code>parseInt</code> для усечения числовых значений может дать неожиданные результаты, когда используются очень малые или очень большие величины. <code>parseInt</code> не должна использоваться как замена для <a href="/js/Math/floor/"><code>Math.floor()</code></a>.</p>
 
 <p>Если основание системы счисления имеет значение <code>undefined</code> (не определено) или равно 0 (или не указано), то JavaScript по умолчанию предполагает следующее:</p>
 
@@ -36,7 +36,7 @@
 
 <p>Если первый символ строки не может быть преобразован в число, <code>parseInt</code> возвращает значение <code>NaN</code>.</p>
 
-<p>С точки зрения математики, значение <code>NaN</code> не является числом в какой-либо системе счисления. Чтобы определить, вернёт ли <code>parseInt </code>значение<code> </code><code>NaN </code>в качестве результата, можно вызвать функцию&nbsp;<a href="/webhints_data_ru/js/isNaN/"><code>isNaN</code></a>. Если <code>NaN</code> участвует в арифметических операциях, результатом также будет <code>NaN</code>.</p>
+<p>С точки зрения математики, значение <code>NaN</code> не является числом в какой-либо системе счисления. Чтобы определить, вернёт ли <code>parseInt </code>значение<code> </code><code>NaN </code>в качестве результата, можно вызвать функцию&nbsp;<a href="/js/isNaN/"><code>isNaN</code></a>. Если <code>NaN</code> участвует в арифметических операциях, результатом также будет <code>NaN</code>.</p>
 
 <p>Для преобразования числа в строку в указанной системе счисления, используйте <code>intValue.toString(radix)</code>.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_using_parseint"><a href="#example_using_parseint" title="Permalink to Пример: Использование parseInt">Пример: Использование <code>parseInt</code></a></h3><div><p>Все следующие примеры возвращают <strong><code>15</code></strong>:</p>
 
@@ -137,10 +137,10 @@ console<span class="token punctuation">.</span><span class="token function">log<
   </tr>
  </tbody>
 </table></div><h2 id="поддержка_браузерами"><a href="#поддержка_браузерами" title="Permalink to Поддержка браузерами">Поддержка браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
- <li><a href="/webhints_data_ru/js/parseFloat/"><code>parseFloat()</code></a></li>
- <li><a href="/webhints_data_ru/js/Number/parseFloat/"><code>Number.parseFloat()</code></a></li>
- <li><a href="/webhints_data_ru/js/Number/parseInt/"><code>Number.parseInt()</code></a></li>
- <li><a href="/webhints_data_ru/js/isNaN/"><code>isNaN()</code></a></li>
- <li><a href="/webhints_data_ru/js/Number/toString/"><code>Number.toString()</code></a></li>
- <li><a href="/webhints_data_ru/js/Object/valueOf/"><code>Object.valueOf</code></a></li>
+ <li><a href="/js/parseFloat/"><code>parseFloat()</code></a></li>
+ <li><a href="/js/Number/parseFloat/"><code>Number.parseFloat()</code></a></li>
+ <li><a href="/js/Number/parseInt/"><code>Number.parseInt()</code></a></li>
+ <li><a href="/js/isNaN/"><code>isNaN()</code></a></li>
+ <li><a href="/js/Number/toString/"><code>Number.toString()</code></a></li>
+ <li><a href="/js/Object/valueOf/"><code>Object.valueOf</code></a></li>
 </ul></div>

@@ -1,0 +1,50 @@
+<h1>&lt;hgroup&gt;</h1><div><div><div class="notecard experimental">
+    <h4 id="experimental">Experimental</h4>
+    <p><strong>Это экспериментальная технология</strong><br>Так как спецификация этой технологии ещё не стабилизировалась, смотрите <a href="#browser_compatibility">таблицу совместимости</a> по поводу использования в различных браузерах. Также заметьте, что синтаксис и поведение экспериментальной технологии может измениться в будущих версиях браузеров, вслед за изменениями спецификации.</p>
+</div></div>
+
+<div></div>
+
+<div class="note notecard">
+<p><strong>Примечание использования: </strong>Этот элемент был удалён из HTML5 (W3C) спецификации&nbsp;, но до сих пор остаётся в спецификации&nbsp;WHATWG. Он частично встроен в большинство браузеров, хотя бы поэтому вряд ли уйдёт. Поскольку схематический алгоритм не реализован ни в одном браузере, семантика тега <code>&lt;hgroup&gt;</code> на практике реализована только теоретически. Спецификация HTML5 (W3C) даёт совет как обозначать <a href="https://www.w3.org/TR/html5/common-idioms.html#sub-head" class="external" rel=" noopener">подзаголовки,&nbsp;альтернативные заголовки и&nbsp;слоганы</a>.</p>
+</div>
+
+<p>HTML &lt;hgroup&gt; Элемент (HTML Headings Group Element - Элемент Группы Заголовков HTML) представляет заголовок раздела. Он определяет один заголовок, который участвует в схеме документа как заголовок явно или неявно заданного&nbsp;раздела, к которому он принадлежит.</p>
+
+<p>Собственно текст для схематического алгоритма&nbsp;- это текст первого элемента заголовка HTML наивысшего ранга (т. Е. Первый <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements" class="only-in-en-us" title="Currently only available in English (US)">&lt;h1&gt; (en-US)</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements" class="only-in-en-us" title="Currently only available in English (US)">&lt;h2&gt; (en-US)</a>, <a href="/html/%20h3/" class="page-not-created" title="This is a link to an unwritten page"> h3 </a>, <a href="/html/%20h4/" class="page-not-created" title="This is a link to an unwritten page"> h4 </a>, <a href="/html/%20h5/" class="page-not-created" title="This is a link to an unwritten page"> h5 </a> или <a href="/html/%20h6/" class="page-not-created" title="This is a link to an unwritten page"> h6 </a> с наименьшим числом потомков), а rank - уровень этого&nbsp;элемента заголовка HTML.</p>
+
+<p>Поэтому этот элемент группирует несколько заголовков, внося лишь основной текст в план документа. Он позволяет связывать вторичные заголовки, такие как подзаголовки, альтернативные заголовки или даже теги, с основным заголовком, без загрязнения структуры документа.</p>
+
+<table class="properties">
+ <tbody>
+  <tr>
+   <th scope="row">
+    <p>Категория информации&nbsp;</p>
+   </th>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#flow_content" title="HTML/Content categories#Flow content">Flow content</a>, heading content, palpable content.</td>
+  </tr>
+  <tr>
+   <th scope="row">Permitted content</th>
+   <td>One or more <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements" class="only-in-en-us" title="Currently only available in English (US)">&lt;h1&gt; (en-US)</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements" class="only-in-en-us" title="Currently only available in English (US)">&lt;h2&gt; (en-US)</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements" class="only-in-en-us" title="Currently only available in English (US)">&lt;h3&gt; (en-US)</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements" class="only-in-en-us" title="Currently only available in English (US)">&lt;h4&gt; (en-US)</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements" class="only-in-en-us" title="Currently only available in English (US)">&lt;h5&gt; (en-US)</a>, and/or <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements" class="only-in-en-us" title="Currently only available in English (US)">&lt;h6&gt; (en-US)</a>.</td>
+  </tr>
+  <tr>
+   <th scope="row">Tag omission</th>
+   <td>Нет, открывающий и закрывающий теги обязательны.</td>
+  </tr>
+  <tr>
+   <th scope="row">Permitted parent elements</th>
+   <td>Any element that accepts <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#flow_content" title="HTML/Content categories#Flow content">flow content</a>.</td>
+  </tr>
+  <tr>
+   <th scope="row">DOM interface</th>
+   <td><a href="https://developer.mozilla.org/ru/docs/Web/API/HTMLElement"><code>HTMLElement</code></a></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="атрибуты"><a href="#атрибуты" title="Permalink to Атрибуты">Атрибуты</a></h2><div><p><span style="line-height: 21px;">This element only includes the&nbsp;</span><a href="https://developer.mozilla.org/en-US/docs/HTML/Global_attributes" style="line-height: 21px;" title="HTML/Global attributes">global attributes</a><span style="line-height: 21px;">.</span></p></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>hgroup</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>Главный заголовок<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>Вторичный заголовок<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>hgroup</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h2 id="совместимость_браузеров"><a href="#совместимость_браузеров" title="Permalink to Совместимость браузеров">Совместимость браузеров</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li>Другие элементы, связанные с разделом: <a href="/html/body/"><code>&lt;body&gt;</code></a>, <a href="/html/article/"><code>&lt;article&gt;</code></a>, <a href="/html/section/"><code>&lt;section&gt;</code></a>, <a href="/html/aside/"><code>&lt;aside&gt;</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements" class="only-in-en-us" title="Currently only available in English (US)">&lt;h1&gt; (en-US)</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements" class="only-in-en-us" title="Currently only available in English (US)">&lt;h2&gt; (en-US)</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements" class="only-in-en-us" title="Currently only available in English (US)">&lt;h3&gt; (en-US)</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements" class="only-in-en-us" title="Currently only available in English (US)">&lt;h4&gt; (en-US)</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements" class="only-in-en-us" title="Currently only available in English (US)">&lt;h5&gt; (en-US)</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements" class="only-in-en-us" title="Currently only available in English (US)">&lt;h6&gt; (en-US)</a>, <a href="/html/nav/"><code>&lt;nav&gt;</code></a>, <a href="/html/header/"><code>&lt;header&gt;</code></a>, <a href="/html/footer/"><code>&lt;footer&gt;</code></a>, <a href="/html/address/"><code>&lt;address&gt;</code></a>;</li>
+ <li><a class="deki-ns current" href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML_sections_and_outlines" title="Sections and Outlines of an HTML5 document">Sections and outlines of an HTML5 document</a>.</li>
+</ul></div>

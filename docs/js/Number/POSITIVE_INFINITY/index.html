@@ -1,5 +1,5 @@
 <h1>Number.POSITIVE_INFINITY</h1><div><div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Свойство <strong><code>Number.POSITIVE_INFINITY</code></strong> представляет значение положительной бесконечности.</p>
-<p>Вам не нужно создавать объект <a href="/webhints_data_ru/js/Number/"><code>Number</code></a> для доступа к этому статическому свойству (используйте <code>Number.POSITIVE_INFINITY</code>).</p>
+<p>Вам не нужно создавать объект <a href="/js/Number/"><code>Number</code></a> для доступа к этому статическому свойству (используйте <code>Number.POSITIVE_INFINITY</code>).</p>
 
 <div><table class="standard-table">
   <thead>
@@ -21,19 +21,19 @@
       <td>нет</td>
     </tr>
   </tbody>
-</table></div></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Значение <code>Number.POSITIVE_INFINITY</code> является тем же самым значением, что содержит свойство <a href="/webhints_data_ru/js/Infinity/"><code>Infinity</code></a> глобального объекта.</p>
+</table></div></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Значение <code>Number.POSITIVE_INFINITY</code> является тем же самым значением, что содержит свойство <a href="/js/Infinity/"><code>Infinity</code></a> глобального объекта.</p>
 <p>Это значение ведёт себя несколько иначе, нежели математическая бесконечность:</p>
 <ul>
  <li>Любое положительное значение, включая <code>POSITIVE_INFINITY</code>, умноженное на <code>POSITIVE_INFINITY</code> даёт <code>POSITIVE_INFINITY</code>.</li>
- <li>Любое отрицательное значение, включая <a href="/webhints_data_ru/js/Number/NEGATIVE_INFINITY/"><code>NEGATIVE_INFINITY</code></a>, умноженное на <code>POSITIVE_INFINITY</code> даёт <a href="/webhints_data_ru/js/Number/NEGATIVE_INFINITY/"><code>NEGATIVE_INFINITY</code></a>.</li>
- <li>Ноль, умноженный на <code>POSITIVE_INFINITY</code>, даёт <a href="/webhints_data_ru/js/NaN/"><code>NaN</code></a>.</li>
- <li><a href="/webhints_data_ru/js/NaN/"><code>NaN</code></a>, умноженный на <code>POSITIVE_INFINITY</code>, даёт <a href="/webhints_data_ru/js/NaN/"><code>NaN</code></a>.</li>
- <li><code>POSITIVE_INFINITY</code>, делённое на любое отрицательное значение, исключая <a href="/webhints_data_ru/js/Number/NEGATIVE_INFINITY/"><code>NEGATIVE_INFINITY</code></a>, даёт <a href="/webhints_data_ru/js/Number/NEGATIVE_INFINITY/"><code>NEGATIVE_INFINITY</code></a>.</li>
+ <li>Любое отрицательное значение, включая <a href="/js/Number/NEGATIVE_INFINITY/"><code>NEGATIVE_INFINITY</code></a>, умноженное на <code>POSITIVE_INFINITY</code> даёт <a href="/js/Number/NEGATIVE_INFINITY/"><code>NEGATIVE_INFINITY</code></a>.</li>
+ <li>Ноль, умноженный на <code>POSITIVE_INFINITY</code>, даёт <a href="/js/NaN/"><code>NaN</code></a>.</li>
+ <li><a href="/js/NaN/"><code>NaN</code></a>, умноженный на <code>POSITIVE_INFINITY</code>, даёт <a href="/js/NaN/"><code>NaN</code></a>.</li>
+ <li><code>POSITIVE_INFINITY</code>, делённое на любое отрицательное значение, исключая <a href="/js/Number/NEGATIVE_INFINITY/"><code>NEGATIVE_INFINITY</code></a>, даёт <a href="/js/Number/NEGATIVE_INFINITY/"><code>NEGATIVE_INFINITY</code></a>.</li>
  <li><code>POSITIVE_INFINITY</code>, делённое на любое положительное значение, исключая <code>POSITIVE_INFINITY</code>, даёт <code>POSITIVE_INFINITY</code>.</li>
- <li><code>POSITIVE_INFINITY</code>, делённое на <a href="/webhints_data_ru/js/Number/NEGATIVE_INFINITY/"><code>NEGATIVE_INFINITY</code></a> или <code>POSITIVE_INFINITY</code>, даёт <a href="/webhints_data_ru/js/NaN/"><code>NaN</code></a>.</li>
+ <li><code>POSITIVE_INFINITY</code>, делённое на <a href="/js/Number/NEGATIVE_INFINITY/"><code>NEGATIVE_INFINITY</code></a> или <code>POSITIVE_INFINITY</code>, даёт <a href="/js/NaN/"><code>NaN</code></a>.</li>
  <li>Любое число, делённое на <code>POSITIVE_INFINITY</code>, даёт ноль.</li>
 </ul>
-<p>Вы можете использовать свойство <code>Number.POSITIVE_INFINITY</code> для проверки на ошибки и возвращать конечное число в случае успеха. Однако, обратите внимание, что в этом случае более уместным было бы использование функции <a href="/webhints_data_ru/js/isFinite/"><code>isFinite</code></a>.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_using_positive_infinity"><a href="#example_using_positive_infinity" title="Permalink to Пример: использование POSITIVE_INFINITY">Пример: использование <code>POSITIVE_INFINITY</code></a></h3><div><p>В следующем примере переменной <code>bigNumber</code> присваивается значение, большее максимального. Когда выполняется инструкция <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/if...else"><code>if</code></a>, переменная <code>bigNumber</code> имеет значение <code>Infinity</code>, так что перед продолжением вычислений она устанавливается в более приемлемое значение.</p>
+<p>Вы можете использовать свойство <code>Number.POSITIVE_INFINITY</code> для проверки на ошибки и возвращать конечное число в случае успеха. Однако, обратите внимание, что в этом случае более уместным было бы использование функции <a href="/js/isFinite/"><code>isFinite</code></a>.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_using_positive_infinity"><a href="#example_using_positive_infinity" title="Permalink to Пример: использование POSITIVE_INFINITY">Пример: использование <code>POSITIVE_INFINITY</code></a></h3><div><p>В следующем примере переменной <code>bigNumber</code> присваивается значение, большее максимального. Когда выполняется инструкция <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/if...else"><code>if</code></a>, переменная <code>bigNumber</code> имеет значение <code>Infinity</code>, так что перед продолжением вычислений она устанавливается в более приемлемое значение.</p>
 <pre class="brush: js notranslate"><code><span class="token keyword">var</span> bigNumber <span class="token operator">=</span> Number<span class="token punctuation">.</span><span class="token constant">MAX_VALUE</span> <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">;</span>
 
 <span class="token keyword">if</span> <span class="token punctuation">(</span>bigNumber <span class="token operator">==</span> Number<span class="token punctuation">.</span><span class="token constant">POSITIVE_INFINITY</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -63,8 +63,8 @@
   </tr>
  </tbody>
 </table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
- <li><a href="/webhints_data_ru/js/Number/NEGATIVE_INFINITY/"><code>Number.NEGATIVE_INFINITY</code></a></li>
- <li><a href="/webhints_data_ru/js/Number/isFinite/"><code>Number.isFinite()</code></a></li>
- <li><a href="/webhints_data_ru/js/Infinity/"><code>Infinity</code></a></li>
- <li><a href="/webhints_data_ru/js/isFinite/"><code>isFinite()</code></a></li>
+ <li><a href="/js/Number/NEGATIVE_INFINITY/"><code>Number.NEGATIVE_INFINITY</code></a></li>
+ <li><a href="/js/Number/isFinite/"><code>Number.isFinite()</code></a></li>
+ <li><a href="/js/Infinity/"><code>Infinity</code></a></li>
+ <li><a href="/js/isFinite/"><code>isFinite()</code></a></li>
 </ul></div>

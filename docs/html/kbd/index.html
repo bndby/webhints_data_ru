@@ -1,0 +1,152 @@
+<h1>&lt;kbd&gt;: Элемент ввода с клавиатуры</h1><div><p><span class="seoSummary"><strong>HTML элемент ввода с клавиатуры</strong> (<strong><code>&lt;kbd&gt;</code></strong>) указывает на то, что текст внутри элемента&nbsp; описывает пользовательский ввод с клавиатуры, голосовой ввод или ввод с использованием любого другого типа устройств ввода текста.</span> По общему соглашению, <a href="https://developer.mozilla.org/ru/docs/Glossary/User_agent">user agent</a> использует моноширинный шрифт для отображения содержимого элемента <code>&lt;kbd&gt;</code> по умолчанию, хотя это и не указывается HTML стандартом явно.</p>
+
+<p><code>&lt;kbd&gt;</code> можно использовать в различных комбинациях с&nbsp; <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/samp" class="only-in-en-us" title="Currently only available in English (US)">&lt;samp&gt; (en-US)</a> (Sample Output) элементом для отображения различных форм ввода с клавиатуры или ввода, базирующегося на визуальных сигналах.</p>
+
+<table class="properties">
+ <tbody>
+  <tr>
+   <th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories">Content categories</a></th>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#flow_content">Flow content</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#phrasing_content">phrasing content</a>, palpable content.</td>
+  </tr>
+  <tr>
+   <th scope="row">Permitted content</th>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#phrasing_content">Phrasing content</a>.</td>
+  </tr>
+  <tr>
+   <th scope="row">Tag omission</th>
+   <td>Нет, открывающий и закрывающий теги обязательны.</td>
+  </tr>
+  <tr>
+   <th scope="row">Permitted parents</th>
+   <td>Any element that accepts <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#phrasing_content">phrasing content</a>.</td>
+  </tr>
+  <tr>
+   <th scope="row">Permitted ARIA roles</th>
+   <td>Any</td>
+  </tr>
+  <tr>
+   <th scope="row">DOM interface</th>
+   <td><a href="https://developer.mozilla.org/ru/docs/Web/API/HTMLElement"><code>HTMLElement</code></a></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="атрибуты"><a href="#атрибуты" title="Permalink to Атрибуты">Атрибуты</a></h2><div><p>Этот элемент использует только <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes">глобальные атрибуты</a>.</p></div><h2 id="usage_notes"><a href="#usage_notes" title="Permalink to Usage notes">Usage notes</a></h2><div><p>Other elements can be used in tandem with <code>&lt;kbd&gt;</code> to represent more specific scenarios:</p>
+
+<ul>
+ <li>Nesting a <code>&lt;kbd&gt;</code> element within another <code>&lt;kbd&gt;</code> element represents an actual key or other unit of input as a portion of a larger input. See <a href="#representing_keystrokes_within_an_input">Representing keystrokes within an input</a> below.</li>
+ <li>Nesting a <code>&lt;kbd&gt;</code> element inside a <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/samp" class="only-in-en-us" title="Currently only available in English (US)">&lt;samp&gt; (en-US)</a> element represents input that has been echoed back to the user by the system. See <a href="#echoed_input">Echoed input</a>, below, for an example.</li>
+ <li>Nesting a <code>&lt;samp&gt;</code> element<em> </em>inside a <code>&lt;kbd&gt;</code> element, on the other hand, represents input which is based on text presented by the system, such as the names of menus and menu items, or the names of buttons displayed on the screen. See the example under <a href="#representing_onscreen_input_options">Representing onscreen input options</a> below.</li>
+</ul>
+
+<div class="note notecard">
+<p>You can define a custom style to override the browser's default font selection for the <code>&lt;kbd&gt;</code> element, although the user's preferences may potentially override your CSS.</p>
+</div></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="basic_example"><a href="#basic_example" title="Permalink to Basic example">Basic example</a></h3><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Use the command <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>kbd</span><span class="token punctuation">&gt;</span></span>help mycommand<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>kbd</span><span class="token punctuation">&gt;</span></span> to view documentation
+for the command "mycommand".<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<h4 id="result">Result</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Basic_example" width="350" height="80" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/kbd/_sample_.Basic_example.html" loading="lazy"></iframe></p></div><h3 id="representing_keystrokes_within_an_input"><a href="#representing_keystrokes_within_an_input" title="Permalink to Representing keystrokes within an input">Representing keystrokes within an input</a></h3><div><p>To describe an input comprised of multiple keystrokes, you can nest multiple <code>&lt;kbd&gt;</code> elements, with an outer <code>&lt;kbd&gt;</code> element representing the overall input and each individual keystroke or component of the input enclosed within its own <code>&lt;kbd&gt;</code>.</p>
+
+<h4 id="unstyled">Unstyled</h4>
+
+<p>First, let's look at what this looks like as just plain HTML.</p>
+
+<h5 id="html">HTML</h5>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>You can also create a new document using the keyboard shortcut
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>kbd</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>kbd</span><span class="token punctuation">&gt;</span></span>Ctrl<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>kbd</span><span class="token punctuation">&gt;</span></span>+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>kbd</span><span class="token punctuation">&gt;</span></span>N<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>kbd</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>kbd</span><span class="token punctuation">&gt;</span></span>.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<p>This wraps the entire key sequence in an outer <code>&lt;kbd&gt;</code> element, then each individual key within its own, in order to denote the components of the sequence.</p>
+
+<h5 id="result_2">Result</h5>
+
+<p>The output looks like this without a style sheet applied:</p>
+
+<p><iframe class="sample-code-frame" id="frame_Unstyled" width="650" height="80" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/kbd/_sample_.Unstyled.html" loading="lazy"></iframe></p>
+
+<h4 id="with_custom_styles">With custom styles</h4>
+
+<p>We can make more sense of this by adding some CSS:</p>
+
+<h5 id="css">CSS</h5>
+
+<p>We add new new style for <code>&lt;kbd&gt;</code> elements, <code>"key"</code>, which we can apply when rendering keyboard keys:</p>
+
+<pre class="brush: css notranslate"><code><span class="token selector">kbd.key</span> <span class="token punctuation">{</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 3px<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 1px 2px 0<span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 1px solid black<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<h5 id="html_2">HTML</h5>
+
+<p>Then we update the HTML to use this class on the keys in the output to be presented:</p>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>You can also create a new document by pressing
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>kbd</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>kbd</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>key<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Ctrl<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>kbd</span><span class="token punctuation">&gt;</span></span>+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>kbd</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>key<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>N<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>kbd</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>kbd</span><span class="token punctuation">&gt;</span></span>.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<h5 id="result_3">Result</h5>
+
+<p>The result is just what we want!</p>
+
+<p><iframe class="sample-code-frame" id="frame_With_custom_styles" width="650" height="80" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/kbd/_sample_.With_custom_styles.html" loading="lazy"></iframe></p></div><h3 id="echoed_input"><a href="#echoed_input" title="Permalink to Echoed input">Echoed input</a></h3><div><p>Nesting a <code>&lt;kbd&gt;</code> element inside a <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/samp" class="only-in-en-us" title="Currently only available in English (US)">&lt;samp&gt; (en-US)</a> element represents input that has been echoed back to the user by the system.</p>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>If a syntax error occurs, the tool will output the initial
+command you typed for your review:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>blockquote</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>samp</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>kbd</span><span class="token punctuation">&gt;</span></span>custom-git ad my-new-file.cpp<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>kbd</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>samp</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>blockquote</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<p>The result looks like this:</p>
+
+<p><iframe class="sample-code-frame" id="frame_Echoed_input" width="650" height="100" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/kbd/_sample_.Echoed_input.html" loading="lazy"></iframe></p></div><h3 id="representing_onscreen_input_options"><a href="#representing_onscreen_input_options" title="Permalink to Representing onscreen input options">Representing onscreen input options</a></h3><div><p>Nesting a <code>&lt;samp&gt;</code> element<em> </em>inside a <code>&lt;kbd&gt;</code> element represents input which is based on text presented by the system, such as the names of menus and menu items, or the names of buttons displayed on the screen.</p>
+
+<p>For example, you can explain how to choose the "New Document" option in the "File" menu using HTML that looks like this:</p>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>To create a new file, choose the menu option
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>kbd</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>kbd</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>samp</span><span class="token punctuation">&gt;</span></span>File<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>samp</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>kbd</span><span class="token punctuation">&gt;</span></span>⇒<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>kbd</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>samp</span><span class="token punctuation">&gt;</span></span>New
+Document<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>samp</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>kbd</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>kbd</span><span class="token punctuation">&gt;</span></span>.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Don't forget to click the <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>kbd</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>samp</span><span class="token punctuation">&gt;</span></span>OK<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>samp</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>kbd</span><span class="token punctuation">&gt;</span></span> button
+to confirm once you've entered the name of the new file.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<p>This does some interesting nesting. For the menu option description, the entire input is enclosed in a <code>&lt;kbd&gt;</code> element. Then, inside that, both the menu and menu item names are&nbsp; contained within both <code>&lt;kbd&gt;</code> and <code>&lt;samp&gt;</code>, indicating an input which is selected from a screen widget.</p>
+
+<p>Similarly, the representation of the keyboard shortcut is done by enclosing the entire keyboard shortcut text inside <code>&lt;kbd&gt;</code>, but by also wrapping each key in its own <code>&lt;kbd&gt;</code> element.</p>
+
+<p>You don't need to do all this wrapping; you can choose to simplify it by leaving out the external <code>&lt;kbd&gt;</code> element. In other words, simplifying this to just <code>&lt;kbd&gt;Ctrl&lt;/kbd&gt;+&lt;kbd&gt;N&lt;/kbd&gt;</code> would be perfectly valid.</p>
+
+<p>Depending on your style sheet , though, you may find it useful to do this kind of nesting.</p>
+
+<p>The output from this HTML looks like this:</p>
+
+<p><iframe class="sample-code-frame" id="frame_Representing_onscreen_input_options" width="650" height="120" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/kbd/_sample_.Representing_onscreen_input_options.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://html.spec.whatwg.org/multipage/semantics.html#the-kbd-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML Living Standard<br><small lang="ru">Определение '&lt;kbd&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html52/text-level-semantics.html#the-kbd-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML5<br><small lang="ru">Определение '&lt;kbd&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Expanded to include any user input, like voice input and individual keystrokes.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html401/struct/text.html#h-9.2.1" hreflang="en" lang="en" class="external" rel=" noopener">HTML 4.01 Specification<br><small lang="ru">Определение '&lt;kbd&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>&nbsp;</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="/html/code/"><code>&lt;code&gt;</code></a></li>
+</ul>
+
+<div></div></div>

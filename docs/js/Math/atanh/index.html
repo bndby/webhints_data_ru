@@ -11,7 +11,7 @@ Math<span class="token punctuation">.</span><span class="token function">atanh</
 Math<span class="token punctuation">.</span><span class="token function">atanh</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// NaN</span>
 </code></pre>
 
-<p>Для значений, меньших -1 или больших 1, метод <code>Math.atanh()</code> возвращает <a href="/webhints_data_ru/js/NaN/"><code>NaN</code></a>.</p></div><h2 id="polyfill"><a href="#polyfill" title="Permalink to Полифил">Полифил</a></h2><div><p>Для <math><semantics><mrow><mrow><mo>|</mo><mi>x</mi><mo>|</mo></mrow><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="TeX">\left|x\right| &lt; 1</annotation></semantics></math>, мы имеем <math><semantics><mrow><mo lspace="0em" rspace="thinmathspace">artanh</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo lspace="0em" rspace="0em">ln</mo><mrow><mo>(</mo><mfrac><mrow><mn>1</mn><mo>+</mo><mi>x</mi></mrow><mrow><mn>1</mn><mo>-</mo><mi>x</mi></mrow></mfrac><mo>)</mo></mrow></mrow><annotation encoding="TeX">\operatorname {artanh} (x) = \frac{1}{2}\ln \left( \frac{1 + x}{1 - x} \right)</annotation></semantics></math>, так что этот метод может эмулироваться следующим образом:</p>
+<p>Для значений, меньших -1 или больших 1, метод <code>Math.atanh()</code> возвращает <a href="/js/NaN/"><code>NaN</code></a>.</p></div><h2 id="polyfill"><a href="#polyfill" title="Permalink to Полифил">Полифил</a></h2><div><p>Для <math><semantics><mrow><mrow><mo>|</mo><mi>x</mi><mo>|</mo></mrow><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="TeX">\left|x\right| &lt; 1</annotation></semantics></math>, мы имеем <math><semantics><mrow><mo lspace="0em" rspace="thinmathspace">artanh</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo lspace="0em" rspace="0em">ln</mo><mrow><mo>(</mo><mfrac><mrow><mn>1</mn><mo>+</mo><mi>x</mi></mrow><mrow><mn>1</mn><mo>-</mo><mi>x</mi></mrow></mfrac><mo>)</mo></mrow></mrow><annotation encoding="TeX">\operatorname {artanh} (x) = \frac{1}{2}\ln \left( \frac{1 + x}{1 - x} \right)</annotation></semantics></math>, так что этот метод может эмулироваться следующим образом:</p>
 
 <pre class="brush: js notranslate"><code>Math<span class="token punctuation">.</span>atanh <span class="token operator">=</span> Math<span class="token punctuation">.</span>atanh <span class="token operator">||</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">x</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> Math<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">+</span>x<span class="token punctuation">)</span><span class="token operator">/</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">-</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span>
@@ -30,9 +30,9 @@ Math<span class="token punctuation">.</span><span class="token function">atanh</
   </tr>
  </tbody>
 </table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
- <li><a href="/webhints_data_ru/js/Math/acosh/"><code>Math.acosh()</code></a> </li>
- <li><a href="/webhints_data_ru/js/Math/asinh/"><code>Math.asinh()</code></a> </li>
- <li><a href="/webhints_data_ru/js/Math/cosh/"><code>Math.cosh()</code></a> </li>
- <li><a href="/webhints_data_ru/js/Math/sinh/"><code>Math.sinh()</code></a> </li>
- <li><a href="/webhints_data_ru/js/Math/tanh/"><code>Math.tanh()</code></a> </li>
+ <li><a href="/js/Math/acosh/"><code>Math.acosh()</code></a> </li>
+ <li><a href="/js/Math/asinh/"><code>Math.asinh()</code></a> </li>
+ <li><a href="/js/Math/cosh/"><code>Math.cosh()</code></a> </li>
+ <li><a href="/js/Math/sinh/"><code>Math.sinh()</code></a> </li>
+ <li><a href="/js/Math/tanh/"><code>Math.tanh()</code></a> </li>
 </ul></div>

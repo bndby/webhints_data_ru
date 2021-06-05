@@ -1,0 +1,68 @@
+<h1>&lt;i&gt;: The Idiomatic Text element</h1><div><div></div>
+
+<p>The <strong><code>&lt;i&gt;</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a> element represents a range of text that is set off from the normal text for some reason, such as idiomatic text, technical terms, taxonomical designations, among others.&nbsp;Historically, these have been presented using italicized type, which is the original source of the <code>&lt;i&gt;</code>&nbsp;naming of this element.</p>
+
+<div><iframe class="interactive" width="100%" height="375" src="https://interactive-examples.mdn.mozilla.net/pages/tabbed/i.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+<table class="properties">
+ <tbody>
+  <tr>
+   <th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories">Content categories</a></th>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#flow_content">Flow content</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#phrasing_content">phrasing content</a>, palpable content.</td>
+  </tr>
+  <tr>
+   <th scope="row">Permitted content</th>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#phrasing_content">Phrasing content</a>.</td>
+  </tr>
+  <tr>
+   <th scope="row">Tag omission</th>
+   <td>None, both the starting and ending tag are mandatory.</td>
+  </tr>
+  <tr>
+   <th scope="row">Permitted parents</th>
+   <td>Any element that accepts <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#phrasing_content">phrasing content</a>.</td>
+  </tr>
+  <tr>
+   <th scope="row">Implicit ARIA role</th>
+   <td><a href="https://www.w3.org/TR/html-aria/#dfn-no-corresponding-role" class="external" rel=" noopener">No corresponding role</a></td>
+  </tr>
+  <tr>
+   <th scope="row">Permitted ARIA roles</th>
+   <td>Any</td>
+  </tr>
+  <tr>
+   <th scope="row">DOM interface</th>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement"><code>HTMLElement</code></a></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="attributes"><a href="#attributes" title="Permalink to Attributes">Attributes</a></h2><div><p>This element only includes the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes">global attributes</a>.</p></div><h2 id="usage_notes"><a href="#usage_notes" title="Permalink to Usage notes">Usage notes</a></h2><div><ul>
+ <li>Use the <code>&lt;i&gt;</code> element for text that is set off from the normal prose for readability reasons. This would be a range of text with different semantic meaning than the surrounding text. Among the use cases for the&nbsp;<code>&lt;i&gt;</code>&nbsp;element are spans of text representing a different quality or mode of text, such as:
+
+  <ul>
+   <li>Alternative voice or mood</li>
+   <li>Taxonomic designations (such as the genus and species&nbsp;"<em>Homo sapiens</em>")</li>
+   <li>Idiomatic terms from another language (such as "<em>et cetera</em>"); these should include the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes#attr-lang"><code>lang</code></a> attribute to identify the language</li>
+   <li>Technical terms</li>
+   <li>Transliterations</li>
+   <li>Thoughts (such as "She wondered, <em>What is this writer talking about, anyway?</em>")</li>
+   <li>Ship or vessel names in Western writing systems (such as "They searched the docks for the&nbsp;<em>Empress of the Galaxy</em>, the ship to which they were assigned.")</li>
+  </ul>
+ </li>
+ <li>In earlier versions of the HTML specification, the <code>&lt;i&gt;</code> element was merely a presentational element used to display text in italics, much like the <code>&lt;b&gt;</code> element was used to display text in bold letters. This is no longer true, as these tags now define semantics rather than typographic appearance. A browser will typically still display the contents of the <code>&lt;i&gt;</code> element in italic type, but is, by definition, no longer required to do so. To display text in italic type, authors should use the CSS <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-style"><code>font-style</code></a> property.</li>
+ <li>Be sure the text in question is not actually more appropriately marked up with another element.
+  <ul>
+   <li>Use <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/em"><code>&lt;em&gt;</code></a> to indicate stress emphasis.</li>
+   <li>Use <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/strong"><code>&lt;strong&gt;</code></a> to indicate importance, seriousness, or urgency.</li>
+   <li>Use <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/mark"><code>&lt;mark&gt;</code></a> to indicate relevance.</li>
+   <li>Use <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/cite"><code>&lt;cite&gt;</code></a> to mark up the name of a work, such as a book, play, or song.</li>
+   <li>Use <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dfn"><code>&lt;dfn&gt;</code></a> to mark up the defining instance of a term.</li>
+  </ul>
+ </li>
+</ul></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div><p>This example demonstrates using the <code>&lt;i&gt;</code> element to mark text that is in another language.</p>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>The Latin phrase <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span><span class="token punctuation">&gt;</span></span>Veni, vidi, vici<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span> is often
+mentioned in music, art, and literature.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h3 id="result"><a href="#result" title="Permalink to Result">Result</a></h3><div><p><iframe class="sample-code-frame" id="frame_Examples" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/HTML/Element/i/_sample_.Examples.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><table class="standard-table"><thead><tr><th scope="col">Specification</th></tr></thead><tbody><tr><td><a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-i-element">HTML Standard<!-- --> <!-- -->(HTML)<br><small># <!-- -->the-i-element</small></a></td></tr></tbody></table><div><p></p><p></p></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/em"><code>&lt;em&gt;</code></a></li>
+ <li>Other italicized elements: <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/var"><code>&lt;var&gt;</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dfn"><code>&lt;dfn&gt;</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/cite"><code>&lt;cite&gt;</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/address"><code>&lt;address&gt;</code></a></li>
+</ul></div>

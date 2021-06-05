@@ -7,13 +7,13 @@
 </div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code>var <var>new_array</var> = <var>old_array</var>.concat(<var>value1</var>[, <var>value2</var>[, ...[, <var>valueN</var>]]])</code></pre></div><h3 id="параметры"><a href="#параметры" title="Permalink to Параметры">Параметры</a></h3><div><dl>
  <dt><code>value<em>N</em></code></dt>
  <dd>Массивы и/или значения, соединяемые в новый массив. Смотрите описание ниже.</dd>
-</dl></div><h3 id="возвращаемое_значение"><a href="#возвращаемое_значение" title="Permalink to Возвращаемое значение">Возвращаемое значение</a></h3><div><p>Новый экземпляр <a href="/webhints_data_ru/js/Array/"><code>Array</code></a>.</p></div><h2 id="описание"><a href="#описание" title="Permalink to Описание">Описание</a></h2><div><p>Метод <code>concat</code> создаёт новый массив, состоящий из элементов в объекте, на котором он был вызван, за которыми по порядку следуют, для каждого аргумента, все его элементы (если аргумент является массивом), либо сам аргумент (если он массивом не является).</p>
+</dl></div><h3 id="возвращаемое_значение"><a href="#возвращаемое_значение" title="Permalink to Возвращаемое значение">Возвращаемое значение</a></h3><div><p>Новый экземпляр <a href="/js/Array/"><code>Array</code></a>.</p></div><h2 id="описание"><a href="#описание" title="Permalink to Описание">Описание</a></h2><div><p>Метод <code>concat</code> создаёт новый массив, состоящий из элементов в объекте, на котором он был вызван, за которыми по порядку следуют, для каждого аргумента, все его элементы (если аргумент является массивом), либо сам аргумент (если он массивом не является).</p>
 
 <p>Метод <code>concat</code> не изменяет данный массив или любой из массивов, переданных в аргументах, а вместо этого возвращает поверхностную копию, содержащую копии тех элементов, что были объединены с исходными массивами. Элементы оригинальных массивов копируются в новый массив по следующим правилам:</p>
 
 <ul>
  <li>Ссылки на объекты (но не фактические объекты): метод <code>concat</code> копирует ссылки на объекты в новый массив. И оригинал, и новый массив ссылаются на один и тот же объект. То есть, если объект по ссылке будет изменён, изменения будут видны и в новом, и в исходном массивах.</li>
- <li>Строки, числа и булевы значения (но не объекты <a href="/webhints_data_ru/js/String/"><code>String</code></a>, <a href="/webhints_data_ru/js/Number/"><code>Number</code></a> или <a href="/webhints_data_ru/js/Boolean/"><code>Boolean</code></a>): метод <code>concat</code> копирует значения строк и чисел в новый массив.</li>
+ <li>Строки, числа и булевы значения (но не объекты <a href="/js/String/"><code>String</code></a>, <a href="/js/Number/"><code>Number</code></a> или <a href="/js/Boolean/"><code>Boolean</code></a>): метод <code>concat</code> копирует значения строк и чисел в новый массив.</li>
 </ul>
 
 <div class="note notecard">
@@ -73,9 +73,9 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </table></div><h2 id="совместимость_с_браузерами"><a href="#совместимость_с_браузерами" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><div>
 <p></p><p></p>
 </div></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
- <li><a href="/webhints_data_ru/js/Array/push/"><code>push</code></a> / <a href="/webhints_data_ru/js/Array/pop/"><code>pop</code></a>&nbsp;— добавление / удаление элементов с конца массива</li>
- <li><a href="/webhints_data_ru/js/Array/unshift/"><code>unshift</code></a> / <a href="/webhints_data_ru/js/Array/shift/"><code>shift</code></a>&nbsp;— добавление / удаление элементов с начала массива</li>
- <li><a href="/webhints_data_ru/js/Array/splice/"><code>splice</code></a>&nbsp;— добавление / удаление элементов в указанной позиции массива</li>
- <li><a href="/webhints_data_ru/js/String/concat/"><code>String.prototype.concat()</code></a></li>
- <li><a href="/webhints_data_ru/js/Symbol/isConcatSpreadable/"><code>Symbol.isConcatSpreadable</code></a> — управление уменьшением размерности массива</li>
+ <li><a href="/js/Array/push/"><code>push</code></a> / <a href="/js/Array/pop/"><code>pop</code></a>&nbsp;— добавление / удаление элементов с конца массива</li>
+ <li><a href="/js/Array/unshift/"><code>unshift</code></a> / <a href="/js/Array/shift/"><code>shift</code></a>&nbsp;— добавление / удаление элементов с начала массива</li>
+ <li><a href="/js/Array/splice/"><code>splice</code></a>&nbsp;— добавление / удаление элементов в указанной позиции массива</li>
+ <li><a href="/js/String/concat/"><code>String.prototype.concat()</code></a></li>
+ <li><a href="/js/Symbol/isConcatSpreadable/"><code>Symbol.isConcatSpreadable</code></a> — управление уменьшением размерности массива</li>
 </ul></div>

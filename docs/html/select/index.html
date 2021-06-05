@@ -1,0 +1,85 @@
+<h1>&lt;select&gt;</h1><div><p><span class="seoSummary"><strong>HTML тэг&nbsp;<code>&lt;select&gt;</code></strong>&nbsp;представляет собой элемент управления который содержит меню опций:</span></p>
+
+<table class="properties">
+ <tbody>
+  <tr>
+   <th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories">Категории содержимого</a></th>
+   <td><a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Content_categories#%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%BE%D0%B9_%D0%BF%D0%BE%D1%82%D0%BE%D0%BA">Основной поток</a>, <a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Content_categories#phrasing_content">текстовый контент</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#interactive_content">интерактивный контент</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#form_listed">списочный</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#form_labelable">labelable</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#form_resettable">сбрасываемый</a>, и <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#form_submittable">submittable</a> <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#form-associated_">form-associated </a>element</td>
+  </tr>
+  <tr>
+   <th scope="row">Допустимое содержимое</th>
+   <td>Ноль или более <a href="/html/option/"><code>&lt;option&gt;</code></a> или <a href="/html/optgroup/"><code>&lt;optgroup&gt;</code></a> элементы.</td>
+  </tr>
+  <tr>
+   <th scope="row">Опускание тегов</th>
+   <td>Открывающий и закрывающий теги обязательны.</td>
+  </tr>
+  <tr>
+   <th scope="row">Допустимые родительские элементы</th>
+   <td>Любые элементы в которых разрешено текстовое содержимое</td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённая ARIA роль</th>
+   <td><code><a href="https://w3c.github.io/aria/#menu" class="external" rel=" noopener">menu</a></code></td>
+  </tr>
+  <tr>
+   <th scope="row">DOM интерфейс</th>
+   <td><a href="https://developer.mozilla.org/ru/docs/Web/API/HTMLSelectElement"><code>HTMLSelectElement</code></a></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="атрибуты"><a href="#атрибуты" title="Permalink to Атрибуты">Атрибуты</a></h2><div><p>Элемент включает <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes">глобальные атрибуты</a>.</p>
+
+<dl>
+ <dt><a id="attr-autofocus" href="#attr-autofocus"><b><code>autofocus</code></b></a> <span class="badge inline html-version"><a href="https://developer.mozilla.org/ru/docs/orphaned/Web/Guide/HTML/HTML5">HTML5</a></span></dt>
+ <dd>Этот атрибут указывает что при загрузке страницы данный элемент формы должен иметь фокус ввода, пока пользователь не переопределит&nbsp;это, к примеру печатая в разных элементах управления. Только один элемент формы может иметь атрибут&nbsp;<code>autofocus</code>, элемент является логическим (булевым).</dd>
+ <dt><a id="attr-disabled" href="#attr-disabled"><b><code>disabled</code></b></a></dt>
+ <dd>Этот логический&nbsp;атрибут указывает что пользователь не может взаимодействовать с элементом управления. Если атрибут не указан, элемент управления наследует настройки от содержащего его элемента, к примеру&nbsp;<code>fieldset</code>; если у родительского элемента не указан атрибут&nbsp;<code>disabled</code>, то элемент управления доступен для взаимодействия.</dd>
+ <dt><a id="attr-form" href="#attr-form"><b><code>form</code></b></a> <span class="badge inline html-version"><a href="https://developer.mozilla.org/ru/docs/orphaned/Web/Guide/HTML/HTML5">HTML5</a></span></dt>
+ <dd>Этот атрибут указывает к какой конкретно&nbsp;форме относится элемент &lt;select&gt;&nbsp;. Если атрибут указан, его значением должно быть ID формы в том же документе. Это позволяет размещать элементы &lt;select&gt; где угодно в документе, а не только как потомки форм.</dd>
+ <dt><a id="attr-multiple" href="#attr-multiple"><b><code>multiple</code></b></a></dt>
+ <dd>Этот логический атрибут указывает что&nbsp;возможен выбор нескольких опций в списке. Если данный атрибут не указан, то только одна опция может быть выбрана.</dd>
+ <dt><a id="attr-name" href="#attr-name"><b><code>name</code></b></a></dt>
+ <dd>Этот атрибут используется для указания имени элемента управления.</dd>
+ <dt><a id="attr-required" href="#attr-required"><b><code>required</code></b></a> <span class="badge inline html-version"><a href="https://developer.mozilla.org/ru/docs/orphaned/Web/Guide/HTML/HTML5">HTML5</a></span></dt>
+ <dd>Этот логический атрибут указывает что обязательно должна быть выбрана опция и которая содержит не пустую строку.</dd>
+ <dt><a id="attr-size" href="#attr-size"><b><code>size</code></b></a></dt>
+ <dd>Если элемент управления представлен как прокручиваемый список, этот атрибут указывает количество строк в списке, которые должны быть видны за раз. Браузеру не требуется представлять &lt;select&gt; в&nbsp; виде прокручиваемого списка. Значение по умолчанию 0.</dd>
+</dl>
+
+<div class="note notecard"><strong>Примечания&nbsp;Firefox:</strong>&nbsp;Согласно спецификации&nbsp;HTML5, значение размера по умолчанию должно быть 1; однако на практике, оказывается что это портит некоторые веб сайты, и ни один браузер не придерживается этого на данный момент, поэтому Mozilla предпочла также указать 0 пока что в Firefox.</div></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div><pre class="brush: html notranslate"><code><span class="token comment">&lt;!-- Начально будет выбрано второе значение --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>select<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> <span class="token comment">&lt;!--Supplement an id here instead of using 'name'--&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>value1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Значение 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>value2<span class="token punctuation">"</span></span> <span class="token attr-name">selected</span><span class="token punctuation">&gt;</span></span>Значение 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>value3<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Значение 3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h3 id="результат"><a href="#результат" title="Permalink to Результат">Результат</a></h3><div><p><select name="select"><option value="value1">Value 1</option><option selected value="value2">Value 2</option><option value="value3">Value 3</option></select></p></div><h3 id="примечания"><a href="#примечания" title="Permalink to Примечания">Примечания</a></h3><div><p>Контент этого элемента статичен и не <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Editable_content">редактируемый</a>.</p></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификации</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://html.spec.whatwg.org/multipage/forms.html#the-select-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML Living Standard<br><small lang="ru">Определение '&lt;select&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html52/forms.html#the-select-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML5<br><small lang="ru">Определение '&lt;select&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html401/interact/forms.html#h-17.6" hreflang="en" lang="en" class="external" rel=" noopener">HTML 4.01 Specification<br><small lang="ru">Определение '&lt;select&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>&nbsp;</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="совместимость_с_браузерами"><a href="#совместимость_с_браузерами" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li>Другие элементы форм: <a href="/html/form/"><code>&lt;form&gt;</code></a>, <a href="/html/legend/"><code>&lt;legend&gt;</code></a>, <a href="/html/label/"><code>&lt;label&gt;</code></a>, <a href="/html/button/"><code>&lt;button&gt;</code></a>, <a href="/html/option/"><code>&lt;option&gt;</code></a>, <a href="/html/datalist/"><code>&lt;datalist&gt;</code></a>, <a href="/html/optgroup/"><code>&lt;optgroup&gt;</code></a>, <a href="/html/fieldset/"><code>&lt;fieldset&gt;</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea" class="only-in-en-us" title="Currently only available in English (US)">&lt;textarea&gt; (en-US)</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/keygen" class="only-in-en-us" title="Currently only available in English (US)">&lt;keygen&gt; (en-US)</a>, <a href="/html/Input/"><code>&lt;input&gt;</code></a>, <a href="/html/output/"><code>&lt;output&gt;</code></a>, <a href="/html/progress/"><code>&lt;progress&gt;</code></a> and <a href="/html/meter/"><code>&lt;meter&gt;</code></a>.</li>
+ <li>События запускаемые&nbsp;<code>&lt;select&gt;</code>: <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event">change.</a></li>
+</ul>
+
+<div></div></div>

@@ -6,7 +6,7 @@ Math<span class="token punctuation">.</span><span class="token function">fround<
 Math<span class="token punctuation">.</span><span class="token function">fround</span><span class="token punctuation">(</span><span class="token number">1.337</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 1.3370000123977661</span>
 Math<span class="token punctuation">.</span><span class="token function">fround</span><span class="token punctuation">(</span><span class="token number">1.5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// 1.5</span>
 Math<span class="token punctuation">.</span><span class="token function">fround</span><span class="token punctuation">(</span><span class="token number">NaN</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// NaN</span>
-</code></pre></div><h2 id="polyfill"><a href="#polyfill" title="Permalink to Полифил">Полифил</a></h2><div><p>Этот метод может эмулироваться следующим образом, при условии, что среда выполнения поддерживает объект <a href="/webhints_data_ru/js/Float32Array/"><code>Float32Array</code></a>:</p>
+</code></pre></div><h2 id="polyfill"><a href="#polyfill" title="Permalink to Полифил">Полифил</a></h2><div><p>Этот метод может эмулироваться следующим образом, при условии, что среда выполнения поддерживает объект <a href="/js/Float32Array/"><code>Float32Array</code></a>:</p>
 
 <pre class="brush: js notranslate"><code>Math<span class="token punctuation">.</span>fround <span class="token operator">=</span> Math<span class="token punctuation">.</span>fround <span class="token operator">||</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">x</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Float32Array</span><span class="token punctuation">(</span><span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
@@ -25,5 +25,5 @@ Math<span class="token punctuation">.</span><span class="token function">fround<
   </tr>
  </tbody>
 </table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
- <li><a href="/webhints_data_ru/js/Math/round/"><code>Math.round()</code></a></li>
+ <li><a href="/js/Math/round/"><code>Math.round()</code></a></li>
 </ul></div>

@@ -1,0 +1,165 @@
+<h1>&lt;ol&gt;: The Ordered List element</h1><div><div></div>
+
+<p><span class="seoSummary"><strong>HTML-элемент <code>&lt;ol&gt;</code></strong> используется для упорядоченного списка — в частности для пронумерованного списка.</span></p>
+
+<div><iframe class="interactive" width="100%" height="375" src="https://interactive-examples.mdn.mozilla.net/pages/tabbed/ol.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+
+
+<table class="properties">
+ <tbody>
+  <tr>
+   <th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories">Категории контента</a></th>
+   <td><a href="https://wiki.developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#Flow_content" class="external" rel=" noopener">Основной поток</a>, и если дочерний элемент <code>&lt;ol&gt;</code> включает в себя хотя бы один элемент <a href="/html/li/"><code>&lt;li&gt;</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#palpable_content">явный контент</a>.</td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённое содержимое</th>
+   <td>Ноль или больше <a href="/html/li/"><code>&lt;li&gt;</code></a> элементов, которые, в свою очередь, содержат вложенные элементы <a href="/html/ol/" aria-current="page"><code>&lt;ol&gt;</code></a> или <a href="/html/ul/"><code>&lt;ul&gt;</code></a>.</td>
+  </tr>
+  <tr>
+   <th scope="row">Пропуск тегов</th>
+   <td>Нет, открывающий и закрывающий теги обязательны.</td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённые родители</th>
+   <td>Любой элемент, который принимает <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#flow_content">основной поток</a>.</td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённые ARIA-роли</th>
+   <td><code><a href="https://w3c.github.io/aria/#directory" class="external" rel=" noopener">directory</a></code>, <code><a href="https://w3c.github.io/aria/#group" class="external" rel=" noopener">group</a></code>, <code><a href="https://w3c.github.io/aria/#listbox" class="external" rel=" noopener">listbox</a></code>, <code><a href="https://w3c.github.io/aria/#menu" class="external" rel=" noopener">menu</a></code>, <code><a href="https://w3c.github.io/aria/#menubar" class="external" rel=" noopener">menubar</a></code>, <code><a href="https://w3c.github.io/aria/#radiogroup" class="external" rel=" noopener">radiogroup</a></code>, <code><a href="https://w3c.github.io/aria/#tablist" class="external" rel=" noopener">tablist</a></code>, <code><a href="https://w3c.github.io/aria/#toolbar" class="external" rel=" noopener">toolbar</a></code>, <code><a href="https://w3c.github.io/aria/#tree" class="external" rel=" noopener">tree</a></code>, <code><a href="https://w3c.github.io/aria/#presentation" class="external" rel=" noopener">presentation</a></code></td>
+  </tr>
+  <tr>
+   <th scope="row">DOM-интерфейс</th>
+   <td><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLOListElement"><code>HTMLOListElement</code> <span>(en-US)</span></a></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="свойства"><a href="#свойства" title="Permalink to Свойства">Свойства</a></h2><div><p>Этот элемент включает <a href="https://developer.mozilla.org/ru/docs/Web/HTML/%D0%9E%D0%B1%D1%89%D0%B8%D0%B5_%D0%B0%D1%82%D1%80%D0%B8%D0%B1%D1%83%D1%82%D1%8B">глобальные атрибуты</a>.</p>
+
+<dl>
+ <dt><a id="attr-reversed" href="#attr-reversed"><b><code>reversed</code></b></a></dt>
+ <dd>Атрибут логического значения (bool)&nbsp; показывает, что предметы указаны по списку в обратном порядке. Пункты в списке будут пронумерованы от большего к меньшему.</dd>
+ <dt><a id="attr-start" href="#attr-start"><b><code>start</code></b></a></dt>
+ <dd>Нумерация начнётся с указанного числа. Арабскими цифрами (1, 2, 3, и т.д.), даже когда нумерация <code>type</code> в буквах или Римском исчислении. Например, чтобы начать нумерацию с буквы "г" или Римской "iv", используйте <code>start="4"</code>.</dd>
+ <dt><a id="attr-type" href="#attr-type"><b><code>type</code></b></a></dt>
+ <dd>Задаёт тип нумерации:
+ <ul>
+  <li><code>a</code> для строчных букв</li>
+  <li><code>A</code> для заглавных букв</li>
+  <li><code>i</code> для строчной Римской нумерации</li>
+  <li><code>I</code> для заглавной Римской нумерации</li>
+  <li><code>1</code> для цифр (по умолчанию)</li>
+ </ul>
+
+ <p>указанный тип используется для всего списка, если только не указан любой другой атрибут <a href="/html/li#attr-type/"><code>type</code></a> в элементе <a href="/html/li/"><code>&lt;li&gt;</code></a>.</p>
+
+ <div class="note notecard">
+ <p><strong>Note:</strong> Если тип цифр в списке не имеет значения (к примеру,&nbsp; юридические или технические документы, где элементы обозначены буквами/цифрами), используйте свойство CSS <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type"><code>list-style-type</code> <span>(en-US)</span></a>.</p>
+ </div>
+ </dd>
+</dl></div><h2 id="примечания_об_использовании"><a href="#примечания_об_использовании" title="Permalink to Примечания об использовании">Примечания об использовании</a></h2><div><p>Обычно, элементы списка отображены с <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::marker">маркером</a>, предшествующим цифрам или буквам.</p>
+
+<p><code>Элементы &lt;ol&gt;</code> и <a href="/html/ul/"><code>&lt;ul&gt;</code></a> могут быть вложены (nested) на любом уровне, чередуясь между элементами <code>&lt;ol&gt;</code> и <code>&lt;ul&gt;</code>.</p>
+
+<p>Оба элемента <code>&lt;ol&gt;</code> и <a href="/html/ul/"><code>&lt;ul&gt;</code></a>&nbsp; используются для списков. Различие лишь в том, что в элементе <code>&lt;ol&gt;</code> порядок имеет значение, как в данных примерах:</p>
+
+<ul>
+ <li>Инструкции рецепта</li>
+ <li>Направление по заданному маршруту</li>
+ <li>Список ингредиентов на информации о питании, в убывающих пропорциях.</li>
+</ul>
+
+<p>Чтобы определить, каким списком пользоваться, можно поменять порядок элементов с списке.Если значение меняется, используйте элемент <code>&lt;ol&gt;</code>&nbsp; — в противном случае <a href="/html/ul/"><code>&lt;ul&gt;</code></a>.</p></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="обычный_список"><a href="#обычный_список" title="Permalink to Обычный список">Обычный список</a></h3><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ol</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>Fee<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>Fi<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>Fo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>Fum<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ol</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<p>Результат HTML кода выше:</p>
+
+<p><iframe class="sample-code-frame" id="frame_Simple_example" width="400" height="100" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/ol/_sample_.Simple_example.html" loading="lazy"></iframe></p></div><h3 id="список_с_римскими_числами"><a href="#список_с_римскими_числами" title="Permalink to Список с Римскими числами">Список с Римскими числами</a></h3><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ol</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>i<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>Introduction<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>List of Greivances<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>Conclusion<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ol</span><span class="token punctuation">&gt;</span></span> </code></pre>
+
+<p>Результат HTML кода выше:</p>
+
+<p><iframe class="sample-code-frame" id="frame_Using_Roman_Numeral_type" width="400" height="100" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/ol/_sample_.Using_Roman_Numeral_type.html" loading="lazy"></iframe></p></div><h3 id="используя_свойство_start"><a href="#используя_свойство_start" title="Permalink to Используя свойство start">Используя свойство <code>start</code></a></h3><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Finishing places of contestants not in the winners’ circle:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ol</span> <span class="token attr-name">start</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>4<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>Speedwalk Stu<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>Saunterin’ Sam<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>Slowpoke Rodriguez<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ol</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<p>Результат HTML кода выше:</p>
+
+<p><iframe class="sample-code-frame" id="frame_Using_the_start_attribute" width="400" height="100" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/ol/_sample_.Using_the_start_attribute.html" loading="lazy"></iframe></p></div><h3 id="вложенный_список"><a href="#вложенный_список" title="Permalink to Вложенный список">Вложенный список</a></h3><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ol</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>first item<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>second item  <span class="token comment">&lt;!-- closing &lt;/li&gt; tag not here! --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ol</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>second item first subitem<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>second item second subitem<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>second item third subitem<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ol</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>            <span class="token comment">&lt;!-- Here's the closing &lt;/li&gt; tag --&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>third item<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ol</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<p>Результат HTML кода выше:</p>
+
+<p><iframe class="sample-code-frame" id="frame_Nesting_lists" width="400" height="150" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/ol/_sample_.Nesting_lists.html" loading="lazy"></iframe></p></div><h3 id="неупорядоченный_список_внутри_упорядоченного_списка"><a href="#неупорядоченный_список_внутри_упорядоченного_списка" title="Permalink to Неупорядоченный список внутри упорядоченного списка">Неупорядоченный список внутри упорядоченного списка</a></h3><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ol</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>first item<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>second item  <span class="token comment">&lt;!-- closing &lt;/li&gt; tag not here! --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>second item first subitem<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>second item second subitem<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>second item third subitem<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>            <span class="token comment">&lt;!-- Here's the closing &lt;/li&gt; tag --&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>third item<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ol</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<p>Результат HTML кода выше:</p>
+
+<p><iframe class="sample-code-frame" id="frame_Unordered_list_inside_ordered_list" width="400" height="150" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/ol/_sample_.Unordered_list_inside_ordered_list.html" loading="lazy"></iframe></p></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://html.spec.whatwg.org/multipage/semantics.html#the-ol-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML Living Standard<br><small lang="ru">Определение '&lt;ol&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td>Без изменений с последнего W3C, <a href="https://www.w3.org/TR/html52/" hreflang="en" lang="en" class="external" title="Спецификация 'HTML5'" rel=" noopener">HTML5</a>.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html52/grouping-content.html#the-ol-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML5<br><small lang="ru">Определение 'HTMLOListElement' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Добавлено <code>reversed</code> и приписан <code>start</code>; возможно использование <code>type</code></td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html401/struct/lists.html#h-10.2" hreflang="en" lang="en" class="external" rel=" noopener">HTML 4.01 Specification<br><small lang="ru">Определение '&lt;ol&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Были убраны <code>compact</code> и <code>type</code>.</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="поддержка_браузерами"><a href="#поддержка_браузерами" title="Permalink to Поддержка браузерами">Поддержка браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li>Другие элементы HTML списка: <a href="/html/ul/"><code>&lt;ul&gt;</code></a>, <a href="/html/li/"><code>&lt;li&gt;</code></a>, <a href="/html/menu/"><code>&lt;menu&gt;</code></a></li>
+ <li>CSS свойства, которые могут быть полезны для стилизации <code>&lt;ol&gt;</code> элемента:
+  <ul>
+   <li>свойство <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/list-style"><code>list-style</code> <span>(en-US)</span></a>, для порядковых показов</li>
+   <li><a href="https://wiki.developer.mozilla.org/ru/docs/Web/CSS/CSS_Lists_and_Counters/Using_CSS_counters" class="external" rel=" noopener">CSS счётчики</a>, для более сложных вложенных списков</li>
+   <li>свойство <a href="https://developer.mozilla.org/ru/docs/Web/CSS/line-height">line-height</a>, для замены убранного свойства <a href="/html/ol#attr-compact/">compact</a></li>
+   <li>Свойство <a href="https://developer.mozilla.org/ru/docs/Web/CSS/margin">margin</a>, для контроля отступа в списке</li>
+  </ul>
+ </li>
+</ul></div>

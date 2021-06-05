@@ -1,0 +1,84 @@
+<h1>&lt;label&gt;</h1><div><div></div>
+
+<p><strong>HTML элемент <code>&lt;label&gt;</code> </strong>представляет собой подпись к элементу пользовательского интерфейса.</p>
+
+<table class="properties">
+ <tbody>
+  <tr>
+   <th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories">Категории контента</a></th>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#flow_content">Общий поток</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#phrasing_content">текстовый контент</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#interactive_content">интерактивный контент, элемент формы</a>, ощутимый контент.</td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённый контент</th>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#phrasing_content">Текстовый контент</a>, но без вложенных элементов <code>label</code>. Недопустимы другие оборачиваемые в <code>label </code>элементы помимо целевого.</td>
+  </tr>
+  <tr>
+   <th scope="row">Пропуск тегов</th>
+   <td>Нет, открывающий и закрывающий теги обязательны.</td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённые предки</th>
+   <td>Любой элемент, разрешающий <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#phrasing_content">текстовый контент.</a></td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённые ARIA роли</th>
+   <td>Отсутствуют</td>
+  </tr>
+  <tr>
+   <th scope="row">DOM interface</th>
+   <td><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLLabelElement"><code>HTMLLabelElement</code> <span>(en-US)</span></a></td>
+  </tr>
+  <tr>
+   <th scope="row">Тип</th>
+   <td>Строчный</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="атрибуты"><a href="#атрибуты" title="Permalink to Атрибуты">Атрибуты</a></h2><div><p>Элемент поддерживает <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes">глобальные атрибуты</a><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes"> .</a></p>
+
+<dl>
+ <dt><a id="attr-for" href="#attr-for"><b><code>for</code></b></a></dt>
+ <dd>
+ <p>ID <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#Form_labelable">labelable</a>-элемента, который&nbsp;находится в том же документе, что и элемент&nbsp;<font face="consolas, Liberation Mono, courier, monospace"><span style="background-color: rgba(220, 220, 220, 0.5);">label</span></font>. Первый такой элемент в документе, ID которого совпадает со значением&nbsp;атрибута&nbsp;<code>for</code>, становится&nbsp;<em>labeled-</em>контролом<em>&nbsp;</em>для данного&nbsp;<code>label</code>.</p>
+
+ <div class="note notecard">Элемент <em>label </em>может иметь как атрибут <em>for</em>, так и отдельный элемент управления, если атрибут <em>for </em>указывает на содержащийся элемент управления.</div>
+ </dd>
+ <dt><a id="attr-form" href="#attr-form"><b><code>form</code></b></a> <span class="badge inline html-version"><a href="https://developer.mozilla.org/ru/docs/orphaned/Web/Guide/HTML/HTML5">HTML5</a></span> </dt>
+ <dd>Элемент формы, с которым связан label (его владелец формы). Если указано, значением атрибута является идентификатор элемента <a href="/html/form/"><code>&lt;form&gt;</code></a> в том же документе. Это позволяет размещать элементы label в любом месте документа, а не только как потомки их элементов формы..
+ <div class="note notecard">Этот атрибут содержимого был удалён из спецификации HTML 28 апреля 2016 г. Однако сценарии по-прежнему имеют доступ только для чтения <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLLabelElement/form"><code>HTMLLabelElement.form</code> <span>(en-US)</span></a>; он возвращает форму, членом которой является связанный элемент управления label, или значение NULL, если label не связана с элементом управления или элемент управления не является частью формы.</div>
+ </dd>
+</dl></div><h2 id="примечания_по_использованию"><a href="#примечания_по_использованию" title="Permalink to Примечания по использованию">Примечания по использованию</a></h2><div><ul>
+ <li>&lt;label&gt; можно связать с элементом управления, поместив элемент управления внутри элемента &lt;label&gt; или используя атрибут <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Global_attributes#attr-for"><code>for</code></a>. Такой элемент управления называется помеченным элементом управления надписью. Один вход может быть связан с несколькими метками.</li>
+ <li>Метки сами по себе не связаны с формами. Они только косвенно связаны с формами через элементы управления, с которыми они связаны.</li>
+</ul></div><h2 id="examples"><a href="#examples" title="Permalink to Examples">Examples</a></h2><div></div><h3 id="simple_label_example"><a href="#simple_label_example" title="Permalink to Simple label example">Simple label example</a></h3><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span><span class="token punctuation">&gt;</span></span>Click me <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<p><iframe class="sample-code-frame" id="frame_Simple_label_example" width="200" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/label/_sample_.Simple_label_example.html" loading="lazy"></iframe></p></div><h3 id="using_the_for_attribute"><a href="#using_the_for_attribute" title="Permalink to Using the &quot;for&quot; attribute">Using the "for" attribute</a></h3><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>username<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Click me<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>username<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<p><iframe class="sample-code-frame" id="frame_Using_the_for_attribute" width="200" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/label/_sample_.Using_the_for_attribute.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://html.spec.whatwg.org/multipage/forms.html#the-label-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML Living Standard<br><small lang="ru">Определение '&lt;label&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html52/forms.html#the-label-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML5<br><small lang="ru">Определение '&lt;label&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html401/interact/forms.html#h-17.9.1" hreflang="en" lang="en" class="external" rel=" noopener">HTML 4.01 Specification<br><small lang="ru">Определение '&lt;label&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li>Other form-related elements: <a href="/html/form/"><code>&lt;form&gt;</code></a>, <a href="/html/Input/"><code>&lt;input&gt;</code></a>, <a href="/html/button/"><code>&lt;button&gt;</code></a>, <a href="/html/datalist/"><code>&lt;datalist&gt;</code></a>, <a href="/html/legend/"><code>&lt;legend&gt;</code></a>, <a href="/html/select/"><code>&lt;select&gt;</code></a>, <a href="/html/optgroup/"><code>&lt;optgroup&gt;</code></a>, <a href="/html/option/"><code>&lt;option&gt;</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea" class="only-in-en-us" title="Currently only available in English (US)">&lt;textarea&gt; (en-US)</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/keygen" class="only-in-en-us" title="Currently only available in English (US)">&lt;keygen&gt; (en-US)</a>, <a href="/html/fieldset/"><code>&lt;fieldset&gt;</code></a>, <a href="/html/output/"><code>&lt;output&gt;</code></a>, <a href="/html/progress/"><code>&lt;progress&gt;</code></a> and <a href="/html/meter/"><code>&lt;meter&gt;</code></a>.</li>
+</ul></div>

@@ -1,0 +1,56 @@
+<h1>&lt;bdi&gt;</h1><h2 id="описание"><a href="#описание" title="Permalink to Описание">Описание</a></h2><div><p><strong>HTML элемент <code>&lt;bdi&gt;</code></strong><em> </em>(<em>bidirectional isolation</em>, или изоляция двунаправленности [текста]) изолирует от окружающего текста текстовый фрагмент,&nbsp;направление в котором&nbsp;может отличаться от направления&nbsp;окружающего&nbsp;текста (но не обязательно отличается).</p>
+
+<p>Этот элемент полезен при встраивании текста с неизвестным направлением (например,&nbsp;из базы данных) внутрь текста с заданным направлением.</p>
+
+<p class="note">Хотя&nbsp;тот&nbsp;же эффект может быть достигнут применением&nbsp;CSS&nbsp;правила&nbsp;<a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/unicode-bidi"><code>unicode-bidi</code> <span>(en-US)</span></a><code>: isolate</code>&nbsp;к элементу&nbsp;<a href="/html/span/"><code>&lt;span&gt;</code></a> или другому&nbsp;элементу форматирования текста, семантическое&nbsp;значение передаётся&nbsp;только с помощью элемента&nbsp;<code>&lt;bdi&gt;</code>. Тем более, что&nbsp;браузеры могут&nbsp;игнорировать стили. В этом случае, текст будет отображён корректно при использовании HTML элемента, и некорректно при использовании только CSS стилей.</p>
+
+<table class="properties">
+ <tbody>
+  <tr>
+   <th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories" title="HTML/Content_categories">Content categories</a></th>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#flow_content" title="HTML/Content categories#Flow content">Flow content</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#phrasing_content" title="HTML/Content_categories#Phrasing_content">phrasing content</a>, palpable content.</td>
+  </tr>
+  <tr>
+   <th scope="row">Permitted content</th>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#phrasing_content" title="HTML/Content_categories#Flow_content">Phrasing content</a>.</td>
+  </tr>
+  <tr>
+   <th scope="row">Tag omission</th>
+   <td>Нет, открывающий и закрывающий теги обязательны.</td>
+  </tr>
+  <tr>
+   <th scope="row">Permitted parent elements</th>
+   <td>Any element that accepts <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#phrasing_content" title="HTML/Content_categories#Flow_content">phrasing content</a>.</td>
+  </tr>
+  <tr>
+   <th scope="row">DOM interface</th>
+   <td><a href="https://developer.mozilla.org/ru/docs/Web/API/HTMLElement"><code>HTMLElement</code></a></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="attributes"><a href="#attributes" title="Permalink to Attributes">Attributes</a></h2><div><p>Like all other HTML elements, this element has the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes" title="HTML/Global attributes">global attributes</a>, with a slight semantic difference: the <strong>dir</strong> attribute is not inherited. If not set, its default value is the <code>auto</code> which let the browser decide the direction based on the element's content.</p></div><h2 id="example"><a href="#example" title="Permalink to Example">Example</a></h2><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">dir</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ltr<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This arabic word <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bdi</span><span class="token punctuation">&gt;</span></span>ARABIC_PLACEHOLDER<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bdi</span><span class="token punctuation">&gt;</span></span> is automatically displayed right-to-left.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h3 id="result"><a href="#result" title="Permalink to Result">Result</a></h3><div><p dir="ltr">This arabic word REDLOHECALP_CIBARA is automatically displayed right-to-left.</p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdi-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML Living Standard<br><small lang="ru">Определение '&lt;bdi&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html52/the-bdi-element.html#the-bdi-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML5<br><small lang="ru">Определение '&lt;bdi&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>&nbsp;</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li>Related HTML element: <a href="/html/bdo/"><code>&lt;bdo&gt;</code></a></li>
+ <li>Related HTML properties: <a href="https://developer.mozilla.org/ru/docs/Web/CSS/direction"><code>direction</code></a>, <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/unicode-bidi"><code>unicode-bidi</code> <span>(en-US)</span></a></li>
+</ul>
+
+<p></p><p></p></div>

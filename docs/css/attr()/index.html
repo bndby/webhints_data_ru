@@ -1,6 +1,6 @@
 <h1>attr</h1><div><div></div></div><h2 id="описание"><a href="#описание" title="Permalink to Описание">Описание</a></h2><div><p>С помощью функции&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> <code>attr()</code>&nbsp;можно извлекать значение атрибута выбранного элемента и использовать это значение в таблице стилей. Функция работает и с псевдо-элементами. В этом случае возвращается значение атрибута элемента, для которого формируется <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements">псевдо-элемент</a>.</p>
 
-<p>Функцию&nbsp;<code>attr()</code>&nbsp;можно использовать с любым свойством CSS, но поддержка иных свойств, кроме <a href="/webhints_data_ru/css/content/"><code>content</code></a>, является экспериментальной.</p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="brush:js notranslate"><code><span class="token comment">/* Пример простого использования */</span>
+<p>Функцию&nbsp;<code>attr()</code>&nbsp;можно использовать с любым свойством CSS, но поддержка иных свойств, кроме <a href="/css/content/"><code>content</code></a>, является экспериментальной.</p></div><h2 id="синтаксис"><a href="#синтаксис" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="brush:js notranslate"><code><span class="token comment">/* Пример простого использования */</span>
 <span class="token function">attr</span><span class="token punctuation">(</span>data<span class="token operator">-</span>count<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token function">attr</span><span class="token punctuation">(</span>title<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
@@ -39,7 +39,7 @@
    </tr>
    <tr>
     <td><code>color</code> </td>
-    <td><a href="/webhints_data_ru/css/color_value/"><code>&lt;color&gt;</code></a></td>
+    <td><a href="/css/color_value/"><code>&lt;color&gt;</code></a></td>
     <td>The attribute value is parsed as a hash (3- or 6-value hash) or a keyword. It must be a valid CSS <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/string"><code>&lt;string&gt;</code> <span>(en-US)</span></a> value.<br>
      Leading and trailing spaces are stripped.</td>
     <td><code>currentColor</code></td>
@@ -54,59 +54,59 @@
    </tr>
    <tr>
     <td><code>integer</code> </td>
-    <td><a href="/webhints_data_ru/css/integer/"><code>&lt;integer&gt;</code></a></td>
-    <td>The attribute value is parsed as a CSS <a href="/webhints_data_ru/css/integer/"><code>&lt;integer&gt;</code></a>. If it is not valid, that is not an integer or out of the range accepted by the CSS property, the default value is used.<br>
+    <td><a href="/css/integer/"><code>&lt;integer&gt;</code></a></td>
+    <td>The attribute value is parsed as a CSS <a href="/css/integer/"><code>&lt;integer&gt;</code></a>. If it is not valid, that is not an integer or out of the range accepted by the CSS property, the default value is used.<br>
      Leading and trailing spaces are stripped.</td>
     <td><code>0</code>, or, if <code>0</code> is not a valid value for the property, the property's minimum value.</td>
    </tr>
    <tr>
     <td><code>number</code> </td>
-    <td><a href="/webhints_data_ru/css/number/"><code>&lt;number&gt;</code></a></td>
-    <td>The attribute value is parsed as a CSS <a href="/webhints_data_ru/css/number/"><code>&lt;number&gt;</code></a>. If it is not valid, that is not a number or out of the range accepted by the CSS property, the default value is used.<br>
+    <td><a href="/css/number/"><code>&lt;number&gt;</code></a></td>
+    <td>The attribute value is parsed as a CSS <a href="/css/number/"><code>&lt;number&gt;</code></a>. If it is not valid, that is not a number or out of the range accepted by the CSS property, the default value is used.<br>
      Leading and trailing spaces are stripped.</td>
     <td><code>0</code>, or, if <code>0</code> is not a valid value for the property, the property's minimum value.</td>
    </tr>
    <tr>
     <td><code>length</code> </td>
-    <td><a href="/webhints_data_ru/css/length/"><code>&lt;length&gt;</code></a></td>
-    <td>The attribute value is parsed as a CSS <a href="/webhints_data_ru/css/length/"><code>&lt;length&gt;</code></a> dimension, that is including the unit (e.g. <code>12.5em</code>). If it is not valid, that is not a length or out of the range accepted by the CSS property, the default value is used.<br>
+    <td><a href="/css/length/"><code>&lt;length&gt;</code></a></td>
+    <td>The attribute value is parsed as a CSS <a href="/css/length/"><code>&lt;length&gt;</code></a> dimension, that is including the unit (e.g. <code>12.5em</code>). If it is not valid, that is not a length or out of the range accepted by the CSS property, the default value is used.<br>
      If the given unit is a relative length, <code>attr()</code>computes it to an absolute length.<br>
      Leading and trailing spaces are stripped.</td>
     <td><code>0</code>, or, if <code>0</code> is not a valid value for the property, the property's minimum value.</td>
    </tr>
    <tr>
     <td><code>em</code>, <code>ex</code>, <code>px</code>, <code>rem</code>, <code>vw</code>, <code>vh</code>, <code>vmin</code>, <code>vmax</code>, <code>mm</code>, <code>cm</code>, <code>in</code>, <code>pt</code>, or <code>pc</code> </td>
-    <td><a href="/webhints_data_ru/css/length/"><code>&lt;length&gt;</code></a></td>
-    <td>The attribute value is parsed as a CSS <a href="/webhints_data_ru/css/number/"><code>&lt;number&gt;</code></a>, that is without the unit (e.g. <code>12.5</code>), and interpreted as a <a href="/webhints_data_ru/css/length/"><code>&lt;length&gt;</code></a> with the specified unit. If it is not valid, that is not a number or out of the range accepted by the CSS property, the default value is used.<br>
+    <td><a href="/css/length/"><code>&lt;length&gt;</code></a></td>
+    <td>The attribute value is parsed as a CSS <a href="/css/number/"><code>&lt;number&gt;</code></a>, that is without the unit (e.g. <code>12.5</code>), and interpreted as a <a href="/css/length/"><code>&lt;length&gt;</code></a> with the specified unit. If it is not valid, that is not a number or out of the range accepted by the CSS property, the default value is used.<br>
      If the given unit is a relative length, <code>attr()</code>computes it to an absolute length.<br>
      Leading and trailing spaces are stripped.</td>
     <td><code>0</code>, or, if <code>0</code> is not a valid value for the property, the property's minimum value.</td>
    </tr>
    <tr>
     <td><code>angle</code> </td>
-    <td><a href="/webhints_data_ru/css/angle/"><code>&lt;angle&gt;</code></a></td>
-    <td>The attribute value is parsed as a CSS <a href="/webhints_data_ru/css/angle/"><code>&lt;angle&gt;</code></a> dimension, that is including the unit (e.g. <code>30.5deg</code>). If it is not valid, that is not an angle or out of the range accepted by the CSS property, the default value is used.<br>
+    <td><a href="/css/angle/"><code>&lt;angle&gt;</code></a></td>
+    <td>The attribute value is parsed as a CSS <a href="/css/angle/"><code>&lt;angle&gt;</code></a> dimension, that is including the unit (e.g. <code>30.5deg</code>). If it is not valid, that is not an angle or out of the range accepted by the CSS property, the default value is used.<br>
      Leading and trailing spaces are stripped.</td>
     <td><code>0deg</code>, or, if <code>0deg</code> is not a valid value for the property, the property's minimum value.</td>
    </tr>
    <tr>
     <td><code>deg</code>, <code>grad</code>, <code>rad</code> </td>
-    <td><a href="/webhints_data_ru/css/angle/"><code>&lt;angle&gt;</code></a></td>
-    <td>The attribute value is parsed as a CSS <a href="/webhints_data_ru/css/number/"><code>&lt;number&gt;</code></a>, that is without the unit (e.g. <code>12.5</code>), and interpreted as an <a href="/webhints_data_ru/css/angle/"><code>&lt;angle&gt;</code></a> with the specified unit. If it is not valid, that is not a number or out of the range accepted by the CSS property, the default value is used.<br>
+    <td><a href="/css/angle/"><code>&lt;angle&gt;</code></a></td>
+    <td>The attribute value is parsed as a CSS <a href="/css/number/"><code>&lt;number&gt;</code></a>, that is without the unit (e.g. <code>12.5</code>), and interpreted as an <a href="/css/angle/"><code>&lt;angle&gt;</code></a> with the specified unit. If it is not valid, that is not a number or out of the range accepted by the CSS property, the default value is used.<br>
      Leading and trailing spaces are stripped.</td>
     <td><code>0deg</code>, or, if <code>0deg</code> is not a valid value for the property, the property's minimum value.</td>
    </tr>
    <tr>
     <td><code>time</code> </td>
-    <td><a href="/webhints_data_ru/css/time/"><code>&lt;time&gt;</code></a></td>
-    <td>The attribute value is parsed as a CSS <a href="/webhints_data_ru/css/time/"><code>&lt;time&gt;</code></a> dimension, that is including the unit (e.g. <code>30.5ms</code>). If it is not valid, that is not a time or out of the range accepted by the CSS property, the default value is used.<br>
+    <td><a href="/css/time/"><code>&lt;time&gt;</code></a></td>
+    <td>The attribute value is parsed as a CSS <a href="/css/time/"><code>&lt;time&gt;</code></a> dimension, that is including the unit (e.g. <code>30.5ms</code>). If it is not valid, that is not a time or out of the range accepted by the CSS property, the default value is used.<br>
      Leading and trailing spaces are stripped.</td>
     <td><code>0s</code>, or, if <code>0s</code> is not a valid value for the property, the property's minimum value.</td>
    </tr>
    <tr>
     <td><code>s</code>, <code>ms</code> </td>
-    <td><a href="/webhints_data_ru/css/time/"><code>&lt;time&gt;</code></a></td>
-    <td>The attribute value is parsed as a CSS <a href="/webhints_data_ru/css/number/"><code>&lt;number&gt;</code></a>, that is without the unit (e.g. <code>12.5</code>), and interpreted as an<a href="/webhints_data_ru/css/time/"><code>&lt;time&gt;</code></a> with the specified unit. If it is not valid, that is not a number or out of the range accepted by the CSS property, the default value is used.<br>
+    <td><a href="/css/time/"><code>&lt;time&gt;</code></a></td>
+    <td>The attribute value is parsed as a CSS <a href="/css/number/"><code>&lt;number&gt;</code></a>, that is without the unit (e.g. <code>12.5</code>), and interpreted as an<a href="/css/time/"><code>&lt;time&gt;</code></a> with the specified unit. If it is not valid, that is not a number or out of the range accepted by the CSS property, the default value is used.<br>
      Leading and trailing spaces are stripped.</td>
     <td><code>0s</code>, or, if <code>0s</code> is not a valid value for the property, the property's minimum value.</td>
    </tr>
@@ -119,14 +119,14 @@
    <tr>
     <td><code>Hz</code>, <code>kHz</code> </td>
     <td><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/frequency"><code>&lt;frequency&gt;</code> <span>(en-US)</span></a></td>
-    <td>The attribute value is parsed as a CSS <a href="/webhints_data_ru/css/number/"><code>&lt;number&gt;</code></a>, that is without the unit (e.g. <code>12.5</code>), and interpreted as a <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/frequency"><code>&lt;frequency&gt;</code> <span>(en-US)</span></a> with the specified unit. If it is not valid, that is not a number or out of the range accepted by the CSS property, the default value is used.<br>
+    <td>The attribute value is parsed as a CSS <a href="/css/number/"><code>&lt;number&gt;</code></a>, that is without the unit (e.g. <code>12.5</code>), and interpreted as a <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/frequency"><code>&lt;frequency&gt;</code> <span>(en-US)</span></a> with the specified unit. If it is not valid, that is not a number or out of the range accepted by the CSS property, the default value is used.<br>
      Leading and trailing spaces are stripped.</td>
     <td><code>0Hz</code>, or, if <code>0Hz</code> is not a valid value for the property, the property's minimum value.</td>
    </tr>
    <tr>
     <td><code>%</code> </td>
-    <td><a href="/webhints_data_ru/css/percentage/"><code>&lt;percentage&gt;</code></a></td>
-    <td>The attribute value is parsed as a CSS <a href="/webhints_data_ru/css/number/"><code>&lt;number&gt;</code></a>, that is without the unit (e.g. <code>12.5</code>), and interpreted as a <a href="/webhints_data_ru/css/percentage/"><code>&lt;percentage&gt;</code></a>. If it is not valid, that is not a number or out of the range accepted by the CSS property, the default value is used.<br>
+    <td><a href="/css/percentage/"><code>&lt;percentage&gt;</code></a></td>
+    <td>The attribute value is parsed as a CSS <a href="/css/number/"><code>&lt;number&gt;</code></a>, that is without the unit (e.g. <code>12.5</code>), and interpreted as a <a href="/css/percentage/"><code>&lt;percentage&gt;</code></a>. If it is not valid, that is not a number or out of the range accepted by the CSS property, the default value is used.<br>
      If the given value is used as a length, <code>attr()</code>computes it to an absolute length.<br>
      Leading and trailing spaces are stripped.</td>
     <td><code>0%</code>, or, if <code>0%</code> is not a valid value for the property, the property's minimum value.</td>
@@ -159,7 +159,7 @@
   <tr>
    <td><a href="https://www.w3.org/TR/CSS2/generate.html#x18" hreflang="en" lang="en" class="external" rel=" noopener">CSS Level&nbsp;2 (Revision&nbsp;1)<br><small lang="ru">Определение 'attr()' в этой спецификации.</small></a></td>
    <td><span class="spec-rec">Рекомендация</span></td>
-   <td>Limited to the <a href="/webhints_data_ru/css/content/"><code>content</code></a> property; always return a <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/string"><code>&lt;string&gt;</code> <span>(en-US)</span></a>.</td>
+   <td>Limited to the <a href="/css/content/"><code>content</code></a> property; always return a <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/string"><code>&lt;string&gt;</code> <span>(en-US)</span></a>.</td>
   </tr>
  </tbody>
 </table></div><h2 id="совместимость_с_браузерами"><a href="#совместимость_с_браузерами" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div>

@@ -1,0 +1,91 @@
+<h1>&lt;head&gt;: элемент метаданных документа</h1><div><div></div>
+
+<p><span class="seoSummary"><strong>HTML-элемент <code>&lt;head&gt;</code></strong> содержит машиночитаемую информацию (<a href="https://developer.mozilla.org/ru/docs/Glossary/Metadata">metadata</a>) о документе, например его <a href="/html/title/">заголовок</a>, <a href="/html/script/">скрипты</a> и <a href="/html/style/">страницы стилей</a>.</span></p>
+
+<div class="note notecard">
+<p><strong>Примечание:</strong> <code>&lt;head&gt;</code> в основном содержит информацию для машинной обработки, а не для восприятия человеком. Информацию, видимую человеком, такую как заголовки верхнего уровня и перечисленные авторы, смотрите в элементе <a href="/html/header/"><code>&lt;header&gt;</code></a>.</p>
+</div>
+
+<table class="properties">
+ <tbody>
+  <tr>
+   <th scope="row"><a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Content_categories">Категории контента</a></th>
+   <td>Отсутствуют.</td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённое содержимое</th>
+   <td>
+    <p>Если документ является документом <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe" class="only-in-en-us" title="Currently only available in English (US)">&lt;iframe&gt; (en-US)</a> с атрибутом <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe"><code>srcdoc</code> <span>(en-US)</span></a>, или если информация о заголовке доступна из протокола более высокого уровня (например, строки темы в электронном письме HTML), то ноль или более элементов содержащих метаданные.</p>
+
+    <p>Иначе, один или более элементов содержащих метаданные, один из которых является элементом <a href="/html/title/"><code>&lt;title&gt;</code></a>.</p>
+   </td>
+  </tr>
+  <tr>
+   <th scope="row">Пропуск тега</th>
+   <td>Открывающий тег может быть пропущен, если первым, что находится внутри элемента <code>&lt;head&gt;</code> является другой элемент.<br>
+    Закрывающий тег может быть пропущен, если первое, что следует за элементом <code>&lt;head&gt;</code> не является пробелом или комментарием.</td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённые родительские элементы</th>
+   <td>Элемент <a href="/html/html/"><code>&lt;html&gt;</code></a> (<code>&lt;head&gt;</code> является его первым дочерним элементом).</td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённые роли ARIA</th>
+   <td>Отсутствуют.</td>
+  </tr>
+  <tr>
+   <th scope="row">DOM-интерфейс</th>
+   <td><a href="https://developer.mozilla.org/ru/docs/Web/API/HTMLHeadElement"><code>HTMLHeadElement</code></a></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="атрибуты"><a href="#атрибуты" title="Permalink to Атрибуты">Атрибуты</a></h2><div><p>К этому элементу применимы <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Global_attributes">глобальные атрибуты</a>.</p>
+
+<dl>
+ <dt><a id="attr-profile" href="#attr-profile"><b><code>profile</code></b></a> </dt>
+ <dd><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Glossary/URI">URI <span>(en-US)</span></a> одного или более профилей метаданных, разделённых пробелами.</dd>
+</dl></div><h2 id="пример"><a href="#пример" title="Permalink to Пример">Пример</a></h2><div><pre class="brush: html notranslate"><code><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token name">doctype</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>Заголовок страницы<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h2 id="примечание"><a href="#примечание" title="Permalink to Примечание">Примечание</a></h2><div><p>HTML5-совместимые браузеры автоматически создают элемент <code>&lt;head&gt;</code>, если его теги пропущены в разметке. <a class="external" href="https://www.stevesouders.com/blog/2010/05/12/autohead-my-first-browserscope-user-test/" rel=" noopener">Такое поведение не гарантируется в старых браузерах</a>.</p></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://html.spec.whatwg.org/multipage/semantics.html#the-head-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML Living Standard<br><small lang="ru">Определение '&lt;head&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td>Нет изменений с последнего "snapshot" (состояние сохранённое в определённый момент времени)</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html52/document-metadata.html#the-head-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML5<br><small lang="ru">Определение '&lt;head&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Атрибут <code>profile</code> больше не поддерживается</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html401/struct/global.html#h-7.4.1" hreflang="en" lang="en" class="external" rel=" noopener">HTML 4.01 Specification<br><small lang="ru">Определение '&lt;head&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>&nbsp;</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="поддержка_браузерами"><a href="#поддержка_браузерами" title="Permalink to Поддержка браузерами">Поддержка браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li>Элементы, которые могут использоваться внутри <code>&lt;head&gt;</code>:
+
+  <ul>
+   <li><a href="/html/title/"><code>&lt;title&gt;</code></a></li>
+   <li><a href="/html/base/"><code>&lt;base&gt;</code></a></li>
+   <li><a href="/html/link/"><code>&lt;link&gt;</code></a></li>
+   <li><a href="/html/style/"><code>&lt;style&gt;</code></a></li>
+   <li><a href="/html/meta/"><code>&lt;meta&gt;</code></a></li>
+   <li><a href="/html/script/"><code>&lt;script&gt;</code></a></li>
+   <li><a href="/html/noscript/"><code>&lt;noscript&gt;</code></a></li>
+   <li><a href="/html/template/"><code>&lt;template&gt;</code></a></li>
+  </ul>
+ </li>
+</ul></div>

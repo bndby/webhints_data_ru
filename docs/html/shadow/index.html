@@ -1,0 +1,82 @@
+<h1>&lt;shadow&gt;: The Shadow Root element</h1><div><p></p><div class="notecard deprecated">
+            <h4 id="deprecated">Deprecated</h4>
+            <p>This feature is no longer recommended. Though some browsers might still support it, it may have already been removed from the relevant web standards, may be in the process of being dropped, or may only be kept for compatibility purposes. Avoid using it, and update existing code if possible; see the <a href="#browser_compatibility">compatibility table</a> at the bottom of this page to guide your decision. Be aware that this feature may cease to work at any time.</p>
+        </div><p></p>
+
+<p>The <strong><code>&lt;shadow&gt;</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a> element—an obsolete part of the <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components">Web Components</a> technology suite—was intended to be used as a shadow DOM <a class="page-not-created" title="The documentation about this has not yet been written; please consider contributing!">insertion point</a>. You might have used it if you have created multiple shadow roots under a shadow host. It is not useful in ordinary HTML.</p>
+
+<table class="properties">
+ <tbody>
+  <tr>
+   <th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories">Content categories</a></th>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#transparent_content_model">Transparent content</a></td>
+  </tr>
+  <tr>
+   <th scope="row">Permitted content</th>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#flow_content">Flow content</a></td>
+  </tr>
+  <tr>
+   <th scope="row">Tag omission</th>
+   <td>None, both the starting and ending tag are mandatory.</td>
+  </tr>
+  <tr>
+   <th scope="row">Permitted parents</th>
+   <td>Any element that accepts flow content.</td>
+  </tr>
+  <tr>
+   <th scope="row">Permitted ARIA roles</th>
+   <td>None</td>
+  </tr>
+  <tr>
+   <th scope="row">DOM interface</th>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLShadowElement"><code>HTMLShadowElement</code></a></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="attributes"><a href="#attributes" title="Permalink to Attributes">Attributes</a></h2><div><p>This element includes the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes">global attributes</a>.</p></div><h2 id="example"><a href="#example" title="Permalink to Example">Example</a></h2><div><p>Here is a simple example of using the <code>&lt;shadow&gt;</code> element. It is an HTML file with everything needed in it.</p>
+
+<div class="note notecard">
+<p><strong>Note:</strong>&nbsp;This is an experimental technology. For this code to work, the browser you display it in must support Web Components. See <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components#enabling_web_components_in_firefox">Enabling Web Components in Firefox</a>.</p>
+</div>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+
+  <span class="token comment">&lt;!-- This &lt;div&gt; will hold the shadow roots. --&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token comment">&lt;!-- This heading will not be displayed --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h4</span><span class="token punctuation">&gt;</span></span>My Original Heading<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h4</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+    <span class="token comment">// Get the &lt;div&gt; above with its content</span>
+    <span class="token keyword">var</span> origContent <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// Create the first shadow root</span>
+    <span class="token keyword">var</span> shadowroot1 <span class="token operator">=</span> origContent<span class="token punctuation">.</span><span class="token function">createShadowRoot</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// Create the second shadow root</span>
+    <span class="token keyword">var</span> shadowroot2 <span class="token operator">=</span> origContent<span class="token punctuation">.</span><span class="token function">createShadowRoot</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Insert something into the older shadow root</span>
+    shadowroot1<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span>
+      '<span class="token operator">&lt;</span>p<span class="token operator">&gt;</span>Older shadow root inserted by
+          <span class="token operator">&amp;</span>lt<span class="token punctuation">;</span>shadow<span class="token operator">&amp;</span>gt<span class="token punctuation">;</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span>'<span class="token punctuation">;</span>
+    <span class="token comment">// Insert into younger shadow root, including &lt;shadow&gt;.</span>
+    <span class="token comment">// The previous markup will not be displayed unless</span>
+    <span class="token comment">// &lt;shadow&gt; is used below.</span>
+    shadowroot2<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span>
+      '<span class="token operator">&lt;</span>shadow<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>shadow<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>p<span class="token operator">&gt;</span>Younger shadow
+       root<span class="token punctuation">,</span> displayed because it is the youngest<span class="token punctuation">.</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span>'<span class="token punctuation">;</span>
+  </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<p>If you display this in a web browser it should look like the following.</p>
+
+<p><img alt="shadow example" src="/en-US/docs/Web/HTML/Element/shadow/shadow-example.png" width="641" height="343" loading="lazy"></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><p>This element is no longer defined by any specifications.</p></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components">Web Components</a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/content"><code>&lt;content&gt;</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot"><code>&lt;slot&gt;</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template"><code>&lt;template&gt;</code></a>,&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/element" class="page-not-created" title="This is a link to an unwritten page"><code>&lt;element&gt;</code></a></li>
+</ul>
+
+<div></div></div>

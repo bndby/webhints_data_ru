@@ -7,7 +7,7 @@
   "author": "Bandarenka Yura <info@bnd.by>",
   "license": "MIT",
   "scripts": {
-    "build": "node js.js && node css.js"
+    "build": "node js.js && node css.js && node html.js"
   },
   "devDependencies": {
     "cheerio": "0.22.0",

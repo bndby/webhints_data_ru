@@ -3,7 +3,7 @@
             <p>Эта возможность была удалена из веб-стандартов. Хотя некоторые браузеры по-прежнему могут поддерживать её, она находится в процессе удаления. Не используйте её ни в старых, ни в новых проектах. Страницы или веб-приложения, использующие её, могут в любой момент сломаться.</p>
         </div></div></div><h2 id="summary"><a href="#summary" title="Permalink to Сводка">Сводка</a></h2><div><p>Метод <strong><code>toGMTString()</code></strong> преобразует дату в строку, используя соглашения Среднего времени по Гринвичу (GMT) в Интернет. Точный формат значения, возвращаемого методом <code>toGMTString()</code> различается на разных платформах и браузерах, можно лишь сказать, что он представляет собой человеко-читаемую строку с датой.</p>
 <div class="note notecard">
- <p><strong>Примечание:</strong> метод <code>toGMTString()</code> устарел и не должен использоваться. Он оставлен только для обратной совместимости; пожалуйста, используйте вместо него метод <a href="/webhints_data_ru/js/Date/toUTCString/"><code>toUTCString()</code></a>.</p>
+ <p><strong>Примечание:</strong> метод <code>toGMTString()</code> устарел и не должен использоваться. Он оставлен только для обратной совместимости; пожалуйста, используйте вместо него метод <a href="/js/Date/toUTCString/"><code>toUTCString()</code></a>.</p>
 </div></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code><var>dateObj</var>.toGMTString()</code></pre></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_using_togmtstring"><a href="#example_using_togmtstring" title="Permalink to Пример: использование метода toGMTString()">Пример: использование метода <code>toGMTString()</code></a></h3><div><p>В этом примере метод <code>toGMTString()</code> преобразует дату в формат GMT (UTC), используя часовой пояс операционной системы и возвращает подобную строку. Точный формат зависит от платформы.</p>
 <pre class="brush: js notranslate"><code><span class="token keyword">var</span> today <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">var</span> str <span class="token operator">=</span> today<span class="token punctuation">.</span><span class="token function">toGMTString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// устарел! используйте метод toUTCString()</span>
@@ -33,7 +33,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
   </tr>
  </tbody>
 </table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
- <li><a href="/webhints_data_ru/js/Date/toLocaleDateString/"><code>Date.prototype.toLocaleDateString()</code></a></li>
- <li><a href="/webhints_data_ru/js/Date/toTimeString/"><code>Date.prototype.toTimeString()</code></a></li>
- <li><a href="/webhints_data_ru/js/Date/toUTCString/"><code>Date.prototype.toUTCString()</code></a></li>
+ <li><a href="/js/Date/toLocaleDateString/"><code>Date.prototype.toLocaleDateString()</code></a></li>
+ <li><a href="/js/Date/toTimeString/"><code>Date.prototype.toTimeString()</code></a></li>
+ <li><a href="/js/Date/toUTCString/"><code>Date.prototype.toUTCString()</code></a></li>
 </ul></div>

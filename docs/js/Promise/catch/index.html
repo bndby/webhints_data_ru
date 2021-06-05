@@ -1,13 +1,13 @@
 <h1>Promise.prototype.catch()</h1><div><div></div>
 
-<p>Метод&nbsp;<strong>catch()</strong>&nbsp;возвращает промис (<code>Promise(</code>) и работает только в случае отклонения&nbsp;промиса. Ведёт себя аналогично вызову <a href="/webhints_data_ru/js/Promise/then/"><code>Promise.prototype.then(undefined, onRejected)</code></a>.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="syntaxbox notranslate"><var>p.catch(onRejected)</var>;
+<p>Метод&nbsp;<strong>catch()</strong>&nbsp;возвращает промис (<code>Promise(</code>) и работает только в случае отклонения&nbsp;промиса. Ведёт себя аналогично вызову <a href="/js/Promise/then/"><code>Promise.prototype.then(undefined, onRejected)</code></a>.</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Syntax">Syntax</a></h2><div><pre class="syntaxbox notranslate"><var>p.catch(onRejected)</var>;
 
 p.catch(function(reason) {
    // отказ
 });
 </pre></div><h3 id="параметры"><a href="#параметры" title="Permalink to Параметры">Параметры</a></h3><div><dl>
  <dt>onRejected</dt>
- <dd><a href="/webhints_data_ru/js/Function/"><code>Function</code></a> вызывается когда промис отклонен. У этой функции один аргумент:
+ <dd><a href="/js/Function/"><code>Function</code></a> вызывается когда промис отклонен. У этой функции один аргумент:
  <dl>
   <dt><code>reason</code></dt>
   <dd>Причина отказа.</dd>
@@ -16,7 +16,7 @@ p.catch(function(reason) {
   </dt>
  </dl>
  </dd>
-</dl></div><h3 id="возвращаемое_значение"><a href="#возвращаемое_значение" title="Permalink to Возвращаемое значение">Возвращаемое значение</a></h3><div><p><a href="/webhints_data_ru/js/Promise/"><code>Promise</code></a>.</p></div><h2 id="описание"><a href="#описание" title="Permalink to Описание">Описание</a></h2><div><dl>
+</dl></div><h3 id="возвращаемое_значение"><a href="#возвращаемое_значение" title="Permalink to Возвращаемое значение">Возвращаемое значение</a></h3><div><p><a href="/js/Promise/"><code>Promise</code></a>.</p></div><h2 id="описание"><a href="#описание" title="Permalink to Описание">Описание</a></h2><div><dl>
  <dd>Метод&nbsp;<code>catch может быть полезен для обработки ошибок</code>&nbsp;в вашей структуре промисов.</dd>
 </dl></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="использование_метода_catch"><a href="#использование_метода_catch" title="Permalink to Использование метода&nbsp;catch">Использование метода&nbsp;<code>catch</code></a></h3><div><pre class="brush: js notranslate"><code><span class="token keyword">var</span> p1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'Success'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -103,6 +103,6 @@ p3<span class="token punctuation">.</span><span class="token function">catch</sp
   </tr>
  </tbody>
 </table></div><h2 id="совместимость_с_браузерами"><a href="#совместимость_с_браузерами" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
- <li><a href="/webhints_data_ru/js/Promise/"><code>Promise</code></a></li>
- <li><a href="/webhints_data_ru/js/Promise/then/"><code>Promise.prototype.then()</code></a></li>
+ <li><a href="/js/Promise/"><code>Promise</code></a></li>
+ <li><a href="/js/Promise/then/"><code>Promise.prototype.then()</code></a></li>
 </ul></div>

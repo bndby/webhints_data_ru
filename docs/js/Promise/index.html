@@ -17,7 +17,7 @@
 
 <p>При создании промис находится в <em>ожидании (pending)</em>, а затем может стать&nbsp;<em>исполненным&nbsp;</em> (<em>fulfilled)</em>, вернув полученный результат (значение), или <em>отклонённым&nbsp;</em>(<em>rejected),</em>&nbsp;вернув причину отказа. В любом из этих случаев вызывается обработчик, прикреплённый к промису методом&nbsp;<code>then</code>. (Если в момент назначения обработчика промис уже исполнен или отклонён, обработчик всё равно будет вызван, т.е. асинхронное&nbsp;исполнение&nbsp;промиса и назначение&nbsp;обработчика не будет происходить в «состоянии&nbsp;гонки», как, например, в случае с событиями в DOM.)</p>
 
-<p>Так как методы <code><a href="/webhints_data_ru/js/Promise/then/"><code>Promise.prototype.then()</code></a></code>&nbsp;и&nbsp;<code><a href="/webhints_data_ru/js/Promise/catch/"><code>Promise.prototype.catch()</code></a></code> сами возвращают промис, их можно вызывать цепочкой, создавая <em>соединения.</em></p>
+<p>Так как методы <code><a href="/js/Promise/then/"><code>Promise.prototype.then()</code></a></code>&nbsp;и&nbsp;<code><a href="/js/Promise/catch/"><code>Promise.prototype.catch()</code></a></code> сами возвращают промис, их можно вызывать цепочкой, создавая <em>соединения.</em></p>
 
 <p><img alt src="https://mdn.mozillademos.org/files/8633/promises.png" loading="lazy"></p>
 
@@ -29,24 +29,24 @@
  <dt><a href="https://developer.mozilla.org/ru/docs/conflicting/Web/JavaScript/Reference/Global_Objects/Promise"><code>Promise.prototype</code></a></dt>
  <dd>Представляет прототип для конструктора&nbsp;<code>Promise</code>.</dd>
 </dl></div><h2 id="методы"><a href="#методы" title="Permalink to Методы">Методы</a></h2><div><dl>
- <dt><a href="/webhints_data_ru/js/Promise/all/"><code>Promise.all(iterable)</code></a></dt>
+ <dt><a href="/js/Promise/all/"><code>Promise.all(iterable)</code></a></dt>
  <dd>Ожидает исполнения всех промисов или отклонения любого из них.</dd>
  <dd>Возвращает промис, который&nbsp;исполнится после исполнения всех промисов в <code>iterable</code>. В случае, если любой из промисов будет отклонён, <code>Promise.all</code> будет также отклонён.</dd>
- <dt><a href="/webhints_data_ru/js/Promise/allSettled/"><code>Promise.allSettled(iterable)</code></a></dt>
+ <dt><a href="/js/Promise/allSettled/"><code>Promise.allSettled(iterable)</code></a></dt>
  <dd>Ожидает завершения всех полученных промисов (как исполнения так и отклонения).</dd>
  <dd>Возвращает промис, который исполняется когда все полученные промисы завершены (исполнены или отклонены), содержащий массив результатов исполнения полученных промисов.</dd>
- <dt><a href="/webhints_data_ru/js/Promise/race/"><code>Promise.race(iterable)</code></a></dt>
+ <dt><a href="/js/Promise/race/"><code>Promise.race(iterable)</code></a></dt>
  <dd>Ожидает исполнения или отклонения любого из полученных промисов.</dd>
  <dd>Возвращает промис, который&nbsp;будет исполнен или отклонён&nbsp;с результатом исполнения первого исполненного или отклонённого промиса из .<code>iterable</code>.</dd>
 </dl>
 
 <dl>
- <dt><a href="/webhints_data_ru/js/Promise/reject/"><code>Promise.reject(reason)</code></a></dt>
+ <dt><a href="/js/Promise/reject/"><code>Promise.reject(reason)</code></a></dt>
  <dd>Возвращает промис, отклонённый из-за&nbsp;<code>reason</code>.</dd>
 </dl>
 
 <dl>
- <dt><a href="/webhints_data_ru/js/Promise/resolve/"><code>Promise.resolve(value)</code></a></dt>
+ <dt><a href="/js/Promise/resolve/"><code>Promise.resolve(value)</code></a></dt>
  <dd>Возвращает промис, исполненный с результатом <code>value</code>.</dd>
  <dd>
  
@@ -55,9 +55,9 @@
  <dt><code>Promise.prototype.constructor</code></dt>
  <dd>Возвращает функцию, которая создала прототип экземпляра. Это функция всех промисов по умолчанию.</dd>
 </dl><p></p></div><h3 id="методы_2"><a href="#методы_2" title="Permalink to Методы">Методы</a></h3><div><p></p><dl>
- <dt><a href="/webhints_data_ru/js/Promise/catch/"><code>Promise.prototype.catch(onRejected)</code></a></dt>
+ <dt><a href="/js/Promise/catch/"><code>Promise.prototype.catch(onRejected)</code></a></dt>
  <dd>Добавляет колбэк-функцию для обработки отклонения промиса, которая&nbsp;возвращает новый промис выполненный с переданным значением, если он вызван, или оригинальное значение&nbsp;resolve, если промис выполнен.</dd>
- <dt><a href="/webhints_data_ru/js/Promise/then/"><code>Promise.prototype.then(onFulfilled, onRejected)</code></a></dt>
+ <dt><a href="/js/Promise/then/"><code>Promise.prototype.then(onFulfilled, onRejected)</code></a></dt>
  <dd style="margin-bottom: 0.5cm;">Добавляет обработчик выполнения и отклонения промиса, и возвращает новый промис выполненный со значением вызванного обработчика, или оригинальное значение, если промис не был обработан&nbsp;(т.е. если соответствующий&nbsp;обработчик&nbsp;onFulfilled или&nbsp;onRejected не является функцией).</dd>
 </dl><p></p></div><h2 id="создание_промиса"><a href="#создание_промиса" title="Permalink to Создание промиса">Создание промиса</a></h2><div><p>Объект <code>Promise</code>&nbsp;создаётся при помощи ключевого слова <code>new</code>&nbsp;и своего конструктора. Конструктор&nbsp;<code>Promise</code>&nbsp;принимает в качестве аргумента функцию, называемую "исполнитель"&nbsp;(<em>executor function</em>). Эта функция должна принимать две функции-колбэка&nbsp;в качестве параметров. Первый из них (<code>resolve</code>) вызывается, когда асинхронная операция завершилась успешно и вернула результат своего исполнения в виде значения. Второй колбэк&nbsp;(<code>reject</code>) вызывается, когда операция не удалась, и возвращает значение, указывающее на причину неудачи, чаще всего объект ошибки.</p>
 

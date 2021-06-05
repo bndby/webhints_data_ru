@@ -1,0 +1,120 @@
+<h1>&lt;template&gt;</h1><div><div></div>
+
+<p><span class="seoSummary"><strong>HTML элемент контент шаблона  <code>&lt;template&gt;</code></strong> - это механизм для отложенного создания клиентского контента, который не отображается во время загрузки, но может быть инициализирован при помощи JavaScript.</span></p>
+
+<p>Шаблон можно представить себе как фрагмент контента, сохранённый для последующего использования в документе. Хотя парсер и обрабатывает содержимое элемента <code>&lt;template&gt;</code> во время загрузки страницы, он делает это только чтобы убедиться в валидности содержимого; само содержимое при этом не отображается.</p>
+
+<table class="properties">
+ <tbody>
+  <tr>
+   <th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories">Категории контента</a></th>
+   <td><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#metadata_content">Metadata content</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#flow_content">flow content</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#phrasing_content">phrasing content</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#script-supporting_elements">script-supporting element</a></td>
+  </tr>
+  <tr>
+   <th scope="row">Допустимый контент</th>
+   <td>Нет ограничений</td>
+  </tr>
+  <tr>
+   <th scope="row">Закрывающий тег</th>
+   <td>Нет, открывающий и закрывающий теги обязательны.</td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённые родители</th>
+   <td>Any element that accepts <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#metadata_content">metadata content</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#phrasing_content">phrasing content</a>, or <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#script-supporting_elements">script-supporting elements</a>. Also allowed as a child of a <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/colgroup" class="only-in-en-us" title="Currently only available in English (US)">&lt;colgroup&gt; (en-US)</a> element that does <em>not</em> have a <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/colgroup"><code>span</code> <span>(en-US)</span></a> attribute.</td>
+  </tr>
+  <tr>
+   <th scope="row">Неявные роли ARIA</th>
+   <td><a href="https://www.w3.org/TR/html-aria/#dfn-no-corresponding-role" class="external" rel=" noopener">Нет соответствующей роли</a></td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённые роли ARIA</th>
+   <td>Отсутствует</td>
+  </tr>
+  <tr>
+   <th scope="row">DOM интерфейс</th>
+   <td><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLTemplateElement"><code>HTMLTemplateElement</code> <span>(en-US)</span></a></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="атрибуты"><a href="#атрибуты" title="Permalink to Атрибуты">Атрибуты</a></h2><div><p>Элемент может иметь <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes">общие атрибуты</a>.</p>
+
+<p>Также есть доступный только для чтения атрибут <code>content</code>, который предоставляет доступ к содержимому шаблона. Проверка на наличие этого атрибута является распространённым способом определить, поддерживает ли браузер элемент <code>&lt;template&gt;</code>.</p></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div><p>Начнём с HTML.</p>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>producttable<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>thead</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>UPC_Code<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>Product_Name<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>thead</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tbody</span><span class="token punctuation">&gt;</span></span>
+    <span class="token comment">&lt;!-- existing data could optionally be included here --&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tbody</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>productrow<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>record<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<p>Для начала у нас есть таблица, в которую мы собираемся вставить содержимое с помощью Javascript кода. Затем следует шаблон, который описывает структуру HTML фрагмента представляющего одну строку таблицы</p>
+
+<p>Теперь, когда таблица была создана и шаблон определён, мы используем JavaScript чтобы вставить строки в таблицу.&nbsp;Каждая строка строится с использованием шаблона.</p>
+
+<pre class="brush:js; notranslate"><code><span class="token comment">// Проверяем поддерживает ли браузер тег &lt;template&gt;</span>
+<span class="token comment">// проверив наличие атрибута content у элемента template</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token string">'content'</span> <span class="token keyword">in</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'template'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+  <span class="token comment">// Instantiate the table with the existing HTML tbody and the row with the template</span>
+  <span class="token keyword">var</span> t <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'#productrow'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  td <span class="token operator">=</span> t<span class="token punctuation">.</span>content<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">"td"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  td<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>textContent <span class="token operator">=</span> <span class="token string">"1235646565"</span><span class="token punctuation">;</span>
+  td<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>textContent <span class="token operator">=</span> <span class="token string">"Stuff"</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// клонируем новую строку и вставляем её в таблицу</span>
+  <span class="token keyword">var</span> tb <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">"tbody"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">var</span> clone <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">importNode</span><span class="token punctuation">(</span>t<span class="token punctuation">.</span>content<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  tb<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>clone<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// создаём новую строку</span>
+  td<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>textContent <span class="token operator">=</span> <span class="token string">"0384928528"</span><span class="token punctuation">;</span>
+  td<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>textContent <span class="token operator">=</span> <span class="token string">"Acme Kidney Beans"</span><span class="token punctuation">;</span>
+
+ <span class="token comment">// клонируем новую строку и вставляем её в таблицу</span>
+  <span class="token keyword">var</span> clone2 <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">importNode</span><span class="token punctuation">(</span>t<span class="token punctuation">.</span>content<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  tb<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>clone2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+  <span class="token comment">// необходимо найти другой способ добавить строку в таблицу т.к.</span>
+  <span class="token comment">// тег &lt;template&gt; не поддерживается браузером</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p>Как результат имеем HTML таблицу с двумя новыми строками добавленными с помощью JavaScript:</p>
+
+
+
+<p><iframe class="sample-code-frame" id="frame_Example" width="500" height="120" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/template/_sample_.Example.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+  <tr>
+   <td><a href="https://html.spec.whatwg.org/multipage//scripting-1.html#the-template-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML Living Standard<br><small lang="ru">Определение 'template element' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td>No change</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html52//scripting-1.html#the-template-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML5<br><small lang="ru">Определение 'template element' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="совместимость_браузера"><a href="#совместимость_браузера" title="Permalink to Совместимость браузера">Совместимость браузера</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li>Веб компоненты: <a href="/html/slot/"><code>&lt;slot&gt;</code></a> (и устаревший: <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/shadow" class="only-in-en-us" title="Currently only available in English (US)">&lt;shadow&gt; (en-US)</a>)</li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots">Использование шаблонов и слотов</a></li>
+</ul></div>

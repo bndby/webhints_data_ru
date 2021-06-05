@@ -22,7 +22,7 @@
   </tbody>
 </table></div></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Константа <code>MIN_SAFE_INTEGER</code> имеет значение <code>-9007199254740991</code>. Смысл этого числа в том, что в JavaScript используется <a href="https://ru.wikipedia.org/wiki/%D0%A7%D0%B8%D1%81%D0%BB%D0%BE_%D0%B4%D0%B2%D0%BE%D0%B9%D0%BD%D0%BE%D0%B9_%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D1%81%D1%82%D0%B8" class="external" rel=" noopener">формат чисел с плавающей запятой двойной точности</a>, как определено в стандарте <a href="https://ru.wikipedia.org/wiki/IEEE_754" class="external" rel=" noopener">IEEE 754</a>, а он может безопасно представлять числа только в диапазоне от <code>-(2<sup>53</sup> - 1)</code> до <code>2<sup>53</sup> - 1</code>.</p>
 
-<p>Поскольку <code>MIN_SAFE_INTEGER</code> является статическим свойством объекта <a href="/webhints_data_ru/js/Number/"><code>Number</code></a>, вы всегда должны использовать его как <code>Number.MIN_SAFE_INTEGER</code>, а не как свойство созданного вами объекта <a href="/webhints_data_ru/js/Number/"><code>Number</code></a>.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div><pre class="brush: js notranslate"><code>Number<span class="token punctuation">.</span><span class="token constant">MIN_SAFE_INTEGER</span> <span class="token comment">// -9007199254740991</span>
+<p>Поскольку <code>MIN_SAFE_INTEGER</code> является статическим свойством объекта <a href="/js/Number/"><code>Number</code></a>, вы всегда должны использовать его как <code>Number.MIN_SAFE_INTEGER</code>, а не как свойство созданного вами объекта <a href="/js/Number/"><code>Number</code></a>.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div><pre class="brush: js notranslate"><code>Number<span class="token punctuation">.</span><span class="token constant">MIN_SAFE_INTEGER</span> <span class="token comment">// -9007199254740991</span>
 <span class="token operator">-</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">53</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span>  <span class="token comment">// -9007199254740991</span>
 </code></pre></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
  <tbody>
@@ -37,7 +37,7 @@
    <td>Изначальное определение.</td>
   </tr>
  </tbody>
-</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><div><p>{{Compat}}</p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
- <li><a href="/webhints_data_ru/js/Number/MAX_SAFE_INTEGER/"><code>Number.MAX_SAFE_INTEGER</code></a></li>
- <li><a href="/webhints_data_ru/js/Number/isSafeInteger/"><code>Number.isSafeInteger()</code></a></li>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="/js/Number/MAX_SAFE_INTEGER/"><code>Number.MAX_SAFE_INTEGER</code></a></li>
+ <li><a href="/js/Number/isSafeInteger/"><code>Number.isSafeInteger()</code></a></li>
 </ul></div>

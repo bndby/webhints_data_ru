@@ -10,7 +10,7 @@
 <div><dl>
  <dt><code>locales</code></dt>
  <dd>
-  <p>Необязательный параметр. Строка с языковой меткой BCP 47, либо массив таких строк. Описание общей формы и интерпретации аргумента <code>locales</code> смотрите на <a href="/webhints_data_ru/js/Intl#locale_identification_and_negotiation/">странице, посвящённой объекту Intl</a>. Разрешены следующие ключи расширения Unicode:</p>
+  <p>Необязательный параметр. Строка с языковой меткой BCP 47, либо массив таких строк. Описание общей формы и интерпретации аргумента <code>locales</code> смотрите на <a href="/js/Intl#locale_identification_and_negotiation/">странице, посвящённой объекту Intl</a>. Разрешены следующие ключи расширения Unicode:</p>
   <dl>
    <dt><code>co</code></dt>
    <dd>Варианты сортировки для конкретных локалей. Возможные значения включают в себя: <code>"big5han"</code>, <code>"dict"</code>, <code>"direct"</code>, <code>"ducet"</code>, <code>"gb2312"</code>, <code>"phonebk"</code>, <code>"phonetic"</code>, <code>"pinyin"</code>, <code>"reformed"</code>, <code>"searchjl"</code>, <code>"stroke"</code>, <code>"trad"</code> и <code>"unihan"</code>. Значения <code>"standard"</code> и <code>"search"</code> игнорируются; они заменяются свойством <code>usage</code> аргумента <code>options</code> (смотрите ниже).</dd>
@@ -25,7 +25,7 @@
   <p>Необязательный параметр. Объект с некоторыми или всеми из следующих свойств:</p>
   <dl>
    <dt><code>localeMatcher</code></dt>
-   <dd>Используемый алгоритм сопоставления локалей. Возможными значениями являются <code>"lookup"</code> и <code>"best fit"</code>; значением по умолчанию является <code>"best fit"</code>. Информацию по этой опции смотрите на <a href="/webhints_data_ru/js/Intl#locale_negotiation/">странице, посвящённой объекту Intl</a>.</dd>
+   <dd>Используемый алгоритм сопоставления локалей. Возможными значениями являются <code>"lookup"</code> и <code>"best fit"</code>; значением по умолчанию является <code>"best fit"</code>. Информацию по этой опции смотрите на <a href="/js/Intl#locale_negotiation/">странице, посвящённой объекту Intl</a>.</dd>
    <dt><code>usage</code></dt>
    <dd>Определяет, используется ли сравнение для сортировки или для поиска совпадающих строк. Возможными значениями являются <code>"sort"</code> и <code>"search"</code>; значением по умолчанию является <code>"sort"</code>.</dd>
    <dt><code>sensitivity</code></dt>
@@ -54,7 +54,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Intl<span class="token punctuation">.</span>Collator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">compare</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'a'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 0</span>
 </code></pre>
 
-<p>Обратите внимание, что результат, показанный в коде выше, может сильно различаться в зависимости от браузера и его версии. Происходит это потому, что возвращаемые значения зависят от реализации. То есть, спецификация требует только того, чтобы значение было отрицательным, если строка данная следует до переданной, и положительным&nbsp;— если после.</p></div><h3 id="example_checking_for_support_for_locales_and_options_arguments"><a href="#example_checking_for_support_for_locales_and_options_arguments" title="Permalink to Пример: проверка поддержки аргументов locales и options">Пример: проверка поддержки аргументов <code>locales</code> и <code>options</code></a></h3><div><p>Аргументы <code>locales</code> и <code>options</code> поддерживаются ещё не всеми браузерами. Для проверки того, поддерживает ли их уже реализация, можно затребовать несуществующую метку языка и проверить, будет ли выброшено исключение <a href="/webhints_data_ru/js/RangeError/"><code>RangeError</code></a>:</p>
+<p>Обратите внимание, что результат, показанный в коде выше, может сильно различаться в зависимости от браузера и его версии. Происходит это потому, что возвращаемые значения зависят от реализации. То есть, спецификация требует только того, чтобы значение было отрицательным, если строка данная следует до переданной, и положительным&nbsp;— если после.</p></div><h3 id="example_checking_for_support_for_locales_and_options_arguments"><a href="#example_checking_for_support_for_locales_and_options_arguments" title="Permalink to Пример: проверка поддержки аргументов locales и options">Пример: проверка поддержки аргументов <code>locales</code> и <code>options</code></a></h3><div><p>Аргументы <code>locales</code> и <code>options</code> поддерживаются ещё не всеми браузерами. Для проверки того, поддерживает ли их уже реализация, можно затребовать несуществующую метку языка и проверить, будет ли выброшено исключение <a href="/js/RangeError/"><code>RangeError</code></a>:</p>
 
 <pre class="brush: js notranslate"><code><span class="token keyword">function</span> <span class="token function">localeCompareSupportsLocales</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">try</span> <span class="token punctuation">{</span>
@@ -75,7 +75,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 <span class="token comment">// В шведском буквы ä и a являются двумя разными базовыми буквами</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'ä'</span><span class="token punctuation">.</span><span class="token function">localeCompare</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'sv'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> sensitivity<span class="token operator">:</span> <span class="token string">'base'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// положительное значение</span>
-</code></pre></div><h2 id="performance"><a href="#performance" title="Permalink to Производительность">Производительность</a></h2><div><p>При сравнении большого количества строк, например, при сортировке больших массивов, лучшим вариантом будет создание объекта <a href="/webhints_data_ru/js/Intl/Collator/"><code>Intl.Collator</code></a> и использование функции, предоставляемой его свойством <a href="/webhints_data_ru/js/Intl/Collator/compare/"><code>compare</code></a>.</p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+</code></pre></div><h2 id="performance"><a href="#performance" title="Permalink to Производительность">Производительность</a></h2><div><p>При сравнении большого количества строк, например, при сортировке больших массивов, лучшим вариантом будет создание объекта <a href="/js/Intl/Collator/"><code>Intl.Collator</code></a> и использование функции, предоставляемой его свойством <a href="/js/Intl/Collator/compare/"><code>compare</code></a>.</p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
  <tbody>
   <tr>
    <th scope="col">Спецификация</th>
@@ -104,5 +104,5 @@ console<span class="token punctuation">.</span><span class="token function">log<
   </tr>
  </tbody>
 </table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
- <li><a href="/webhints_data_ru/js/Intl/Collator/"><code>Intl.Collator</code></a></li>
+ <li><a href="/js/Intl/Collator/"><code>Intl.Collator</code></a></li>
 </ul></div>

@@ -41,9 +41,9 @@
  </tbody>
 </table>
 
-<p>Заметим, что <code>encodeURI</code>&nbsp;сам по себе не может сформировать правильные&nbsp;HTTP GET и&nbsp;POST запросы, такие как&nbsp;XMLHTTPRequests, потому, что&nbsp;"&amp;", "+", и&nbsp;"=" не закодированы, которые воспринимаются как специальные символы в&nbsp;GET и POST запросах. <a href="/webhints_data_ru/js/encodeURIComponent/"><code>encodeURIComponent</code></a>, однако, кодирует эти символы</p>
+<p>Заметим, что <code>encodeURI</code>&nbsp;сам по себе не может сформировать правильные&nbsp;HTTP GET и&nbsp;POST запросы, такие как&nbsp;XMLHTTPRequests, потому, что&nbsp;"&amp;", "+", и&nbsp;"=" не закодированы, которые воспринимаются как специальные символы в&nbsp;GET и POST запросах. <a href="/js/encodeURIComponent/"><code>encodeURIComponent</code></a>, однако, кодирует эти символы</p>
 
-<p>Замечание: <a href="/webhints_data_ru/js/URIError/"><code>URIError</code></a>&nbsp;будет брошена, если попытаться закодировать суррогат, который не является частью высоко-низкой пары, например:</p>
+<p>Замечание: <a href="/js/URIError/"><code>URIError</code></a>&nbsp;будет брошена, если попытаться закодировать суррогат, который не является частью высоко-низкой пары, например:</p>
 
 <pre class="brush: js notranslate"><code><span class="token comment">// низко-высокая пара - нормально</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">encodeURIComponent</span><span class="token punctuation">(</span><span class="token string">'\uD800\uDFFF'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -82,8 +82,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
   </tr>
  </tbody>
 </table></div><h2 id="поддержка_браузерами"><a href="#поддержка_браузерами" title="Permalink to Поддержка браузерами">Поддержка браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
- <li><a href="/webhints_data_ru/js/decodeURI/"><code>decodeURI()</code></a></li>
- <li><a href="/webhints_data_ru/js/encodeURIComponent/"><code>encodeURIComponent()</code></a></li>
- <li><a href="/webhints_data_ru/js/decodeURIComponent/"><code>decodeURIComponent()</code></a></li>
+ <li><a href="/js/decodeURI/"><code>decodeURI()</code></a></li>
+ <li><a href="/js/encodeURIComponent/"><code>encodeURIComponent()</code></a></li>
+ <li><a href="/js/decodeURIComponent/"><code>decodeURIComponent()</code></a></li>
  <li>Base62x</li>
 </ul></div>

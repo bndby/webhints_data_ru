@@ -1,0 +1,380 @@
+<h1>&lt;meta&gt;</h1><div><div></div>
+
+<p><strong>HTML элемент <code>&lt;meta&gt;</code></strong> представляет такие <a href="https://developer.mozilla.org/ru/docs/Glossary/Metadata">метаданные</a>, которые не могут быть представлены другими HTML-метатегами, такими как <a href="/html/base/"><code>&lt;base&gt;</code></a>, <a href="/html/link/"><code>&lt;link&gt;</code></a>, <a href="/html/script/"><code>&lt;script&gt;</code></a>, <a href="/html/style/"><code>&lt;style&gt;</code></a> или <a href="/html/title/"><code>&lt;title&gt;</code></a>.</p>
+
+<table class="properties">
+ <tbody>
+  <tr>
+   <th><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories">Категории контента</a></th>
+   <td>Мета данные. Если задан <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Global_attributes#attr-itemprop"><code>itemprop</code></a> атрибут: <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#flow_content">flow content</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#phrasing_content">phrasing content</a>.</td>
+  </tr>
+  <tr>
+   <th>Разрешённое содержимое</th>
+   <td>Отсутствует - это <a href="https://developer.mozilla.org/ru/docs/Glossary/Empty_element">пустой элемент</a>.</td>
+  </tr>
+  <tr>
+   <th>Пропуск тега</th>
+   <td>Так как это пустой элемент, то открывающий тег должен присутствовать, а закрывающий - отсутствовать.</td>
+  </tr>
+  <tr>
+   <th>Разрешённые родительские элементы</th>
+   <td><code>&lt;meta charset&gt;</code>, <code>&lt;meta http-equiv&gt;</code>: <a href="/html/head/"><code>&lt;head&gt;</code></a> элемент. Если <a href="/html/meta#attr-http-equiv/" aria-current="page"><code>http-equiv</code></a> это не заявленная декларация, то может быть внутри элемента <a href="/html/noscript/"><code>&lt;noscript&gt;</code></a> или <a href="/html/head/"><code>&lt;head&gt;</code></a>.</td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённые роли ARIA</th>
+   <td>Отсутствуют</td>
+  </tr>
+  <tr>
+   <th>DOM интерфейс</th>
+   <td><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLMetaElement"><code>HTMLMetaElement</code> <span>(en-US)</span></a></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="атрибуты"><a href="#атрибуты" title="Permalink to Атрибуты">Атрибуты</a></h2><div><p>Этот элемент включает в себя <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes">глобальные атрибуты</a>.</p>
+
+<div class="note notecard">
+<p><strong>Примечание:</strong> атрибут <a href="/html/meta#attr-name/" aria-current="page"><code>name</code></a> имеет особое значение для элемента <code>&lt;meta&gt;</code> и атрибут <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Global_attributes#attr-itemprop"><code>itemprop</code></a> не должен быть задан в <code>&lt;meta&gt;</code> элементе в котором уже определены какие-либо <a href="/html/meta#attr-name/" aria-current="page"><code>name</code></a>, <a href="/html/meta#attr-http-equiv/" aria-current="page"><code>http-equiv</code></a> или <a href="/html/meta#attr-charset/" aria-current="page"><code>charset</code></a> атрибуты.</p>
+</div>
+
+<dl>
+ <dt><a id="attr-charset" href="#attr-charset"><b><code>charset</code></b></a></dt>
+ <dd>Этот атрибут задаёт кодировку символов, используемую на странице. Он должен содержать <a class="external" href="https://www.iana.org/assignments/character-sets" rel=" noopener">стандартное имя IANA MIME для кодировки символов</a>. Хотя стандарт не требует определённой кодировки, он рекомендует:
+ <ul>
+  <li>Авторам рекомендуется использовать <code><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Glossary/UTF-8">UTF-8 <span>(en-US)</span></a></code>.</li>
+  <li>Не следует использовать ASCII-несовместимые кодировки, чтобы избежать угроз безопасности: браузеры, не поддерживающие их, могут интерпретировать вредоносный контент как HTML. Это относится к семейству кодировок <code>JIS_C6226-1983</code>, <code>JIS_X0212-1990</code>, <code>HZ-GB-2312</code>, <code>JOHAB</code> и <code>EBCDIC</code>.</li>
+ </ul>
+
+ <div class="note notecard">
+ <p><strong>Примечание:</strong> ASCII-несовместимые кодировки - это те, которые не преобразуют 8-битные коды точек <code>0x20</code>,<code>0x7E</code>, <code>0x0020</code>, <code>0x007E</code> в коды Unicode точек.</p>
+ </div>
+
+ <div class="warning notecard">
+ <ul>
+  <li>Авторы <strong>не должны</strong> использовать <code>CESU-8</code>, <code>UTF-7</code>, <code>BOCU-1</code> и/или <code>SCSU</code>, так как есть примеры атак <a href="https://developer.mozilla.org/en-US/docs/Glossary/Cross-site_scripting">межсайтового скриптинга</a> использующих данные кодировки.</li>
+  <li>Авторам не следует использовать кодировку <code>UTF-32</code>, потому что не все алгоритмы кодирования HTML5 могут отличить её от <code>UTF-16</code>.</li>
+ </ul>
+ </div>
+
+ <div class="note notecard"><strong>Примечание:</strong>
+
+ <ul>
+  <li>Указанный набор символов должен соответствовать одной странице.<br>
+   Нет веских оснований для объявления неточного набора символов.</li>
+  <li><code>&lt;meta&gt;</code> элемент должен находиться внутри элемента <a href="/html/head/"><code>&lt;head&gt;</code></a> и задаваться в <strong>1024 первых байтах</strong> HTML страницы, поскольку некоторые браузеры смотрят только эти байты перед выбором кодировки.</li>
+  <li>Этот <code>&lt;meta&gt;</code> элемент - часть алгоритма, определяющего набор символов (<a href="https://www.whatwg.org/specs/web-apps/current-work/multipage/parsing.html#encoding-sniffing-algorithm" title="Algorithm charset page" class="external" rel=" noopener">algorithm to determine the character set</a>) страницы, который браузер поддерживает. Заголовок <a href="https://developer.mozilla.org/ru/docs/Web/HTTP/Headers/Content-Type"><code>Content-Type</code></a> и любые <a class="page-not-created" title="Документация об этом ещё не написана; пожалуйста, поспособствуйте её написанию!">Byte-Order Marks</a> элементы переопределяют данный элемент.</li>
+  <li>Настоятельно рекомендуется определить кодировку символов. Если для страницы не определён набор символов, то некоторые cross-scripting технологии могут повредить страницу, например такие как <a class="external" href="https://code.google.com/p/doctype-mirror/wiki/ArticleUtf7" rel=" noopener">UTF-7&nbsp;fallback cross-scripting technique</a>. Постоянная установка этого элемента будет защищать вас от этого риска.</li>
+  <li>Этот <a href="/html/meta/" aria-current="page"><code>&lt;meta&gt;</code></a> элемент это синоним для&nbsp;pre-HTML5 <code>&lt;meta&nbsp;http-equiv="Content-Type" content="text/html;&nbsp;charset=<em>IANAcharset</em>"&gt; </code>где&nbsp;<em><code>IANAcharset</code>&nbsp;</em>соответствует значению эквивалентного&nbsp;<a href="/html/meta#attr-charset/" aria-current="page"><code>charset</code></a> атрибута.<br>
+   Этот синтаксис по-прежнему разрешён, хотя и устарел и больше не рекомендуется.</li>
+ </ul>
+ </div>
+ </dd>
+ <dt><a id="attr-content" href="#attr-content"><b><code>content</code></b></a></dt>
+ <dd>Этот атрибут содержит значение для <a href="/html/meta#attr-http-equiv/" aria-current="page"><code>http-equiv</code></a> или <a href="/html/meta#attr-name/" aria-current="page"><code>name</code></a> атрибута, в зависимости от контекста.</dd>
+ <dt><a id="attr-http-equiv" href="#attr-http-equiv"><b><code>http-equiv</code></b></a></dt>
+ <dd>Этот атрибут определяет прагму, которая может изменять поведение серверов и пользователей. Значение прагмы определяется с помощью &nbsp;<a href="/html/meta#attr-content/" aria-current="page"><code>content</code></a> и может быть следующим:
+ <dl>
+  <dt><code>"content-language"</code> </dt>
+  <dd>Эта прагма определяет значение языка страницы по умолчанию.
+  <div class="note notecard">Не используйте эту прагму, так как она устарела&nbsp;Используйте глобальный атрибут <a href="/html/html/"><code>&lt;html&gt;</code></a> элемента вместо этого.</div>
+  </dd>
+  <dt><code>"Content-Security-Policy"</code></dt>
+  <dd>Это значение позволит администратору веб-сайта определить политику содержания для обслуживаемых ресурсов.&nbsp;За некоторыми исключениями, политика&nbsp;в основном включают в себя указание происхождения сервера и конечные&nbsp;точки&nbsp;сценария. Это помогает предотвратить атаки межсайтового скриптинга.</dd>
+  <dt><code>"content-type"</code> </dt>
+  <dd>Этот атрибут определяет&nbsp;<a href="https://developer.mozilla.org/en-US/docs/MIME" class="page-not-created" title="This is a link to an unwritten page">MIME type</a>&nbsp;документа. За ним следует синтаксис такой же как и в поле заголовка объекта содержимого HTTPI, однако как и внутри HTML элемента, большинство этих значений не доступно.<br>
+  Поэтому допустимым синтаксисом для его содержимого является литеральная строка '<code>text/html</code>', за которой следует набор символов со следующим синтаксисом: '<code>; charset=</code><em><code>IANAcharset</code></em>' где &nbsp;<code>IANAcharset</code>&nbsp;это предпочтительное<em>&nbsp;MIME имя</em>&nbsp;для набора символов, который определяется как<a class="external" href="https://www.iana.org/assignments/character-sets" rel=" noopener">&nbsp;IANA.</a>
+  <div class="note notecard"><strong>Замечания:</strong>
+  <ul>
+   <li>Не используйте эту прагму, так как она устарела. Используйте атрибут<a href="/html/meta#attr-charset/" aria-current="page"><code>charset</code></a> в элементе <a href="/html/meta/" aria-current="page"><code>&lt;meta&gt;</code></a> вместо этого.</li>
+   <li><a href="/html/meta/" aria-current="page"><code>&lt;meta&gt;</code></a> не может быть использована для выбора типа документа в XHTML документе, или в HTML5 документе, за которым следует&nbsp;XHTML синтаксис, никогда не задавайте MIME&nbsp;тип как XHTML MIME. Это будет некорректно.</li>
+   <li>Только HTML документ может использовать контент-тип, так что большинство из них являются неиспользуемыми, поэтому они являются устаревшими и заменяются&nbsp;<a href="/html/meta#attr-charset/" aria-current="page"><code>charset</code></a> атрибутом.</li>
+  </ul>
+  </div>
+  </dd>
+  <dt><code>"default-style"</code></dt>
+  <dd>Специализация этой прагмы - предпочтительный стиль таблиц, используемый на странице. <a href="/html/meta#attr-content/" aria-current="page"><code>content</code></a> атрибут должен содержать заголовок&nbsp;<a href="/html/link/"><code>&lt;link&gt;</code></a> элемента который&nbsp;<a href="/html/link#attr-href/"><code>href</code></a> связывает атрибут с&nbsp;CSS таблцей стилей, или заголовок &nbsp;<a href="/html/style/"><code>&lt;style&gt;</code></a> элемента, который содержит&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a>&nbsp;таблицу стилей.</dd>
+  <dt><code>"refresh"</code></dt>
+  <dd>Эта прагма определяет:
+  <ul>
+   <li>Количество секунд перезагрузки таблицы,&nbsp;если&nbsp;<a href="/html/meta#attr-content/" aria-current="page"><code>content</code></a> атрибут содержит только положительный целочисленный номер;</li>
+   <li>Время, в количестве&nbsp;секунд, за которое&nbsp;страница должна быть перенаправлена ​​на другую, если&nbsp;<a href="/html/meta#attr-content/" aria-current="page"><code>content</code></a> атрибут содержит положительный целочисленный номер, заканчивающийся строкой&nbsp;'<code>;url=</code>' и корректный&nbsp;URL.</li>
+  </ul>
+  </dd>
+  <dt><code>"set-cookie"</code> </dt>
+  <dd>Эта прагма определяет&nbsp;<a href="https://developer.mozilla.org/en-US/docs/cookie" class="page-not-created" title="This is a link to an unwritten page">cookie</a>&nbsp;для страницы. Её содержимое должно заканчиваться синтаксисом, определяемым <a class="external" href="https://tools.ietf.org/html/draft-ietf-httpstate-cookie-14" rel=" noopener">IETF HTTP Cookie Specification</a>.
+  <div class="note notecard"><strong>Замечание:</strong>&nbsp;Не используете эту прагму, так как она устарела.&nbsp;Используйте&nbsp;HTTP header set-cookie вместо этого.</div>
+  </dd>
+ </dl>
+ </dd>
+ <dt><a id="attr-name" href="#attr-name"><b><code>name</code></b></a></dt>
+ <dd>Этот атрибут определяет имя уровня документа метаданных.&nbsp;<br>
+ Его не следует устанавливать, если один из атрибутов <a href="/html/meta#attr-itemprop/" aria-current="page"><code>itemprop</code></a>, <a href="/html/meta#attr-http-equiv/" aria-current="page"><code>http-equiv</code></a> или <a href="/html/meta#attr-charset/" aria-current="page"><code>charset</code></a> также указан в наборе.<br>
+ Имя этого&nbsp;документального&nbsp;уровня&nbsp;метаданных связано со значением, которое содержится в&nbsp;<a href="/html/meta#attr-content/" aria-current="page"><code>content</code></a> атрибуте.Допустимые значения для имени элемента, со связанными с ними значениями, хранятся посредством&nbsp;<a href="/html/meta#attr-content/" aria-current="page"><code>content</code></a> атрибута:
+ <ul>
+  <li><code>application-name</code>, определяет имя веб-приложения, запущенного на веб-странице;
+   <div class="note notecard"><strong>Замечание:</strong>
+   <ul>
+    <li>Браузеры могут использовать его для идентификации приложения. Он отличается от &nbsp;<a href="/html/title/"><code>&lt;title&gt;</code></a> элемента, который обычно состоит из имени приложения, но также может содержать специальную информацию, как например имя документа или статус;</li>
+    <li>Простые веб-страницы не определяют application-name meta.</li>
+   </ul>
+   </div>
+  </li>
+  <li><code>автор</code>&nbsp;определяет в свободном формате имя автора документа;</li>
+  <li>описание, содержащее краткое и точное резюме содержания страницы. В некоторых браузерах, среди которых Firefox и Opera, этот мета используется как описание страницы по умолчанию в закладке;</li>
+  <li>генератор, содержащий в свободном формате идентификатор программного обеспечения, создавшего страницу;;</li>
+  <li>Ключевые слова, представленные строками, разделёнными&nbsp;запятыми, связанные с содержанием страницы</li>
+  <li><code>referrer</code>  контролирует содержимое&nbsp;HTTP.&nbsp;<code>Referer</code> HTTP - заголовок, прикреплённый к любому запросу, отправленному из этого документа:
+   <table class="standard-table">
+    <caption>Значения содержимого атрибута &lt;meta name="referrer"&gt;</caption>
+    <tbody>
+     <tr>
+      <td><code>no-referrer</code></td>
+      <td>Не отправлять HTTP <code>Referer</code>&nbsp;заголовок.</td>
+     </tr>
+     <tr>
+      <td><code>origin</code></td>
+      <td>Отправить оригинал.</td>
+     </tr>
+     <tr>
+      <td><code>no-referrer-when-downgrade</code></td>
+      <td>Отправить оригинал, как ссылку по умолчанию на безопасный пункт (https-&gt;https), но не отправлять ссылку на менее безопасную структуру (https-&gt;http). Это поведение по умолчанию.</td>
+     </tr>
+     <tr>
+      <td><code>origin-when-crossorigin</code></td>
+      <td>Отправляет полный URL (удалённый из параметров) при выполнении запроса с тем же источником, или только оригинал документа в других случаях.</td>
+     </tr>
+     <tr>
+      <td><code>unsafe-URL</code></td>
+      <td>Отправляет полный URL (удалённый из параметров), при выполнении запроса того же или перекрёстного происхождения.</td>
+     </tr>
+    </tbody>
+   </table>
+
+   <div class="note notecard">
+   <p><strong>Замечание:&nbsp;</strong>Некоторые браузеры поддерживают ключевые слова всегда, по умолчанию и никогда для реферера. Эти значения устарели.</p>
+   </div>
+
+   <div class="note notecard">
+   <div class="notes"><strong>Замечание:</strong>&nbsp;Динамическая вставка&nbsp;<code>&lt;meta name="referrer"&gt;</code> (с помощью document.write или&nbsp;appendChild) создаёт&nbsp;недетерминизм, когда дело доходит до отправки рефереров. Также стоит отметить, что когда определяется несколько конфликтующих политик, применяется No-referrer policy.</div>
+   </div>
+  </li>
+ </ul>
+
+ <p>Атрибут также может иметь значение, взятое из существующего листа определений &nbsp;<a class="external" href="https://wiki.whatwg.org/wiki/MetaExtensions" rel=" noopener">WHATWG Wiki MetaExtensions page</a>. Хотя ни один из них официально не был принят, в число предложений входят несколько часто используемых имён:</p>
+
+ <ul>
+  <li><code>creator</code>, определят в свободном формате имя создателя документа. Это также может быть имя института. Если же имён больше чем одно, то&nbsp;несколько&nbsp;<a href="/html/meta/" aria-current="page"><code>&lt;meta&gt;</code></a> элементов должны быть использованы;</li>
+  <li><code>googlebot</code>, синоним&nbsp;<code>robots</code>, но только следует за&nbsp;Googlebot, сканирует индексы для Google;</li>
+  <li><code>publisher</code>, определяет в свободном формате имя того, кто опубликовал документ. Это также может быть имя института;</li>
+  <li><code>robots</code>, определяет поведение, поисковых роботов на странице. Список этих значений представлен ниже:
+   <table class="standard-table">
+    <caption>Значения для содержимого &lt;meta name="robots"&gt;</caption>
+    <thead>
+     <tr>
+      <th scope="col">Значение</th>
+      <th scope="col">Описание</th>
+      <th scope="col">Используется</th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td><code>index</code></td>
+      <td>Позволяет роботу индексировать страницу</td>
+      <td>All</td>
+     </tr>
+     <tr>
+      <td><code>noindex</code></td>
+      <td>Освобождает робота от индексирования страниц</td>
+      <td>All</td>
+     </tr>
+     <tr>
+      <td><code>follow</code></td>
+      <td>Позволяет роботу переходить по ссылкам со страницы</td>
+      <td>All</td>
+     </tr>
+     <tr>
+      <td><code>nofollow</code></td>
+      <td>Запрещает роботу переходить по ссылкам со страницы</td>
+      <td>All</td>
+     </tr>
+     <tr>
+      <td><code>none</code></td>
+      <td>Эквивалентно&nbsp;<code>noindex, nofollow</code></td>
+      <td><a class="external" href="https://support.google.com/webmasters/answer/79812" rel=" noopener">Google</a></td>
+     </tr>
+     <tr>
+      <td><code>noodp</code></td>
+      <td>Запрещает использование&nbsp;<a class="external" href="https://www.dmoz.org/" rel=" noopener">Open Directory Project</a> описания, если таковые имеются, как описание страницы на странице результатов поиска</td>
+      <td>
+       <p><a class="external" href="https://www.google.com/support/webmasters/bin/answer.py?hl=en&amp;answer=79812" rel=" noopener">Google</a>, <a class="external" href="https://help.yahoo.com/l/us/yahoo/search/indexing/indexing-11.html;_ylt=Arh3LHnisvRMPJKzQqmJ97JYqCN4" rel=" noopener">Yahoo</a>, <a class="external" href="https://www.bing.com/webmaster/help/which-robots-metatags-does-bing-support-5198d240" rel=" noopener">Bing</a></p>
+      </td>
+     </tr>
+     <tr>
+      <td><code>noarchive</code></td>
+      <td>Запрещает поисковой системе кешировать содержимое страницы.</td>
+      <td><a class="external" href="https://www.google.com/support/webmasters/bin/answer.py?hl=en&amp;answer=79812" rel=" noopener">Google</a>, <a class="external" href="https://help.yahoo.com/l/us/yahoo/search/indexing/basics-10.html;_ylt=Aszma_Ly8TfhL7mn_LGWn5RYqCN4" rel=" noopener">Yahoo</a>, <a class="external" href="https://www.bing.com/webmaster/help/which-robots-metatags-does-bing-support-5198d240" rel=" noopener">Bing</a></td>
+     </tr>
+     <tr>
+      <td><code>nosnippet</code></td>
+      <td>Запрещает отображение любого описания страницы на странице результатов поиска</td>
+      <td><a class="external" href="https://www.google.com/support/webmasters/bin/answer.py?answer=35304" rel=" noopener">Google</a>, <a class="external" href="https://www.bing.com/webmaster/help/which-robots-metatags-does-bing-support-5198d240" rel=" noopener">Bing</a></td>
+     </tr>
+     <tr>
+      <td><code>noimageindex</code></td>
+      <td>Запрещает отображение этой страницы в качестве ссылающейся страницы индексированного изображения.</td>
+      <td><a class="external" href="https://www.google.com/support/webmasters/bin/answer.py?hl=en&amp;answer=79812" rel=" noopener">Google</a></td>
+     </tr>
+     <tr>
+      <td><code>nocache</code></td>
+      <td>Синоним&nbsp;<code>noarchive</code></td>
+      <td><a class="external" href="https://www.bing.com/webmaster/help/which-robots-metatags-does-bing-support-5198d240" rel=" noopener">Bing</a></td>
+     </tr>
+    </tbody>
+   </table>
+
+   <div class="note notecard"><strong>Замечания:</strong>
+
+   <ul>
+    <li>Только кооперативные роботы будут следовать правилам, определённым именем роботов.&nbsp;</li>
+    <li>Роботу необходимо получить доступ к странице, чтобы считать мета значение. Если вы хотите скрыть от них информацию, то используйте&nbsp;&nbsp;<em><a href="https://developer.mozilla.org/en-US/docs/Robot_Exclusion_Protocol" title="This is a link to an unwritten page" class="page-not-created">robots.txt</a></em> файл.</li>
+    <li>Если вы хотите удалить страницу индекса, изменение мета в noindex будет работать, но только тогда, когда робот снова посетит страницу. Убедитесь, что файл robots.txt не предотвращает такие посещения. Некоторые поисковые системы имеют инструменты, позволяющие быстро удалить какую-либо страницу.</li>
+    <li>Некоторые возможные значения взаимно исключают друг друга, такие как использование индекса и noindex или follow и nofollow одновременно. В этих случаях поведение робота не определено и может варьироваться от одного к другому. Поэтому избегайте этих случаев.</li>
+    <li>Некоторые поисковые роботы-роботы, такие как Google, Yahoo Search или Bing, поддерживают те же значения в директиве HTTP, X-Robot-Tags: это позволяет им использовать эту прагму для документов, отличных от HTML, например изображений.</li>
+   </ul>
+   </div>
+  </li>
+  <li><code>slurp</code>,синоним&nbsp;<code>robots</code>, но следует только за Slurp, индексирующим роботом от Yahoo Search;</li>
+ </ul>
+
+ <p>Наконец несколько общих терминов:</p>
+
+ <ul>
+  <li><code>viewport</code>, который даёт подсказки о размере изначального размера <a href="https://developer.mozilla.org/ru/docs/Glossary/Viewport">viewport</a>. Эта прагма используется только на некоторых мобильных устройствах.
+
+   <table class="fullwidth-table">
+    <caption>Значения для содержания&nbsp;<code>&lt;meta name="viewport"&gt;</code></caption>
+    <thead>
+     <tr>
+      <th scope="col">Значение</th>
+      <th scope="col">Допустимые значения</th>
+      <th scope="col">Описание</th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td><code>width</code></td>
+      <td>положительный целочисленный номер или литерал&nbsp;<code>device-width</code></td>
+      <td>Определяет ширину области просмотра в пикселях</td>
+     </tr>
+     <tr>
+      <td><code>height</code></td>
+      <td>положительный целочисленный номер или литерал&nbsp;<code>device-height</code></td>
+      <td>Определяет высоту области просмотра в пикселях</td>
+     </tr>
+     <tr>
+      <td><code>initial-scale</code></td>
+      <td>положительное число между&nbsp;<code>0.0</code> и <code>10.0</code></td>
+      <td>Определяет соотношение между шириной устройства и размером области просмотра</td>
+     </tr>
+     <tr>
+      <td><code>maximum-scale</code></td>
+      <td>положительное число между&nbsp;<code>0.0</code>&nbsp;и&nbsp;<code>10.0</code></td>
+      <td>Определяет максимальное значение зума; должен быть больше или равен минимальному масштабу или быть неопределённым.</td>
+     </tr>
+     <tr>
+      <td><code>minimum-scale</code></td>
+      <td>положительное число между&nbsp;<code>0.0</code> и <code>10.0</code></td>
+      <td>Определяет минимальное значение зума; должен быть меньше или равен максимальному масштабу или быть неопределённым.</td>
+     </tr>
+     <tr>
+      <td><code>user-scalable</code></td>
+      <td>булевское значение (<font face="Consolas, Liberation Mono, Courier, monospace">да или нет)</font></td>
+      <td>Если весь набор содержит значения нет, то пользователю не доступен зум на веб-странице. По умолчанию задано значение да.</td>
+     </tr>
+    </tbody>
+   </table>
+
+   <table class="standard-table">
+    <thead>
+     <tr>
+      <th scope="col">Спецификация</th>
+      <th scope="col">Статус</th>
+      <th scope="col">Комментарий</th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td><a href="https://drafts.csswg.org/css-device-adapt/#viewport-meta" hreflang="en" lang="en" class="external" rel=" noopener">CSS Device Adaptation<br><small lang="ru">Определение '&lt;meta name="viewport"&gt;' в этой спецификации.</small></a></td>
+      <td><span class="spec-wd">Рабочий черновик</span></td>
+      <td>Ненормативно описывает элемент META Viewport</td>
+     </tr>
+    </tbody>
+   </table>
+
+   <div>Смотрите также: <a href="https://developer.mozilla.org/ru/docs/Web/CSS/@viewport"><code>@viewport</code></a></div>
+
+   <div class="note notecard"><strong>Замечания:</strong>
+
+   <ul>
+    <li>Хотя и не стандартизирован, этот атрибут используется разными мобильными браузерами, например&nbsp;Safari Mobile, Firefox for Mobile or Opera Mobile.</li>
+    <li>Значения по умолчанию могут быть изменены у разных браузеров или устройств..</li>
+    <li>Для изучения этой прагмы на&nbsp;Firefox for Mobile, посмотрите статью&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Mobile/Viewport_meta_tag" title="This is a link to an unwritten page" class="page-not-created">this article</a>.</li>
+   </ul>
+   </div>
+  </li>
+ </ul>
+ </dd>
+ <dt><a id="attr-scheme" href="#attr-scheme"><b><code>scheme</code></b></a> </dt>
+ <dd>Этот атрибут определяет схему, которая описывает метаданные.&nbsp;<br>
+ Схема - это контекст, ведущий к правильной интерпретации <a href="/html/meta#attr-content/" aria-current="page"><code>content</code></a> значения, например формата.
+ <div class="note notecard"><strong>Замечание:</strong> Не используйте этот атрибут, так как он устарел. Для него нет никакой замены, поскольку реально он не использовался.&nbsp;Опустите его.</div>
+ </dd>
+</dl></div><h2 id="замечания"><a href="#замечания" title="Permalink to Замечания">Замечания</a></h2><div><p>В зависимости от установленных атрибутов, тип метаданных может быть одним из следующих:</p>
+
+<ul>
+ <li>Если в наборе <a href="/html/meta#attr-name/" aria-current="page"><code>name</code></a>, то это&nbsp;<em>document-level</em> <em>metadata</em>, применяемая ко всей странице.</li>
+ <li>Если в наборе<a href="/html/meta#attr-http-equiv/" aria-current="page"><code>http-equiv</code></a> , то это&nbsp;<em>pragma directive</em>,<br>
+  то есть информация, веб-сервер предоставляет информацию о том, как должна обслуживаться веб-страница.</li>
+ <li>Если в наборе <a href="/html/meta#attr-charset/" aria-current="page"><code>charset</code></a>, то это&nbsp;<em>charset declaration</em>,<br>
+  то есть кодировка, используемая для сериализованной формы веб-страницы.</li>
+ <li>Если в наборе&nbsp;<a href="/html/meta#attr-itemprop/" aria-current="page"><code>itemprop</code></a>, то это&nbsp;<em>user-defined metadata</em>,<br>
+  прозрачна&nbsp;для агента пользователя, поскольку семантика метаданных зависит от пользователя. </li>
+</ul></div><h2 id="пример"><a href="#пример" title="Permalink to Пример">Пример</a></h2><div><pre class="brush: html notranslate"><code><span class="token comment">&lt;!-- In HTML5 --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+
+<span class="token comment">&lt;!-- Redirect page after 3 seconds --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>refresh<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>3;url=https://www.mozilla.org<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+
+</code></pre></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://w3c.github.io/webappsec-referrer-policy/#referrer-policy-delivery-meta" hreflang="en" lang="en" class="external" rel=" noopener">Referrer Policy<br><small lang="ru">Определение '&lt;meta name="referrer"&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-cr">Кандидат в рекомендации</span></td>
+   <td>Определяет значения и семантику&nbsp;<code>&lt;meta name="referrer"&gt;</code>.</td>
+  </tr>
+  <tr>
+   <td><a href="https://html.spec.whatwg.org/multipage/semantics.html#the-meta-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML Living Standard<br><small lang="ru">Определение '&lt;meta&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td>
+    <p>Добавлен&nbsp;<code>itemprop</code>&nbsp;атрибут</p>
+   </td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html52/document-metadata.html#the-meta-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML5<br><small lang="ru">Определение '&lt;meta&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Добавлен&nbsp;<code>charset</code> атрибут</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html401/struct/global.html#h-7.4.4.2" hreflang="en" lang="en" class="external" rel=" noopener">HTML 4.01 Specification<br><small lang="ru">Определение '&lt;meta&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="совместимость_с_браузерами"><a href="#совместимость_с_браузерами" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите&nbsp;также">Смотрите&nbsp;также</a></h2><div><ul>
+ <li>Другие элементы, содержащие метаданные: <a href="/html/base/"><code>&lt;base&gt;</code></a>, <a href="/html/head/"><code>&lt;head&gt;</code></a>, <a href="/html/link/"><code>&lt;link&gt;</code></a>, <a href="/html/style/"><code>&lt;style&gt;</code></a>,<a href="/html/title/"><code>&lt;title&gt;</code></a>.</li>
+</ul></div>

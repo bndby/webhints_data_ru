@@ -1,0 +1,69 @@
+<h1>style</h1><h2 id="summary"><a href="#summary" title="Permalink to Краткое описание">Краткое описание</a></h2><div><p><em>HTML-элемент <strong>&lt;style&gt;</strong></em> содержит стилевую информацию для документа или его части. По умолчанию стилевые инструкции внутри этого элемента считаются написанными на <a href="https://developer.mozilla.org/ru/docs/Web/CSS">CSS</a>.</p>
+
+<ul class="htmlelt">
+ <li><dfn><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories" class="only-in-en-us" title="Currently only available in English (US)">Категории содержимого (en-US)</a></dfn><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#metadata_content" class="only-in-en-us" title="Currently only available in English (US)">Metadata content (en-US)</a>, and if the <code>scoped</code> attribute is present: <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#flow_content" class="only-in-en-us" title="Currently only available in English (US)">flow content  (en-US)</a>.</li>
+ <li><dfn>Permitted content</dfn> Style information matching the language of the <code>type</code> attribute.</li>
+ <li><dfn>Tag omission</dfn> Нет, открывающий и закрывающий теги обязательны.</li>
+ <li><dfn>Допустимые родительские элементы</dfn> ...</li>
+ <li><dfn>Интерфейс DOM</dfn> <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLStyleElement"><code>HTMLStyleElement</code> <span>(en-US)</span></a></li>
+</ul></div><h2 id="атрибуты"><a href="#атрибуты" title="Permalink to Атрибуты">Атрибуты</a></h2><div><p>This element includes the <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Global_attributes">global attributes</a>.</p>
+
+<dl>
+ <dt><a id="attr-type" href="#attr-type"><b><code>type</code></b></a></dt>
+ <dd>Этот атрибут определяет язык стиля в виде MIME-типа (кодировка не указывается). Этот атрибут необязателен, и при отсутствии считается «<code>text/css</code>».</dd>
+ <dt><a id="attr-media" href="#attr-media"><b><code>media</code></b></a></dt>
+ <dd>К какому виду медиа должен применяться этот стиль. Значением этого атрибута является <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries" class="only-in-en-us" title="Currently only available in English (US)">медиавыражение (en-US)</a>, которое по умолчанию соответствует <code>all</code>.</dd>
+ <dt><a id="attr-scoped" href="#attr-scoped"><b><code>scoped</code></b></a></dt>
+ <dd>Если указан этот атрибут, то стиль применяется только внутри своего родительского элемента. Если не указан, то стиль применяется ко всему документу.</dd>
+ <dt><a id="attr-title" href="#attr-title"><b><code>title</code></b></a></dt>
+ <dd>Specifies alternative style sheet sets.</dd>
+ <dt><a id="attr-disabled" href="#attr-disabled"><b><code>disabled</code></b></a></dt>
+ <dd>If set, disables (does not apply) the style rules,&nbsp;specified within the element, to the <a href="https://developer.mozilla.org/ru/docs/Web/API/Document" title="Document"><code>Document</code></a>.</dd>
+</dl></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="простая_таблица_стилей"><a href="#простая_таблица_стилей" title="Permalink to Простая таблица стилей">Простая таблица стилей</a></h3><div><pre class="brush:html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/css<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+<span class="token selector">body</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span>red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h3 id="таблица_стилей_с_ограниченной_областью_действия"><a href="#таблица_стилей_с_ограниченной_областью_действия" title="Permalink to Таблица стилей с ограниченной областью действия">Таблица стилей с ограниченной областью действия</a></h3><div><pre class="brush:html;highlight:7 notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>article</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>Атрибут scoped позволяет включить элементы стиля в середине документа.
+   Внутренние правила применяются только внутри родительского элемента.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Этот текст должен быть чёрным. Если он красный, ваш браузер не поддерживает атрибут scoped.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">scoped</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+      <span class="token selector">p</span> <span class="token punctuation">{</span> <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Этот должен быть красным.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>article</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<h4 id="live_sample" name="Live_sample">Live sample</h4>
+
+<div><iframe class="sample-code-frame" id="frame_Таблица_стилей_с_ограниченной_областью_действия" width="100%" height="200" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/style/_sample_.%D0%A2%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B0_%D1%81%D1%82%D0%B8%D0%BB%D0%B5%D0%B9_%D1%81_%D0%BE%D0%B3%D1%80%D0%B0%D0%BD%D0%B8%D1%87%D0%B5%D0%BD%D0%BD%D0%BE%D0%B9_%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C%D1%8E_%D0%B4%D0%B5%D0%B9%D1%81%D1%82%D0%B2%D0%B8%D1%8F.html" loading="lazy"></iframe></div></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+  <tr>
+   <td><a href="https://html.spec.whatwg.org/multipage/document-metadata.html#the-style-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML Living Standard<br><small lang="ru">Определение 'style' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td>Нет отличий от <a href="https://www.w3.org/TR/html52/" hreflang="en" lang="en" class="external" title="Спецификация 'HTML5'" rel=" noopener">HTML5</a>.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html52/document-metadata.html#the-style-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML5<br><small lang="ru">Определение 'style' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>Добавлен атрибут <code>scoped</code></td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html401/present/styles.html#h-14.2.3" hreflang="en" lang="en" class="external" rel=" noopener">HTML 4.01 Specification<br><small lang="ru">Определение 'style' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td>&nbsp;</td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость браузеров">Совместимость браузеров</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li>Элемент <a href="/html/link/"><code>&lt;link&gt;</code></a>, позволяющий использовать внешние таблицы стилей.</li>
+</ul>
+
+<p></p><p></p></div>

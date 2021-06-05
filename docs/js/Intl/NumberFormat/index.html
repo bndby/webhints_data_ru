@@ -3,7 +3,7 @@ Intl.NumberFormat.call(<var>this</var>[, <var>locales</var>[, <var>options</var>
 </code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
  <dt><code>locales</code></dt>
  <dd>
- <p>Необязательный параметр. Строка с языковой меткой BCP 47, либо массив таких строк. Описание общей формы и интерпретации аргумента <code>locales</code> смотрите на <a href="/webhints_data_ru/js/Intl#locale_identification_and_negotiation/">странице, посвящённой объекту Intl</a>. Разрешены следующие ключи расширения Unicode:</p>
+ <p>Необязательный параметр. Строка с языковой меткой BCP 47, либо массив таких строк. Описание общей формы и интерпретации аргумента <code>locales</code> смотрите на <a href="/js/Intl#locale_identification_and_negotiation/">странице, посвящённой объекту Intl</a>. Разрешены следующие ключи расширения Unicode:</p>
 
  <dl>
   <dt><code>nu</code></dt>
@@ -16,7 +16,7 @@ Intl.NumberFormat.call(<var>this</var>[, <var>locales</var>[, <var>options</var>
 
  <dl>
   <dt><code>localeMatcher</code></dt>
-  <dd>Используемый алгоритм сопоставления локалей. Возможными значениями являются <code>"lookup"</code> и <code>"best fit"</code>; значением по умолчанию является <code>"best fit"</code>. Информацию по этой опции смотрите на <a href="/webhints_data_ru/js/Intl#locale_negotiation/">странице, посвящённой объекту Intl</a>.</dd>
+  <dd>Используемый алгоритм сопоставления локалей. Возможными значениями являются <code>"lookup"</code> и <code>"best fit"</code>; значением по умолчанию является <code>"best fit"</code>. Информацию по этой опции смотрите на <a href="/js/Intl#locale_negotiation/">странице, посвящённой объекту Intl</a>.</dd>
   <dt><code>style</code></dt>
   <dd>Используемый стиль форматирования. Возможными значениями являются <code>"decimal"</code> для простого форматирования числа, <code>"currency"</code> для форматирования валюты и <code>"percent"</code> для форматирования процентов; значением по умолчанию является <code>"decimal"</code>.</dd>
   <dt><code>currency</code></dt>
@@ -46,19 +46,19 @@ Intl.NumberFormat.call(<var>this</var>[, <var>locales</var>[, <var>options</var>
  <dt><a href="https://developer.mozilla.org/ru/docs/conflicting/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat"><code>Intl.NumberFormat.prototype</code></a></dt>
  <dd>Позволяет добавлять свойства ко всем объектам.</dd>
 </dl></div><h2 id="methods"><a href="#methods" title="Permalink to Методы">Методы</a></h2><div><dl>
- <dt><a href="/webhints_data_ru/js/Intl/NumberFormat/supportedLocalesOf/"><code>Intl.NumberFormat.supportedLocalesOf()</code></a></dt>
+ <dt><a href="/js/Intl/NumberFormat/supportedLocalesOf/"><code>Intl.NumberFormat.supportedLocalesOf()</code></a></dt>
  <dd>Возвращает массив, содержащий те из предоставленных локалей, которые поддерживаются без отката к локали по умолчанию среды выполнения.</dd>
 </dl></div><h2 id="numberformat_instances"><a href="#numberformat_instances" title="Permalink to Экземпляры объекта NumberFormat">Экземпляры объекта <code>NumberFormat</code></a></h2><div></div><h3 id="properties_of_numberformat_instance"><a href="#properties_of_numberformat_instance" title="Permalink to Свойства">Свойства</a></h3><div><p>Экземпляры <code>NumberFormat</code> наследуют следующие свойства из своего прототипа:</p>
 
 <div><dl>
  <dt><code>Intl.NumberFormat.prototype.constructor</code></dt>
- <dd>Ссылка на <a href="/webhints_data_ru/js/Intl/NumberFormat/" aria-current="page"><code>Intl.NumberFormat</code></a>.</dd>
- <dt><a href="/webhints_data_ru/js/Intl/NumberFormat/format/"><code>Intl.NumberFormat.prototype.format</code></a></dt>
- <dd>Геттер; возвращает функцию, форматирующую число согласно локали и опциям форматирования этого объекта <a href="/webhints_data_ru/js/Intl/NumberFormat/" aria-current="page"><code>NumberFormat</code></a>.</dd>
+ <dd>Ссылка на <a href="/js/Intl/NumberFormat/" aria-current="page"><code>Intl.NumberFormat</code></a>.</dd>
+ <dt><a href="/js/Intl/NumberFormat/format/"><code>Intl.NumberFormat.prototype.format</code></a></dt>
+ <dd>Геттер; возвращает функцию, форматирующую число согласно локали и опциям форматирования этого объекта <a href="/js/Intl/NumberFormat/" aria-current="page"><code>NumberFormat</code></a>.</dd>
 </dl></div></div><h3 id="methods_of_numberformat_instance"><a href="#methods_of_numberformat_instance" title="Permalink to Методы">Методы</a></h3><div><p>Экземпляры <code>NumberFormat</code> наследуют следующие методы из своего прототипа:</p>
 
 <div><dl>
- <dt><a href="/webhints_data_ru/js/Intl/NumberFormat/resolvedOptions/"><code>Intl.NumberFormat.prototype.resolvedOptions()</code></a></dt>
+ <dt><a href="/js/Intl/NumberFormat/resolvedOptions/"><code>Intl.NumberFormat.prototype.resolvedOptions()</code></a></dt>
  <dd>Возвращает новый объект со свойствами, отражающими локаль и опции сравнения, вычисленные при инициализации объекта.</dd>
 </dl></div></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_basic_usage"><a href="#example_basic_usage" title="Permalink to Пример: базовое использование">Пример: базовое использование</a></h3><div><p>При базовом использовании без определения локали возвращается строка, отформатированная с помощью локали по умолчанию с опциями по умолчанию.</p>
 
@@ -131,18 +131,18 @@ console<span class="token punctuation">.</span><span class="token function">log<
  <li>Введение: <a href="http://norbertlindenberg.com/2012/12/ecmascript-internationalization-api/index.html" class="external" rel=" noopener">API интернационализации ECMAScript</a></li>
  <li>Конструкторы
   <ul>
-   <li><a href="/webhints_data_ru/js/Intl/Collator/"><code>Intl.Collator</code></a></li>
-   <li><a href="/webhints_data_ru/js/Intl/DateTimeFormat/"><code>Intl.DateTimeFormat</code></a></li>
-   <li><a href="/webhints_data_ru/js/Intl/NumberFormat/" aria-current="page"><code>Intl.NumberFormat</code></a></li>
+   <li><a href="/js/Intl/Collator/"><code>Intl.Collator</code></a></li>
+   <li><a href="/js/Intl/DateTimeFormat/"><code>Intl.DateTimeFormat</code></a></li>
+   <li><a href="/js/Intl/NumberFormat/" aria-current="page"><code>Intl.NumberFormat</code></a></li>
   </ul>
  </li>
  <li>Методы
   <ul>
-   <li><a href="/webhints_data_ru/js/String/localeCompare/"><code>String.prototype.localeCompare()</code></a></li>
-   <li><a href="/webhints_data_ru/js/Number/toLocaleString/"><code>Number.prototype.toLocaleString()</code></a></li>
-   <li><a href="/webhints_data_ru/js/Date/toLocaleString/"><code>Date.prototype.toLocaleString()</code></a></li>
-   <li><a href="/webhints_data_ru/js/Date/toLocaleDateString/"><code>Date.prototype.toLocaleDateString()</code></a></li>
-   <li><a href="/webhints_data_ru/js/Date/toLocaleTimeString/"><code>Date.prototype.toLocaleTimeString()</code></a></li>
+   <li><a href="/js/String/localeCompare/"><code>String.prototype.localeCompare()</code></a></li>
+   <li><a href="/js/Number/toLocaleString/"><code>Number.prototype.toLocaleString()</code></a></li>
+   <li><a href="/js/Date/toLocaleString/"><code>Date.prototype.toLocaleString()</code></a></li>
+   <li><a href="/js/Date/toLocaleDateString/"><code>Date.prototype.toLocaleDateString()</code></a></li>
+   <li><a href="/js/Date/toLocaleTimeString/"><code>Date.prototype.toLocaleTimeString()</code></a></li>
   </ul>
  </li>
 </ul></div></div>

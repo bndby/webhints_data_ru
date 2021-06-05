@@ -2,7 +2,7 @@
 Intl.DateTimeFormat.call(<var>this</var>[, <var>locales</var>[, <var>options</var>]])</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
  <dt><code>locales</code></dt>
  <dd>
- <p>Необязательный параметр. Строка с языковой меткой BCP 47, либо массив таких строк. Описание общей формы и интерпретации аргумента <code>locales</code> смотрите на <a href="/webhints_data_ru/js/Intl#locale_identification_and_negotiation/">странице, посвящённой объекту Intl</a>. Разрешены следующие ключи расширения Unicode:</p>
+ <p>Необязательный параметр. Строка с языковой меткой BCP 47, либо массив таких строк. Описание общей формы и интерпретации аргумента <code>locales</code> смотрите на <a href="/js/Intl#locale_identification_and_negotiation/">странице, посвящённой объекту Intl</a>. Разрешены следующие ключи расширения Unicode:</p>
 
  <dl>
   <dt><code>nu</code></dt>
@@ -17,7 +17,7 @@ Intl.DateTimeFormat.call(<var>this</var>[, <var>locales</var>[, <var>options</va
 
  <dl>
   <dt><code>localeMatcher</code></dt>
-  <dd>Используемый алгоритм сопоставления локалей. Возможными значениями являются <code>"lookup"</code> и <code>"best fit"</code>; значением по умолчанию является <code>"best fit"</code>. Информацию по этой опции смотрите на <a href="/webhints_data_ru/js/Intl#locale_negotiation/">странице, посвящённой объекту Intl</a>.</dd>
+  <dd>Используемый алгоритм сопоставления локалей. Возможными значениями являются <code>"lookup"</code> и <code>"best fit"</code>; значением по умолчанию является <code>"best fit"</code>. Информацию по этой опции смотрите на <a href="/js/Intl#locale_negotiation/">странице, посвящённой объекту Intl</a>.</dd>
   <dt><code>timeZone</code></dt>
   <dd>Используемый часовой пояс. Единственным значением, которые реализации обязаны распознавать, является <code>"UTC"</code>; значением по умолчанию является часовой пояс по умолчанию среды выполнения. Реализации также могут распознавать названия часовых поясов из <a href="https://www.iana.org/time-zones" class="external" rel=" noopener">базы данных часовых поясов IANA</a>, например <code>"Asia/Shanghai"</code>, <code>"Asia/Kolkata"</code> или <code>"America/New_York"</code>.</dd>
   <dt><code>hour12</code></dt>
@@ -61,25 +61,25 @@ Intl.DateTimeFormat.call(<var>this</var>[, <var>locales</var>[, <var>options</va
   <dd>Представление названий часовых поясов. Возможными значениями являются <code>"short"</code> и <code>"long"</code>.</dd>
  </dl>
 
- <p class="noinclude">Значение по умолчанию для всех свойств компонентов даты/времени является значение <a href="/webhints_data_ru/js/undefined/"><code>undefined</code></a>,но если все свойства компонентов будут равны <a href="/webhints_data_ru/js/undefined/"><code>undefined</code></a>, то будет предполагаться, что значением свойств <code>year</code>, <code>month</code> и <code>day</code> является <code>"numeric"</code>.</p>
+ <p class="noinclude">Значение по умолчанию для всех свойств компонентов даты/времени является значение <a href="/js/undefined/"><code>undefined</code></a>,но если все свойства компонентов будут равны <a href="/js/undefined/"><code>undefined</code></a>, то будет предполагаться, что значением свойств <code>year</code>, <code>month</code> и <code>day</code> является <code>"numeric"</code>.</p>
  </dd>
 </dl></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div></div><h3 id="properties"><a href="#properties" title="Permalink to Свойства">Свойства</a></h3><div><dl>
  <dt><a href="https://developer.mozilla.org/ru/docs/conflicting/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat"><code>Intl.DateTimeFormat.prototype</code></a></dt>
  <dd>Позволяет добавлять свойства ко всем объектам.</dd>
 </dl></div><h2 id="methods"><a href="#methods" title="Permalink to Методы">Методы</a></h2><div><dl>
- <dt><a href="/webhints_data_ru/js/Intl/DateTimeFormat/supportedLocalesOf/"><code>Intl.DateTimeFormat.supportedLocalesOf()</code></a></dt>
+ <dt><a href="/js/Intl/DateTimeFormat/supportedLocalesOf/"><code>Intl.DateTimeFormat.supportedLocalesOf()</code></a></dt>
  <dd>Возвращает массив, содержащий те из предоставленных локалей, которые поддерживаются без отката к локали по умолчанию среды выполнения.</dd>
 </dl></div><h2 id="datetimeformat_instances"><a href="#datetimeformat_instances" title="Permalink to Экземпляры объекта DateTimeFormat">Экземпляры объекта <code>DateTimeFormat</code></a></h2><div></div><h3 id="properties_of_datetimeformat_instance"><a href="#properties_of_datetimeformat_instance" title="Permalink to Свойства">Свойства</a></h3><div><p>Экземпляры <code>DateTimeFormat</code> наследуют следующие свойства из своего прототипа:</p>
 
 <div><dl>
  <dt><code>Intl.DateTimeFormat.prototype.constructor</code></dt>
- <dd>Ссылка на <a href="/webhints_data_ru/js/Intl/DateTimeFormat/" aria-current="page"><code>Intl.DateTimeFormat</code></a>.</dd>
- <dt><a href="/webhints_data_ru/js/Intl/DateTimeFormat/format/"><code>Intl.DateTimeFormat.prototype.format</code></a></dt>
- <dd>Геттер; возвращает функцию, форматирующую дату согласно локали и опциям форматирования этого объекта <a href="/webhints_data_ru/js/Intl/DateTimeFormat/" aria-current="page"><code>DateTimeFormat</code></a>.</dd>
+ <dd>Ссылка на <a href="/js/Intl/DateTimeFormat/" aria-current="page"><code>Intl.DateTimeFormat</code></a>.</dd>
+ <dt><a href="/js/Intl/DateTimeFormat/format/"><code>Intl.DateTimeFormat.prototype.format</code></a></dt>
+ <dd>Геттер; возвращает функцию, форматирующую дату согласно локали и опциям форматирования этого объекта <a href="/js/Intl/DateTimeFormat/" aria-current="page"><code>DateTimeFormat</code></a>.</dd>
 </dl></div></div><h3 id="methods_of_datetimeformat_instance"><a href="#methods_of_datetimeformat_instance" title="Permalink to Методы">Методы</a></h3><div><p>Экземпляры <code>DateTimeFormat</code> наследуют следующие методы из своего прототипа:</p>
 
 <div><dl>
- <dt><a href="/webhints_data_ru/js/Intl/DateTimeFormat/resolvedOptions/"><code>Intl.DateTimeFormat.prototype.resolvedOptions()</code></a></dt>
+ <dt><a href="/js/Intl/DateTimeFormat/resolvedOptions/"><code>Intl.DateTimeFormat.prototype.resolvedOptions()</code></a></dt>
  <dd>Возвращает новый объект со свойствами, отражающими локаль и опции форматирования, вычисленные при инициализации объекта.</dd>
 </dl></div></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_using_datetimeformat"><a href="#example_using_datetimeformat" title="Permalink to Пример: использование DateTimeFormat">Пример: использование <code>DateTimeFormat</code></a></h3><div><p>При базовом использовании без определения локали <code>DateTimeFormat</code> использует локаль и опции по умолчанию.</p>
 
@@ -169,18 +169,18 @@ console<span class="token punctuation">.</span><span class="token function">log<
  <li>Введение: <a href="http://norbertlindenberg.com/2012/12/ecmascript-internationalization-api/index.html" class="external" rel=" noopener">API интернационализации ECMAScript</a></li>
  <li>Конструкторы
   <ul>
-   <li><a href="/webhints_data_ru/js/Intl/Collator/"><code>Intl.Collator</code></a></li>
-   <li><a href="/webhints_data_ru/js/Intl/DateTimeFormat/" aria-current="page"><code>Intl.DateTimeFormat</code></a></li>
-   <li><a href="/webhints_data_ru/js/Intl/NumberFormat/"><code>Intl.NumberFormat</code></a></li>
+   <li><a href="/js/Intl/Collator/"><code>Intl.Collator</code></a></li>
+   <li><a href="/js/Intl/DateTimeFormat/" aria-current="page"><code>Intl.DateTimeFormat</code></a></li>
+   <li><a href="/js/Intl/NumberFormat/"><code>Intl.NumberFormat</code></a></li>
   </ul>
  </li>
  <li>Методы
   <ul>
-   <li><a href="/webhints_data_ru/js/String/localeCompare/"><code>String.prototype.localeCompare()</code></a></li>
-   <li><a href="/webhints_data_ru/js/Number/toLocaleString/"><code>Number.prototype.toLocaleString()</code></a></li>
-   <li><a href="/webhints_data_ru/js/Date/toLocaleString/"><code>Date.prototype.toLocaleString()</code></a></li>
-   <li><a href="/webhints_data_ru/js/Date/toLocaleDateString/"><code>Date.prototype.toLocaleDateString()</code></a></li>
-   <li><a href="/webhints_data_ru/js/Date/toLocaleTimeString/"><code>Date.prototype.toLocaleTimeString()</code></a></li>
+   <li><a href="/js/String/localeCompare/"><code>String.prototype.localeCompare()</code></a></li>
+   <li><a href="/js/Number/toLocaleString/"><code>Number.prototype.toLocaleString()</code></a></li>
+   <li><a href="/js/Date/toLocaleString/"><code>Date.prototype.toLocaleString()</code></a></li>
+   <li><a href="/js/Date/toLocaleDateString/"><code>Date.prototype.toLocaleDateString()</code></a></li>
+   <li><a href="/js/Date/toLocaleTimeString/"><code>Date.prototype.toLocaleTimeString()</code></a></li>
   </ul>
  </li>
 </ul></div></div>

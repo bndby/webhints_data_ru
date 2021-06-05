@@ -9,7 +9,7 @@
 
 <p>'æ' взаимозаменяемый 'ae', но они не являются строго эквивалентными, если не провести некоторую нормализацию</p></div><h2 id="syntax"><a href="#syntax" title="Permalink to Синтаксис">Синтаксис</a></h2><div><pre class="syntaxbox notranslate"><code><var>str</var>.normalize(<var>[form</var>])</code></pre></div><h3 id="parameters"><a href="#parameters" title="Permalink to Параметры">Параметры</a></h3><div><dl>
  <dt><code>form</code></dt>
- <dd>Одно из значений <code>"NFC"</code>, <code>"NFD"</code>, <code>"NFKC"</code> или <code>"NFKD"</code>, определяющих форму нормализации Юникода. Если параметр опущен или равен <a href="/webhints_data_ru/js/undefined/"><code>undefined</code></a>, будет использоваться значение <code>"NFC"</code>.
+ <dd>Одно из значений <code>"NFC"</code>, <code>"NFD"</code>, <code>"NFKC"</code> или <code>"NFKD"</code>, определяющих форму нормализации Юникода. Если параметр опущен или равен <a href="/js/undefined/"><code>undefined</code></a>, будет использоваться значение <code>"NFC"</code>.
  <ul>
   <li><code>NFC</code>&nbsp;— &nbsp;форма нормализации канонической композицией (Normalization Form Canonical Composition, 'NFC'), по умолчанию;</li>
   <li><code>NFD</code>&nbsp;— форма нормализации канонической декомпозицией (Normalization Form Canonical Decomposition, 'NFD');</li>
@@ -18,8 +18,8 @@
  </ul>
  </dd>
 </dl></div><h3 id="throws"><a href="#throws" title="Permalink to Выбрасываемые исключения">Выбрасываемые исключения</a></h3><div><dl>
- <dt><a href="/webhints_data_ru/js/RangeError/"><code>RangeError</code></a></dt>
- <dd>Если параметр <code>form</code> не является одним из вышеперечисленных значений, будет выброшено исключение <a href="/webhints_data_ru/js/RangeError/"><code>RangeError</code></a>.</dd>
+ <dt><a href="/js/RangeError/"><code>RangeError</code></a></dt>
+ <dd>Если параметр <code>form</code> не является одним из вышеперечисленных значений, будет выброшено исключение <a href="/js/RangeError/"><code>RangeError</code></a>.</dd>
 </dl></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Метод <code>normalize()</code> возвращает указанную форму нормализации Юникода строки. Он не изменяет значение самой строки.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="example_using_normalize"><a href="#example_using_normalize" title="Permalink to Пример: использование метода normalize()">Пример: использование метода <code>normalize()</code></a></h3><div><pre class="brush: js notranslate"><code><span class="token keyword">let</span> valueStr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'h'</span><span class="token punctuation">,</span> <span class="token string">'ĥ'</span><span class="token punctuation">,</span> <span class="token string">'æ'</span><span class="token punctuation">,</span> <span class="token string">'ae'</span><span class="token punctuation">,</span> <span class="token string">'g'</span><span class="token punctuation">,</span> <span class="token string">'ġ'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
     normArr <span class="token operator">=</span> valueStr<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">text</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">return</span> text<span class="token punctuation">.</span><span class="token function">normalize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// (по умолчанию 'NFC') normArr (после сортировки) -&gt; [ae, g, h, æ, ġ, ĥ]</span>

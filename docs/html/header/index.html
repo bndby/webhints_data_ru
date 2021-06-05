@@ -1,0 +1,71 @@
+<h1>&lt;header&gt;</h1><div><div></div>
+
+<p><span class="seoSummary"><strong>HTML-элемент <code>&lt;header&gt;</code></strong> представляет собой вводный контент, обычно группу вводных или навигационных средств. Он может содержать другие элементы-заголовки, а также логотип, форму поиска, имя автора и другие элементы.</span></p>
+
+<div><iframe class="interactive" width="100%" height="445" src="https://interactive-examples.mdn.mozilla.net/pages/tabbed/header.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+
+
+<table class="properties">
+ <tbody>
+  <tr>
+   <th scope="row"><a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Content_categories" title="HTML/Content_categories">Категории контента</a></th>
+   <td><a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Content_categories#%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%BE%D0%B9_%D0%BF%D0%BE%D1%82%D0%BE%D0%BA">Основной поток</a>, <a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Content_categories#%D1%8F%D0%B2%D0%BD%D1%8B%D0%B9_%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%BD%D1%82">явный контент</a>.</td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённое содержимое</th>
+   <td><a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Content_categories#%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%BE%D0%B9_%D0%BF%D0%BE%D1%82%D0%BE%D0%BA">Основной поток</a>, кроме <code>&lt;header&gt;</code> и <a href="/html/footer/"><code>&lt;footer&gt;</code></a></td>
+  </tr>
+  <tr>
+   <th scope="row">Пропуск тега</th>
+   <td>Ни одного; Оба тега, открывающий и закрывающий, являются обязательными.</td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённые родительские элементы</th>
+   <td>Любой элемент, который разрешает <a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Content_categories#%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%BE%D0%B9_%D0%BF%D0%BE%D1%82%D0%BE%D0%BA">контент основного потока</a> в качестве содержимого. Обратите внимание, что элемент <code>&lt;header&gt;</code> не должен быть потомком элемента <a href="/html/address/"><code>&lt;address&gt;</code></a>, <a href="/html/footer/"><code>&lt;footer&gt;</code></a> или другого элемента <code>&lt;header&gt;</code>.</td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённые роли ARIA</th>
+   <td><code><a href="https://w3c.github.io/aria/#group" class="external" rel=" noopener">group</a></code>, <code><a href="https://w3c.github.io/aria/#presentation" class="external" rel=" noopener">presentation</a></code></td>
+  </tr>
+  <tr>
+   <th scope="row">DOM-интерфейс</th>
+   <td><a href="https://developer.mozilla.org/ru/docs/Web/API/HTMLElement"><code>HTMLElement</code></a></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="примечание"><a href="#примечание" title="Permalink to Примечание">Примечание</a></h2><div><p>Элемент <code>&lt;header&gt;</code> не относится к секционному контенту , а значит не создаёт новый раздел в <a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Using_HTML_sections_and_outlines">структуре HTML-документа</a>. При этом элемент <code>&lt;header&gt;</code> обычно должен содержать заголовок ближайшего раздела (элементы <code>h1</code>-<code>h6</code>), но это <strong>не</strong> обязательно.</p></div><h3 id="историческое_употребление"><a href="#историческое_употребление" title="Permalink to Историческое употребление">Историческое употребление</a></h3><div><p>Несмотря на то, что элемент <code>&lt;header&gt;</code> не попал в спецификации до <a href="https://developer.mozilla.org/ru/docs/Glossary/HTML5">HTML5</a>, на самом деле, он существовал с самого начала HTML. Первоначально, на самом первом веб-сайте он использовался как элемент <code>&lt;head&gt;</code>. В какой-то момент было принято решение использовать другое имя. Позже, это позволило <code>&lt;header&gt;</code> занять другую роль.</p></div><h2 id="атрибуты"><a href="#атрибуты" title="Permalink to Атрибуты">Атрибуты</a></h2><div><p>К этому элементу применимы только <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Global_attributes">глобальные атрибуты</a>.</p></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="заголовок_страницы"><a href="#заголовок_страницы" title="Permalink to Заголовок страницы">Заголовок страницы</a></h3><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>Заголовок главной страницы<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mdn-logo-sm.png<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>MDN logo<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>header</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h3 id="заголовок_статьи"><a href="#заголовок_статьи" title="Permalink to Заголовок статьи">Заголовок статьи</a></h3><div><pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>article</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>Планета Земля<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Опубликовано в среду, 4 октября 2017, Джейн Смит<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>header</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Мы живём на сине-зелёной планете, на которой до сих пор так много неизведанного.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://janesmith.com/the-planet-earth/<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Продолжить чтение...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>article</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарий</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://html.spec.whatwg.org/multipage/sections.html#the-header-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML Living Standard<br><small lang="ru">Определение '&lt;header&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html52/sections.html#the-header-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML5<br><small lang="ru">Определение '&lt;header&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="поддержка_браузерами"><a href="#поддержка_браузерами" title="Permalink to Поддержка браузерами">Поддержка браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li>Связанные с этим разделом элементы: <a href="/html/body/"><code>&lt;body&gt;</code></a>, <a href="/html/nav/"><code>&lt;nav&gt;</code></a>, <a href="/html/article/"><code>&lt;article&gt;</code></a>, <a href="/html/aside/"><code>&lt;aside&gt;</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements" class="only-in-en-us" title="Currently only available in English (US)">&lt;h1&gt; (en-US)</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements" class="only-in-en-us" title="Currently only available in English (US)">&lt;h2&gt; (en-US)</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements" class="only-in-en-us" title="Currently only available in English (US)">&lt;h3&gt; (en-US)</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements" class="only-in-en-us" title="Currently only available in English (US)">&lt;h4&gt; (en-US)</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements" class="only-in-en-us" title="Currently only available in English (US)">&lt;h5&gt; (en-US)</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements" class="only-in-en-us" title="Currently only available in English (US)">&lt;h6&gt; (en-US)</a>, <a href="/html/hgroup/"><code>&lt;hgroup&gt;</code></a>, <a href="/html/footer/"><code>&lt;footer&gt;</code></a>, <a href="/html/section/"><code>&lt;section&gt;</code></a>, <a href="/html/address/"><code>&lt;address&gt;</code></a>.</li>
+ <li class="last"><a class="deki-ns current" href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Using_HTML_sections_and_outlines">Разделы и структура документа HTML5</a>.</li>
+</ul></div>

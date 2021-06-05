@@ -1,0 +1,129 @@
+<h1>&lt;abbr&gt;: Элемент Аббревиатура</h1><div><div></div>
+
+<p><strong>Элемент HTML «аббревиатура» (<code>&lt;abbr&gt;</code>)</strong> представляет собой аббревиатуру и, опционально, может показывать её расшифровку. Расшифровка записывается в атрибут <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Global_attributes#attr-title"><code>title</code></a>. Иные значения <code>title</code>,&nbsp;кроме расшифровки аббревиатуры не допускаются.</p>
+
+<div><iframe class="interactive" width="100%" height="375" src="https://interactive-examples.mdn.mozilla.net/pages/tabbed/abbr.html" title="MDN Web Docs Interactive Example" loading="lazy"></iframe></div>
+
+
+
+<p>Статья&nbsp;<em><a href="https://developer.mozilla.org/ru/docs/Learn/HTML/%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D0%B2_HTML/Advanced_text_formatting#%D0%90%D0%B1%D0%B1%D1%80%D0%B5%D0%B2%D0%B8%D0%B0%D1%82%D1%83%D1%80%D1%8B">Как помечать аббревиатуры и сделать их потянутыми</a></em>&nbsp;поможет понять как использовать <code>&lt;abbr&gt;</code> и связанные элементы.</p>
+
+<table class="htmlelt">
+ <tbody>
+  <tr>
+   <th scope="row">Интерфейс DOM</th>
+   <td><a href="https://developer.mozilla.org/ru/docs/Web/API/HTMLElement"><code>HTMLElement</code></a></td>
+  </tr>
+  <tr>
+   <th scope="row"><a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Content_categories">Категории контента</a></th>
+   <td><a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Content_categories#%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%BE%D0%B9_%D0%BF%D0%BE%D1%82%D0%BE%D0%BA" title="HTML/Content categories#Flow content">Основной поток</a>, <a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Content_categories#%d0%a4%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d1%8b%d0%b9_%d0%ba%d0%be%d0%bd%d1%82%d0%b5%d0%bd%d1%82" title="HTML/Content categories#Phrasing content">текстовый контент</a>, явный контент</td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённое содержимое</th>
+   <td><a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Content_categories#%d0%a4%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d1%8b%d0%b9_%d0%ba%d0%be%d0%bd%d1%82%d0%b5%d0%bd%d1%82" title="HTML/Content_categories#Phrasing_content">Фразовый контент</a></td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённые родительские элементы</th>
+   <td>Любые, поддерживающие <a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Content_categories#%d0%a4%d1%80%d0%b0%d0%b7%d0%be%d0%b2%d1%8b%d0%b9_%d0%ba%d0%be%d0%bd%d1%82%d0%b5%d0%bd%d1%82" title="HTML/Content_categories#Phrasing_content">фразовый контент</a>.</td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённые ARIA роли</th>
+   <td>Любые</td>
+  </tr>
+  <tr>
+   <th scope="row">DOM интерфейс</th>
+   <td><a href="https://developer.mozilla.org/ru/docs/Web/API/HTMLElement"><code>HTMLElement</code></a></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="attributes"><a href="#attributes" title="Permalink to Атрибуты">Атрибуты</a></h2><div><p><span style="line-height: 21px;">Этот элемент поддерживает только </span><a href="https://developer.mozilla.org/ru/docs/Web/HTML/Global_attributes" style="line-height: 21px;" title="HTML/Global attributes">глобальные атрибуты</a><span style="line-height: 21px;">. Атрибут&nbsp;</span><a href="https://developer.mozilla.org/ru/docs/Web/HTML/Global_attributes#attr-title"><code>title</code></a>&nbsp;имеет специальное семантическое значение, когда используется вместе с элементом <code>&lt;abbr&gt;</code>. Он <em>должен</em> содержать полную расшифровку или описание аббревиатуры.</p>
+
+<p>Каждый элемент <code>&lt;abbr&gt;</code> независим от других. Указание <code>title</code> на одном элементе не применяет это же описание к другим элементам с одинаковым содержанием.</p></div><h2 id="примечания_к_использованию"><a href="#примечания_к_использованию" title="Permalink to Примечания к использованию">Примечания к использованию</a></h2><div></div><h3 id="обычное_использование"><a href="#обычное_использование" title="Permalink to Обычное использование">Обычное использование</a></h3><div><p>Необязательно помечать все аббревиатуры с помощью&nbsp;<code>&lt;abbr&gt;</code>. Далее представлено несколько вариантов, которые помогут выбрать как помечать текст:</p>
+
+<ul>
+ <li>Когда используете&nbsp;аббревиатуру и хотите показать описание или расшифровку вне основного потока содержания, используйте <code>&lt;abbr&gt;</code> c подходящим&nbsp;<a href="https://developer.mozilla.org/ru/docs/Web/HTML/Global_attributes#attr-title"><code>title</code></a>.</li>
+ <li>Чтобы обозначить аббревиатуру, которая может быть незнакома читателю, используете <code>&lt;abbr&gt;</code> с атрибутом title или просто текст с описанием.</li>
+ <li>Когда присутствие аббревиатуры в тексте должно быть семантически выделено, полезен элемент <code>&lt;abbr&gt;</code>. В свою очередь, его использование&nbsp;может быть использовано для стилизации или написания сценариев.</li>
+ <li>Вы можете использовать <code>&lt;abbr&gt;</code>&nbsp;вместе с&nbsp;<a href="/html/dfn/"><code>&lt;dfn&gt;</code></a>, чтобы установить определения для терминов, которые являются аббревиатурами или акронимами. Смотрите пример&nbsp;<a href="#определение_в_аббревиатуре">Определение в аббревиатуре</a> ниже.</li>
+</ul></div><h3 id="грамматические_вопросы"><a href="#грамматические_вопросы" title="Permalink to Грамматические&nbsp;вопросы">Грамматические&nbsp;вопросы</a></h3><div><p>В языках с&nbsp;<a title="grammatical number" href="https://ru.wikipedia.org/wiki/Grammatical_number" class="external" rel=" noopener">grammatical number</a> (то есть, языки, в которых количество предметов влияет на грамматику предложения), используйте одинаковое грамматическое число в атрибуте <code>title</code>&nbsp;и внутри элемента <code>&lt;abbr&gt;</code>. Это также имеет место в языках с более чем двумя грамматическими числами (например, арабский имеет не только категории единственного и множественного числа, но двойственного).</p></div><h2 id="стили_по умолчанию"><a href="#стили_по умолчанию" title="Permalink to Стили по умолчанию">Стили по умолчанию</a></h2><div><p>Назначение данного элемента исключительно для удобства автора и браузеры отображают его как&nbsp;(<a href="https://developer.mozilla.org/ru/docs/Web/CSS/display"><code>display</code></a><code>: inline</code>) по умолчанию, хотя его стиль по умолчанию меняется в разных браузерах:</p>
+
+<ul>
+ <li>Некоторые браузеры, например Internet Explorer, стилизуют его как элемент&nbsp;<a href="/html/span/"><code>&lt;span&gt;</code></a>.</li>
+ <li>Opera, Firefox и другие добавляют подчёркивание точками к содержанию элемента.</li>
+ <li>Некоторые браузеры не только подчёркивают, но и меняют начертание на капитель (small caps). Чтобы избежать этого, добавьте&nbsp;<a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant"><code>font-variant</code> <span>(en-US)</span></a><code>: none</code>&nbsp;в ваш CSS.</li>
+</ul></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="семантическая_пометка_аббревиатуры"><a href="#семантическая_пометка_аббревиатуры" title="Permalink to Семантическая&nbsp;пометка аббревиатуры">Семантическая&nbsp;пометка аббревиатуры</a></h3><div><p>Чтобы пометить аббревиатуру без задания описания или расшифровок, просто используйте <code>&lt;abbr&gt;</code>&nbsp;без каких-либо атрибутов, как показано в примере ниже.</p>
+
+<h4 id="html">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Использование <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>abbr</span><span class="token punctuation">&gt;</span></span>HTML<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>abbr</span><span class="token punctuation">&gt;</span></span> – весело и легко!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<h4 id="результат">Результат</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Семантическая_пометка_аббревиатуры" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/abbr/_sample_.%D0%A1%D0%B5%D0%BC%D0%B0%D0%BD%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D0%BF%D0%BE%D0%BC%D0%B5%D1%82%D0%BA%D0%B0_%D0%B0%D0%B1%D0%B1%D1%80%D0%B5%D0%B2%D0%B8%D0%B0%D1%82%D1%83%D1%80%D1%8B.html" loading="lazy"></iframe></p></div><h3 id="стилизация_аббревиатуры"><a href="#стилизация_аббревиатуры" title="Permalink to Стилизация аббревиатуры">Стилизация аббревиатуры</a></h3><div><p>Вы можете использовать CSS, чтобы задать пользовательские стили для аббревиатуры, как показано в примере ниже.</p>
+
+<h4 id="html_2">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Используя <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>abbr</span><span class="token punctuation">&gt;</span></span>CSS<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>abbr</span><span class="token punctuation">&gt;</span></span>, вы можете стилизовать аббревиатуры!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<h4 id="css">CSS</h4>
+
+<pre class="brush: css notranslate"><code><span class="token selector">abbr</span> <span class="token punctuation">{</span>
+  <span class="token property">font-variant</span><span class="token punctuation">:</span> all-small-caps<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<h4 id="результат_2">Результат</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Стилизация_аббревиатуры" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/abbr/_sample_.%D0%A1%D1%82%D0%B8%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F_%D0%B0%D0%B1%D0%B1%D1%80%D0%B5%D0%B2%D0%B8%D0%B0%D1%82%D1%83%D1%80%D1%8B.html" loading="lazy"></iframe></p></div><h3 id="задание_расшифровки"><a href="#задание_расшифровки" title="Permalink to Задание расшифровки">Задание расшифровки</a></h3><div><p>Добавление атрибута&nbsp;<a href="https://developer.mozilla.org/ru/docs/Web/HTML/Global_attributes#attr-title"><code>title</code></a> даёт вам возможность задать расшифровку или описание для аббревиатуры или акронима.</p>
+
+<h4 id="html_3">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Эта статья великолепна! <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>abbr</span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Подпишусь под Каждым Словом<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>ППКС<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>abbr</span><span class="token punctuation">&gt;</span></span>
+без раздумий.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<h4 id="result">Result</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Задание_расшифровки" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/abbr/_sample_.%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%84%D1%80%D0%BE%D0%B2%D0%BA%D0%B8.html" loading="lazy"></iframe></p></div><h3 id="определение_в_аббревиатуре"><a href="#определение_в_аббревиатуре" title="Permalink to Определение в аббревиатуре">Определение в аббревиатуре</a></h3><div><p>Вы можете использовать <code>&lt;abbr&gt;</code>&nbsp;вместе с&nbsp;<a href="/html/dfn/"><code>&lt;dfn&gt;</code></a> для более формального определения аббревиатуры, как показано ниже.</p>
+
+<h4 id="html_4">HTML</h4>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dfn</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>html<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>abbr</span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>HyperText Markup Language<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>HTML<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>abbr</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dfn</span><span class="token punctuation">&gt;</span></span> – язык разметки, который используется для создания семантических и
+структурированных веб-страниц.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>A <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dfn</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>spec<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Specification<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dfn</span><span class="token punctuation">&gt;</span></span>
+(<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>abbr</span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Specification<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>spec<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>abbr</span><span class="token punctuation">&gt;</span></span>) – документ, в котором описаны основные
+принципы работы технологи или API и как получить к ним доступ.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<h4 id="result_2">Result</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Определение_в_аббревиатуре" width="600" height="120" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/abbr/_sample_.%D0%9E%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%B2_%D0%B0%D0%B1%D0%B1%D1%80%D0%B5%D0%B2%D0%B8%D0%B0%D1%82%D1%83%D1%80%D0%B5.html" loading="lazy"></iframe></p>
+
+<p>Смотрите больше примеров в статье <a href="https://developer.mozilla.org/ru/docs/Learn/HTML/Introduction_to_HTML/Advanced_text_formatting#%d0%90%d0%b1%d0%b1%d1%80%d0%b5%d0%b2%d0%b8%d0%b0%d1%82%d1%83%d1%80%d1%8b">Как размечать аббревиатуры и делать их понятными</a>.</p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Примечание</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-abbr-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML Living Standard<br><small lang="ru">Определение '&lt;abbr&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html52/text-level-semantics.html#the-abbr-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML5<br><small lang="ru">Определение '&lt;abbr&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td></td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html401/struct/text.html#edef-ABBR" hreflang="en" lang="en" class="external" rel=" noopener">HTML 4.01 Specification<br><small lang="ru">Определение '&lt;abbr&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Совместимость с браузерами">Совместимость с браузерами</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li><a href="https://developer.mozilla.org/ru/docs/Learn/HTML/Element/abbr">Использование элемента &lt;abbr&gt;</a></li>
+ <li>Другие <a href="https://developer.mozilla.org/ru/docs/HTML/Text_level_semantics_conveying_elements" title="This is a link to an unwritten page" class="page-not-created">элементы, являющиеся семантически текстовыми</a>: <a href="/html/A/"><code>&lt;a&gt;</code></a>, <a href="/html/em/"><code>&lt;em&gt;</code></a>, <a href="/html/strong/"><code>&lt;strong&gt;</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/small" class="only-in-en-us" title="Currently only available in English (US)">&lt;small&gt; (en-US)</a>, <a href="/html/cite/"><code>&lt;cite&gt;</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q" class="only-in-en-us" title="Currently only available in English (US)">&lt;q&gt; (en-US)</a>, <a href="/html/dfn/"><code>&lt;dfn&gt;</code></a>, <a href="/html/time/"><code>&lt;time&gt;</code></a>, <a href="/html/code/"><code>&lt;code&gt;</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/var" class="only-in-en-us" title="Currently only available in English (US)">&lt;var&gt; (en-US)</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/samp" class="only-in-en-us" title="Currently only available in English (US)">&lt;samp&gt; (en-US)</a>, <a href="/html/kbd/"><code>&lt;kbd&gt;</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/sub" class="only-in-en-us" title="Currently only available in English (US)">&lt;sub&gt; (en-US)</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/sup" class="only-in-en-us" title="Currently only available in English (US)">&lt;sup&gt; (en-US)</a>, <a href="/html/b/"><code>&lt;b&gt;</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/i" class="only-in-en-us" title="Currently only available in English (US)">&lt;i&gt; (en-US)</a>, <a href="/html/mark/"><code>&lt;mark&gt;</code></a>, <a href="/html/ruby/"><code>&lt;ruby&gt;</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/rp" class="only-in-en-us" title="Currently only available in English (US)">&lt;rp&gt; (en-US)</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/rt" class="only-in-en-us" title="Currently only available in English (US)">&lt;rt&gt; (en-US)</a>, <a href="/html/bdo/"><code>&lt;bdo&gt;</code></a>, <a href="/html/span/"><code>&lt;span&gt;</code></a>, <a href="/html/br/"><code>&lt;br&gt;</code></a>, <a href="/html/wbr/"><code>&lt;wbr&gt;</code></a>.</li>
+ <li>Устаревший элемент <a href="/html/acronym/"><code>&lt;acronym&gt;</code></a>, который был заменён элементом&nbsp;<code>&lt;abbr&gt;</code>.</li>
+</ul></div>

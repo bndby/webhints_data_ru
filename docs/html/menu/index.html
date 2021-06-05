@@ -1,0 +1,173 @@
+<h1>&lt;menu&gt;</h1><div><p></p><div class="notecard experimental">
+    <h4 id="experimental">Experimental</h4>
+    <p><strong>Это экспериментальная технология</strong><br>Так как спецификация этой технологии ещё не стабилизировалась, смотрите <a href="#browser_compatibility">таблицу совместимости</a> по поводу использования в различных браузерах. Также заметьте, что синтаксис и поведение экспериментальной технологии может измениться в будущих версиях браузеров, вслед за изменениями спецификации.</p>
+</div><p></p>
+
+<p><strong>HTML элемент <code>&lt;menu&gt;</code></strong> представляет группу команд, которые пользователь может выполнить или активировать. Он включает как меню-списки, которые могут отображаться в верхней части экрана, так и <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/menu#context_menu"> контекстные меню</a>, например, такие, что могут появиться под кнопкой после нажатия.</p>
+
+<table class="properties">
+ <tbody>
+  <tr>
+   <th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories">Категории контента</a></th>
+   <td>
+    <p><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#flow_content">Flow content</a>. If the element's children include at least one <a href="/html/li/"><code>&lt;li&gt;</code></a> element: <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#palpable_content">Palpable content</a>.</p>
+   </td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённое содержимое</th>
+   <td>
+    <p>If the element is in the <em>list menu</em> state: <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#flow_content">flow content</a>, or alternatively, zero or more occurrences of <a href="/html/li/"><code>&lt;li&gt;</code></a>, <a href="/html/script/"><code>&lt;script&gt;</code></a>, and <a href="/html/template/"><code>&lt;template&gt;</code></a>. (<em>list menu</em> is the default state, unless the parent element is a <a href="/html/menu/" aria-current="page"><code>&lt;menu&gt;</code></a> in the <em>context menu</em> state.)</p>
+
+    <p>If the element is in the <em>context menu</em> state: zero or more occurrences, in any order, of <a href="/html/menu/" aria-current="page"><code>&lt;menu&gt;</code></a> (<em>context menu</em> state only), <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/menuitem" class="only-in-en-us" title="Currently only available in English (US)">&lt;menuitem&gt; (en-US)</a>, <a href="/html/hr/"><code>&lt;hr&gt;</code></a>, <a href="/html/script/"><code>&lt;script&gt;</code></a>, and <a href="/html/template/"><code>&lt;template&gt;</code></a>.</p>
+   </td>
+  </tr>
+  <tr>
+   <th scope="row">Пропуск тега</th>
+   <td>Нет, открывающий и закрывающий теги обязательны.</td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённые родительские элементы</th>
+   <td>Любой элемент, который поддерживает <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#flow_content">основной поток</a>.</td>
+  </tr>
+  <tr>
+   <th scope="row">Implicit ARIA role</th>
+   <td><code><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/List_role">list</a></code></td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённые роли ARIA</th>
+   <td><code><a href="https://w3c.github.io/aria/#directory" class="external" rel=" noopener">directory</a></code>, <code><a href="https://w3c.github.io/aria/#group" class="external" rel=" noopener">group</a></code>, <code><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/listbox_role">listbox</a></code>, <code><a href="https://w3c.github.io/aria/#menu" class="external" rel=" noopener">menu</a></code>, <code><a href="https://w3c.github.io/aria/#menubar" class="external" rel=" noopener">menubar</a></code>, <code><a href="https://w3c.github.io/aria/#none" class="external" rel=" noopener">none</a></code>, <code><a href="https://w3c.github.io/aria/#presentation" class="external" rel=" noopener">presentation</a></code>, <code><a href="https://w3c.github.io/aria/#radiogroup" class="external" rel=" noopener">radiogroup</a></code>, <code><a href="https://w3c.github.io/aria/#tablist" class="external" rel=" noopener">tablist</a></code>, <code><a href="https://w3c.github.io/aria/#toolbar" class="external" rel=" noopener">toolbar</a></code> или <code><a href="https://w3c.github.io/aria/#tree" class="external" rel=" noopener">tree</a></code></td>
+  </tr>
+  <tr>
+   <th scope="row">DOM-интерфейс</th>
+   <td><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLMenuElement"><code>HTMLMenuElement</code> <span>(en-US)</span></a></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="атрибуты"><a href="#атрибуты" title="Permalink to Атрибуты">Атрибуты</a></h2><div><p>К этому элементу применимы <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes">глобальные атрибуты</a>.</p>
+
+<dl>
+ <dt><a id="attr-label" href="#attr-label"><b><code>label</code></b></a> </dt>
+ <dd>The name of the menu as shown to the user. Used within nested menus, to provide a label through which the submenu can be accessed. Must only be specified when the parent element is a <a href="/html/menu/" aria-current="page"><code>&lt;menu&gt;</code></a> in the <em>context menu</em> state.</dd>
+ <dt><a id="attr-type" href="#attr-type"><b><code>type</code></b></a></dt>
+ <dd>This attribute indicates the kind of menu being declared, and can be one of two values.
+ <ul>
+  <li><code>context</code>  : Indicates the <em>popup menu</em> state, which represents a group of commands activated through another element. This might be as a button menu referenced by a <a href="/html/button#attr-menu/"><code>menu</code></a> attribute of a <a href="/html/button/"><code>&lt;button&gt;</code></a> element, or as context menu for an element with a <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes#attr-contextmenu"><code>contextmenu</code></a> attribute. This value is the default if the attribute is missing and the parent element is also a <code>&lt;menu&gt;</code> element.</li>
+  <li><code>toolbar</code>: Indicates the <em>toolbar</em> state, which represents a toolbar consisting of a series of commands for user interaction. This might be in the form of an unordered list of <a href="/html/li/"><code>&lt;li&gt;</code></a> elements, or, if the element has no <code>&lt;li&gt;</code> element children, <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#flow_content">flow content</a> describing available commands. This value is the default if the attribute is missing.</li>
+ </ul>
+ </dd>
+</dl></div><h2 id="примечания_по_использованию"><a href="#примечания_по_использованию" title="Permalink to Примечания по использованию">Примечания по использованию</a></h2><div><p>The <a href="/html/menu/" aria-current="page"><code>&lt;menu&gt;</code></a> and <a href="/html/ul/"><code>&lt;ul&gt;</code></a> elements both represent an unordered list of items. The key difference is that <a href="/html/ul/"><code>&lt;ul&gt;</code></a> primarily contains items for display, whilst <a href="/html/menu/" aria-current="page"><code>&lt;menu&gt;</code></a> is intended for interactive items, to act on.</p>
+
+<p>An HTML menu can be used to create context menus (typically activated by right-clicking another element) or toolbars.</p>
+
+<p><strong><a href="#context_menu">Context menus</a></strong> consist of a <code>&lt;menu&gt;</code> element which contains <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/menuitem" class="only-in-en-us" title="Currently only available in English (US)">&lt;menuitem&gt; (en-US)</a> elements for each selectable option in the menu, <code>&lt;menu&gt;</code> elements for submenus within the menu, and <a href="/html/hr/"><code>&lt;hr&gt;</code></a> elements for separator lines to break up the menu's content into sections. Context menus are then attached to the element they're activated from using either the associated element's <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Global_attributes#attr-contextmenu"><code>contextmenu</code></a> attribute or, for <a href="#button_menu">button-activated menus</a> attached to <a href="/html/button/"><code>&lt;button&gt;</code></a> elements, the <a href="/html/button#attr-menu/"><code>menu</code></a> attribute.</p>
+
+<p><strong><a href="#toolbar">Toolbar menus</a></strong> consist of a <code>&lt;menu&gt;</code> element whose content is described in one of two ways: either as an unordered list of items represented by <a href="/html/li/"><code>&lt;li&gt;</code></a> elements (each representing a command or option the user can utilize), or (if there are no <code>&lt;li&gt;</code> elements), <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#flow_content">flow content</a> describing the available commands and options.</p>
+
+<p>This element was deprecated in HTML4, but reintroduced in HTML5.1 and the HTML living standard. This document describes the current Firefox implementation. Type 'list' is likely to change to 'toolbar' according to HTML5.1.</p></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div></div><h3 id="context_menu"><a href="#context_menu" title="Permalink to Context menu">Context menu</a></h3><div><p></p><div class="notecard deprecated">
+            <h4 id="устарело">Устарело</h4>
+            <p>Эта возможность была удалена из веб-стандартов. Хотя некоторые браузеры по-прежнему могут поддерживать её, она находится в процессе удаления. Не используйте её ни в старых, ни в новых проектах. Страницы или веб-приложения, использующие её, могут в любой момент сломаться.</p>
+        </div><p></p>
+
+<h4 id="html">HTML</h4>
+
+<pre class="brush: html; notranslate"><code><span class="token comment">&lt;!-- A &lt;div&gt; element with a context menu --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">contextmenu</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>popup-menu<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  Right-click to see the adjusted context menu
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>menu</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>context<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>popup-menu<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>menuitem</span><span class="token punctuation">&gt;</span></span>Action<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>menuitem</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>menuitem</span><span class="token punctuation">&gt;</span></span>Another action<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>menuitem</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>hr</span><span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>menuitem</span><span class="token punctuation">&gt;</span></span>Separated action<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>menuitem</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>menu</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<h4 id="css">CSS</h4>
+
+<pre class="brush: css; notranslate"><code><span class="token selector">div</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 80px<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> lightgreen<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<h4 id="result">Result</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Context_menu" width="100%" height="80" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/menu/_sample_.Context_menu.html" loading="lazy"></iframe></p></div><h3 id="menu_button"><a href="#menu_button" title="Permalink to Menu button">Menu button</a></h3><div><div class="warning notecard">
+<p>Menu buttons haven't been implemented in any known browsers yet. The <a href="/html/menu#attr-type/" aria-current="page"><code>type</code></a> attribute on the <code>&lt;menu&gt;</code> element is now obsolete.</p>
+</div>
+
+<div class="warning notecard">
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/menuitem" class="only-in-en-us" title="Currently only available in English (US)">&lt;menuitem&gt; (en-US)</a> element is obsolete.</p>
+</div>
+
+<h4 id="html_2">HTML</h4>
+
+<pre class="brush: html; notranslate"><code><span class="token comment">&lt;!-- A button, which displays a menu when clicked. --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>menu<span class="token punctuation">"</span></span> <span class="token attr-name">menu</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>popup-menu<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  Dropdown
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>menu</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>context<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>popup-menu<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>menuitem</span><span class="token punctuation">&gt;</span></span>Action<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>menuitem</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>menuitem</span><span class="token punctuation">&gt;</span></span>Another action<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>menuitem</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>hr</span><span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>menuitem</span><span class="token punctuation">&gt;</span></span>Separated action<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>menuitem</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>menu</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<h4 id="result_2">Result</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Menu_button" width="100%" height="60" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/menu/_sample_.Menu_button.html" loading="lazy"></iframe></p></div><h3 id="toolbar"><a href="#toolbar" title="Permalink to Toolbar">Toolbar</a></h3><div><div class="warning notecard">
+<p>Toolbar menus haven't been implemented in any known browsers yet.</p>
+</div>
+
+<h4 id="html_3">HTML</h4>
+
+<pre class="brush: html; notranslate"><code><span class="token comment">&lt;!-- A context menu for a simple editor,
+   - containing two menu buttons. --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>menu</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>toolbar<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>menu<span class="token punctuation">"</span></span> <span class="token attr-name">menu</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>file-menu<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>File<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>menu</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>context<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>file-menu<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>menuitem</span> <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>New...<span class="token punctuation">"</span></span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>newFile()<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>menuitem</span> <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Save...<span class="token punctuation">"</span></span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>saveFile()<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>menu</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>menu<span class="token punctuation">"</span></span> <span class="token attr-name">menu</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>edit-menu<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Edit<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>menu</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>context<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>edit-menu<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>menuitem</span> <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Cut...<span class="token punctuation">"</span></span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>cutEdit()<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>menuitem</span> <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Copy...<span class="token punctuation">"</span></span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>copyEdit()<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>menuitem</span> <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Paste...<span class="token punctuation">"</span></span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>pasteEdit()<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>menu</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>menu</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<h4 id="result_3">Result</h4>
+
+<p><iframe class="sample-code-frame" id="frame_Toolbar" width="100%" height="100" src="https://yari-demos.prod.mdn.mozit.cloud/ru/docs/Web/HTML/Element/menu/_sample_.Toolbar.html" loading="lazy"></iframe></p></div><h2 id="specifications"><a href="#specifications" title="Permalink to Specifications">Specifications</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-menu-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML Living Standard<br><small lang="ru">Определение '&lt;menu&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td>No change from latest snapshot, <a href="about:unknown" hreflang="en" lang="en" class="external" title="Спецификация 'Unknown'">Unknown</a></td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/html51/interactive-elements.html#the-menu-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML 5.1<br><small lang="ru">Определение '&lt;menu&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-rec">Рекомендация</span></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="browser_compatibility"><a href="#browser_compatibility" title="Permalink to Browser compatibility">Browser compatibility</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="see_also"><a href="#see_also" title="Permalink to See also">See also</a></h2><div><ul>
+ <li>Other list-related HTML Elements: <a href="/html/ol/"><code>&lt;ol&gt;</code></a>, <a href="/html/ul/"><code>&lt;ul&gt;</code></a>, <a href="/html/li/"><code>&lt;li&gt;</code></a>, <a href="/html/hr/"><code>&lt;hr&gt;</code></a>, and the obsolete <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dir" class="only-in-en-us" title="Currently only available in English (US)">&lt;dir&gt; (en-US)</a>.</li>
+ <li>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes#attr-contextmenu"><code>contextmenu</code></a> <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes">global attribute</a> can be used on an element to refer to the <code>id</code> of a <code>menu</code> with <a href="/html/menu#attr-type/" aria-current="page"><code>type="context"</code></a>.</li>
+</ul></div>

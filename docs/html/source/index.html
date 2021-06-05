@@ -1,0 +1,93 @@
+<h1>Элемент &lt;source&gt;</h1><div><p><strong>HTML-элемент&nbsp;<code>&lt;source&gt;</code> </strong>&nbsp;указывает несколько медиа-ресурсов для элементов&nbsp;<a href="/html/picture/"><code>&lt;picture&gt;</code></a>, <a href="/html/video/"><code>&lt;video&gt;</code></a> и&nbsp;<a href="/html/audio/"><code>&lt;audio&gt;</code></a>. Это пустой элемент. Он обычно используется для обслуживания одного и того же медиа-контента <a href="https://developer.mozilla.org/en-US/docs/Web/Media/Formats">в нескольких форматах, поддерживаемых различными браузерами</a>.</p>
+
+<table class="properties">
+ <tbody>
+  <tr>
+   <th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories">Категории контента</a></th>
+   <td>Нет</td>
+  </tr>
+  <tr>
+   <th scope="row">Разрешённый контент</th>
+   <td>Нет, это&nbsp; <a href="https://developer.mozilla.org/ru/docs/Glossary/Empty_element">пустой элемент</a>.</td>
+  </tr>
+  <tr>
+   <th scope="row">Пропуск тегов</th>
+   <td>Должен иметь открывающий тег; закрывающий тег необязателен.</td>
+  </tr>
+  <tr>
+   <th scope="row"><dfn>Разрешённые родители</dfn></th>
+   <td>
+    <div>Медиа-элементы —<a href="/html/audio/"><code>&lt;audio&gt;</code></a> или <a href="/html/video/"><code>&lt;video&gt;</code></a>—должен быть помещён перед любым&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#flow_content">потоковым контентом</a>&nbsp;или элементом<a href="/html/track/"><code>&lt;track&gt;</code></a>.</div>
+
+    <div>Элемент <a href="/html/picture/"><code>&lt;picture&gt;</code></a> , должен быть помещён перед элементом <a href="/html/img/"><code>&lt;img&gt;</code></a>.</div>
+   </td>
+  </tr>
+  <tr>
+   <th scope="row">Permitted ARIA roles</th>
+   <td>Нет</td>
+  </tr>
+  <tr>
+   <th scope="row">DOM interface</th>
+   <td><a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLSourceElement"><code>HTMLSourceElement</code> <span>(en-US)</span></a></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="атрибуты"><a href="#атрибуты" title="Permalink to Атрибуты">Атрибуты</a></h2><div><p>Этот элемент включает в себя&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes">универсальные атрибуты</a>.</p>
+
+<ol>
+ <li>адреса изображения (URL);</li>
+ <li>дескриптора ширины, представляющего собой целое положительное число, за которым следует&nbsp;<code>'w'</code>.&nbsp; Значением по умолчанию, если оно отсутствует, является бесконечность.</li>
+ <li>дескриптора плотности пикселей, представляющее собой положительное десятичное число, за которым следует&nbsp;<code>'x'</code>. Значением по умолчанию,&nbsp;если оно отсутствует, является&nbsp;<code>1x</code>.</li>
+</ol>
+
+<dl>
+ <dt><a id="attr-sizes" href="#attr-sizes"><b><code>sizes</code></b></a> </dt>
+ <dd>Список размеров изображений для разных размеров страниц. Он состоит из разделённых&nbsp;запятыми&nbsp;медиавыражений со значениями ширины изображения. Эта информация используется браузером&nbsp;перед выкладкой страницы&nbsp;для определения конкретного изображения, заданного в атрибуте&nbsp;<a href="/html/source#attr-srcset/" aria-current="page"><code>srcset</code></a>. Атрибут&nbsp;<code>sizes</code> работает только тогда, когда элемент&nbsp; <a href="/html/source/" aria-current="page"><code>&lt;source&gt;</code></a> расположен внутри элемента&nbsp;<a href="/html/picture/"><code>&lt;picture&gt;</code></a>.</dd>
+ <dt><a id="attr-src" href="#attr-src"><b><code>src</code></b></a></dt>
+ <dd>Требуемый для элементов&nbsp; <a href="/html/audio/"><code>&lt;audio&gt;</code></a> и&nbsp;<a href="/html/video/"><code>&lt;video&gt;</code></a> адрес медиа-ресурсов. Значение этого атрибута игнорируется браузером, когда элемент&nbsp;<code>&lt;source&gt;</code> размещён внутри элемента <a href="/html/picture/"><code>&lt;picture&gt;</code></a>.</dd>
+ <dt><a id="attr-srcset" href="#attr-srcset"><b><code>srcset</code></b></a> </dt>
+ <dd>Список из одной или нескольких строк, разделённых запятыми, определяющий набор возможных изображений, представленных для отображения в браузере. Каждая строка может состоять из:</dd>
+ <dd>
+ <p>Каждая строка списка должна содержать по крайней мере дескриптор ширины или дескриптор плотности пикселей.&nbsp;&nbsp;</p>
+
+ <p>Браузер выбирает самое подходящее изображение для отображения в данный момент времени.</p>
+
+ <p>Атрибут&nbsp;<code>srcset</code>&nbsp; работает только в том случае, когда элемент&nbsp;<a href="/html/source/" aria-current="page"><code>&lt;source&gt;</code></a> находится внутри элемента&nbsp;<a href="/html/picture/"><code>&lt;picture&gt;</code></a>.</p>
+ </dd>
+ <dt><a id="attr-type" href="#attr-type"><b><code>type</code></b></a></dt>
+ <dd>MIME-тип ресурса, опционально содержащий параметр&nbsp;<code>codecs</code>. Для получения полной информации по указанию кодеков смотрите&nbsp;&nbsp;<a class="external" href="https://tools.ietf.org/html/rfc4281" rel=" noopener">RFC 4281</a>.&nbsp;</dd>
+ <dt><a id="attr-media" href="#attr-media"><b><code>media</code></b></a> </dt>
+ <dd>Определяет&nbsp;<a class="internal" href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries">медиавыражение</a>&nbsp;, согласно которому будет выводиться изображение. Работает&nbsp;только в элементе <a href="/html/picture/"><code>&lt;picture&gt;</code></a>.</dd>
+</dl>
+
+<p>Если атрибут&nbsp;<code>type</code> не указан, то он запрашивается с сервера и проверяется, может ли <a href="https://developer.mozilla.org/ru/docs/Glossary/User_agent">user agent</a>&nbsp;его обрабатывать. Если он не может быть обработан, проверяется следующий <code>&lt;source&gt;</code>. Если атрибут <code>type</code> указан, он сравнивается с типами, которые может поддерживать <a href="https://developer.mozilla.org/ru/docs/Glossary/User_agent">user agent</a>​​​​​, и если он не распознан, сервер даже не запрашивается, вместо этого проверяется следующий элемент <code>&lt;source&gt;</code>.</p></div><h2 id="примеры"><a href="#примеры" title="Permalink to Примеры">Примеры</a></h2><div><p>This example demonstrates how to offer a video in Ogg format for users whose browsers support Ogg format, and a QuickTime format video for users whose browsers support that. If the <code>audio</code> or <code>video</code> element is not supported by the browser, a notice is displayed instead.&nbsp; If the browser supports the element but does not support any of the specified formats, an <code>error</code> event is raised and the default media controls (if enabled) will indicate an error. See also the list of <a href="https://developer.mozilla.org/en-US/docs/Web/Media/Formats">media formats supported by the audio and video elements</a> in various browsers.</p>
+
+<pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>video</span> <span class="token attr-name">controls</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>foo.webm<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>video/webm<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>foo.ogg<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>video/ogg<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>foo.mov<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>video/quicktime<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  I'm sorry; your browser doesn't support HTML5 video.
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>video</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+<p>For more examples, see <a class="internal" href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Video_and_audio_content">Using audio and video in Firefox</a>.</p></div><h2 id="спецификации"><a href="#спецификации" title="Permalink to Спецификации">Спецификации</a></h2><div><table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Спецификация</th>
+   <th scope="col">Статус</th>
+   <th scope="col">Комментарии</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://html.spec.whatwg.org/multipage/embedded-content.html#the-source-element" hreflang="en" lang="en" class="external" rel=" noopener">HTML Living Standard<br><small lang="ru">Определение '&lt;source&gt;' в этой спецификации.</small></a></td>
+   <td><span class="spec-living">Живой стандарт</span></td>
+   <td></td>
+  </tr>
+ </tbody>
+</table></div><h2 id="браузерная_совместимость"><a href="#браузерная_совместимость" title="Permalink to Браузерная совместимость">Браузерная совместимость</a></h2><p>BCD tables only load in the browser</p><div><p></p><p></p></div><h2 id="смотрите_также"><a href="#смотрите_также" title="Permalink to Смотрите также">Смотрите также</a></h2><div><ul>
+ <li>Элемент <a href="/html/picture/"><code>&lt;picture&gt;</code></a>&nbsp;</li>
+ <li>Элемент <a href="/html/audio/"><code>&lt;audio&gt;</code></a>&nbsp;</li>
+ <li>Элемент <a href="/html/video/"><code>&lt;video&gt;</code></a>&nbsp;</li>
+</ul>
+
+<p></p><p></p></div>

@@ -6,8 +6,8 @@
 </dl></div><h2 id="description"><a href="#description" title="Permalink to Описание">Описание</a></h2><div><p>Метод <code>Object.is()</code> определяет, являются ли два значения <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness" class="only-in-en-us" title="Currently only available in English (US)">одинаковыми значениями (en-US)</a>. Два значения являются одинаковыми в следующих случаях:</p>
 
 <ul>
- <li>оба равны <a href="/webhints_data_ru/js/undefined/"><code>undefined</code></a></li>
- <li>оба равны <a href="/webhints_data_ru/js/null/"><code>null</code></a></li>
+ <li>оба равны <a href="/js/undefined/"><code>undefined</code></a></li>
+ <li>оба равны <a href="/js/null/"><code>null</code></a></li>
  <li>оба равны <code>true</code>, либо оба равны <code>false</code></li>
  <li>оба являются строками с одинаковой длиной и одинаковыми символами</li>
  <li>оба являются одним и тем же объектом</li>
@@ -15,15 +15,15 @@
   <ul>
    <li>оба равны <code>+0</code></li>
    <li>оба равны <code>-0</code></li>
-   <li>оба равны <a href="/webhints_data_ru/js/NaN/"><code>NaN</code></a></li>
-   <li>либо оба не равны нулю или <a href="/webhints_data_ru/js/NaN/"><code>NaN</code></a> и оба имеют одинаковое значение</li>
+   <li>оба равны <a href="/js/NaN/"><code>NaN</code></a></li>
+   <li>либо оба не равны нулю или <a href="/js/NaN/"><code>NaN</code></a> и оба имеют одинаковое значение</li>
   </ul>
  </li>
 </ul>
 
 <p>Поведение этого метода <em>не</em> аналогично оператору <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators"><code>==</code> <span>(en-US)</span></a>. Оператор <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators"><code>==</code> <span>(en-US)</span></a> использует приведение типов обоих операндов (если они имеют различный тип) перед проверкой на равенство (в результате получается, что проверка <code>"" == false</code> даёт <code>true</code>), а метод <code>Object.is</code> приведение типов не выполняет.</p>
 
-<p>Поведение этого метода <em>не</em> аналогично оператору <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators"><code>===</code> <span>(en-US)</span></a>. Оператор <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators"><code>===</code> <span>(en-US)</span></a> (также как и оператор <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators"><code>==</code> <span>(en-US)</span></a>) считает числовые значения <code>-0</code> и <code>+0</code> равными, а значение <a href="/webhints_data_ru/js/Number/NaN/"><code>Number.NaN</code></a> не равным самому себе.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div><pre class="brush: js notranslate"><code>Object<span class="token punctuation">.</span><span class="token function">is</span><span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">,</span> <span class="token string">'foo'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">// true</span>
+<p>Поведение этого метода <em>не</em> аналогично оператору <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators"><code>===</code> <span>(en-US)</span></a>. Оператор <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators"><code>===</code> <span>(en-US)</span></a> (также как и оператор <a class="only-in-en-us" title="Currently only available in English (US)" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators"><code>==</code> <span>(en-US)</span></a>) считает числовые значения <code>-0</code> и <code>+0</code> равными, а значение <a href="/js/Number/NaN/"><code>Number.NaN</code></a> не равным самому себе.</p></div><h2 id="examples"><a href="#examples" title="Permalink to Примеры">Примеры</a></h2><div><pre class="brush: js notranslate"><code>Object<span class="token punctuation">.</span><span class="token function">is</span><span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">,</span> <span class="token string">'foo'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">// true</span>
 Object<span class="token punctuation">.</span><span class="token function">is</span><span class="token punctuation">(</span>window<span class="token punctuation">,</span> window<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// true</span>
 
 Object<span class="token punctuation">.</span><span class="token function">is</span><span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">,</span> <span class="token string">'bar'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">// false</span>
